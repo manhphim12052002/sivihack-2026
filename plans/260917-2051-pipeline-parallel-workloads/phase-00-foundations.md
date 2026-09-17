@@ -80,9 +80,9 @@ create view lot_latest as select distinct on (source, notice_id, lot_id) * from 
 - Unblocks: W1, W2, W3.
 
 ### W0.3 · Python project and DB module
-- `pyproject.toml` at root: package `tender_extract` from `src/`, deps `psycopg[binary]`, `fastapi`, `uvicorn`, `python-multipart`; dev: none (stdlib `unittest`). Pin Python ≥3.11.
-- `src/tender_extract/db.py`: `connect()` from `DATABASE_URL`; helpers `upsert_lot`, `insert_observations` (`on conflict do nothing`, immutability), `upsert_source`, `get_state/set_state`, `resolve(scope_keys)` reading `observation_resolved`. Same call shapes as `store.py` so `load.py` ports by import swap.
-- `tests/__init__.py`, run with `python -m unittest`. Add `README` run lines for API and pipeline.
+- `apps/pipeline/pyproject.toml`: package `tender_extract` from `src/`; root `pyproject.toml` is a uv workspace with `members = ["apps/pipeline"]`, deps `psycopg[binary]`, `fastapi`, `uvicorn`, `python-multipart`; dev: none (stdlib `unittest`). Pin Python ≥3.11.
+- `apps/pipeline/src/tender_extract/db.py`: `connect()` from `DATABASE_URL`; helpers `upsert_lot`, `insert_observations` (`on conflict do nothing`, immutability), `upsert_source`, `get_state/set_state`, `resolve(scope_keys)` reading `observation_resolved`. Same call shapes as `store.py` so `load.py` ports by import swap.
+- `apps/pipeline/tests/__init__.py`, run with `python -m unittest`. Add `README` run lines for API and pipeline.
 - Acceptance: `python -m unittest` runs (zero tests OK); `python -c 'from tender_extract import db'` imports.
 
 ### W0.4 · Record the LLM model

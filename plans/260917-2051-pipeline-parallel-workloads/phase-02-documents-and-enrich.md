@@ -7,7 +7,7 @@ platform named; the same code runs for one notice (`ingest-one`) and for the bat
 
 ## Tracer fixture (from W5.1)
 One `plattform.aumass.de` lot (anonymous ZIP confirmed end to end in both probe rounds). Save its package under
-`data/documents/` (gitignored) and, for tests, the ~5KB text of its conditions PDF as a fixture under `tests/fixtures/`.
+`data/documents/` (gitignored) and, for tests, the ~5KB text of its conditions PDF as a fixture under `apps/pipeline/tests/fixtures/`.
 
 ## Tickets
 

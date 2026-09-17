@@ -52,10 +52,10 @@ rules must not be duplicated in TypeScript (ADR 0003: one pure `screen()` functi
 
 | id | workstream | owner | file ownership | detail |
 |---|---|---|---|---|
-| W0 | Foundations: gitignore fix, Supabase schema, Python project, ADR 0005 | backend A (1h, solo, first) | `supabase/`, `pyproject.toml`, `src/tender_extract/db.py`, `.gitignore`, `docs/adr/0005*` | [phase-00](./phase-00-foundations.md) |
-| W1 | Acquisition + load: poll, load, backfill, eForms fixes, parse tests | backend A | `src/tender_extract/{fetch,poll,load,eforms,factsheet}.py`, `tests/test_parse_notice.py` | [phase-01](./phase-01-acquisition-and-load.md) |
-| W2 | Documents + enrich: adapters, router, pdftotext, LLM extraction, evidence check | backend B | `src/tender_extract/{documents,adapters/,reader,llm,rules,enrich}.py` | [phase-02](./phase-02-documents-and-enrich.md) |
-| W3 | Decision + API: `screen()`, company normalisation, FastAPI, job worker, ingest-one | backend A after W1.3; W3.1 may be pulled by B or web owner | `src/tender_extract/{screen,templates,company}.py`, `apps/api/`, `tests/test_screen.py` | [phase-03](./phase-03-decision-and-api.md) |
+| W0 | Foundations: gitignore fix, Supabase schema, Python project, ADR 0005 | backend A (1h, solo, first) | `supabase/`, `pyproject.toml` (uv workspace), `apps/pipeline/**`, `.gitignore`, `docs/adr/0005*` | [phase-00](./phase-00-foundations.md) |
+| W1 | Acquisition + load: poll, load, backfill, eForms fixes, parse tests | backend A | `apps/pipeline/src/tender_extract/{fetch,poll,load,eforms,factsheet}.py`, `apps/pipeline/tests/test_parse_notice.py` | [phase-01](./phase-01-acquisition-and-load.md) |
+| W2 | Documents + enrich: adapters, router, pdftotext, LLM extraction, evidence check | backend B | `apps/pipeline/src/tender_extract/{documents,adapters/,reader,llm,rules,enrich}.py` | [phase-02](./phase-02-documents-and-enrich.md) |
+| W3 | Decision + API: `screen()`, company normalisation, FastAPI, job worker, ingest-one | backend A after W1.3; W3.1 may be pulled by B or web owner | `apps/pipeline/src/tender_extract/{screen,templates,company}.py`, `apps/api/` (uv workspace member depending on `tender-extract`), `apps/pipeline/tests/test_screen.py` | [phase-03](./phase-03-decision-and-api.md) |
 | W4 | Web wiring: commit `lib/`, regenerate types, unmatched list, click-through | web owner | `apps/web/**` | [phase-04](./phase-04-web-wiring.md) |
 | W5 | Curation + seed: 3 profiles, tracer tender, README, `seed.sql`, slides | curator | `data/companies/`, `README.md`, `supabase/seed.sql`, slides | [phase-05](./phase-05-curation-and-seed.md) |
 
@@ -86,6 +86,17 @@ Everything not on an edge runs in parallel. W1, W2, W3.1 and W5 can all start th
 | 18.09 12:00 | **M3 live**: unseen notice URL/id/text via `/ingest`, unseen company via `/companies`, both end on the briefing page | generalises for judges |
 | 18.09 13:00 | **M4 freeze**: `seed.sql` committed, README, tech check, no more config changes | submission-safe |
 
+## Monorepo layout (decided 17.09 21:10)
+
+```
+apps/web/        Next.js UI
+apps/pipeline/   Python: ingestion pipeline (own pyproject, src/tender_extract, tests, README)
+apps/api/        FastAPI, uv workspace member that depends on tender-extract (W3.3)
+supabase/        shared schema migrations + seed
+data/            shared batch data and caches
+pyproject.toml   uv workspace root, no deps of its own
+```
+
 ## Rules of the road
 
 - Tracer bullet before breadth (pipeline doc §7). Every ticket lands a thin vertical slice, not a layer.
@@ -93,7 +104,7 @@ Everything not on an edge runs in parallel. W1, W2, W3.1 and W5 can all start th
 - Per ticket: `/tdd` for the two pure seams (`parse_notice`, `screen`), `/code-review` before commit,
   Conventional Commits, no secrets. `poll`, adapters and the LLM client are verified by running, not unit tests (PRD).
 - `store.py`, `load.py`, `factsheet.py` are untracked in the main checkout. Their author commits them
-  before W1.1 ports them; nobody else stages them.
+  under `apps/pipeline/src/tender_extract/` before W1.1 ports them; nobody else stages them.
 - Never commit `.env`, `data/cache/`, `data/documents/`.
 
 ## Risks

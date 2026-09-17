@@ -12,7 +12,7 @@ contract the web already uses, reading Supabase; a worker drains `ingest_job`; `
   Missing fact or `REFERRED_TO_DOCUMENTS`/`CONFLICTING` → `Unknown`, never `OK`. Rollup: any Blocker → `NoGo`;
   Risk or Unknown → `Consider`; else `Bid`. Order `(blockers, unknowns, risks)` asc, then deadline.
 - `templates.py`: English reason templates with the German term in parentheses and the untranslated quote; `company_fact` filled.
-- `tests/test_screen.py` (most cases live here): three seeded profiles × fixture fact sheets → shortlists differ; missing fact
+- `apps/pipeline/tests/test_screen.py` (most cases live here): three seeded profiles × fixture fact sheets → shortlists differ; missing fact
   → `Unknown`; Blocker → `NoGo`; every result has non-empty `reason_en` and `company_fact`; deterministic on repeat.
 - Acceptance: tests green; no I/O in the module.
 

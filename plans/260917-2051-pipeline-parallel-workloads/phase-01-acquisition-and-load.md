@@ -5,8 +5,8 @@
 **Spec:** PRD "Source and acquisition", "Extractor bugs to fix as part of load"; ADR 0002.
 
 ## Existing code to reuse
-- `src/tender_extract/eforms.py` — `parse_notice(xml_bytes) -> list[LotRecord]`, namespace map `NS`, CPV/NUTS/placeholder normalisation, awarded-title heuristic.
-- `src/tender_extract/fetch.py` — `fetch_day` (bulk export, becomes `backfill`), `fetch_notice(notice_id)` (single eForms notice, the live path), polite `USER_AGENT`.
+- `apps/pipeline/src/tender_extract/eforms.py` — `parse_notice(xml_bytes) -> list[LotRecord]`, namespace map `NS`, CPV/NUTS/placeholder normalisation, awarded-title heuristic.
+- `apps/pipeline/src/tender_extract/fetch.py` — `fetch_day` (bulk export, becomes `backfill`), `fetch_notice(notice_id)` (single eForms notice, the live path), polite `USER_AGENT`.
 - Untracked in main, author commits first: `load.py` (load_notice_bytes, load_zip), `factsheet.py` (15 attributes → xpath claims, `DOCUMENT_ONLY`), `store.py` (SQLite; superseded by `db.py`).
 
 ## Tickets
@@ -21,7 +21,7 @@
 - Fix the five fields (PRD table): **BT-750** selection-criteria description (highest priority; it is the references
   criterion's only notice source), BT-758 changed-notice id, BT-33 lots-max-awarded path, BT-13(d), BT-541.
 - Verify every XPath resolves by namespace URI; add a fixture where UBL binds to `ns3:`/`ns5:`.
-- `tests/test_parse_notice.py` over `data/format-comparison/*` (5 rich, 5 thin): BT-750 read; CPV → 8 digits; thin profile
+- `apps/pipeline/tests/test_parse_notice.py` over `data/format-comparison/*` (5 rich, 5 thin): BT-750 read; CPV → 8 digits; thin profile
   yields a lot with absent fields, no crash; `ns3:` fixture parses identically to `cbc:`. Use `/tdd`.
 - Acceptance: tests green; `python -m tender_extract --days 14` still writes `data/tenders.jsonl`.
 
@@ -32,7 +32,7 @@
 - Unblocks: W2.6, W3.6, W5.4.
 
 ### W1.4 · `poll` command — blocked by W1.1
-- `src/tender_extract/poll.py`: POST the lot-search query (PRD JSON envelope) with `publicationDate >= watermark`,
+- `apps/pipeline/src/tender_extract/poll.py`: POST the lot-search query (PRD JSON envelope) with `publicationDate >= watermark`,
   ISO timestamps only, `active` as JSON boolean, page size 100, `ORDER publicationDate DESC`; diff stubs on
   `(notice_id, notice_version, lot_id)` against `lot`; for each delta `fetch_notice` → `load_notice_bytes`; advance
   watermark in `sync_state` only after the page is loaded. Single-threaded, sleep between pages, identifying UA.
