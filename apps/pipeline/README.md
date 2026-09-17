@@ -56,13 +56,13 @@ says what it does not know. Status vocabularies are uppercase.
 |---|---|---|
 | Screening candidates, one row per lot at its newest version, corrigenda collapsed | `lots_current` | `select * from lots_current where submission_deadline >= now() order by submission_deadline` |
 | Every notice id at its newest version (superseded originals included) | `lots_latest` | `select * from lots_latest where notice_id = $1` |
-| Fact sheet and requirements for a lot | `observations_resolved` | `select * from observations_resolved where scope_key in ($lot_key, $procedure_key)` (the reader inherits PROCEDURE rows; `state` and `confidence` are separate axes) |
+| Fact sheet and requirements for a lot | `observations_resolved` | `select * from observations_resolved where scope_key in ($lot_key, $procedure_key)` (PROCEDURE-scoped rows are not auto-inherited by a lot; include `$procedure_key` in the `IN` list yourself to see them; `state` and `confidence` are separate axes) |
 | Evidence behind a value | `observations_resolved.evidence` | jsonb array of `{source_id, extractor, locator, page, quote, value}`; `locator` is `xpath:BT-…` for notice fields or `<file>#p.<page>` for documents |
 | Why a requirement is unknown | `documents` | `select status, platform from documents where lot_key = $1` (`RETRIEVED`, `GATED`, `UNREACHABLE`, `SCANNED`, `SKIPPED`); a `REFERRED_TO_DOCUMENTS` row plus a `GATED` document means "open the portal" |
 | Conditions the buyer stated that no rule checks | `observations` | `select category, value_text, evidence_quote, locator from observations where kind = 'unmatched' and scope_key in (...)` (`attribute` is `<category>#<hash>` to keep every item; read `category`) |
 | Page text a quote came from | `chunks` | `select text from chunks where id = $1` (`<source_id>#p<page>`) |
 | What is fresh, what the batch contained | `sync_state` | `select * from sync_state order by key` (`last_poll_at`, `poll_watermark`, `load.*`, `enrich.*`) |
-| Enqueue an unseen tender | `ingest_jobs` | `insert into ingest_jobs (id, payload) values ($1, '{"reference": "<notice id or url>"}')`; a worker must run what `python -m tender_extract.ingest_one` runs |
+| Enqueue an unseen notice | `ingest_jobs` | `insert into ingest_jobs (id, payload) values ($1, '{"reference": "<notice id or url>"}')`; a worker must run what `python -m tender_extract.ingest_one` runs |
 
 States: `KNOWN` a value with evidence; `NOT_FOUND` a document was read and does not state it;
 `REFERRED_TO_DOCUMENTS` the notice defers to documents not (yet) read; `CONFLICTING` two sources at the

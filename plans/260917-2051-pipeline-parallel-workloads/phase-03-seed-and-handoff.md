@@ -4,6 +4,24 @@
 is snapshotted for offline use, the numbers the team quotes come from the database, and whoever owns
 the decision rules, API or web knows exactly what to read.
 
+## Status (18.09 01:10, branch `manhphim12052002/w2-w3-enrich-and-seed`)
+
+| ticket | result |
+|---|---|
+| W3.1 | `data/tracer.md`: notice `0f60a327-2519-4e0a-8bf6-eca4edeb1fde` (aumass, EU threshold, open until 19.10, all five prose signals present). Its document package could not be downloaded here (network); the fixture bullet says so and how to finish it. |
+| W3.2 | `sync_state` has every number the ticket lists except the document/model-stage ones, which are 0 because W2.6 did not run: `load.lots_loaded` (3222), `load.dropped_awarded_by_title` (72), `enrich.lots.count`/`lots_latest.count`/`lots_current.count`, `enrich.observations.xpath` (19931) and `.rule` (1616), `enrich.lots_with_retrieved_document` (0), `enrich.last_run.model_calls` (0), `enrich.sources.rejected_items` (0). |
+| W3.3 | `supabase/seed.sql` (30MB, data-only) committed. Verified live: `supabase db reset` from clean migrations + this file reproduces every `sync_state` number exactly. Holds the 14-day batch (xpath) plus the rule stage (mirrored onto the fact sheet, see phase-02) — no document or model observations, since W2.6 did not run. |
+| W3.4 | Not run as a rehearsal (needs the demo laptop). The read-contract queries below were run against the live seed and confirmed correct, including the extractor-precedence case: a lot with both an xpath `guarantees=true` and a rule-derived `guarantees=5%` resolves to the xpath value, per ADR 0001. |
+| W3.5 | `apps/pipeline/README.md` "Reading the data" section written and every query verified against the live seed. |
+| W3.6 | Not applicable yet — freeze is 18.09 12:30 per the plan; W2.6 (documents/model batch) is the remaining blocker before a freeze would be meaningful. |
+
+**Follow-ups before the demo:**
+- Run `python -m tender_extract.enrich --limit 300` (W2.6) from a normal network connection with an
+  LLM access credential configured, then re-dump `supabase/seed.sql` — the current seed has no
+  document or model observations.
+- Apply `supabase/migrations/` to the hosted project (still only verified against local `supabase start`)
+  and reload the batch there.
+
 ## Tickets
 
 ### W3.1 · Choose the tracer-bullet procedure — no blockers, do first (30 min)
