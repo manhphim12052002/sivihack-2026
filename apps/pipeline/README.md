@@ -32,6 +32,45 @@ observations. `poll` keeps `poll_watermark` and `last_poll_at` in `sync_state`; 
 candidates from the `lots_current` view (newest version per notice, corrigenda collapsed);
 `lots_latest` keeps every notice id.
 
+## Enrich and ingest-one (need `DATABASE_URL`; the model stage needs `OPENROUTER_API_KEY`)
+
+```bash
+python -m tender_extract.enrich --all-rules            # extraction rules over BT-750 prose of every current lot
+python -m tender_extract.enrich --limit 300            # documents + model over open, fetchable lots, soonest deadline first
+python -m tender_extract.enrich --lot <lot_key>        # one lot, rules + documents + model
+python -m tender_extract.ingest_one <notice-id|url>    # the live path: fetch, load, enrich one unseen notice
+python -m tender_extract.ingest_one <notice-id> --text pasted.txt   # plus pasted notice text as a MANUAL_INPUT source
+```
+
+`enrich` is idempotent: a document already extracted with the current `prompt_version` is not sent to
+the model again, and a package already retrieved for a lot is not downloaded again. Without the model
+key the model stage reports `model_unavailable` and everything else still runs (ADR 0003 fallback).
+Downloaded files live in the gitignored content-addressed store `data/documents/<sha256>.<ext>`.
+
+## Reading the data (contract for downstream owners)
+
+Nothing in this pipeline ranks or decides. It stores what the sources state, with evidence, and
+says what it does not know. Status vocabularies are uppercase.
+
+| question | read | query |
+|---|---|---|
+| Screening candidates, one row per lot at its newest version, corrigenda collapsed | `lots_current` | `select * from lots_current where submission_deadline >= now() order by submission_deadline` |
+| Every notice id at its newest version (superseded originals included) | `lots_latest` | `select * from lots_latest where notice_id = $1` |
+| Fact sheet and requirements for a lot | `observations_resolved` | `select * from observations_resolved where scope_key in ($lot_key, $procedure_key)` (the reader inherits PROCEDURE rows; `state` and `confidence` are separate axes) |
+| Evidence behind a value | `observations_resolved.evidence` | jsonb array of `{source_id, extractor, locator, page, quote, value}`; `locator` is `xpath:BT-…` for notice fields or `<file>#p.<page>` for documents |
+| Why a requirement is unknown | `documents` | `select status, platform from documents where lot_key = $1` (`RETRIEVED`, `GATED`, `UNREACHABLE`, `SCANNED`, `SKIPPED`); a `REFERRED_TO_DOCUMENTS` row plus a `GATED` document means "open the portal" |
+| Conditions the buyer stated that no rule checks | `observations` | `select category, value_text, evidence_quote, locator from observations where kind = 'unmatched' and scope_key in (...)` (`attribute` is `<category>#<hash>` to keep every item; read `category`) |
+| Page text a quote came from | `chunks` | `select text from chunks where id = $1` (`<source_id>#p<page>`) |
+| What is fresh, what the batch contained | `sync_state` | `select * from sync_state order by key` (`last_poll_at`, `poll_watermark`, `load.*`, `enrich.*`) |
+| Enqueue an unseen tender | `ingest_jobs` | `insert into ingest_jobs (id, payload) values ($1, '{"reference": "<notice id or url>"}')`; a worker must run what `python -m tender_extract.ingest_one` runs |
+
+States: `KNOWN` a value with evidence; `NOT_FOUND` a document was read and does not state it;
+`REFERRED_TO_DOCUMENTS` the notice defers to documents not (yet) read; `CONFLICTING` two sources at the
+same precedence disagree, no value is shown. Confidence (`high` xpath, `medium` rule and model over a
+document, `low` model over notice text, `not_found`) is derived from the extractor, never asked of the model.
+Coverage on the 14-day batch: deadline 93.8%, place 95.7%, estimated value 4.9% from the notice;
+about 24% of document-bearing lots are on anonymously downloadable platforms.
+
 ## Environment variables (names only; values live in an untracked env file)
 
 - `DATABASE_URL` — Postgres DSN read by `tender_extract.db.connect()`; `supabase start` prints a local one.
