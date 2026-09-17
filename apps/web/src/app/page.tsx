@@ -137,9 +137,9 @@ function TriageBoard() {
             onOpenTender={(tenderId) => router.push(`/tenders/${tenderId}?company=${companyId}`)}
           />
 
-          <TriageSection dotClass="bg-[var(--biddesk-accent)]" title="Pursue" rows={otherBidRows} companyId={companyId} emptyNote="Everything worth pursuing this week is already in the portfolio above." />
-          <TriageSection dotClass="bg-[var(--biddesk-review)]" title="Review" rows={considerRows} companyId={companyId} />
-          <TriageSection dotClass="bg-[var(--biddesk-skip)]" title="Skip" rows={noGoRows} companyId={companyId} />
+          <TriageSection dotClass="bg-[--color-pursue]" title="Pursue" rows={otherBidRows} companyId={companyId} emptyNote="Everything worth pursuing this week is already in the portfolio above." />
+          <TriageSection dotClass="bg-[--color-review]" title="Review" rows={considerRows} companyId={companyId} />
+          <TriageSection dotClass="bg-[--color-skip]" title="Skip" rows={noGoRows} companyId={companyId} />
         </div>
       )}
     </div>

@@ -37,29 +37,29 @@ export function PortfolioBanner({
 }) {
   if (slots.length === 0) {
     return (
-      <div className="rounded-xl bg-[var(--biddesk-ink)] px-6 py-5 text-white/70">
+      <div className="rounded-xl bg-[var(--color-charcoal)] px-6 py-5 text-white/70">
         No Bid-verdict tenders yet this week — recommendations will appear here once screening runs.
       </div>
     );
   }
 
   return (
-    <div className="rounded-xl bg-[var(--biddesk-ink)] px-6 py-5 text-white">
+    <div className="rounded-xl bg-[var(--color-charcoal)] px-6 py-5 text-white">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-lg font-semibold">
           Recommended Bid Portfolio <span className="font-normal text-white/60">{slots.length} / {capacity} slots</span>
         </h2>
-        <span className="rounded-full bg-[var(--biddesk-accent)] px-3 py-1 text-xs font-semibold tracking-wide uppercase">
+        <span className="rounded-full bg-[var(--color-pursue)] px-3 py-1 text-xs font-semibold tracking-wide uppercase">
           Estimating capacity reserved
         </span>
       </div>
 
-      <div className="mt-4 grid grid-cols-1 gap-4 divide-y divide-[var(--biddesk-banner-line)] sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
+      <div className="mt-4 grid grid-cols-1 gap-4 divide-y divide-[rgba(255,255,255,0.14)] sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
         {slots.map((slot, index) => (
           <div key={slot.tenderId} className="pt-4 first:pt-0 sm:pt-0 sm:px-4 sm:first:px-0">
             <div className="flex items-center justify-between text-xs text-white/50">
               <span className="font-mono">{String(index + 1).padStart(2, "0")}</span>
-              <button type="button" onClick={() => onOpenSwap(index)} className="font-semibold text-[var(--biddesk-accent)] hover:underline">
+              <button type="button" onClick={() => onOpenSwap(index)} className="font-semibold text-[var(--color-pursue)] hover:underline">
                 ↻ Replace
               </button>
             </div>
@@ -71,7 +71,7 @@ export function PortfolioBanner({
             </p>
 
             {swappingSlot === index && (
-              <div className="mt-3 rounded-lg border border-[var(--biddesk-banner-line)] bg-[var(--biddesk-ink-soft)] p-3">
+              <div className="mt-3 rounded-lg border border-[rgba(255,255,255,0.14)] bg-[rgba(255,255,255,0.06)] p-3">
                 <p className="text-xs font-semibold text-white/70">Choose a replacement</p>
                 {swapPool.length === 0 ? (
                   <p className="mt-2 text-sm text-white/50">No other screened tenders available to swap in.</p>

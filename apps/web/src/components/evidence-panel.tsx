@@ -24,7 +24,7 @@ export function EvidencePanel({ data, onClose }: { data: EvidencePanelData | nul
         {data && (
           <>
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold tracking-wide text-[var(--biddesk-accent)] uppercase">Source evidence</span>
+              <span className="text-xs font-semibold tracking-wide text-[var(--color-pursue)] uppercase">Source evidence</span>
               <button type="button" onClick={onClose} aria-label="Close" className="text-xl text-zinc-400 hover:text-zinc-700">
                 &times;
               </button>
@@ -35,8 +35,8 @@ export function EvidencePanel({ data, onClose }: { data: EvidencePanelData | nul
               {data.page != null && <span className="ml-auto rounded bg-zinc-100 px-2 py-0.5 font-mono text-xs">Page {data.page}</span>}
             </div>
             <div className="mt-3 rounded border border-zinc-200 bg-zinc-50 p-4 text-sm leading-relaxed italic">&ldquo;{data.quote_de}&rdquo;</div>
-            <div className="mt-3 rounded border border-[var(--biddesk-accent)]/30 bg-[var(--biddesk-accent-soft)] p-4">
-              <p className="text-xs font-semibold tracking-wide text-[var(--biddesk-accent)] uppercase">AI interpretation</p>
+            <div className="mt-3 rounded border border-[var(--color-pursue)]/30 bg-[var(--color-pursue-soft)] p-4">
+              <p className="text-xs font-semibold tracking-wide text-[var(--color-pursue)] uppercase">AI interpretation</p>
               <p className="mt-1 text-sm text-zinc-800">{data.reason_en}</p>
             </div>
             <p className="mt-3 text-xs tracking-wide text-zinc-400 uppercase">Conclusion → Extracted requirement → Original evidence</p>
