@@ -62,6 +62,12 @@ class FixedFieldTests(unittest.TestCase):
                          "7abb1e09-7c7b-4061-ae3a-d5bf690da54d-01")
         self.assertIsNone(one_lot(RICH_REFERENCES).changed_notice_id)
 
+    def test_bt758_thin_profile_publishes_only_the_previous_version(self):
+        # eforms-sdk-0.1 keeps the notice id and writes the predecessor's bare version
+        # number ("3") into Change/ChangedNoticeIdentifier; normalise to "<id>-<version>"
+        # so both profiles name the amended notice the same way.
+        self.assertEqual(one_lot(THIN_NS3).changed_notice_id, "25659566-3")
+
     def test_bt13d_question_deadline_is_a_plain_date(self):
         self.assertEqual(one_lot(RICH_WEIGHTED).question_deadline, "2026-10-01")
         self.assertIsNone(one_lot(RICH_REFERENCES).question_deadline)

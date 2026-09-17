@@ -334,12 +334,19 @@ def parse_notice(xml_bytes: bytes, cpv_prefix: str | None = "45") -> list[LotRec
     notice_terms = root.find("cac:TenderingTerms", NS)
     notice_grounds, notice_prose = _qualification(notice_terms)
     notice_selection = _selection_criteria(notice_terms)
-    # BT-758 lives in the notice-level extension block, not under any lot.
-    changed_notice_id = _txt(
-        root,
+    # BT-758 lives in the notice-level extension block, not under any lot. The rich
+    # profile nests it in efac:Changes and writes "<predecessor id>-<version>"; the
+    # thin profile puts it directly in efac:Change and writes only the predecessor's
+    # bare version number under the same notice id. Normalise both to "<id>-<version>".
+    extension = (
         "ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/efext:EformsExtension/"
-        "efac:Changes/efbc:ChangedNoticeIdentifier",
     )
+    changed_notice_id = (
+        _txt(root, extension + "efac:Changes/efbc:ChangedNoticeIdentifier")
+        or _txt(root, extension + "efac:Change/efbc:ChangedNoticeIdentifier")
+    )
+    if changed_notice_id and "-" not in changed_notice_id:
+        changed_notice_id = f"{notice_id}-{changed_notice_id}"
     # BT-33 sits under the notice-level TenderingTerms, not TenderingProcess.
     lots_max_awarded = _txt(
         notice_terms, "cac:LotDistribution/cbc:MaximumLotsAwardedNumeric"
