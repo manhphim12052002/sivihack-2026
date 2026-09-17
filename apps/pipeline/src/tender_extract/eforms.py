@@ -124,6 +124,8 @@ class LotRecord:
     notice_subtype: str | None = None
     schema_profile: str | None = None
     title_marks_awarded: bool = False
+    # BT-758: the earlier notice this version corrects; None for a first publication.
+    changed_notice_id: str | None = None
     published: str | None = None
     language: str | None = None
     legal_basis: str | None = None
@@ -162,6 +164,7 @@ class LotRecord:
     # time
     submission_deadline: str | None = None
     submission_deadline_time: str | None = None
+    question_deadline: str | None = None   # BT-13(d): last day to ask the buyer questions
     bid_opening: str | None = None
     construction_start: str | None = None
     construction_end: str | None = None
@@ -178,6 +181,10 @@ class LotRecord:
 
     # eligibility prose — the usual home of the real disqualifier
     exclusion_grounds: list[str] = field(default_factory=list)
+    # BT-750 Eignungskriterien: {"type": selection-criterion code or None, "description": prose}.
+    # The code (slc-abil-ref-work = comparable references) is the only structured
+    # hint of what the prose demands; the thin profile omits it.
+    selection_criteria: list[dict[str, str | None]] = field(default_factory=list)
     qualification_text: list[str] = field(default_factory=list)
     prose_signals: list[str] = field(default_factory=list)
 
@@ -231,6 +238,25 @@ def _qualification(node: ET.Element | None) -> tuple[list[str], list[str]]:
     return grounds, prose
 
 
+def _selection_criteria(terms: ET.Element | None) -> list[dict[str, str | None]]:
+    """BT-750: selection criteria from the eForms extension block of TenderingTerms.
+
+    The rich profile pairs each description with a `selection-criterion` code;
+    the thin profile publishes the description alone.
+    """
+    out: list[dict[str, str | None]] = []
+    if terms is None:
+        return out
+    for crit in terms.findall(".//efext:EformsExtension/efac:SelectionCriteria", NS):
+        entry = {
+            "type": _coded(crit, "cbc:TendererRequirementTypeCode", "selection-criterion"),
+            "description": _txt(crit, "cbc:Description"),
+        }
+        if entry["description"] or entry["type"]:
+            out.append(entry)
+    return out
+
+
 def _location(node: ET.Element | None) -> dict[str, str | None]:
     addr = node.find("cac:RealizedLocation/cac:Address", NS) if node is not None else None
     return {
@@ -255,7 +281,7 @@ def _value(node: ET.Element | None) -> tuple[float | None, str | None]:
 
 
 def _award_criteria(terms: ET.Element | None) -> list[dict[str, Any]]:
-    out = []
+    out: list[dict[str, Any]] = []
     if terms is None:
         return out
     for crit in terms.findall(
@@ -266,11 +292,14 @@ def _award_criteria(terms: ET.Element | None) -> list[dict[str, Any]]:
             "name": _txt(crit, "cbc:Name"),
             "description": _txt(crit, "cbc:Description"),
         }
-        weight = crit.find(
-            ".//efac:CriterionParameter/efbc:ParameterNumeric", NS
-        )
-        if weight is not None and weight.text:
-            entry["weight"] = weight.text.strip()
+        # BT-541: the weight is the parameter whose code list is `number-weight`;
+        # the same block can also carry fixed values or order-of-importance codes.
+        for param in crit.findall(".//efac:AwardCriterionParameter", NS):
+            code = param.find("efbc:ParameterCode", NS)
+            number = _txt(param, "efbc:ParameterNumeric")
+            if code is not None and code.get("listName") == "number-weight" and number:
+                entry["weight"] = number
+                break
         if any(entry.values()):
             out.append(entry)
     return out
@@ -298,6 +327,17 @@ def parse_notice(xml_bytes: bytes, cpv_prefix: str | None = "45") -> list[LotRec
 
     notice_terms = root.find("cac:TenderingTerms", NS)
     notice_grounds, notice_prose = _qualification(notice_terms)
+    notice_selection = _selection_criteria(notice_terms)
+    # BT-758 lives in the notice-level extension block, not under any lot.
+    changed_notice_id = _txt(
+        root,
+        "ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/efext:EformsExtension/"
+        "efac:Changes/efbc:ChangedNoticeIdentifier",
+    )
+    # BT-33 sits under the notice-level TenderingTerms, not TenderingProcess.
+    lots_max_awarded = _txt(
+        notice_terms, "cac:LotDistribution/cbc:MaximumLotsAwardedNumeric"
+    )
 
     project = root.find("cac:ProcurementProject", NS)
     project_location = _location(project)
@@ -326,11 +366,15 @@ def parse_notice(xml_bytes: bytes, cpv_prefix: str | None = "45") -> list[LotRec
             continue
 
         cpv_additional = [
-            _cpv(el.text)
-            for el in (lot_project or root).findall(
-                "cac:AdditionalCommodityClassification/cbc:ItemClassificationCode", NS
+            code
+            for code in (
+                _cpv(el.text)
+                for el in (lot_project or root).findall(
+                    "cac:AdditionalCommodityClassification/cbc:ItemClassificationCode", NS
+                )
+                if el.text and el.get("listName") == "cpv"
             )
-            if el.text and el.get("listName") == "cpv"
+            if code
         ]
 
         location = _location(lot_project)
@@ -342,7 +386,12 @@ def parse_notice(xml_bytes: bytes, cpv_prefix: str | None = "45") -> list[LotRec
             value, currency = project_value, project_currency
 
         lot_grounds, lot_prose = _qualification(lot_terms)
-        qualification_text = notice_prose + lot_prose
+        selection_criteria = notice_selection + _selection_criteria(lot_terms)
+        # BT-750 prose joins the qualification blob so the rules and the prose
+        # signals see the Eignungskriterien, not only the exclusion-ground text.
+        qualification_text = notice_prose + lot_prose + [
+            c["description"] for c in selection_criteria if c["description"]
+        ]
 
         doc_urls = _all_txt(
             lot_terms,
@@ -399,6 +448,7 @@ def parse_notice(xml_bytes: bytes, cpv_prefix: str | None = "45") -> list[LotRec
                 title_marks_awarded=bool(
                     resolved_title and AWARDED_TITLE.match(resolved_title)
                 ),
+                changed_notice_id=changed_notice_id,
                 description=_txt(lot_project, "cbc:Description")
                 or _txt(project, "cbc:Description"),
                 nature=_coded(lot_project, "cbc:ProcurementTypeCode", "contract-nature")
@@ -417,6 +467,9 @@ def parse_notice(xml_bytes: bytes, cpv_prefix: str | None = "45") -> list[LotRec
                 ),
                 submission_deadline_time=_txt(
                     lot_process, "cac:TenderSubmissionDeadlinePeriod/cbc:EndTime"
+                ),
+                question_deadline=_date(
+                    _txt(lot_process, "cac:AdditionalInformationRequestPeriod/cbc:EndDate")
                 ),
                 bid_opening=_date(
                     _txt(lot_process, "cac:OpenTenderEvent/cbc:OccurrenceDate")
@@ -446,10 +499,9 @@ def parse_notice(xml_bytes: bytes, cpv_prefix: str | None = "45") -> list[LotRec
                 esubmission=_coded(
                     lot_process, "cbc:SubmissionMethodCode", "esubmission"
                 ),
-                lots_max_awarded=_txt(
-                    root, "cac:TenderingProcess/cbc:MaximumLotsAwardedNumeric"
-                ),
+                lots_max_awarded=lots_max_awarded,
                 exclusion_grounds=sorted(set(notice_grounds + lot_grounds)),
+                selection_criteria=selection_criteria,
                 qualification_text=qualification_text,
                 prose_signals=signals,
                 document_urls=doc_urls,

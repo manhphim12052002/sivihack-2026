@@ -65,7 +65,7 @@ def main(argv: list[str] | None = None) -> int:
     today = dt.date.today().isoformat()
     args.out.parent.mkdir(parents=True, exist_ok=True)
 
-    stats = collections.Counter()
+    stats: collections.Counter[str] = collections.Counter()
     seen: set[tuple[str, str]] = set()
     records = []
 
