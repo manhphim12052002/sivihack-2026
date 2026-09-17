@@ -40,7 +40,7 @@ def route(filename: str) -> str:
 
 def lot_hint(filename: str) -> str | None:
     """'Los_2' / 'Los 2' in a filename names the lot the file applies to."""
-    m = re.search(r"\blos[ _-]?(\d{1,2})\b", filename, re.I)
+    m = re.search(r"\blos[ _-]?(\d{1,2})(?!\d)", filename, re.I)
     return f"LOT-{int(m.group(1)):04d}" if m else None
 
 
