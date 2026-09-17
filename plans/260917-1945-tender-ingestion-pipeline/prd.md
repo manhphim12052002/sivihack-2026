@@ -9,6 +9,7 @@ created: 2026-09-17
 owner: backend builder
 counterpart: docs/design.md (frontend, separate owner)
 ---
+> Storage superseded by docs/adr/0005-supabase-postgres-over-sqlite.md (Supabase Postgres, 17.09).
 
 # Tender ingestion pipeline and data layer
 
