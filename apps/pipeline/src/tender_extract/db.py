@@ -40,6 +40,8 @@ SOURCE_UPDATE_COLUMNS = ("status", "fetched_at", "pages", "bytes", "rejected_ite
 # psycopg adapts Python lists to arrays natively, so these pass through unwrapped;
 # every other list/dict value is sent as Jsonb. Keep in sync with the migration.
 ARRAY_COLUMNS = frozenset({"qualification_text", "document_urls"})
+# Generated stored columns on `lot`; never sent in an INSERT.
+GENERATED_LOT_COLUMNS = frozenset({"lot_key", "procedure_key"})
 
 COUNTED_TABLES = ("lot", "observation", "source", "document", "company", "verdict", "ingest_job")
 
@@ -160,12 +162,11 @@ def _insert_many(conn: psycopg.Connection, table: str, rows: Iterable[dict[str, 
 def upsert_lot(conn: psycopg.Connection, row: dict[str, Any]) -> str:
     """Insert or update one lot at one notice version. Returns its lot_key.
 
-    Accepts the same row shape `store.py` did: a `lot_key` entry is dropped
-    because the DB generates that column, and `procedure_key` is filled in when
-    the caller did not.
+    Accepts the same row shape `store.py` did. `lot_key` and `procedure_key`
+    are dropped if present: both are generated columns in the schema, and
+    Postgres rejects explicit values for them.
     """
-    row = {k: v for k, v in row.items() if k != "lot_key"}
-    row.setdefault("procedure_key", procedure_key(row["source"], row["notice_id"]))
+    row = {k: v for k, v in row.items() if k not in GENERATED_LOT_COLUMNS}
     conn.execute(_upsert_sql("lot", row, LOT_CONFLICT_COLUMNS), _adapt(row))
     return lot_key(row["source"], row["notice_id"], row["notice_version"], row["lot_id"])
 
