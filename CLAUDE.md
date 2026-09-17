@@ -61,3 +61,12 @@ Full spec: `Track-2.md` (appendices A–D: company profiles, data sources, tools
 - **Data:** public & free — oeffentlichevergabe.de (best source, open API/CC0), ted.europa.eu (EU-wide, larger tenders only). Filter by CPV code starting with `45` = construction.
 - **Docs are in German** — team doesn't need to speak it, but output must be usable by someone who does. Key terms (Referenzen, Eignungskriterien, Bauzeit, …) are in `Track-2.md` Appendix D.
 - **Judges bring unseen tender/company pairs** at judging to check the solution generalizes rather than being tuned to the example profiles.
+
+## Git conventions
+
+- Commit messages use Conventional Commits: `type(scope): imperative summary`, body as short
+  bullets. Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`. Scopes in use: `web`,
+  `api`, `pipeline`, `docs`, `plans`.
+- No AI attribution trailers in commit messages or PR descriptions.
+- One focused commit per change; do not stage another session's in-flight files unless asked.
+- Never commit `.env`, `data/cache/`, `node_modules`, `.next`, or the eForms spec HTML dump.
