@@ -1,5 +1,13 @@
 # Arctis Tender Intelligence --- Document Pipeline Specification
 
+> **Status (17.09.2026, after design review).** This is the target design. The shipped v1 shape
+> is the schema in `plans/260917-1945-tender-ingestion-pipeline/prd.md` (`lot`, `claim`,
+> `document`, `company`, `verdict`) plus the deltas listed under Flow 13. Vocabulary follows
+> `CONTEXT.md`: *Procedure* and *Lot* are the two scope levels; "tender" is UI copy only.
+> Section 5a says what starts each stage; section 7 says which flows are code and which are
+> prose for the hackathon.
+> Resolution rules are recorded in `docs/adr/0001-immutable-observations-read-time-resolution.md`.
+
 ## 1. Goal
 
 Given **one public procurement notice** from ÖffentlicheVergabe plus its
@@ -8,13 +16,14 @@ procurement data into a **canonical, evidence-backed tender
 representation** that can be consumed by a separate company-matching and
 Bid/No-Bid decision pipeline.
 
-The notice can be available in three source formats:
+ÖffentlicheVergabe publishes the same submission as eForms, CSV and OCDS. eForms is the
+publisher's original format and the only one carrying the submission deadline and the
+eligibility prose (see `docs/tender-data-extraction.md`), so **v1 reads eForms only**. The
+normalization layer (eForms XML → `NormalizedNotice`) is real code; aggregating a second format
+into an enriched intermediary dataset is a future extension, to be built when a concrete field
+gap appears (candidate: OCDS release history for amendments).
 
--   **eForms**
--   **CSV**
--   **OCDS**
-
-The document pipeline ends at the **Canonical Tender**. It does **not**
+The document pipeline ends at the **Resolved Procedure**. It does **not**
 decide whether a specific company should bid.
 
 ------------------------------------------------------------------------
@@ -24,13 +33,11 @@ decide whether a specific company should bid.
 ``` text
                     ÖFFENTLICHEVERGABE
                             │
-                ┌───────────┼───────────┐
-                │           │           │
-             eForms        CSV        OCDS
-                │           │           │
-                └───────────┼───────────┘
+                            │
+                         eForms        (CSV / OCDS: future aggregation)
+                            │
                             ▼
-                    NOTICE ADAPTERS
+                   NOTICE NORMALIZATION
                             │
                             ▼
                     NORMALIZED NOTICE
@@ -67,7 +74,7 @@ decide whether a specific company should bid.
                   CONFIDENCE + PROVENANCE
                             │
                             ▼
-                    CANONICAL TENDER
+                    RESOLVED PROCEDURE
                             │
                             ▼
                             DB
@@ -165,13 +172,19 @@ decide whether a specific company should bid.
                                                   items for downstream use
   -------------------------------------------------------------------------
 
+**v1 reading of the table.** DP1/DP2: eForms only. DP7: PDF only; DOCX/XLSX are P2. DP11, DP13,
+DP14, DP16: satisfied in v1 by the read-time resolution view (Flow 8/9) and extractor-derived
+confidence (Flow 11), not by dedicated stages. DP15: four states (Flow 10).
+
 ------------------------------------------------------------------------
 
 # 4. Core Data Concepts
 
 ## 4.1 Facts
 
-Facts describe the tender itself.
+A Fact is a descriptive statement about the Procedure or Lot. The decision pipeline may compare
+a Fact against a company constraint (place vs. regions, CPV vs. trades, value vs. contract band),
+but that does not make it a Requirement.
 
 Examples:
 
@@ -183,29 +196,39 @@ Examples:
 
 ## 4.2 Requirements
 
-Requirements describe conditions a bidder or bid must satisfy.
+A Requirement is a condition the buyer imposes on the bidder or the bid — there is a *muss* /
+*hat … zu* sentence behind it in the source. The test is normative wording, not whether the
+decision pipeline compares it.
 
-Examples:
+**v1 has a closed set of six Requirement kinds**, each with its own typed condition shape,
+declared next to the decision rule that consumes it:
 
--   DB prequalification required
--   Comparable projects from previous five years required
--   Performance guarantee = 10% of contract value
--   Specific personnel qualification required
+``` text
+PERFORMANCE_GUARANTEE      { percent_of_contract_value }
+COMPARABLE_REFERENCES      { minimum_count, lookback_years, project_type }
+CONSTRUCTION_WINDOW        { start, end }
+SELF_PERFORMANCE_MINIMUM   { percent }
+PENALTY_CLAUSE             { percent_per_day, cap_percent }
+CONTRACTOR_ROLE            { role }              -- GENERAL | TRADE | SUBCONTRACTOR
+```
 
-Requirements are first-class objects because they are later evaluated
-against a company profile.
+Anything else the extractor finds (prequalification, personnel qualifications, insurance,
+turnover, legal form, …) is an **Unmatched Requirement**: kept with an ontology category, a
+verbatim quote, source, page and scope, and shown to the estimator as "stated, not checked".
+Unmatched Requirements are collapsed when their whitespace-normalized quotes match; both
+evidence pointers are kept.
 
 ## 4.3 Scope
 
 Every fact and requirement must state what it applies to:
 
 ``` text
-PROCEDURE
-TENDER
-LOT-0001
+PROCEDURE          applies to every lot; stored once, inherited by the lot view
+LOT-0001           applies to one lot
 LOT-0002
-ALL_LOTS
 ```
+
+There is no `TENDER` and no `ALL_LOTS` scope: both collapse into `PROCEDURE`.
 
 ## 4.4 Evidence / Provenance
 
@@ -213,26 +236,28 @@ Every extraction should retain enough information to return the user to
 the source:
 
 ``` text
-source_id
-document/file
-page / section / paragraph / spreadsheet range
-source passage
-optional bounding box
+source_id          the Notice version or the fetched document (both are Sources)
+locator            eForms business term (BT-751) or page number
+source passage     verbatim German quote, never translated
 ```
+
+Page plus quote is the v1 locator. Section headings and bounding boxes are P2.
 
 ## 4.5 State
 
-Suggested states:
+State and Confidence are two separate axes (two enums in the API). v1 has exactly four states:
 
 ``` text
-KNOWN
-NOT_FOUND
-REFERRED_TO_DOCUMENTS
-AMBIGUOUS
-CONFLICTING
-SUPERSEDED
-NOT_APPLICABLE
+KNOWN                    a resolved value exists
+NOT_FOUND                sources were read and do not state it
+REFERRED_TO_DOCUMENTS    the notice defers to the Vergabeunterlagen and they were not read
+                         (the reason names the document fetch status and platform,
+                          e.g. "gated, www.evergabe.de")
+CONFLICTING              observations at equal precedence disagree; no current value
 ```
+
+`SUPERSEDED` is not a state: observations from an older notice version stay stored and drop out
+of the resolved view. `AMBIGUOUS` is the model's extraction metadata, not a state.
 
 ------------------------------------------------------------------------
 
@@ -287,6 +312,10 @@ Format-Specific Adapters
 -   Prefer deterministic parsing.
 -   Do not use an LLM to parse structured values unnecessarily.
 -   Preserve a reference to the raw source.
+-   v1 implements the eForms branch only. Namespace prefixes are not stable across the feed;
+    resolve XPaths by namespace URI, never by prefix string.
+-   Register the Notice version itself as a Source (`SRC-001`) so every observation carries a
+    `source_id`.
 
 ### Output
 
@@ -358,7 +387,7 @@ after amendments are considered.
 
 ------------------------------------------------------------------------
 
-## Flow 3 --- Tender / Lot Hierarchy Construction
+## Flow 3 --- Procedure / Lot Hierarchy Construction
 
 ### Purpose
 
@@ -397,7 +426,7 @@ Global Reqs      Lot Reqs     Lot Reqs
 
 ### Output
 
-Tender scope hierarchy / `Lot[]`
+Procedure scope hierarchy / `Lot[]`
 
 ------------------------------------------------------------------------
 
@@ -528,6 +557,19 @@ Evidence-Addressable Chunks
 Never flatten documents into plain text while discarding their source
 locations.
 
+### v1 implementation
+
+-   Plain HTTP only, per-platform adapters, no headless browser, no registration walls.
+-   Filename router before the reader: read `Teilnahme|Vertragsbedingungen|Bewerbungsbedingungen|
+    Eignung|Aufforderung|Leistungsbeschreibung|Beiblatt|Merkblatt`; skip drawings, `LV_`,
+    `Bekanntmachung`, `__MACOSX/`.
+-   Text via `pdftotext` (poppler) as a subprocess; pages split on form-feed. A Chunk is one page.
+    No OCR: a PDF without a text layer is `status=scanned` and reads `NOT_FOUND`.
+-   No embeddings / retrieval. A routed conditions document is a few kilobytes and is sent whole
+    (Flow 6). If a document exceeds the model context, select pages by the German keyword
+    regexes already in `eforms.py`, not by vector search.
+-   DOCX / XLSX parsing is P2.
+
 ### Output
 
 `DocumentChunk[]`
@@ -546,7 +588,7 @@ facts and requirements.
 ``` text
 Relevant Document Chunks
 +
-Tender / Lot Context
+Procedure / Lot Context
 +
 Extraction Schema
 ```
@@ -568,25 +610,34 @@ Extraction Schema
 FACTS   REQUIREMENTS
 ```
 
+### Call shape
+
+One call per routed document, full extracted text, schema-enforced JSON output. The prompt
+carries the Procedure title and the list of lot ids and titles. Output has three arrays:
+`facts`, `requirements` (the six typed kinds only) and `unmatched_requirements`.
+
+**Scope assignment.** The model emits a scope per item from the supplied lot list. Default is
+`PROCEDURE` unless the file or text names a lot; a filename hint such as `Los_2` sets the default
+for that file.
+
 ### Example Output
 
 ``` json
 {
-  "type": "PERFORMANCE_GUARANTEE",
-  "condition": {
-    "operator": "REQUIRED",
-    "value": 10,
-    "unit": "PERCENT_CONTRACT_VALUE"
-  },
-  "mandatory": true,
-  "scope": {
-    "type": "LOT",
-    "id": "LOT-0001"
-  },
-  "evidence_chunk_ids": ["CHUNK-184"],
-  "extraction_metadata": {
+  "requirements": [{
+    "kind": "PERFORMANCE_GUARANTEE",
+    "condition": { "percent_of_contract_value": 10 },
+    "scope": { "type": "LOT", "id": "LOT-0001" },
+    "evidence": [{ "chunk_id": "CHUNK-184", "quote": "Der Auftragnehmer hat eine Sicherheit ..." }],
     "statement_type": "EXPLICIT"
-  }
+  }],
+  "unmatched_requirements": [{
+    "category": "QUALIFICATION",
+    "quote": "Präqualifikation nach PQ-VOB oder gleichwertig",
+    "scope": { "type": "PROCEDURE" },
+    "evidence": [{ "chunk_id": "CHUNK-102", "quote": "Präqualifikation nach PQ-VOB oder gleichwertig" }]
+  }],
+  "facts": []
 }
 ```
 
@@ -610,18 +661,21 @@ INFERRED
 AMBIGUOUS
 ```
 
-Every LLM extraction must reference existing evidence.
+Every LLM extraction must reference existing evidence. The check is: the `chunk_id` exists for
+this Source **and** the quote is a whitespace-normalized substring of that Chunk's text.
+Anything else is rejected, and the rejection count is stored per document so the demo can show
+it.
 
 ``` text
 LLM Claim
    │
    ▼
-Referenced Evidence Exists?
+chunk_id exists AND quote ⊂ chunk text (whitespace-normalized)?
    │
  ┌─┴─┐
 YES  NO
  │    │
-Keep Reject / Flag
+Keep Reject + count
 ```
 
 ### Output
@@ -631,6 +685,10 @@ Keep Reject / Flag
 ------------------------------------------------------------------------
 
 ## Flow 7 --- Semantic Normalization
+
+> **v1: prose only.** The closed set of six Requirement kinds plus the schema-enforced output
+> does the normalization implicitly; the ontology below survives as the `category` label on
+> Unmatched Requirements.
 
 ### Purpose
 
@@ -695,6 +753,10 @@ Normalized fact and requirement candidates.
 
 ## Flow 8 --- Deduplication & Merging
 
+> **v1: the read-time resolution view only** (see ADR 0001). Observations at equal extractor
+> precedence whose values agree merge their evidence; Unmatched Requirements collapse on
+> whitespace-normalized quote. No semantic dedup step.
+
 ### Purpose
 
 Determine whether multiple observations describe separate requirements
@@ -736,16 +798,26 @@ rail projects      previous 5 years
 }
 ```
 
-Keep the underlying observations. The canonical object should point back
-to them rather than destroying them.
+Keep the underlying observations. The resolved value is a view over them; it points back to
+them rather than destroying them.
 
 ### Output
 
-Canonical facts and requirements.
+Resolved facts and requirements (a view over observations).
 
 ------------------------------------------------------------------------
 
 ## Flow 9 --- Amendment & Conflict Resolution
+
+> **v1 rules, all deterministic, no LLM:**
+> 1. Latest notice version wins. Observations from a superseded version stay stored and drop out
+>    of the view; the tender shows an "amended" marker. No per-field history view.
+> 2. Document-derived observations attach to Procedure + Lot without a notice version, so a
+>    corrected notice does not invalidate document reads.
+> 3. Extractor precedence: structured field > rule over notice text > model over document >
+>    model over notice text. A structured value beats a disagreeing document value, but the
+>    disagreement is flagged and both are shown.
+> 4. Disagreement at equal precedence → `CONFLICTING`, no current value.
 
 ### Purpose
 
@@ -840,10 +912,10 @@ Initial representation:
 After document ingestion:
 
 ``` text
-Found       → KNOWN
-Not found   → NOT_FOUND
-Ambiguous   → AMBIGUOUS
-Disagreement→ CONFLICTING
+Found                     → KNOWN
+Read, not stated          → NOT_FOUND
+Documents gated/unreached → stays REFERRED_TO_DOCUMENTS, reason names platform + fetch status
+Disagreement              → CONFLICTING
 ```
 
 ### Core Rule
@@ -863,6 +935,11 @@ Explicit unresolved state objects.
 ------------------------------------------------------------------------
 
 ## Flow 11 --- Confidence Calculation
+
+> **v1: derived from the Extractor, nothing else.** Structured field → HIGH, rule → MEDIUM,
+> model over document → MEDIUM, model over notice text → LOW. Corroboration by a second source
+> is shown as a signal line ("Supported by 2 sources") and does **not** change the level.
+> The signal-based engine below is the target design.
 
 ### Purpose
 
@@ -884,7 +961,7 @@ Amendment/version status
 ### Flow
 
 ``` text
-Canonical Fact / Requirement
+Resolved Fact / Requirement
           │
           ├── Extraction Method
           ├── Explicit / Inferred
@@ -950,7 +1027,7 @@ Ensure every canonical conclusion can be inspected and cited in the UI.
 ### Flow
 
 ``` text
-Canonical Requirement
+Resolved Requirement
 "10% performance guarantee"
             │
             ▼
@@ -1005,7 +1082,7 @@ Evidence/provenance attached to canonical items.
 
 ------------------------------------------------------------------------
 
-## Flow 13 --- Canonical Tender Persistence
+## Flow 13 --- Resolved Procedure Persistence
 
 ### Purpose
 
@@ -1015,7 +1092,7 @@ application.
 ### Structure
 
 ``` text
-           CANONICAL TENDER
+           RESOLVED PROCEDURE
                   │
      ┌────────────┼─────────────┐
      ▼            ▼             ▼
@@ -1038,7 +1115,7 @@ application.
 
 ``` json
 {
-  "tender_id": "...",
+  "procedure_id": "...",
   "metadata": {},
   "lots": [],
   "facts": [],
@@ -1049,11 +1126,64 @@ application.
 }
 ```
 
+### v1 storage: deltas to the PRD `claim` table
+
+SQLite, single committed file, as decided in the PRD. The `claim` table becomes the Observation
+table:
+
+-   Primary key widens to `(scope_key, attribute, extractor, source_id)` so two documents stating
+    the same requirement are two rows.
+-   New columns: `kind` (`fact | requirement | unmatched`), `scope_type` (`PROCEDURE | LOT`),
+    `scope_id`, `state`, `condition` JSON (per-kind shape), `category` (unmatched only).
+-   Procedure-scoped rows are stored once with `scope_type = PROCEDURE`; the lot view inherits
+    them.
+-   Document-derived rows carry no `notice_version`; notice-derived rows do.
+-   The Notice version is a row in the source registry, so `source_id` is never null.
+-   Resolution is a view (ADR 0001); there is no canonical table.
+-   API: `state` and `confidence` are two fields; tender detail gains an
+    `unmatched_requirements` list (category, quote, document, page, scope).
+
 ### Output
 
-Persisted `CanonicalTender`.
+Persisted `ResolvedProcedure`.
 
 This is the end of the **Document Pipeline**.
+
+------------------------------------------------------------------------
+
+# 5a. Triggers --- What Starts Each Stage
+
+Decided 17.09 20:45. Every stage is an idempotent command over the store; triggers are thin and
+external to the stages, so the same code runs from a shell, an HTTP request or a scheduler.
+
+| stage | v1 trigger | idempotency key | scaling path |
+|---|---|---|---|
+| `poll` → `load` | CLI, run by hand or in a shell loop; no scheduler in the API process | watermark in `sync_state`, `(notice_id, notice_version, lot_id)` diff | any external scheduler (cron, systemd timer, CI schedule) calls the same command; the watermark lives in the DB, so the scheduler is stateless and replaceable |
+| `enrich` (batch) | CLI `enrich --for-company <id>` before the demo, over lots that pass region + CPV and still have Unknowns | document content hash + prompt version | same command fanned out per host; politeness limits per platform, not per process |
+| `enrich` (on demand) | `POST /tenders/{id}/enrich` → job. The detail response carries `documents_read: false`; the briefing page fires the request. Reads never enrich as a side effect | same as above, so a double fire is a no-op | unchanged |
+| `ingest-one` (live) | `POST /ingest` with a notice URL, id or files → job → `load` + `enrich` for all six kinds and the unmatched list, no company filter | notice id + version; document hash | unchanged |
+| `screen` | compute on read, cached in `verdict` keyed `(lot, company)`; recomputed when any observation or the profile is newer than `computed_at` | pure function | precompute per company after `enrich`; cache is already the contract |
+| company normalization | synchronous inside `POST /companies` (one model call) | — | move behind a job if profiles get long |
+| `backfill` | CLI only | export day / month | unchanged |
+
+**Job runner.** One in-process worker (background task in the API) drains the `ingest_job` table
+sequentially: claim the oldest `queued` row inside a `BEGIN IMMEDIATE` transaction, run the stage
+functions, update `stage` / `pct` / `message`, finish with `done` or `error`. The web polls the
+job row through the existing stepper (`queued → downloading → extracting_text →
+extracting_facts → done | error`).
+
+The table is the queue contract. Scaling out means a separate worker process claiming rows
+from the same table with the same transaction, and the API only writing rows; nothing in the
+stage code changes. Beyond SQLite's single-writer limit, swap the claim for Postgres
+`SKIP LOCKED` or a real queue. Stages are idempotent, so a crashed worker's job is safe to
+re-run, and observations are written per document, so partial progress survives a failure.
+
+**Failure.** A job ends in `error` with the message; retry is a new `POST`. A platform fetch
+failure marks the document (`gated | unreachable | scanned`) and the job continues; only a
+notice fetch failure fails the job.
+
+**Health.** `GET /health` returns `last_poll_at` and `queued_jobs` so the UI can show how fresh
+the batch is instead of implying real time.
 
 ------------------------------------------------------------------------
 
@@ -1068,7 +1198,7 @@ DOCUMENT PIPELINE
 Messy Tender Data
        │
        ▼
-Canonical Tender
+Resolved Procedure
        │
        ▼
 ════════ API / DB BOUNDARY ════════
@@ -1076,7 +1206,7 @@ Canonical Tender
        ▼
 DECISION PIPELINE
 
-Canonical Tender
+Resolved Procedure
        +
 Company Profile
        │
@@ -1090,7 +1220,7 @@ PASS / FAIL / UNCERTAIN
 Business Decision Aspects
        │
        ▼
-Tender / Lot Viability
+Procedure / Lot Viability
        │
        ▼
 PURSUE / REVIEW / SKIP
@@ -1103,35 +1233,44 @@ Top-3 Portfolio
 
 # 7. Suggested Implementation Priority for the Hackathon
 
-Implement in this order:
+Decided 17.09 20:30, submission 18.09 15:00.
 
 ``` text
-P0
-1. One working notice adapter
-2. Deterministic extraction
-3. Lot hierarchy
-4. Document discovery/fetch
-5. PDF parsing with source locations
-6. LLM requirement extraction with evidence IDs
-7. Canonical Tender JSON
-8. DB persistence
+CODE (v1)
+  Flow 1   eForms → NormalizedNotice (namespace-URI-aware XPaths)
+  Flow 2   structured extraction incl. BT-750 / BT-758 fixes from the PRD
+  Flow 3   Procedure / Lot scopes, procedure rows stored once
+  Flow 4   source registry incl. the Notice as a Source; content-hashed documents
+  Flow 5   plain-HTTP fetch, filename router, pdftotext pages, no OCR
+  Flow 6   one schema-enforced call per document; six kinds + unmatched list;
+           quote-substring evidence check with rejection count
+  Flow 9   latest-version-wins + precedence/agreement view (minimal)
+  Flow 10  four states
+  Flow 11  extractor-derived confidence + corroboration signal line
+  Flow 13  SQLite with the claim-table deltas; state/confidence split;
+           unmatched_requirements in the API
 
-P1
-9. Semantic normalization
-10. Deduplication / merging
-11. Missing / uncertain states
-12. Explainable confidence
-
-P2
-13. DOCX / XLSX parsing
-14. Amendment resolution
-15. Sophisticated conflict resolution
-16. All three eForms / CSV / OCDS adapters
+PROSE (target design, not built)
+  Flow 7   semantic normalization
+  Flow 8   semantic dedup beyond the resolution view
+  Flow 9   per-field amendment history
+  Flow 11  signal-based confidence engine
+  CSV / OCDS aggregation, DOCX / XLSX, bounding boxes, OCR
 ```
 
-The architecture should support all three notice formats from the
-beginning, but a 24-hour prototype does not need three fully implemented
-adapters if one format is sufficient for the end-to-end demo.
+One ugly real Procedure processed end to end beats broad shallow coverage.
+
+------------------------------------------------------------------------
+
+# 7a. Known Limitations (stated, not hidden)
+
+-   **Estimated contract value** is absent from ~95% of notices and stays `NOT_FOUND` unless the
+    notice states it. No reading of bills of quantities (Leistungsverzeichnis).
+-   **Registration-walled platforms** (~33% of document-bearing lots) leave requirements at
+    `REFERRED_TO_DOCUMENTS`; the reason names the platform.
+-   **Scanned PDFs** without a text layer are not read.
+-   **Locator granularity** is page + verbatim quote; no section or bounding box.
+-   **Contractor role** is inferred from CPV breadth and flagged as inference.
 
 ------------------------------------------------------------------------
 
