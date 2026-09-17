@@ -12,7 +12,10 @@ SKIPPED, JavaScript shells are UNREACHABLE.
 
 from __future__ import annotations
 
+import http.client
 import http.cookiejar
+import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from typing import Callable
@@ -34,17 +37,43 @@ def opener_with_cookies() -> urllib.request.OpenerDirector:
     return urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
 
 
+RETRIES = 3
+CHUNK = 1 << 20   # stream in 1 MiB reads so a slow package never trips the per-read timeout
+
+
 def http_get(url: str, opener: urllib.request.OpenerDirector | None = None,
              headers: dict[str, str] | None = None, data: bytes | None = None,
              max_bytes: int = MAX_BYTES) -> tuple[bytes, str, dict[str, str]]:
-    """GET (or POST when `data` is given). Returns (body, final_url, headers)."""
-    req = urllib.request.Request(url, data=data, headers={"User-Agent": USER_AGENT, **(headers or {})},
-                                 method="POST" if data is not None else "GET")
-    with (opener or urllib.request.build_opener()).open(req, timeout=TIMEOUT) as resp:
-        body = resp.read(max_bytes + 1)
-        if len(body) > max_bytes:
-            raise TooLarge(f"{url} exceeds {max_bytes} bytes")
-        return body, resp.url, dict(resp.headers)
+    """GET (or POST when `data` is given). Returns (body, final_url, headers).
+
+    Portals drop or reset long anonymous downloads now and then; a truncated or reset
+    transfer is retried a few times with a fresh connection before it counts as
+    UNREACHABLE. Anything else (4xx, too large) fails at once.
+    """
+    last: Exception | None = None
+    for attempt in range(RETRIES):
+        req = urllib.request.Request(
+            url, data=data, method="POST" if data is not None else "GET",
+            headers={"User-Agent": USER_AGENT, "Connection": "close", **(headers or {})})
+        try:
+            with (opener or urllib.request.build_opener()).open(req, timeout=TIMEOUT) as resp:
+                parts: list[bytes] = []
+                size = 0
+                while chunk := resp.read(CHUNK):
+                    parts.append(chunk)
+                    size += len(chunk)
+                    if size > max_bytes:
+                        raise TooLarge(f"{url} exceeds {max_bytes} bytes")
+                return b"".join(parts), resp.url, dict(resp.headers)
+        except (http.client.IncompleteRead, ConnectionResetError, TimeoutError) as exc:
+            last = exc
+        except urllib.error.URLError as exc:
+            if isinstance(exc.reason, (ConnectionResetError, TimeoutError, OSError)) and not isinstance(exc, urllib.error.HTTPError):
+                last = exc
+            else:
+                raise
+        time.sleep(3 * (attempt + 1))
+    raise RuntimeError(f"gave up after {RETRIES} attempts: {type(last).__name__}: {last}")
 
 
 def host_of(url: str) -> str:
