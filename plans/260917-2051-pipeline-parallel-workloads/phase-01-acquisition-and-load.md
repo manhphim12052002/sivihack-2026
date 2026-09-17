@@ -29,7 +29,7 @@
 - Load the cached 14-day export (3,201 lots) into Supabase. Record dropped-as-awarded count in `sync_state`.
 - Acceptance: `select count(*) from lots_latest` ≈ 3,201; `select attribute, count(*) from observations where extractor='xpath' group by 1`
   matches `factsheet.coverage` numbers within the PRD's measured shares (deadline ~94%, value ~5%).
-- Unblocks: W2.6, W3.6, W5.4.
+- Unblocks: W2.6, W3.2.
 
 ### W1.4 · `poll` command — blocked by W1.1
 - `apps/pipeline/src/tender_extract/poll.py`: POST the lot-search query (PRD JSON envelope) with `publicationDate >= watermark`,
@@ -43,8 +43,8 @@
 - Thin wrapper: `backfill --start --end` = `fetch_day` + `load_zip`. Same code path as W1.3.
 
 ### W1.6 · Amendment resolution check — blocked by W1.3
-- Find a notice in the batch with two versions (BT-758 populated). Confirm `lots_latest` shows the later one and the
-  API (W3.3) shows an amended marker. Adjust `lots_latest` ordering if versions are not lexically sortable.
+- Find a notice in the batch with two versions (BT-758 populated). Confirm `lots_latest` shows the later one and
+  `changed_notice_id` links it to the earlier one. Adjust `lots_latest` ordering if versions are not lexically sortable.
 
 ## Validation
 - `python -m unittest tests.test_parse_notice`; row counts above; one real amended notice resolves correctly.

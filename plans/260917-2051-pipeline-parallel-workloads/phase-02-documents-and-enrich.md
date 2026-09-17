@@ -5,7 +5,7 @@
 platform named; the same code runs for one notice (`ingest-one`) and for the batch.
 **Spec:** pipeline doc Flows 4–6, 10; ADR 0003, 0004; PRD "The extraction cascade", "Document tier".
 
-## Tracer fixture (from W5.1)
+## Tracer fixture (from W3.1)
 One `plattform.aumass.de` lot (anonymous ZIP confirmed end to end in both probe rounds). Save its package under
 `data/documents/` (gitignored) and, for tests, the ~5KB text of its conditions PDF as a fixture under `apps/pipeline/tests/fixtures/`.
 
@@ -21,7 +21,7 @@ One `plattform.aumass.de` lot (anonymous ZIP confirmed end to end in both probe 
 - Nested ZIPs, cp437/UTF-8 filename mojibake decoded defensively, `__MACOSX/` skipped.
 - Acceptance: tracer lot yields files; a cosinex (`VMPSatellite`) URL yields `Gated('evergabe.nrw.de')`.
 
-### W2.2 · Filename router + `pdftotext` page chunks — blocked by W5.1 (fixture)
+### W2.2 · Filename router + `pdftotext` page chunks — blocked by W3.1 (fixture)
 - Read `Teilnahme|Vertragsbedingungen|Bewerbungsbedingungen|Eignung|Aufforderung|Leistungsbeschreibung|Beiblatt|Merkblatt`;
   skip `Anlage|Plan|_EP|_GR|_WP|LV_|Bekanntmachung`. `pdftotext -layout` subprocess, split on form-feed → `Chunk(page, text)`.
   Empty text layer → `source.status='scanned'`.
@@ -34,7 +34,7 @@ One `plattform.aumass.de` lot (anonymous ZIP confirmed end to end in both probe 
   "gemäß Vergabeunterlagen"/"siehe Vergabeunterlagen" → `state='REFERRED_TO_DOCUMENTS'`.
 - Acceptance: unit tests on 10 real BT-750 strings pulled from `data/tenders.jsonl`.
 
-### W2.4 · LLM client + extraction schema + evidence check — blocked by W0.4 (model), W5.1 (fixture)
+### W2.4 · LLM client + extraction schema + evidence check — blocked by W3.1 (fixture)
 - `llm.py`: one function `extract(document_text, procedure_context, prompt_version) -> ExtractionResult` over OpenRouter,
   JSON-schema-enforced output with `facts[]`, `requirements[]` (six kinds, typed `condition`), `unmatched_requirements[]`
   (category, quote, scope). Prompt carries procedure title and lot ids/titles; default scope `PROCEDURE`, filename `Los_2` hint.
@@ -45,16 +45,31 @@ One `plattform.aumass.de` lot (anonymous ZIP confirmed end to end in both probe 
   fabricated quote in a mocked response is rejected and counted.
 
 ### W2.5 · `enrich` command — blocked by W2.1–W2.4, W0.2
-- `enrich.py`: for each lot key (or `--for-company <id>`: lots passing region + CPV that still have Unknowns), run rules over notice
-  prose → fetch documents → route → chunk → LLM per routed document → gate → write `observations` rows
-  (`on conflict do nothing`), `sources`, `chunks`, `documents`. Idempotency key: document sha256 + `prompt_version`.
-- Unknown after reading = `NOT_FOUND` row per attribute per document source (so the UI can say "read, not stated").
-- Acceptance: run twice on the tracer lot → second run makes zero LLM calls and zero new rows.
+- `enrich.py`: for each lot key (default: the slice below), run rules over notice prose → fetch documents →
+  route → chunk → model per routed document → gate → write `observations` rows (`on conflict do nothing`),
+  `sources`, `chunks`, `documents`. Idempotency key: document sha256 + `prompt_version`.
+- Slice selection (no company profiles in this scope): `--all-rules` runs the rule stage over every lot in
+  `lots_latest`; the model stage runs over open lots (`submission_deadline >= today`) whose document URLs
+  resolve to a supported adapter host, ordered by deadline, `--limit N`; `--lot <lot_key>` targets one lot.
+- Unknown after reading = `NOT_FOUND` row per attribute per document source; notice text deferring to the
+  documents = `REFERRED_TO_DOCUMENTS`; gated/unreachable platform recorded on `documents` with the host.
+- Acceptance: run twice on the tracer lot → second run makes zero model calls and zero new rows.
 
-### W2.6 · Enrich the batch slice — blocked by W1.3, W5.2
-- `enrich --for-company` for each seeded company; expect a few hundred lots, ~24% with readable documents.
-- Record totals in `sync_state`: lots enriched, documents retrieved/gated/unreachable/scanned, LLM calls, rejections.
-- Acceptance: `select status, count(*) from documents group by 1` shows all five statuses (`RETRIEVED|GATED|UNREACHABLE|SCANNED|SKIPPED`) populated with platforms.
+### W2.6 · Enrich the batch — blocked by W1.3
+- `enrich --all-rules` then `enrich --limit 300` (adjust to budget; ~24% of lots have readable documents).
+- Totals written to `sync_state` (see W3.2): lots enriched, documents by status, model calls, rejections.
+- Acceptance: `select status, count(*) from documents group by 1` shows the five statuses
+  (`RETRIEVED|GATED|UNREACHABLE|SCANNED|SKIPPED`) populated with platforms; `select extractor, count(*)
+  from observations group by 1` shows all four extractors.
+
+### W2.7 · `ingest-one` CLI — blocked by W1.1, W2.5
+- `python -m tender_extract.ingest_one <notice-id|url>`: `fetch_notice` → `load_notice_bytes` →
+  `enrich --lot` for every lot of that notice, all six kinds plus the unmatched list, no slice filter.
+  Same two functions the batch uses; nothing else. Prints the lot keys and a summary of what was read.
+- P2: `--text <file>` registers pasted notice text as a `sources` row (`type='TXT'`, `origin='MANUAL_INPUT'`)
+  and runs the same extraction over it.
+- Acceptance: a notice id not in the store has rows in `observations_resolved` within a minute; a platform
+  fetch failure is recorded on `documents` and does not abort the run.
 
 ## Validation
 - Tests for rules and the evidence gate (`/tdd`); adapters and the LLM verified by running on the tracer lot.
