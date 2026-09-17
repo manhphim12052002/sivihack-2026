@@ -4,6 +4,40 @@
 `lots` rows and `xpath` observations, with a poll watermark so the next run costs one request.
 **Spec:** PRD "Source and acquisition", "Extractor bugs to fix as part of load"; ADR 0002.
 
+## Status (17.09 23:10, branch `manhphim12052002/w1-acquisition-and-load`)
+
+All six tickets done; verified against a local `supabase start` stack, not yet run against the hosted project.
+
+| ticket | result |
+|---|---|
+| W1.1 | `load --zip` loads one day in ~1 s; re-run inserts 0 observations, counts unchanged |
+| W1.2 | 23 tests green (`tests/test_parse_notice.py`); CLI still writes 3,201 lots to `data/tenders.jsonl` |
+| W1.3 | 14 days → `lots` 3,222, `lots_latest` 3,201, `observations` 19,733; deadline 93.8%, value 4.9%; `sync_state.load.dropped_awarded_by_title = 72` |
+| W1.4 | `poll` run 1 fetched 1 new notice version, run 2 fetched 0; watermark + `last_poll_at` in `sync_state` |
+| W1.5 | `backfill --start --end` over two cached days: same counts, 0 new observations |
+| W1.6 | same-id versions resolve correctly (`25758778` v2→v3, `a1771259…` v1→v3). Finding below. |
+
+Findings for W2/W3:
+- **Corrigenda come in two shapes.** The national profile bumps the version under the same notice id
+  (`lots_latest` handles it). The EU-threshold profile publishes a **new notice id** and points back with
+  BT-758; 430 amended lot rows in the batch, 88 predecessors present. New view **`lots_current`**
+  (`supabase/migrations/20260917230000_lots_current.sql`) = `lots_latest` minus superseded predecessors
+  (3,113 rows). W2.6 should enrich `lots_current`; the W3.5 read contract should point downstream owners at it
+  and name `changed_notice_id` as the amended marker (always `<predecessor id>-<version>` for both profiles).
+- `lots.published` is NULL for the thin profile (no IssueDate in eforms-sdk-0.1). The poll stub carries
+  `publicationDate`; not written to `lots` to keep one load path. The W3.5 read contract should say: fall back to `ingested_at`.
+- BT-750 prose is stored as a **LOT-scoped** `selection_criteria_text` observation (not PROCEDURE as this
+  ticket said: the observations primary key includes the source, so two notice versions of one procedure
+  would resolve to CONFLICTING instead of the newer text winning; a lot key is per version), and per lot in
+  `lots.qualification_text` and `lots.extra.selection_criteria` (with the `slc-*` code). Rules (W2.3) can read either.
+- `active` is not sent in the poll query: measured on lots since 16.09, `active=true` trims 1,074 → 1,022 and
+  keeps every `can-*` award notice, so it is a deadline filter, not a competition filter. Poll skips award
+  stubs by `noticeType` before fetching instead (values match the eForms subtype codes, verified live).
+- Stub identity pinned live: 40 of 41 `cn-standard` stubs of 16.09 matched stored `(notice_id, notice_version,
+  lot_id)`; rich ids are bare UUIDs with zero-padded versions, national ids bare integers.
+- The lot search endpoint is `POST https://oeffentlichevergabe.de/bkmk/searches`; single notice is
+  `GET /api/notices/<bare id>?format=eforms&noticeVersion=<v>`. Both in `fetch.py`.
+
 ## Existing code to reuse
 - `apps/pipeline/src/tender_extract/eforms.py` — `parse_notice(xml_bytes) -> list[LotRecord]`, namespace map `NS`, CPV/NUTS/placeholder normalisation, awarded-title heuristic.
 - `apps/pipeline/src/tender_extract/fetch.py` — `fetch_day` (bulk export, becomes `backfill`), `fetch_notice(notice_id)` (single eForms notice, the live path), polite `USER_AGENT`.
