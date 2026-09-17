@@ -1,228 +1,113 @@
-import type { Confidence, Overall, Status } from "@/lib/status";
+/**
+ * Thin typed fetch wrapper over the FastAPI service. Every request/response
+ * shape comes from the generated `api-types.d.ts` (OpenAPI components) — this
+ * file never hand-declares a parallel type.
+ */
+import type { components } from "./api-types";
 
-// ─── Domain types ─────────────────────────────────────────────────────────────
+export type TenderSummary = components["schemas"]["TenderSummary"];
+export type TenderDetail = components["schemas"]["TenderDetail"];
+export type TenderDocument = components["schemas"]["TenderDocument"];
+export type TenderFactSheet = components["schemas"]["TenderFactSheet"];
+export type Fact = components["schemas"]["Fact"];
+export type Evidence = components["schemas"]["Evidence"];
+export type CompanyProfile = components["schemas"]["CompanyProfile"];
+export type CompanyCreate = components["schemas"]["CompanyCreate"];
+export type Verdict = components["schemas"]["Verdict"];
+export type CriterionResult = components["schemas"]["CriterionResult"];
+export type ScreenRequest = components["schemas"]["ScreenRequest"];
+export type IngestRequest = components["schemas"]["IngestRequest"];
+export type IngestJob = components["schemas"]["IngestJob"];
 
-export type { Confidence, Overall, Status };
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
-export interface Evidence {
-  quote_de: string;
-  doc: string;
-  page?: number | null;
-}
-
-export interface Fact {
-  value: unknown;
-  confidence: Confidence;
-  evidence: Evidence[];
-}
-
-export interface TenderFactSheet {
-  trade_scope: Fact;
-  place_of_performance: Fact;
-  estimated_value: Fact;
-  lots: Fact;
-  references_required: Fact;
-  eligibility_proofs: Fact;
-  construction_window: Fact;
-  guarantees: Fact;
-  penalty: Fact;
-  self_performance_min_pct: Fact;
-  side_offers_allowed: Fact;
-  consortium_allowed: Fact;
-  submission_deadline: Fact;
-  special_qualifications: Fact;
-  contractor_role: Fact;
-}
-
-export interface TenderDocument {
-  name: string;
-  pages?: number | null;
-  text_extracted: boolean;
-}
-
-export interface TenderSummary {
-  id: string;
-  title: string;
-  buyer_name: string | null;
-  place_city: string | null;
-  estimated_value_eur: number | null;
-  submission_deadline: string | null;
-  lot_count: number;
-  source: string;
-  docs_retrieved: boolean;
-}
-
-export interface TenderDetail extends TenderSummary {
-  cpv_main: string | null;
-  lots: TenderSummary[];
-  documents: TenderDocument[];
-  fact_sheet: TenderFactSheet | null;
-}
-
-export interface CriterionResult {
-  criterion: string;
-  status: Status;
-  kind: "numeric" | "semantic";
-  reason_en: string;
-  tender_evidence: Evidence[];
-  company_fact: string | null;
-}
-
-export interface Verdict {
-  tender_id: string;
-  overall: Overall;
-  blockers: number;
-  risks: number;
-  unknowns: number;
-  summary_en?: string;
-  criteria: CriterionResult[];
-}
-
-export interface CompanyProfile {
-  id: string;
-  name: string;
-  home_base: string;
-  regions?: string[];
-  radius_km?: number | null;
-  trades?: string[];
-  cpv_prefixes?: string[];
-  contract_min_eur?: number | null;
-  contract_max_eur?: number | null;
-  partner_threshold_eur?: number | null;
-  guarantee_capacity_eur?: number | null;
-  self_perform_share_pct?: number | null;
-  earliest_start?: string | null;
-  capacity_per_week: number;
-  references_held?: string[];
-  hard_exclusions?: string[];
-  raw_text: string;
-}
-
-export type JobStage =
-  | "queued"
-  | "downloading"
-  | "extracting_text"
-  | "extracting_facts"
-  | "done"
-  | "error";
-
-export interface IngestJob {
-  id: string;
-  stage: JobStage;
-  pct: number;
-  message?: string | null;
-  tender_id?: string | null;
-}
-
-// ─── Client ───────────────────────────────────────────────────────────────────
-
+/** Distinguishes "API reachable but returned an error" from "API unreachable". */
 export class ApiError extends Error {
-  constructor(
-    public readonly status: number,
-    message: string,
-  ) {
+  readonly status: number;
+
+  constructor(status: number, message: string) {
     super(message);
     this.name = "ApiError";
+    this.status = status;
   }
 }
 
-const BASE = (process.env.NEXT_PUBLIC_API_URL ?? "").replace(/\/$/, "");
+async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
+  const isFormData = typeof FormData !== "undefined" && init.body instanceof FormData;
+  // Never set Content-Type for FormData bodies — the browser must add the
+  // multipart boundary itself, an explicit header would break parsing.
+  const headers = isFormData
+    ? init.headers
+    : { "Content-Type": "application/json", ...(init.headers as Record<string, string> | undefined) };
 
-async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(`${BASE}${path}`, {
-    headers: { "Content-Type": "application/json", ...(init?.headers ?? {}) },
-    ...init,
-  });
-  if (!res.ok) {
-    let message = `HTTP ${res.status}`;
-    try {
-      const body = (await res.json()) as { error?: string };
-      if (body.error) message = body.error;
-    } catch {
-      // ignore
-    }
-    throw new ApiError(res.status, message);
+  let response: Response;
+  try {
+    response = await fetch(`${BASE_URL}${path}`, { ...init, headers, cache: "no-store" });
+  } catch {
+    throw new ApiError(0, `Could not reach the API at ${BASE_URL}. Is it running?`);
   }
-  return res.json() as Promise<T>;
+
+  if (!response.ok) {
+    const body = await response.text().catch(() => "");
+    throw new ApiError(response.status, body || response.statusText);
+  }
+
+  return (await response.json()) as T;
 }
 
-async function upload<T>(path: string, body: FormData): Promise<T> {
-  const res = await fetch(`${BASE}${path}`, { method: "POST", body });
-  if (!res.ok) {
-    let message = `HTTP ${res.status}`;
-    try {
-      const b = (await res.json()) as { error?: string };
-      if (b.error) message = b.error;
-    } catch {
-      // ignore
-    }
-    throw new ApiError(res.status, message);
-  }
-  return res.json() as Promise<T>;
-}
-
+/** Used by the offline banner; never throws, resolves to false on any failure. */
 export async function checkHealth(): Promise<boolean> {
   try {
-    const res = await fetch(`${BASE}/api/health`, { cache: "no-store" });
-    return res.ok;
+    await request<Record<string, boolean>>("/health");
+    return true;
   } catch {
     return false;
   }
 }
 
 export const api = {
-  // Companies
-  companies(): Promise<CompanyProfile[]> {
-    return request("/api/companies");
-  },
-  createCompanyFromText(text: string): Promise<CompanyProfile> {
-    return request("/api/companies", {
+  tenders: () => request<TenderSummary[]>("/tenders"),
+  tender: (id: string) => request<TenderDetail>(`/tenders/${encodeURIComponent(id)}`),
+
+  companies: () => request<CompanyProfile[]>("/companies"),
+  company: (id: string) => request<CompanyProfile>(`/companies/${encodeURIComponent(id)}`),
+
+  createCompanyFromText: (text: string) =>
+    request<CompanyProfile>("/companies", {
       method: "POST",
-      body: JSON.stringify({ text }),
-    });
-  },
-  createCompanyFromFile(file: File): Promise<CompanyProfile> {
+      body: JSON.stringify({ text } satisfies CompanyCreate),
+    }),
+
+  createCompanyFromFile: (file: File) => {
     const form = new FormData();
     form.append("file", file);
-    return upload("/api/companies", form);
+    return request<CompanyProfile>("/companies", { method: "POST", body: form });
   },
-  getCompany(id: string): Promise<CompanyProfile> {
-    return request(`/api/companies/${id}`);
-  },
-  updateCompany(id: string, profile: CompanyProfile): Promise<CompanyProfile> {
-    return request(`/api/companies/${id}`, {
+
+  updateCompany: (id: string, profile: CompanyProfile) =>
+    request<CompanyProfile>(`/companies/${encodeURIComponent(id)}`, {
       method: "PUT",
       body: JSON.stringify(profile),
-    });
-  },
+    }),
 
-  // Tenders
-  tenders(): Promise<TenderSummary[]> {
-    return request("/api/tenders");
-  },
-  tender(id: string): Promise<TenderDetail> {
-    return request(`/api/tenders/${id}`);
-  },
+  /** `tenderIds` narrows a screen to one tender (the briefing page) instead of the whole batch. */
+  screen: (companyId: string, tenderIds?: string[]) =>
+    request<Verdict[]>("/screen", {
+      method: "POST",
+      body: JSON.stringify({ company_id: companyId, tender_ids: tenderIds ?? null } satisfies ScreenRequest),
+    }),
 
-  // Screening
-  screen(companyId: string, tenderIds?: string[]): Promise<Verdict[]> {
-    const params = new URLSearchParams({ company: companyId });
-    if (tenderIds?.length) {
-      tenderIds.forEach((t) => params.append("tender", t));
-    }
-    return request(`/api/screen?${params.toString()}`);
-  },
-
-  // Ingest jobs
-  ingestFiles(files: File[]): Promise<IngestJob> {
+  ingestFiles: (files: File[]) => {
     const form = new FormData();
-    files.forEach((f) => form.append("files", f));
-    return upload("/api/ingest", form);
+    files.forEach((file) => form.append("files", file));
+    return request<IngestJob>("/ingest", { method: "POST", body: form });
   },
-  ingestUrl(url: string): Promise<IngestJob> {
-    return request("/api/ingest", { method: "POST", body: JSON.stringify({ url }) });
-  },
-  job(id: string): Promise<IngestJob> {
-    return request(`/api/jobs/${id}`);
-  },
-} as const;
+
+  ingestUrl: (noticeUrl: string) =>
+    request<IngestJob>("/ingest", {
+      method: "POST",
+      body: JSON.stringify({ notice_url: noticeUrl } satisfies IngestRequest),
+    }),
+
+  job: (id: string) => request<IngestJob>(`/jobs/${encodeURIComponent(id)}`),
+};

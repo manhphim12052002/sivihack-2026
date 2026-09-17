@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type FormEvent } from "react";
-import { api, ApiError } from "@/lib/api";
+import { ApiError } from "@/lib/api";
 import type { CompanyProfile } from "@/lib/api";
 import { CompanyForm } from "@/components/company-form";
 
@@ -60,8 +60,7 @@ export default function CompaniesPage() {
   const [extractBusy, setExtractBusy] = useState(false);
 
   function loadCompanies() {
-    api
-      .companies()
+    apiFetch<CompanyProfile[]>("/api/companies")
       .then(setCompanies)
       .catch((err: unknown) =>
         setError(err instanceof ApiError ? err.message : "Could not load companies."),
@@ -80,8 +79,8 @@ export default function CompaniesPage() {
     setCanonical(null);
     try {
       const profile = file
-        ? await api.createCompanyFromFile(file)
-        : await api.createCompanyFromText(text);
+        ? await apiFetch<CompanyProfile>("/api/companies", { method: "POST", body: (() => { const f = new FormData(); f.append("file", file); return f; })() })
+        : await apiFetch<CompanyProfile>("/api/companies", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ text }) });
       setSelected(profile);
       setText("");
       setFile(null);
@@ -98,7 +97,7 @@ export default function CompaniesPage() {
     setError(null);
     setNotice(null);
     try {
-      const saved = await api.updateCompany(profile.id, profile);
+      const saved = await apiFetch<CompanyProfile>(`/api/companies/${profile.id}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(profile) });
       setSelected(saved);
       setNotice("Saved.");
       loadCompanies();

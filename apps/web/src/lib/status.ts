@@ -1,33 +1,38 @@
-export type Overall = "Bid" | "Consider" | "NoGo";
-export type Status = "Blocker" | "Risk" | "OK" | "Unknown";
-export type Confidence = "high" | "medium" | "low" | "not_found";
+/**
+ * Single source of truth for status -> colour/label. Every badge in the app
+ * imports from here so a colour never drifts between the triage table and
+ * the briefing checklist.
+ */
+import type { components } from "./api-types";
 
-interface Style {
-  className: string;
-  label: string;
-}
+export type Status = components["schemas"]["Status"];
+export type Overall = components["schemas"]["Overall"];
+export type Confidence = components["schemas"]["Confidence"];
+export type JobStage = components["schemas"]["JobStage"];
 
-export const OVERALL_STYLES: Record<Overall, Style> = {
-  Bid: { className: "bg-green-100 text-green-800 border-green-200", label: "Bid" },
-  Consider: { className: "bg-amber-100 text-amber-800 border-amber-200", label: "Consider" },
-  NoGo: { className: "bg-red-100 text-red-800 border-red-200", label: "No-go" },
+type Tone = { label: string; className: string };
+
+/** Criterion-level status: Blocker red, Risk amber, OK green, Unknown grey. */
+export const STATUS_STYLES: Record<Status, Tone> = {
+  Blocker: { label: "Blocker", className: "border-red-300 bg-red-100 text-red-800" },
+  Risk: { label: "Risk", className: "border-amber-300 bg-amber-100 text-amber-800" },
+  OK: { label: "OK", className: "border-green-300 bg-green-100 text-green-800" },
+  Unknown: { label: "Unknown", className: "border-zinc-300 bg-zinc-100 text-zinc-600" },
 };
 
-export const STATUS_STYLES: Record<Status, Style> = {
-  Blocker: { className: "bg-red-100 text-red-800 border-red-200", label: "Blocker" },
-  Risk: { className: "bg-amber-100 text-amber-800 border-amber-200", label: "Risk" },
-  OK: { className: "bg-green-100 text-green-800 border-green-200", label: "OK" },
-  Unknown: { className: "bg-zinc-100 text-zinc-600 border-zinc-200", label: "Unknown" },
+/** Tender-level verdict: Bid green, Consider amber, No-go red. */
+export const OVERALL_STYLES: Record<Overall, Tone> = {
+  Bid: { label: "Bid", className: "bg-green-600 text-white" },
+  Consider: { label: "Consider", className: "bg-amber-500 text-white" },
+  NoGo: { label: "No-go", className: "bg-red-600 text-white" },
 };
 
-export const CONFIDENCE_STYLES: Record<Confidence, Style> = {
-  high: { className: "text-green-700", label: "High" },
-  medium: { className: "text-amber-700", label: "Medium" },
-  low: { className: "text-zinc-500", label: "Low" },
-  not_found: { className: "text-zinc-400 italic", label: "Not found" },
+export const CONFIDENCE_STYLES: Record<Confidence, Tone> = {
+  high: { label: "High confidence", className: "text-green-700" },
+  medium: { label: "Medium confidence", className: "text-amber-700" },
+  low: { label: "Low confidence", className: "text-red-700" },
+  not_found: { label: "Not found in documents", className: "text-zinc-500" },
 };
-
-import type { JobStage } from "@/lib/api";
 
 export const JOB_STAGES: JobStage[] = [
   "queued",
