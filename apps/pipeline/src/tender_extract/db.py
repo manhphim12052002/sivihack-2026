@@ -3,13 +3,13 @@
 Grain is the lot, not the notice: a EUR 14M procedure may contain one EUR 700k
 lot that fits a small contractor, so a notice-grained row would hide the cases
 that matter. Every notice version is kept rather than overwritten; callers read
-the `lot_latest` view to get one row per lot.
+the `lots_latest` view to get one row per lot.
 
 Facts and requirements live in `observation`, one row per (scope, attribute,
 extractor, source). Per ADR 0001 those rows are immutable: `insert_observations`
 uses ON CONFLICT DO NOTHING and nothing here ever updates or deletes one.
 Which observation the application shows is decided at read time by the
-`observation_resolved` view (extractor precedence, agreement merges evidence,
+`observations_resolved` view (extractor precedence, agreement merges evidence,
 disagreement yields CONFLICTING); `resolve()` only reads that view.
 
 Schema lives in `supabase/migrations/`. This module carries no business logic:
@@ -33,6 +33,11 @@ DATABASE_URL_ENV = "DATABASE_URL"
 # Natural key of a lot row; `lot_key` itself is a generated column in the DB.
 LOT_CONFLICT_COLUMNS = ("source", "notice_id", "notice_version", "lot_id")
 
+# `sources` is shared with the company-intelligence pipeline (see the init migration). Rows the
+# tender pipeline writes use: entity_type='tender', entity_id=procedure_key, type in
+# EFORMS|PDF|DOCX|XLSX|TXT, origin in EFORM_API|PORTAL_FETCH|MANUAL_INPUT, status in
+# AVAILABLE|GATED|UNREACHABLE|SCANNED|SKIPPED, id 'notice:<id>:<version>' or 'doc:<sha256>'.
+# `chunks` rows use id '<source_id>#p<page>' so re-inserting a page is a no-op.
 # Columns a re-fetch of the same source may legitimately change.
 SOURCE_UPDATE_COLUMNS = ("status", "fetched_at", "pages", "bytes", "rejected_items")
 
@@ -43,7 +48,7 @@ ARRAY_COLUMNS = frozenset({"qualification_text", "document_urls"})
 # Generated stored columns on `lot`; never sent in an INSERT.
 GENERATED_LOT_COLUMNS = frozenset({"lot_key", "procedure_key"})
 
-COUNTED_TABLES = ("lot", "observation", "source", "document", "company", "verdict", "ingest_job")
+COUNTED_TABLES = ("lots", "observations", "sources", "documents", "chunks", "companies", "verdicts", "ingest_jobs")
 
 _IDENTIFIER = re.compile(r"^[a-z_][a-z0-9_]*$")
 
@@ -167,24 +172,24 @@ def upsert_lot(conn: psycopg.Connection, row: dict[str, Any]) -> str:
     Postgres rejects explicit values for them.
     """
     row = {k: v for k, v in row.items() if k not in GENERATED_LOT_COLUMNS}
-    conn.execute(_upsert_sql("lot", row, LOT_CONFLICT_COLUMNS), _adapt(row))
+    conn.execute(_upsert_sql("lots", row, LOT_CONFLICT_COLUMNS), _adapt(row))
     return lot_key(row["source"], row["notice_id"], row["notice_version"], row["lot_id"])
 
 
 def upsert_source(conn: psycopg.Connection, row: dict[str, Any]) -> str:
     """Insert or refresh one Source (notice version or fetched document). Returns its id."""
-    conn.execute(_upsert_sql("source", row, ("id",), update=SOURCE_UPDATE_COLUMNS), _adapt(row))
+    conn.execute(_upsert_sql("sources", row, ("id",), update=SOURCE_UPDATE_COLUMNS), _adapt(row))
     return row["id"]
 
 
 def upsert_document(conn: psycopg.Connection, row: dict[str, Any]) -> None:
     """Insert or update the fetch outcome of one (lot, url) document link."""
-    conn.execute(_upsert_sql("document", row, ("lot_key", "url")), _adapt(row))
+    conn.execute(_upsert_sql("documents", row, ("lot_key", "url")), _adapt(row))
 
 
 def insert_chunks(conn: psycopg.Connection, rows: Iterable[dict[str, Any]]) -> int:
     """Insert page text per (source_id, page); existing pages are left untouched."""
-    return _insert_many(conn, "chunk", rows, ("source_id", "page"))
+    return _insert_many(conn, "chunks", rows, ("id",))
 
 
 # --- observations ---------------------------------------------------------------
@@ -194,11 +199,11 @@ OBSERVATION_CONFLICT_COLUMNS = ("scope_key", "attribute", "extractor", "source_i
 
 def insert_observations(conn: psycopg.Connection, rows: Iterable[dict[str, Any]]) -> int:
     """Append observations. Never updates: an existing reading is kept as is (ADR 0001)."""
-    return _insert_many(conn, "observation", rows, OBSERVATION_CONFLICT_COLUMNS)
+    return _insert_many(conn, "observations", rows, OBSERVATION_CONFLICT_COLUMNS)
 
 
 def resolve(conn: psycopg.Connection, scope_keys: list[str]) -> dict[str, dict[str, dict[str, Any]]]:
-    """Resolved value per attribute for each scope key, from `observation_resolved`.
+    """Resolved value per attribute for each scope key, from `observations_resolved`.
 
     Returns {scope_key: {attribute: row}}; a scope key with no observations is absent.
     """
@@ -207,7 +212,7 @@ def resolve(conn: psycopg.Connection, scope_keys: list[str]) -> dict[str, dict[s
     out: dict[str, dict[str, dict[str, Any]]] = defaultdict(dict)
     with conn.cursor() as cur:
         cur.execute(
-            "SELECT * FROM observation_resolved WHERE scope_key = ANY(%(keys)s)",
+            "SELECT * FROM observations_resolved WHERE scope_key = ANY(%(keys)s)",
             {"keys": list(scope_keys)},
         )
         for row in cur:

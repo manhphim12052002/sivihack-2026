@@ -9,9 +9,9 @@ The PRD chose a single SQLite file committed to the repo. We replace it with one
 Postgres database, defined by additive migrations under `supabase/migrations/` and applied with
 the Supabase CLI. Three people load, fetch and enrich into the same store during the hack, so
 the store must accept concurrent writers rather than pass a file around; the job runner claims
-`ingest_job` rows with `FOR UPDATE SKIP LOCKED`, so the API, a worker and the CLI can drain one
+`ingest_jobs` rows with `FOR UPDATE SKIP LOCKED`, so the API, a worker and the CLI can drain one
 queue without a second queue system; the resolution rules of ADR 0001 are one SQL view
-(`observation_resolved`) that every reader shares; and the web can read the same tables through
+(`observations_resolved`) that every reader shares; and the web can read the same tables through
 the Data API if it needs to, without a second copy of the data. Lots are keyed by generated
 `lot_key` and `procedure_key` columns, so the two Scope keys are computed once in the schema and
 never hand-built in application code.
@@ -36,7 +36,11 @@ swappable to a GPT model by changing that one environment variable.
   coexist with another local Supabase project; the local database URL is
   `postgresql://postgres:postgres@127.0.0.1:55322/postgres`.
 - Hosted project URL, service-role key and `DATABASE_URL` live in the untracked env file only.
-- Concurrency rules for three writers: `lot` and `source` upserts are idempotent, `observation`
+- Concurrency rules for three writers: `lots` and `sources` upserts are idempotent, `observations`
   inserts use `on conflict do nothing`, and nothing deletes.
 - `supabase/tests/resolution_smoke.sql` is the executable statement of the resolution rules;
   run it after any change to the views.
+- The schema is shared with the company-intelligence pipeline (17.09, PR #3): `sources`,
+  `chunks` and `companies` are one table each, table names are plural to match the web's route
+  handlers, and the single init migration is idempotent so it also applies to a hosted project
+  where the company tables were created by hand.

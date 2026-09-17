@@ -21,7 +21,7 @@ Fix all three in one short commit series, then hand off.
 - Create the Supabase project (human step; use `/wizard` to capture `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`,
   `DATABASE_URL` into the untracked env file and never into git). Install the Supabase CLI, `supabase init`, `supabase link`.
 - `supabase/migrations/0001_init.sql`, additive, derived from `store.py` SCHEMA + pipeline doc Flow 13 deltas.
-  Sketch below (column lists abridged; `company` mirrors the PRD table); the ticket writes the runnable file:
+  Sketch below is superseded by the merged shared schema in `supabase/migrations/20260917210000_init.sql` (plural names, `sources`/`chunks`/`companies` shared with the company-intelligence pipeline):
 
 ```sql
 create table lot (                       -- one row per lot per notice version (store.py columns, unchanged)
@@ -68,9 +68,9 @@ create table verdict (lot_key text, company_id text references company(id), crit
 create table sync_state (key text primary key, value text not null);
 create table ingest_job (id text primary key, stage text not null default 'queued', pct int not null default 0,
   message text, tender_id text, payload jsonb, created_at timestamptz default now(), updated_at timestamptz default now());
-create view lot_latest as select distinct on (source, notice_id, lot_id) * from lot
+create view lots_latest as select distinct on (source, notice_id, lot_id) * from lot
   order by source, notice_id, lot_id, notice_version desc;
--- observation_resolved: rank by extractor precedence (xpath=1 … llm_notice=4); at the best rank,
+-- observations_resolved: rank by extractor precedence (xpath=1 … llm_notice=4); at the best rank,
 -- agreeing rows merge evidence, disagreeing rows yield state CONFLICTING and no value. Written as SQL, tested in W3.
 ```
 
@@ -81,7 +81,7 @@ create view lot_latest as select distinct on (source, notice_id, lot_id) * from 
 
 ### W0.3 · Python project and DB module
 - `apps/pipeline/pyproject.toml`: package `tender_extract` from `src/`; root `pyproject.toml` is a uv workspace with `members = ["apps/pipeline"]`, deps `psycopg[binary]`, `fastapi`, `uvicorn`, `python-multipart`; dev: none (stdlib `unittest`). Pin Python ≥3.11.
-- `apps/pipeline/src/tender_extract/db.py`: `connect()` from `DATABASE_URL`; helpers `upsert_lot`, `insert_observations` (`on conflict do nothing`, immutability), `upsert_source`, `get_state/set_state`, `resolve(scope_keys)` reading `observation_resolved`. Same call shapes as `store.py` so `load.py` ports by import swap.
+- `apps/pipeline/src/tender_extract/db.py`: `connect()` from `DATABASE_URL`; helpers `upsert_lot`, `insert_observations` (`on conflict do nothing`, immutability), `upsert_source`, `get_state/set_state`, `resolve(scope_keys)` reading `observations_resolved`. Same call shapes as `store.py` so `load.py` ports by import swap.
 - `apps/pipeline/tests/__init__.py`, run with `python -m unittest`. Add `README` run lines for API and pipeline.
 - Acceptance: `python -m unittest` runs (zero tests OK); `python -c 'from tender_extract import db'` imports.
 

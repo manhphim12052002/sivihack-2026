@@ -1,7 +1,7 @@
 # W2 · Documents and enrich (backend B, starts at W0; DB needed only from W2.5)
 
 **Goal:** for a lot with readable documents, the six Requirement kinds and the unmatched list are in
-`observation` with a verbatim quote, source id and page; unreadable documents are recorded with the
+`observations` with a verbatim quote, source id and page; unreadable documents are recorded with the
 platform named; the same code runs for one notice (`ingest-one`) and for the batch.
 **Spec:** pipeline doc Flows 4–6, 10; ADR 0003, 0004; PRD "The extraction cascade", "Document tier".
 
@@ -39,22 +39,22 @@ One `plattform.aumass.de` lot (anonymous ZIP confirmed end to end in both probe 
   JSON-schema-enforced output with `facts[]`, `requirements[]` (six kinds, typed `condition`), `unmatched_requirements[]`
   (category, quote, scope). Prompt carries procedure title and lot ids/titles; default scope `PROCEDURE`, filename `Los_2` hint.
 - Evidence gate: keep an item only if `chunk_id` exists **and** the quote is a whitespace-normalised substring of that page;
-  count rejections per document and store on `source` (`rejected_items int`).
+  count rejections per document and store on `sources` (`rejected_items int`).
 - Network failure → return empty result flagged `unavailable`; enrich continues with rules only (ADR 0003 fallback).
 - Acceptance: tracer conditions PDF → at least guarantee and references extracted with quotes that pass the gate; a
   fabricated quote in a mocked response is rejected and counted.
 
 ### W2.5 · `enrich` command — blocked by W2.1–W2.4, W0.2
 - `enrich.py`: for each lot key (or `--for-company <id>`: lots passing region + CPV that still have Unknowns), run rules over notice
-  prose → fetch documents → route → chunk → LLM per routed document → gate → write `observation` rows
-  (`on conflict do nothing`), `source`, `chunk`, `document`. Idempotency key: document sha256 + `prompt_version`.
+  prose → fetch documents → route → chunk → LLM per routed document → gate → write `observations` rows
+  (`on conflict do nothing`), `sources`, `chunks`, `documents`. Idempotency key: document sha256 + `prompt_version`.
 - Unknown after reading = `NOT_FOUND` row per attribute per document source (so the UI can say "read, not stated").
 - Acceptance: run twice on the tracer lot → second run makes zero LLM calls and zero new rows.
 
 ### W2.6 · Enrich the batch slice — blocked by W1.3, W5.2
 - `enrich --for-company` for each seeded company; expect a few hundred lots, ~24% with readable documents.
 - Record totals in `sync_state`: lots enriched, documents retrieved/gated/unreachable/scanned, LLM calls, rejections.
-- Acceptance: `select status, count(*) from document group by 1` shows all five statuses populated with platforms.
+- Acceptance: `select status, count(*) from documents group by 1` shows all five statuses (`RETRIEVED|GATED|UNREACHABLE|SCANNED|SKIPPED`) populated with platforms.
 
 ## Validation
 - Tests for rules and the evidence gate (`/tdd`); adapters and the LLM verified by running on the tracer lot.

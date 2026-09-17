@@ -23,22 +23,22 @@ class ScopeKeyTests(unittest.TestCase):
 
 class UpsertSqlTests(unittest.TestCase):
     def test_update_all_non_conflict_columns(self):
-        sql = db._upsert_sql("lot", ["source", "notice_id", "title"], ["source", "notice_id"])
+        sql = db._upsert_sql("lots", ["source", "notice_id", "title"], ["source", "notice_id"])
         self.assertEqual(
             sql,
-            "INSERT INTO lot (source, notice_id, title) "
+            "INSERT INTO lots (source, notice_id, title) "
             "VALUES (%(source)s, %(notice_id)s, %(title)s) "
             "ON CONFLICT (source, notice_id) DO UPDATE SET title = EXCLUDED.title",
         )
 
     def test_update_false_does_nothing_on_conflict(self):
-        sql = db._upsert_sql("observation", ["scope_key", "attribute", "value_text"],
+        sql = db._upsert_sql("observations", ["scope_key", "attribute", "value_text"],
                              ["scope_key", "attribute"], update=False)
         self.assertTrue(sql.endswith("ON CONFLICT (scope_key, attribute) DO NOTHING"))
         self.assertNotIn("UPDATE", sql)
 
     def test_update_subset_only_touches_present_columns(self):
-        sql = db._upsert_sql("source", ["id", "kind", "status", "pages"], ["id"],
+        sql = db._upsert_sql("sources", ["id", "kind", "status", "pages"], ["id"],
                              update=db.SOURCE_UPDATE_COLUMNS)
         self.assertTrue(sql.endswith("DO UPDATE SET status = EXCLUDED.status, pages = EXCLUDED.pages"))
         self.assertNotIn("kind = EXCLUDED", sql)
@@ -50,9 +50,9 @@ class UpsertSqlTests(unittest.TestCase):
 
     def test_rejects_unsafe_identifiers(self):
         with self.assertRaises(ValueError):
-            db._upsert_sql("lot", ["title; DROP TABLE lot"], ["source"])
+            db._upsert_sql("lots", ["title; DROP TABLE lots"], ["source"])
         with self.assertRaises(ValueError):
-            db._upsert_sql("lot", ["Title"], ["source"])
+            db._upsert_sql("lots", ["Title"], ["source"])
 
 
 class RowAdaptationTests(unittest.TestCase):
@@ -76,7 +76,7 @@ class RowAdaptationTests(unittest.TestCase):
 
     def test_observation_statement_never_updates(self):
         keys = ["scope_type", "scope_key", "kind", "attribute", "extractor", "source_id", "value_text"]
-        sql = db._upsert_sql("observation", keys, db.OBSERVATION_CONFLICT_COLUMNS, update=False)
+        sql = db._upsert_sql("observations", keys, db.OBSERVATION_CONFLICT_COLUMNS, update=False)
         self.assertIn("ON CONFLICT (scope_key, attribute, extractor, source_id) DO NOTHING", sql)
 
 

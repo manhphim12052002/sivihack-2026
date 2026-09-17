@@ -17,15 +17,15 @@ Written 17.09 20:51. Submission 18.09 15:00 (~18h). Tech check 18.09 morning; no
 
 Supabase Postgres holds, and `supabase/seed.sql` snapshots:
 
-1. **`lot`**: every lot of every notice version from the 14-day CPV-45 batch (3,201 lots today) plus
-   anything polled since; `lot_latest` view = one row per lot.
-2. **`source`**: one row per notice version and per fetched document (url, sha256, status, platform).
-3. **`observation`**: immutable rows per ADR 0001; `xpath` rows for all lots; `rule`/`llm_doc`/`llm_notice`
+1. **`lots`**: every lot of every notice version from the 14-day CPV-45 batch (3,201 lots today) plus
+   anything polled since; `lots_latest` view = one row per lot.
+2. **`sources`** (shared with the company pipeline): one row per notice version and per fetched document (url, sha256, status, platform).
+3. **`observations`**: immutable rows per ADR 0001; `xpath` rows for all lots; `rule`/`llm_doc`/`llm_notice`
    rows for the enriched slice (union of lots surviving region+CPV for the 3 seeded companies).
-4. **`chunk`**: page text for every retrieved document, so evidence quotes are checkable offline.
-5. **`document`**: fetch status per (lot, url): `retrieved | gated | unreachable | scanned | skipped`, platform named.
-6. **`company`** ×3 seeded, **`verdict`** cache for each company × enriched lot, and the three shortlists differ.
-7. `observation_resolved` view implements precedence + CONFLICTING; `unknown` is never `OK`.
+4. **`chunks`**: page text for every retrieved document, so evidence quotes are checkable offline.
+5. **`documents`**: fetch status per (lot, url): `RETRIEVED | GATED | UNREACHABLE | SCANNED | SKIPPED`, platform named.
+6. **`companies`** ×3 seeded (shared table), **`verdicts`** cache for each company × enriched lot, and the three shortlists differ.
+7. `observations_resolved` view implements precedence + CONFLICTING; `unknown` is never `OK`.
 
 ## Decisions (confirmed 17.09 21:00)
 

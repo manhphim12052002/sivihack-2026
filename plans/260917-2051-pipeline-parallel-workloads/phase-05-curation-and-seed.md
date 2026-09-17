@@ -22,7 +22,7 @@ snapshotted for offline use, and README + slides match the code.
   (coverage ~24.5%, value absent ~95%, no OCR, gated platforms named), test command.
 
 ### W5.4 · Seed snapshot and offline rehearsal — blocked by W1.3, W2.6, W3.6
-- `supabase db dump --data-only -f supabase/seed.sql` (exclude `chunk` if it pushes the repo over size; keep it if under ~50MB).
+- `supabase db dump --data-only -f supabase/seed.sql` (exclude `chunks` if it pushes the repo over size; keep it if under ~50MB).
 - On the demo laptop (Docker confirmed available): `supabase start`, `supabase db reset` (migrations + seed), API pointed at the local `DATABASE_URL`, web up,
   wifi off, run the click-through. This is the fallback rehearsal for the venue-network risk.
 - Acceptance: the click-through passes with wifi off, except live ingest, which needs network by nature.

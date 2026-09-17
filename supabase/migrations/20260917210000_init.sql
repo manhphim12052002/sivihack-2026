@@ -1,20 +1,200 @@
--- Tender screening: initial schema.
+-- Shared Supabase schema: tender screening pipeline + company intelligence pipeline.
 --
--- Vocabulary follows CONTEXT.md. A Procedure has notice versions and Lots; a Source is a Notice
--- version or a fetched document; a Chunk is one page of a Source's text; an Observation is one
--- reading of one Fact or Requirement from one Source by one extractor; the Resolved value is what
--- the read-time view `observation_resolved` selects.
+-- This file merges two schemas that were written in parallel on 17.09: the tender pipeline's
+-- (ADR 0005, vocabulary from CONTEXT.md) and the company intelligence pipeline's (formerly
+-- apps/web/supabase/migration.sql, run by hand in the SQL editor). Shared entities are ONE table:
+--   sources    every Notice version, fetched tender document, or uploaded company document
+--   chunks     an addressable piece of a source's text (a page for PDFs)
+--   companies  the typed Company profile the screening rules read, plus intelligence columns
+-- Table names are plural because the web's route handlers already query `companies`.
 --
--- Row-level security is deliberately NOT enabled. This is a demo: the pipeline and the API talk
--- to Postgres server-side (DATABASE_URL / service-role key); no browser client holds a key. The
--- anon and authenticated roles get no grants. Turning RLS on later is an additive migration.
+-- Idempotent on purpose: `if not exists` everywhere, `create or replace` for views/functions,
+-- `add column if not exists` where two definitions were merged. It therefore applies cleanly to a
+-- fresh database AND to a hosted project where the company tables were already created by hand.
 --
--- Migrations are additive. Never edit this file after it has been applied; add a new one.
+-- Row-level security is deliberately NOT enabled. Demo: the pipeline connects as postgres via
+-- DATABASE_URL, the Next.js route handlers use the Supabase client server-side. Grants go to the
+-- service role and, because those handlers currently use the publishable key, to anon as well.
+-- Turning RLS on later is an additive migration.
 
--- ---------------------------------------------------------------------------------------------
--- lot: one row per Lot per Notice version. Column set mirrors the SQLite store it replaces.
--- ---------------------------------------------------------------------------------------------
-create table lot (
+-- =============================================================================================
+-- Shared infrastructure
+-- =============================================================================================
+
+-- sources: anything text was read from. Column notes:
+--   entity_type  'tender' | 'company'
+--   entity_id    tender: lots.procedure_key; company: companies.id
+--   type         PDF | DOCX | XLSX | TXT | MANUAL | EFORMS
+--   origin       CUSTOMER_UPLOAD | MANUAL_INPUT | EFORM_API | PORTAL_FETCH
+--   status       AVAILABLE | GATED | UNREACHABLE | SCANNED | SKIPPED (pipeline); free text kept for
+--                the company side, which writes AVAILABLE only
+--   id           pipeline convention: 'notice:<notice_id>:<version>' or 'doc:<sha256>'
+create table if not exists sources (
+  id           text primary key,
+  entity_type  text not null,
+  entity_id    text not null,
+  type         text not null,
+  filename     text,
+  origin       text not null,
+  sha256       text,                                 -- content hash; dedup key for documents
+  storage_path text,                                 -- path in Supabase Storage (company uploads)
+  status       text not null default 'AVAILABLE',
+  created_at   timestamptz not null default now()
+);
+-- Tender-pipeline columns (fetch outcome and model bookkeeping).
+alter table sources add column if not exists url            text;
+alter table sources add column if not exists pages          int;
+alter table sources add column if not exists bytes          bigint;
+alter table sources add column if not exists platform       text;              -- e-procurement host, named even when gated
+alter table sources add column if not exists fetched_at     timestamptz;
+alter table sources add column if not exists rejected_items int not null default 0;  -- model items dropped by the quote-substring check
+create index if not exists sources_entity on sources (entity_type, entity_id);
+
+-- chunks: one addressable piece of a source's text so every evidence quote is checkable offline.
+-- PDFs: one row per page, id '<source_id>#p<page>'. DOCX/XLSX use section/paragraph/cell_range.
+create table if not exists chunks (
+  id          text primary key,
+  source_id   text not null references sources (id),
+  page        integer,
+  section     text,
+  paragraph   integer,
+  cell_range  text,                                  -- XLSX range e.g. "A12:F20"
+  text        text not null,
+  created_at  timestamptz not null default now()
+);
+create unique index if not exists chunks_source_page on chunks (source_id, page) where page is not null;
+
+-- =============================================================================================
+-- Companies (typed screening profile + intelligence pipeline tables)
+-- =============================================================================================
+
+create table if not exists companies (
+  id                     text primary key,
+  name                   text not null,
+  headquarters           text not null default '',
+  employees              integer,
+  revenue_eur            numeric,
+  website                text,
+  description            text,
+  status                 text not null default 'ONBOARDING',
+  -- typed screening fields (CompanyProfile in apps/web/src/lib/api-types.d.ts)
+  home_base              text not null default '',
+  regions                jsonb,
+  radius_km              numeric,
+  trades                 jsonb,
+  cpv_prefixes           jsonb,
+  contract_min_eur       numeric,
+  contract_max_eur       numeric,
+  partner_threshold_eur  numeric,
+  references_held        jsonb,
+  hard_exclusions        jsonb,
+  guarantee_capacity_eur numeric,
+  self_perform_share_pct numeric,
+  earliest_start         text,
+  capacity_per_week      integer not null default 3,
+  raw_text               text not null default '',
+  created_at             timestamptz not null default now(),
+  updated_at             timestamptz not null default now()
+);
+-- Money and percentages were `real` in the hand-run version; float32 cannot hold EUR amounts
+-- above ~16.7M exactly, so widen to numeric (no-op on a fresh database).
+alter table companies alter column revenue_eur            type numeric;
+alter table companies alter column radius_km              type numeric;
+alter table companies alter column contract_min_eur       type numeric;
+alter table companies alter column contract_max_eur       type numeric;
+alter table companies alter column partner_threshold_eur  type numeric;
+alter table companies alter column guarantee_capacity_eur type numeric;
+alter table companies alter column self_perform_share_pct type numeric;
+alter table companies add column if not exists home_base_geo jsonb;   -- {lat, lon} of home_base, for the region rule
+
+create table if not exists company_capabilities (
+  id         text primary key,
+  company_id text not null references companies (id) on delete cascade,
+  type       text not null,                          -- e.g. ROAD_CONSTRUCTION
+  label      text not null,
+  origin     text not null,                          -- DOCUMENT_EXTRACTED | CUSTOMER_PROVIDED
+  status     text not null default 'PENDING',        -- PENDING | CONFIRMED | REJECTED
+  evidence   jsonb,                                  -- chunk_id[]
+  created_at timestamptz not null default now()
+);
+
+create table if not exists company_references (
+  id                 text primary key,
+  company_id         text not null references companies (id) on delete cascade,
+  name               text not null,
+  client             text,
+  project_types      jsonb,
+  location           text,
+  contract_value_eur numeric,
+  completed_at       text,
+  capabilities       jsonb,
+  origin             text not null,
+  status             text not null default 'PENDING',
+  evidence           jsonb,
+  created_at         timestamptz not null default now()
+);
+alter table company_references alter column contract_value_eur type numeric;
+
+create table if not exists company_qualifications (
+  id          text primary key,
+  company_id  text not null references companies (id) on delete cascade,
+  type        text not null,
+  label       text not null,
+  status      text not null default 'PENDING',
+  valid_from  text,
+  valid_until text,
+  freshness   text not null default 'CURRENT',
+  origin      text not null,
+  evidence    jsonb,
+  created_at  timestamptz not null default now()
+);
+
+create table if not exists company_preferences (
+  id         text primary key,
+  company_id text not null references companies (id) on delete cascade,
+  type       text not null,
+  value      text,
+  unit       text,
+  origin     text not null default 'CUSTOMER_PROVIDED',
+  created_at timestamptz not null default now()
+);
+
+create table if not exists company_constraints (
+  id         text primary key,
+  company_id text not null references companies (id) on delete cascade,
+  type       text not null,
+  value      text,
+  unit       text,
+  origin     text not null default 'CUSTOMER_PROVIDED',
+  created_at timestamptz not null default now()
+);
+
+create table if not exists company_knowledge_gaps (
+  id         text primary key,
+  company_id text not null references companies (id) on delete cascade,
+  type       text not null,
+  state      text not null default 'UNKNOWN',        -- KNOWN_PRESENT | KNOWN_ABSENT | UNKNOWN | STALE
+  reason     text,
+  created_at timestamptz not null default now()
+);
+
+-- Company document ingestion jobs (company side). Tender ingestion uses ingest_jobs below.
+create table if not exists company_ingest_jobs (
+  id         text primary key,
+  company_id text not null references companies (id) on delete cascade,
+  stage      text not null default 'queued',
+  pct        integer not null default 0,
+  message    text,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+-- =============================================================================================
+-- Tender pipeline
+-- =============================================================================================
+
+-- lots: one row per Lot per Notice version. Column set mirrors the SQLite store it replaces.
+create table if not exists lots (
   source                   text not null,           -- feed: 'oeffentlichevergabe' | 'ted' | ...
   notice_id                text not null,
   notice_version           text not null,           -- publisher string, zero-padded ('01', '02')
@@ -50,64 +230,32 @@ create table lot (
   primary key (source, notice_id, notice_version, lot_id),
   unique (lot_key)
 );
-create index lot_published on lot (published);
-create index lot_cpv_main  on lot (cpv_main);
+create index if not exists lots_published on lots (published);
+create index if not exists lots_cpv_main  on lots (cpv_main);
 
--- ---------------------------------------------------------------------------------------------
--- source: everything text was read from. A Notice version and a fetched document are both Sources,
--- so observation.source_id is never null.
--- ---------------------------------------------------------------------------------------------
-create table source (
-  id             text primary key,                  -- 'notice:<notice_id>:<version>' or 'doc:<sha256>'
-  kind           text not null check (kind in ('notice', 'document')),
-  url            text,
-  name           text,                              -- file name as linked
-  sha256         text,                              -- content hash; the dedup key for documents
-  pages          int,
-  bytes          bigint,
-  status         text not null check (status in ('available', 'gated', 'unreachable', 'scanned', 'skipped')),
-  platform       text,                              -- e-procurement host, named even when gated
-  fetched_at     timestamptz,
-  rejected_items int not null default 0             -- model items dropped by the quote-substring check
-);
-
--- ---------------------------------------------------------------------------------------------
--- document: which Lot linked which document URL, with the fetch outcome. Several lots can link the
--- same file; the content lives once in source (by sha256).
--- ---------------------------------------------------------------------------------------------
-create table document (
+-- documents: which Lot linked which document URL, with the fetch outcome. Several lots can link
+-- the same file; the content lives once in sources (by sha256).
+create table if not exists documents (
   lot_key    text not null,
   url        text not null,
-  source_id  text references source (id),           -- null until the file was fetched and hashed
-  status     text not null check (status in ('retrieved', 'gated', 'unreachable', 'scanned', 'skipped')),
+  source_id  text references sources (id),          -- null until the file was fetched and hashed
+  status     text not null check (status in ('RETRIEVED', 'GATED', 'UNREACHABLE', 'SCANNED', 'SKIPPED')),
   platform   text,
   fetched_at timestamptz,
   primary key (lot_key, url)
 );
-create index document_lot_key on document (lot_key);
+create index if not exists documents_lot_key on documents (lot_key);
 
--- ---------------------------------------------------------------------------------------------
--- chunk: one page of a Source's extracted text, so every evidence quote is checkable offline.
--- ---------------------------------------------------------------------------------------------
-create table chunk (
-  source_id text not null references source (id),
-  page      int  not null,
-  text      text not null,
-  primary key (source_id, page)
-);
-
--- ---------------------------------------------------------------------------------------------
--- observation: one reading of one Fact or Requirement from one Source by one extractor.
+-- observations: one reading of one Fact or Requirement from one Source by one extractor.
 -- Rows are immutable (ADR 0001): re-running an extractor inserts new rows (or hits the primary key
 -- and does nothing); nothing ever updates or deletes a row. Resolution happens in the view below.
--- ---------------------------------------------------------------------------------------------
-create table observation (
+create table if not exists observations (
   scope_type     text not null check (scope_type in ('PROCEDURE', 'LOT')),
-  scope_key      text not null,                     -- lot.procedure_key or lot.lot_key
+  scope_key      text not null,                     -- lots.procedure_key or lots.lot_key
   kind           text not null check (kind in ('fact', 'requirement', 'unmatched')),
   attribute      text not null,                     -- fact-sheet field, Requirement kind, or unmatched category
   extractor      text not null check (extractor in ('xpath', 'rule', 'llm_doc', 'llm_notice')),
-  source_id      text not null references source (id),
+  source_id      text not null references sources (id),
   value_text     text,
   value_num      numeric,
   unit           text,
@@ -122,54 +270,28 @@ create table observation (
   extracted_at   timestamptz not null default now(),
   primary key (scope_key, attribute, extractor, source_id)
 );
-create index observation_scope_key on observation (scope_key);
-comment on table observation is
+create index if not exists observations_scope_key on observations (scope_key);
+comment on table observations is
   'Immutable (ADR 0001). One row per (scope, attribute, extractor, source); insert only, never update or delete. Reset the table with TRUNCATE.';
 
-create function observation_immutable() returns trigger
+create or replace function observations_immutable() returns trigger
 language plpgsql as $$
 begin
-  raise exception 'observation rows are immutable (ADR 0001): % on % rejected; insert a new row instead',
+  raise exception 'observations rows are immutable (ADR 0001): % on % rejected; insert a new row instead',
     tg_op, tg_table_name;
 end
 $$;
 
-create trigger observation_immutable
-  before update or delete on observation
-  for each row execute function observation_immutable();
+drop trigger if exists observations_immutable on observations;
+create trigger observations_immutable
+  before update or delete on observations
+  for each row execute function observations_immutable();
 
--- ---------------------------------------------------------------------------------------------
--- company: typed Company constraints plus the preserved prose they were normalised from.
--- ---------------------------------------------------------------------------------------------
-create table company (
-  id                     text primary key,
-  name                   text not null,
-  home_base              text,
-  home_base_geo          jsonb,                     -- {lat, lon} of home_base
-  regions                jsonb,                     -- array of NUTS codes / Bundesland names
-  radius_km              numeric,
-  trades                 jsonb,                     -- array of trade names
-  cpv_prefixes           jsonb,                     -- array of CPV prefixes the company bids on
-  contract_min_eur       numeric,
-  contract_max_eur       numeric,
-  partner_threshold_eur  numeric,                   -- above this, only as part of a consortium
-  references_held        jsonb,                     -- array of reference projects
-  hard_exclusions        jsonb,                     -- array of things the company will not bid on
-  guarantee_capacity_eur numeric,
-  self_perform_share_pct numeric,
-  earliest_start         date,
-  capacity_per_week      int not null default 3,
-  raw_text               text not null default '',
-  updated_at             timestamptz not null default now()
-);
-
--- ---------------------------------------------------------------------------------------------
--- verdict: cached output of the pure screen() function, one row per (Lot, Company, criterion).
+-- verdicts: cached output of the pure screen() function, one row per (Lot, Company, criterion).
 -- Recomputed when any Observation or the Company profile is newer than computed_at.
--- ---------------------------------------------------------------------------------------------
-create table verdict (
+create table if not exists verdicts (
   lot_key          text not null,
-  company_id       text not null references company (id),
+  company_id       text not null references companies (id) on delete cascade,
   criterion        text not null,
   status           text not null check (status in ('Blocker', 'Risk', 'OK', 'Unknown')),
   kind             text not null check (kind in ('numeric', 'semantic')),
@@ -180,18 +302,15 @@ create table verdict (
   primary key (lot_key, company_id, criterion)
 );
 
--- ---------------------------------------------------------------------------------------------
 -- sync_state: the poll watermark and other single-value pipeline state.
--- ---------------------------------------------------------------------------------------------
-create table sync_state (
+create table if not exists sync_state (
   key   text primary key,
   value text not null
 );
 
--- ---------------------------------------------------------------------------------------------
--- ingest_job: the job queue. The table is the contract; API writes rows, a worker claims them.
--- ---------------------------------------------------------------------------------------------
-create table ingest_job (
+-- ingest_jobs: the tender job queue. The table is the contract; the web writes rows, a worker
+-- claims them.
+create table if not exists ingest_jobs (
   id         text primary key,
   stage      text not null default 'queued'
              check (stage in ('queued', 'downloading', 'extracting_text', 'extracting_facts', 'done', 'error')),
@@ -202,17 +321,17 @@ create table ingest_job (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
-create index ingest_job_stage_created on ingest_job (stage, created_at);
+create index if not exists ingest_jobs_stage_created on ingest_jobs (stage, created_at);
 
--- Claim the oldest queued job for this worker. SKIP LOCKED lets several workers (API background
+-- Claim the oldest queued job for this worker. SKIP LOCKED lets several workers (web background
 -- task, CLI, a second process) drain the same table without handing one job to two of them.
 -- Returns NULL when nothing is queued.
-create function claim_ingest_job() returns ingest_job
+create or replace function claim_ingest_job() returns ingest_jobs
 language sql as $$
-  update ingest_job
+  update ingest_jobs
      set stage = 'downloading', updated_at = now()
    where id = (
-     select id from ingest_job
+     select id from ingest_jobs
       where stage = 'queued'
       order by created_at
       limit 1
@@ -221,19 +340,16 @@ language sql as $$
   returning *;
 $$;
 
--- ---------------------------------------------------------------------------------------------
--- lot_latest: one row per Lot at its newest Notice version.
+-- lots_latest: one row per Lot at its newest Notice version.
 -- Assumption: notice_version strings compare correctly by (length, text). The publisher
 -- zero-pads ('01', '02'), which sorts lexically; the length key keeps a bare '10' after '9' if a
 -- feed ever sends unpadded integers.
--- ---------------------------------------------------------------------------------------------
-create view lot_latest as
+create or replace view lots_latest as
   select distinct on (source, notice_id, lot_id) *
-    from lot
+    from lots
    order by source, notice_id, lot_id, length(notice_version) desc, notice_version desc;
 
--- ---------------------------------------------------------------------------------------------
--- observation_resolved: the Resolved value per (scope_key, attribute), per ADR 0001.
+-- observations_resolved: the Resolved value per (scope_key, attribute), per ADR 0001.
 --
 --   1. KNOWN rows beat REFERRED_TO_DOCUMENTS rows, which beat NOT_FOUND rows.
 --   2. Within that state, the best extractor precedence wins:
@@ -246,10 +362,9 @@ create view lot_latest as
 --      is flagged rather than hidden.
 --
 -- Values are compared as text: numbers with trailing zeros trimmed, else the text value, else the
--- typed condition JSON. Procedure-scoped rows are not inherited here; the API joins them by
--- lot.procedure_key.
--- ---------------------------------------------------------------------------------------------
-create view observation_resolved as
+-- typed condition JSON. Procedure-scoped rows are not inherited here; readers join them by
+-- lots.procedure_key.
+create or replace view observations_resolved as
 with ranked as (
   select o.*,
          case o.extractor
@@ -270,7 +385,7 @@ with ranked as (
            else               4   -- not_found
          end as confidence_rank,
          coalesce(trim_scale(o.value_num)::text, o.value_text, o.condition::text) as value_key
-    from observation o
+    from observations o
 ),
 -- Which state tier and, inside it, which extractor precedence wins for each item.
 winning_tier as (
@@ -351,10 +466,11 @@ select m.scope_type,
   from merged m
   left join lower_disagreement d using (scope_key, attribute);
 
--- ---------------------------------------------------------------------------------------------
--- Grants. Only the service role (server-side) may reach these through the Data API; anon and
--- authenticated get nothing. The pipeline itself connects as postgres via DATABASE_URL.
--- ---------------------------------------------------------------------------------------------
-grant usage on schema public to service_role;
-grant all on all tables in schema public to service_role;
-grant execute on all functions in schema public to service_role;
+-- =============================================================================================
+-- Grants. RLS is off (see header). service_role for server-side access; anon/authenticated
+-- because the Next.js route handlers currently use the publishable key. Revisit before any
+-- deployment beyond the demo.
+-- =============================================================================================
+grant usage on schema public to service_role, anon, authenticated;
+grant all on all tables in schema public to service_role, anon, authenticated;
+grant execute on all functions in schema public to service_role, anon, authenticated;

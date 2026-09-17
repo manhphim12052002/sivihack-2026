@@ -1,7 +1,7 @@
 # W3 · Decision and API (backend A after W1.3; W3.1 can be pulled forward by backend B or the web owner)
 
 **Goal:** `screen(company, resolved_facts) -> CriterionResult[]` is a tested pure function; FastAPI serves the
-contract the web already uses, reading Supabase; a worker drains `ingest_job`; `ingest-one` is `load` + `enrich`.
+contract the web already uses, reading Supabase; a worker drains `ingest_jobs`; `ingest-one` is `load` + `enrich`.
 **Spec:** PRD "Decision rules", "API contract", pipeline doc §5a triggers; ADR 0003.
 
 ## Tickets
@@ -26,16 +26,16 @@ contract the web already uses, reading Supabase; a worker drains `ingest_job`; `
 - `apps/api/main.py` (+ routers): implement exactly the paths in `apps/web/src/lib/api.ts`:
   `GET /health` (adds `last_poll_at`, `queued_jobs`), `GET /tenders`, `GET /tenders/{id}`, `GET/POST/PUT /companies[/{id}]`,
   `POST /screen`, `POST /ingest` (JSON `notice_url` or multipart files), `GET /jobs/{id}`, `GET /contract`, `/openapi.json`. CORS for `localhost:3000`.
-- Projection: storage is lot-grained, contract is notice-grained. `TenderSummary` aggregates a notice's `lot_latest` rows
-  (`lot_count`), `TenderDetail.lots[]` lists them, `fact_sheet` comes from `observation_resolved` (procedure rows inherited),
-  `documents[]` from `document`+`source`. Verdict per lot; best-fitting lot surfaced at notice level, lot named in `reason_en`.
+- Projection: storage is lot-grained, contract is notice-grained. `TenderSummary` aggregates a notice's `lots_latest` rows
+  (`lot_count`), `TenderDetail.lots[]` lists them, `fact_sheet` comes from `observations_resolved` (procedure rows inherited),
+  `documents[]` from `documents`+`sources`. Verdict per lot; best-fitting lot surfaced at notice level, lot named in `reason_en`.
 - Contract additions (regenerate types in W4.2): `Fact.state` (four states) alongside `confidence`;
   `TenderDetail.unmatched_requirements[]` {category, quote_de, doc, page, scope}; optional `CriterionResult.lot_id`.
 - Acceptance: `uvicorn apps.api.main:app --port 8000`; web triage renders real rows; `/openapi.json` diff vs `api-types.d.ts`
   shows only the additions above.
 
-### W3.4 · `screen` on read with `verdict` cache — blocked by W3.1, W3.3
-- `POST /screen`: for each lot in scope, reuse `verdict` rows newer than the latest observation and profile update; else compute and upsert.
+### W3.4 · `screen` on read with `verdicts` cache — blocked by W3.1, W3.3
+- `POST /screen`: for each lot in scope, reuse `verdicts` rows newer than the latest observation and profile update; else compute and upsert.
 - Acceptance: second call for the same company is served from cache (log), and editing the profile invalidates it.
 
 ### W3.5 · Job worker + `ingest-one` — blocked by W1.1, W2.5, W3.3
