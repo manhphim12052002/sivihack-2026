@@ -223,3 +223,11 @@ data/cache/
 # eForms-DE spec bundle: keep the PDF + notes, skip the 85MB generated HTML/model dump
 docs/specifications/eforms-de/html/
 docs/specifications/eforms-de/model/
+
+# apps
+apps/web/node_modules/
+apps/web/.next/
+apps/web/out/
+data/tenders/*/docs/
+data/tenders/*/text/
+data/jobs/
