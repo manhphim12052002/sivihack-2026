@@ -16,6 +16,22 @@ uv venv .venv && uv pip install -e apps/pipeline           # Python 3.12 via .py
 `cd apps/pipeline && ../../.venv/bin/python -m unittest` runs the same tests. They use the
 stdlib only and never touch a database or the network.
 
+## Pipeline commands (need `DATABASE_URL`)
+
+```bash
+python -m tender_extract.load --zip data/cache/2026-09-16-eforms.zip   # one cached day → lots, sources, xpath observations
+python -m tender_extract.load --cache data/cache                       # every cached day (the 14-day batch)
+python -m tender_extract.backfill --start 2026-09-03 --end 2026-09-16  # download missing days, then load them
+python -m tender_extract.poll                                          # lot search index from the sync_state watermark
+python -m tender_extract.poll --since 2026-09-17T00:00:00Z             # override the watermark once
+```
+
+All three writers are idempotent: re-running upserts the same lot rows and inserts no new
+observations. `poll` keeps `poll_watermark` and `last_poll_at` in `sync_state`; `load` and
+`backfill` record `load.last_run_at` and `load.dropped_awarded_by_title`. Read screening
+candidates from the `lots_current` view (newest version per notice, corrigenda collapsed);
+`lots_latest` keeps every notice id.
+
 ## Environment variables (names only; values live in an untracked env file)
 
 - `DATABASE_URL` — Postgres DSN read by `tender_extract.db.connect()`; `supabase start` prints a local one.

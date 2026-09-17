@@ -15,12 +15,8 @@ import zipfile
 from pathlib import Path
 from xml.etree.ElementTree import ParseError
 
-from .eforms import parse_notice
+from .eforms import COMPETITION_TYPES, parse_notice
 from .fetch import fetch_day, iter_days
-
-# A call for tenders is something you can still bid on; an award notice (can-*)
-# records a finished procedure. Screening only makes sense on the former.
-COMPETITION_TYPES = {"cn-standard", "cn-social", "cn-desg", "pin-rtl", "pin-buyer"}
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -65,7 +61,7 @@ def main(argv: list[str] | None = None) -> int:
     today = dt.date.today().isoformat()
     args.out.parent.mkdir(parents=True, exist_ok=True)
 
-    stats = collections.Counter()
+    stats: collections.Counter[str] = collections.Counter()
     seen: set[tuple[str, str]] = set()
     records = []
 
