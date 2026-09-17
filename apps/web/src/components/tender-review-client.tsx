@@ -12,9 +12,9 @@ import { HumanReviewPanel, type OverrideState } from "@/components/human-review-
 
 const OVERALL_LABEL: Record<Verdict["overall"], string> = { Bid: "Pursue", Consider: "Review", NoGo: "Skip" };
 const OVERALL_CLASS: Record<Verdict["overall"], string> = {
-  Bid: "bg-[var(--biddesk-accent-soft)] text-[var(--biddesk-accent)]",
-  Consider: "bg-[var(--biddesk-review-soft)] text-[var(--biddesk-review)]",
-  NoGo: "bg-[var(--biddesk-skip-soft)] text-[var(--biddesk-skip)]",
+  Bid: "bg-[var(--color-pursue-soft)] text-[var(--color-pursue)]",
+  Consider: "bg-[var(--color-review-soft)] text-[var(--color-review)]",
+  NoGo: "bg-[var(--color-skip-soft)] text-[var(--color-skip)]",
 };
 
 export function TenderReviewClient({ tenderId, companyId }: { tenderId: string; companyId: string | undefined }) {

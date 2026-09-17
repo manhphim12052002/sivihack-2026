@@ -48,7 +48,7 @@ export function CompanyPicker({
                 setOpen(false);
               }}
               className={`block w-full px-3 py-2 text-left text-base hover:bg-zinc-50 ${
-                company.id === value ? "bg-[var(--biddesk-accent-soft)] font-semibold" : ""
+                company.id === value ? "bg-[var(--color-pursue-soft)] font-semibold" : ""
               }`}
             >
               <span className="block">{company.name}</span>

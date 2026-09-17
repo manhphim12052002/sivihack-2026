@@ -31,7 +31,7 @@ export function HumanReviewPanel({
   const [reason, setReason] = useState("");
 
   return (
-    <div className="rounded-xl border-2 border-[var(--biddesk-accent)] bg-white p-4">
+    <div className="rounded-xl border-2 border-[var(--color-pursue)] bg-white p-4">
       <div className="flex items-center justify-between">
         <h3 className="font-semibold">Human review</h3>
         <button type="button" onClick={onClose} aria-label="Close" className="text-lg text-zinc-400 hover:text-zinc-700">

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Three Out of Forty",
+  title: "Arctis Compass",
   description: "Weekly tender triage for construction bid estimators.",
 };
 
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ApiOfflineBanner />
         <header className="border-b border-[--color-border] bg-[--color-surface]">
           <div className="mx-auto flex max-w-6xl items-center gap-8 px-6 py-4">
-            <span className="text-lg font-semibold text-[--color-charcoal]">Three Out of Forty</span>
+            <span className="text-lg font-semibold text-[--color-charcoal]">Arctis Compass</span>
             <nav className="flex gap-6 text-base">
               {NAV_LINKS.map((link) => (
                 <Link
