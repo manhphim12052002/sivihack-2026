@@ -1,4 +1,4 @@
-# W0 · Foundations (solo, ~1h, blocks everything)
+# W0 · Foundations (solo, ~1h, blocks everything) — DONE, merged in PR #4
 
 **Owner:** backend A. **Start:** immediately. **Done when:** M0 (17.09 22:00).
 
@@ -74,7 +74,7 @@ create view lots_latest as select distinct on (source, notice_id, lot_id) * from
 -- agreeing rows merge evidence, disagreeing rows yield state CONFLICTING and no value. Written as SQL, tested in W3.
 ```
 
-- Job claim (used by W3.5): `update ingest_job set stage='downloading', updated_at=now() where id = (select id from ingest_job where stage='queued' order by created_at for update skip locked limit 1) returning *;`
+- Job claim (for the downstream job worker, out of this plan's scope): `update ingest_job set stage='downloading', updated_at=now() where id = (select id from ingest_job where stage='queued' order by created_at for update skip locked limit 1) returning *;`
 - `docs/adr/0005-supabase-postgres-over-sqlite.md`: decision, the offline trade-off, and that the seed is `supabase/seed.sql`. Use `/domain-modeling` to keep vocabulary aligned with `CONTEXT.md` (Observation, Source, Chunk, Scope).
 - Acceptance: `supabase db push` applies cleanly; `psql $DATABASE_URL -c '\dv'` lists both views.
 - Unblocks: W1, W2, W3.
