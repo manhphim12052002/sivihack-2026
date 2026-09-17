@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { createCompany, normalizeAndUpdate, rowToProfile } from "@/lib/company/create";
+import { MOCK_COMPANIES } from "@/lib/mock/companies";
 
 function err(message: string, status = 500) {
   return NextResponse.json({ error: message }, { status });
@@ -13,7 +14,9 @@ export async function GET() {
     .order("created_at", { ascending: false });
 
   if (error) return err(error.message);
-  return NextResponse.json((data ?? []).map((row) => rowToProfile(row as Record<string, unknown>)));
+  const rows = (data ?? []).map((row) => rowToProfile(row as Record<string, unknown>));
+  // Fall back to mock profiles when the database is empty (demo / offline mode).
+  return NextResponse.json(rows.length > 0 ? rows : MOCK_COMPANIES);
 }
 
 export async function POST(req: NextRequest) {
