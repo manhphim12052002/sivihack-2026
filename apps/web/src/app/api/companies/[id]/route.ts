@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import { rowToProfile } from "@/lib/company/create";
 import type { CompanyProfile } from "@/lib/api";
+import { findCompany } from "@/lib/mock/companies";
 
 type Ctx = { params: Promise<{ id: string }> };
 
@@ -12,7 +13,11 @@ function err(message: string, status = 500) {
 export async function GET(_req: NextRequest, { params }: Ctx) {
   const { id } = await params;
   const { data, error } = await supabase.from("companies").select("*").eq("id", id).single();
-  if (error) return err(error.message, 404);
+  if (error) {
+    const mock = findCompany(id);
+    if (mock) return NextResponse.json(mock);
+    return err(error.message, 404);
+  }
   return NextResponse.json(rowToProfile(data as Record<string, unknown>));
 }
 

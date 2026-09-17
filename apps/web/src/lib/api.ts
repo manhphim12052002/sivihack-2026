@@ -1,7 +1,15 @@
 /**
- * Thin typed fetch wrapper over the FastAPI service. Every request/response
- * shape comes from the generated `api-types.d.ts` (OpenAPI components) — this
- * file never hand-declares a parallel type.
+ * Thin typed fetch wrapper over the tender-screening backend. Every
+ * request/response shape comes from the generated `api-types.d.ts` (OpenAPI
+ * components) — this file never hand-declares a parallel type.
+ *
+ * The backend lives in this same Next.js app as route handlers under
+ * `src/app/api/*` (same-origin, no separate service to run). Endpoints that
+ * have a real implementation behind them (companies) hit Supabase; endpoints
+ * that don't have a pipeline yet (tenders, screen) are served by placeholder
+ * fixtures + a small rule engine — see `src/lib/mock/tenders.ts` and
+ * `src/lib/screening/engine.ts`. `NEXT_PUBLIC_API_URL` can still override this
+ * to point at a standalone service later without touching call sites here.
  */
 import type { components } from "./api-types";
 
@@ -19,7 +27,11 @@ export type ScreenRequest = components["schemas"]["ScreenRequest"];
 export type IngestRequest = components["schemas"]["IngestRequest"];
 export type IngestJob = components["schemas"]["IngestJob"];
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+// Same-origin by default — every endpoint below is a route handler in this
+// app (`src/app/api/*`). Set NEXT_PUBLIC_API_URL to point at a standalone
+// service instead (e.g. once a real FastAPI pipeline replaces the stubs).
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
+const API_PREFIX = "/api";
 
 /** Distinguishes "API reachable but returned an error" from "API unreachable". */
 export class ApiError extends Error {
@@ -42,9 +54,9 @@ async function request<T>(path: string, init: RequestInit = {}): Promise<T> {
 
   let response: Response;
   try {
-    response = await fetch(`${BASE_URL}${path}`, { ...init, headers, cache: "no-store" });
+    response = await fetch(`${BASE_URL}${API_PREFIX}${path}`, { ...init, headers, cache: "no-store" });
   } catch {
-    throw new ApiError(0, `Could not reach the API at ${BASE_URL}. Is it running?`);
+    throw new ApiError(0, `Could not reach the API at ${BASE_URL}${API_PREFIX}. Is the dev server running?`);
   }
 
   if (!response.ok) {
