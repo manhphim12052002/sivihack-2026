@@ -22,17 +22,9 @@ from __future__ import annotations
 
 from typing import Any
 
+from .confidence import CONFIDENCE_BY_EXTRACTOR
 from .db import lot_key, notice_version, procedure_key
 from .eforms import LotRecord
-
-# Base confidence is a property of the route a reading arrived by (ADR 0001),
-# exposed to the app as a coarse enum rather than a float.
-CONFIDENCE_BY_EXTRACTOR = {
-    "xpath": "high",
-    "rule": "medium",
-    "llm_doc": "medium",
-    "llm_notice": "low",
-}
 
 # The 15 fields, in the order the briefing page renders them.
 ATTRIBUTES = (

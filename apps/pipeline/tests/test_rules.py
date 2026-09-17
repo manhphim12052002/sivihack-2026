@@ -96,5 +96,34 @@ class EmptyInputTests(unittest.TestCase):
         self.assertEqual(rules.extract("Los 1: Rohbauarbeiten"), [])
 
 
+class FactSheetBridgeTests(unittest.TestCase):
+    """Every requirement row is mirrored under the fact sheet's own attribute name."""
+
+    def test_guarantee_percent_also_lands_as_a_guarantees_fact(self):
+        rows = rules.extract("t) geforderte Sicherheiten  5 % der Auftragssumme netto  u) Wesentliche")
+        fact = by_kind(rows)["guarantees"]
+        self.assertEqual(fact["kind"], "fact")
+        self.assertEqual(fact["state"], "KNOWN")
+        self.assertEqual(fact["value_num"], 5.0)
+        self.assertEqual(fact["condition"], {"percent_of_contract_value": 5.0})
+        # The requirement row under its own kind name is still present, unchanged.
+        self.assertIn("PERFORMANCE_GUARANTEE", by_kind(rows))
+
+    def test_referred_to_documents_state_carries_through_to_the_fact(self):
+        rows = rules.extract("t) geforderte Sicherheiten  Siehe Vergabeunterlagen.  u) Wesentliche")
+        self.assertEqual(by_kind(rows)["guarantees"]["state"], "REFERRED_TO_DOCUMENTS")
+
+    def test_construction_window_fact_uses_a_formatted_text_value(self):
+        rows = rules.extract("g) Liefer-/Ausführungsfrist:  Beginn: 08.03.2027 Ende: 15.10.2027")
+        fact = by_kind(rows)["construction_window"]
+        self.assertIsNone(fact["value_num"])
+        self.assertEqual(fact["value_text"], "2027-03-08 … 2027-10-15")
+
+    def test_custom_locator_overrides_the_bt750_default(self):
+        rows = rules.extract("Vertragsstrafe 0,3% der Auftragssumme.", locator="notice:description")
+        self.assertEqual(by_kind(rows)["PENALTY_CLAUSE"]["locator"], "notice:description")
+        self.assertEqual(by_kind(rows)["penalty"]["locator"], "notice:description")
+
+
 if __name__ == "__main__":
     unittest.main()

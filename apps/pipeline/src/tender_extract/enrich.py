@@ -72,11 +72,19 @@ def notice_lots(conn: psycopg.Connection, lot: dict) -> list[dict]:
 
 
 def rule_stage(conn: psycopg.Connection, lot: dict, stats: Counter[str]) -> int:
-    """Regex requirements over the notice prose; source is the notice version itself."""
-    text = "\n".join(lot["qualification_text"] or []) + "\n" + (lot["description"] or "")
+    """Regex requirements over the notice prose; source is the notice version itself.
+
+    BT-750 (qualification_text) and the lot description are run separately so a rule
+    hit is attributed to the field it actually came from, not blanket-stamped BT-750.
+    """
     source_id = f"notice:{lot['notice_id']}:{lot['notice_version']}"
-    rows = [{**row, "scope_type": "LOT", "scope_key": lot["lot_key"], "source_id": source_id}
-            for row in rules.extract(text)]
+    blocks = [("\n".join(lot["qualification_text"] or []), rules.LOCATOR),
+              (lot["description"] or "", "notice:description")]
+    rows = [
+        {**row, "scope_type": "LOT", "scope_key": lot["lot_key"], "source_id": source_id}
+        for text, locator in blocks
+        for row in rules.extract(text, locator=locator)
+    ]
     n = db.insert_observations(conn, rows)
     stats["rule_rows"] += n
     stats["rule_lots"] += 1
@@ -86,10 +94,18 @@ def rule_stage(conn: psycopg.Connection, lot: dict, stats: Counter[str]) -> int:
 # --- document stage ------------------------------------------------------------------
 
 
+# db.py's documented `sources.type` vocabulary (init migration comment): PDF|DOCX|XLSX|TXT|
+# MANUAL|EFORMS. A package can hold file kinds outside that set (GAEB .X83, plain .zip
+# member with no extension); those get the additive "OTHER" rather than an invented code.
+_SOURCE_TYPE_BY_EXTENSION = {"pdf": "PDF", "docx": "DOCX", "doc": "DOCX", "xlsx": "XLSX",
+                            "xls": "XLSX", "txt": "TXT"}
+
+
 def _source_row(lot: dict, file: File, url: str, platform: str, status: str, pages: int | None) -> dict:
+    ext = file.path.suffix.lstrip(".").lower()
     return {
         "id": file.source_id, "entity_type": "tender", "entity_id": lot["procedure_key"],
-        "type": file.path.suffix.lstrip(".").upper() or "BIN", "filename": file.name,
+        "type": _SOURCE_TYPE_BY_EXTENSION.get(ext, "OTHER"), "filename": file.name,
         "origin": "PORTAL_FETCH", "sha256": file.sha256, "status": status,
         "url": f"{url}#{file.name}", "bytes": file.size, "pages": pages, "platform": platform,
         "fetched_at": datetime.now(timezone.utc),
@@ -97,20 +113,23 @@ def _source_row(lot: dict, file: File, url: str, platform: str, status: str, pag
 
 
 def already_retrieved(conn: psycopg.Connection, lot: dict, url: str) -> list[File] | None:
-    """Files of a package this lot already fetched, rebuilt from `sources`; None if never fetched."""
+    """Files of a package this lot already fetched, via `document_files`; None if never fetched.
+
+    None means "fetch it"; an empty list would wrongly mean "fetched, zero files" (and would
+    permanently skip a package whose local store copy was pruned, since it never re-checks).
+    """
     row = conn.execute("SELECT status FROM documents WHERE lot_key=%(k)s AND url=%(u)s",
                        {"k": lot["lot_key"], "u": url}).fetchone()
     if not row or row["status"] != "RETRIEVED":
         return None
-    files = conn.execute("SELECT id, filename, sha256, bytes FROM sources WHERE url LIKE %(p)s",
-                         {"p": url + "#%"}).fetchall()
+    files = db.document_file_sources(conn, lot["lot_key"], url)
     out = []
     for f in files:
         ext = f["filename"].rsplit(".", 1)[-1].lower() if "." in f["filename"] else "bin"
         path = DEFAULT_STORE / f"{f['sha256']}.{ext}"
         if path.exists():
             out.append(File(name=f["filename"], path=path, sha256=f["sha256"], size=f["bytes"] or 0))
-    return out
+    return out if out else None
 
 
 def document_stage(conn: psycopg.Connection, lot: dict, *, model: bool, store: Path,
@@ -131,6 +150,10 @@ def document_stage(conn: psycopg.Connection, lot: dict, *, model: bool, store: P
         platform = adapters.host_of(url)
         for file in files:
             read_file(conn, lot, file, url, platform, model=model, stats=stats, prompt_version=prompt_version)
+        if files:
+            # Linked after each file's Source row exists (document_files.source_id is a
+            # foreign key); re-running is a no-op via the (lot_key, url, source_id) PK.
+            db.insert_document_files(conn, lot["lot_key"], url, [f.source_id for f in files])
         conn.commit()
 
 
@@ -153,12 +176,14 @@ def read_file(conn: psycopg.Connection, lot: dict, file: File, url: str, platfor
         stats["files_scanned"] += 1
         return
     db.upsert_source(conn, _source_row(lot, file, url, platform, "AVAILABLE", len(pages)))
-    chunk_ids = {f"{file.source_id}#p{i}": text for i, text in enumerate(pages, start=1)}
-    db.insert_chunks(conn, [{"id": cid, "source_id": file.source_id, "page": i, "text": text}
-                            for i, (cid, text) in enumerate(chunk_ids.items(), start=1)])
+    # chunk id -> page text, one entry per page; the same map is the model's document text
+    # and the evidence gate's page lookup, so the id and the page number never drift apart.
+    page_texts = {f"{file.source_id}#p{page}": text for page, text in enumerate(pages, start=1)}
+    db.insert_chunks(conn, [{"id": cid, "source_id": file.source_id, "page": page, "text": text}
+                            for page, (cid, text) in enumerate(page_texts.items(), start=1)])
     stats["files_read"] += 1
     if model:
-        model_stage(conn, lot, file, chunk_ids, stats=stats, prompt_version=prompt_version)
+        model_stage(conn, lot, file, page_texts, stats=stats, prompt_version=prompt_version)
 
 
 # --- model stage ---------------------------------------------------------------------
@@ -188,11 +213,21 @@ def _page_of(chunk_id: str) -> int | None:
 
 
 def observation_rows(result: llm.ExtractionResult, kept: dict[str, list[dict]], lot: dict, lots: list[dict],
-                     file: File) -> list[dict]:
-    """Typed observation rows from gated model items, plus NOT_FOUND for every kind the document lacks."""
+                     file: File, *, extractor: str = "llm_doc") -> list[dict]:
+    """Typed observation rows from gated model items, plus NOT_FOUND for every kind the document lacks.
+
+    Each Requirement is written twice, exactly like the rule stage (`rules._fact_row`):
+    once under its own kind name (`kind='requirement'`) for a future decision rule, and
+    once mirrored onto the fact sheet's own attribute name (`kind='fact'`) so
+    `observations_resolved` actually surfaces it on the briefing page. `value_num` /
+    `value_text` come from the condition's primary field, not from `statement_type`
+    (which is extraction metadata, not the value — comparing on it would make two
+    documents that both say EXPLICIT look like they agree even when their percentages
+    differ, and identical percentages with different statement_type look CONFLICTING).
+    """
     rows: list[dict] = []
-    base = {"extractor": "llm_doc", "source_id": file.source_id, "prompt_version": result.prompt_version,
-            "confidence": CONFIDENCE_BY_EXTRACTOR["llm_doc"]}
+    base = {"extractor": extractor, "source_id": file.source_id, "prompt_version": result.prompt_version,
+            "confidence": CONFIDENCE_BY_EXTRACTOR[extractor]}
 
     def evidence(item: dict) -> dict:
         ev = item["evidence"][0]
@@ -204,9 +239,14 @@ def observation_rows(result: llm.ExtractionResult, kept: dict[str, list[dict]], 
         scope_type, scope_key = _scope(item, lot, lots)
         condition = {k: v for k, v in (item.get("condition") or {}).items() if v is not None}
         found_kinds.add(item["kind"])
-        rows.append({**base, **evidence(item), "scope_type": scope_type, "scope_key": scope_key,
-                     "kind": "requirement", "attribute": item["kind"], "state": "KNOWN",
-                     "condition": condition, "value_text": item.get("statement_type")})
+        value_num, value_text = rules.primary_value(item["kind"], condition)
+        requirement = {**base, **evidence(item), "scope_type": scope_type, "scope_key": scope_key,
+                       "kind": "requirement", "attribute": item["kind"], "state": "KNOWN",
+                       "condition": condition, "value_num": value_num, "value_text": value_text}
+        rows.append(requirement)
+        fact_attribute = rules.FACT_ATTRIBUTE_BY_KIND.get(item["kind"])
+        if fact_attribute:
+            rows.append({**requirement, "kind": "fact", "attribute": fact_attribute})
     for item in kept["unmatched_requirements"]:
         scope_type, scope_key = _scope(item, lot, lots)
         digest = hashlib.sha1(llm.normalise(item["quote"]).lower().encode()).hexdigest()[:8]
@@ -219,15 +259,22 @@ def observation_rows(result: llm.ExtractionResult, kept: dict[str, list[dict]], 
                      "kind": "fact", "attribute": item["attribute"], "state": "KNOWN",
                      "value_text": item["value"]})
     # Read and not stated is a finding too: NOT_FOUND per kind, so "Unknown" has a reason.
+    # PROCEDURE scope matches _scope()'s own default (a requirement with no lot named
+    # applies to the whole procedure), so a KNOWN row found at PROCEDURE scope and its
+    # NOT_FOUND siblings for the other kinds share the same scope_key.
     for kind in rules.REQUIREMENT_KINDS:
         if kind not in found_kinds:
-            rows.append({**base, "scope_type": "LOT", "scope_key": lot["lot_key"], "kind": "requirement",
-                         "attribute": kind, "state": "NOT_FOUND", "confidence": "not_found",
-                         "locator": file.name})
+            not_found = {**base, "scope_type": "PROCEDURE", "scope_key": lot["procedure_key"],
+                        "kind": "requirement", "attribute": kind, "state": "NOT_FOUND",
+                        "confidence": "not_found", "locator": file.name}
+            rows.append(not_found)
+            fact_attribute = rules.FACT_ATTRIBUTE_BY_KIND.get(kind)
+            if fact_attribute:
+                rows.append({**not_found, "kind": "fact", "attribute": fact_attribute})
     return rows
 
 
-def model_stage(conn: psycopg.Connection, lot: dict, file: File, pages: dict[str, str], *,
+def model_stage(conn: psycopg.Connection, lot: dict, file: File, page_texts: dict[str, str], *,
                 stats: Counter[str], prompt_version: str) -> None:
     if _extracted_before(conn, file.source_id, prompt_version):
         stats["model_cached"] += 1
@@ -235,7 +282,7 @@ def model_stage(conn: psycopg.Connection, lot: dict, file: File, pages: dict[str
     lots = notice_lots(conn, lot)
     context = {"title": lot["title"], "buyer_name": lot["buyer_name"], "filename": file.name,
                "lots": lots, "lot_hint": lot_hint(file.name)}
-    text = "\n\n".join(f"[{cid}]\n{page}" for cid, page in pages.items())
+    text = "\n\n".join(f"[{cid}]\n{page}" for cid, page in page_texts.items())
     result = llm.extract(text, context, prompt_version)
     if result.unavailable:
         stats["model_unavailable"] += 1
@@ -244,7 +291,7 @@ def model_stage(conn: psycopg.Connection, lot: dict, file: File, pages: dict[str
     kept: dict[str, list[dict]] = {}
     rejected = 0
     for name in ("facts", "requirements", "unmatched_requirements"):
-        kept[name], n = llm.gate(getattr(result, name), pages)
+        kept[name], n = llm.gate(getattr(result, name), page_texts)
         rejected += n
     stats["model_items_kept"] += sum(len(v) for v in kept.values())
     stats["model_items_rejected"] += rejected

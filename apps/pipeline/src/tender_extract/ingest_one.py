@@ -43,12 +43,15 @@ def ingest_text(conn: psycopg.Connection, lot: dict, path: Path, stats: Counter[
     """Pasted notice text as a MANUAL_INPUT source: rules and model over it, procedure scope."""
     text = path.read_text(encoding="utf-8")
     digest = hashlib.sha256(text.encode("utf-8")).hexdigest()
-    source_id = f"txt:{digest}"
+    # "doc:<sha256>" is db.py's one documented form for a content-addressed source
+    # (the other is "notice:<id>:<version>"); pasted text is content-addressed like any
+    # fetched document, just origin=MANUAL_INPUT instead of PORTAL_FETCH.
+    source_id = f"doc:{digest}"
     db.upsert_source(conn, {"id": source_id, "entity_type": "tender", "entity_id": lot["procedure_key"],
                             "type": "TXT", "filename": path.name, "origin": "MANUAL_INPUT", "sha256": digest,
                             "status": "AVAILABLE", "bytes": len(text.encode("utf-8")), "pages": 1,
                             "fetched_at": datetime.now(timezone.utc)})
-    pages = {f"{source_id}#p1": text}
+    page_texts = {f"{source_id}#p1": text}
     db.insert_chunks(conn, [{"id": f"{source_id}#p1", "source_id": source_id, "page": 1, "text": text}])
     stats["rule_rows"] += db.insert_observations(conn, [
         {**row, "scope_type": "PROCEDURE", "scope_key": lot["procedure_key"], "source_id": source_id,
@@ -60,14 +63,13 @@ def ingest_text(conn: psycopg.Connection, lot: dict, path: Path, stats: Counter[
         stats["model_unavailable"] += 1
         return
     stats["model_calls"] += 1
-    kept = {name: llm.gate(getattr(result, name), pages)[0] for name in ("facts", "requirements", "unmatched_requirements")}
+    kept = {name: llm.gate(getattr(result, name), page_texts)[0]
+            for name in ("facts", "requirements", "unmatched_requirements")}
     pseudo = File(name=path.name, path=path, sha256=digest, size=len(text))
-    pseudo_rows = observation_rows(result, kept, lot, lots, pseudo)
-    for row in pseudo_rows:            # text is notice prose, not a document
-        row["extractor"] = "llm_notice"
-        row["confidence"] = "low" if row["state"] == "KNOWN" else "not_found"
-        row["source_id"] = source_id
-    stats["llm_rows"] += db.insert_observations(conn, pseudo_rows)
+    # extractor="llm_notice" (model over notice text, not a document): lower precedence
+    # and lower base confidence than llm_doc, per ADR 0003's extractor precedence table.
+    rows = observation_rows(result, kept, lot, lots, pseudo, extractor="llm_notice")
+    stats["llm_rows"] += db.insert_observations(conn, rows)
     conn.commit()
 
 
@@ -96,7 +98,7 @@ def main(argv: list[str] | None = None) -> int:
         for lot_key in lot_keys:
             lot = lots_current(conn, "WHERE lot_key = %(k)s", {"k": lot_key})
             if not lot:   # superseded by a corrigendum already in the store
-                lot = conn.execute(f"SELECT * FROM lots_latest WHERE lot_key = %(k)s", {"k": lot_key}).fetchall()
+                lot = conn.execute("SELECT * FROM lots_latest WHERE lot_key = %(k)s", {"k": lot_key}).fetchall()
             enrich_lot(conn, lot[0], model=not args.no_model, stats=stats)
             if args.text:
                 ingest_text(conn, lot[0], args.text, stats)
