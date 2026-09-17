@@ -138,6 +138,61 @@ create table if not exists company_ingest_jobs (
   updated_at timestamptz not null default now()
 );
 
+-- ─── Matching Engine ─────────────────────────────────────────────────────────
+
+create table if not exists match_evaluations (
+  id            text primary key,
+  tender_id     text not null,
+  company_id    text not null references companies(id) on delete cascade,
+  scope_type    text not null default 'WHOLE_TENDER',
+  scope_id      text,
+  status        text not null default 'VIABLE',  -- VIABLE | REVIEW | BLOCKED
+  hard_blockers integer not null default 0,
+  hard_unknowns integer not null default 0,
+  soft_concerns integer not null default 0,
+  created_at    timestamptz not null default now(),
+  updated_at    timestamptz not null default now()
+);
+
+create table if not exists matching_tasks (
+  id             text primary key,
+  evaluation_id  text not null references match_evaluations(id) on delete cascade,
+  requirement_id text not null,
+  label          text not null,
+  matcher_type   text not null,  -- RULE | ONTOLOGY | SEMANTIC | REFERENCE
+  severity       text not null default 'HARD',
+  tender_value   jsonb,
+  company_value  jsonb,
+  created_at     timestamptz not null default now()
+);
+
+create table if not exists match_results (
+  id               text primary key,
+  evaluation_id    text not null references match_evaluations(id) on delete cascade,
+  task_id          text not null references matching_tasks(id) on delete cascade,
+  status           text not null,   -- PASS | FAIL | UNCERTAIN
+  severity         text not null,
+  method           text not null,
+  reason           text not null,
+  tender_evidence  jsonb,
+  company_evidence jsonb,
+  aspect           text,
+  override_status  text,
+  override_reason  text,
+  override_at      timestamptz,
+  created_at       timestamptz not null default now()
+);
+
+create table if not exists match_knowledge_gaps (
+  id            text primary key,
+  evaluation_id text not null references match_evaluations(id) on delete cascade,
+  task_id       text,
+  concept       text not null,
+  importance    text not null default 'HARD_REQUIREMENT',
+  triggered_by  text,
+  created_at    timestamptz not null default now()
+);
+
 -- ─── Storage bucket ──────────────────────────────────────────────────────────
 -- Run separately in Storage > New bucket if it doesn't exist:
 -- bucket name: company-documents, public: false
