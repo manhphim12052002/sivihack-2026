@@ -153,6 +153,7 @@ def record_batch_state(conn: psycopg.Connection, stats: Counter[str]) -> None:
     """Persist the batch's headline numbers so /health and the demo can show them."""
     db.set_state(conn, STATE_LAST_LOAD_AT, datetime.now(timezone.utc).isoformat(timespec="seconds"))
     db.set_state(conn, STATE_DROPPED_AWARDED, str(stats["skipped_awarded_by_title"]))
+    db.set_state(conn, "load.lots_loaded", str(stats["lots"]))
     conn.commit()
 
 

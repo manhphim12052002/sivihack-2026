@@ -23,7 +23,11 @@ from typing import Callable
 from ..fetch import USER_AGENT
 
 Files = list[tuple[str, bytes]]
-Adapter = Callable[[str], Files]
+# Every adapter now takes an optional file filter, even the three that fetch one whole
+# package and ignore it (rib.fetch is the only listing adapter that uses it to skip
+# drawings before downloading them) — a uniform signature so documents.py can call any
+# adapter the same way, no isinstance/identity check needed.
+Adapter = Callable[[str, "Callable[[str], bool] | None"], Files]
 
 MAX_BYTES = 80 * 1024 * 1024   # a package above this is not a conditions document set
 TIMEOUT = 180
@@ -72,7 +76,8 @@ def http_get(url: str, opener: urllib.request.OpenerDirector | None = None,
                 last = exc
             else:
                 raise
-        time.sleep(3 * (attempt + 1))
+        if attempt < RETRIES - 1:
+            time.sleep(3 * (attempt + 1))
     raise RuntimeError(f"gave up after {RETRIES} attempts: {type(last).__name__}: {last}")
 
 

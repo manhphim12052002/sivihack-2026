@@ -9,12 +9,14 @@ from __future__ import annotations
 
 import urllib.parse
 
+from typing import Callable
+
 from . import Files, http_get, opener_with_cookies
 
 BASE = "https://www.evergabe-online.de/tenderdocuments.html"
 
 
-def fetch(url: str) -> Files:
+def fetch(url: str, wanted: Callable[[str], bool] | None = None) -> Files:
     tender_id = urllib.parse.parse_qs(urllib.parse.urlparse(url).query).get("id", [None])[0]
     if not tender_id:
         raise RuntimeError("evergabe-online: no id in url")

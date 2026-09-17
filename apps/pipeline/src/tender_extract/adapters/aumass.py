@@ -11,6 +11,8 @@ from __future__ import annotations
 import re
 import urllib.parse
 
+from typing import Callable
+
 from . import Files, http_get
 
 ID_PATTERNS = (
@@ -27,7 +29,7 @@ def publication_id(page: str) -> str | None:
     return None
 
 
-def fetch(url: str) -> Files:
+def fetch(url: str, wanted: Callable[[str], bool] | None = None) -> Files:
     page, final_url, _ = http_get(url)
     aumass_id = publication_id(page.decode("utf-8", "replace"))
     if not aumass_id:

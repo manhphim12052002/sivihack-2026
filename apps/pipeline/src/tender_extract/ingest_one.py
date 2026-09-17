@@ -1,7 +1,7 @@
 """ingest-one: the live path for a notice the store has never seen.
 
 `fetch_notice` → `load_notice_bytes` → `enrich_lot` for every lot of that notice: the same
-two functions the batch runs, nothing else, so a judge's unseen tender takes exactly the
+two functions the batch runs, nothing else, so a judge's unseen notice takes exactly the
 path the 3,000 batch lots took. Optionally registers pasted notice text as a MANUAL_INPUT
 source and runs the rule and model extraction over it.
 

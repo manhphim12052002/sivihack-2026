@@ -357,6 +357,12 @@ def main(argv: list[str] | None = None) -> int:
     stats: Counter[str] = Counter()
     with db.connect(args.dsn) as conn:
         if args.all_rules:
+            # W2.5 names lots_latest; this deliberately uses lots_current instead. W1's
+            # amendment check (phase-01) found 430 lot rows in the batch superseded by a
+            # corrigendum published under a NEW notice id, which lots_latest cannot
+            # collapse (see supabase/migrations/20260917230000_lots_current.sql). Running
+            # the rule stage over a withdrawn/replaced notice's text wastes nothing but is
+            # also never useful, so lots_current is the strictly better slice here.
             for lot in lots_current(conn):
                 rule_stage(conn, lot, stats)
             conn.commit()

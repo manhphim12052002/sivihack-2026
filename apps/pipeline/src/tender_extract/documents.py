@@ -125,11 +125,9 @@ def fetch_documents(url: str, store: Path = DEFAULT_STORE) -> FetchOutcome:
 
     adapter = adapters.ADAPTERS[platform]
     try:
-        # Listing adapters accept a filter so drawings are never downloaded.
-        if adapter is adapters.rib.fetch:
-            raw = adapter(url, wanted=lambda n: route(n) != "SKIP")  # type: ignore[call-arg]
-        else:
-            raw = adapter(url)
+        # A listing adapter (currently only RIB) uses this to skip drawings before
+        # downloading them; the single-package adapters ignore it.
+        raw = adapter(url, lambda n: route(n) != "SKIP")
     except Exception as exc:  # transport, parsing, size: all become an honest UNREACHABLE
         return Unreachable(platform, f"{type(exc).__name__}: {str(exc)[:160]}")
 

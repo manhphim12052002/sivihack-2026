@@ -12,6 +12,8 @@ from __future__ import annotations
 import re
 import urllib.parse
 
+from typing import Callable
+
 from . import Files, http_get, opener_with_cookies
 
 ZIP_LINK = re.compile(r'href="(https?://[^"]+\.zip)"', re.I)
@@ -21,7 +23,7 @@ def is_notice_only(url: str) -> bool:
     return "BekLanding4Bund" in url or "EFormsBekVuUrl" not in url
 
 
-def fetch(url: str) -> Files:
+def fetch(url: str, wanted: Callable[[str], bool] | None = None) -> Files:
     parsed = urllib.parse.urlparse(url)
     z_param = urllib.parse.parse_qs(parsed.query).get("z_param", [None])[0]
     if not z_param:

@@ -32,8 +32,16 @@ Chosen 17.09.2026 23:50 from the 14-day batch (`data/tenders.jsonl`, 3,201 lots)
 - No open aumass notice has more than one construction lot; lot-scope handling is covered by the
   multi-lot EU notices on other platforms instead.
 
-## Fixture
+## Fixture status (18.09, updated)
 
-`apps/pipeline/tests/fixtures/tracer-teilnahmebedingungen.txt` holds the `pdftotext -layout` output of
-`V - 212EU Teilnahmebedingungen EU.pdf` from this package (see W2.2/W2.4). The package itself lives
-in the gitignored `data/documents/` store under its sha256.
+The aumass all-files ZIP for this notice could not be downloaded from this environment's
+network (three retries, each timing out after 3 minutes; a RIB package on the same
+connection did complete, so it is a slow-host issue, not a code defect — see
+`plans/260917-2051-pipeline-parallel-workloads/phase-02-documents-and-enrich.md`). No
+`apps/pipeline/tests/fixtures/` directory or extracted Teilnahmebedingungen text exists
+yet. `tests/test_rules.py` uses real BT-750/description sentences from `data/tenders.jsonl`
+instead, which needed no document fetch. Re-run
+`python -m tender_extract.enrich --lot "oeffentlichevergabe.de|0f60a327-2519-4e0a-8bf6-eca4edeb1fde|01|LOT-0001"`
+from a normal connection to populate the package into `data/documents/` (gitignored,
+content-addressed by sha256) and, if a fixture is still wanted, save the routed PDF's
+`pdftotext -layout` output under `apps/pipeline/tests/fixtures/`.
