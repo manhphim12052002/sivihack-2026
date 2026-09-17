@@ -6,4 +6,6 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 // client" component, so this bypasses RLS the same way the Python pipeline does via postgres.
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+export const supabase = createClient(supabaseUrl, supabaseKey, {
+  auth: { persistSession: false },
+});

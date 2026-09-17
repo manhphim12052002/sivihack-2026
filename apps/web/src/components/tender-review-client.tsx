@@ -9,6 +9,7 @@ import { FactSheet } from "@/components/fact-sheet";
 import { DecisionBreakdown } from "@/components/decision-breakdown";
 import { EvidencePanel, type EvidencePanelData } from "@/components/evidence-panel";
 import { HumanReviewPanel, type OverrideState } from "@/components/human-review-panel";
+import { MatchEvaluationPanel } from "@/components/match-evaluation-panel";
 
 const OVERALL_LABEL: Record<Verdict["overall"], string> = { Bid: "Pursue", Consider: "Review", NoGo: "Skip" };
 const OVERALL_CLASS: Record<Verdict["overall"], string> = {
@@ -130,6 +131,15 @@ export function TenderReviewClient({ tenderId, companyId }: { tenderId: string; 
           <h2 className="text-lg font-semibold">Decision Breakdown</h2>
           <div className="mt-3">
             <DecisionBreakdown criteria={verdict.criteria} onViewEvidence={handleViewEvidence} />
+          </div>
+        </section>
+      )}
+
+      {companyId && (
+        <section>
+          <h2 className="text-lg font-semibold">Eligibility Check</h2>
+          <div className="mt-3">
+            <MatchEvaluationPanel tenderId={tenderId} companyId={companyId} />
           </div>
         </section>
       )}
