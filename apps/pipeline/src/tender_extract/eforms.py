@@ -33,6 +33,12 @@ AWARDED_TITLE = re.compile(
 )
 
 
+# Notice subtypes that announce work still open for bidding. Award notices
+# (can-*) and result notices describe procedures that are already closed, so
+# screening only makes sense on these.
+COMPETITION_TYPES = frozenset({"cn-standard", "cn-social", "cn-desg", "pin-rtl", "pin-buyer"})
+
+
 # Terms an estimator screens on that eForms has no field for — they appear only
 # as prose in the qualification criteria. Flagging them tells the downstream
 # screener where a hard disqualifier is likely to be hiding.
