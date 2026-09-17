@@ -1,0 +1,582 @@
+<ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts-cct="urn:un:unece:uncefact:data:specification:CoreComponentTypeSchemaModule:2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2" xmlns:udt="urn:oasis:names:specification:bdndr:schema:xsd:UnqualifiedDataTypes-1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent>
+				<efext:EformsExtension>
+					<efac:Changes>
+						<efbc:ChangedNoticeIdentifier>7abb1e09-7c7b-4061-ae3a-d5bf690da54d-01</efbc:ChangedNoticeIdentifier>
+						<efac:Change>
+							<efbc:ChangeDescription languageID="DEU">Der nachzuweisende durchschnittliche Jahresumsatz unter dem Kriterium "Allgemeiner Jahresumsatz" wurde auf mindestens 80 Mio. EUR geändert.  Die Teilnahmefrist wurde dementsprechend auf den 23.09.2026 um 14 Uhr verlängert.</efbc:ChangeDescription>
+							<efac:ChangedSection>
+								<efbc:ChangedSectionIdentifier>PROCEDURE</efbc:ChangedSectionIdentifier>
+							</efac:ChangedSection>
+						</efac:Change>
+						<efac:ChangeReason>
+							<cbc:ReasonCode listName="change-corrig-justification">update-add</cbc:ReasonCode>
+							<efbc:ReasonDescription languageID="DEU">Der nachzuweisende durchschnittliche Jahresumsatz unter dem Kriterium "Allgemeiner Jahresumsatz" wurde auf mindestens 80 Mio. EUR aktualisiert.  Die Teilnahmefrist wurde dementsprechend auf den 23.09.2026 um 14 Uhr verlängert.</efbc:ReasonDescription>
+						</efac:ChangeReason>
+					</efac:Changes>
+					<efac:NoticeSubType>
+						<cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+					</efac:NoticeSubType>
+					<efac:Organizations>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://ipm.nrw/</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0001</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Immobilien Projekt Management Düsseldorf GmbH</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Henkelstraße 164</cbc:StreetName>
+									<cbc:CityName>Düsseldorf</cbc:CityName>
+									<cbc:PostalZone>40589</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA11</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>DE255740804</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>Thomas Kleist</cbc:Name>
+									<cbc:Telephone>+49 211-74836472</cbc:Telephone>
+									<cbc:Telefax>+49 211-74836101</cbc:Telefax>
+									<cbc:ElectronicMail>kleist@ipm.nrw</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+						<efac:Organization>
+							<efac:Company>
+								<cbc:WebsiteURI>https://www.brms.nrw.de/themen/wirtschaft-kultur-und-kommunales/vergabekammer-westfalen</cbc:WebsiteURI>
+								<cac:PartyIdentification>
+									<cbc:ID>ORG-0003</cbc:ID>
+								</cac:PartyIdentification>
+								<cac:PartyName>
+									<cbc:Name languageID="DEU">Vergabekammer Westfalen mit Sitz bei der Bezirksregierung Münster</cbc:Name>
+								</cac:PartyName>
+								<cac:PostalAddress>
+									<cbc:StreetName>Albrecht-Thaer-Straße 9</cbc:StreetName>
+									<cbc:CityName>Münster</cbc:CityName>
+									<cbc:PostalZone>48147</cbc:PostalZone>
+									<cbc:CountrySubentityCode listName="nuts-lvl3">DEA33</cbc:CountrySubentityCode>
+									<cac:Country>
+										<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+									</cac:Country>
+								</cac:PostalAddress>
+								<cac:PartyLegalEntity>
+									<cbc:CompanyID>05515-03004-07</cbc:CompanyID>
+								</cac:PartyLegalEntity>
+								<cac:Contact>
+									<cbc:Name>Geschäftsstelle Vergabekammer Westfalen</cbc:Name>
+									<cbc:Telephone>+49 251 411 1691</cbc:Telephone>
+									<cbc:Telefax>+49 251 411 2165</cbc:Telefax>
+									<cbc:ElectronicMail>vergabekammer@brms.nrw.de</cbc:ElectronicMail>
+								</cac:Contact>
+							</efac:Company>
+						</efac:Organization>
+					</efac:Organizations>
+				</efext:EformsExtension>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+	<cbc:CustomizationID>eforms-de-2.1</cbc:CustomizationID>
+	<cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+	<cbc:ID schemeName="notice-id">03ddf5d7-0650-411f-a1ac-d0fca9374811</cbc:ID>
+	<cbc:ContractFolderID>77618279-65ad-42d7-93e2-e4d5dcc91b57</cbc:ContractFolderID>
+	<cbc:IssueDate>2026-09-14+02:00</cbc:IssueDate>
+	<cbc:IssueTime>16:44:29+02:00</cbc:IssueTime>
+	<cbc:VersionID>01</cbc:VersionID>
+	<cbc:RequestedPublicationDate>2026-09-14+02:00</cbc:RequestedPublicationDate>
+	<cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+	<cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+	<cbc:NoticeLanguageCode listID="eu-official-language">DEU</cbc:NoticeLanguageCode>
+	<cac:ContractingParty>
+		<cac:ContractingPartyType>
+			<cbc:PartyTypeCode listName="buyer-legal-type">pub-undert-ra</cbc:PartyTypeCode>
+		</cac:ContractingPartyType>
+		<cac:ContractingActivity>
+			<cbc:ActivityTypeCode listName="authority-activity">hc-am</cbc:ActivityTypeCode>
+		</cac:ContractingActivity>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:Party>
+	</cac:ContractingParty>
+	<cac:TenderingTerms>
+		<ext:UBLExtensions>
+			<ext:UBLExtension>
+				<ext:ExtensionContent>
+					<efext:EformsExtension>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+						<efac:StrategicProcurement>
+							<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+						</efac:StrategicProcurement>
+					</efext:EformsExtension>
+				</ext:ExtensionContent>
+			</ext:UBLExtension>
+		</ext:UBLExtensions>
+		<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+		<cac:RequiredFinancialGuarantee>
+			<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+		</cac:RequiredFinancialGuarantee>
+		<cac:ProcurementLegislationDocumentReference>
+			<cbc:ID>vob-a-eu</cbc:ID>
+		</cac:ProcurementLegislationDocumentReference>
+		<cac:CallForTendersDocumentReference>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:OfficialLanguages>
+								<cac:Language>
+									<cbc:ID>DEU</cbc:ID>
+								</cac:Language>
+							</efac:OfficialLanguages>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:ID>SomeTenderDocID1</cbc:ID>
+			<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+		</cac:CallForTendersDocumentReference>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">crime-org</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">terr-offence</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">finan-laund</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">fraud</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">corruption</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">human-traffic</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">tax-pay</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw.  fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">socsec-pay</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">envir-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">socsec-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">labour-law</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">insolvency</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">liq-admin</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">susp-act</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">bankr-nat</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">prof-misconduct</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">distorsion</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">partic-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">prep-confl</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">sanction</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-ground">misrepresent</cbc:TendererRequirementTypeCode>
+				<cbc:Description languageID="DEU">Zwingende bzw. fakultative Ausschlussgründe nach §§ 123 bis 126 GWB</cbc:Description>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TendererQualificationRequest>
+			<cac:SpecificTendererRequirement>
+				<cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+			</cac:SpecificTendererRequirement>
+		</cac:TendererQualificationRequest>
+		<cac:TenderRecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID>ORG-0001</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:TenderRecipientParty>
+		<cac:AppealTerms>
+			<cac:PresentationPeriod>
+				<cbc:Description languageID="DEU">Das Verfahren für Verstöße gegen diese Vergabe richtet sich nach den Vorschriften der §§ 160 ff. des Gesetzes gegen Wettbewerbsbeschränkungen (GWB).   Zur Wahrung der Fristen wird auf die §§ 160 ff. GWB verwiesen. Insbesondere weisen wir darauf hin, dass der Nachprüfungsantrag gemäß § 160 Abs. 3 Satz 1 Nr. 4 GWB spätestens 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, zu stellen ist.   Vergabeverstöße sind nach § 160 Abs. 3 Satz 1 Nr. 1 GWB vor Einreichen des Nachprüfungsantrags innerhalb von 10 Kalendertagen, nachdem der Bieter den Verstoß erkannt hat, beim Auftraggeber zu rügen. Vergabeverstöße, die aufgrund der Bekanntmachung erkennbar sind, sind darüber hinaus gemäß § 160 Abs. 3 Satz 1 Nr. 2 GWB spätestens bis zum Ablauf der Teilnahmefrist nach Ziffer 5.1.12 bei dem Auftraggeber zu rügen.</cbc:Description>
+			</cac:PresentationPeriod>
+			<cac:AppealReceiverParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AppealReceiverParty>
+		</cac:AppealTerms>
+		<cac:Language>
+			<cbc:ID>DEU</cbc:ID>
+		</cac:Language>
+	</cac:TenderingTerms>
+	<cac:TenderingProcess>
+		<cbc:ProcedureCode listName="procurement-procedure-type">neg-w-call</cbc:ProcedureCode>
+		<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4Y2RM7B6</cbc:AccessToolsURI>
+		<cac:ProcessJustification>
+			<cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+		</cac:ProcessJustification>
+		<cac:AuctionTerms>
+			<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+		</cac:AuctionTerms>
+	</cac:TenderingProcess>
+	<cac:ProcurementProject>
+		<cbc:ID schemeName="internalID">20260817 IPM - GA - GU: Gesundheitsamt Düsseldorf TNW</cbc:ID>
+		<cbc:Name languageID="DEU">Planungs- und Bauleistungen für das Gesundheitsamt mit Fahrradgarage in Düsseldorf (Hochbau)</cbc:Name>
+		<cbc:Description languageID="DEU">Die Immobilien Projektmanagement Düsseldorf GmbH ist eine 100 %-ige Tochtergesellschaft der Landeshauptstadt Düsseldorf (LHD). Die IPM führt im Auftrag der LHD verschiedene Bauaufträge aus. Sie beabsichtigt, im Auftrag der LHD in Düsseldorf-Stadtmitte zwischen Konrad-Adenauer-Platz, Harkortstraße und Graf-Adolf-Straße einen Neubau für das Gesundheitsamt in Düsseldorf errichten zu lassen.  Gegenstand des Gesamtvorhabens ist der Neubau eines modernen, publikumsorientierten und zugleich intern leistungsfähigen Gesundheitsamtes bzw. Zentrums für öffentliche Gesundheit. Das Gebäude soll unterschiedliche Nutzungen des öffentlichen Gesundheitsdienstes aufnehmen und eine zeitgemäße, barrierefreie, nachhaltige und funktional flexible Arbeits- und Serviceumgebung schaffen. Ergänzend wird eine Fahrradgarage mit eigenständiger Nutzungs- und Betriebslogik in das Gebäude integriert. Die Fahrradgarage soll insbesondere der Verbesserung der Radverkehrsinfrastruktur im Bahnhofsumfeld dienen und eine leistungsfähige, gut erreichbare und nutzerfreundliche Abstellmöglichkeit für ca. 1.900 Fahrräder schaffen.   Der Rückbau des bestehenden Hansahauses ist eine wesentliche Voraussetzung für die Realisierung des Neubaus, wird jedoch als vorgelagerte Maßnahme separat ausgeführt und ist nicht Gegenstand dieses Vergabeverfahrens.  Der Auftraggeber erwägt, das Projekt im Rahmen einer Partnerschaftlichen Projektabwicklung (Partnering-Verfahren) umzusetzen. Zentraler Baustein des Partnering-Modells ist die Einbindung des ausführenden Generalunternehmers in die frühe Planungsphase der LP 3 HOAI, um Planungs- und Kostensicherheit frühzeitig zu gewährleisten. Der Generalplaner wurde durch ein vorgeschaltetes Architekturwettbewerbsverfahren bereits ermittelt und beauftragt. Während der laufenden LP 3 HOAI soll der Auftragnehmer in den Planungsprozess eingebunden werden und die Planungen aus Bauausführungssicht optimieren.  Nach derzeitigem Stand ist eine zweistufige Vertragsstruktur vorgesehen: Mit Zuschlagserteilung wird der Generalunternehmer zunächst mit Mitwirkungs- und Beratungsleistungen während der laufenden Erarbeitung der LP 3 HOAI beauftragt (Preconstruction-Phase). In der Preconstruction-Phase wirkt der Generalunternehmer insbesondere an der Erarbeitung und Optimierung der Entwurfsplanung mit und berät zur Terminplanung, Baulogistik und Wirtschaftlichkeit. Mit Abschluss der Preconstruction-Phase übernimmt der Generalunternehmer die vollständige Planungsverantwortung. Die Vergütung für die LP 3 erfolgt voraussichtlich auf der Basis eines Stundenkontingents.  Die weiteren Planungs- und Bauleistungen zur schlüsselfertigen Errichtung des Gesundheitsamtes ruft die IPM optional nach Abschluss der Preconstruction-Phase ab. Die Beauftragung der weiteren Planungs- und Bauleistungen steht unter dem Vorbehalt eines Ausführungs- und Finanzierungsbeschlusses des Rates der Landeshauptstadt Düsseldorf. Ein Rechtsanspruch auf Beauftragung mit den Leistungen der zweiten Stufe besteht nicht.  Der Auftraggeber verfolgt das Ziel, die Erfahrungen und Kenntnisse des Auftragnehmers insbesondere in Bezug auf Planungsoptimierungen, Bauabläufe und -prozesse, Baustellenabwicklung und -logistik sowie Kosten- und Terminoptimierungen bereits in einer frühen Phase des Projektes wirksam einzusetzen. Erfahrungen und Kenntnisse aus den Bereichen der Planung und Ausführung sollen in einer solchen Art und Weise ausgetauscht werden, dass der Transfer zwischen Planung und Bauausführung reibungslos umgesetzt werden kann. Schnittstellen sollen frühzeitig identifiziert und festgelegt werden, um Konflikte zwischen Planung und Ausführung zu vermeiden und um den Fokus auf die Optimierung der Leistungserbringung richten zu können.   Der Auftragnehmer erbringt seine Leistungen dabei zusammen mit dem Generalplaner und den übrigen Fachplanern und Beratern unter gegenseitiger Berücksichtigung der Erfahrungen und Kenntnisse der weiteren Projektbeteiligten im Sinne des Grundsatzes "best for project". Eine effiziente und zielorientierte Zusammenarbeit aller Projektpartner zum bestmöglichen Erreichen der Projektziele setzt dabei voraus, dass die Partner zu einem hohen Maß an Kooperation und Kollaboration bereit sind.   In Kombination mit vorgenannter partnerschaftlicher Projektabwicklungsform beabsichtigt der Auftraggeber zudem, kollaborative Arbeitsmethoden (Lean Construction sowie Building Information Modelling (BIM)) einzusetzen.  Möglicher Ablauf des Partnering-Verfahrens siehe Anlage 1.</cbc:Description>
+		<cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+		<cbc:Note languageID="DEU">#Bekanntmachungs-ID: CXP4Y2RM7B6#
+
+
+Das gesamte Verfahren steht unter Haushaltsvorbehalt. Die IPM behält sich vor, den Wettbewerb sowie das anschließende Verhandlungsverfahren ganz oder teilweise einzustellen, soweit sie ihrerseits nicht weiter von der LHD beauftragt wird.  Objektive Kriterien für die Auswahl der begrenzten Zahl von Bewerbern:  Der Auftraggeber wird zur Auswahl der Bewerber bzw. Bewerbergemeinschaften in drei Stufen vorgehen:   1) Formelle Prüfung des Teilnahmeantrages,  2) Überprüfung der Eignung des Bewerbers bzw. der Bewerbergemeinschaft anhand der in der Bekanntmachung genannten Eignungsanforderungen,  3) Auswahl der Bewerber, die die Eignungskriterien am besten erfüllen: Der Auftraggeber wird zur Abgabe eines Angebotes die Bewerber bzw. Bewerbergemeinschaften auffordern, die die Eignungsanforderungen am besten erfüllen (Ranking). Er behält sich vor, nur die drei besten Bewerber aufzufordern, auch wenn mehr Bewerber die Eignungsanforderungen erfüllen.   Bei der Ermittlung des Rankings wird der Auftraggeber insbesondere die von den Bewerbern genannten Referenzen und deren Vergleichbarkeit mit dem vorliegenden Beschaffungsvorhaben sowie die praktischen Erfahrungen der Bewerber mit Projekten der partnerschaftlichen Projektabwicklung berücksichtigen. Die Bewertung erfolgt in einem relativen Vergleich der Bewerber miteinander. Dabei gilt: Je mehr und besser mit dem Auftragsgegenstand vergleichbare Referenzen und je belastbarer und aussagekräftiger insbesondere die praktischen Erfahrungen mit partnerschaftlicher Projektabwicklung sind, desto mehr Punkte erhält der Bewerber. Maßgeblich sind die unter Ziffer 5.1.9 genannten Angaben und Nachweise. Die Bewertung erfolgt in einem relativen Vergleich der Bewerber miteinander.  Hierbei handelt es sich um Auswahl-, nicht um Zuschlagskriterien.</cbc:Note>
+		<cac:MainCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+		</cac:MainCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45210000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71240000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71300000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">71221000</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45215100</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45213312</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:AdditionalCommodityClassification>
+			<cbc:ItemClassificationCode listName="cpv">45216110</cbc:ItemClassificationCode>
+		</cac:AdditionalCommodityClassification>
+		<cac:RealizedLocation>
+			<cac:Address>
+				<cbc:CountrySubentityCode listName="nuts">DEA11</cbc:CountrySubentityCode>
+				<cac:Country>
+					<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:RealizedLocation>
+	</cac:ProcurementProject>
+	<cac:ProcurementProjectLot>
+		<cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+		<cac:TenderingTerms>
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent>
+						<efext:EformsExtension>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Mit dem Teilnahmeantrag sollen die Bewerber möglichst folgende Unterlagen vorlegen (bei Bewerbergemeinschaften von jedem Mitglied):      a) Formlose Eigenerklärung, aus der hervorgeht,        - dass keine Ausschlussgründe im Sinne des § 6e EU VOB/A vorliegen bzw. erfolgreiche Selbstreinigungsmaßnahmen im Sinne des § 6f EU VOB/A durchgeführt worden sind;         - dass der Bewerber in das einschlägige Berufsregister (Handelsregister oder Handwerksrolle) oder ein vergleichbares Register (Standeskammern et cetera.) des Herkunftslandes eingetragen ist sowie für seine Berufshaftpflichtversicherung, seine Krankenkasse(n) und seine Berufsgenossenschaft rückstandslos Beiträge entrichtet hat sowie seinen steuerlichen Verpflichtungen nachgekommen ist.  b) Eigenerklärung, in welcher der Bewerber bestätigt, nicht zu den in Art. 5k Absatz 1 der Verordnung (EU) Nr. 833/2014 in der Fassung des Art. 1 Ziff. 16 der Verordnung (EU) 2025/2033 des Rates vom 23. Oktober 2025 über restriktive Maßnahmen angesichts der Handlungen Russlands, die die Lage in der Ukraine destabilisieren, genannten Personen oder Unternehmen, die einen Bezug zu Russland im Sinne der Vorschrift aufweisen, zu gehören.  c) Bewerbergemeinschaften sollen zusätzlich eine Erklärung abgeben, aus der hervorgeht, dass kein Verstoß gegen Kartellrecht vorliegt, und dass keine unzulässigen wettbewerbsbeschränkenden Absprachen getroffen wurden.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-subc</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Mit dem Teilnahmeantrag sollen die Bewerber möglichst folgende Nachweise vorlegen (bei Bewerbergemeinschaften von mindestens einem Mitglied):  Eigenerklärung, in der der Bewerber / die Bewerbergemeinschaft erklärt, ob und welche Leistungsbereiche er/sie im Auftragsfall mithilfe von Nachunternehmern erbringen wird.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-gen</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Die Bewerber sollen möglichst die folgenden Nachweise vorlegen (bei Bewerbergemeinschaften von einem Mitglied):  Eigenerklärung über die in den letzten 3 abgeschlossenen Geschäftsjahren erwirtschafteten Gesamtumsätze sowie über die in den letzten drei abgeschlossenen Geschäftsjahren erwirtschafteten Umsätze mit Leistungen, die mit dem ausgeschriebenen Auftragsgegenstand vergleichbar sind. Daraus muss sich ergeben, dass der Bewerber in den letzten drei abgeschlossenen Geschäftsjahren (2023, 2024, 2025) jeweils einen durchschnittlichen Jahresumsatz von mindestens 80 Mio. EUR erwirtschaftet hat. Bewerbergemeinschaften werden hier als Ganzes betrachtet. Liegen Gesamtumsätze für das Jahr 2025 noch nicht vor, sind die Gesamtumsätze des Jahres 2022 anzugeben.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Die Bewerber sollen möglichst die folgenden Nachweise vorlegen (bei Bewerbergemeinschaften von einem Mitglied):  Eigenerklärung über die in den letzten 3 abgeschlossenen Geschäftsjahren jahresdurchschnittlich beschäftigten Arbeitskräfte (eigenes Personal, nicht Verwaltungskräfte). Daraus sollte sich ergeben, dass der Bewerber in den letzten drei abgeschlossenen Geschäftsjahren (2023, 2024, 2025) jeweils durchschnittlich 100 Arbeitskräfte beschäftigt hat. Bewerbergemeinschaften werden hier als Ganzes betrachtet.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Die Bewerber sollen möglichst die folgenden Nachweise vorlegen (bei Bewerbergemeinschaften von einem Mitglied):  Bestätigung, dass der Bewerber eine Berufshaftpflichtversicherung mit einer Deckungssumme von mindestens 20 Mio. EUR pro Schadensfall, 2-fach maximiert, unterhält oder im Falle der Auftragserteilung abschließen wird. Der Auftraggeber behält sich vor, alternativ eine Projektversicherung abzuschließen.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:SelectionCriteria>
+								<cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-services</cbc:TendererRequirementTypeCode>
+								<cbc:Description languageID="DEU">Mit dem Teilnahmeantrag sollen die Bewerber möglichst folgende Unterlagen vorlegen (bei Bewerbergemeinschaften von einem Mitglied):  a) Detaillierte Darstellung von vergleichbaren Referenzen (Referenzprojekte), bei denen der Auftragnehmer als direkter Vertragspartner des Auftraggebers - ggf. gemeinsam mit weiteren Unternehmen in einer Arbeitsgemeinschaft - tätig war. Für jede Referenz ist der genaue Auftrag, die Auftragssumme, der Auftraggeber, ein Ansprechpartner beim Auftraggeber, die Leistungszeiträume, die Art des Bauwerks (Nutzungsart), die konkret vom Bewerber erbrachten Leistungen, die Größe des Bauwerks (BGF) und der derzeitige Projektstand anzugeben. Der Auftraggeber wird nur Referenzen berücksichtigen, bei denen die Baugenehmigung innerhalb der letzten fünf Jahre erteilt wurde.  Der Auftraggeber wird insbesondere die drei aus seiner Sicht am besten geeigneten Referenzen berücksichtigen. Hierzu bewertet er anhand der nachfolgenden Kriterien, welche Bewerber über die am besten vergleichbaren Referenzen verfügen. In Summe sollten die Referenzprojekte die folgenden Merkmale/Besonderheiten aufweisen:                     - Errichtung von Verwaltungsgebäuden oder Bildungsgebäuden mit einer BGF von 15.000 m² oder mehr in der Funktion als GU/TU                     - Errichtung eines Gebäudes mit einem Bauvolumen von EUR 55 Mio. oder mehr,                     - Generalplanung ab Leistungsphase 5 eines Gebäudes mit einem Bauvolumen von EUR 55 Mio. oder mehr,                     - Tätigkeit für eine kommunale Inhousegesellschaft,                      - Nachweis von Merkmalen partnerschaftlicher Zusammenarbeit mit einem oder mehreren Projektbeteiligten, z.B. frühzeitige Einbindung in die Planung, Open-Book-Verfahren, Cost-Plus-Fee-     Verfahren, gemeinsame Nachunternehmerauswahl, Preconstruction Phase, Lean Construction, Target-Value-Design etc.  Sofern erforderlich, um einen ausreichenden Wettbewerb sicherzustellen, wird der Auftraggeber auch einschlägige Bauleistungen berücksichtigen, die mehr als fünf Jahre zurückliegen.  b) Der Auftraggeber erwartet zudem eine Darstellung (max. 5 Seiten), aus der hervorgeht, ob und in welchem Umfang sich der Bewerber als lernendes Unternehmen mit Modellen der partnerschaftlichen Projektabwicklung auseinandergesetzt hat und ob sowie welche konkreten Maßnahmen eingeleitet wurden, um entsprechende Projektabwicklungsmodelle in Zukunft praktisch umsetzen zu können. Die Darstellung soll zusätzlich beschreiben, welche Elemente der partnerschaftlichen Projektabwicklung in einem konkreten Projekt umgesetzt wurden, wie die Kooperation und Kommunikation zwischen Auftraggeber und Auftragnehmer sowie zwischen den Auftragnehmern gestaltet war und wie mit Konflikten umgegangen wurde.</cbc:Description>
+							</efac:SelectionCriteria>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+							<efac:StrategicProcurement>
+								<efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+							</efac:StrategicProcurement>
+						</efext:EformsExtension>
+					</ext:ExtensionContent>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+			<cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+			<cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+			<cac:RequiredFinancialGuarantee>
+				<cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+			</cac:RequiredFinancialGuarantee>
+			<cac:CallForTendersDocumentReference>
+				<ext:UBLExtensions>
+					<ext:UBLExtension>
+						<ext:ExtensionContent>
+							<efext:EformsExtension>
+								<efac:OfficialLanguages>
+									<cac:Language>
+										<cbc:ID>DEU</cbc:ID>
+									</cac:Language>
+								</efac:OfficialLanguages>
+							</efext:EformsExtension>
+						</ext:ExtensionContent>
+					</ext:UBLExtension>
+				</ext:UBLExtensions>
+				<cbc:ID>SomeTenderDocID1</cbc:ID>
+				<cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>https://www.dtvp.de/Satellite/notice/CXP4Y2RM7B6/documents</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:CallForTendersDocumentReference>
+			<cac:TendererQualificationRequest>
+				<cbc:CompanyLegalFormCode listName="required">false</cbc:CompanyLegalFormCode>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="missing-info-submission">late-some</cbc:TendererRequirementTypeCode>
+					<cbc:Description languageID="DEU">Der Auftraggeber behält sich vor, fehlende Unterlagen gemäß § 16a EU Abs. 3 VOB/A nachzufordern. Auf die Nachforderung besteht abweichend von § 16a EU Abs. 1 VOB/A kein Rechtsanspruch.</cbc:Description>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:TendererQualificationRequest>
+				<cac:SpecificTendererRequirement>
+					<cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+				</cac:SpecificTendererRequirement>
+			</cac:TendererQualificationRequest>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="einvoicing">required</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+				<cbc:Description languageID="DEU">Die Bedingungen für die Ausführung des Auftrags ergeben sich aus der Bekanntmachung und den Vergabeunterlagen.</cbc:Description>
+			</cac:ContractExecutionRequirement>
+			<cac:ContractExecutionRequirement>
+				<cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+			</cac:ContractExecutionRequirement>
+			<cac:AwardingTerms>
+				<cbc:NoFurtherNegotiationIndicator>false</cbc:NoFurtherNegotiationIndicator>
+				<cac:AwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>30.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Preis</cbc:Name>
+						<cbc:Description languageID="DEU">Die Verrechnungs- und Zuschlagssätze (Baustellengemeinkosten / Allgemeine Geschäftskosten / Stundensätze) sowie die Gewinnerwartung werden bewertet, (nicht abschließende Aufzählung) - vorläufiges Kriterium (auch bezüglich Gewichtung). Details werden nach dem Teilnahmewettbewerb bekanntgegeben.</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>35.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Qualifikation, Rollenverständnis &amp; Verfügbarkeit der Schlüsselpersonen während des Planungs- und Bauprozesses</cbc:Name>
+						<cbc:Description languageID="DEU">Qualifikation, Rollenverständnis, Verfügbarkeit, Kommunikationsfähigkeit, Konfliktlösungskompetenz, Teamfähigkeit der Schlüsselpersonen (Gesamtprojektleiter sowie sein Stellvertreter, Geschäftsführer/Managementebene, (Ober-) Bauleitung, BIM- und LEAN- bzw. Terminkoordination) (nicht abschließende Aufzählung) - vorläufiges Kriterium (auch bezüglich Gewichtung) . Details werden nach Teilnahmewettbewerb bekanntgegeben.</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+					<cac:SubordinateAwardingCriterion>
+						<ext:UBLExtensions>
+							<ext:UBLExtension>
+								<ext:ExtensionContent>
+									<efext:EformsExtension>
+										<efac:AwardCriterionParameter>
+											<efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+											<efbc:ParameterNumeric>35.0</efbc:ParameterNumeric>
+										</efac:AwardCriterionParameter>
+									</efext:EformsExtension>
+								</ext:ExtensionContent>
+							</ext:UBLExtension>
+						</ext:UBLExtensions>
+						<cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+						<cbc:Name languageID="DEU">Qualität des Umsetzungskonzeptes</cbc:Name>
+						<cbc:Description languageID="DEU">Qualität des Umsetzungskonzepts (insb. Terminablauf, Bauablaufkonzept, Einsatz von Nachunternehmern, Personaleinsatzplan, Darstellung projektspezifischer Besonderheiten sowie des Umgangs hiermit, Umgang mit Einbindung gesondert zu beauftragender Dritter), Übernahme der Planungsverantwortung, Konzepte für Optimierungsvorschläge für die Durchführung des Projektes (nicht abschließende Aufzählung) - vorläufiges Kriterium (auch bezüglich Gewichtung). Details werden nach dem Teilnahmewettbewerb bekanntgegeben.</cbc:Description>
+					</cac:SubordinateAwardingCriterion>
+				</cac:AwardingCriterion>
+			</cac:AwardingTerms>
+			<cac:AdditionalInformationParty>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:AdditionalInformationParty>
+			<cac:TenderRecipientParty>
+				<cbc:EndpointID>https://www.dtvp.de/Satellite/notice/CXP4Y2RM7B6</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<cbc:ID>ORG-0001</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:TenderRecipientParty>
+			<cac:AppealTerms>
+				<cac:PresentationPeriod>
+					<cbc:Description languageID="DEU">Das Verfahren für Verstöße gegen diese Vergabe richtet sich nach den Vorschriften der §§ 160 ff. des Gesetzes gegen Wettbewerbsbeschränkungen (GWB).   Zur Wahrung der Fristen wird auf die §§ 160 ff. GWB verwiesen. Insbesondere weisen wir darauf hin, dass der Nachprüfungsantrag gemäß § 160 Abs. 3 Satz 1 Nr. 4 GWB spätestens 15 Kalendertage nach Eingang der Mitteilung des Auftraggebers, einer Rüge nicht abhelfen zu wollen, zu stellen ist.   Vergabeverstöße sind nach § 160 Abs. 3 Satz 1 Nr. 1 GWB vor Einreichen des Nachprüfungsantrags innerhalb von 10 Kalendertagen, nachdem der Bieter den Verstoß erkannt hat, beim Auftraggeber zu rügen. Vergabeverstöße, die aufgrund der Bekanntmachung erkennbar sind, sind darüber hinaus gemäß § 160 Abs. 3 Satz 1 Nr. 2 GWB spätestens bis zum Ablauf der Teilnahmefrist nach Ziffer 5.1.12 bei dem Auftraggeber zu rügen.</cbc:Description>
+				</cac:PresentationPeriod>
+				<cac:AppealReceiverParty>
+					<cac:PartyIdentification>
+						<cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+					</cac:PartyIdentification>
+				</cac:AppealReceiverParty>
+			</cac:AppealTerms>
+			<cac:Language>
+				<cbc:ID>DEU</cbc:ID>
+			</cac:Language>
+			<cac:PostAwardProcess>
+				<cbc:ElectronicOrderUsageIndicator>false</cbc:ElectronicOrderUsageIndicator>
+				<cbc:ElectronicPaymentUsageIndicator>false</cbc:ElectronicPaymentUsageIndicator>
+			</cac:PostAwardProcess>
+			<cac:SecurityClearanceTerm>
+				<cbc:Code listName="required">false</cbc:Code>
+			</cac:SecurityClearanceTerm>
+		</cac:TenderingTerms>
+		<cac:TenderingProcess>
+			<cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+			<cbc:CandidateReductionConstraintIndicator>false</cbc:CandidateReductionConstraintIndicator>
+			<cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+			<cbc:AccessToolsURI>https://www.dtvp.de/Satellite/notice/CXP4Y2RM7B6</cbc:AccessToolsURI>
+			<cac:ParticipationRequestReceptionPeriod>
+				<cbc:EndDate>2026-09-23+02:00</cbc:EndDate>
+				<cbc:EndTime>14:00:00+02:00</cbc:EndTime>
+			</cac:ParticipationRequestReceptionPeriod>
+			<cac:AdditionalInformationRequestPeriod>
+				<cbc:EndDate>2026-09-16+02:00</cbc:EndDate>
+				<cbc:EndTime>23:59:59+02:00</cbc:EndTime>
+			</cac:AdditionalInformationRequestPeriod>
+			<cac:EconomicOperatorShortList>
+				<cbc:LimitationDescription>false</cbc:LimitationDescription>
+				<cbc:MinimumQuantity>3</cbc:MinimumQuantity>
+			</cac:EconomicOperatorShortList>
+			<cac:AuctionTerms>
+				<cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+			</cac:AuctionTerms>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+			<cac:ContractingSystem>
+				<cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+			</cac:ContractingSystem>
+		</cac:TenderingProcess>
+		<cac:ProcurementProject>
+			<cbc:ID schemeName="internalID">20260817 IPM - GA - GU: Gesundheitsamt Düsseldorf TNW</cbc:ID>
+			<cbc:Name languageID="DEU">Planungs- und Bauleistungen für das Gesundheitsamt mit Fahrradgarage in Düsseldorf (Hochbau)</cbc:Name>
+			<cbc:Description languageID="DEU">Der Auftraggeber beabsichtigt, Planungs- und Bauleistungen für den Neubau des Gesundheitsamts mit Fahrradgarage zu vergeben.   Der Leistungsumfang umfasst insbesondere, jedoch nicht abschließend, Bau-, Liefer-, Montage-, Planungs- und Koordinationsleistungen für das gesamte Gebäude. Art, Umfang und Ausgestaltung der Leistungen werden im weiteren Vergabeverfahren näher konkretisiert.</cbc:Description>
+			<cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+			<cbc:Note languageID="DEU">1. Bewerber werden gebeten, Rückfragen zum Teilnahmeantrag ausschließlich über die in Ziffer 5.1.11. genannte Website einzureichen. Der Auftraggeber wird alle Fragen und Antworten auf der in Ziffer 5.1.11. genannten Website anonymisiert zur Verfügung stellen. Bewerbungen für Teilleistungen sind nicht möglich. Fragen können bis sieben Kalendertage vor Ablauf der Teilnahmefrist gestellt werden.  2. Ausreichend ist die Abgabe des Teilnahmeantrages in Textform (§ 126b BGB) über das in Ziffer 5.1.11 genannte Vergabeportal. Nähere Informationen stehen auf der Startseite des in Ziffer 5.1.11 genannten Vergabeportals zur Verfügung. Zur Formwahrung muss die Teilnahmeerklärung die Firma des Bewerbers / des bevollmächtigten Bewerbergemeinschaftsmitglieds ausweisen. Eine Unterschrift oder Signatur ist nicht erforderlich. Bewerber werden gebeten, im Teilnahmeantrag einen Ansprechpartner mit Namen, Adresse, E-Mail und Telefonnummer zu benennen. Das Vergabeverfahren wird vollständig elektronisch über die unter Ziffer 5.1.11 genannte Vergabeplattform abgewickelt. Sämtliche Kommunikation mit den Bietern verläuft ausschließlich über die Vergabeplattform.  3. Mehrfachbewerbungen, als Einzelbewerber sowie als Mitglied einer/mehrerer Bewerbergemeinschaften sind nicht zulässig. Soweit mehrere Unternehmen im Rahmen der Vergabe miteinander kooperieren (z. B. über ein gemeinsames Tochterunternehmen, als Nachunternehmer oder im Rahmen einer Bewerbergemeinschaft), behält sich der Auftraggeber vor, Nachweise dafür zu fordern, dass die Kooperation als Ganzes sowie die Teilnahme der einzelnen Unternehmen an der Kooperation zulässig ist, insbesondere keine unzulässige wettbewerbsbeschränkende Abrede getroffen wurde. Für jeden Teilnehmer der Kooperation wäre dann zu begründen, inwieweit sein Entschluss zur Teilnahme an der Kooperation eine im Rahmen von zweckmäßigen und kaufmännisch vernünftigen Handelns liegende Entscheidung ist, z. B. weil der jeweilige Teilnehmer zur Zeit der Bildung der Kooperation überhaupt nicht oder jedenfalls zu dieser Zeit nicht über die erforderliche Kapazität zur Durchführung des hier ausgeschriebenen Auftrages verfügt oder aus anderen Gründen erst die Kooperation den jeweiligen Teilnehmer in die Lage versetzt, ein erfolgversprechendes Angebot abzugeben.  4. Die Bildung von Bewerbergemeinschaften ist bis zur Abgabe des Teilnahmeantrages möglich. Die Angaben zur Zusammensetzung der Bewerbergemeinschaft sind grundsätzlich bindend. Ein Austausch einzelner Mitglieder der Bewerbergemeinschaft vor Auftragsvergabe bedarf der Zustimmung des Auftraggebers. Die Abgabe von Angeboten durch Bewerbergemeinschaften ist nur bei gesamtschuldnerischer Haftung mit bevollmächtigtem Vertreter möglich. Hierzu ist eine von allen Mitgliedern      unterschriebene Vollmacht mittels einer Bewerbergemeinschaftserklärung vorzulegen. Außerdem haben sämtliche Mitglieder der Bewerbergemeinschaft namentlich mit Anschrift einen bevollmächtigten Vertreter für das Vergabeverfahren sowie den Abschluss und die Durchführung des Vertrages zu bezeichnen. Der Auftraggeber behält sich ausdrücklich vor, diese Angaben nachzufordern. Bei der Eignungsprüfung wird die Bewerbergemeinschaft als Ganzes beurteilt.   5. Der Auftraggeber wird den Vorgaben in § 12a EU VOB/A dadurch nachkommen, dass er in dieser Bekanntmachung die wesentlichen Eckpunkte und Besonderheiten der zu erbringenden Leistung skizziert. Da der Auftraggeber wegen nicht abschließend beschreibbarer Leistung ein Verhandlungsverfahren mit vorgeschaltetem Teilnahmewettbewerb durchführt, erfüllt dies die Anforderungen des § 12a EU VOB/A. Ziel des Verhandlungsverfahrens ist, die konkreten Anforderungen an die Leistung mit den Bietern gemeinsam im Rahmen eines dynamischen Prozesses zu konkretisieren. Zum jetzigen Zeitpunkt stehen deshalb zahlreiche Unterlagen noch nicht fest.  6. Der Auftraggeber wird die von dem Bewerber übermittelten Informationen vertraulich behandeln und die anwendbaren Vorschriften zum Datenschutzrecht beachten. Dies gilt insbesondere für personenbezogene Informationen, die im Zusammenhang mit der Angabe von Referenzen an den Auftraggeber weitergegeben werden.  7. Verfahrensablauf: Anhand der im Teilnahmewettbewerb eingereichten Unterlagen und den dort festgelegten Auswahlkriterien wählt der Auftraggeber die aus seiner Sicht geeigneten Bewerber (voraussichtlich 3 - 5) aus und fordert diese zur Abgabe eines ersten, unverbindlichen indikativen Angebotes auf. Gegenstand der Angebotsaufforderung ist neben der Projektbeschreibung ein erster ausformulierter Entwurf des mit dem obsiegenden Bieter zu schließenden Vertrages. Die Bieter haben die Möglichkeit, die Vergabeunterlagen durch die Angabe von Optimierungsvorschlägen mitzugestalten. Im Anschluss an die Prüfung der indikativen Angebote führt der Auftraggeber Verhandlungsgespräche mit den ausgewählten Bietern durch. Ziel ist es, die Anforderungen an die Planungs- und Bauleistungen sowie den zu schließenden Vertrag mit allen Bietern zu verhandeln, so dass am Ende inhaltlich vergleichbare Angebote zu erwarten sind. Nach Abschluss der Verhandlungsgespräche übersendet der Auftraggeber den Bietern die abschließenden Vergabeunterlagen. Auf dieser Grundlage fordert er die Bieter zur Abgabe letztverbindlicher Angebote auf. Den Bietern wird im Vorfeld mitgeteilt, welche Vorgaben zu beachten sind. Der Auftraggeber prüft und bewertet die letztverbindlichen Angebote nach Maßgabe der mitgeteilten Zuschlagskriterien.   8. Bewerber sollten die auf der in Ziffer 5.1.11 genannten Website hinterlegten Vordrucke für ihre nach der Bekanntmachung erforderlichen Eigenerklärungen verwenden. Der Auftraggeber behält sich vor, fehlende Unterlagen gemäß § 16a EU Abs. 3 VOB/A nachzufordern. Auf die Nachforderung besteht abweichend von § 16a EU Abs. 1 VOB/A kein Rechtsanspruch.  9. Für den Fall, dass ein Bewerber sich zum Nachweis seiner Eignung auf andere Unternehmen stützen will, wird auf die Möglichkeit der Eignungsleihe und die in § 6d EU VOB/A genannten Voraussetzungen hingewiesen. Wenn und soweit sich der Bieter auf die Eignung des Nachunternehmers beruft, ist mit dem Teilnahmeantrag insbesondere eine Verpflichtungserklärung des Nachunternehmers, dass dieser seine Ressourcen und Kapazitäten dem Bewerber im Auftragsfall zur Verfügung stellt sowie die erforderlichen Referenzen und/oder Nachweise gemäß § 6a EU VOB/A einzureichen. Bewerber sollten die auf der in Ziffer 5.1.11 genannten Website hinterlegten Vordrucke verwenden. Der Auftraggeber behält sich vor, Unterlagen im Rahmen des § 16a Abs. 3 EU VOB/A nachzufordern. Hierauf besteht kein Rechtsanspruch.</cbc:Note>
+			<cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+			<cac:ProcurementAdditionalType>
+				<cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+			</cac:ProcurementAdditionalType>
+			<cac:MainCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+			</cac:MainCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45210000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71240000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71300000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">71221000</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45215100</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45213312</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:AdditionalCommodityClassification>
+				<cbc:ItemClassificationCode listName="cpv">45216110</cbc:ItemClassificationCode>
+			</cac:AdditionalCommodityClassification>
+			<cac:RealizedLocation>
+				<cac:Address>
+					<cbc:CountrySubentityCode listName="nuts">DEA11</cbc:CountrySubentityCode>
+					<cac:Country>
+						<cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:RealizedLocation>
+			<cac:PlannedPeriod>
+				<cbc:StartDate>2026-11-23+01:00</cbc:StartDate>
+				<cbc:EndDate>2030-08-08+02:00</cbc:EndDate>
+			</cac:PlannedPeriod>
+			<cac:ContractExtension>
+				<cbc:OptionsDescription languageID="DEU">Die weiteren Planungs- und Bauleistungen werden nur optional nach Abschluss der LP 3 HOAI und Vorliegen eines Ausführungs- und Finanzierungsbeschlusses des Rates der Landeshauptstadt Düsseldorf abgerufen.  Ein Rechtsanspruch auf Beauftragung mit den Leistungen der zweiten Stufe besteht nicht.</cbc:OptionsDescription>
+			</cac:ContractExtension>
+		</cac:ProcurementProject>
+	</cac:ProcurementProjectLot>
+</ContractNotice>

@@ -1,0 +1,158 @@
+{
+ "eforms": {
+  "notice_type": "cn-standard",
+  "schema_profile": "eforms-de-2.1",
+  "regulatory_domain": "32014L0025",
+  "procedure_type": "open",
+  "buyer_activity": "port",
+  "title": "Los 6 - Umschlagtechnik",
+  "description_len": 770,
+  "cpv_main": "42414000",
+  "cpv_additional": [
+   "45241000",
+   "45223100"
+  ],
+  "place_city": "Riesa",
+  "place_nuts": "DED2E",
+  "buyer_name": "Sächsische Binnenhäfen Oberelbe GmbH",
+  "buyer_nuts": "DED21",
+  "lots": 1,
+  "estimated_value": null,
+  "submission_deadline": "2026-09-29+02:00",
+  "question_deadline": null,
+  "bid_opening": null,
+  "bauzeit_start": null,
+  "bauzeit_end": null,
+  "bindefrist_days": "60",
+  "guarantee_required": "false",
+  "guarantee_text": null,
+  "variants_allowed": "not-allowed",
+  "sme_suitable": "false",
+  "max_lots_awarded": null,
+  "exclusion_grounds": [
+   "nati-ground"
+  ],
+  "selection_criteria": [
+   "Zum Nachweis Befähigung und Erlaubnis zur Berufsausübung, hat sich der Bieter mit dem Angebot über eine Eintragung in das zuständige Berufsregister bzw. einem vergleichbaren Register des Herkunftslandes (Betriebssitz des Unternehmens) zu erklären oder dass er zu so einer Eintragung nicht verpflichtet ist. Der Bieter hat auf gesondertes Verlangen eine Gewerbeanmeldung, einen Nachweis der Eintragung in der Handwerksrolle (Handwerkskarte) oder bei der Industrie- und Handelskammer bzw. einem vergleichbaren Register des Herkunftslandes vorzulegen.",
+   "Zum Nachweis Befähigung und Erlaubnis zur Berufsausübung, hat sich der Bieter mit dem Angebot über eine Eintragung in das zuständige Handelsregister bzw. einem vergleichbaren Register des Herkunftslandes (Betriebssitz des Unternehmens) zu erklären oder dass er zu so einer Eintragung nicht verpflichtet ist. Der Bieter hat auf gesondertes Verlangen einen Nachweis dessen (Handelsregisterauszug oder gleichwertig) vorzulegen.",
+   "Der Bieter hat sich gegen sämtliche mit der Abwicklung des Auftrages zusammenhängende versicherbaren Risiken zu versichern. Dabei dürfen folgende Versicherungssummen je Schadensfall nicht unterschritten werden: - 5.000.000 € für Personen- und Sachschäden und 750.000 € für Vermögensschäden im Rahmen einer Haftpflichtversicherung - Umweltschäden nach dem Umweltschadensgesetz sind von der Haftpflichtversicherung einzuschließen - Maximierung der Ersatzleistungen min. 2-Faches der Versicherungssummen.\nDer AN hat sich gegen alle unvorhersehbare Beschädigungen oder Zerstörungen von Montageobjekten (Kranbauteile, Tragwerke, Maschinen- und Elektrotechnik) auf der Baustelle abzusichern. Versichert sein müssen dabei insbesondere Schäden durch Montagefehler, Ungeschicklichkeit, Konstruktions- und Materialfehler des Herstellers sowie durch höhere Gewalt und extreme Witterungseinflüsse (z. B. Sturm, Hochwasser). Durch den Bieter ist auf gesondertes Verlangen jeweils der Nachweis für die Berufshaftpflichtversicherung und die Montageversicherung über eine bestehende Versicherung bzw. eine entsprechende Zusicherung der Versicherungen im Auftragsfall zu erbringen.",
+   "Der Bieter hat sich mit dem Angebot über seinen Jahresumsatz bezogen auf die letzten drei Geschäftsjahre (netto) zu erklären, unter Einschluss des Anteils bei gemeinsam mit anderen Unternehmen ausgeführten Leistungen; Mindestanforderung:  Durch den Bieter (bei Bieter-/Arbeitsgemeinschaften von jedem Mitglied bzw. vom Eignungsleihenden) sind die folgenden Umsätze kumulativ anzugeben: Mindestjahresumsatz (Geschäftsjahr) größer oder gleich 13.000.000 EUR (netto) jeweils im Mittel der letzten drei Jahre.",
+   "Der Bieter erklärt mit dem Angebot in den letzten fünf Kalenderjahren vergleichbare Leistungen ausgeführt zu haben und reicht dazu 2 geeignete Referenzangaben, die mit der zu vergebenden Leistung vergleichbar sind, mittels der Anlage zur Eigenerklärung ein.\n\nArt der Leistung: \nNeubau von 2 Portalkränen folgende Mindestanforderungen (in einem oder zwei Projekten): - außen aufgestellter, schienengebundener, elektrisch angetriebener Ausleger-Portalkran, der in der Lage ist, kontinuierlichen Containerumschlag durchzuführen; - Überfahren von mind. 1 über 4 Containern; - Auskragung 15 m (Wasser und oder Landseitig); - Spurweite 30 m; - Förderung von 20/30/40/45' ISO- Container, Kühlcontainer, Wechselbrücken und Sattelanhänger; - BUS- und SPS System; - Industrieller Ethernet-Netzwerkbasis (mindestens CAT-6A, CAT-7 oder CAT-8)\n\nDer Bieter hat auf gesondertes Verlangen Nachweise für die mit dem Angebot benannten 2 geeigneten Referenzen aus den letzten 5 Kalenderjahren vorzulegen, die mit der zu vergebenden Leistung vergleichbar sind. Die Referenznachweise müssen mindestens folgende Angaben beinhalten: Ansprechpartner; Art der ausgeführten Leistung; Auftragssumme; Ausführungszeitraum; stichwortartige Benennung des mit eigenem Personal ausgeführten maßgeblichen Leistungsumfanges einschl. Angabe der ausgeführten Mengen; Zahl der hierfür durchschnittlich eingesetzten Arbeitnehmer; stichwortartige Beschreibung der besonderen technischen und gerätespezifischen Anforderungen bzw. (bei Komplettleistung) Kurzbeschreibung der Leistungen  einschließlich eventueller Besonderheiten der Ausführung; Angabe zur Art der Leistungen (Neubau, Umbau, Denkmal); Angabe zur vertraglichen Bindung (Hauptauftragnehmer, ARGE-Partner, Nachunternehmer); ggf. Angabe der Gewerke, die mit eigenem Leitungspersonal koordiniert wurden; Bestätigung des Auftraggebers über die vertragsgemäße Ausführung der Leistung.",
+   "Schweißzulassung:\nDer Bieter weist mit dem Angebot (mit Angebotsabgabe) für den Verantwortlichen der Leistungserbringung sowie dessen Vertreter die ISO 9001 Zertifizierung und seine Schweißzulassung DIN EN 1090-2 EXC 3 nach (Gültigkeit max. 3 Jahre). \n\nEs ist auch erforderlich, dass der Bieter mit dem Angebot die Einzelheiten der Qualitätssicherung und der Qualitätskontrolle aufführt, die er während der Fertigung anwendet. \n\nSchweißpersonal:\nDer Bieter hat mit dem Angebot (mit Angebotsabgabe) den Verantwortlichen der Leistungserbringung sowie dessen Vertreter zu benennen, welche die Schweißarbeiten ausführen. Weiterhin ist anzugeben ob diese Personen für den Bieter, als Mitglied der Bieter-/Arbeitsgemeinschaft oder als anderes Unternehmen tätig sind.\n\nDer Bieter weist mit dem Angebot (mit Angebotsabgabe) die Qualifikation zum Schweißen von Stahlbauten für den Verantwortlichen der Leistungserbringung sowie dessen Vertreter nach DIN EN 1090 für den Anwendungsbereich „nicht ruhend beanspruchte Bauteile“ und „Krane (DIN EN 130018)“ nach.\nKranbauer: Der Bieter hat auf gesondertes Verlangen folgende Nachweise zu erbringen: - Schweißzulassung nach DIN EN ISO 3834-2:2021 (max. Gültigkeit 3 Jahre); - Nachweis Europäische Fertigung des Containerportalkranes ODER\tAlternativ: - Herstellererklärung (Eigenerklärung): Der Bieter muss im Angebot verbindlich den genauen Ort der Endmontage des Portalkrans (Stahlbau und Maschinenbau) sowie die Herkunftsländer der Hauptkomponenten (Hubwerk, Motoren, Fahrwerke) benennen.  - Der Bieter muss nachweisen, dass die schweißtechnische Fertigung des Krantragwerks nach DIN EN ISO 3834-2 zertifiziert ist. Um im Gewährleistungsfall Ausfallzeiten zu minimieren, muss der Auftragnehmer ein zentrales Ersatzteillager innerhalb der EU betreiben, welches eine Ersatzteilversorgung kritischer Maschinenbauteile innerhalb von 24 Stunden garantiert;  -Zulassungen und Normenkonformität; - Einhaltung von CE, EN Normen, ggf. Hafen /Binnenschiff Spezifika und Schallschutzanforderungen: - Zertifikate; - Prüfzeugnisse;  -Nachweis über interne oder externe Prüfstellen (z. B. TÜV).",
+   "Der Bieter erklärt mit dem Angebot (mit Angebotsabgabe), dass die für die Ausführung der Leistungen erforderlichen Arbeitskräfte zur Verfügung stehen. Durch den Bieter ist auf gesondertes Verlangen die Zahl der in den letzten drei abgeschlossenen Kalenderjahren jahresdurchschnittlich beschäftigten Arbeitskräfte gegliedert nach Lohngruppen mit extra ausgewiesenem Leitungspersonal anzugeben."
+  ],
+  "qualification_prose": [
+   "Zwingend erfolgt ein Ausschluss nach § 123 GWB, wenn dem Bieter das Verhalten einer Person zuzurechnen ist, die rechtskräftig verurteilt oder gegen den Bieter eine Geldbuße nach § 30 OWiG rechtskräftig festgesetzt worden ist wegen einer Straftat nach: 1. § 129 StGB (Bildung krimineller Vereinigungen), § 129a StGB (Bildung terroristischer Vereinigungen) oder § 129b StGB (Kriminelle und terroristische Vereinigungen im Ausland); 2. § 89c StGB (Terrorismusfinanzierung) oder wegen der Teilnahme an einer solchen Tat oder wegen der Bereitstellung oder Sammlung finanzieller Mittel in Kenntnis dessen, dass diese ganz oder teilweise dazu verwendet werden oder verwendet werden sollen, eine Tat nach § 89a Abs. 2 Nr. 2 StGB zu begehen; 3. § 261 StGB (Geldwäsche); 4. § 263 StGB (Betrug), soweit sich die Straftat gegen den Haushalt der Europäischen Union (EU) oder gegen Haushalte richtet, die von der EU oder in ihrem Auftrag verwaltet werden; 5. § 264 StGB (Subventionsbetrug), soweit sich die Straftat gegen den Haushalt der EU oder gegen Haushalte richtet, die von der EU oder in ihrem Auftrag verwaltet werden; 6. § 299 StGB (Bestechlichkeit und Bestechung im geschäftlichen Verkehr), §§ 299a und 299b StGB (Bestechlichkeit und Bestechung im Gesundheitswesen); 7. § 108e StGB (Bestechlichkeit und Bestechung\nvon Mandatsträgern); 8. den §§ 333 und 334 StGB (Vorteilsgewährung und Bestechung), jeweils auch in Verbindung mit § 335a StGB (Ausländische und internationale Bedienstete);\n9. Artikel 2 § 2 IntBestG (Bestechung ausländischer Abgeordneter im Zusammenhang mit internationalem Geschäftsverkehr) oder 10. den §§ 232, 232a Abs. 1 bis 5, den §§ 232b bis 233a des StGB (Menschenhandel, Zwangsprostitution, Zwangsarbeit, Ausbeutung der Arbeitskraft, Ausbeutung unter Ausnutzung einer Freiheitsberaubung). Einer Verurteilung oder der Festsetzung einer Geldbuße stehen eine Verurteilung oder die Festsetzung einer Geldbuße nach den vergleichbaren Vorschriften anderer Staaten gleich. Das Verhalten einer rechtskräftig verurteilten Person ist einem Bieter zuzurechnen, wenn diese Person als für die Leitung des Unternehmens Verantwortlicher gehandelt hat; dazu gehört auch die Überwachung der Geschäftsführung oder die sonstige Ausübung von Kontrollbefugnissen in leitender Stellung. \nEin Ausschluss kann nach § 124 GWB aufgrund von Kriterien erfolgen, die im Bezug zur persönlichen Situation der Bieter stehen. Das ist der Fall, wenn 1. der Bieter bei der Ausführung öffentlicher Aufträge nachweislich gegen geltende umwelt-, sozial-oder arbeitsrechtliche Verpflichtungen verstoßen hat; 2. der Bieter zahlungsunfähig ist, über das Vermögen ein Insolvenzverfahren oder ein vergleichbares Verfahren beantragt oder eröffnet worden ist, die Eröffnung eines solchen Verfahrens mangels Masse abgelehnt worden ist, sich der Bieter im Verfahren der Liquidation befindet oder seine Tätigkeit eingestellt hat; 3. der Bieter im Rahmen der beruflichen Tätigkeit nachweislich eine schwere Verfehlung begangen hat, durch die die Integrität des Bieters infrage gestellt wird; 4. der öffentliche AG über hinreichende Anhaltspunkte dafür verfügt, dass der Bieter mit anderen Unternehmen Vereinbarungen getroffen oder Verhaltensweisen aufeinander abgestimmt hat, die eine Verhinderung, Einschränkung oder Verfälschung des Wettbewerbs bezwecken oder bewirken; 5. ein Interessenkonflikt bei der Durchführung des Verfahrens besteht, der die Unparteilichkeit und Unabhängigkeit einer für den öffentlichen AG tätigen Person bei der Durchführung des Verfahrens beeinträchtigen könnte und der durch andere, weniger einschneidende Maßnahmen nicht wirksam beseitigt werden kann; 6. eine Wettbewerbsverzerrung daraus resultiert, dass der Bieter bereits in die Vorbereitung des Verfahrens einbezogen war, und diese Wettbewerbsverzerrung nicht durch andere, weniger einschneidende Maßnahmen beseitigt werden kann; 7. der Bieter eine wesentliche Anforderung bei der Ausführung eines früheren öffentlichen Auftrags oder Konzessionsvertrags erheblich oder fortdauernd mangelhaft erfüllt hat und dies zu einer vorzeitigen Beendigung, zu Schadensersatz oder zu einer vergleichbaren Rechtsfolge geführt hat; 8. der Bieter in Bezug auf Ausschlussgründe oder Eignungskriterien eine schwerwiegende Täuschung begangen oder Auskünfte zurückgehalten hat oder nicht in der Lage ist, die erforderlichen Nachweise zu übermitteln, oder 9. der Bieter a) versucht hat, die Entscheidungsfindung des öffentlichen AGs in unzulässiger Weise zu beeinflussen b) versucht hat, vertrauliche Informationen zu erhalten, durch die es unzulässige Vorteile beim Verfahren erlangen könnte, oder c) fahrlässig oder vorsätzlich irreführende Informationen übermittelt hat, die die Vergabeentscheidung des öffentlichen AGs erheblich beeinflussen könnten, oder versucht hat, solche Informationen zu übermitteln. Es handelt sich um Ausschlussgründe, die bei Vorliegen optional zum Ausschluss führen. D.h., es wird im Einzelfall geprüft, ob die Situation des Bieters eine Beauftragung ausschließt. Informationserfordernisse: Bieter hat mit dem Angebot eine \"Eigenerklärung Eignung\" abzugeben, dass nachweislich keine schwere Verfehlung begangen wurde, die die Zuverlässigkeit als Bieter in Frage stellt. Wurde ein Insolvenzplan rechtskräftig bestätigt oder eine Selbstreinigung gem. § 125 GWB durchgeführt, sind auf Verlangen geeignete Nachweise vorzulegen.",
+   "Eine Nachforderung von unternehmens- oder leistungsbezogenen Unterlagen ist gem. § 51 Abs. 2 SektVO möglich. Gemäß § 51 Abs. 3 SektVO ist die Nachforderung von leistungsbezogenen Unterlagen, welche die Wirtschaftlichkeitsbewertung der Angebote anhand der Zuschlagskriterien betreffen, ausgeschlossen. Nach Aufforderung nicht vorliegende geforderte Erklärungen oder Nachweise führen zum Ausschluss."
+  ],
+  "document_urls": [
+   "https://www.evergabe.de/unterlagen/019ff4a0-b177-4cf0-a0fe-3e22056c76fd/zustellweg-auswaehlen"
+  ],
+  "is_corrigendum": true
+ },
+ "ocds": {
+  "tag": [
+   "tender"
+  ],
+  "schema_profile": null,
+  "regulatory_domain": null,
+  "procedure_type": "Open",
+  "buyer_activity": null,
+  "title": "Neubau eines KV-Terminals im Hafen Riesa, Alter Hafen - Los 6 - Umschlagtechnik",
+  "description_len": 79,
+  "cpv_main": "42414000",
+  "cpv_additional": [
+   "45241000",
+   "45223100"
+  ],
+  "place_city": "Riesa",
+  "place_nuts": "DED2E",
+  "buyer_name": "Sächsische Binnenhäfen Oberelbe GmbH",
+  "buyer_nuts": "DED21",
+  "lots": 1,
+  "estimated_value": null,
+  "submission_deadline": null,
+  "question_deadline": null,
+  "bid_opening": null,
+  "bauzeit_start": null,
+  "bauzeit_end": null,
+  "bindefrist_days": null,
+  "guarantee_required": null,
+  "guarantee_text": null,
+  "variants_allowed": null,
+  "sme_suitable": null,
+  "max_lots_awarded": null,
+  "exclusion_grounds": [],
+  "selection_criteria": [],
+  "qualification_prose": [],
+  "document_urls": [
+   "https://www.evergabe.de/unterlagen/019ff4a0-b177-4cf0-a0fe-3e22056c76fd/zustellweg-auswaehlen"
+  ],
+  "is_corrigendum": true,
+  "_ocds_keys": [
+   "amendments",
+   "description",
+   "documents",
+   "id",
+   "items",
+   "lots",
+   "mainProcurementCategory",
+   "numberOfTenderers",
+   "procurementMethod",
+   "procurementMethodDetails",
+   "procuringEntity",
+   "title"
+  ]
+ },
+ "csv": {
+  "form_type": "competition",
+  "notice_type": "cn-standard",
+  "schema_profile": null,
+  "regulatory_domain": "32014L0025",
+  "procedure_type": "open",
+  "buyer_activity": null,
+  "title": "Neubau eines KV-Terminals im Hafen Riesa, Alter Hafen - Los 6 - Umschlagtechnik",
+  "description_len": 79,
+  "cpv_main": "42414000",
+  "cpv_additional": [
+   "45241000,45223100"
+  ],
+  "place_city": "Riesa",
+  "place_nuts": "DED2E",
+  "buyer_name": "Sächsische Binnenhäfen Oberelbe GmbH",
+  "buyer_nuts": "DED21",
+  "lots": 1,
+  "estimated_value": null,
+  "submission_deadline": null,
+  "question_deadline": null,
+  "bid_opening": "",
+  "bauzeit_start": "",
+  "bauzeit_end": "",
+  "bindefrist_days": "60.0",
+  "guarantee_required": "false",
+  "guarantee_text": null,
+  "variants_allowed": null,
+  "sme_suitable": "false",
+  "max_lots_awarded": null,
+  "exclusion_grounds": [],
+  "selection_criteria": [],
+  "qualification_prose": [],
+  "document_urls": [],
+  "is_corrigendum": true,
+  "_csv_tables_hit": [
+   "additionalInformation",
+   "changes",
+   "classification",
+   "duration",
+   "lot",
+   "notice",
+   "organisation",
+   "placeOfPerformance",
+   "procedure",
+   "purpose",
+   "secondStage",
+   "strategicProcurement",
+   "submissionTerms"
+  ]
+ }
+}

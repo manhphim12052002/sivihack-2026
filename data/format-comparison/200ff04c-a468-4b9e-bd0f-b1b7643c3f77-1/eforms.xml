@@ -1,0 +1,198 @@
+<cn:ContractNotice xmlns:cn="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-sdk-0.1</cbc:CustomizationID>
+   <cbc:ID>200ff04c-a468-4b9e-bd0f-b1b7643c3f77</cbc:ID>
+   <cbc:ContractFolderID>dd90c198-201f-42a1-a9e8-3d361405cee6</cbc:ContractFolderID>
+   <cbc:IssueDate>2026-09-16+02:00</cbc:IssueDate>
+   <cbc:IssueTime>10:04:40+02:00</cbc:IssueTime>
+   <cbc:VersionID>1</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2026-09-16</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>de-vob</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode>DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:Party>
+         <cbc:WebsiteURI>http://www.wittenberg.de</cbc:WebsiteURI>
+         <cac:PartyName>
+            <cbc:Name languageID="DEU">Lutherstadt Wittenberg</cbc:Name>
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:StreetName>Lutherstr. 56</cbc:StreetName>
+            <cbc:CityName>Lutherstadt Wittenberg</cbc:CityName>
+            <cbc:PostalZone>06886</cbc:PostalZone>
+            <cac:Country>
+               <cbc:IdentificationCode>DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:PostalAddress>
+         <cac:Contact>
+            <cbc:Telephone>+49 3491 42191153</cbc:Telephone>
+            <cbc:ElectronicMail>vergabestelle@wittenberg.de</cbc:ElectronicMail>
+         </cac:Contact>
+         <cac:ServiceProviderParty>
+            <cbc:ServiceTypeCode listName="organisation-role">ted-esen</cbc:ServiceTypeCode>
+            <cac:Party>
+               <cbc:EndpointID>http://bescha.bund.de:9930:DE122268496</cbc:EndpointID>
+               <cac:PartyName>
+                  <cbc:Name>Beschaffungsamt des BMI</cbc:Name>
+               </cac:PartyName>
+               <cac:PostalAddress>
+                  <cbc:StreetName>Brühler Str. 3</cbc:StreetName>
+                  <cbc:CityName>Bonn</cbc:CityName>
+                  <cbc:PostalZone>53119</cbc:PostalZone>
+                  <cbc:CountrySubentityCode listName="nuts">DEA22</cbc:CountrySubentityCode>
+                  <cac:Country>
+                     <cbc:IdentificationCode>DEU</cbc:IdentificationCode>
+                  </cac:Country>
+               </cac:PostalAddress>
+               <cac:PartyLegalEntity>
+                  <cbc:CompanyID>0204: 991-1405-10</cbc:CompanyID>
+               </cac:PartyLegalEntity>
+               <cac:Contact>
+                  <cbc:Telephone>0228 99 610 1234</cbc:Telephone>
+                  <cbc:ElectronicMail>ticket@bescha.bund.de</cbc:ElectronicMail>
+               </cac:Contact>
+            </cac:Party>
+         </cac:ServiceProviderParty>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:TenderValidityPeriod>
+         <cbc:DurationMeasure unitCode="DAY">22</cbc:DurationMeasure>
+      </cac:TenderValidityPeriod>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">de-open</cbc:ProcedureCode>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID schemeName="InternalID">OB2-V-2026-74</cbc:ID>
+      <cbc:Name languageID="DEU">KGA " Am Stadtgraben" in 06886 Luth. Wittenberg - Rückbau Gartenparzelle Nr. 2 - Rückbauarbeiten</cbc:Name>
+      <cbc:Description languageID="DEU">Kleingartenanlage „Am Stadtgraben“
+Rückbau Gartenparzelle 2
+Art und Umfang
+Rückbau Bestandsgebäude, ca. 100m³ umbauter Raum, gefährliche Abfälle
+Nachweis der Sach- und Fachkunde TRGS 521 und 524 1 Stk.
+Entsiegelung Außenflächen, Beton, Betonplatten, Betonborde ca. 500m²
+Erdarbeiten, Lieferung und Profilierung Oberboden ca. 30to
+Ausführung:
+Siehe Vergabevermerk</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="DEU">Fertigstellung oder Dauer der Leistungen: 20.11.2026
+Sonstige Ausführungsfristen: Ausführungsfristen: Beginn: 46. KW 2026; Ende: 47. KW 2026; siehe Vergabeunterlagen</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">43000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">44000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:Description languageID="DEU">Kleingartenanlage " Am Stadtgraben" , Wallstraße in 06886 Lutherstadt Wittenberg</cbc:Description>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:Description languageID="DEU">Bezug zum Formblatt: siehe Vergabeunterlagen; FB 124 oder PQ, Eigenerkärung Tariftreue TVerG LSA; Fachkunde TRGS 521 und 524</cbc:Description>
+                        <cbc:CalculationExpressionCode listName="usage">used</cbc:CalculationExpressionCode>
+                     </efac:SelectionCriteria>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">allowed</cbc:VariantConstraintCode>
+         <cbc:MultipleTendersCode>true</cbc:MultipleTendersCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="required-guarantee">provisional</cbc:GuaranteeTypeCode>
+            <cbc:Description languageID="DEU">siehe Vergabeunterlagen</cbc:Description>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <cbc:ID>No ID</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://www.evergabe-online.de/tenderdetails.html?id=890925</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode>true</cbc:CompanyLegalFormCode>
+            <cbc:CompanyLegalForm>gesamtschuldnerisch haftend mit bevollmächtigtem Vertreter</cbc:CompanyLegalForm>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">Nachprüfungsstelle: Landesverwaltungsamt; 3. Vergabekammer
+Ernst-Kamieth-Str. 2
+06112 Halle/S.</cbc:Description>
+            </cac:PresentationPeriod>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:SecurityClearanceTerm>
+            <cbc:Code listName="required">false</cbc:Code>
+         </cac:SecurityClearanceTerm>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">allowed</cbc:SubmissionMethodCode>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2026-10-01+02:00</cbc:EndDate>
+            <cbc:EndTime>10:00:00+02:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2026-10-01+02:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>10:01:00+02:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="DEU">Bieter und /oder ihre Bevollmächtigten</cbc:Description>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="DEU">Vergabestelle, R. 4.23</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID schemeName="InternalID">OB2-V-2026-74</cbc:ID>
+         <cbc:Name languageID="DEU">KGA " Am Stadtgraben" in 06886 Luth. Wittenberg - Rückbau Gartenparzelle Nr. 2 - Rückbauarbeiten</cbc:Name>
+         <cbc:Description languageID="DEU">Kleingartenanlage „Am Stadtgraben“
+Rückbau Gartenparzelle 2
+Art und Umfang
+Rückbau Bestandsgebäude, ca. 100m³ umbauter Raum, gefährliche Abfälle
+Nachweis der Sach- und Fachkunde TRGS 521 und 524 1 Stk.
+Entsiegelung Außenflächen, Beton, Betonplatten, Betonborde ca. 500m²
+Erdarbeiten, Lieferung und Profilierung Oberboden ca. 30to
+Ausführung:
+Siehe Vergabevermerk</cbc:Description>
+         <cbc:Note languageID="DEU">Fertigstellung oder Dauer der Leistungen: 20.11.2026
+Sonstige Ausführungsfristen: Ausführungsfristen: Beginn: 46. KW 2026; Ende: 47. KW 2026; siehe Vergabeunterlagen</cbc:Note>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">43000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">44000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">71000000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cbc:Description languageID="DEU">Kleingartenanlage " Am Stadtgraben" , Wallstraße in 06886 Lutherstadt Wittenberg</cbc:Description>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod/>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</cn:ContractNotice>

@@ -1,0 +1,143 @@
+{
+ "eforms": {
+  "notice_type": "cn-standard",
+  "schema_profile": "eforms-sdk-0.1",
+  "regulatory_domain": "de-vob",
+  "procedure_type": "de-open",
+  "buyer_activity": null,
+  "title": "KGA \" Am Stadtgraben\" in 06886 Luth. Wittenberg - Rückbau Gartenparzelle Nr. 2 - Rückbauarbeiten",
+  "description_len": 362,
+  "cpv_main": "45000000",
+  "cpv_additional": [
+   "43000000",
+   "44000000",
+   "71000000"
+  ],
+  "place_city": null,
+  "place_nuts": null,
+  "buyer_name": null,
+  "buyer_nuts": null,
+  "lots": 1,
+  "estimated_value": null,
+  "submission_deadline": "2026-10-01+02:00",
+  "question_deadline": null,
+  "bid_opening": "2026-10-01+02:00",
+  "bauzeit_start": null,
+  "bauzeit_end": null,
+  "bindefrist_days": null,
+  "guarantee_required": null,
+  "guarantee_text": "siehe Vergabeunterlagen",
+  "variants_allowed": "allowed",
+  "sme_suitable": null,
+  "max_lots_awarded": null,
+  "exclusion_grounds": [],
+  "selection_criteria": [
+   "Bezug zum Formblatt: siehe Vergabeunterlagen; FB 124 oder PQ, Eigenerkärung Tariftreue TVerG LSA; Fachkunde TRGS 521 und 524"
+  ],
+  "qualification_prose": [],
+  "document_urls": [
+   "https://www.evergabe-online.de/tenderdetails.html?id=890925"
+  ],
+  "is_corrigendum": false
+ },
+ "ocds": {
+  "tag": [
+   "tender"
+  ],
+  "schema_profile": null,
+  "regulatory_domain": null,
+  "procedure_type": "Public announcement",
+  "buyer_activity": null,
+  "title": "KGA \" Am Stadtgraben\" in 06886 Luth. Wittenberg - Rückbau Gartenparzelle Nr. 2 - Rückbauarbeiten",
+  "description_len": 362,
+  "cpv_main": "45000000",
+  "cpv_additional": [
+   "43000000",
+   "44000000",
+   "71000000"
+  ],
+  "place_city": null,
+  "place_nuts": null,
+  "buyer_name": "Lutherstadt Wittenberg",
+  "buyer_nuts": null,
+  "lots": 1,
+  "estimated_value": null,
+  "submission_deadline": null,
+  "question_deadline": null,
+  "bid_opening": null,
+  "bauzeit_start": null,
+  "bauzeit_end": null,
+  "bindefrist_days": null,
+  "guarantee_required": null,
+  "guarantee_text": null,
+  "variants_allowed": null,
+  "sme_suitable": null,
+  "max_lots_awarded": null,
+  "exclusion_grounds": [],
+  "selection_criteria": [],
+  "qualification_prose": [],
+  "document_urls": [
+   "https://www.evergabe-online.de/tenderdetails.html?id=890925"
+  ],
+  "is_corrigendum": false,
+  "_ocds_keys": [
+   "description",
+   "documents",
+   "id",
+   "items",
+   "lots",
+   "mainProcurementCategory",
+   "numberOfTenderers",
+   "procurementMethodDetails",
+   "procuringEntity",
+   "title"
+  ]
+ },
+ "csv": {
+  "form_type": "competition",
+  "notice_type": "cn-standard",
+  "schema_profile": null,
+  "regulatory_domain": "de-vob",
+  "procedure_type": "de-open",
+  "buyer_activity": null,
+  "title": "KGA \" Am Stadtgraben\" in 06886 Luth. Wittenberg - Rückbau Gartenparzelle Nr. 2 - Rückbauarbeiten",
+  "description_len": 362,
+  "cpv_main": "45000000",
+  "cpv_additional": [
+   "43000000,44000000,71000000"
+  ],
+  "place_city": "",
+  "place_nuts": "",
+  "buyer_name": "Lutherstadt Wittenberg",
+  "buyer_nuts": "",
+  "lots": 1,
+  "estimated_value": null,
+  "submission_deadline": null,
+  "question_deadline": null,
+  "bid_opening": "2026-10-01T10:01:00+02:00",
+  "bauzeit_start": null,
+  "bauzeit_end": null,
+  "bindefrist_days": "",
+  "guarantee_required": "true",
+  "guarantee_text": null,
+  "variants_allowed": null,
+  "sme_suitable": "",
+  "max_lots_awarded": null,
+  "exclusion_grounds": [],
+  "selection_criteria": [],
+  "qualification_prose": [],
+  "document_urls": [],
+  "is_corrigendum": false,
+  "_csv_tables_hit": [
+   "additionalInformation",
+   "classification",
+   "lot",
+   "notice",
+   "organisation",
+   "placeOfPerformance",
+   "procedure",
+   "purpose",
+   "submissionTerms"
+  ]
+ }
+}

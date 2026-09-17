@@ -1,0 +1,530 @@
+<ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">16</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efbc:AcquiringCPBIndicator>false</efbc:AcquiringCPBIndicator>
+                     <efbc:AwardingCPBIndicator>false</efbc:AwardingCPBIndicator>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://vergabe.bremen.de</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Immobilien Bremen - Eigenbetrieb der Stadtgemeinde Bremen</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Theodor-Heuss-Allee 14</cbc:StreetName>
+                           <cbc:CityName>Bremen</cbc:CityName>
+                           <cbc:PostalZone>28215</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE501</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>entfällt</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 421-361-16998</cbc:Telephone>
+                           <cbc:Telefax>+49 421-496-16998</cbc:Telefax>
+                           <cbc:ElectronicMail>volker.hach@immobilien.bremen.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://bau.bremen.de/ressort/vergabekammer-3529</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7004</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammer der Freien Hansestadt Bremen bei der Senatorin für Bau, Mobilität und Stadtentwicklung</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Contrescarpe 72</cbc:StreetName>
+                           <cbc:CityName>Bremen</cbc:CityName>
+                           <cbc:PostalZone>28195</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE501</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>keine Angabe</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 42136159796</cbc:Telephone>
+                           <cbc:Telefax>+49 421-496-32311</cbc:Telefax>
+                           <cbc:ElectronicMail>vergabekammer@bau.bremen.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.bauumwelt.bremen.de</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-7005</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Vergabekammer der Freien Hansestadt Bremen bei der Senatorin für Bau, Mobilität und Stadtentwicklung</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Contrescarpe 72</cbc:StreetName>
+                           <cbc:CityName>Bremen</cbc:CityName>
+                           <cbc:PostalZone>28195</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DE501</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>nicht bekannt</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 421-361-2487</cbc:Telephone>
+                           <cbc:Telefax>+49 421-496-32311</cbc:Telefax>
+                           <cbc:ElectronicMail>vergabekammer@bau.bremen.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            </efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-de-2.1</cbc:CustomizationID>
+   <cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+   <cbc:ID schemeName="notice-id">005970e4-fa83-4d72-b88d-6b8acfe47c4a</cbc:ID>
+   <cbc:ContractFolderID>b6ef3da2-c7e0-4d41-a41e-42c3eef90f2d</cbc:ContractFolderID>
+   <cbc:IssueDate>2026-09-15+02:00</cbc:IssueDate>
+   <cbc:IssueTime>07:06:41+02:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2026-09-15+02:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0024</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cbc:BuyerProfileURI>https://vergabe.bremen.de</cbc:BuyerProfileURI>
+      <cac:ContractingPartyType>
+         <cbc:PartyTypeCode listName="buyer-legal-type">pub-undert</cbc:PartyTypeCode>
+      </cac:ContractingPartyType>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="authority-activity">gen-pub</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-7001</cbc:ID>
+         </cac:PartyIdentification>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>vob-a-eu</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">bankr-nat</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">corruption</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">crime-org</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">distorsion</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">envir-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">finan-laund</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">fraud</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">human-traffic</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">insolvency</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">labour-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">liq-admin</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">misrepresent</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">partic-confl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">prep-confl</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">prof-misconduct</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">sanction</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">socsec-law</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">socsec-pay</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">susp-act</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">tax-pay</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">terr-offence</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Es gelten die gesetzlichen Ausschlussvoraussetzungen nach den §§ 123 und 124 GWB</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID>V0540/2026</cbc:ID>
+      <cbc:Name languageID="DEU">Wärmedämmverbundsystem (WDVS)</cbc:Name>
+      <cbc:Description languageID="DEU">Wärmedämmverbundsystem</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="DEU">1. Rügen sind ausschließlich an den unter "Beschaffer" genannten Auftraggeber zu senden.
+2. Werden im Vergabeverfahren Bescheinigungen von Auftraggebern oder amtlichen Stellen gefordert, sind sie - soweit sie nicht in deutsch verfasst wurden - inklusive einer beglaubigten deutschsprachigen Übersetzung einzureichen.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:StreetName>Pürschweg 5</cbc:StreetName>
+            <cbc:CityName>Bremen</cbc:CityName>
+            <cbc:PostalZone>28779</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">DE501</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0000</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-work</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Die Ausführung von Leistungen in den letzten 3 abgeschlossenen Geschäftsjahren, die mit der zu vergebenden Leistung vergleichbar sind, mit Angabe der Auftragswerte, sowie der vollständigen Kontaktdaten des privaten oder öffentlichen Auftraggebers.
+Geforderter Mindeststandart:
+3 Referenzen, die nach Art und Umfang mit der ausgeschriebenen Leistung vergleichbar sind.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-yrly-avg-mp</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Die Zahl der in den letzten 3 abgeschlossenen Geschäftsjahren jahresdurchschnittlich beschäftigten Arbeitskräfte. Geforderter Mindeststandard: mindestens 6 Arbeitskräfte in jedem Jahr</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-subc</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Soweit Nachunternehmer zum Einsatz gebracht werden sollen, wird deren Eignung und technische Leistungsfähigkeit ebenfalls geprüft. Auf 
+gesondertes Verlangen der Vergabestelle sind für en Nachunternehmer Erklärungen des Nachunternehmers wir folgt vorzulegen:  
+- Angaben nach § 6e EU VOB/A  und ggf. zu § 6f EU VOB/A 
+- Nachweis des NU über die Ausführung von Leistungen in den letzten 3 abgeschlossenen Geschäftsjahren, die mit den (vom Bieter an den 
+NU) zu vergebenden Leistungen vergleichbar sind, mit Angabe des Auftragswertes sowie der vollständigen Kontaktdaten des privaten oder 
+öffentlichen Auftraggebers. Hierzu geforderter Mindeststandard: 3 
+vergleichbare Referenzen der letzten 3 Geschäftsjahre.  
+
+Hinweis:  
+Die fehlende Eignung oder die fehlende technische Leistungsfähigkeit eines benannten NU kann zum Ausschluss des Angebots führen. 
+Der Bieter ist berechtigt, einen benannten NU auszutauschen, wenn dieser die geforderten Erklärungen/Nachweise nicht erbringt und die Vergabestelle das Angebot deshalb ausschließen will. Der neue NU ist unter Vorlage der Nachweise/Erklärungen innerhalb von 6 Werktagen 
+nach Mitteilung der Vergabestelle zu benennen. Alternativ kann der Bieter innerhalb dieser Frist erklären, dass er die Leistung im eigenen Betrieb 
+erbringt, muss aber in dem Fall, dass der den NU für Bereich benannt hat, für die besonderer Qualifikation oder Referenzen des NU verlangt 
+werden, entsprechend (den Anforderungen an den NU) nachweisen, dass er die Qualifikation oder Referenzen im eigenen Betrieb erfüllt. 
+Auf gesondertes Verlangen der Vergabestelle sind für jeden benannten NU Erklärungen/Nachweise entsprechend Eignung zur Berufsausübung und zur Haftpflichtversicherung entsprechend Wirtschaftliche und finanzielle Leistungsfähigkeit (dort zu b)) vorzulegen.
+Ergänzend gilt § 6d EU VOB/A. Wegen der Erklärungen und der Nachweisführung und der Nachweispflichten gilt § 6b EU VOB/A.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Nachweis der Haftpflichtversicherung (§6a EU Nr. 2a VOB/A)
+Wegen der Erklärungen und der Nachweisführung und der Nachweispflichten gilt § 6b EU VOB/A.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-other</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Erklärung, dass der Bieter seiner Verpflichtung zur Zahlung von Steuern und Abgaben sowie der Beiträge zur gesetzlichen Sozialversicherung, soweit er der Pflicht zur Betragszahlung unterfällt, ordnungsgemäß erfüllt hat.
+Falls das Angebot/Teilnahmeantrag in die engere Wahl kommt, ist der Bieter auf gesondertes Verlangen der Vergabestelle verpflichtet, eine Unbedenklichkeitsbescheinigung der tariflichen Sozialkasse (nur: soweit der Betrieb des Bieters beitragspflichtig ist), eine Unbedenklichkeitsbescheinigung des Finanzamtes bzw. Bescheinigung in Steuersachen (nur: soweit das Finanzamt derartige Bescheinigungen ausstellt) sowie eine Freistellungsbescheinigung nach § 48b EStG vorzulegen. Wenn der Bieter nicht in den Anwendungsbereich eines Sozialkassentarifvertrages fällt, ist das durch formlose Eigenerklärung mitzuteilen.
+
+Erklärung, dass der Bieter Mitglied der Berufsgenossenschaft ist.  Falls das Angebot/Teilnahmeantrag in die engere Wahl kommt, ist der Bieter auf gesondertes Verlangen der Vergabestelle verpflichtet, eine Unbedenklichkeitsbescheinigung der Berufsgenossenschaft des für ihn zuständigen Versicherungsträgers mit Angabe der Lohnsummen vorzulegen. 
+
+Ausländische Unternehmen haben vergleichbare Erklärungen/Nachweise zu erbringen. 
+
+Erklärung, ob Ausschlussgründe nach § 6e EU VOB/A  vorliegen und ggf. Erklärungen zur Selbstreinigung gem. § 6f EU VOB/A.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-avg</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der geforderte Mindestjahresumsatz von 1.800.000 EUR ist erforderlich, um die für dieses Bauvorhaben notwendige wirtschaftliche und technische Leistungsfähigkeit sicherzustellen, die deutlich über den Anforderungen kleinerer Standardbauvorhaben liegt. Unternehmen können den in § 6a EU Nr. 2 c VOB/A genannten Regelwert bereits durch die Ausführung einzelner kleinerer Bauvorhaben in der Summe im Jahr erreichen. Die Ausführung eines WDVS in der ausgeschriebenen Größenordnung setzt auch ein entsprechendes Kundenkonto und Bonität bei den Materiallieferanten voraus. Die Ausführung der Leistungen setzt eine entsprechende Unternehmensgröße sowie die dauerhafte Verfügbarkeit von Fachpersonal, Maschinen, Geräten und organisatorischen Kapazitäten voraus.
+Der Auftraggeber muss sicherstellen, dass der Auftragnehmer die erforderlichen Ressourcen während der gesamten Bauzeit vorhalten kann und auch bei unvorhergesehenen Ereignissen handlungsfähig bleibt. Hierzu zählen insbesondere Personalengpässe, krankheitsbedingte Ausfälle, Lieferverzögerungen oder zusätzliche Leistungsanforderungen.
+Ein Jahresumsatz in Höhe des Zweifachen des geschätzten Auftragswertes würde diese Leistungsfähigkeit nicht ausreichend belegen. Die festgelegte Umsatzanforderung dient daher der Sicherstellung einer ordnungsgemäßen und termingerechten Auftragsausführung bis zur vollständigen Fertigstellung des Bauvorhabens.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-auth-mbrshp</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Erklärung, dass der Bieter Mitglied der Berufsgenossenschaft ist.
+Falls das Angebot/Teilnahmeantrag in die engere Wahl kommt, ist der Bieter auf gesondertes Verlangen der Vergabestelle verpflichtet, eine Unbedenklichkeitsbescheinigung der Berufsgenossenschaft des für ihn zuständigen Versicherungsträgers mit Angabe der Lohnsummen vorzulegen.
+Ausländische Unternehmen haben zu Ziff. 1, 3 und 4 vergleichbare Erklärungen/Nachweise zu erbringen.
+Wegen der Erklärungen und Nachweisführung und der Nachweispflichten gilt § 6b EU VOB/A.
+Das Formblatt 124 "Eigenerklärung zur Eignung" liegt den Vergabeunterlagen bei.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Erklärung über die Eintragung in das Berufsregister 
+(§ 6a EU Nr. 1 VOB/A</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Erklärung über die Eintragung in das Handelsregister 
+oder Handwerksrolle (§ 6a EU Nr. 1 VOB/A</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RequiredCurriculaCode listName="requirement-stage">nyk</cbc:RequiredCurriculaCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>TenderDoc</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://vergabe.bremen.de/NetServer/TenderingProcedureDetails?function=_Details&amp;TenderOID=54321-Tender-1a06104565f-50b2fdecf1ed4a59</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-all</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">-</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>100.00</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Preis</cbc:Name>
+                  <cbc:Description languageID="DEU">Preis</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://vergabe.bremen.de</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">60</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">a) Ein Unternehmen, das ein Interesse am Auftrag hat und eine
+Verletzung in seinen Rechten nach §97 Abs. 6 GWB durch
+Nichtbeachtung von Vergabevorschriften geltend macht, kann
+ein Nachprüfungsverfahren gemäß der §§ 160 ff. GWB bei der
+unter VI.4.1. genannten Stelle einleiten.
+b) Der Antrag ist unzulässig, soweit
+- der Antragsteller den gerügten Verstoß gegen
+Vergabevorschriften im Vergabeverfahren vor Einreichen des
+Nachprüfungsantrages erkannt und gegenüber dem
+Auftraggeber nicht innerhalb einer Frist von 10 Kalendertagen
+gerügt hat,
+- Verstöße gegen Vergabevorschriften, die aufgrund der
+Bekanntmachung erkennbar sind, nicht spätestens bis zum
+Ablauf der in der Bekanntmachung benannten Frist zur
+Bewerbung oder zur Angebotsabgabe gegenüber dem
+Auftraggeber gerügt werden,
+- Verstöße gegen Vergabevorschriften, die erst in den
+Vergabeunterlagen erkennbar sind, nicht spätestens bis zum
+Ablauf der in der Vergabebekanntmachung benannten Frist zur
+Bewerbung oder Angebotsabgabe gegenüber dem
+Auftraggeber gerügt werden,
+- mehr als 15 Tage nach Eingang der Mitteilung des
+Auftraggebers, einer Rüge nicht abhelfen zu wollen, vergangen
+sind.
+c) Die Ausführungen zur Unzulässigkeit (vorstehend unter lit. B)
+gelten nicht bei einem Antrag auf Feststellung der
+Unwirksamkeit des Vertrages nach § 135 Abs. 1 Satz 2 GWB.
+§ 134 Abs. 1 Satz 2 GWB bleibt unberührt.
+
+g) Stelle für Rechtsbehelfs-/Nachprüfungsverfahren</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-7005</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-7004</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>false</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">allowed</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2026-10-16+02:00</cbc:EndDate>
+            <cbc:EndTime>11:30:00+02:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:OpenTenderEvent>
+            <cbc:OccurrenceDate>2026-10-16+02:00</cbc:OccurrenceDate>
+            <cbc:OccurrenceTime>11:30:00+02:00</cbc:OccurrenceTime>
+            <cbc:Description languageID="DEU">Bei europaweiten Verfahren sind gem. § 14(1) EU VOB/A keine Bieter und deren Bevollmächtige zugelassen.</cbc:Description>
+            <cac:OccurenceLocation>
+               <cbc:Description languageID="DEU">Immobilien Bremen
+Vergabemanagement
+Langenstraße 10-12
+28195 Bremen</cbc:Description>
+            </cac:OccurenceLocation>
+         </cac:OpenTenderEvent>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID>LOT-0000</cbc:ID>
+         <cbc:Name languageID="DEU">Wärmedämmverbundsystem (WDVS)</cbc:Name>
+         <cbc:Description languageID="DEU">930 m² Untergrund reinigen
+965 m² Altsystem WDVS zurückbauen
+240 m Alu-Fensterbänke demontieren und entsorgen
+ca. 200 m² Sockeldämmplatten anbringen
+ca. 200 m² Siliconharz-Fassadenfarbe auftragen
+ca. 1.400 m² Mineralwolle im System anbringen</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">works</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45000000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:StreetName>Pürschweg 5</cbc:StreetName>
+               <cbc:CityName>Bremen</cbc:CityName>
+               <cbc:PostalZone>28779</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">DE501</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:StartDate>2026-11-09+01:00</cbc:StartDate>
+            <cbc:EndDate>2027-06-17+02:00</cbc:EndDate>
+         </cac:PlannedPeriod>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>

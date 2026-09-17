@@ -1,0 +1,496 @@
+<ContractNotice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ContractNotice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:efac="http://data.europa.eu/p27/eforms-ubl-extension-aggregate-components/1" xmlns:efbc="http://data.europa.eu/p27/eforms-ubl-extension-basic-components/1" xmlns:efext="http://data.europa.eu/p27/eforms-ubl-extensions/1" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <efext:EformsExtension>
+               <efac:Changes>
+                  <efbc:ChangedNoticeIdentifier>01a06220-073c-4185-a3ac-033e6d8d32d1-01</efbc:ChangedNoticeIdentifier>
+                  <efac:Change>
+                     <efac:ChangedSection>
+                        <efbc:ChangedSectionIdentifier>LOT-0001</efbc:ChangedSectionIdentifier>
+                     </efac:ChangedSection>
+                  </efac:Change>
+                  <efac:ChangeReason>
+                     <cbc:ReasonCode listName="change-corrig-justification">update-add</cbc:ReasonCode>
+                  </efac:ChangeReason>
+               </efac:Changes>
+               <efac:NoticeSubType>
+                  <cbc:SubTypeCode listName="notice-subtype">17</cbc:SubTypeCode>
+               </efac:NoticeSubType>
+               <efac:Organizations>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">Sächsische Binnenhäfen Oberelbe GmbH</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Magdeburger Str. 58</cbc:StreetName>
+                           <cbc:CityName>Dresden</cbc:CityName>
+                           <cbc:PostalZone>01067</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DED21</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>Ust-ID: DE140300361</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>000</cbc:Telephone>
+                           <cbc:ElectronicMail>vergabe@list.sachsen.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">LISt Gesellschaft für Verkehrswesen und ingenieurtechnische Dienstleistungen mbH</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Ernst-Thälmann-Straße 5</cbc:StreetName>
+                           <cbc:CityName>Hainichen</cbc:CityName>
+                           <cbc:PostalZone>09661</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DED43</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>14-0706002LASUV07-27</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>000</cbc:Telephone>
+                           <cbc:ElectronicMail>vergabe@list.sachsen.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+                  <efac:Organization>
+                     <efac:Company>
+                        <cbc:WebsiteURI>https://www.lds.sachsen.de</cbc:WebsiteURI>
+                        <cac:PartyIdentification>
+                           <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+                        </cac:PartyIdentification>
+                        <cac:PartyName>
+                           <cbc:Name languageID="DEU">1. Vergabekammer des Freistaates Sachsen bei der Landesdirektion Sachsen</cbc:Name>
+                        </cac:PartyName>
+                        <cac:PostalAddress>
+                           <cbc:StreetName>Braustraße 2</cbc:StreetName>
+                           <cbc:CityName>Leipzig</cbc:CityName>
+                           <cbc:PostalZone>04107</cbc:PostalZone>
+                           <cbc:CountrySubentityCode listName="nuts">DED51</cbc:CountrySubentityCode>
+                           <cac:Country>
+                              <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+                           </cac:Country>
+                        </cac:PostalAddress>
+                        <cac:PartyLegalEntity>
+                           <cbc:CompanyID>DE287064009</cbc:CompanyID>
+                        </cac:PartyLegalEntity>
+                        <cac:Contact>
+                           <cbc:Telephone>+49 3419773800 </cbc:Telephone>
+                           <cbc:ElectronicMail>vergabekammer@lds.sachsen.de</cbc:ElectronicMail>
+                        </cac:Contact>
+                     </efac:Company>
+                  </efac:Organization>
+               </efac:Organizations>
+            </efext:EformsExtension>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.3</cbc:UBLVersionID>
+   <cbc:CustomizationID>eforms-de-2.1</cbc:CustomizationID>
+   <cbc:ProfileID>eforms-sdk-1.13</cbc:ProfileID>
+   <cbc:ID schemeName="notice-id">01a0a444-1c07-471e-b755-941f4becd2ee</cbc:ID>
+   <cbc:ContractFolderID>019ff4a0-b177-4cf0-a0fe-3e22056c76fd</cbc:ContractFolderID>
+   <cbc:IssueDate>2026-09-15+02:00</cbc:IssueDate>
+   <cbc:IssueTime>11:05:53+02:00</cbc:IssueTime>
+   <cbc:VersionID>01</cbc:VersionID>
+   <cbc:RequestedPublicationDate>2026-09-15+02:00</cbc:RequestedPublicationDate>
+   <cbc:RegulatoryDomain>32014L0025</cbc:RegulatoryDomain>
+   <cbc:NoticeTypeCode listName="competition">cn-standard</cbc:NoticeTypeCode>
+   <cbc:NoticeLanguageCode listName="language">DEU</cbc:NoticeLanguageCode>
+   <cac:ContractingParty>
+      <cac:ContractingActivity>
+         <cbc:ActivityTypeCode listName="entity-activity">port</cbc:ActivityTypeCode>
+      </cac:ContractingActivity>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeName="organization">ORG-0001</cbc:ID>
+         </cac:PartyIdentification>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:TenderingTerms>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>sektvo</cbc:ID>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>CrossBorderLaw</cbc:ID>
+         <cbc:DocumentDescription languageID="DEU">Es liegt kein grenzüberschreitender Auftragsbezug im Sinne von Applicable CrossBorderLaw vor. Der Auftrag wird ausschließlich nach deutschem Recht vergeben.</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-grounds-source">epo-notice</cbc:TendererRequirementTypeCode>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+      <cac:TendererQualificationRequest>
+         <cac:SpecificTendererRequirement>
+            <cbc:TendererRequirementTypeCode listName="exclusion-ground">nati-ground</cbc:TendererRequirementTypeCode>
+            <cbc:Description languageID="DEU">Zwingend erfolgt ein Ausschluss nach § 123 GWB, wenn dem Bieter das Verhalten einer Person zuzurechnen ist, die rechtskräftig verurteilt oder gegen den Bieter eine Geldbuße nach § 30 OWiG rechtskräftig festgesetzt worden ist wegen einer Straftat nach: 1. § 129 StGB (Bildung krimineller Vereinigungen), § 129a StGB (Bildung terroristischer Vereinigungen) oder § 129b StGB (Kriminelle und terroristische Vereinigungen im Ausland); 2. § 89c StGB (Terrorismusfinanzierung) oder wegen der Teilnahme an einer solchen Tat oder wegen der Bereitstellung oder Sammlung finanzieller Mittel in Kenntnis dessen, dass diese ganz oder teilweise dazu verwendet werden oder verwendet werden sollen, eine Tat nach § 89a Abs. 2 Nr. 2 StGB zu begehen; 3. § 261 StGB (Geldwäsche); 4. § 263 StGB (Betrug), soweit sich die Straftat gegen den Haushalt der Europäischen Union (EU) oder gegen Haushalte richtet, die von der EU oder in ihrem Auftrag verwaltet werden; 5. § 264 StGB (Subventionsbetrug), soweit sich die Straftat gegen den Haushalt der EU oder gegen Haushalte richtet, die von der EU oder in ihrem Auftrag verwaltet werden; 6. § 299 StGB (Bestechlichkeit und Bestechung im geschäftlichen Verkehr), §§ 299a und 299b StGB (Bestechlichkeit und Bestechung im Gesundheitswesen); 7. § 108e StGB (Bestechlichkeit und Bestechung
+von Mandatsträgern); 8. den §§ 333 und 334 StGB (Vorteilsgewährung und Bestechung), jeweils auch in Verbindung mit § 335a StGB (Ausländische und internationale Bedienstete);
+9. Artikel 2 § 2 IntBestG (Bestechung ausländischer Abgeordneter im Zusammenhang mit internationalem Geschäftsverkehr) oder 10. den §§ 232, 232a Abs. 1 bis 5, den §§ 232b bis 233a des StGB (Menschenhandel, Zwangsprostitution, Zwangsarbeit, Ausbeutung der Arbeitskraft, Ausbeutung unter Ausnutzung einer Freiheitsberaubung). Einer Verurteilung oder der Festsetzung einer Geldbuße stehen eine Verurteilung oder die Festsetzung einer Geldbuße nach den vergleichbaren Vorschriften anderer Staaten gleich. Das Verhalten einer rechtskräftig verurteilten Person ist einem Bieter zuzurechnen, wenn diese Person als für die Leitung des Unternehmens Verantwortlicher gehandelt hat; dazu gehört auch die Überwachung der Geschäftsführung oder die sonstige Ausübung von Kontrollbefugnissen in leitender Stellung. 
+Ein Ausschluss kann nach § 124 GWB aufgrund von Kriterien erfolgen, die im Bezug zur persönlichen Situation der Bieter stehen. Das ist der Fall, wenn 1. der Bieter bei der Ausführung öffentlicher Aufträge nachweislich gegen geltende umwelt-, sozial-oder arbeitsrechtliche Verpflichtungen verstoßen hat; 2. der Bieter zahlungsunfähig ist, über das Vermögen ein Insolvenzverfahren oder ein vergleichbares Verfahren beantragt oder eröffnet worden ist, die Eröffnung eines solchen Verfahrens mangels Masse abgelehnt worden ist, sich der Bieter im Verfahren der Liquidation befindet oder seine Tätigkeit eingestellt hat; 3. der Bieter im Rahmen der beruflichen Tätigkeit nachweislich eine schwere Verfehlung begangen hat, durch die die Integrität des Bieters infrage gestellt wird; 4. der öffentliche AG über hinreichende Anhaltspunkte dafür verfügt, dass der Bieter mit anderen Unternehmen Vereinbarungen getroffen oder Verhaltensweisen aufeinander abgestimmt hat, die eine Verhinderung, Einschränkung oder Verfälschung des Wettbewerbs bezwecken oder bewirken; 5. ein Interessenkonflikt bei der Durchführung des Verfahrens besteht, der die Unparteilichkeit und Unabhängigkeit einer für den öffentlichen AG tätigen Person bei der Durchführung des Verfahrens beeinträchtigen könnte und der durch andere, weniger einschneidende Maßnahmen nicht wirksam beseitigt werden kann; 6. eine Wettbewerbsverzerrung daraus resultiert, dass der Bieter bereits in die Vorbereitung des Verfahrens einbezogen war, und diese Wettbewerbsverzerrung nicht durch andere, weniger einschneidende Maßnahmen beseitigt werden kann; 7. der Bieter eine wesentliche Anforderung bei der Ausführung eines früheren öffentlichen Auftrags oder Konzessionsvertrags erheblich oder fortdauernd mangelhaft erfüllt hat und dies zu einer vorzeitigen Beendigung, zu Schadensersatz oder zu einer vergleichbaren Rechtsfolge geführt hat; 8. der Bieter in Bezug auf Ausschlussgründe oder Eignungskriterien eine schwerwiegende Täuschung begangen oder Auskünfte zurückgehalten hat oder nicht in der Lage ist, die erforderlichen Nachweise zu übermitteln, oder 9. der Bieter a) versucht hat, die Entscheidungsfindung des öffentlichen AGs in unzulässiger Weise zu beeinflussen b) versucht hat, vertrauliche Informationen zu erhalten, durch die es unzulässige Vorteile beim Verfahren erlangen könnte, oder c) fahrlässig oder vorsätzlich irreführende Informationen übermittelt hat, die die Vergabeentscheidung des öffentlichen AGs erheblich beeinflussen könnten, oder versucht hat, solche Informationen zu übermitteln. Es handelt sich um Ausschlussgründe, die bei Vorliegen optional zum Ausschluss führen. D.h., es wird im Einzelfall geprüft, ob die Situation des Bieters eine Beauftragung ausschließt. Informationserfordernisse: Bieter hat mit dem Angebot eine "Eigenerklärung Eignung" abzugeben, dass nachweislich keine schwere Verfehlung begangen wurde, die die Zuverlässigkeit als Bieter in Frage stellt. Wurde ein Insolvenzplan rechtskräftig bestätigt oder eine Selbstreinigung gem. § 125 GWB durchgeführt, sind auf Verlangen geeignete Nachweise vorzulegen.</cbc:Description>
+         </cac:SpecificTendererRequirement>
+      </cac:TendererQualificationRequest>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listName="procurement-procedure-type">open</cbc:ProcedureCode>
+      <cac:ProcessJustification>
+         <cbc:ProcessReasonCode listName="accelerated-procedure">false</cbc:ProcessReasonCode>
+      </cac:ProcessJustification>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:ID>LDL-26-048-SBO</cbc:ID>
+      <cbc:Name languageID="DEU">Neubau eines KV-Terminals im Hafen Riesa, Alter Hafen - Los 6 - Umschlagtechnik</cbc:Name>
+      <cbc:Description languageID="DEU">Neubau eines KV-Terminals im Hafen Riesa, Alter Hafen - Los 6 - Umschlagtechnik</cbc:Description>
+      <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+      <cbc:Note languageID="DEU">Im Rahmen dieser Veröffentlichung bezieht sich die Formulierung „Bieter“ sowohl auf Einzelbieter als auch gleichermaßen auf die Mitglieder einer Bieter-/Arbeitsgemeinschaft sowie die zugehörigen Unterauftragnehmer oder Eignungsleihenden.
+Der Bieter hat seine Identität sowie Verantwortlichkeit für die Erbringung einzelner Leistungsteile zweifelsfrei darzustellen, indem er, soweit erforderlich, die beigefügten Formulare über die Erklärung der Bieter-/Arbeitsgemeinschaft (VHB-Formblatt 234), das Verzeichnis der Leistungen / Kapazitäten anderer Unternehmen (VHB-Formblatt 235) vollständig ausgefüllt und durch den Bevollmächtigten bestätigt, mit dem Angebot vorlegt. 
+Bei der Darstellung der in der Eigenerklärung zur Eignung geforderten Angaben, Erklärungen und Nachweise beziehen sich diese jeweils auf den Leistungserbringer. Im Falle der Leistungserbringung durch Mitglieder einer Bieter-/Arbeitsgemeinschaft, Unterauftragnehmer oder Eignungsleihende sind die Erklärungen entsprechend der Leistungsteile abzugeben. Der Bieter ist somit nur geeignet, wenn die von ihm benannten Leistungserbringer den Anforderungen für die übernommenen Leistungen genügen. Werden die gestellten Anforderungen oder Bedingungen nicht erfüllt, wird das Angebot ausgeschlossen. Ein Verweis auf frühere Angebote reicht nicht aus.
+Die Leistungserbringenden und das gemäß Angebot benannte Personal sind bindend.
+Für alle genannten Kriterien gilt: Unternehmen, die in den Präqualifizierungsdatenbanken https://amtliches-verzeichnis.ihk.de oder http://www.pq-verein.de bzw. einer anderen für den öffentlichen Auftraggeber kostenfreien Datenbank innerhalb der EU registriert sind, können dies bei Einreichung eines Angebotes durch Angabe der Registrierungsnummer und/oder des Zugangscodes angeben. Sofern Angaben/Erklärungen/Nachweise gefordert werden, die zum Zeitpunkt der Angebotsabgabe nicht in den Präqualifizierungsdatenbanken enthalten sind, sind diese ergänzend mit dem Angebot einzureichen. Bitte beachten Sie, dass im Falle der Bezugnahme auf die Präqualifikation, Angaben/Erklärungen/Nachweise (insbesondere vergleichbare Referenzen und deren Anzahl), die in den Präqualifizierungsdatenbanken enthalten sind, aber nicht den Mindestanforderungen entsprechen, nicht nachgefordert werden können. Die PQ-Informationen ergänzende Angaben/Erklärungen/Nachweise sind daher zusätzlich mit dem Angebot einzureichen. Die Erläuterungen zur Präqualifikation gelten für alle geforderten Erklärungen und Nachweise.  
+Von ausländischen Bietern oder ausländischen Mitgliedern der Bieter-/Arbeitsgemeinschaft oder ausländischen Unterauftragnehmer/Eignungsleihende werden für alle benannten Angaben, Erklärungen und Nachweise entsprechend gleichwertige verlangt. Bescheinigungen, die nicht in deutscher Sprache abgefasst sind, ist eine Übersetzung in deutscher Sprache beizufügen.
+Spätestens im Zuge der Auftragserteilung hat der Bieter ggf. auch Auskunft über die Nationalität des wirtschaftlichen Eigentümers des beauftragten Unternehmens zu erteilen.  
+Im Rahmen der elektronischen Übermittlung des Angebots kann bei Unterlagen, die eine Zeichnung erfordern, der Erklärende in Textform angegeben werden. Ist bei einem elektronisch übermittelten Angebot in Textform der Bieter nicht erkennbar, wird das Angebot ausgeschlossen.
+Die Vergabestelle behält sich vor, Erklärungen als Original nachzufordern. Insbesondere gilt dies für Erklärungen von Personen, welche nicht mit dem Einreichenden identisch sind, bspw. Mitglieder der Bieter-/Arbeitsgemeinschaft, Unterauftragnehmer und Eignungsleihende.
+Mit dem Angebot sind Angaben und Erklärungen gemäß Eignungskriterien einzureichen sowie die folgenden Angaben und Erklärungen: 
+- VHB-Formblatt 221 - Preisermittlung bei Zuschlagskalkulation oder VHB-Formblatt 222 - Preisermittlung bei Kalkulation über die Endsumme  
+- soweit erforderlich VHB-Formblatt 234 - Erklärung Bieter-/Arbeitsgemeinschaft
+- soweit erforderlich VHB-Formblatt 235 – Verzeichnis der Leistungen / Kapazitäten anderer Unternehmen
+Auf gesondertes Verlangen sind folgende Nachweise vorzulegen:
+- VHB-Formblatt 236 - Verpflichtungserklärung anderer Unternehmen
+- Urkalkulation
+Informationserfordernisse: Der Bieter hat mit dem Angebot eine "Eigenerklärung Eignung" mit Angaben zur Zahlung von Steuern, Abgaben und Beiträgen zur Sozialversicherung, eine Bestätigung über die Mitgliedschaft bei der Berufsgenossenschaft sowie eine Eigenerklärung zu Artikel 5k der Verordnung (EU) Nr. 833/2014 bzgl. der Terrorismusfinanzierung vorzulegen.
+Der Bieter hat auf gesondertes Verlangen eine Unbedenklichkeitsbescheinigung der tariflichen Sozialkasse, eine Unbedenklichkeitsbescheinigung des Finanzamtes oder eine Bescheinigung in Steuersachen und eine qualifizierte Unbedenklichkeitsbescheinigung der Berufsgenossenschaft des zuständigen Versicherungsträgers mit Angabe der Lohnsummen vorzulegen. 
+Der Auftraggeber (AG) wird von dem Bieter, dessen Angebot beauftragt werden soll, einen Auszug aus dem Wettbewerbsregister gem. § 6 WRegG anfordern.
+Mit der Ausführung ist 5 Werktage nach Zugang des Auftragsschreibens zu beginnen. Die Leistung ist bis 04.05.2029 zu vollenden (abnahmereif fertig zu stellen).   Weitere Einzelfristen gem. Vergabeunterlagen.
+Rechtzeitig beantragte Auskünfte werden spätestens 6 Kalendertage vor Ablauf der Angebotsfrist (bis einschließlich 23.09.2026) erteilt.</cbc:Note>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">42414000</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45241000</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listName="cpv">45223100</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cac:Address>
+            <cbc:CityName>Riesa</cbc:CityName>
+            <cbc:PostalZone>01591</cbc:PostalZone>
+            <cbc:CountrySubentityCode listName="nuts">DED2E</cbc:CountrySubentityCode>
+            <cac:Country>
+               <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:Address>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID schemeName="Lot">LOT-0001</cbc:ID>
+      <cac:TenderingTerms>
+         <ext:UBLExtensions>
+            <ext:UBLExtension>
+               <ext:ExtensionContent>
+                  <efext:EformsExtension>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-prof</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Zum Nachweis Befähigung und Erlaubnis zur Berufsausübung, hat sich der Bieter mit dem Angebot über eine Eintragung in das zuständige Berufsregister bzw. einem vergleichbaren Register des Herkunftslandes (Betriebssitz des Unternehmens) zu erklären oder dass er zu so einer Eintragung nicht verpflichtet ist. Der Bieter hat auf gesondertes Verlangen eine Gewerbeanmeldung, einen Nachweis der Eintragung in der Handwerksrolle (Handwerkskarte) oder bei der Industrie- und Handelskammer bzw. einem vergleichbaren Register des Herkunftslandes vorzulegen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-suit-reg-trade</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Zum Nachweis Befähigung und Erlaubnis zur Berufsausübung, hat sich der Bieter mit dem Angebot über eine Eintragung in das zuständige Handelsregister bzw. einem vergleichbaren Register des Herkunftslandes (Betriebssitz des Unternehmens) zu erklären oder dass er zu so einer Eintragung nicht verpflichtet ist. Der Bieter hat auf gesondertes Verlangen einen Nachweis dessen (Handelsregisterauszug oder gleichwertig) vorzulegen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-ins</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter hat sich gegen sämtliche mit der Abwicklung des Auftrages zusammenhängende versicherbaren Risiken zu versichern. Dabei dürfen folgende Versicherungssummen je Schadensfall nicht unterschritten werden: - 5.000.000 € für Personen- und Sachschäden und 750.000 € für Vermögensschäden im Rahmen einer Haftpflichtversicherung - Umweltschäden nach dem Umweltschadensgesetz sind von der Haftpflichtversicherung einzuschließen - Maximierung der Ersatzleistungen min. 2-Faches der Versicherungssummen.
+Der AN hat sich gegen alle unvorhersehbare Beschädigungen oder Zerstörungen von Montageobjekten (Kranbauteile, Tragwerke, Maschinen- und Elektrotechnik) auf der Baustelle abzusichern. Versichert sein müssen dabei insbesondere Schäden durch Montagefehler, Ungeschicklichkeit, Konstruktions- und Materialfehler des Herstellers sowie durch höhere Gewalt und extreme Witterungseinflüsse (z. B. Sturm, Hochwasser). Durch den Bieter ist auf gesondertes Verlangen jeweils der Nachweis für die Berufshaftpflichtversicherung und die Montageversicherung über eine bestehende Versicherung bzw. eine entsprechende Zusicherung der Versicherungen im Auftragsfall zu erbringen.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-stand-to-avg</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter hat sich mit dem Angebot über seinen Jahresumsatz bezogen auf die letzten drei Geschäftsjahre (netto) zu erklären, unter Einschluss des Anteils bei gemeinsam mit anderen Unternehmen ausgeführten Leistungen; Mindestanforderung:  Durch den Bieter (bei Bieter-/Arbeitsgemeinschaften von jedem Mitglied bzw. vom Eignungsleihenden) sind die folgenden Umsätze kumulativ anzugeben: Mindestjahresumsatz (Geschäftsjahr) größer oder gleich 13.000.000 EUR (netto) jeweils im Mittel der letzten drei Jahre.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-ref-work</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter erklärt mit dem Angebot in den letzten fünf Kalenderjahren vergleichbare Leistungen ausgeführt zu haben und reicht dazu 2 geeignete Referenzangaben, die mit der zu vergebenden Leistung vergleichbar sind, mittels der Anlage zur Eigenerklärung ein.
+
+Art der Leistung: 
+Neubau von 2 Portalkränen folgende Mindestanforderungen (in einem oder zwei Projekten): - außen aufgestellter, schienengebundener, elektrisch angetriebener Ausleger-Portalkran, der in der Lage ist, kontinuierlichen Containerumschlag durchzuführen; - Überfahren von mind. 1 über 4 Containern; - Auskragung 15 m (Wasser und oder Landseitig); - Spurweite 30 m; - Förderung von 20/30/40/45' ISO- Container, Kühlcontainer, Wechselbrücken und Sattelanhänger; - BUS- und SPS System; - Industrieller Ethernet-Netzwerkbasis (mindestens CAT-6A, CAT-7 oder CAT-8)
+
+Der Bieter hat auf gesondertes Verlangen Nachweise für die mit dem Angebot benannten 2 geeigneten Referenzen aus den letzten 5 Kalenderjahren vorzulegen, die mit der zu vergebenden Leistung vergleichbar sind. Die Referenznachweise müssen mindestens folgende Angaben beinhalten: Ansprechpartner; Art der ausgeführten Leistung; Auftragssumme; Ausführungszeitraum; stichwortartige Benennung des mit eigenem Personal ausgeführten maßgeblichen Leistungsumfanges einschl. Angabe der ausgeführten Mengen; Zahl der hierfür durchschnittlich eingesetzten Arbeitnehmer; stichwortartige Beschreibung der besonderen technischen und gerätespezifischen Anforderungen bzw. (bei Komplettleistung) Kurzbeschreibung der Leistungen  einschließlich eventueller Besonderheiten der Ausführung; Angabe zur Art der Leistungen (Neubau, Umbau, Denkmal); Angabe zur vertraglichen Bindung (Hauptauftragnehmer, ARGE-Partner, Nachunternehmer); ggf. Angabe der Gewerke, die mit eigenem Leitungspersonal koordiniert wurden; Bestätigung des Auftraggebers über die vertragsgemäße Ausführung der Leistung.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-tech-work</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Schweißzulassung:
+Der Bieter weist mit dem Angebot (mit Angebotsabgabe) für den Verantwortlichen der Leistungserbringung sowie dessen Vertreter die ISO 9001 Zertifizierung und seine Schweißzulassung DIN EN 1090-2 EXC 3 nach (Gültigkeit max. 3 Jahre). 
+
+Es ist auch erforderlich, dass der Bieter mit dem Angebot die Einzelheiten der Qualitätssicherung und der Qualitätskontrolle aufführt, die er während der Fertigung anwendet. 
+
+Schweißpersonal:
+Der Bieter hat mit dem Angebot (mit Angebotsabgabe) den Verantwortlichen der Leistungserbringung sowie dessen Vertreter zu benennen, welche die Schweißarbeiten ausführen. Weiterhin ist anzugeben ob diese Personen für den Bieter, als Mitglied der Bieter-/Arbeitsgemeinschaft oder als anderes Unternehmen tätig sind.
+
+Der Bieter weist mit dem Angebot (mit Angebotsabgabe) die Qualifikation zum Schweißen von Stahlbauten für den Verantwortlichen der Leistungserbringung sowie dessen Vertreter nach DIN EN 1090 für den Anwendungsbereich „nicht ruhend beanspruchte Bauteile“ und „Krane (DIN EN 130018)“ nach.
+Kranbauer: Der Bieter hat auf gesondertes Verlangen folgende Nachweise zu erbringen: - Schweißzulassung nach DIN EN ISO 3834-2:2021 (max. Gültigkeit 3 Jahre); - Nachweis Europäische Fertigung des Containerportalkranes ODER	Alternativ: - Herstellererklärung (Eigenerklärung): Der Bieter muss im Angebot verbindlich den genauen Ort der Endmontage des Portalkrans (Stahlbau und Maschinenbau) sowie die Herkunftsländer der Hauptkomponenten (Hubwerk, Motoren, Fahrwerke) benennen.  - Der Bieter muss nachweisen, dass die schweißtechnische Fertigung des Krantragwerks nach DIN EN ISO 3834-2 zertifiziert ist. Um im Gewährleistungsfall Ausfallzeiten zu minimieren, muss der Auftragnehmer ein zentrales Ersatzteillager innerhalb der EU betreiben, welches eine Ersatzteilversorgung kritischer Maschinenbauteile innerhalb von 24 Stunden garantiert;  -Zulassungen und Normenkonformität; - Einhaltung von CE, EN Normen, ggf. Hafen /Binnenschiff Spezifika und Schallschutzanforderungen: - Zertifikate; - Prüfzeugnisse;  -Nachweis über interne oder externe Prüfstellen (z. B. TÜV).</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:SelectionCriteria>
+                        <cbc:TendererRequirementTypeCode listName="selection-criterion">slc-abil-staff-yrly-avg-mp</cbc:TendererRequirementTypeCode>
+                        <cbc:Description languageID="DEU">Der Bieter erklärt mit dem Angebot (mit Angebotsabgabe), dass die für die Ausführung der Leistungen erforderlichen Arbeitskräfte zur Verfügung stehen. Durch den Bieter ist auf gesondertes Verlangen die Zahl der in den letzten drei abgeschlossenen Kalenderjahren jahresdurchschnittlich beschäftigten Arbeitskräfte gegliedert nach Lohngruppen mit extra ausgewiesenem Leitungspersonal anzugeben.</cbc:Description>
+                     </efac:SelectionCriteria>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="cvd-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                     <efac:StrategicProcurement>
+                        <efbc:ApplicableLegalBasis listName="eed-scope">false</efbc:ApplicableLegalBasis>
+                     </efac:StrategicProcurement>
+                  </efext:EformsExtension>
+               </ext:ExtensionContent>
+            </ext:UBLExtension>
+         </ext:UBLExtensions>
+         <cbc:VariantConstraintCode listName="permission">not-allowed</cbc:VariantConstraintCode>
+         <cbc:FundingProgramCode listName="eu-funded">no-eu-funds</cbc:FundingProgramCode>
+         <cbc:RequiredCurriculaCode listName="requirement-stage">t-requ</cbc:RequiredCurriculaCode>
+         <cbc:RecurringProcurementIndicator>false</cbc:RecurringProcurementIndicator>
+         <cbc:MultipleTendersCode listName="permission">not-allowed</cbc:MultipleTendersCode>
+         <cac:RequiredFinancialGuarantee>
+            <cbc:GuaranteeTypeCode listName="tender-guarantee-required">false</cbc:GuaranteeTypeCode>
+         </cac:RequiredFinancialGuarantee>
+         <cac:CallForTendersDocumentReference>
+            <ext:UBLExtensions>
+               <ext:UBLExtension>
+                  <ext:ExtensionContent>
+                     <efext:EformsExtension>
+                        <efac:NonOfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:NonOfficialLanguages>
+                        <efac:OfficialLanguages>
+                           <cac:Language>
+                              <cbc:ID>DEU</cbc:ID>
+                           </cac:Language>
+                        </efac:OfficialLanguages>
+                     </efext:EformsExtension>
+                  </ext:ExtensionContent>
+               </ext:UBLExtension>
+            </ext:UBLExtensions>
+            <cbc:ID>n/a</cbc:ID>
+            <cbc:DocumentType>non-restricted-document</cbc:DocumentType>
+            <cac:Attachment>
+               <cac:ExternalReference>
+                  <cbc:URI>https://www.evergabe.de/unterlagen/019ff4a0-b177-4cf0-a0fe-3e22056c76fd/zustellweg-auswaehlen</cbc:URI>
+               </cac:ExternalReference>
+            </cac:Attachment>
+         </cac:CallForTendersDocumentReference>
+         <cac:PaymentTerms>
+            <cbc:Note languageID="DEU">Abschlagszahlungen und Schlusszahlung nach VOL/B und Weitere Besondere Vertragsbedingungen. Weiterhin werden zur Vorauszahlung die Regelungen gem. Besondere Vertragsbedingungen Pkt. 7 Zahlungsbedingungen in Verbindung mit den Weiteren Besonderen Vertragsbedingungen vereinbart.</cbc:Note>
+         </cac:PaymentTerms>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="selection-criteria-source">epo-notice</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cbc:CompanyLegalFormCode listName="required">true</cbc:CompanyLegalFormCode>
+            <cbc:CompanyLegalForm languageID="DEU">Gesamtschuldnerisch haftende Arbeitsgemeinschaft mit bevollmächtigtem Vertreter.</cbc:CompanyLegalForm>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="missing-info-submission">late-some</cbc:TendererRequirementTypeCode>
+               <cbc:Description languageID="DEU">Eine Nachforderung von unternehmens- oder leistungsbezogenen Unterlagen ist gem. § 51 Abs. 2 SektVO möglich. Gemäß § 51 Abs. 3 SektVO ist die Nachforderung von leistungsbezogenen Unterlagen, welche die Wirtschaftlichkeitsbewertung der Angebote anhand der Zuschlagskriterien betreffen, ausgeschlossen. Nach Aufforderung nicht vorliegende geforderte Erklärungen oder Nachweise führen zum Ausschluss.</cbc:Description>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:TendererQualificationRequest>
+            <cac:SpecificTendererRequirement>
+               <cbc:TendererRequirementTypeCode listName="reserved-procurement">none</cbc:TendererRequirementTypeCode>
+            </cac:SpecificTendererRequirement>
+         </cac:TendererQualificationRequest>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="reserved-execution">no</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="conditions">performance</cbc:ExecutionRequirementCode>
+            <cbc:Description languageID="DEU">Geforderte Kautionen und Sicherheiten: Sicherheit für Vertragserfüllung gem. § 18 VOL/B ist in Höhe von 5 % der Brutto-Auftragssumme zu leisten; Sicherheit für Mängelansprüche gem. § 18 VOL/B ist in Höhe von 3 % der bis zum Zeitpunkt der Abnahme geleisteten Abschläge zu leisten. Bei Stellung einer Bürgschaft sind die Formblätter 421 und 422 zu verwenden. Basis des Vertrages ist die VOL/B in der bei Vertragsabschluss geltenden Fassung. Vertragstermine gem. Vergabeunterlagen (Besondere Vertragsbedingungen).</cbc:Description>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="einvoicing">allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="nda">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="fsr">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="ecatalog-submission">not-allowed</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:ContractExecutionRequirement>
+            <cbc:ExecutionRequirementCode listName="esignature-submission">false</cbc:ExecutionRequirementCode>
+         </cac:ContractExecutionRequirement>
+         <cac:AwardingTerms>
+            <cac:AwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>70</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">price</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">In diesem Zuschlagskriterium werden ausschließlich die Investitionskosten betrachtet. Der Bieter hat mit dem Angebot die geforderten Angaben zum Preis der OZ 01, OZ 03 und 04 gemäß Preisblatt vorzulegen. Weitere Wertungsgrundlagen gemäß dem Dokument "Zuschlagskriterien" in den Vergabeunterlagen.</cbc:Name>
+                  <cbc:Description languageID="DEU">Zuschlagskriterium 1 - Investitionspreis</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>15</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">cost</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">In diesem Zuschlagskriterium werden ausschließlich die Gesamtkosten der Wartung gem. Preisblatt OZ 02 betrachtet. Der Bieter hat mit dem Angebot ein umfassendes, auf die angebotene Krananlage bezogenes Wartungsangebot abzugeben, dass alle erforderlichen Wartungen, auch der Zulieferteile anderer Hersteller, umfasst. Weitere Wertungsgrundlagen gem. "Zuschlagskriterien" in den Vergabeunterlagen.</cbc:Name>
+                  <cbc:Description languageID="DEU">Zuschlagskriterium 2 - Wartungskosten</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+               <cac:SubordinateAwardingCriterion>
+                  <ext:UBLExtensions>
+                     <ext:UBLExtension>
+                        <ext:ExtensionContent>
+                           <efext:EformsExtension>
+                              <efac:AwardCriterionParameter>
+                                 <efbc:ParameterCode listName="number-weight">per-exa</efbc:ParameterCode>
+                                 <efbc:ParameterNumeric>15</efbc:ParameterNumeric>
+                              </efac:AwardCriterionParameter>
+                           </efext:EformsExtension>
+                        </ext:ExtensionContent>
+                     </ext:UBLExtension>
+                  </ext:UBLExtensions>
+                  <cbc:AwardingCriterionTypeCode listName="award-criterion-type">quality</cbc:AwardingCriterionTypeCode>
+                  <cbc:Name languageID="DEU">Der Bieter hat mit dem Angebot ein Montagekonzept einzureichen. Die Ausarbeitung des Montagekonzeptes löst keinen Vergütungsanspruch aus. Weitere Wertungsgrundlagen gemäß dem Dokument "Zuschlagskriterien" in den Vergabeunterlagen.</cbc:Name>
+                  <cbc:Description languageID="DEU">Zuschlagskriterium 3 - Montagekonzept</cbc:Description>
+               </cac:SubordinateAwardingCriterion>
+            </cac:AwardingCriterion>
+         </cac:AwardingTerms>
+         <cac:AdditionalInformationParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:AdditionalInformationParty>
+         <cac:DocumentProviderParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+            </cac:PartyIdentification>
+         </cac:DocumentProviderParty>
+         <cac:TenderRecipientParty>
+            <cbc:EndpointID>https://www.evergabe.de/unterlagen/019ff4a0-b177-4cf0-a0fe-3e22056c76fd/zustellweg-auswaehlen</cbc:EndpointID>
+         </cac:TenderRecipientParty>
+         <cac:TenderValidityPeriod>
+            <cbc:DurationMeasure unitCode="DAY">60</cbc:DurationMeasure>
+         </cac:TenderValidityPeriod>
+         <cac:AppealTerms>
+            <cac:PresentationPeriod>
+               <cbc:Description languageID="DEU">Gem. § 160 Abs. 1 GWB wird ein Nachprüfungsverfahren nur auf Antrag eingeleitet. Auf die Unzulässigkeit eines solchen Antrages gem. § 160 Abs. 3 Nr. 1 bis 4 GWB (Rügeobliegenheit gegenüber dem Auftraggeber, Rügeobliegenheit gegenüber zuständiger Stelle für Nachprüfungsverfahren nicht mehr als 15 Kalendertage nach Eingang des Nichtabhilfeschreibens auf eine Rüge) wird hingewiesen.</cbc:Description>
+            </cac:PresentationPeriod>
+            <cac:AppealInformationParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0002</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealInformationParty>
+            <cac:AppealReceiverParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeName="organization">ORG-0003</cbc:ID>
+               </cac:PartyIdentification>
+            </cac:AppealReceiverParty>
+         </cac:AppealTerms>
+         <cac:Language>
+            <cbc:ID>DEU</cbc:ID>
+         </cac:Language>
+         <cac:PostAwardProcess>
+            <cbc:ElectronicOrderUsageIndicator>true</cbc:ElectronicOrderUsageIndicator>
+            <cbc:ElectronicPaymentUsageIndicator>true</cbc:ElectronicPaymentUsageIndicator>
+         </cac:PostAwardProcess>
+         <cac:SecurityClearanceTerm>
+            <cbc:Code listName="required">false</cbc:Code>
+         </cac:SecurityClearanceTerm>
+      </cac:TenderingTerms>
+      <cac:TenderingProcess>
+         <cbc:SubmissionMethodCode listName="esubmission">required</cbc:SubmissionMethodCode>
+         <cbc:GovernmentAgreementConstraintIndicator>true</cbc:GovernmentAgreementConstraintIndicator>
+         <cac:TenderSubmissionDeadlinePeriod>
+            <cbc:EndDate>2026-09-29+02:00</cbc:EndDate>
+            <cbc:EndTime>10:00:00+02:00</cbc:EndTime>
+         </cac:TenderSubmissionDeadlinePeriod>
+         <cac:AuctionTerms>
+            <cbc:AuctionConstraintIndicator>false</cbc:AuctionConstraintIndicator>
+         </cac:AuctionTerms>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="framework-agreement">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+         <cac:ContractingSystem>
+            <cbc:ContractingSystemTypeCode listName="dps-usage">none</cbc:ContractingSystemTypeCode>
+         </cac:ContractingSystem>
+      </cac:TenderingProcess>
+      <cac:ProcurementProject>
+         <cbc:ID>LOT-0001</cbc:ID>
+         <cbc:Name languageID="DEU">Los 6 - Umschlagtechnik</cbc:Name>
+         <cbc:Description languageID="DEU">Das Gesamtprojekt umfasst den Neubau eines KV-Terminals im Hafen Riesa. Das geplante trimodale KV-Terminal (Terminal für den Kombinierten Verkehr) dient dem Umschlag von Container-Ladeeinheiten zwischen den Verkehrsträgern Straße, Schiene, Wasserstraße mit einer Kapazität von bis zu 100.000 TEU/a. Bei der vorliegenden Ausschreibung handelt es sich um die Planung sowie Lieferung und Montage von 2 Portalkränen.
+Pauschalvertrag mit funktionaler Leistungsbeschreibung.
+Beschreibung der Leistungen nach Art und Umfang:
+-	Ausführungsplanung und statische Berechnung für den Portalkran; -	Lieferung und Aufbau von 2 Containervollportalkränen; -	Baustelleneinrichtung und -sicherung; -	Verkehrssicherung.
+Weitere Angaben gemäß Leistungsbeschreibung in den Vergabeunterlagen.</cbc:Description>
+         <cbc:ProcurementTypeCode listName="contract-nature">supplies</cbc:ProcurementTypeCode>
+         <cbc:SMESuitableIndicator>false</cbc:SMESuitableIndicator>
+         <cac:ProcurementAdditionalType>
+            <cbc:ProcurementTypeCode listName="strategic-procurement">none</cbc:ProcurementTypeCode>
+         </cac:ProcurementAdditionalType>
+         <cac:MainCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">42414000</cbc:ItemClassificationCode>
+         </cac:MainCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45241000</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:AdditionalCommodityClassification>
+            <cbc:ItemClassificationCode listName="cpv">45223100</cbc:ItemClassificationCode>
+         </cac:AdditionalCommodityClassification>
+         <cac:RealizedLocation>
+            <cac:Address>
+               <cbc:CityName>Riesa</cbc:CityName>
+               <cbc:PostalZone>01591</cbc:PostalZone>
+               <cbc:CountrySubentityCode listName="nuts">DED2E</cbc:CountrySubentityCode>
+               <cac:Country>
+                  <cbc:IdentificationCode listName="country">DEU</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:Address>
+         </cac:RealizedLocation>
+         <cac:PlannedPeriod>
+            <cbc:DurationMeasure unitCode="MONTH">29</cbc:DurationMeasure>
+         </cac:PlannedPeriod>
+         <cac:ContractExtension>
+            <cbc:MaximumNumberNumeric>0</cbc:MaximumNumberNumeric>
+         </cac:ContractExtension>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ContractNotice>
