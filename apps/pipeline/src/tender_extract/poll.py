@@ -34,7 +34,7 @@ import psycopg
 from . import db
 from .eforms import COMPETITION_TYPES
 from .fetch import SEARCH_MAX_RESULTS, fetch_notice, search_lots
-from .load import load_notice_bytes
+from .load import load_notice_bytes, print_stats
 
 WATERMARK_KEY = "poll_watermark"     # newest publicationDate loaded so far (ISO timestamp)
 LAST_POLL_KEY = "last_poll_at"       # read by /health
@@ -126,8 +126,15 @@ def poll(
         print(f"  page {page}: {len(stubs)} stubs, {len(todo)} new notice versions, "
               f"{written} lots written", file=sys.stderr)
 
-        done = not stubs or result.get("offset", page * page_size) + len(stubs) >= total
-        if done or (page + 1) * page_size >= SEARCH_MAX_RESULTS:
+        # A short page is the last page whatever the envelope says; the total is a
+        # second stop so a renamed key cannot turn one page into an endless loop.
+        if len(stubs) < page_size or result.get("offset", page * page_size) + len(stubs) >= total:
+            break
+        if (page + 1) * page_size >= SEARCH_MAX_RESULTS:
+            print(f"  WARNING: {total} results exceed the {SEARCH_MAX_RESULTS} ceiling; "
+                  "the rest were not read. Window the run with --since, or use backfill.",
+                  file=sys.stderr)
+            stats["ceiling_hit"] += 1
             break
         page += 1
         time.sleep(sleep)
@@ -154,10 +161,7 @@ def main(argv: list[str] | None = None) -> int:
     with db.connect(args.dsn) as conn:
         stats = poll(conn, since=args.since, page_size=args.page_size, sleep=args.sleep,
                      cpv_prefix=args.cpv or None)
-        print("\nstats:", file=sys.stderr)
-        for key in sorted(stats):
-            if not key.startswith("observation:"):
-                print(f"  {key:34} {stats[key]:6}", file=sys.stderr)
+        print_stats(stats)
         print(f"\nwatermark {db.get_state(conn, WATERMARK_KEY)}  last_poll_at {db.get_state(conn, LAST_POLL_KEY)}",
               file=sys.stderr)
     return 0

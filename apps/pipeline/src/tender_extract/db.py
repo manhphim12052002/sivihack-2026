@@ -78,9 +78,21 @@ def connect(dsn: str | None = None) -> psycopg.Connection:
 # change here without a matching migration silently orphans every observation.
 
 
-def lot_key(source: str, notice_id: str, notice_version: str | None, lot_id: str) -> str:
+# A notice without a VersionID is its first publication. The publisher's rich profile
+# zero-pads ('01'); the national profile ships bare integers ('3'), which is fine
+# because lots_latest orders by (length, text). Every writer must use this one default:
+# the lots row, the lot key and the notice source id have to agree byte for byte.
+DEFAULT_NOTICE_VERSION = "01"
+
+
+def notice_version(version: str | None) -> str:
+    """The stored notice version string, defaulting a missing VersionID."""
+    return version or DEFAULT_NOTICE_VERSION
+
+
+def lot_key(source: str, notice_id: str, version: str | None, lot_id: str) -> str:
     """Stable identity for one lot at one notice version (LOT scope key)."""
-    return "|".join((source, notice_id, notice_version or "01", lot_id))
+    return "|".join((source, notice_id, notice_version(version), lot_id))
 
 
 def procedure_key(source: str, notice_id: str) -> str:

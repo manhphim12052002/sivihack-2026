@@ -16,7 +16,7 @@ from pathlib import Path
 
 from . import db
 from .fetch import fetch_day, iter_days
-from .load import load_zip, record_batch_state, report
+from .load import add_load_args, load_archive, record_batch_state, report
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -33,10 +33,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--cache", type=Path, default=Path("data/cache"),
                         help="directory for downloaded export ZIPs")
     parser.add_argument("--refresh", action="store_true", help="re-download cached days")
-    parser.add_argument("--cpv", default="45", help="CPV prefix to keep; empty string keeps everything")
-    parser.add_argument("--all-notice-types", action="store_true",
-                        help="keep awards and results, not just open competitions")
-    parser.add_argument("--dsn", help="Postgres DSN (default: $DATABASE_URL)")
+    add_load_args(parser)
     args = parser.parse_args(argv)
 
     if args.start > args.end:
@@ -52,10 +49,7 @@ def main(argv: list[str] | None = None) -> int:
                 stats["days_missing"] += 1
                 continue
             stats["days_loaded"] += 1
-            before = stats["lots"]
-            load_zip(conn, archive, cpv_prefix=args.cpv or None,
-                     competition_only=not args.all_notice_types, stats=stats)
-            print(f"{day}  {archive.name}: +{stats['lots'] - before} lots", file=sys.stderr)
+            load_archive(conn, archive, args, stats)
         record_batch_state(conn, stats)
         report(stats, conn)
     return 0

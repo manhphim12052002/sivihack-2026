@@ -382,7 +382,7 @@ def parse_notice(xml_bytes: bytes, cpv_prefix: str | None = "45") -> list[LotRec
             code
             for code in (
                 _cpv(el.text)
-                for el in (lot_project or root).findall(
+                for el in (lot_project if lot_project is not None else root).findall(
                     "cac:AdditionalCommodityClassification/cbc:ItemClassificationCode", NS
                 )
                 if el.text and el.get("listName") == "cpv"

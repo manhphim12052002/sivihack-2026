@@ -5,9 +5,9 @@ its field names are fixed by the published API contract — not invented here.
 
 Only *interpreted* facts become observations. Raw German prose (the BT-750
 Eignungskriterien, the lot description) is kept on the lot row and is the input
-the enrich stage reads. The one exception is the BT-750 text itself, stored as a
-procedure- or lot-scoped observation so the briefing page can show "what the
-buyer wrote" next to what the rules made of it.
+the enrich stage reads. The one exception is the BT-750 text itself, also stored
+as a lot-scoped observation so the briefing page can show "what the buyer wrote"
+next to what the rules made of it, with the notice version as its Source.
 
 Nine of the fifteen fact-sheet attributes can be read straight from the
 structured notice and land here with extractor `xpath` and high confidence. The
@@ -15,14 +15,14 @@ other six have no structured source for most of the feed and stay absent until
 enrich supplies them from prose or documents. Absent means no row, never a
 default value: on the national sub-threshold feed, which is 56% of lots, the
 contract value and guarantee fields are empty 100% of the time, and reading that
-as "no guarantee required" would make every such tender look eligible.
+as "no guarantee required" would make every such lot look eligible.
 """
 
 from __future__ import annotations
 
 from typing import Any
 
-from .db import lot_key, procedure_key
+from .db import lot_key, notice_version, procedure_key
 from .eforms import LotRecord
 
 # Base confidence is a property of the route a reading arrived by (ADR 0001),
@@ -62,14 +62,9 @@ DOCUMENT_ONLY = (
     "contractor_role",
 )
 
-# Facts that belong to the Procedure, not to one Lot: the same across every lot
-# and every version of the notice, so they are stored once with PROCEDURE scope.
-PROCEDURE_ATTRIBUTES = ("buyer_name", "procedure_type", "selection_criteria_text")
-
-
 def notice_source_id(record: LotRecord) -> str:
     """`sources.id` of the notice version a record was parsed from."""
-    return f"notice:{record.notice_id}:{record.notice_version or '01'}"
+    return f"notice:{record.notice_id}:{notice_version(record.notice_version)}"
 
 
 def _timestamp(date: str | None, time: str | None) -> str | None:
@@ -114,7 +109,7 @@ def lot_row(record: LotRecord, lot_count: int = 1) -> dict[str, Any]:
     return {
         "source": record.source,
         "notice_id": record.notice_id,
-        "notice_version": record.notice_version or "01",
+        "notice_version": notice_version(record.notice_version),
         "lot_id": record.lot_id,
         "source_format": record.source_format,
         "schema_profile": record.schema_profile,
@@ -168,10 +163,13 @@ def xpath_observations(record: LotRecord) -> list[dict[str, Any]]:
     """Observations readable straight from the structured notice.
 
     Emits nothing for an attribute the notice does not carry, which is what makes
-    the difference between `Unknown` and a wrong `OK` downstream. Lot facts carry
-    the LOT scope key; buyer, procedure type and BT-750 prose carry the PROCEDURE
-    key and are written once per notice version (the primary key absorbs the
-    repeat from every other lot of the same notice).
+    the difference between `Unknown` and a wrong `OK` downstream. Lot facts,
+    including the BT-750 prose, carry the LOT scope key: a corrigendum publishes a
+    new lot key, so the reworded text supersedes rather than conflicts. Buyer and
+    procedure type carry the PROCEDURE key and are written once per notice version
+    (the primary key absorbs the repeat from every other lot of the same notice);
+    if a later version changes them, the resolution view flags CONFLICTING, which
+    is the intended signal for a changed buyer or procedure.
     """
     source_id = notice_source_id(record)
     key = lot_key(record.source, record.notice_id, record.notice_version, record.lot_id)
@@ -231,7 +229,7 @@ def xpath_observations(record: LotRecord) -> list[dict[str, Any]]:
     prose = [c["description"] for c in record.selection_criteria if c["description"]]
     if prose:
         text = "\n".join(prose)
-        procedure("selection_criteria_text", "xpath:BT-750", text=text, quote=text)
+        lot("selection_criteria_text", "xpath:BT-750", text=text, quote=text)
 
     return out
 

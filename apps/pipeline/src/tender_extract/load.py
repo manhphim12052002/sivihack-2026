@@ -1,7 +1,7 @@
 """Load stage: parsed eForms notices into Supabase Postgres.
 
 Reads either the cached bulk day exports (backfill) or a single notice fetched on
-demand (the live path a judge's unseen tender takes). Both go through the same
+demand (the live path a judge's unseen notice takes). Both go through the same
 parse-and-write code so the live path cannot drift from the batch one.
 
 Per notice version: register the notice as a `sources` row, upsert one `lots`
@@ -34,6 +34,9 @@ from .factsheet import ATTRIBUTES, coverage, lot_row, notice_source_id, xpath_ob
 # sync_state keys written after a batch, read by /health and the demo notes.
 STATE_LAST_LOAD_AT = "load.last_run_at"
 STATE_DROPPED_AWARDED = "load.dropped_awarded_by_title"
+
+# Stats keys with this prefix are per-attribute coverage counts, printed separately.
+COVERAGE_PREFIX = "observation:"
 
 
 def load_notice_bytes(
@@ -97,7 +100,7 @@ def load_notice_bytes(
     stats["observations"] += db.insert_observations(conn, observations)
     for attr, n in coverage(observations).items():
         if n:
-            stats[f"observation:{attr}"] += n
+            stats[f"{COVERAGE_PREFIX}{attr}"] += n
     return written
 
 
@@ -125,6 +128,27 @@ def load_zip(
     return count
 
 
+# --- shared by the load and backfill CLIs ---------------------------------------
+
+
+def add_load_args(parser: argparse.ArgumentParser) -> None:
+    """Options every command that writes lots accepts."""
+    parser.add_argument("--dsn", help="Postgres DSN (default: $DATABASE_URL)")
+    parser.add_argument("--cpv", default="45",
+                        help="CPV prefix to keep; empty string keeps everything")
+    parser.add_argument("--all-notice-types", action="store_true",
+                        help="keep awards and results, not just open competitions")
+
+
+def load_archive(conn: psycopg.Connection, path: Path, args: argparse.Namespace,
+                 stats: Counter[str]) -> None:
+    """Load one export zip with the CLI's filters and log how many lots it held."""
+    before = stats["lots"]
+    load_zip(conn, path, cpv_prefix=args.cpv or None,
+             competition_only=not args.all_notice_types, stats=stats)
+    print(f"  {path.name}: {stats['lots'] - before} lots", file=sys.stderr)
+
+
 def record_batch_state(conn: psycopg.Connection, stats: Counter[str]) -> None:
     """Persist the batch's headline numbers so /health and the demo can show them."""
     db.set_state(conn, STATE_LAST_LOAD_AT, datetime.now(timezone.utc).isoformat(timespec="seconds"))
@@ -132,19 +156,21 @@ def record_batch_state(conn: psycopg.Connection, stats: Counter[str]) -> None:
     conn.commit()
 
 
-def report(stats: Counter[str], conn: psycopg.Connection) -> None:
+def print_stats(stats: Counter[str]) -> None:
     print("\nstats:", file=sys.stderr)
     for key in sorted(stats):
-        if not key.startswith("observation:"):
+        if not key.startswith(COVERAGE_PREFIX):
             print(f"  {key:34} {stats[key]:6}", file=sys.stderr)
 
+
+def report(stats: Counter[str], conn: psycopg.Connection) -> None:
+    print_stats(stats)
     print("\nfact-sheet coverage (xpath only):", file=sys.stderr)
     total = stats["lots"] or 1
     for attr in ATTRIBUTES:
-        n = stats.get(f"observation:{attr}", 0)
+        n = stats.get(f"{COVERAGE_PREFIX}{attr}", 0)
         note = "" if n else "   <- needs enrich"
         print(f"  {attr:26} {n:6} {100 * n / total:5.1f}%{note}", file=sys.stderr)
-
     print("\nstore:", db.counts(conn), file=sys.stderr)
 
 
@@ -157,11 +183,7 @@ def main(argv: list[str] | None = None) -> int:
     source.add_argument("--zip", type=Path, help="one *-eforms.zip bulk export")
     source.add_argument("--cache", type=Path, default=Path("data/cache"),
                         help="directory of *-eforms.zip bulk exports (default: data/cache)")
-    parser.add_argument("--dsn", help="Postgres DSN (default: $DATABASE_URL)")
-    parser.add_argument("--cpv", default="45",
-                        help="CPV prefix to keep; empty string keeps everything")
-    parser.add_argument("--all-notice-types", action="store_true",
-                        help="keep awards and results, not just open competitions")
+    add_load_args(parser)
     args = parser.parse_args(argv)
 
     zips = [args.zip] if args.zip else sorted(args.cache.glob("*-eforms.zip"))
@@ -172,10 +194,7 @@ def main(argv: list[str] | None = None) -> int:
     stats: Counter[str] = Counter()
     with db.connect(args.dsn) as conn:
         for path in zips:
-            before = stats["lots"]
-            load_zip(conn, path, cpv_prefix=args.cpv or None,
-                     competition_only=not args.all_notice_types, stats=stats)
-            print(f"  {path.name}: +{stats['lots'] - before} lots", file=sys.stderr)
+            load_archive(conn, path, args, stats)
         record_batch_state(conn, stats)
         report(stats, conn)
     return 0
