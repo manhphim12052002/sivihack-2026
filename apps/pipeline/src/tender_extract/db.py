@@ -199,6 +199,16 @@ def upsert_document(conn: psycopg.Connection, row: dict[str, Any]) -> None:
     conn.execute(_upsert_sql("documents", row, ("lot_key", "url")), _adapt(row))
 
 
+def upsert_cpv_descriptions(conn: psycopg.Connection, rows: Iterable[dict[str, Any]]) -> int:
+    """Insert or refresh (code, description_en, description_de) rows. Returns rows written."""
+    written = 0
+    with conn.cursor() as cur:
+        for keys, group in _group_by_keys(rows).items():
+            cur.executemany(_upsert_sql("cpv_descriptions", keys, ("code",)), group)
+            written += len(group)
+    return written
+
+
 def insert_document_files(conn: psycopg.Connection, lot_key: str, url: str, source_ids: Iterable[str]) -> None:
     """Record which Sources came from unpacking one (lot, url) package.
 
