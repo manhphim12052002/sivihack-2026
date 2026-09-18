@@ -1,0 +1,2 @@
+# Tender packages are inputs to a content-addressed store: never normalise their bytes.
+data/Vergabeunterlagen_*/** -text

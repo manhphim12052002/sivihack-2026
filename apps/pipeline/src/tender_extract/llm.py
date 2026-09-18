@@ -117,7 +117,7 @@ Return JSON only, matching the schema. Three arrays:
   Rechtsform, Fristen, ...) with a category from the list.
 - facts: descriptive statements of the listed attributes only.
 
-Every item needs evidence: the chunk_id of the page it appears on (given as "<source>#p<page>" in the text)
+Every item needs evidence: the chunk_id of the block it appears in (the "[<source>#<locator>]" header above each block; copy it exactly)
 and a VERBATIM German quote copied exactly from that page, 5 to 40 words. Do not translate, paraphrase or
 fix typos in quotes. Scope is PROCEDURE unless the text or the filename names a specific lot (Los)."""
 

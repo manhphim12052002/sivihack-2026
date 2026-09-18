@@ -11,9 +11,9 @@ import { TenderCard } from "@/components/tender-card";
 type Row = { verdict: Verdict; tender: TenderSummary | undefined };
 
 /**
- * Weekly triage board. Client-side: switching companies re-runs POST /api/screen (today, the
- * placeholder rule engine in lib/screening/engine.ts) and re-renders the shortlist without a
- * page reload. Portfolio slot swaps are held in local state only — there's no backend concept
+ * Weekly triage board. Client-side: switching companies re-runs POST /api/screen (the decision
+ * engine in lib/match, layer 1 on every lot, layer 2 on the survivors, stored results reused)
+ * and re-renders the shortlist without a page reload. Portfolio slot swaps are held in local state only — there's no backend concept
  * of a stored weekly portfolio yet, same caveat as the tender-review page's human override.
  */
 function TriageBoard() {

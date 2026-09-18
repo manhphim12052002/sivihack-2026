@@ -1,0 +1,242 @@
+[
+  {
+    "company_id": "COMP-brenner",
+    "id": "QUAL-34884692",
+    "type": "DB_PREQUALIFICATION",
+    "label": "DB qualification",
+    "knowledge_state": "KNOWN_ABSENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "STALE",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.708Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "QUAL-62F546D1",
+    "type": "RAIL_SAFETY",
+    "label": "Rail safety staff",
+    "knowledge_state": "KNOWN_ABSENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "STALE",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.708Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "QUAL-9F6704D7",
+    "type": "SPECIALIST_LICENSE",
+    "label": "System-partner certificate, T30 aluminium fire doors (approved manufacturer system)",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.745Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "QUAL-7AE95322",
+    "type": "SPECIALIST_LICENSE",
+    "label": "Fachkraft für Feststellanlagen (hold-open systems), 2 staff",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.745Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "QUAL-453AFAAB",
+    "type": "OTHER",
+    "label": "Handwerksrolle Metallbau",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.745Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "QUAL-00C87E17",
+    "type": "ISO_9001",
+    "label": "ISO 9001 (system manufacturer)",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.745Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "QUAL-F7BC3C9C",
+    "type": "OTHER",
+    "label": "Handwerksrolle Metallbau",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.757Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "QUAL-02CC5D0D",
+    "type": "SPECIALIST_LICENSE",
+    "label": "System partnership with an approved fire-door manufacturer",
+    "knowledge_state": "KNOWN_ABSENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.757Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "QUAL-7B2EFC1C",
+    "type": "SPECIALIST_LICENSE",
+    "label": "Fachkraft für Feststellanlagen (hold-open systems)",
+    "knowledge_state": "KNOWN_ABSENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.757Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "QUAL-DF0FC925",
+    "type": "SPECIALIST_LICENSE",
+    "label": "System-partner certificate, fire doors steel and aluminium (approved manufacturer system)",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.769Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "QUAL-FA7D160A",
+    "type": "SPECIALIST_LICENSE",
+    "label": "Fachkraft für Feststellanlagen (hold-open systems), 2 staff",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.769Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "QUAL-956700A1",
+    "type": "ISO_9001",
+    "label": "ISO 9001",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.769Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "QUAL-2BFB87AC",
+    "type": "OTHER",
+    "label": "Handwerksrolle Metallbau",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.769Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "QUAL-55C3ED7C",
+    "type": "SPECIALIST_LICENSE",
+    "label": "System-partner certificate, T30 fire doors (approved manufacturer system)",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.781Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "QUAL-B38BAA56",
+    "type": "OTHER",
+    "label": "Handwerksrolle Metallbau",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.781Z"
+  }
+]

@@ -1,0 +1,278 @@
+[
+  {
+    "id": "COMP-brenner",
+    "name": "Brenner & Sohn Tiefbau GmbH",
+    "status": "ONBOARDING",
+    "headquarters": "Augsburg",
+    "home_base": "",
+    "raw_text": "",
+    "field_evidence": {},
+    "revision": 1,
+    "created_at": "2026-09-18T11:15:49.690Z",
+    "updated_at": "2026-09-18T11:15:49.706Z",
+    "employees": 140,
+    "revenue_eur": 31000000,
+    "website": null,
+    "geography": {
+      "headquarters": "Augsburg",
+      "regions": [
+        "Bavaria",
+        "Schwaben",
+        "Oberbayern"
+      ],
+      "radius_km": 150,
+      "countries": []
+    },
+    "commercial_profile": {
+      "contract_min_eur": 400000,
+      "contract_max_eur": 4000000,
+      "partner_threshold_eur": 5000000,
+      "guarantee_capacity_eur": 1500000,
+      "self_perform_share_pct": null
+    },
+    "cpv_prefixes": [
+      "45233",
+      "45232",
+      "45111",
+      "45112"
+    ],
+    "intelligence_version": 2
+  },
+  {
+    "id": "COMP-vogtland",
+    "name": "Elektro Vogtland GmbH",
+    "status": "ONBOARDING",
+    "headquarters": "Plauen",
+    "home_base": "",
+    "raw_text": "",
+    "field_evidence": {},
+    "revision": 1,
+    "created_at": "2026-09-18T11:15:49.710Z",
+    "updated_at": "2026-09-18T11:15:49.719Z",
+    "employees": 45,
+    "revenue_eur": 8000000,
+    "website": null,
+    "geography": {
+      "headquarters": "Plauen",
+      "regions": [
+        "Saxony",
+        "Thuringia",
+        "eastern Bavaria"
+      ],
+      "radius_km": 200,
+      "countries": []
+    },
+    "commercial_profile": {
+      "contract_min_eur": 80000,
+      "contract_max_eur": 900000,
+      "partner_threshold_eur": null,
+      "guarantee_capacity_eur": 300000,
+      "self_perform_share_pct": null
+    },
+    "cpv_prefixes": [
+      "45310",
+      "45311",
+      "45312",
+      "45315",
+      "45316"
+    ],
+    "intelligence_version": 2
+  },
+  {
+    "id": "COMP-hanseatische",
+    "name": "Hanseatische Bau AG",
+    "status": "ONBOARDING",
+    "headquarters": "Hamburg",
+    "home_base": "",
+    "raw_text": "",
+    "field_evidence": {},
+    "revision": 1,
+    "created_at": "2026-09-18T11:15:49.723Z",
+    "updated_at": "2026-09-18T11:15:49.730Z",
+    "employees": 620,
+    "revenue_eur": 310000000,
+    "website": null,
+    "geography": {
+      "headquarters": "Hamburg",
+      "regions": [
+        "Hamburg",
+        "Schleswig-Holstein",
+        "Lower Saxony",
+        "Mecklenburg-Vorpommern",
+        "Bremen"
+      ],
+      "radius_km": 300,
+      "countries": []
+    },
+    "commercial_profile": {
+      "contract_min_eur": 8000000,
+      "contract_max_eur": 90000000,
+      "partner_threshold_eur": null,
+      "guarantee_capacity_eur": null,
+      "self_perform_share_pct": null
+    },
+    "cpv_prefixes": [
+      "45210",
+      "45211",
+      "45212",
+      "45213",
+      "45214",
+      "45215",
+      "45216"
+    ],
+    "intelligence_version": 2
+  },
+  {
+    "id": "COMP-metallbau-westfalen",
+    "name": "Metallbau Westfalen GmbH",
+    "status": "ONBOARDING",
+    "headquarters": "Lippstadt",
+    "home_base": "",
+    "raw_text": "",
+    "field_evidence": {},
+    "revision": 1,
+    "created_at": "2026-09-18T11:15:49.736Z",
+    "updated_at": "2026-09-18T11:15:49.744Z",
+    "employees": 65,
+    "revenue_eur": 12000000,
+    "website": null,
+    "geography": {
+      "headquarters": "Lippstadt",
+      "regions": [
+        "North Rhine-Westphalia",
+        "Westfalen",
+        "Ruhr"
+      ],
+      "radius_km": 120,
+      "countries": []
+    },
+    "commercial_profile": {
+      "contract_min_eur": 50000,
+      "contract_max_eur": 1500000,
+      "partner_threshold_eur": null,
+      "guarantee_capacity_eur": 600000,
+      "self_perform_share_pct": null
+    },
+    "cpv_prefixes": [
+      "45421",
+      "45441",
+      "44221",
+      "45420"
+    ],
+    "intelligence_version": 2
+  },
+  {
+    "id": "COMP-alu-sauerland",
+    "name": "Alu-Fenster Sauerland GmbH",
+    "status": "ONBOARDING",
+    "headquarters": "Arnsberg",
+    "home_base": "",
+    "raw_text": "",
+    "field_evidence": {},
+    "revision": 1,
+    "created_at": "2026-09-18T11:15:49.748Z",
+    "updated_at": "2026-09-18T11:15:49.755Z",
+    "employees": 32,
+    "revenue_eur": 6000000,
+    "website": null,
+    "geography": {
+      "headquarters": "Arnsberg",
+      "regions": [
+        "North Rhine-Westphalia",
+        "Sauerland",
+        "Westfalen"
+      ],
+      "radius_km": 100,
+      "countries": []
+    },
+    "commercial_profile": {
+      "contract_min_eur": 30000,
+      "contract_max_eur": 800000,
+      "partner_threshold_eur": null,
+      "guarantee_capacity_eur": 250000,
+      "self_perform_share_pct": null
+    },
+    "cpv_prefixes": [
+      "45421",
+      "45441",
+      "44221"
+    ],
+    "intelligence_version": 2
+  },
+  {
+    "id": "COMP-tueren-rheinland",
+    "name": "Türen & Tore Rheinland GmbH",
+    "status": "ONBOARDING",
+    "headquarters": "Köln",
+    "home_base": "",
+    "raw_text": "",
+    "field_evidence": {},
+    "revision": 1,
+    "created_at": "2026-09-18T11:15:49.760Z",
+    "updated_at": "2026-09-18T11:15:49.767Z",
+    "employees": 70,
+    "revenue_eur": 15000000,
+    "website": null,
+    "geography": {
+      "headquarters": "Köln",
+      "regions": [
+        "North Rhine-Westphalia",
+        "Rheinland",
+        "Ruhr"
+      ],
+      "radius_km": 200,
+      "countries": []
+    },
+    "commercial_profile": {
+      "contract_min_eur": 40000,
+      "contract_max_eur": 1200000,
+      "partner_threshold_eur": null,
+      "guarantee_capacity_eur": 500000,
+      "self_perform_share_pct": null
+    },
+    "cpv_prefixes": [
+      "45421",
+      "44221",
+      "45420"
+    ],
+    "intelligence_version": 2
+  },
+  {
+    "id": "COMP-hellweg",
+    "name": "Schlosserei Hellweg e.K.",
+    "status": "ONBOARDING",
+    "headquarters": "Soest",
+    "home_base": "",
+    "raw_text": "",
+    "field_evidence": {},
+    "revision": 1,
+    "created_at": "2026-09-18T11:15:49.772Z",
+    "updated_at": "2026-09-18T11:15:49.779Z",
+    "employees": 9,
+    "revenue_eur": 1800000,
+    "website": null,
+    "geography": {
+      "headquarters": "Soest",
+      "regions": [
+        "North Rhine-Westphalia",
+        "Westfalen",
+        "Kreis Soest"
+      ],
+      "radius_km": 60,
+      "countries": []
+    },
+    "commercial_profile": {
+      "contract_min_eur": 10000,
+      "contract_max_eur": 80000,
+      "partner_threshold_eur": 60000,
+      "guarantee_capacity_eur": 60000,
+      "self_perform_share_pct": null
+    },
+    "cpv_prefixes": [
+      "45421",
+      "44221",
+      "45262"
+    ],
+    "intelligence_version": 2
+  }
+]

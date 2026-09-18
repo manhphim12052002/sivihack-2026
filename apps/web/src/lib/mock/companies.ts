@@ -142,6 +142,153 @@ export const MOCK_COMPANIES: CompanyProfile[] = [
       "Cannot show: civil engineering as lead contractor (no roads, sewers or bridges), nothing in southern Germany in a decade. " +
       "Constraint: not money — bidding capacity. The estimating department can seriously pursue about three tenders a week.",
   },
+  {
+    // Fourth profile, written in the Appendix A form the brief allows ("extend them, or write
+    // your own"): the obvious yes for a single-trade aluminium-door lot in Westfalen.
+    id: "COMP-metallbau-westfalen",
+    name: "Metallbau Westfalen GmbH",
+    home_base: "Lippstadt, North Rhine-Westphalia",
+    regions: ["North Rhine-Westphalia", "Westfalen", "Ruhr"],
+    radius_km: 120,
+    trades: [
+      "aluminium windows and doors",
+      "aluminium facades",
+      "fire protection doors T30",
+      "smoke protection doors RS",
+      "automatic door drives",
+      "metal construction",
+    ],
+    cpv_prefixes: ["45421", "45441", "44221", "45420"],
+    contract_min_eur: 50000,
+    contract_max_eur: 1500000,
+    partner_threshold_eur: null,
+    guarantee_capacity_eur: 600000,
+    self_perform_share_pct: 85,
+    earliest_start: "2027-01-01",
+    capacity_per_week: null,
+    references_held: [
+      "Aluminium fire doors T30/RS, fire station Warstein (2024, €140k)",
+      "Exterior aluminium doors and F30 glazing, school campus Soest (2025, €310k)",
+      "Entrance doors with automatic drives, town hall Lippstadt (2023, €95k)",
+    ],
+    hard_exclusions: [
+      "steel structures",
+      "facades above 20 m",
+      "outside Germany",
+    ],
+    raw_text:
+      "Metallbau Westfalen GmbH, Lippstadt, North Rhine-Westphalia. ~€12M revenue, 65 employees, founded 1978. " +
+      "Does: aluminium windows, doors and facades; fire- and smoke-protection doors (T30, RS) as system partner of an approved manufacturer; automatic door drives; own workshop, powder coating through a GSB-certified partner. " +
+      "Where: North Rhine-Westphalia, mainly Westfalen and the Ruhr, up to ~120 km from Lippstadt. " +
+      "Contract size: €50k–€1.5M. " +
+      "Can show: aluminium fire doors for the Warstein fire station (2024, €140k); exterior doors and F30 glazing for a school campus in Soest (2025, €310k); entrance doors with automatic drives for Lippstadt town hall (2023, €95k). " +
+      "Cannot show: steel structures, facades above 20 m, anything outside Germany. " +
+      "Qualifications: Handwerksrolle Metallbau; two staff certified for hold-open systems (Feststellanlagen); system-partner certificate for T30 aluminium fire doors; ISO 9001 at the system manufacturer. " +
+      "Financial limit: guarantees up to about €600k. " +
+      "Free from: January 2027. " +
+      "In their words: Doors and glass in public buildings are our bread and butter. We bid directly when the package is one trade and the fire-protection paperwork is clear.",
+  },
+  {
+    // Passes the hard gate, fails in layer 2: the documents demand approved fire-door systems
+    // and the profile says the company has none.
+    id: "COMP-alu-sauerland",
+    name: "Alu-Fenster Sauerland GmbH",
+    home_base: "Arnsberg, North Rhine-Westphalia",
+    regions: ["North Rhine-Westphalia", "Sauerland", "Westfalen"],
+    radius_km: 100,
+    trades: ["aluminium windows", "aluminium exterior doors", "conservatories", "metal construction"],
+    cpv_prefixes: ["45421", "45441", "44221"],
+    contract_min_eur: 30000,
+    contract_max_eur: 800000,
+    partner_threshold_eur: null,
+    guarantee_capacity_eur: 250000,
+    self_perform_share_pct: 90,
+    earliest_start: "2027-02-01",
+    capacity_per_week: null,
+    references_held: [
+      "Aluminium windows and entrance doors, primary school Meschede (2025, €210k)",
+      "Aluminium exterior doors, sports hall Arnsberg (2024, €75k)",
+      "Conservatory and terrace doors, care home Sundern (2023, €120k)",
+    ],
+    hard_exclusions: ["steel structures", "outside Germany"],
+    raw_text:
+      "Alu-Fenster Sauerland GmbH, Arnsberg, North Rhine-Westphalia. ~€6M revenue, 32 employees, founded 1995. " +
+      "Does: aluminium windows and exterior doors, conservatories, small metal construction. Own workshop. " +
+      "Where: North Rhine-Westphalia, mainly Sauerland and Westfalen, up to ~100 km from Arnsberg. " +
+      "Contract size: €30k–€800k. " +
+      "Can show: windows and entrance doors for a primary school in Meschede (2025, €210k); exterior doors for a sports hall in Arnsberg (2024, €75k); conservatory and terrace doors for a care home in Sundern (2023, €120k). " +
+      "Cannot show: fire- or smoke-protection doors — no system partnership with an approved fire-door manufacturer and no certified hold-open-system staff; no steel structures; nothing outside Germany. " +
+      "Financial limit: guarantees up to about €250k. " +
+      "Free from: February 2027. " +
+      "In their words: Windows and doors we do well. Fire protection we have always left to the specialists.",
+  },
+  {
+    // Passes the hard gate; the reference check stays open: one comparable job in three years, two required.
+    id: "COMP-tueren-rheinland",
+    name: "Türen & Tore Rheinland GmbH",
+    home_base: "Köln, North Rhine-Westphalia",
+    regions: ["North Rhine-Westphalia", "Rheinland", "Ruhr"],
+    radius_km: 200,
+    trades: ["fire protection doors", "smoke protection doors", "industrial doors and gates", "automatic door drives", "metal construction"],
+    cpv_prefixes: ["45421", "44221", "45420"],
+    contract_min_eur: 40000,
+    contract_max_eur: 1200000,
+    partner_threshold_eur: null,
+    guarantee_capacity_eur: 500000,
+    self_perform_share_pct: 80,
+    earliest_start: "2027-01-01",
+    capacity_per_week: null,
+    references_held: [
+      "Aluminium fire doors T30 and hold-open systems, logistics hall Köln-Niehl (2025, €180k)",
+      "Steel fire doors and sectional gates, depot Leverkusen (2021, €260k)",
+      "Smoke protection doors, office building Düsseldorf (2020, €95k)",
+    ],
+    hard_exclusions: ["facades", "outside Germany"],
+    raw_text:
+      "Türen & Tore Rheinland GmbH, Köln, North Rhine-Westphalia. ~€15M revenue, 70 employees, founded 1982. " +
+      "Does: fire- and smoke-protection doors in steel and aluminium as system partner of an approved manufacturer, industrial doors and gates, automatic door drives; two staff certified for hold-open systems (Feststellanlagen); ISO 9001. " +
+      "Where: North Rhine-Westphalia, mainly Rheinland and the Ruhr, up to ~200 km from Köln. " +
+      "Contract size: €40k–€1.2M. " +
+      "Can show: aluminium fire doors T30 with hold-open systems for a logistics hall in Köln-Niehl (2025, €180k); steel fire doors and sectional gates for a depot in Leverkusen (2021, €260k); smoke protection doors for an office building in Düsseldorf (2020, €95k). " +
+      "Cannot show: facades, anything outside Germany. " +
+      "Financial limit: guarantees up to about €500k. " +
+      "Free from: January 2027. " +
+      "In their words: Fire doors are our core. Public clients ask for recent references, and most of ours are a few years old now.",
+  },
+  {
+    // Passes trade, region and timing; the lot is above the contract ceiling but below the
+    // partner threshold, so the value check asks for a partner instead of failing.
+    id: "COMP-hellweg",
+    name: "Schlosserei Hellweg e.K.",
+    home_base: "Soest, North Rhine-Westphalia",
+    regions: ["North Rhine-Westphalia", "Westfalen", "Kreis Soest"],
+    radius_km: 60,
+    trades: ["metal construction", "aluminium doors", "fire protection doors", "railings and stairs"],
+    cpv_prefixes: ["45421", "44221", "45262"],
+    contract_min_eur: 10000,
+    contract_max_eur: 80000,
+    partner_threshold_eur: 60000,
+    guarantee_capacity_eur: 60000,
+    self_perform_share_pct: 95,
+    earliest_start: "2026-11-01",
+    capacity_per_week: null,
+    references_held: [
+      "Aluminium entrance and fire doors, kindergarten Soest (2025, €48k)",
+      "Fire doors T30, community hall Bad Sassendorf (2024, €35k)",
+      "Railings and doors, town hall annex Werl (2023, €62k)",
+    ],
+    hard_exclusions: ["facades", "outside Germany"],
+    raw_text:
+      "Schlosserei Hellweg e.K., Soest, North Rhine-Westphalia. ~€1.8M revenue, 9 employees, founded 2004. " +
+      "Does: metal construction, aluminium doors, fire-protection doors as system partner of an approved manufacturer, railings and stairs. " +
+      "Where: Kreis Soest and neighbouring districts, up to ~60 km. " +
+      "Contract size: €10k–€80k. Above about €60k they team up with a larger partner. " +
+      "Can show: aluminium entrance and fire doors for a kindergarten in Soest (2025, €48k); T30 fire doors for a community hall in Bad Sassendorf (2024, €35k); railings and doors for the town hall annex in Werl (2023, €62k). " +
+      "Cannot show: facades, anything outside Germany. " +
+      "Financial limit: guarantees up to about €60k. " +
+      "Free from: November 2026. " +
+      "In their words: We are small and quick. A €90k door package is at the edge of what we carry alone.",
+  },
 ];
 
 export function findCompany(id: string): CompanyProfile | undefined {

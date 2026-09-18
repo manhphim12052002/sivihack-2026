@@ -217,12 +217,9 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# JSON data backend: the local store the web app reads and writes. Pipeline snapshots are
-# re-exportable and stay out of git; the demo board's two relations are checked in, since they
-# are the demo content itself.
-data/json-db/*.json
-!data/json-db/company_profiles.json
-!data/json-db/demo_lots.json
+# JSON data backend: data/json-db/ is the local store the web app reads and writes. The
+# committed snapshot is the demo itself (lot, documents, profiles, warmed board); re-export
+# with `python -m tender_extract.export_json`, see docs/json-data-backend.md.
 
 # Tender extraction: cached bulk export ZIPs (re-downloadable, ~4MB/day) and the
 # content-addressed store of fetched Vergabeunterlagen (re-downloadable, tens of MB)

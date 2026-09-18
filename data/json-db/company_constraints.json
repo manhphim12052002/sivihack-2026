@@ -1,0 +1,466 @@
+[
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CON-0",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "rail-adjacent work",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "rail-adjacent work",
+    "created_at": "2026-09-18T11:15:49.709Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CON-1",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "rail-side construction",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "rail-side construction",
+    "created_at": "2026-09-18T11:15:49.709Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CON-2",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "DB qualification required",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "DB qualification required",
+    "created_at": "2026-09-18T11:15:49.709Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CON-3",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "bridge construction",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "bridge construction",
+    "created_at": "2026-09-18T11:15:49.709Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CON-4",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "outside Germany",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "outside Germany",
+    "created_at": "2026-09-18T11:15:49.709Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CON-5",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "Brücke",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "Brücke",
+    "created_at": "2026-09-18T11:15:49.709Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CON-0",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "high voltage",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "high voltage",
+    "created_at": "2026-09-18T11:15:49.722Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CON-1",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "explosion-protected installation",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "explosion-protected installation",
+    "created_at": "2026-09-18T11:15:49.722Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CON-2",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "ATEX",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "ATEX",
+    "created_at": "2026-09-18T11:15:49.722Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CON-3",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "main contractor on multi-trade",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "main contractor on multi-trade",
+    "created_at": "2026-09-18T11:15:49.722Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CON-4",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "Generalunternehmer",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "Generalunternehmer",
+    "created_at": "2026-09-18T11:15:49.722Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CON-5",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "road construction",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "road construction",
+    "created_at": "2026-09-18T11:15:49.722Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CON-6",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "civil engineering",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "civil engineering",
+    "created_at": "2026-09-18T11:15:49.722Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CON-0",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "road construction as lead contractor",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "road construction as lead contractor",
+    "created_at": "2026-09-18T11:15:49.733Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CON-1",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "sewer construction as lead contractor",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "sewer construction as lead contractor",
+    "created_at": "2026-09-18T11:15:49.733Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CON-2",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "bridge construction as lead contractor",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "bridge construction as lead contractor",
+    "created_at": "2026-09-18T11:15:49.733Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CON-3",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "southern Germany",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "southern Germany",
+    "created_at": "2026-09-18T11:15:49.733Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CON-4",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "Bavaria",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "Bavaria",
+    "created_at": "2026-09-18T11:15:49.733Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CON-5",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "Baden-Württemberg",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "Baden-Württemberg",
+    "created_at": "2026-09-18T11:15:49.733Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CON-6",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "high self-performance share required",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "high self-performance share required",
+    "created_at": "2026-09-18T11:15:49.733Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "COMP-metallbau-westfalen-LEGACY-CON-0",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "steel structures",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "steel structures",
+    "created_at": "2026-09-18T11:15:49.746Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "COMP-metallbau-westfalen-LEGACY-CON-1",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "facades above 20 m",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "facades above 20 m",
+    "created_at": "2026-09-18T11:15:49.746Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "COMP-metallbau-westfalen-LEGACY-CON-2",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "outside Germany",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "outside Germany",
+    "created_at": "2026-09-18T11:15:49.746Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "COMP-alu-sauerland-LEGACY-CON-0",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "steel structures",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "steel structures",
+    "created_at": "2026-09-18T11:15:49.758Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "COMP-alu-sauerland-LEGACY-CON-1",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "outside Germany",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "outside Germany",
+    "created_at": "2026-09-18T11:15:49.759Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "COMP-tueren-rheinland-LEGACY-CON-0",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "facades",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "facades",
+    "created_at": "2026-09-18T11:15:49.771Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "COMP-tueren-rheinland-LEGACY-CON-1",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "outside Germany",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "outside Germany",
+    "created_at": "2026-09-18T11:15:49.771Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "COMP-hellweg-LEGACY-CON-0",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "facades",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "facades",
+    "created_at": "2026-09-18T11:15:49.782Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "COMP-hellweg-LEGACY-CON-1",
+    "type": "WORK_TYPE",
+    "operator": "EXCLUDE",
+    "value": "outside Germany",
+    "severity": "HARD",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "state": "EXPLICIT",
+    "raw_value": "outside Germany",
+    "created_at": "2026-09-18T11:15:49.782Z"
+  }
+]

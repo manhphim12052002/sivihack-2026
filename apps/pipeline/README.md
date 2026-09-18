@@ -47,6 +47,34 @@ the model again, and a package already retrieved for a lot is not downloaded aga
 key the model stage reports `model_unavailable` and everything else still runs (ADR 0003 fallback).
 Downloaded files live in the gitignored content-addressed store `data/documents/<sha256>.<ext>`.
 
+## Package intake for a gated portal (need `DATABASE_URL`; the model stage needs `OPENROUTER_API_KEY`)
+
+Portals behind a registration form (cosinex/vergabe-westfalen, evergabe.de, ...) cannot be fetched
+by the adapters (ADR 0004). An estimator downloads the ZIP by hand; `package` reads the unpacked
+folder into the same tables a portal fetch fills:
+
+```bash
+python -m tender_extract.package --lot "<lot_key>" --dir data/Vergabeunterlagen_<id>            # sources, chunks, model extraction
+python -m tender_extract.package --lot "<lot_key>" --dir data/Vergabeunterlagen_<id> --no-model # sources and chunks only
+```
+
+File handling: a GAEB `.x83` is parsed deterministically (`gaeb.py`) into one chunk per position
+(`#pos01.02`, German text, quantity, unit) plus the ZTV preambles (`#ztv<n>.<m>`) and the DIN 18299
+site information (`#din<n>`); its `.D83` twin and the printed LV PDF are skipped as duplicates.
+Other PDFs go through `pdftotext` page by page; drawings (little text per page) and scanned files
+are recorded `SKIPPED` / `SCANNED`. Every readable file is sent to the model once per prompt
+version, exactly as in `enrich`. Idempotent: re-running relinks the same content hashes.
+
+## Export for the web's JSON backend (need `DATABASE_URL`)
+
+```bash
+python -m tender_extract.export_json --out data/json-db --open-lots 200
+```
+
+Writes one JSON file per relation (`lots_latest`, `lots_current`, `observations_resolved`,
+`documents`, `document_files`, `sources`, `chunks`), views resolved, trimmed to lots with
+documents plus the soonest open lots. See `docs/json-data-backend.md`.
+
 ## Reading the data (contract for downstream owners)
 
 Nothing in this pipeline ranks or decides. It stores what the sources state, with evidence, and

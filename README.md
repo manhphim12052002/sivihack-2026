@@ -6,14 +6,18 @@ ingest an unseen tender and company. Frontend design: `docs/design.md`.
 
 ## Run the web app
 
-Node 24:
+Node 24, no services, no keys:
 
 ```bash
 cd apps/web && npm install && npm run dev          # http://localhost:3000
 ```
 
-The UI expects an API at `NEXT_PUBLIC_API_URL` (default `http://localhost:8000`) and shows an
-offline banner when none is running. The backend is developed separately.
+The app reads and writes `data/json-db/` through its data port (`docs/json-data-backend.md`);
+the committed snapshot holds the demo lot, its documents, seven company profiles and the
+pre-computed evaluations, so the board and the briefing work offline. Set `OPENROUTER_API_KEY`
+(and optionally `OPENROUTER_MODEL`) to let layer 2 re-read the documents with a model; without
+it those checks show as UNCERTAIN with the reason stated. `DATA_BACKEND=supabase` switches to
+Postgres.
 
 ## Run the pipeline
 

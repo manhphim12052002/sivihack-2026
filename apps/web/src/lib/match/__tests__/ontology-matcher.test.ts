@@ -12,7 +12,7 @@ function makeTask(overrides: Partial<MatchingTask> = {}): MatchingTask {
     severity: "HARD",
     tender_value: "Straßenbau",
     company_value: null,
-    tender_evidence: ["LV.pdf"],
+    tender_evidence: [{ doc: "LV.pdf", page: 1, quote_de: "Straßenbau" }],
     aspect: "SCOPE_CAPABILITY",
     ...overrides,
   };

@@ -41,9 +41,9 @@ async function seed() {
     c.sources = [source.source];
     c.chunks = source.chunks;
     const idx = MOCK_COMPANIES.indexOf(profile);
-    c.identity.employees = [140, 45, 620][idx];
-    c.identity.revenue_eur = [31000000, 8000000, 310000000][idx];
-    c.identity.headquarters = ["Augsburg", "Plauen", "Hamburg"][idx];
+    c.identity.employees = [140, 45, 620, 65, 32, 70, 9][idx];
+    c.identity.revenue_eur = [31000000, 8000000, 310000000, 12000000, 6000000, 15000000, 1800000][idx];
+    c.identity.headquarters = ["Augsburg", "Plauen", "Hamburg", "Lippstadt", "Arnsberg", "Köln", "Soest"][idx];
     // Existing sample descriptions, not fabricated project dates or locations.
     const names = [
       [
@@ -63,15 +63,88 @@ async function seed() {
         "Hospital extension",
         "Large residential quarters",
       ],
+      [
+        "Aluminium fire doors T30/RS, fire station Warstein",
+        "Exterior aluminium doors and F30 glazing, school campus Soest",
+        "Entrance doors with automatic drives, town hall Lippstadt",
+      ],
+      [
+        "Aluminium windows and entrance doors, primary school Meschede",
+        "Aluminium exterior doors, sports hall Arnsberg",
+        "Conservatory and terrace doors, care home Sundern",
+      ],
+      [
+        "Aluminium fire doors T30 and hold-open systems, logistics hall Köln-Niehl",
+        "Steel fire doors and sectional gates, depot Leverkusen",
+        "Smoke protection doors, office building Düsseldorf",
+      ],
+      [
+        "Aluminium entrance and fire doors, kindergarten Soest",
+        "Fire doors T30, community hall Bad Sassendorf",
+        "Railings and doors, town hall annex Werl",
+      ],
     ][idx];
+    // Reference facts stated in the fourth profile's own text (year, value, kind of work).
+    const stated: Record<number, Array<{ completed_at: string; value: number; types: string[] }>> = {
+      3: [
+        { completed_at: "2024-09-30", value: 140000, types: ["FIRE_PROTECTION_DOORS", "ALUMINIUM_DOORS"] },
+        { completed_at: "2025-06-30", value: 310000, types: ["ALUMINIUM_DOORS", "FIRE_PROTECTION_GLAZING"] },
+        { completed_at: "2023-11-30", value: 95000, types: ["ALUMINIUM_DOORS", "AUTOMATIC_DOORS"] },
+      ],
+      4: [
+        { completed_at: "2025-05-31", value: 210000, types: ["ALUMINIUM_WINDOWS", "ALUMINIUM_DOORS"] },
+        { completed_at: "2024-08-31", value: 75000, types: ["ALUMINIUM_DOORS"] },
+        { completed_at: "2023-10-31", value: 120000, types: ["CONSERVATORY", "ALUMINIUM_DOORS"] },
+      ],
+      5: [
+        { completed_at: "2025-03-31", value: 180000, types: ["FIRE_PROTECTION_DOORS", "ALUMINIUM_DOORS", "HOLD_OPEN_SYSTEMS"] },
+        { completed_at: "2021-06-30", value: 260000, types: ["FIRE_PROTECTION_DOORS", "STEEL_DOORS", "SECTIONAL_GATES"] },
+        { completed_at: "2020-09-30", value: 95000, types: ["SMOKE_PROTECTION_DOORS"] },
+      ],
+      6: [
+        { completed_at: "2025-07-31", value: 48000, types: ["ALUMINIUM_DOORS", "FIRE_PROTECTION_DOORS"] },
+        { completed_at: "2024-04-30", value: 35000, types: ["FIRE_PROTECTION_DOORS"] },
+        { completed_at: "2023-09-30", value: 62000, types: ["RAILINGS", "ALUMINIUM_DOORS"] },
+      ],
+    };
+    // Qualifications each fourth-plus profile states, including what it says it does NOT have.
+    const statedQualifications: Record<number, Array<{ label: string; type: string; knowledge_state: "KNOWN_PRESENT" | "KNOWN_ABSENT" }>> = {
+      3: [
+        { label: "System-partner certificate, T30 aluminium fire doors (approved manufacturer system)", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Fachkraft für Feststellanlagen (hold-open systems), 2 staff", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Handwerksrolle Metallbau", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
+        { label: "ISO 9001 (system manufacturer)", type: "ISO_9001", knowledge_state: "KNOWN_PRESENT" },
+      ],
+      4: [
+        { label: "Handwerksrolle Metallbau", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
+        { label: "System partnership with an approved fire-door manufacturer", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_ABSENT" },
+        { label: "Fachkraft für Feststellanlagen (hold-open systems)", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_ABSENT" },
+      ],
+      5: [
+        { label: "System-partner certificate, fire doors steel and aluminium (approved manufacturer system)", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Fachkraft für Feststellanlagen (hold-open systems), 2 staff", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
+        { label: "ISO 9001", type: "ISO_9001", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Handwerksrolle Metallbau", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
+      ],
+      6: [
+        { label: "System-partner certificate, T30 fire doors (approved manufacturer system)", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Handwerksrolle Metallbau", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
+      ],
+    };
+    const statedAvailability: Record<number, { from: string; raw: string }> = {
+      3: { from: "2027-01-01", raw: "January 2027" },
+      4: { from: "2027-02-01", raw: "February 2027" },
+      5: { from: "2027-01-01", raw: "January 2027" },
+      6: { from: "2026-11-01", raw: "November 2026" },
+    };
     c.references = names.map((name, i) => ({
       ...rowMeta(profile.id, "REF", ids, "CONFIRMED"),
       name,
       client: null,
       location: null,
-      completed_at: null,
-      contract_value_eur: idx === 0 && i === 0 ? 2900000 : null,
-      project_types: idx === 0 && i === 0 ? ["ROAD_REHABILITATION"] : [],
+      completed_at: stated[idx]?.[i]?.completed_at ?? null,
+      contract_value_eur: idx === 0 && i === 0 ? 2900000 : stated[idx]?.[i]?.value ?? null,
+      project_types: idx === 0 && i === 0 ? ["ROAD_REHABILITATION"] : stated[idx]?.[i]?.types ?? [],
       capabilities: idx === 0 && i === 0 ? ["ROAD_CONSTRUCTION"] : [],
     }));
     for (const r of [...c.capabilities, ...(c.constraints ?? [])]) {
@@ -113,6 +186,31 @@ async function seed() {
           unit: null,
           raw_value: "March",
           state: "AMBIGUOUS",
+        },
+      ];
+    }
+    if (statedQualifications[idx]) {
+      c.qualifications = statedQualifications[idx].map((q) => ({
+        ...rowMeta(profile.id, "QUAL", ids, "CONFIRMED"),
+        label: q.label,
+        type: q.type,
+        knowledge_state: q.knowledge_state,
+        valid_from: null,
+        valid_until: null,
+        freshness: "CURRENT" as const,
+      }));
+      c.capacity = [
+        {
+          ...manualOperational(profile.id),
+          origin: "DOCUMENT_EXTRACTED",
+          evidence: ids,
+          type: "CREW_AVAILABILITY",
+          label: `Free from ${statedAvailability[idx].raw}`,
+          value: null,
+          unit: null,
+          available_from: statedAvailability[idx].from,
+          raw_value: statedAvailability[idx].raw,
+          state: "EXPLICIT",
         },
       ];
     }

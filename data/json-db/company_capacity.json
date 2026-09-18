@@ -1,0 +1,110 @@
+[
+  {
+    "company_id": "COMP-brenner",
+    "id": "OP-78301572",
+    "type": "CREW_AVAILABILITY",
+    "label": "Two crews committed until March",
+    "value": null,
+    "unit": null,
+    "available_from": null,
+    "valid_as_of": null,
+    "raw_value": "March",
+    "state": "AMBIGUOUS",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.709Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "OP-875AF033",
+    "type": "ESTIMATOR_CAPACITY",
+    "label": "Estimating department",
+    "value": 3,
+    "unit": "BIDS_PER_WEEK",
+    "available_from": null,
+    "valid_as_of": null,
+    "raw_value": "about three tenders a week",
+    "state": "EXPLICIT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.733Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "OP-9A3D0373",
+    "type": "CREW_AVAILABILITY",
+    "label": "Free from January 2027",
+    "value": null,
+    "unit": null,
+    "available_from": "2027-01-01",
+    "valid_as_of": null,
+    "raw_value": "January 2027",
+    "state": "EXPLICIT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.746Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "OP-C93491F5",
+    "type": "CREW_AVAILABILITY",
+    "label": "Free from February 2027",
+    "value": null,
+    "unit": null,
+    "available_from": "2027-02-01",
+    "valid_as_of": null,
+    "raw_value": "February 2027",
+    "state": "EXPLICIT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.758Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "OP-6C260111",
+    "type": "CREW_AVAILABILITY",
+    "label": "Free from January 2027",
+    "value": null,
+    "unit": null,
+    "available_from": "2027-01-01",
+    "valid_as_of": null,
+    "raw_value": "January 2027",
+    "state": "EXPLICIT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.770Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "OP-5BFF8BF2",
+    "type": "CREW_AVAILABILITY",
+    "label": "Free from November 2026",
+    "value": null,
+    "unit": null,
+    "available_from": "2026-11-01",
+    "valid_as_of": null,
+    "raw_value": "November 2026",
+    "state": "EXPLICIT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.781Z"
+  }
+]

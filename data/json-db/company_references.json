@@ -1,0 +1,432 @@
+[
+  {
+    "company_id": "COMP-brenner",
+    "id": "REF-BA64B2E4",
+    "name": "State road rehabilitation",
+    "client": null,
+    "project_types": [
+      "ROAD_REHABILITATION"
+    ],
+    "location": null,
+    "value_eur": 2900000,
+    "completed_at": null,
+    "capabilities": [
+      "ROAD_CONSTRUCTION"
+    ],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.707Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "REF-B2D3FF32",
+    "name": "District sewer renewal",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.707Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "REF-9860DE0F",
+    "name": "Housing-estate site developments",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.707Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "REF-7DA098C9",
+    "name": "School refurbishments",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "created_at": "2026-09-18T11:15:49.720Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "REF-B2421D63",
+    "name": "Hospital ward block",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "created_at": "2026-09-18T11:15:49.720Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "REF-79CF2920",
+    "name": "Office fit-outs",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "created_at": "2026-09-18T11:15:49.720Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "REF-4238CE9D",
+    "name": "Two care homes",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "created_at": "2026-09-18T11:15:49.720Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "REF-ACD5CF48",
+    "name": "University building",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "REF-F35FB1DC",
+    "name": "Two school campuses",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "REF-3B4C9DBA",
+    "name": "Hospital extension",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "REF-EB701595",
+    "name": "Large residential quarters",
+    "client": null,
+    "project_types": [],
+    "location": null,
+    "value_eur": null,
+    "completed_at": null,
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "REF-3696C0B9",
+    "name": "Aluminium fire doors T30/RS, fire station Warstein",
+    "client": null,
+    "project_types": [
+      "FIRE_PROTECTION_DOORS",
+      "ALUMINIUM_DOORS"
+    ],
+    "location": null,
+    "value_eur": 140000,
+    "completed_at": "2024-09-30",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.745Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "REF-61BADF9E",
+    "name": "Exterior aluminium doors and F30 glazing, school campus Soest",
+    "client": null,
+    "project_types": [
+      "ALUMINIUM_DOORS",
+      "FIRE_PROTECTION_GLAZING"
+    ],
+    "location": null,
+    "value_eur": 310000,
+    "completed_at": "2025-06-30",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.745Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "REF-D2D5E07B",
+    "name": "Entrance doors with automatic drives, town hall Lippstadt",
+    "client": null,
+    "project_types": [
+      "ALUMINIUM_DOORS",
+      "AUTOMATIC_DOORS"
+    ],
+    "location": null,
+    "value_eur": 95000,
+    "completed_at": "2023-11-30",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.745Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "REF-D899DADC",
+    "name": "Aluminium windows and entrance doors, primary school Meschede",
+    "client": null,
+    "project_types": [
+      "ALUMINIUM_WINDOWS",
+      "ALUMINIUM_DOORS"
+    ],
+    "location": null,
+    "value_eur": 210000,
+    "completed_at": "2025-05-31",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.757Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "REF-DF2E532C",
+    "name": "Aluminium exterior doors, sports hall Arnsberg",
+    "client": null,
+    "project_types": [
+      "ALUMINIUM_DOORS"
+    ],
+    "location": null,
+    "value_eur": 75000,
+    "completed_at": "2024-08-31",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.757Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "REF-4934EA29",
+    "name": "Conservatory and terrace doors, care home Sundern",
+    "client": null,
+    "project_types": [
+      "CONSERVATORY",
+      "ALUMINIUM_DOORS"
+    ],
+    "location": null,
+    "value_eur": 120000,
+    "completed_at": "2023-10-31",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.757Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "REF-E0910A3C",
+    "name": "Aluminium fire doors T30 and hold-open systems, logistics hall Köln-Niehl",
+    "client": null,
+    "project_types": [
+      "FIRE_PROTECTION_DOORS",
+      "ALUMINIUM_DOORS",
+      "HOLD_OPEN_SYSTEMS"
+    ],
+    "location": null,
+    "value_eur": 180000,
+    "completed_at": "2025-03-31",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.769Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "REF-7DEB724B",
+    "name": "Steel fire doors and sectional gates, depot Leverkusen",
+    "client": null,
+    "project_types": [
+      "FIRE_PROTECTION_DOORS",
+      "STEEL_DOORS",
+      "SECTIONAL_GATES"
+    ],
+    "location": null,
+    "value_eur": 260000,
+    "completed_at": "2021-06-30",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.769Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "REF-E4C58517",
+    "name": "Smoke protection doors, office building Düsseldorf",
+    "client": null,
+    "project_types": [
+      "SMOKE_PROTECTION_DOORS"
+    ],
+    "location": null,
+    "value_eur": 95000,
+    "completed_at": "2020-09-30",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.769Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "REF-8970A6FC",
+    "name": "Aluminium entrance and fire doors, kindergarten Soest",
+    "client": null,
+    "project_types": [
+      "ALUMINIUM_DOORS",
+      "FIRE_PROTECTION_DOORS"
+    ],
+    "location": null,
+    "value_eur": 48000,
+    "completed_at": "2025-07-31",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.780Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "REF-4547FC3A",
+    "name": "Fire doors T30, community hall Bad Sassendorf",
+    "client": null,
+    "project_types": [
+      "FIRE_PROTECTION_DOORS"
+    ],
+    "location": null,
+    "value_eur": 35000,
+    "completed_at": "2024-04-30",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.780Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "REF-AAB36D16",
+    "name": "Railings and doors, town hall annex Werl",
+    "client": null,
+    "project_types": [
+      "RAILINGS",
+      "ALUMINIUM_DOORS"
+    ],
+    "location": null,
+    "value_eur": 62000,
+    "completed_at": "2023-09-30",
+    "capabilities": [],
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.780Z"
+  }
+]

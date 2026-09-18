@@ -1,0 +1,178 @@
+[
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-GAP-REFERENCE_DATE_REF-BA64B2E4",
+    "type": "REFERENCE_DATE_REF-BA64B2E4",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for State road rehabilitation.",
+    "created_at": "2026-09-18T11:15:49.710Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-GAP-REFERENCE_DATE_REF-B2D3FF32",
+    "type": "REFERENCE_DATE_REF-B2D3FF32",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for District sewer renewal.",
+    "created_at": "2026-09-18T11:15:49.710Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-GAP-REFERENCE_VALUE_REF-B2D3FF32",
+    "type": "REFERENCE_VALUE_REF-B2D3FF32",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for District sewer renewal.",
+    "created_at": "2026-09-18T11:15:49.710Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-GAP-REFERENCE_DATE_REF-9860DE0F",
+    "type": "REFERENCE_DATE_REF-9860DE0F",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for Housing-estate site developments.",
+    "created_at": "2026-09-18T11:15:49.710Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-GAP-REFERENCE_VALUE_REF-9860DE0F",
+    "type": "REFERENCE_VALUE_REF-9860DE0F",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for Housing-estate site developments.",
+    "created_at": "2026-09-18T11:15:49.710Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-GAP-CAPACITY_OP-78301572",
+    "type": "CAPACITY_OP-78301572",
+    "state": "UNKNOWN",
+    "reason": "Two crews committed until March: March is ambiguous; supply explicit dates/context.",
+    "created_at": "2026-09-18T11:15:49.710Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-GAP-REFERENCE_DATE_REF-7DA098C9",
+    "type": "REFERENCE_DATE_REF-7DA098C9",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for School refurbishments.",
+    "created_at": "2026-09-18T11:15:49.723Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-GAP-REFERENCE_VALUE_REF-7DA098C9",
+    "type": "REFERENCE_VALUE_REF-7DA098C9",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for School refurbishments.",
+    "created_at": "2026-09-18T11:15:49.723Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-GAP-REFERENCE_DATE_REF-B2421D63",
+    "type": "REFERENCE_DATE_REF-B2421D63",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for Hospital ward block.",
+    "created_at": "2026-09-18T11:15:49.723Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-GAP-REFERENCE_VALUE_REF-B2421D63",
+    "type": "REFERENCE_VALUE_REF-B2421D63",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for Hospital ward block.",
+    "created_at": "2026-09-18T11:15:49.723Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-GAP-REFERENCE_DATE_REF-79CF2920",
+    "type": "REFERENCE_DATE_REF-79CF2920",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for Office fit-outs.",
+    "created_at": "2026-09-18T11:15:49.723Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-GAP-REFERENCE_VALUE_REF-79CF2920",
+    "type": "REFERENCE_VALUE_REF-79CF2920",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for Office fit-outs.",
+    "created_at": "2026-09-18T11:15:49.723Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-GAP-REFERENCE_DATE_REF-4238CE9D",
+    "type": "REFERENCE_DATE_REF-4238CE9D",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for Two care homes.",
+    "created_at": "2026-09-18T11:15:49.723Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-GAP-REFERENCE_VALUE_REF-4238CE9D",
+    "type": "REFERENCE_VALUE_REF-4238CE9D",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for Two care homes.",
+    "created_at": "2026-09-18T11:15:49.723Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-GAP-REFERENCE_DATE_REF-ACD5CF48",
+    "type": "REFERENCE_DATE_REF-ACD5CF48",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for University building.",
+    "created_at": "2026-09-18T11:15:49.735Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-GAP-REFERENCE_VALUE_REF-ACD5CF48",
+    "type": "REFERENCE_VALUE_REF-ACD5CF48",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for University building.",
+    "created_at": "2026-09-18T11:15:49.735Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-GAP-REFERENCE_DATE_REF-F35FB1DC",
+    "type": "REFERENCE_DATE_REF-F35FB1DC",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for Two school campuses.",
+    "created_at": "2026-09-18T11:15:49.735Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-GAP-REFERENCE_VALUE_REF-F35FB1DC",
+    "type": "REFERENCE_VALUE_REF-F35FB1DC",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for Two school campuses.",
+    "created_at": "2026-09-18T11:15:49.735Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-GAP-REFERENCE_DATE_REF-3B4C9DBA",
+    "type": "REFERENCE_DATE_REF-3B4C9DBA",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for Hospital extension.",
+    "created_at": "2026-09-18T11:15:49.735Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-GAP-REFERENCE_VALUE_REF-3B4C9DBA",
+    "type": "REFERENCE_VALUE_REF-3B4C9DBA",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for Hospital extension.",
+    "created_at": "2026-09-18T11:15:49.735Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-GAP-REFERENCE_DATE_REF-EB701595",
+    "type": "REFERENCE_DATE_REF-EB701595",
+    "state": "UNKNOWN",
+    "reason": "Completion date missing for Large residential quarters.",
+    "created_at": "2026-09-18T11:15:49.735Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-GAP-REFERENCE_VALUE_REF-EB701595",
+    "type": "REFERENCE_VALUE_REF-EB701595",
+    "state": "UNKNOWN",
+    "reason": "Contract value missing for Large residential quarters.",
+    "created_at": "2026-09-18T11:15:49.735Z"
+  }
+]

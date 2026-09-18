@@ -1,0 +1,3134 @@
+[
+  {
+    "id": "GAP-9732BEA1",
+    "evaluation_id": "EVAL-FD38B6D1",
+    "task_id": "TASK-F15D0E61",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:15:49.990Z"
+  },
+  {
+    "id": "GAP-C57E3C35",
+    "evaluation_id": "EVAL-F7D81AA0",
+    "task_id": "TASK-2F190C39",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:15:50.020Z"
+  },
+  {
+    "id": "GAP-DEF00B3B",
+    "evaluation_id": "EVAL-7F8977D3",
+    "task_id": "TASK-D3118029",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:15:50.059Z"
+  },
+  {
+    "id": "GAP-1EE35186",
+    "evaluation_id": "EVAL-48487970",
+    "task_id": "TASK-600F4CF9",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2023 are comparable to Neubau BHZ - Alutüren, with client, value and completion date?",
+    "created_at": "2026-09-18T11:15:50.098Z"
+  },
+  {
+    "id": "GAP-AC9E8FBF",
+    "evaluation_id": "EVAL-48487970",
+    "task_id": "TASK-0BE6CC95",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Model not configured (OPENROUTER_API_KEY missing); requirement not assessed.",
+    "created_at": "2026-09-18T11:15:50.098Z"
+  },
+  {
+    "id": "GAP-9A87BAD2",
+    "evaluation_id": "EVAL-D459D97D",
+    "task_id": "TASK-0A907E1C",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2023 are comparable to Neubau BHZ - Alutüren, with client, value and completion date?",
+    "created_at": "2026-09-18T11:15:50.132Z"
+  },
+  {
+    "id": "GAP-20C94238",
+    "evaluation_id": "EVAL-D459D97D",
+    "task_id": "TASK-BC82A646",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Model not configured (OPENROUTER_API_KEY missing); requirement not assessed.",
+    "created_at": "2026-09-18T11:15:50.132Z"
+  },
+  {
+    "id": "GAP-F9B3D74B",
+    "evaluation_id": "EVAL-38541193",
+    "task_id": "TASK-FF613FB0",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2023 are comparable to Neubau BHZ - Alutüren, with client, value and completion date?",
+    "created_at": "2026-09-18T11:15:50.176Z"
+  },
+  {
+    "id": "GAP-9B741485",
+    "evaluation_id": "EVAL-38541193",
+    "task_id": "TASK-37F920C8",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Model not configured (OPENROUTER_API_KEY missing); requirement not assessed.",
+    "created_at": "2026-09-18T11:15:50.176Z"
+  },
+  {
+    "id": "GAP-C662AFB4",
+    "evaluation_id": "EVAL-73E7D4D4",
+    "task_id": "TASK-8777743A",
+    "concept": "ESTIMATED_VALUE",
+    "importance": "HARD",
+    "triggered_by": "90.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "created_at": "2026-09-18T11:15:50.205Z"
+  },
+  {
+    "id": "GAP-FBA1E1A1",
+    "evaluation_id": "EVAL-73E7D4D4",
+    "task_id": "TASK-7AF6F294",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2023 are comparable to Neubau BHZ - Alutüren, with client, value and completion date?",
+    "created_at": "2026-09-18T11:15:50.205Z"
+  },
+  {
+    "id": "GAP-44BA6635",
+    "evaluation_id": "EVAL-73E7D4D4",
+    "task_id": "TASK-1180872A",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Model not configured (OPENROUTER_API_KEY missing); requirement not assessed.",
+    "created_at": "2026-09-18T11:15:50.205Z"
+  },
+  {
+    "id": "GAP-B9F1BBCD",
+    "evaluation_id": "EVAL-62E4178C",
+    "task_id": "TASK-56E7BD1A",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.026Z"
+  },
+  {
+    "id": "GAP-7E4B78B0",
+    "evaluation_id": "EVAL-62E4178C",
+    "task_id": "TASK-4CDE44E7",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.026Z"
+  },
+  {
+    "id": "GAP-F2EC4F0D",
+    "evaluation_id": "EVAL-62E4178C",
+    "task_id": "TASK-4945D50A",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.026Z"
+  },
+  {
+    "id": "GAP-E3D3D553",
+    "evaluation_id": "EVAL-432442D4",
+    "task_id": "TASK-5CD55A0E",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.032Z"
+  },
+  {
+    "id": "GAP-BF467253",
+    "evaluation_id": "EVAL-432442D4",
+    "task_id": "TASK-754705F2",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.032Z"
+  },
+  {
+    "id": "GAP-A0514068",
+    "evaluation_id": "EVAL-432442D4",
+    "task_id": "TASK-B69CE959",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.032Z"
+  },
+  {
+    "id": "GAP-3E1F72A9",
+    "evaluation_id": "EVAL-F8FDFC7D",
+    "task_id": "TASK-349248DF",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.036Z"
+  },
+  {
+    "id": "GAP-E658F67C",
+    "evaluation_id": "EVAL-F8FDFC7D",
+    "task_id": "TASK-FE147257",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.036Z"
+  },
+  {
+    "id": "GAP-658E67D8",
+    "evaluation_id": "EVAL-F8FDFC7D",
+    "task_id": "TASK-D5EAE9B3",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.036Z"
+  },
+  {
+    "id": "GAP-87C875D8",
+    "evaluation_id": "EVAL-4F7DDFA5",
+    "task_id": "TASK-1B5FFF8D",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.041Z"
+  },
+  {
+    "id": "GAP-BD186977",
+    "evaluation_id": "EVAL-4F7DDFA5",
+    "task_id": "TASK-B0C85644",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.041Z"
+  },
+  {
+    "id": "GAP-5930B098",
+    "evaluation_id": "EVAL-4F7DDFA5",
+    "task_id": "TASK-6C849414",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.041Z"
+  },
+  {
+    "id": "GAP-CB767541",
+    "evaluation_id": "EVAL-C72E9D89",
+    "task_id": "TASK-33E73209",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.046Z"
+  },
+  {
+    "id": "GAP-86FB627D",
+    "evaluation_id": "EVAL-C72E9D89",
+    "task_id": "TASK-7E836F95",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.046Z"
+  },
+  {
+    "id": "GAP-A082B44E",
+    "evaluation_id": "EVAL-C72E9D89",
+    "task_id": "TASK-0F88FC92",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.046Z"
+  },
+  {
+    "id": "GAP-97AF7DC6",
+    "evaluation_id": "EVAL-007E45D0",
+    "task_id": "TASK-0FD60F11",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.050Z"
+  },
+  {
+    "id": "GAP-5C9EB3BB",
+    "evaluation_id": "EVAL-4F5924CF",
+    "task_id": "TASK-B2F42746",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.054Z"
+  },
+  {
+    "id": "GAP-D7BE5CB3",
+    "evaluation_id": "EVAL-4F5924CF",
+    "task_id": "TASK-FDD7D7EA",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.054Z"
+  },
+  {
+    "id": "GAP-446FAEA7",
+    "evaluation_id": "EVAL-4F5924CF",
+    "task_id": "TASK-768A1D35",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.054Z"
+  },
+  {
+    "id": "GAP-2FB853DE",
+    "evaluation_id": "EVAL-A5B7332A",
+    "task_id": "TASK-A84E1EEB",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.058Z"
+  },
+  {
+    "id": "GAP-48FD9F75",
+    "evaluation_id": "EVAL-2A208ACF",
+    "task_id": "TASK-19608779",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.062Z"
+  },
+  {
+    "id": "GAP-3C107ED8",
+    "evaluation_id": "EVAL-F46CD4DF",
+    "task_id": "TASK-8B51C15E",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.066Z"
+  },
+  {
+    "id": "GAP-6A1B5A7B",
+    "evaluation_id": "EVAL-AF0CB06D",
+    "task_id": "TASK-5B2695BB",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.071Z"
+  },
+  {
+    "id": "GAP-C38A0D24",
+    "evaluation_id": "EVAL-8A237CC5",
+    "task_id": "TASK-707A73B0",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.074Z"
+  },
+  {
+    "id": "GAP-B485D239",
+    "evaluation_id": "EVAL-AE463045",
+    "task_id": "TASK-1D8AE8B5",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.078Z"
+  },
+  {
+    "id": "GAP-6DB11405",
+    "evaluation_id": "EVAL-FC91AFB8",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.114Z"
+  },
+  {
+    "id": "GAP-8F4B613C",
+    "evaluation_id": "EVAL-FC91AFB8",
+    "task_id": "TASK-DBA574AD",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.114Z"
+  },
+  {
+    "id": "GAP-2A57C1D3",
+    "evaluation_id": "EVAL-FC91AFB8",
+    "task_id": "TASK-4AC8B87F",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.114Z"
+  },
+  {
+    "id": "GAP-D126BBEE",
+    "evaluation_id": "EVAL-CA7B4468",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.119Z"
+  },
+  {
+    "id": "GAP-F7DA027B",
+    "evaluation_id": "EVAL-CA7B4468",
+    "task_id": "TASK-7B45612B",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.119Z"
+  },
+  {
+    "id": "GAP-664984D4",
+    "evaluation_id": "EVAL-CA7B4468",
+    "task_id": "TASK-15B8FAB4",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.119Z"
+  },
+  {
+    "id": "GAP-23E290F3",
+    "evaluation_id": "EVAL-0365EB04",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.124Z"
+  },
+  {
+    "id": "GAP-E2C2F231",
+    "evaluation_id": "EVAL-0365EB04",
+    "task_id": "TASK-48547F1C",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.124Z"
+  },
+  {
+    "id": "GAP-30C78C21",
+    "evaluation_id": "EVAL-0365EB04",
+    "task_id": "TASK-3473FC5F",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.124Z"
+  },
+  {
+    "id": "GAP-3EFC0C1F",
+    "evaluation_id": "EVAL-05715AF0",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.130Z"
+  },
+  {
+    "id": "GAP-658CAE23",
+    "evaluation_id": "EVAL-05715AF0",
+    "task_id": "TASK-7397439B",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.130Z"
+  },
+  {
+    "id": "GAP-4313A8E9",
+    "evaluation_id": "EVAL-05715AF0",
+    "task_id": "TASK-1B7B4F63",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.130Z"
+  },
+  {
+    "id": "GAP-55333F8B",
+    "evaluation_id": "EVAL-84E9DEBD",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.136Z"
+  },
+  {
+    "id": "GAP-7B212B36",
+    "evaluation_id": "EVAL-84E9DEBD",
+    "task_id": "TASK-D7B185F9",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.136Z"
+  },
+  {
+    "id": "GAP-A5877781",
+    "evaluation_id": "EVAL-84E9DEBD",
+    "task_id": "TASK-28EAFDD2",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.136Z"
+  },
+  {
+    "id": "GAP-B7EC5169",
+    "evaluation_id": "EVAL-D1F03C4E",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.141Z"
+  },
+  {
+    "id": "GAP-B619407E",
+    "evaluation_id": "EVAL-D1F03C4E",
+    "task_id": "TASK-FD424192",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.141Z"
+  },
+  {
+    "id": "GAP-3AFDE312",
+    "evaluation_id": "EVAL-D1F03C4E",
+    "task_id": "TASK-77BA95A5",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.141Z"
+  },
+  {
+    "id": "GAP-DB4B47B5",
+    "evaluation_id": "EVAL-DC75275C",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.148Z"
+  },
+  {
+    "id": "GAP-6F7FAC86",
+    "evaluation_id": "EVAL-DC75275C",
+    "task_id": "TASK-BFF212B9",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.148Z"
+  },
+  {
+    "id": "GAP-8B30FCA9",
+    "evaluation_id": "EVAL-DC75275C",
+    "task_id": "TASK-71FF0FE6",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.148Z"
+  },
+  {
+    "id": "GAP-025E5BB6",
+    "evaluation_id": "EVAL-D619AE88",
+    "task_id": "TASK-87E02936",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.153Z"
+  },
+  {
+    "id": "GAP-EE16A5FE",
+    "evaluation_id": "EVAL-B7F29FA0",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.159Z"
+  },
+  {
+    "id": "GAP-94C3393E",
+    "evaluation_id": "EVAL-B7F29FA0",
+    "task_id": "TASK-698D07F1",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.159Z"
+  },
+  {
+    "id": "GAP-C08FCE0E",
+    "evaluation_id": "EVAL-B7F29FA0",
+    "task_id": "TASK-A224DF57",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.159Z"
+  },
+  {
+    "id": "GAP-F92F4D57",
+    "evaluation_id": "EVAL-D4E07DF2",
+    "task_id": "TASK-4A30759B",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.165Z"
+  },
+  {
+    "id": "GAP-51826AA6",
+    "evaluation_id": "EVAL-95A5EC86",
+    "task_id": "TASK-A3FBDCD3",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.171Z"
+  },
+  {
+    "id": "GAP-6F6EF97B",
+    "evaluation_id": "EVAL-A3E0D24C",
+    "task_id": "TASK-53E8A72B",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.177Z"
+  },
+  {
+    "id": "GAP-239DE97E",
+    "evaluation_id": "EVAL-D1F00E33",
+    "task_id": "TASK-5B0D49F7",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.188Z"
+  },
+  {
+    "id": "GAP-23F35F8A",
+    "evaluation_id": "EVAL-B70B1716",
+    "task_id": "TASK-5159F1C2",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Tender location \"Untranslated value (Bremerhaven)\" not in stated regions — distance check requires coordinates (radius 150 km on file).",
+    "created_at": "2026-09-18T11:16:06.201Z"
+  },
+  {
+    "id": "GAP-BF57654F",
+    "evaluation_id": "EVAL-B70B1716",
+    "task_id": "TASK-59663564",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.201Z"
+  },
+  {
+    "id": "GAP-60200A3F",
+    "evaluation_id": "EVAL-6CB51E8C",
+    "task_id": "TASK-6DBF8D23",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.221Z"
+  },
+  {
+    "id": "GAP-5AD0C793",
+    "evaluation_id": "EVAL-10B2A232",
+    "task_id": "TASK-116A7738",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Place of performance not specified in tender.",
+    "created_at": "2026-09-18T11:16:06.234Z"
+  },
+  {
+    "id": "GAP-02DB96CD",
+    "evaluation_id": "EVAL-CC4FF8E0",
+    "task_id": "TASK-82008500",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.259Z"
+  },
+  {
+    "id": "GAP-AB64D25C",
+    "evaluation_id": "EVAL-3CD91B19",
+    "task_id": "TASK-3A946C72",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.266Z"
+  },
+  {
+    "id": "GAP-734886B6",
+    "evaluation_id": "EVAL-5E3CBD43",
+    "task_id": "TASK-6C6A39A8",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (ROAD_CONSTRUCTION, SEWER_CONSTRUCTION, PIPELINE, EARTHWORKS, CIVIL_ENGINEERING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.274Z"
+  },
+  {
+    "id": "GAP-1A5A6C14",
+    "evaluation_id": "EVAL-95D16660",
+    "task_id": "TASK-8D1D4F0E",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.323Z"
+  },
+  {
+    "id": "GAP-F53E6D5B",
+    "evaluation_id": "EVAL-95D16660",
+    "task_id": "TASK-90A28210",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.323Z"
+  },
+  {
+    "id": "GAP-97F6CBC7",
+    "evaluation_id": "EVAL-95D16660",
+    "task_id": "TASK-A3EBFABF",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.323Z"
+  },
+  {
+    "id": "GAP-A02AC537",
+    "evaluation_id": "EVAL-171991EA",
+    "task_id": "TASK-8B8F2159",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.331Z"
+  },
+  {
+    "id": "GAP-4838A019",
+    "evaluation_id": "EVAL-171991EA",
+    "task_id": "TASK-B9FC4ED1",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.331Z"
+  },
+  {
+    "id": "GAP-4FE4362C",
+    "evaluation_id": "EVAL-171991EA",
+    "task_id": "TASK-B160CBB7",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.331Z"
+  },
+  {
+    "id": "GAP-9FED47C5",
+    "evaluation_id": "EVAL-6301768C",
+    "task_id": "TASK-5A92977C",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.338Z"
+  },
+  {
+    "id": "GAP-1989399B",
+    "evaluation_id": "EVAL-6301768C",
+    "task_id": "TASK-D4E87D92",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.338Z"
+  },
+  {
+    "id": "GAP-16C6DAFD",
+    "evaluation_id": "EVAL-6301768C",
+    "task_id": "TASK-DE6DC476",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.338Z"
+  },
+  {
+    "id": "GAP-C2ADB1CA",
+    "evaluation_id": "EVAL-B24EC399",
+    "task_id": "TASK-26156271",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.346Z"
+  },
+  {
+    "id": "GAP-4D254D36",
+    "evaluation_id": "EVAL-B24EC399",
+    "task_id": "TASK-981142EF",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.346Z"
+  },
+  {
+    "id": "GAP-2AB34AB7",
+    "evaluation_id": "EVAL-B24EC399",
+    "task_id": "TASK-2D7A8DD1",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.346Z"
+  },
+  {
+    "id": "GAP-FD244577",
+    "evaluation_id": "EVAL-25A76309",
+    "task_id": "TASK-3510AA5E",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.354Z"
+  },
+  {
+    "id": "GAP-14BB026E",
+    "evaluation_id": "EVAL-25A76309",
+    "task_id": "TASK-728007D8",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.354Z"
+  },
+  {
+    "id": "GAP-CCE93D92",
+    "evaluation_id": "EVAL-25A76309",
+    "task_id": "TASK-7AD33D59",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.354Z"
+  },
+  {
+    "id": "GAP-81153728",
+    "evaluation_id": "EVAL-323A5788",
+    "task_id": "TASK-D98CA109",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.360Z"
+  },
+  {
+    "id": "GAP-F03A9805",
+    "evaluation_id": "EVAL-ABEA9839",
+    "task_id": "TASK-99A1858D",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.367Z"
+  },
+  {
+    "id": "GAP-42D1738B",
+    "evaluation_id": "EVAL-ABEA9839",
+    "task_id": "TASK-251E9968",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.367Z"
+  },
+  {
+    "id": "GAP-D0A0AC50",
+    "evaluation_id": "EVAL-ABEA9839",
+    "task_id": "TASK-DC8D13BD",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.367Z"
+  },
+  {
+    "id": "GAP-E24A215F",
+    "evaluation_id": "EVAL-E63F0A62",
+    "task_id": "TASK-DF65D636",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.374Z"
+  },
+  {
+    "id": "GAP-EAD0FB5F",
+    "evaluation_id": "EVAL-E8D2D38C",
+    "task_id": "TASK-D0382076",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.381Z"
+  },
+  {
+    "id": "GAP-36D04349",
+    "evaluation_id": "EVAL-7EF6AB2E",
+    "task_id": "TASK-207E682D",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.387Z"
+  },
+  {
+    "id": "GAP-0F86A855",
+    "evaluation_id": "EVAL-8FE51E69",
+    "task_id": "TASK-45CDD840",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.394Z"
+  },
+  {
+    "id": "GAP-5B06223A",
+    "evaluation_id": "EVAL-C15A3D0F",
+    "task_id": "TASK-86132CEB",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.400Z"
+  },
+  {
+    "id": "GAP-C26B8804",
+    "evaluation_id": "EVAL-22F57C62",
+    "task_id": "TASK-C84CEF4A",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.406Z"
+  },
+  {
+    "id": "GAP-24A93B82",
+    "evaluation_id": "EVAL-D34A8030",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.428Z"
+  },
+  {
+    "id": "GAP-632F49CA",
+    "evaluation_id": "EVAL-D34A8030",
+    "task_id": "TASK-7F6B6810",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.428Z"
+  },
+  {
+    "id": "GAP-821556B6",
+    "evaluation_id": "EVAL-D34A8030",
+    "task_id": "TASK-95B5C187",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.428Z"
+  },
+  {
+    "id": "GAP-8CF47BB2",
+    "evaluation_id": "EVAL-EDA78DDF",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.435Z"
+  },
+  {
+    "id": "GAP-FB2E0E68",
+    "evaluation_id": "EVAL-EDA78DDF",
+    "task_id": "TASK-47222383",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.435Z"
+  },
+  {
+    "id": "GAP-7F693567",
+    "evaluation_id": "EVAL-EDA78DDF",
+    "task_id": "TASK-A2245FC6",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.435Z"
+  },
+  {
+    "id": "GAP-C54B202D",
+    "evaluation_id": "EVAL-4F028EA7",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.441Z"
+  },
+  {
+    "id": "GAP-F0BF7E9D",
+    "evaluation_id": "EVAL-4F028EA7",
+    "task_id": "TASK-942504C6",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.441Z"
+  },
+  {
+    "id": "GAP-90EDE57E",
+    "evaluation_id": "EVAL-4F028EA7",
+    "task_id": "TASK-41966A75",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.441Z"
+  },
+  {
+    "id": "GAP-E747E6E0",
+    "evaluation_id": "EVAL-6B3EBF98",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.447Z"
+  },
+  {
+    "id": "GAP-C88B851A",
+    "evaluation_id": "EVAL-6B3EBF98",
+    "task_id": "TASK-2D11B2BD",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.447Z"
+  },
+  {
+    "id": "GAP-01090F26",
+    "evaluation_id": "EVAL-6B3EBF98",
+    "task_id": "TASK-87950EF6",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.447Z"
+  },
+  {
+    "id": "GAP-C6D4DA65",
+    "evaluation_id": "EVAL-F81D083E",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.453Z"
+  },
+  {
+    "id": "GAP-20FC1342",
+    "evaluation_id": "EVAL-F81D083E",
+    "task_id": "TASK-914A96FA",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.453Z"
+  },
+  {
+    "id": "GAP-5E1CD6D8",
+    "evaluation_id": "EVAL-F81D083E",
+    "task_id": "TASK-52904F72",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.454Z"
+  },
+  {
+    "id": "GAP-AE8BB994",
+    "evaluation_id": "EVAL-BC8C0D72",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.460Z"
+  },
+  {
+    "id": "GAP-3D409C34",
+    "evaluation_id": "EVAL-BC8C0D72",
+    "task_id": "TASK-805E3FEB",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.460Z"
+  },
+  {
+    "id": "GAP-5A722B5E",
+    "evaluation_id": "EVAL-BC8C0D72",
+    "task_id": "TASK-923D1A3C",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.460Z"
+  },
+  {
+    "id": "GAP-A5DB7E5F",
+    "evaluation_id": "EVAL-DC993738",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.466Z"
+  },
+  {
+    "id": "GAP-C995DBE9",
+    "evaluation_id": "EVAL-DC993738",
+    "task_id": "TASK-9248DEDA",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.466Z"
+  },
+  {
+    "id": "GAP-E59C0A80",
+    "evaluation_id": "EVAL-DC993738",
+    "task_id": "TASK-F5635F6F",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.466Z"
+  },
+  {
+    "id": "GAP-3A957ADA",
+    "evaluation_id": "EVAL-B6F59DCF",
+    "task_id": "TASK-1A7AE669",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.472Z"
+  },
+  {
+    "id": "GAP-E9909A89",
+    "evaluation_id": "EVAL-D7FB9604",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.479Z"
+  },
+  {
+    "id": "GAP-0F82727D",
+    "evaluation_id": "EVAL-D7FB9604",
+    "task_id": "TASK-9C604731",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.479Z"
+  },
+  {
+    "id": "GAP-65705559",
+    "evaluation_id": "EVAL-D7FB9604",
+    "task_id": "TASK-6777CBFF",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.479Z"
+  },
+  {
+    "id": "GAP-FA9477D6",
+    "evaluation_id": "EVAL-8125710C",
+    "task_id": "TASK-AB4CB60D",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.486Z"
+  },
+  {
+    "id": "GAP-F070EF6F",
+    "evaluation_id": "EVAL-204C1FC6",
+    "task_id": "TASK-B9EC3E15",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.493Z"
+  },
+  {
+    "id": "GAP-AF9C8366",
+    "evaluation_id": "EVAL-0D403170",
+    "task_id": "TASK-B282CAD6",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.499Z"
+  },
+  {
+    "id": "GAP-54C80F19",
+    "evaluation_id": "EVAL-B5A8FBFA",
+    "task_id": "TASK-25C92F30",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.505Z"
+  },
+  {
+    "id": "GAP-641C31AD",
+    "evaluation_id": "EVAL-22161AB9",
+    "task_id": "TASK-36BAEC90",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Tender location \"Untranslated value (Bremerhaven)\" not in stated regions — distance check requires coordinates (radius 200 km on file).",
+    "created_at": "2026-09-18T11:16:06.513Z"
+  },
+  {
+    "id": "GAP-C54E17EE",
+    "evaluation_id": "EVAL-22161AB9",
+    "task_id": "TASK-39449343",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.513Z"
+  },
+  {
+    "id": "GAP-6A6903E1",
+    "evaluation_id": "EVAL-E7161DD9",
+    "task_id": "TASK-AEC4F6CF",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.525Z"
+  },
+  {
+    "id": "GAP-D06630A7",
+    "evaluation_id": "EVAL-3D7A8D1C",
+    "task_id": "TASK-9BE6870C",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Place of performance not specified in tender.",
+    "created_at": "2026-09-18T11:16:06.540Z"
+  },
+  {
+    "id": "GAP-A8147E97",
+    "evaluation_id": "EVAL-1A56D76D",
+    "task_id": "TASK-247B72D6",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.558Z"
+  },
+  {
+    "id": "GAP-E4150216",
+    "evaluation_id": "EVAL-7D17CAB3",
+    "task_id": "TASK-F0EA78E6",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.570Z"
+  },
+  {
+    "id": "GAP-BD3F4B2F",
+    "evaluation_id": "EVAL-86BF6A2E",
+    "task_id": "TASK-F4128EF1",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (BUILDING_ELECTRICAL, OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.594Z"
+  },
+  {
+    "id": "GAP-D2AF9BDF",
+    "evaluation_id": "EVAL-098016D4",
+    "task_id": "TASK-52178611",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.619Z"
+  },
+  {
+    "id": "GAP-967DE05A",
+    "evaluation_id": "EVAL-098016D4",
+    "task_id": "TASK-FF988367",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.619Z"
+  },
+  {
+    "id": "GAP-CBB64494",
+    "evaluation_id": "EVAL-098016D4",
+    "task_id": "TASK-F1A145FC",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.619Z"
+  },
+  {
+    "id": "GAP-EBD24A6A",
+    "evaluation_id": "EVAL-92D91F12",
+    "task_id": "TASK-84525026",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.627Z"
+  },
+  {
+    "id": "GAP-702E7572",
+    "evaluation_id": "EVAL-92D91F12",
+    "task_id": "TASK-A620BE42",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.627Z"
+  },
+  {
+    "id": "GAP-73A41DF7",
+    "evaluation_id": "EVAL-92D91F12",
+    "task_id": "TASK-F36E141A",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.627Z"
+  },
+  {
+    "id": "GAP-D1E0EE45",
+    "evaluation_id": "EVAL-1265D96D",
+    "task_id": "TASK-0053DE4E",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.635Z"
+  },
+  {
+    "id": "GAP-E761F1B1",
+    "evaluation_id": "EVAL-1265D96D",
+    "task_id": "TASK-EB45C466",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.635Z"
+  },
+  {
+    "id": "GAP-66A639FE",
+    "evaluation_id": "EVAL-1265D96D",
+    "task_id": "TASK-FA213FF5",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.635Z"
+  },
+  {
+    "id": "GAP-1D9233C7",
+    "evaluation_id": "EVAL-81F7D998",
+    "task_id": "TASK-35CE075B",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.643Z"
+  },
+  {
+    "id": "GAP-ECC4BD8E",
+    "evaluation_id": "EVAL-81F7D998",
+    "task_id": "TASK-DED57EA8",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.643Z"
+  },
+  {
+    "id": "GAP-98FA48D1",
+    "evaluation_id": "EVAL-81F7D998",
+    "task_id": "TASK-BAB77280",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.643Z"
+  },
+  {
+    "id": "GAP-A0AC8895",
+    "evaluation_id": "EVAL-B2C71989",
+    "task_id": "TASK-1B4ED5BF",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.650Z"
+  },
+  {
+    "id": "GAP-78FE09DB",
+    "evaluation_id": "EVAL-B2C71989",
+    "task_id": "TASK-01988755",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.650Z"
+  },
+  {
+    "id": "GAP-65B9BDC9",
+    "evaluation_id": "EVAL-B2C71989",
+    "task_id": "TASK-D742FE40",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.650Z"
+  },
+  {
+    "id": "GAP-B7F201F6",
+    "evaluation_id": "EVAL-6FA1D140",
+    "task_id": "TASK-638C3262",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.657Z"
+  },
+  {
+    "id": "GAP-A7BF9FA1",
+    "evaluation_id": "EVAL-09154027",
+    "task_id": "TASK-D71F7AA3",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "No evidence for OTHER (nati-ground).",
+    "created_at": "2026-09-18T11:16:06.665Z"
+  },
+  {
+    "id": "GAP-C282712D",
+    "evaluation_id": "EVAL-09154027",
+    "task_id": "TASK-8E4E7E86",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.665Z"
+  },
+  {
+    "id": "GAP-1C6A9B77",
+    "evaluation_id": "EVAL-09154027",
+    "task_id": "TASK-323D6822",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.665Z"
+  },
+  {
+    "id": "GAP-281146FD",
+    "evaluation_id": "EVAL-5FBE1C26",
+    "task_id": "TASK-EE6B2C07",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.672Z"
+  },
+  {
+    "id": "GAP-88193F67",
+    "evaluation_id": "EVAL-82417075",
+    "task_id": "TASK-BD118CE4",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.679Z"
+  },
+  {
+    "id": "GAP-B96F4C6A",
+    "evaluation_id": "EVAL-FE718F68",
+    "task_id": "TASK-BBB5160E",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.687Z"
+  },
+  {
+    "id": "GAP-F25C90EA",
+    "evaluation_id": "EVAL-1265BC87",
+    "task_id": "TASK-C7AA34DE",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.694Z"
+  },
+  {
+    "id": "GAP-2C50F19E",
+    "evaluation_id": "EVAL-22E11103",
+    "task_id": "TASK-99E4F674",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.702Z"
+  },
+  {
+    "id": "GAP-3D664C08",
+    "evaluation_id": "EVAL-D6B1D742",
+    "task_id": "TASK-4095A0EE",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.709Z"
+  },
+  {
+    "id": "GAP-F1556F0D",
+    "evaluation_id": "EVAL-21CCDF89",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.736Z"
+  },
+  {
+    "id": "GAP-2A2A8A51",
+    "evaluation_id": "EVAL-21CCDF89",
+    "task_id": "TASK-429419C0",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.736Z"
+  },
+  {
+    "id": "GAP-7DF4C2EB",
+    "evaluation_id": "EVAL-21CCDF89",
+    "task_id": "TASK-AC4325C6",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.736Z"
+  },
+  {
+    "id": "GAP-1D04C77A",
+    "evaluation_id": "EVAL-03A2BE38",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.743Z"
+  },
+  {
+    "id": "GAP-D17276A4",
+    "evaluation_id": "EVAL-03A2BE38",
+    "task_id": "TASK-778712B4",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.743Z"
+  },
+  {
+    "id": "GAP-84777AED",
+    "evaluation_id": "EVAL-03A2BE38",
+    "task_id": "TASK-6BF5502C",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.743Z"
+  },
+  {
+    "id": "GAP-D2AB1342",
+    "evaluation_id": "EVAL-5B5ECFF3",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.752Z"
+  },
+  {
+    "id": "GAP-3471E6F5",
+    "evaluation_id": "EVAL-5B5ECFF3",
+    "task_id": "TASK-FFB84DFE",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.752Z"
+  },
+  {
+    "id": "GAP-630D45E0",
+    "evaluation_id": "EVAL-5B5ECFF3",
+    "task_id": "TASK-18D0F19A",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.752Z"
+  },
+  {
+    "id": "GAP-96F1ECB5",
+    "evaluation_id": "EVAL-AB811F88",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.760Z"
+  },
+  {
+    "id": "GAP-10D5C7E6",
+    "evaluation_id": "EVAL-AB811F88",
+    "task_id": "TASK-3C13669A",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.760Z"
+  },
+  {
+    "id": "GAP-936F2EBE",
+    "evaluation_id": "EVAL-AB811F88",
+    "task_id": "TASK-BD49F32B",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.760Z"
+  },
+  {
+    "id": "GAP-55248304",
+    "evaluation_id": "EVAL-4E9DE345",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.767Z"
+  },
+  {
+    "id": "GAP-DCFE9776",
+    "evaluation_id": "EVAL-4E9DE345",
+    "task_id": "TASK-1C77F97B",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.767Z"
+  },
+  {
+    "id": "GAP-CAB0C625",
+    "evaluation_id": "EVAL-4E9DE345",
+    "task_id": "TASK-5C5D32A4",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.767Z"
+  },
+  {
+    "id": "GAP-22F89487",
+    "evaluation_id": "EVAL-A44D571C",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.774Z"
+  },
+  {
+    "id": "GAP-1C44A9A0",
+    "evaluation_id": "EVAL-A44D571C",
+    "task_id": "TASK-EB4C079A",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.774Z"
+  },
+  {
+    "id": "GAP-89526FFE",
+    "evaluation_id": "EVAL-A44D571C",
+    "task_id": "TASK-3C26220C",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.774Z"
+  },
+  {
+    "id": "GAP-EA99AD14",
+    "evaluation_id": "EVAL-A9EE3DE4",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.782Z"
+  },
+  {
+    "id": "GAP-E63A9D6F",
+    "evaluation_id": "EVAL-A9EE3DE4",
+    "task_id": "TASK-5D078B42",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.782Z"
+  },
+  {
+    "id": "GAP-30651AB0",
+    "evaluation_id": "EVAL-A9EE3DE4",
+    "task_id": "TASK-85F3DC05",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.782Z"
+  },
+  {
+    "id": "GAP-3A6A5BF8",
+    "evaluation_id": "EVAL-34ACDF8B",
+    "task_id": "TASK-649A5BB9",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.789Z"
+  },
+  {
+    "id": "GAP-7152A842",
+    "evaluation_id": "EVAL-80DA9ED0",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:06.798Z"
+  },
+  {
+    "id": "GAP-FD3BDBBE",
+    "evaluation_id": "EVAL-80DA9ED0",
+    "task_id": "TASK-6C7C6826",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.798Z"
+  },
+  {
+    "id": "GAP-3B61E560",
+    "evaluation_id": "EVAL-80DA9ED0",
+    "task_id": "TASK-6FD03E71",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.798Z"
+  },
+  {
+    "id": "GAP-BE805030",
+    "evaluation_id": "EVAL-A9A21DA8",
+    "task_id": "TASK-35A939C6",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.817Z"
+  },
+  {
+    "id": "GAP-41EEA922",
+    "evaluation_id": "EVAL-E113B5CB",
+    "task_id": "TASK-A1D3239E",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.825Z"
+  },
+  {
+    "id": "GAP-AE0C7AAD",
+    "evaluation_id": "EVAL-78EFB6FE",
+    "task_id": "TASK-08A572F2",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.832Z"
+  },
+  {
+    "id": "GAP-CA9E6C0C",
+    "evaluation_id": "EVAL-86FC754E",
+    "task_id": "TASK-E0D9B52E",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.840Z"
+  },
+  {
+    "id": "GAP-6E6A4C87",
+    "evaluation_id": "EVAL-D3A36B68",
+    "task_id": "TASK-7B128956",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Tender location \"Untranslated value (Bremerhaven)\" not in stated regions — distance check requires coordinates (radius 300 km on file).",
+    "created_at": "2026-09-18T11:16:06.848Z"
+  },
+  {
+    "id": "GAP-27960000",
+    "evaluation_id": "EVAL-D3A36B68",
+    "task_id": "TASK-99C35FC8",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.848Z"
+  },
+  {
+    "id": "GAP-EAA19087",
+    "evaluation_id": "EVAL-5829565E",
+    "task_id": "TASK-9F86A33B",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:16:06.863Z"
+  },
+  {
+    "id": "GAP-CE14CD21",
+    "evaluation_id": "EVAL-1062B649",
+    "task_id": "TASK-A95DA3E0",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Place of performance not specified in tender.",
+    "created_at": "2026-09-18T11:16:06.879Z"
+  },
+  {
+    "id": "GAP-0F637AC9",
+    "evaluation_id": "EVAL-79211EAB",
+    "task_id": "TASK-44AA6317",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.899Z"
+  },
+  {
+    "id": "GAP-4D2FD4E5",
+    "evaluation_id": "EVAL-F0B9398E",
+    "task_id": "TASK-BB76833C",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.907Z"
+  },
+  {
+    "id": "GAP-44E2DE57",
+    "evaluation_id": "EVAL-2DB338E6",
+    "task_id": "TASK-521D0E26",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER, TURNKEY_BUILDING) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:06.914Z"
+  },
+  {
+    "id": "GAP-FB7F641C",
+    "evaluation_id": "EVAL-1B75F07D",
+    "task_id": "TASK-50D903F3",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:06.941Z"
+  },
+  {
+    "id": "GAP-A641D9D0",
+    "evaluation_id": "EVAL-1B75F07D",
+    "task_id": "TASK-949088E8",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.941Z"
+  },
+  {
+    "id": "GAP-57A4919F",
+    "evaluation_id": "EVAL-2756B0EC",
+    "task_id": "TASK-ADEA2A63",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:06.951Z"
+  },
+  {
+    "id": "GAP-23524201",
+    "evaluation_id": "EVAL-2756B0EC",
+    "task_id": "TASK-CF760BD6",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.951Z"
+  },
+  {
+    "id": "GAP-D5216C5D",
+    "evaluation_id": "EVAL-C92DBCBE",
+    "task_id": "TASK-6F4B6AEB",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:06.960Z"
+  },
+  {
+    "id": "GAP-065C6560",
+    "evaluation_id": "EVAL-C92DBCBE",
+    "task_id": "TASK-00552F96",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.960Z"
+  },
+  {
+    "id": "GAP-0E0F85B0",
+    "evaluation_id": "EVAL-0BE123C7",
+    "task_id": "TASK-490B9924",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:06.968Z"
+  },
+  {
+    "id": "GAP-3E007CDB",
+    "evaluation_id": "EVAL-0BE123C7",
+    "task_id": "TASK-4080E4CD",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.968Z"
+  },
+  {
+    "id": "GAP-B4166A29",
+    "evaluation_id": "EVAL-D79D3CD6",
+    "task_id": "TASK-6E8A015D",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:06.976Z"
+  },
+  {
+    "id": "GAP-8959C988",
+    "evaluation_id": "EVAL-D79D3CD6",
+    "task_id": "TASK-0D89E3C8",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.976Z"
+  },
+  {
+    "id": "GAP-07E55E34",
+    "evaluation_id": "EVAL-256D20C4",
+    "task_id": "TASK-0092F1AD",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:06.992Z"
+  },
+  {
+    "id": "GAP-96D8F3B9",
+    "evaluation_id": "EVAL-256D20C4",
+    "task_id": "TASK-C15C71C0",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:06.992Z"
+  },
+  {
+    "id": "GAP-8ED83E5A",
+    "evaluation_id": "EVAL-AEEBF50A",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.062Z"
+  },
+  {
+    "id": "GAP-2779CE14",
+    "evaluation_id": "EVAL-AEEBF50A",
+    "task_id": "TASK-83E52E43",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.062Z"
+  },
+  {
+    "id": "GAP-01BFEED2",
+    "evaluation_id": "EVAL-C3D8BFD8",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.069Z"
+  },
+  {
+    "id": "GAP-65496687",
+    "evaluation_id": "EVAL-C3D8BFD8",
+    "task_id": "TASK-25E501F9",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.069Z"
+  },
+  {
+    "id": "GAP-EEE131A4",
+    "evaluation_id": "EVAL-51CC436C",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.076Z"
+  },
+  {
+    "id": "GAP-72103F8F",
+    "evaluation_id": "EVAL-51CC436C",
+    "task_id": "TASK-FD5515C3",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.076Z"
+  },
+  {
+    "id": "GAP-CB8A743B",
+    "evaluation_id": "EVAL-6498C529",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.085Z"
+  },
+  {
+    "id": "GAP-15A233D2",
+    "evaluation_id": "EVAL-6498C529",
+    "task_id": "TASK-E3455AA9",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.085Z"
+  },
+  {
+    "id": "GAP-0D0F4148",
+    "evaluation_id": "EVAL-7A99C8D4",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.092Z"
+  },
+  {
+    "id": "GAP-1456861A",
+    "evaluation_id": "EVAL-7A99C8D4",
+    "task_id": "TASK-9EEB178E",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.092Z"
+  },
+  {
+    "id": "GAP-F9C9CB90",
+    "evaluation_id": "EVAL-85553DA8",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.099Z"
+  },
+  {
+    "id": "GAP-06DCF802",
+    "evaluation_id": "EVAL-85553DA8",
+    "task_id": "TASK-7B73D5AA",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.099Z"
+  },
+  {
+    "id": "GAP-F9CAF32E",
+    "evaluation_id": "EVAL-F001CCA2",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.106Z"
+  },
+  {
+    "id": "GAP-38EB0392",
+    "evaluation_id": "EVAL-F001CCA2",
+    "task_id": "TASK-5CCABED0",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.106Z"
+  },
+  {
+    "id": "GAP-AE7BDF74",
+    "evaluation_id": "EVAL-2C57CA79",
+    "task_id": "TASK-22E924AF",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.113Z"
+  },
+  {
+    "id": "GAP-386D4F8E",
+    "evaluation_id": "EVAL-5199132A",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.120Z"
+  },
+  {
+    "id": "GAP-D2CF8D03",
+    "evaluation_id": "EVAL-5199132A",
+    "task_id": "TASK-AC44A3EF",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.120Z"
+  },
+  {
+    "id": "GAP-645D0178",
+    "evaluation_id": "EVAL-639B52C5",
+    "task_id": "TASK-981163E8",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.135Z"
+  },
+  {
+    "id": "GAP-24195671",
+    "evaluation_id": "EVAL-99F22E01",
+    "task_id": "TASK-9AF7B217",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.142Z"
+  },
+  {
+    "id": "GAP-B8DED1A8",
+    "evaluation_id": "EVAL-493067F8",
+    "task_id": "TASK-B6B42641",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.152Z"
+  },
+  {
+    "id": "GAP-D879650F",
+    "evaluation_id": "EVAL-FC731602",
+    "task_id": "TASK-F9BAE867",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Tender location \"Untranslated value (Bremerhaven)\" not in stated regions — distance check requires coordinates (radius 120 km on file).",
+    "created_at": "2026-09-18T11:16:07.162Z"
+  },
+  {
+    "id": "GAP-A4A377CD",
+    "evaluation_id": "EVAL-35053BF2",
+    "task_id": "TASK-79DFB78B",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2021 are comparable to Erw. Gesamtschule Verl; Deckensystem Baffeln, with client, value and completion date?",
+    "created_at": "2026-09-18T11:16:07.172Z"
+  },
+  {
+    "id": "GAP-7E80E6D5",
+    "evaluation_id": "EVAL-64F25841",
+    "task_id": "TASK-455E32CE",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Place of performance not specified in tender.",
+    "created_at": "2026-09-18T11:16:07.198Z"
+  },
+  {
+    "id": "GAP-8CAABE34",
+    "evaluation_id": "EVAL-33BC0CA9",
+    "task_id": "TASK-446001C4",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.225Z"
+  },
+  {
+    "id": "GAP-04A38DC0",
+    "evaluation_id": "EVAL-190D21C7",
+    "task_id": "TASK-8D5BD9BC",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.233Z"
+  },
+  {
+    "id": "GAP-8736B61D",
+    "evaluation_id": "EVAL-19BA6DA3",
+    "task_id": "TASK-CE1B3526",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.251Z"
+  },
+  {
+    "id": "GAP-A3FDF2A9",
+    "evaluation_id": "EVAL-6EDD6A0B",
+    "task_id": "TASK-B6A321C9",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.280Z"
+  },
+  {
+    "id": "GAP-875415BE",
+    "evaluation_id": "EVAL-6EDD6A0B",
+    "task_id": "TASK-B676D4FF",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.280Z"
+  },
+  {
+    "id": "GAP-BB1E5820",
+    "evaluation_id": "EVAL-5DD869AC",
+    "task_id": "TASK-72A641D2",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.294Z"
+  },
+  {
+    "id": "GAP-87A8866B",
+    "evaluation_id": "EVAL-5DD869AC",
+    "task_id": "TASK-3A30CB34",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.294Z"
+  },
+  {
+    "id": "GAP-8C292B31",
+    "evaluation_id": "EVAL-CA8CB12A",
+    "task_id": "TASK-6CB8167D",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.304Z"
+  },
+  {
+    "id": "GAP-9B630F59",
+    "evaluation_id": "EVAL-CA8CB12A",
+    "task_id": "TASK-9EBD74C5",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.304Z"
+  },
+  {
+    "id": "GAP-9AFA4486",
+    "evaluation_id": "EVAL-4214D8FE",
+    "task_id": "TASK-707344A1",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.315Z"
+  },
+  {
+    "id": "GAP-50D8ACC6",
+    "evaluation_id": "EVAL-4214D8FE",
+    "task_id": "TASK-A1D634B7",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.315Z"
+  },
+  {
+    "id": "GAP-4C2BB607",
+    "evaluation_id": "EVAL-09CFB46B",
+    "task_id": "TASK-7E4B5B5B",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.325Z"
+  },
+  {
+    "id": "GAP-608259FE",
+    "evaluation_id": "EVAL-09CFB46B",
+    "task_id": "TASK-699E1742",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.325Z"
+  },
+  {
+    "id": "GAP-2BA77FCA",
+    "evaluation_id": "EVAL-E668D01F",
+    "task_id": "TASK-4B778811",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.344Z"
+  },
+  {
+    "id": "GAP-AEBECCDA",
+    "evaluation_id": "EVAL-E668D01F",
+    "task_id": "TASK-6917F00B",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.344Z"
+  },
+  {
+    "id": "GAP-87106CC5",
+    "evaluation_id": "EVAL-6A36E21C",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.435Z"
+  },
+  {
+    "id": "GAP-A22E990C",
+    "evaluation_id": "EVAL-6A36E21C",
+    "task_id": "TASK-07314172",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.435Z"
+  },
+  {
+    "id": "GAP-1F6E4C9A",
+    "evaluation_id": "EVAL-80155241",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.444Z"
+  },
+  {
+    "id": "GAP-5888920F",
+    "evaluation_id": "EVAL-80155241",
+    "task_id": "TASK-A228B778",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.444Z"
+  },
+  {
+    "id": "GAP-35CF4D92",
+    "evaluation_id": "EVAL-7F03C0B6",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.452Z"
+  },
+  {
+    "id": "GAP-AEF81741",
+    "evaluation_id": "EVAL-7F03C0B6",
+    "task_id": "TASK-2986082B",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.452Z"
+  },
+  {
+    "id": "GAP-97F3BD7D",
+    "evaluation_id": "EVAL-26C10FDD",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.460Z"
+  },
+  {
+    "id": "GAP-51BD9365",
+    "evaluation_id": "EVAL-26C10FDD",
+    "task_id": "TASK-7EFC714B",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.460Z"
+  },
+  {
+    "id": "GAP-B62D85D1",
+    "evaluation_id": "EVAL-56FE5A03",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.468Z"
+  },
+  {
+    "id": "GAP-F8E7F653",
+    "evaluation_id": "EVAL-56FE5A03",
+    "task_id": "TASK-51EF61A6",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.468Z"
+  },
+  {
+    "id": "GAP-842F9108",
+    "evaluation_id": "EVAL-F1410482",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.478Z"
+  },
+  {
+    "id": "GAP-F580C79A",
+    "evaluation_id": "EVAL-F1410482",
+    "task_id": "TASK-DC6F8554",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.478Z"
+  },
+  {
+    "id": "GAP-E7F0D246",
+    "evaluation_id": "EVAL-BE0B3DFD",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.486Z"
+  },
+  {
+    "id": "GAP-AF1C2AA9",
+    "evaluation_id": "EVAL-BE0B3DFD",
+    "task_id": "TASK-7D9898BE",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.486Z"
+  },
+  {
+    "id": "GAP-379446A2",
+    "evaluation_id": "EVAL-EF111692",
+    "task_id": "TASK-E6F17E47",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.495Z"
+  },
+  {
+    "id": "GAP-36FEA2A3",
+    "evaluation_id": "EVAL-C29A50DD",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:07.503Z"
+  },
+  {
+    "id": "GAP-2C32498B",
+    "evaluation_id": "EVAL-C29A50DD",
+    "task_id": "TASK-187D6249",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.503Z"
+  },
+  {
+    "id": "GAP-34C182F2",
+    "evaluation_id": "EVAL-20326A4E",
+    "task_id": "TASK-B12FA732",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.526Z"
+  },
+  {
+    "id": "GAP-7D4C01C7",
+    "evaluation_id": "EVAL-CCB56776",
+    "task_id": "TASK-9AF4AD97",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.545Z"
+  },
+  {
+    "id": "GAP-D270D0F0",
+    "evaluation_id": "EVAL-1BFE280F",
+    "task_id": "TASK-9B9E0830",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.569Z"
+  },
+  {
+    "id": "GAP-575622AC",
+    "evaluation_id": "EVAL-42996B13",
+    "task_id": "TASK-E1D8B48A",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Tender location \"Untranslated value (Bremerhaven)\" not in stated regions — distance check requires coordinates (radius 100 km on file).",
+    "created_at": "2026-09-18T11:16:07.590Z"
+  },
+  {
+    "id": "GAP-16CD379E",
+    "evaluation_id": "EVAL-2476CD2E",
+    "task_id": "TASK-64D745D5",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2021 are comparable to Erw. Gesamtschule Verl; Deckensystem Baffeln, with client, value and completion date?",
+    "created_at": "2026-09-18T11:16:07.629Z"
+  },
+  {
+    "id": "GAP-A50E9BB0",
+    "evaluation_id": "EVAL-22336FF0",
+    "task_id": "TASK-249FAB24",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Place of performance not specified in tender.",
+    "created_at": "2026-09-18T11:16:07.721Z"
+  },
+  {
+    "id": "GAP-70236220",
+    "evaluation_id": "EVAL-1A2804DE",
+    "task_id": "TASK-CCE49BB0",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.764Z"
+  },
+  {
+    "id": "GAP-410F089F",
+    "evaluation_id": "EVAL-FCD439CF",
+    "task_id": "TASK-58E8A904",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.777Z"
+  },
+  {
+    "id": "GAP-CF6ADCE8",
+    "evaluation_id": "EVAL-BFF95B79",
+    "task_id": "TASK-D4BBBFF7",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:07.793Z"
+  },
+  {
+    "id": "GAP-A3413FF0",
+    "evaluation_id": "EVAL-A71BA558",
+    "task_id": "TASK-CF6DD733",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.836Z"
+  },
+  {
+    "id": "GAP-3AF2D1B3",
+    "evaluation_id": "EVAL-A71BA558",
+    "task_id": "TASK-46811A4F",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.836Z"
+  },
+  {
+    "id": "GAP-7D489E0C",
+    "evaluation_id": "EVAL-1731D1A8",
+    "task_id": "TASK-958BD7B1",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.854Z"
+  },
+  {
+    "id": "GAP-D9C22734",
+    "evaluation_id": "EVAL-1731D1A8",
+    "task_id": "TASK-8306FD07",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.854Z"
+  },
+  {
+    "id": "GAP-53284646",
+    "evaluation_id": "EVAL-C267EFAC",
+    "task_id": "TASK-7A93DA2D",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.870Z"
+  },
+  {
+    "id": "GAP-76524885",
+    "evaluation_id": "EVAL-C267EFAC",
+    "task_id": "TASK-92D39BB2",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.870Z"
+  },
+  {
+    "id": "GAP-545EE83D",
+    "evaluation_id": "EVAL-3DEC58B5",
+    "task_id": "TASK-8F2AF140",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.891Z"
+  },
+  {
+    "id": "GAP-54B7F3DC",
+    "evaluation_id": "EVAL-3DEC58B5",
+    "task_id": "TASK-C165EB10",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.891Z"
+  },
+  {
+    "id": "GAP-C6CACF53",
+    "evaluation_id": "EVAL-81E96914",
+    "task_id": "TASK-386C7CAA",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.909Z"
+  },
+  {
+    "id": "GAP-4DE0A1CF",
+    "evaluation_id": "EVAL-81E96914",
+    "task_id": "TASK-CB8D9925",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.909Z"
+  },
+  {
+    "id": "GAP-09196A44",
+    "evaluation_id": "EVAL-E2798873",
+    "task_id": "TASK-8AB1F7CA",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:07.953Z"
+  },
+  {
+    "id": "GAP-3EF8FC55",
+    "evaluation_id": "EVAL-E2798873",
+    "task_id": "TASK-F8BF221C",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:07.953Z"
+  },
+  {
+    "id": "GAP-3E2B6D41",
+    "evaluation_id": "EVAL-5CEF65EE",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.045Z"
+  },
+  {
+    "id": "GAP-3C7E47E8",
+    "evaluation_id": "EVAL-5CEF65EE",
+    "task_id": "TASK-7A7A275C",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.045Z"
+  },
+  {
+    "id": "GAP-33CCB163",
+    "evaluation_id": "EVAL-CF72D492",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.056Z"
+  },
+  {
+    "id": "GAP-B6AAE863",
+    "evaluation_id": "EVAL-CF72D492",
+    "task_id": "TASK-3F0B7EFE",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.056Z"
+  },
+  {
+    "id": "GAP-1802DA94",
+    "evaluation_id": "EVAL-A5E6A6C5",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.065Z"
+  },
+  {
+    "id": "GAP-500BC149",
+    "evaluation_id": "EVAL-A5E6A6C5",
+    "task_id": "TASK-6519A299",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.065Z"
+  },
+  {
+    "id": "GAP-FC81870B",
+    "evaluation_id": "EVAL-B0AE89E7",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.076Z"
+  },
+  {
+    "id": "GAP-0E96FCED",
+    "evaluation_id": "EVAL-B0AE89E7",
+    "task_id": "TASK-23AB4CCB",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.076Z"
+  },
+  {
+    "id": "GAP-6FFC4061",
+    "evaluation_id": "EVAL-54C1BFB3",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.087Z"
+  },
+  {
+    "id": "GAP-6BD048B8",
+    "evaluation_id": "EVAL-54C1BFB3",
+    "task_id": "TASK-D2C0D2EB",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.087Z"
+  },
+  {
+    "id": "GAP-FCAE284E",
+    "evaluation_id": "EVAL-A38D52BD",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.096Z"
+  },
+  {
+    "id": "GAP-BD36F339",
+    "evaluation_id": "EVAL-A38D52BD",
+    "task_id": "TASK-39E5D044",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.096Z"
+  },
+  {
+    "id": "GAP-4D4204A8",
+    "evaluation_id": "EVAL-912EE123",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.105Z"
+  },
+  {
+    "id": "GAP-36EE350D",
+    "evaluation_id": "EVAL-912EE123",
+    "task_id": "TASK-9728CBC3",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.105Z"
+  },
+  {
+    "id": "GAP-0F44A8F8",
+    "evaluation_id": "EVAL-2C24D886",
+    "task_id": "TASK-E33837C1",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.113Z"
+  },
+  {
+    "id": "GAP-C7190C83",
+    "evaluation_id": "EVAL-D52762D1",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.122Z"
+  },
+  {
+    "id": "GAP-7AFA8003",
+    "evaluation_id": "EVAL-D52762D1",
+    "task_id": "TASK-9F5DF40C",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.122Z"
+  },
+  {
+    "id": "GAP-F4040C79",
+    "evaluation_id": "EVAL-BAA3FF8D",
+    "task_id": "TASK-67DCD1EA",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.139Z"
+  },
+  {
+    "id": "GAP-6749A10A",
+    "evaluation_id": "EVAL-44C2175A",
+    "task_id": "TASK-F32194FC",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.148Z"
+  },
+  {
+    "id": "GAP-6346329F",
+    "evaluation_id": "EVAL-8FA468A2",
+    "task_id": "TASK-C436C4CF",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.158Z"
+  },
+  {
+    "id": "GAP-D39093FB",
+    "evaluation_id": "EVAL-05A8C786",
+    "task_id": "TASK-8C59929E",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Tender location \"Untranslated value (Bremerhaven)\" not in stated regions — distance check requires coordinates (radius 200 km on file).",
+    "created_at": "2026-09-18T11:16:08.170Z"
+  },
+  {
+    "id": "GAP-F23D0976",
+    "evaluation_id": "EVAL-44F48F98",
+    "task_id": "TASK-312241F8",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2021 are comparable to Erw. Gesamtschule Verl; Deckensystem Baffeln, with client, value and completion date?",
+    "created_at": "2026-09-18T11:16:08.187Z"
+  },
+  {
+    "id": "GAP-A47AA966",
+    "evaluation_id": "EVAL-EB3DBCA4",
+    "task_id": "TASK-D62FF268",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Place of performance not specified in tender.",
+    "created_at": "2026-09-18T11:16:08.214Z"
+  },
+  {
+    "id": "GAP-7ED6AE52",
+    "evaluation_id": "EVAL-FF754342",
+    "task_id": "TASK-3FDEBD5A",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.239Z"
+  },
+  {
+    "id": "GAP-36A1DF88",
+    "evaluation_id": "EVAL-2152DA34",
+    "task_id": "TASK-4BC1008D",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.247Z"
+  },
+  {
+    "id": "GAP-F2442B54",
+    "evaluation_id": "EVAL-E78BCA7B",
+    "task_id": "TASK-6FF7DC3B",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.256Z"
+  },
+  {
+    "id": "GAP-F491BE64",
+    "evaluation_id": "EVAL-F7AF5EAB",
+    "task_id": "TASK-A357C323",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:08.287Z"
+  },
+  {
+    "id": "GAP-D8DBE20C",
+    "evaluation_id": "EVAL-F7AF5EAB",
+    "task_id": "TASK-BFB17B2B",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:08.287Z"
+  },
+  {
+    "id": "GAP-6B21F5B2",
+    "evaluation_id": "EVAL-533960A3",
+    "task_id": "TASK-72E88265",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:08.299Z"
+  },
+  {
+    "id": "GAP-F184F378",
+    "evaluation_id": "EVAL-533960A3",
+    "task_id": "TASK-CBF286F8",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:08.299Z"
+  },
+  {
+    "id": "GAP-C69D43E2",
+    "evaluation_id": "EVAL-325933B6",
+    "task_id": "TASK-CB34F7E9",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:08.309Z"
+  },
+  {
+    "id": "GAP-BCCA9BC2",
+    "evaluation_id": "EVAL-325933B6",
+    "task_id": "TASK-FCCB4A13",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:08.309Z"
+  },
+  {
+    "id": "GAP-FF75EF27",
+    "evaluation_id": "EVAL-6CC28BBA",
+    "task_id": "TASK-AB955594",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:08.320Z"
+  },
+  {
+    "id": "GAP-159AD2B6",
+    "evaluation_id": "EVAL-6CC28BBA",
+    "task_id": "TASK-587C290C",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:08.320Z"
+  },
+  {
+    "id": "GAP-693A7FCF",
+    "evaluation_id": "EVAL-748D2961",
+    "task_id": "TASK-609D5080",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:08.331Z"
+  },
+  {
+    "id": "GAP-5ABC5E18",
+    "evaluation_id": "EVAL-748D2961",
+    "task_id": "TASK-2BE5F831",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:08.331Z"
+  },
+  {
+    "id": "GAP-9DFF041C",
+    "evaluation_id": "EVAL-F4004BB8",
+    "task_id": "TASK-13D890D6",
+    "concept": "ELIGIBILITY_PROOFS",
+    "importance": "HARD",
+    "triggered_by": "OTHER found in documents but not yet confirmed.",
+    "created_at": "2026-09-18T11:16:08.353Z"
+  },
+  {
+    "id": "GAP-EBFA5194",
+    "evaluation_id": "EVAL-F4004BB8",
+    "task_id": "TASK-D7277545",
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "A guarantee is required but its amount is only stated in the documents.",
+    "created_at": "2026-09-18T11:16:08.353Z"
+  },
+  {
+    "id": "GAP-6534F545",
+    "evaluation_id": "EVAL-09BD8618",
+    "task_id": "TASK-D23D879A",
+    "concept": "ESTIMATED_VALUE",
+    "importance": "HARD",
+    "triggered_by": "721.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "created_at": "2026-09-18T11:16:08.364Z"
+  },
+  {
+    "id": "GAP-65AC85D0",
+    "evaluation_id": "EVAL-1660BC17",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.461Z"
+  },
+  {
+    "id": "GAP-A8A1DE0D",
+    "evaluation_id": "EVAL-1660BC17",
+    "task_id": "TASK-0D0A903C",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.461Z"
+  },
+  {
+    "id": "GAP-AE915C72",
+    "evaluation_id": "EVAL-C2769A9A",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.470Z"
+  },
+  {
+    "id": "GAP-C5FE574A",
+    "evaluation_id": "EVAL-C2769A9A",
+    "task_id": "TASK-84FAD7AF",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.470Z"
+  },
+  {
+    "id": "GAP-A1E454BF",
+    "evaluation_id": "EVAL-53E28898",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.480Z"
+  },
+  {
+    "id": "GAP-71251342",
+    "evaluation_id": "EVAL-53E28898",
+    "task_id": "TASK-9A39E4C3",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.480Z"
+  },
+  {
+    "id": "GAP-5DC28CCC",
+    "evaluation_id": "EVAL-8E99F969",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.490Z"
+  },
+  {
+    "id": "GAP-2943850C",
+    "evaluation_id": "EVAL-8E99F969",
+    "task_id": "TASK-475DFB2C",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.490Z"
+  },
+  {
+    "id": "GAP-15636B39",
+    "evaluation_id": "EVAL-37A70A1D",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.500Z"
+  },
+  {
+    "id": "GAP-07EFD7F3",
+    "evaluation_id": "EVAL-37A70A1D",
+    "task_id": "TASK-4BDBD952",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.500Z"
+  },
+  {
+    "id": "GAP-889668CD",
+    "evaluation_id": "EVAL-74ED4FA2",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.510Z"
+  },
+  {
+    "id": "GAP-0DAD5462",
+    "evaluation_id": "EVAL-74ED4FA2",
+    "task_id": "TASK-C7C7A8D2",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.510Z"
+  },
+  {
+    "id": "GAP-CF035DAD",
+    "evaluation_id": "EVAL-737FCD0D",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.521Z"
+  },
+  {
+    "id": "GAP-9224448F",
+    "evaluation_id": "EVAL-737FCD0D",
+    "task_id": "TASK-61069986",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.521Z"
+  },
+  {
+    "id": "GAP-E65B5B09",
+    "evaluation_id": "EVAL-2EB3B40D",
+    "task_id": "TASK-57B64B09",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.531Z"
+  },
+  {
+    "id": "GAP-447F21EB",
+    "evaluation_id": "EVAL-F1FD12E2",
+    "task_id": null,
+    "concept": "GUARANTEES",
+    "importance": "HARD",
+    "triggered_by": "guarantees",
+    "created_at": "2026-09-18T11:16:08.540Z"
+  },
+  {
+    "id": "GAP-72B63601",
+    "evaluation_id": "EVAL-F1FD12E2",
+    "task_id": "TASK-C0B04DBA",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.540Z"
+  },
+  {
+    "id": "GAP-DF8BDC29",
+    "evaluation_id": "EVAL-D66F9D61",
+    "task_id": "TASK-246BA309",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.568Z"
+  },
+  {
+    "id": "GAP-580A0082",
+    "evaluation_id": "EVAL-FD349A1F",
+    "task_id": "TASK-A9C881C2",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.577Z"
+  },
+  {
+    "id": "GAP-86282E7D",
+    "evaluation_id": "EVAL-E67A7B6B",
+    "task_id": "TASK-F4020FDB",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.587Z"
+  },
+  {
+    "id": "GAP-EF062DA8",
+    "evaluation_id": "EVAL-E2E1B8AB",
+    "task_id": "TASK-2950D343",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Tender location \"Untranslated value (Bremerhaven)\" not in stated regions — distance check requires coordinates (radius 60 km on file).",
+    "created_at": "2026-09-18T11:16:08.597Z"
+  },
+  {
+    "id": "GAP-93E1A3C3",
+    "evaluation_id": "EVAL-B0C4C5AF",
+    "task_id": "TASK-277545E5",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2021 are comparable to Erw. Gesamtschule Verl; Deckensystem Baffeln, with client, value and completion date?",
+    "created_at": "2026-09-18T11:16:08.608Z"
+  },
+  {
+    "id": "GAP-A76EFA96",
+    "evaluation_id": "EVAL-7F7CD38C",
+    "task_id": "TASK-BA3F61E9",
+    "concept": "PLACE_OF_PERFORMANCE",
+    "importance": "HARD",
+    "triggered_by": "Place of performance not specified in tender.",
+    "created_at": "2026-09-18T11:16:08.637Z"
+  },
+  {
+    "id": "GAP-8F4760CC",
+    "evaluation_id": "EVAL-2462769F",
+    "task_id": "TASK-9504D57A",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.670Z"
+  },
+  {
+    "id": "GAP-F1E9D2A1",
+    "evaluation_id": "EVAL-D2FA468F",
+    "task_id": "TASK-9A61B45E",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.681Z"
+  },
+  {
+    "id": "GAP-8274E4E8",
+    "evaluation_id": "EVAL-04411669",
+    "task_id": "TASK-D87EE63D",
+    "concept": "TRADE_SCOPE",
+    "importance": "HARD",
+    "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
+    "created_at": "2026-09-18T11:16:08.700Z"
+  }
+]
