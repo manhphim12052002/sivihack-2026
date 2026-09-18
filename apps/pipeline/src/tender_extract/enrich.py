@@ -232,7 +232,10 @@ def observation_rows(result: llm.ExtractionResult, kept: dict[str, list[dict]], 
     def evidence(item: dict) -> dict:
         ev = item["evidence"][0]
         page = _page_of(ev["chunk_id"])
-        return {"evidence_quote": ev["quote"], "page": page, "locator": f"{file.name}#p.{page}"}
+        # PDF chunks are pages ("#p.17"); GAEB chunks are positions or blocks ("#pos01.02",
+        # "#ztv2.1"), so the locator keeps whatever addresses the chunk.
+        suffix = f"p.{page}" if page is not None else ev["chunk_id"].rsplit("#", 1)[-1]
+        return {"evidence_quote": ev["quote"], "page": page, "locator": f"{file.name}#{suffix}"}
 
     found_kinds: set[str] = set()
     for item in kept["requirements"]:
