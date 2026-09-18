@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { MOCK_COMPANIES } from "@/lib/mock/companies";
 import { importLegacy, rowMeta, manualOperational, gapsFor } from "./model";
 import { ingestSource } from "./ingest-source";
@@ -17,14 +17,14 @@ export async function ensureDemoCompanies() {
 }
 async function seed() {
   for (const profile of MOCK_COMPANIES) {
-    const { data: existing, error } = await supabase
+    const { data: existing, error } = await db
       .from("companies")
       .select("id")
       .eq("id", profile.id)
       .maybeSingle();
     if (error) throw new CompanyError("DATABASE_ERROR", error.message, 500);
     if (existing) continue;
-    const created = await supabase
+    const created = await db
       .from("companies")
       .insert({ id: profile.id, name: profile.name, status: "ONBOARDING" });
     if (created.error) {

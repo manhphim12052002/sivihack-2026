@@ -5,7 +5,7 @@
  *
  * The backend lives in this same Next.js app as route handlers under
  * `src/app/api/*` (same-origin, no separate service to run). Endpoints that
- * have a real implementation behind them (companies) hit Supabase; endpoints
+ * have a real implementation behind them (companies) hit the data backend; endpoints
  * that don't have a pipeline yet (tenders, screen) are served by placeholder
  * fixtures + a small rule engine — see `src/lib/mock/tenders.ts` and
  * `src/lib/screening/engine.ts`. `NEXT_PUBLIC_API_URL` can still override this

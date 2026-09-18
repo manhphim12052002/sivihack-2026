@@ -1,4 +1,3 @@
-import { supabase } from "@/lib/supabase";
 import { genId } from "@/lib/id";
 import { llmClient, EXTRACTION_SYSTEM_PROMPT } from "@/lib/llm";
 import {

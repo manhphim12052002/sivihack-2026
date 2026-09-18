@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-vi.mock("@/lib/supabase", () => ({
-  supabase: {
+vi.mock("@/lib/db", () => ({
+  db: {
     from: vi.fn(),
   },
 }));
@@ -13,7 +13,7 @@ vi.mock("@/lib/llm", () => ({
   EXTRACTION_SYSTEM_PROMPT: "",
 }));
 
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { createCompany, rowToProfile } from "../create";
 
 function mockInsert(returnedRow: Record<string, unknown>) {
@@ -53,8 +53,8 @@ describe("createCompany", () => {
       created_at: "2026-09-17T00:00:00Z",
       updated_at: "2026-09-17T00:00:00Z",
     };
-    vi.mocked(supabase.from).mockReturnValue(
-      mockInsert(row) as unknown as ReturnType<typeof supabase.from>,
+    vi.mocked(db.from).mockReturnValue(
+      mockInsert(row) as unknown as ReturnType<typeof db.from>,
     );
 
     const profile = await createCompany({
@@ -91,8 +91,8 @@ describe("createCompany", () => {
       updated_at: "2026-09-17T00:00:00Z",
     };
     const insertMock = mockInsert(row);
-    vi.mocked(supabase.from).mockReturnValue(
-      insertMock as unknown as ReturnType<typeof supabase.from>,
+    vi.mocked(db.from).mockReturnValue(
+      insertMock as unknown as ReturnType<typeof db.from>,
     );
 
     await createCompany({ name: "Test GmbH", raw_text: "some text" });

@@ -2,8 +2,8 @@
  * Placeholder screening rule engine.
  *
  * Stands in for the real decision pipeline (docs/design.md, ADR-0003: "model extracts, rules
- * decide, templates explain") until it's built. Compares a real `CompanyProfile` (Supabase-
- * backed, via /api/companies) against a mock `TenderDetail` fact sheet (`lib/mock/tenders.ts`)
+ * decide, templates explain") until it's built. Compares a real `CompanyProfile`
+ * (stored, via /api/companies) against a mock `TenderDetail` fact sheet (`lib/mock/tenders.ts`)
  * and produces the same `Verdict`/`CriterionResult` shapes the real pipeline will one day
  * return — so swapping this module out later is a route-handler change, not a frontend one.
  *

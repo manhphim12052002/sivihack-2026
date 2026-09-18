@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { genId } from "@/lib/id";
 
 import type { CompanyProfile } from "@/lib/api";
@@ -33,7 +33,7 @@ export async function createCompany(input: {
   raw_text?: string;
 }): Promise<CompanyProfile> {
   const id = genId("COMP");
-  const { data, error } = await supabase
+  const { data, error } = await db
     .from("companies")
     .insert({
       id,

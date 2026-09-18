@@ -1,6 +1,6 @@
 /**
  * Mock company profiles — the three example companies from Track-2.md Appendix A.
- * Used as seed data / demo fallback when Supabase has no rows yet.
+ * Used as seed data / demo fallback when the data backend has no rows yet.
  *
  * Field mapping:
  *   trades        → plain-English trade categories (matches screening engine vocab)

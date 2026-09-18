@@ -1,6 +1,6 @@
 import { CompanyError } from "./errors";
 import { createHash } from "crypto";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { genId } from "@/lib/id";
 import type { ChunkRow, SourceRow } from "@/lib/company/types";
 
@@ -105,7 +105,7 @@ export async function ingestSource(
   const sha256 = createHash("sha256").update(buffer).digest("hex");
 
   // Deduplicate: if this exact file was already ingested for this company, skip
-  const { data: existing, error: existingError } = await supabase
+  const { data: existing, error: existingError } = await db
     .from("sources")
     .select("*")
     .eq("entity_id", companyId)
@@ -116,7 +116,7 @@ export async function ingestSource(
   if (existingError)
     throw new CompanyError("DATABASE_ERROR", existingError.message, 500);
   if (existing?.status === "AVAILABLE") {
-    const { data: existingChunks } = await supabase
+    const { data: existingChunks } = await db
       .from("chunks")
       .select("*")
       .eq("source_id", existing.id);
@@ -145,7 +145,7 @@ export async function ingestSource(
     );
   // Register source
   const sourceId = genId("CSRC");
-  const { data: sourceRow, error: sourceErr } = await supabase
+  const { data: sourceRow, error: sourceErr } = await db
     .from("sources")
     .insert({
       id: sourceId,
@@ -170,7 +170,7 @@ export async function ingestSource(
     else if (type === "XLSX") parsed = await parseXlsx(buffer);
     else parsed = parseTxt(buffer.toString("utf-8"));
   } catch (e) {
-    await supabase
+    await db
       .from("sources")
       .update({ status: "ERROR" })
       .eq("id", sourceId);
@@ -180,7 +180,7 @@ export async function ingestSource(
     );
   }
   if (!parsed.length) {
-    await supabase
+    await db
       .from("sources")
       .update({ status: "ERROR" })
       .eq("id", sourceId);
@@ -209,11 +209,11 @@ export async function ingestSource(
   }));
 
   if (chunkRows.length > 0) {
-    const { error: chunkErr } = await supabase.from("chunks").insert(chunkRows);
+    const { error: chunkErr } = await db.from("chunks").insert(chunkRows);
     if (chunkErr) throw new Error(chunkErr.message);
   }
 
-  const { error: readyError } = await supabase
+  const { error: readyError } = await db
     .from("sources")
     .update({ status: "AVAILABLE" })
     .eq("id", sourceId);
