@@ -43013,5 +43013,5562 @@
     ],
     "aspect": "SCOPE_CAPABILITY",
     "created_at": "2026-09-18T11:16:08.690Z"
+  },
+  {
+    "id": "RES-9C8FFC1F",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-90F82BBD",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches none of the company's stated trade prefixes (45233, 45232, 45111, 45112).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.430Z"
+  },
+  {
+    "id": "RES-7AFC3A3E",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-B2DC78EE",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, outside the company's stated regions (Bavaria, Schwaben, Oberbayern, ~150 km radius).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:45:04.431Z"
+  },
+  {
+    "id": "RES-50FC0176",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-E35B571A",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is below company minimum 400.000 €.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:45:04.431Z"
+  },
+  {
+    "id": "RES-AE3CD49E",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-07FDD45E",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:04.431Z"
+  },
+  {
+    "id": "RES-C8DADE2E",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-A8DE3E04",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crew availability is unknown or ambiguous.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:04.431Z"
+  },
+  {
+    "id": "RES-FA2D9ECD",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-9F6C5C72",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:45:04.432Z"
+  },
+  {
+    "id": "RES-EF0B69B1",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-7C477CBF",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:04.432Z"
+  },
+  {
+    "id": "RES-11B43BEE",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-1DFB3142",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:45:04.432Z"
+  },
+  {
+    "id": "RES-3D011758",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-4196F90A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (rail-adjacent work) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.432Z"
+  },
+  {
+    "id": "RES-19570E20",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-58EF0DAD",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (rail-side construction) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.433Z"
+  },
+  {
+    "id": "RES-0C86889E",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-9CCE4E6C",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (db qualification required) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.433Z"
+  },
+  {
+    "id": "RES-8BBFBF4A",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-7513A6CE",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (bridge construction) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-3"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.433Z"
+  },
+  {
+    "id": "RES-9702AE3F",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-2E9D2CFD",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-4"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.433Z"
+  },
+  {
+    "id": "RES-F974A178",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-E060AEB6",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (brücke) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-5"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.434Z"
+  },
+  {
+    "id": "RES-5E0AB224",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-3C269C2E",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches none of the company's stated trade prefixes (45310, 45311, 45312, 45315, 45316).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.481Z"
+  },
+  {
+    "id": "RES-ACFDDFF1",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-2D3023C3",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, outside the company's stated regions (Saxony, Thuringia, eastern Bavaria, ~200 km radius).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:45:04.481Z"
+  },
+  {
+    "id": "RES-A5C34DFD",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-E64E15D7",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (80.000 €–900.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:45:04.481Z"
+  },
+  {
+    "id": "RES-615E2D22",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-CA7DF20E",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:04.482Z"
+  },
+  {
+    "id": "RES-C6B6098B",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-8C56255B",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crew availability is unknown or ambiguous.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:04.482Z"
+  },
+  {
+    "id": "RES-3DC6FE56",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-8814E71B",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:45:04.482Z"
+  },
+  {
+    "id": "RES-023D5D67",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-26FA0B28",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:04.482Z"
+  },
+  {
+    "id": "RES-7574B9B3",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-615D8EEE",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:45:04.482Z"
+  },
+  {
+    "id": "RES-3EB0D599",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-0B30B566",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (high voltage) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.483Z"
+  },
+  {
+    "id": "RES-3C004C65",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-E8ABAAF1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (explosion-protected installation) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.483Z"
+  },
+  {
+    "id": "RES-C2508036",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-7D4C5986",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (atex) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.483Z"
+  },
+  {
+    "id": "RES-F30FB794",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-7D687C45",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (main contractor on multi-trade) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-3"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.483Z"
+  },
+  {
+    "id": "RES-D35FE356",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-7CCC68D9",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (generalunternehmer) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-4"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.483Z"
+  },
+  {
+    "id": "RES-6DB65F21",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-0F6FD2F5",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (road construction) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-5"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.483Z"
+  },
+  {
+    "id": "RES-095F8A5F",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-0C10071E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (civil engineering) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-6"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.484Z"
+  },
+  {
+    "id": "RES-4E9E5778",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-28DDDA86",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches none of the company's stated trade prefixes (45210, 45211, 45212, 45213, 45214, 45215, 45216).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.520Z"
+  },
+  {
+    "id": "RES-1F290DF6",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-A7099E7D",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, outside the company's stated regions (Hamburg, Schleswig-Holstein, Lower Saxony, Mecklenburg-Vorpommern, Bremen, ~300 km radius).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:45:04.520Z"
+  },
+  {
+    "id": "RES-373E9249",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-A6724CDE",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is below company minimum 8.000.000 €.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:45:04.520Z"
+  },
+  {
+    "id": "RES-06EEC8AA",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-6F17C983",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:04.521Z"
+  },
+  {
+    "id": "RES-975C595D",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-B021CDD0",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crew availability is unknown or ambiguous.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:04.521Z"
+  },
+  {
+    "id": "RES-3F703FDD",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-99B14130",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:45:04.521Z"
+  },
+  {
+    "id": "RES-B0AD881B",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-51063FCB",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:04.521Z"
+  },
+  {
+    "id": "RES-6AECC444",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-2D8CE647",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:45:04.521Z"
+  },
+  {
+    "id": "RES-1EE70053",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-CA69D812",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (road construction as lead contractor) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.522Z"
+  },
+  {
+    "id": "RES-434FB97D",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-51721B4F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (sewer construction as lead contractor) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.522Z"
+  },
+  {
+    "id": "RES-956207D2",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-1592FF3E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (bridge construction as lead contractor) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.522Z"
+  },
+  {
+    "id": "RES-943135AD",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-77401393",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (southern germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-3"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.522Z"
+  },
+  {
+    "id": "RES-28083037",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-1B3760F8",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (bavaria) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-4"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.522Z"
+  },
+  {
+    "id": "RES-069B7F38",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-DF4CE981",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (baden-württemberg) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-5"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.523Z"
+  },
+  {
+    "id": "RES-159B2C9C",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-262BF55F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (high self-performance share required) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-6"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:04.524Z"
+  },
+  {
+    "id": "RES-98E4286B",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-65EB53A1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:09.741Z"
+  },
+  {
+    "id": "RES-DCE93E97",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-65D7B67B",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Westfalen, Ruhr).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:45:09.742Z"
+  },
+  {
+    "id": "RES-61358DE6",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-47C3B17F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (50.000 €–1.500.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:45:09.742Z"
+  },
+  {
+    "id": "RES-E664952E",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-EC688C13",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:09.742Z"
+  },
+  {
+    "id": "RES-DCED9E15",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-F51C991E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-01-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:09.743Z"
+  },
+  {
+    "id": "RES-63CF3B00",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-B3B6AE7F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:45:09.743Z"
+  },
+  {
+    "id": "RES-1CC76ED8",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-6ACCCF69",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:09.743Z"
+  },
+  {
+    "id": "RES-8D0E3C22",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-89F4E5B4",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:45:09.743Z"
+  },
+  {
+    "id": "RES-AB411163",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-8D6766A8",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (steel structures) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:09.744Z"
+  },
+  {
+    "id": "RES-9953DC09",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-30A967DD",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades above 20 m) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:09.744Z"
+  },
+  {
+    "id": "RES-7D8547F8",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-B1D66066",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:09.744Z"
+  },
+  {
+    "id": "RES-81106488",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-77560211",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "3 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 3; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-3696C0B9",
+      "REF-61BADF9E",
+      "REF-D2D5E07B"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T11:45:09.744Z"
+  },
+  {
+    "id": "RES-24FC4DE6",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-FA22C5F4",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company provides evidence for system-specific approvals, ISO 9001 certification, and fire protection element approvals, but lacks specific certifications for powder coating and SiGeKo qualification.\n\nThe tender requires system-specific test certificates, a quality assurance system according to DIN ISO 9001, and official building approvals for fire protection elements. The company has a 'System-partner certificate, T30 aluminium fire doors' and 'ISO 9001 (system manufacturer)'. However, the tender also specifies 'Zulassung nach Qualicoat in Pulverklasse 2' and 'Zulassung nach GSB International e.V. in Masterqualität' for powder coating, and that the coating company must be a 'Premiumbeschichter der GSB International e.V.' or follow their rules. Additionally, a 'Sicherheits- und Gesundheitsschutzkoordinator' with specific qualifications is mentioned. The company's evidence does not explicitly cover these powder coating certifications or the SiGeKo qualification. (3 quotes rejected by the evidence gate.)",
+    "tender_evidence": [],
+    "company_evidence": [
+      "QUAL-9F6704D7",
+      "QUAL-00C87E17"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:09.745Z"
+  },
+  {
+    "id": "RES-507B648D",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-DC3F5695",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:15.831Z"
+  },
+  {
+    "id": "RES-83ED4FC9",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-436F29E4",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Sauerland, Westfalen).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:45:15.832Z"
+  },
+  {
+    "id": "RES-7A1C0FEA",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-707850D9",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (30.000 €–800.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:45:15.832Z"
+  },
+  {
+    "id": "RES-534EC58D",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-FEB16322",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:15.833Z"
+  },
+  {
+    "id": "RES-92D744DA",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-697494CE",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-02-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:15.833Z"
+  },
+  {
+    "id": "RES-9049D60B",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-7C4F72D3",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:45:15.833Z"
+  },
+  {
+    "id": "RES-DF742CA8",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-766BE9E6",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:15.833Z"
+  },
+  {
+    "id": "RES-8F444BC8",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-F4062C5C",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:45:15.833Z"
+  },
+  {
+    "id": "RES-198C5C69",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-911EA11E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (steel structures) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:15.833Z"
+  },
+  {
+    "id": "RES-D4FF9D39",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-7B47C1CF",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:15.834Z"
+  },
+  {
+    "id": "RES-0208B061",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-0C2EAC44",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "3 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 3; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-D899DADC",
+      "REF-DF2E532C",
+      "REF-4934EA29"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T11:45:15.834Z"
+  },
+  {
+    "id": "RES-9F94AB22",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-4DAA5978",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has not provided evidence for any of the required approvals, certificates, or qualifications mentioned in the tender documents.\n\nThe tender documents explicitly demand various certifications and approvals, including system test certificates, a quality assurance system according to DIN ISO 9001, general building authority approvals for materials, specific coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator. The company's evidence does not contain any information regarding these specific requirements. (1 quote rejected by the evidence gate.)",
+    "tender_evidence": [
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Das ist durch Detailzeichnungen, Muster und System-Prüfzeugnisse nachzuweisen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Nachweis, daß der Hersteller des angebotenen Systems ein Qualitätssicherungssystem nach DIN ISO 9001 oder gleichwertig anwendet, ist durch Vorlage eines entsprechenden Zertifikates zu erbringen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Zulassung nach Qualicoat in Pulverklasse 2 Zulassung nach GSB International e.V. (Qualitätsgemeinschaft für die Stückbeschichtung von Bauteilen) in Masterqualität Um besten Korrosionsschutz und Oberflächenbeschaffenheit zugewährleisten, muss der Beschichtungsbetrieb die Zulassung zum Premiumbeschichter der GSB International e.V. besitzen oder nachweislich nach den dort festgelegten Regeln beschichten."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die nachfolgend beschriebenen Brandschutz-Konstruktionen sind zulassungspflichtige Bauteile. Diese bauaufsichtliche Zulassung muss erteilt sein."
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:15.834Z"
+  },
+  {
+    "id": "RES-7B07B61E",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-6F5DA214",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:23.386Z"
+  },
+  {
+    "id": "RES-DCFFF61B",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-3775F00F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Rheinland, Ruhr).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:45:23.386Z"
+  },
+  {
+    "id": "RES-0DBAB038",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-B9E46BC1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (40.000 €–1.200.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:45:23.386Z"
+  },
+  {
+    "id": "RES-7F806751",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-8907CF49",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:23.387Z"
+  },
+  {
+    "id": "RES-70D90D77",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-6A41ED84",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-01-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:23.387Z"
+  },
+  {
+    "id": "RES-07BEFFA3",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-567D6459",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:45:23.387Z"
+  },
+  {
+    "id": "RES-8055F861",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-FA66890A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:23.387Z"
+  },
+  {
+    "id": "RES-5C30BA22",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-359868FC",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:45:23.387Z"
+  },
+  {
+    "id": "RES-C1C337D5",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-83B67392",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-tueren-rheinland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:23.388Z"
+  },
+  {
+    "id": "RES-81FEE695",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-FC78245E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-tueren-rheinland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:23.388Z"
+  },
+  {
+    "id": "RES-6656B7C2",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-0379F630",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "Only 1 verified reference(s) found; 2 required (Neubau BHZ - Alutüren).\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 1; judged comparable: 1; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-E0910A3C"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T11:45:23.388Z"
+  },
+  {
+    "id": "RES-E6D26D3F",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-ACC539C0",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has an ISO 9001 certificate, but it is uncertain if they meet other specific product and personnel certifications, approvals, and documentation requirements.\n\nThe tender requires several specific approvals and certificates, including system-specific information, detailed drawings, system test certificates, general building authority approvals for materials, and specific approvals for fire protection elements (bauaufsichtliche Zulassung and Allgemeines bauaufsichtliches Prüfzeugnis). It also demands that the coating company holds Qualicoat Class 2 or GSB International e.V. Master quality approval, and that the safety and health coordinator has RAB 30 qualification. The company provides an ISO 9001 certificate, which fulfills the requirement for a quality assurance system. However, there is no evidence for the other specific product approvals, system test certificates, or personnel qualifications mentioned in the tender documents. (1 quote rejected by the evidence gate.)",
+    "tender_evidence": [
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Bieter hat mit dem Angebot die systemspezifischen Angaben zu machen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Das ist durch Detailzeichnungen, Muster und System-Prüfzeugnisse nachzuweisen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Nachweis, daß der Hersteller des angebotenen Systems ein Qualitätssicherungssystem nach DIN ISO 9001 oder gleichwertig anwendet, ist durch Vorlage eines entsprechenden Zertifikates zu erbringen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Es sind nur Baustoffe mit allgemeiner bauaufsichtlicher Zulassung zu verwenden."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die nachfolgend beschriebenen Brandschutz-Konstruktionen sind zulassungspflichtige Bauteile. Diese bauaufsichtliche Zulassung muss erteilt sein."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Zulassung nach Qualicoat in Pulverklasse 2 Zulassung nach GSB International e.V. (Qualitätsgemeinschaft für die Stückbeschichtung von Bauteilen) in Masterqualität"
+      }
+    ],
+    "company_evidence": [
+      "QUAL-956700A1"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:23.388Z"
+  },
+  {
+    "id": "RES-6404C559",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-B0A381E5",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:29.615Z"
+  },
+  {
+    "id": "RES-EEE91DBB",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-ABBA384F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Westfalen, Kreis Soest).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:45:29.616Z"
+  },
+  {
+    "id": "RES-CACF8444",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-BB904995",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "PARTNER_REQUIRED",
+    "reason": "90.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:45:29.616Z"
+  },
+  {
+    "id": "RES-37657976",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-5F2E21CB",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:29.617Z"
+  },
+  {
+    "id": "RES-DE648683",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-7D31105C",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2026-11-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:29.617Z"
+  },
+  {
+    "id": "RES-0E0F2201",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-9E690B2A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:45:29.617Z"
+  },
+  {
+    "id": "RES-FC9CAED2",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-D1117BB1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:45:29.618Z"
+  },
+  {
+    "id": "RES-95EE4AEB",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-A5D31576",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:45:29.618Z"
+  },
+  {
+    "id": "RES-EF31E9B4",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-CD5F1A3D",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hellweg-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:29.618Z"
+  },
+  {
+    "id": "RES-3F1561E9",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-D2DE3100",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hellweg-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:45:29.619Z"
+  },
+  {
+    "id": "RES-D509AD2A",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-FCD8461A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "2 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 2; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-8970A6FC",
+      "REF-4547FC3A",
+      "REF-AAB36D16"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T11:45:29.619Z"
+  },
+  {
+    "id": "RES-7CA4BDD4",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-EEE0F496",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has a system-partner certificate for T30 fire doors, which likely covers the building authority approval for fire protection elements, but it is unclear if they meet other required certifications for quality assurance, powder coating, and personnel qualifications.\n\nThe tender requires various approvals and certificates, including system-specific test certificates, a quality assurance system according to DIN ISO 9001, general building authority approval for materials, Qualicoat Class 2 and GSB International e.V. Master quality approvals for powder coating, and a Premium Coater status for the coating company. It also demands building authority approval for fire protection constructions and a qualified safety and health coordinator. The company provides a 'System-partner certificate, T30 fire doors (approved manufacturer system)', which directly addresses the requirement for building authority approval for fire protection elements. However, there is no evidence provided for the other specific certifications and qualifications mentioned in the tender documents. (3 quotes rejected by the evidence gate.)",
+    "tender_evidence": [],
+    "company_evidence": [
+      "QUAL-55C3ED7C"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:45:29.619Z"
+  },
+  {
+    "id": "RES-7128C175",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-D001F7E4",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:51:28.422Z"
+  },
+  {
+    "id": "RES-B034E632",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-AC385D1D",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Sauerland, Westfalen).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:51:28.423Z"
+  },
+  {
+    "id": "RES-34FB3C13",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-BFFE634F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (30.000 €–800.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:51:28.423Z"
+  },
+  {
+    "id": "RES-ADAF9F08",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-7B61965C",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:51:28.424Z"
+  },
+  {
+    "id": "RES-F14744D4",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-F2400CD9",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-02-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:51:28.424Z"
+  },
+  {
+    "id": "RES-049E114F",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-12B8266E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:51:28.424Z"
+  },
+  {
+    "id": "RES-B51C1E4D",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-95BF69BD",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:51:28.424Z"
+  },
+  {
+    "id": "RES-E0DD0ED2",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-DD7BC197",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:51:28.425Z"
+  },
+  {
+    "id": "RES-BE1FA845",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-4A6F8642",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (steel structures) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:51:28.425Z"
+  },
+  {
+    "id": "RES-BDC890F9",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-28C01A8F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:51:28.426Z"
+  },
+  {
+    "id": "RES-1F61BFCE",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-69568A27",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "3 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 3; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-D899DADC",
+      "REF-DF2E532C",
+      "REF-4934EA29"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T11:51:28.426Z"
+  },
+  {
+    "id": "RES-B0691E76",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-DFF1D24A",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has not provided evidence for any of the required approvals, certificates, or qualifications mentioned in the tender documents.\n\nThe tender documents explicitly demand various certifications and approvals, including system test certificates, a quality assurance system according to DIN ISO 9001, general building authority approvals for materials, specific coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator. The company's evidence does not contain any information regarding these specific requirements. (1 quote rejected by the evidence gate.)",
+    "tender_evidence": [
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Das ist durch Detailzeichnungen, Muster und System-Prüfzeugnisse nachzuweisen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Nachweis, daß der Hersteller des angebotenen Systems ein Qualitätssicherungssystem nach DIN ISO 9001 oder gleichwertig anwendet, ist durch Vorlage eines entsprechenden Zertifikates zu erbringen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Zulassung nach Qualicoat in Pulverklasse 2 Zulassung nach GSB International e.V. (Qualitätsgemeinschaft für die Stückbeschichtung von Bauteilen) in Masterqualität Um besten Korrosionsschutz und Oberflächenbeschaffenheit zugewährleisten, muss der Beschichtungsbetrieb die Zulassung zum Premiumbeschichter der GSB International e.V. besitzen oder nachweislich nach den dort festgelegten Regeln beschichten."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die nachfolgend beschriebenen Brandschutz-Konstruktionen sind zulassungspflichtige Bauteile. Diese bauaufsichtliche Zulassung muss erteilt sein."
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:51:28.426Z"
+  },
+  {
+    "id": "RES-CD8F4EF0",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-E0A165B7",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches none of the company's stated trade prefixes (45233, 45232, 45111, 45112).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:55:59.959Z"
+  },
+  {
+    "id": "RES-977F4843",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-913AFA7B",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, outside the company's stated regions (Bavaria, Schwaben, Oberbayern, ~150 km radius).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:55:59.960Z"
+  },
+  {
+    "id": "RES-468484FB",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-CC08868B",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is below company minimum 400.000 €.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:55:59.961Z"
+  },
+  {
+    "id": "RES-0AE04C48",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-8FD02E4F",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:55:59.961Z"
+  },
+  {
+    "id": "RES-2E3550D5",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-6F24D851",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crew availability is unknown or ambiguous.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:55:59.961Z"
+  },
+  {
+    "id": "RES-6C9CE210",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-39A69FD6",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:55:59.961Z"
+  },
+  {
+    "id": "RES-68A711C1",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-7D339BDC",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:55:59.962Z"
+  },
+  {
+    "id": "RES-BAD210AE",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-0052DEAF",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:55:59.962Z"
+  },
+  {
+    "id": "RES-9730D2C8",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-1630791E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (rail-adjacent work) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:55:59.962Z"
+  },
+  {
+    "id": "RES-BEA75344",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-3DC312D6",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (rail-side construction) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:55:59.962Z"
+  },
+  {
+    "id": "RES-9B4FD705",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-A484B7B7",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (db qualification required) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:55:59.963Z"
+  },
+  {
+    "id": "RES-EA580542",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-92EBC2D4",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (bridge construction) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-3"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:55:59.963Z"
+  },
+  {
+    "id": "RES-BEBE8271",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-13D2656A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-4"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:55:59.963Z"
+  },
+  {
+    "id": "RES-D4540C2A",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-0B378573",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (brücke) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-brenner-LEGACY-CON-5"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:55:59.963Z"
+  },
+  {
+    "id": "RES-171A2D87",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-9A782B4B",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches none of the company's stated trade prefixes (45310, 45311, 45312, 45315, 45316).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.007Z"
+  },
+  {
+    "id": "RES-1A0B1097",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-6031DC8F",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, outside the company's stated regions (Saxony, Thuringia, eastern Bavaria, ~200 km radius).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:56:00.007Z"
+  },
+  {
+    "id": "RES-B3B5BB4E",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-BAF78D33",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (80.000 €–900.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:56:00.008Z"
+  },
+  {
+    "id": "RES-41E73B30",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-A0265E41",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:00.008Z"
+  },
+  {
+    "id": "RES-96EE3B21",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-DEAA1048",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crew availability is unknown or ambiguous.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:00.008Z"
+  },
+  {
+    "id": "RES-C42B9B38",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-0EF64BA9",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:56:00.008Z"
+  },
+  {
+    "id": "RES-520122E6",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-27475F08",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:00.008Z"
+  },
+  {
+    "id": "RES-CB977973",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-7B1CBBE2",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:56:00.008Z"
+  },
+  {
+    "id": "RES-BE94666C",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-DBC9B17C",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (high voltage) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.009Z"
+  },
+  {
+    "id": "RES-7788401B",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-F629E08C",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (explosion-protected installation) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.009Z"
+  },
+  {
+    "id": "RES-14D56D4C",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-6368C6F8",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (atex) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.009Z"
+  },
+  {
+    "id": "RES-97179C69",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-000EEB0B",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (main contractor on multi-trade) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-3"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.010Z"
+  },
+  {
+    "id": "RES-BABB0920",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-B5953109",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (generalunternehmer) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-4"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.010Z"
+  },
+  {
+    "id": "RES-4A04F946",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-F00307E0",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (road construction) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-5"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.010Z"
+  },
+  {
+    "id": "RES-676C00BC",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-6A6AAF47",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (civil engineering) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-vogtland-LEGACY-CON-6"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.010Z"
+  },
+  {
+    "id": "RES-AC8FE438",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-D9B69EBD",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches none of the company's stated trade prefixes (45210, 45211, 45212, 45213, 45214, 45215, 45216).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.061Z"
+  },
+  {
+    "id": "RES-1215CEFC",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-DAB1DEC5",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, outside the company's stated regions (Hamburg, Schleswig-Holstein, Lower Saxony, Mecklenburg-Vorpommern, Bremen, ~300 km radius).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:56:00.062Z"
+  },
+  {
+    "id": "RES-74B2F3E4",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-93B8834E",
+    "status": "FAIL",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is below company minimum 8.000.000 €.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:56:00.062Z"
+  },
+  {
+    "id": "RES-6C763241",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-27C007C9",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:00.062Z"
+  },
+  {
+    "id": "RES-33DFC3F1",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-F1E6B4C3",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crew availability is unknown or ambiguous.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:00.062Z"
+  },
+  {
+    "id": "RES-C5482C26",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-5BF6AC4C",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:56:00.062Z"
+  },
+  {
+    "id": "RES-940E623F",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-784F30D2",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:00.063Z"
+  },
+  {
+    "id": "RES-38783594",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-5154F52B",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:56:00.063Z"
+  },
+  {
+    "id": "RES-84AF5F5F",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-35DFB6B3",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (road construction as lead contractor) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.063Z"
+  },
+  {
+    "id": "RES-55DB4940",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-7F61B8FF",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (sewer construction as lead contractor) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.063Z"
+  },
+  {
+    "id": "RES-F91B64E6",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-549C10FC",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (bridge construction as lead contractor) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.063Z"
+  },
+  {
+    "id": "RES-3CF6F174",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-45E9E66A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (southern germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-3"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.064Z"
+  },
+  {
+    "id": "RES-385B8CE6",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-EF628974",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (bavaria) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-4"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.064Z"
+  },
+  {
+    "id": "RES-C11FD727",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-39D3F07C",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (baden-württemberg) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-5"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.064Z"
+  },
+  {
+    "id": "RES-C87DDAD2",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-9307A914",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (high self-performance share required) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hanseatische-LEGACY-CON-6"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:00.064Z"
+  },
+  {
+    "id": "RES-D8008D3F",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-9E3924C3",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:05.647Z"
+  },
+  {
+    "id": "RES-D4A5E713",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-A3F7EBEC",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Westfalen, Ruhr).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:56:05.647Z"
+  },
+  {
+    "id": "RES-99D7C833",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-B5A1B0D1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (50.000 €–1.500.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:56:05.648Z"
+  },
+  {
+    "id": "RES-BCA32A64",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-F0197C31",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:05.648Z"
+  },
+  {
+    "id": "RES-E1E79847",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-CD321E68",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-01-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:05.648Z"
+  },
+  {
+    "id": "RES-04548F88",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-DB3B0875",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:56:05.648Z"
+  },
+  {
+    "id": "RES-9CE28966",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-C43D874B",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:05.649Z"
+  },
+  {
+    "id": "RES-7494A789",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-08AE2FD1",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:56:05.649Z"
+  },
+  {
+    "id": "RES-E703FA1A",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-18AEF9B8",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (steel structures) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:05.649Z"
+  },
+  {
+    "id": "RES-63C6C96F",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-E15BB989",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades above 20 m) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:05.649Z"
+  },
+  {
+    "id": "RES-C8F750E1",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-63AB36DF",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:05.650Z"
+  },
+  {
+    "id": "RES-E1751AF2",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-6D179B39",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "3 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 3; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-3696C0B9",
+      "REF-61BADF9E",
+      "REF-D2D5E07B"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T11:56:05.651Z"
+  },
+  {
+    "id": "RES-121D85E0",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-7E9B7938",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company provides evidence for system-specific approvals, ISO 9001 certification, and fire protection element approvals, but lacks specific certifications for powder coating and SiGeKo qualification.\n\nThe tender requires system-specific test certificates, a quality assurance system according to DIN ISO 9001, and official building approvals for fire protection elements. The company has a 'System-partner certificate, T30 aluminium fire doors' and 'ISO 9001 (system manufacturer)'. However, the tender also specifies 'Zulassung nach Qualicoat in Pulverklasse 2' and 'Zulassung nach GSB International e.V. in Masterqualität' for powder coating, and that the coating company must be a 'Premiumbeschichter der GSB International e.V.' or follow their rules. Additionally, a 'Sicherheits- und Gesundheitsschutzkoordinator' with specific qualifications is mentioned. The company's evidence does not explicitly cover these powder coating certifications or the SiGeKo qualification. (3 quotes rejected by the evidence gate.)",
+    "tender_evidence": [],
+    "company_evidence": [
+      "QUAL-9F6704D7",
+      "QUAL-00C87E17"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:05.651Z"
+  },
+  {
+    "id": "RES-AC94B95C",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-885748B3",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:11.119Z"
+  },
+  {
+    "id": "RES-3216D22D",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-20563D30",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Sauerland, Westfalen).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:56:11.120Z"
+  },
+  {
+    "id": "RES-E06B5282",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-53AD721E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (30.000 €–800.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:56:11.120Z"
+  },
+  {
+    "id": "RES-7176F3EE",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-620564DC",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:11.120Z"
+  },
+  {
+    "id": "RES-1319EEE5",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-1D46EFF1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-02-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:11.121Z"
+  },
+  {
+    "id": "RES-764F298C",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-71521BDD",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:56:11.121Z"
+  },
+  {
+    "id": "RES-1CFE5AB1",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-088E0AEE",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:11.121Z"
+  },
+  {
+    "id": "RES-FA18954F",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-AB86DD74",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:56:11.121Z"
+  },
+  {
+    "id": "RES-1DD665D7",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-05FC7327",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (steel structures) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:11.122Z"
+  },
+  {
+    "id": "RES-AB1560BF",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-3E3357A0",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:11.122Z"
+  },
+  {
+    "id": "RES-6016AC46",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-8561D0F1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "3 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 3; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-D899DADC",
+      "REF-DF2E532C",
+      "REF-4934EA29"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T11:56:11.122Z"
+  },
+  {
+    "id": "RES-0BE24E34",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-8D4CB901",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has not provided evidence for any of the required approvals, certificates, or qualifications mentioned in the tender documents.\n\nThe tender documents explicitly demand various certifications and approvals, including system test certificates, a quality assurance system according to DIN ISO 9001, general building authority approvals for materials, specific coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator. The company's evidence does not contain any information regarding these specific requirements.",
+    "tender_evidence": [
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Das ist durch Detailzeichnungen, Muster und System-Prüfzeugnisse nachzuweisen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Nachweis, daß der Hersteller des angebotenen Systems ein Qualitätssicherungssystem nach DIN ISO 9001 oder gleichwertig anwendet, ist durch Vorlage eines entsprechenden Zertifikates zu erbringen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Zulassung nach Qualicoat in Pulverklasse 2 Zulassung nach GSB International e.V. (Qualitätsgemeinschaft für die Stückbeschichtung von Bauteilen) in Masterqualität Um besten Korrosionsschutz und Oberflächenbeschaffenheit zugewährleisten, muss der Beschichtungsbetrieb die Zulassung zum Premiumbeschichter der GSB International e.V. besitzen oder nachweislich nach den dort festgelegten Regeln beschichten."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die nachfolgend beschriebenen Brandschutz-Konstruktionen sind zulassungspflichtige Bauteile. Diese bauaufsichtliche Zulassung muss erteilt sein."
+      },
+      {
+        "doc": "vertragsbedingungen/210_EU_ohne_Lose (002)_BHZ_Alutüren.pdf",
+        "page": 12,
+        "quote_de": "ein nach der Leistungsbeschreibung ggf. zu benennender Sicherheits- und Gesundheitsschutzkoordinator gemäß Baustellenverordnung und dessen Stellvertreter über die nach den „Regeln zum Arbeitsschutz auf Baustellen; geeigneter Koordinator (Konkretisierung zu § 3 BaustellV) (RAB 30)“ geforderte Qualifikation verfügen"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:11.124Z"
+  },
+  {
+    "id": "RES-8DFD3C6B",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-7040482E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:18.255Z"
+  },
+  {
+    "id": "RES-8DD2EEEE",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-E1D9E732",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Rheinland, Ruhr).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:56:18.256Z"
+  },
+  {
+    "id": "RES-68006D2E",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-E04A1184",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (40.000 €–1.200.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:56:18.256Z"
+  },
+  {
+    "id": "RES-4366D7CA",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-70F127EE",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:18.257Z"
+  },
+  {
+    "id": "RES-721D85EB",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-11A8EFB5",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-01-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:18.257Z"
+  },
+  {
+    "id": "RES-1FEEA875",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-8F129680",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:56:18.257Z"
+  },
+  {
+    "id": "RES-D01856D5",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-7C6ED5A6",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:18.257Z"
+  },
+  {
+    "id": "RES-0A58A783",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-2FF7C556",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:56:18.258Z"
+  },
+  {
+    "id": "RES-64ADB5B2",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-98E41F6B",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-tueren-rheinland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:18.258Z"
+  },
+  {
+    "id": "RES-D02B0E90",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-6C423DBF",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-tueren-rheinland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:18.258Z"
+  },
+  {
+    "id": "RES-7C4D653E",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-340B3EFE",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "Only 1 verified reference(s) found; 2 required (Neubau BHZ - Alutüren).\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 1; judged comparable: 1; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-E0910A3C"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T11:56:18.258Z"
+  },
+  {
+    "id": "RES-59F08EAE",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-3268D48D",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has an ISO 9001 certificate, but it is uncertain if they meet other specific product and personnel certifications, approvals, and documentation requirements.\n\nThe tender requires several specific approvals and certificates, including system-specific information, detailed drawings, system test certificates, general building authority approvals for materials, and specific approvals for fire protection elements (bauaufsichtliche Zulassung and Allgemeines bauaufsichtliches Prüfzeugnis). It also demands that the coating company holds Qualicoat Class 2 or GSB International e.V. Master quality approval, and that the safety and health coordinator has RAB 30 qualification. The company provides an ISO 9001 certificate, which fulfills the requirement for a quality assurance system. However, there is no evidence for the other specific product approvals, system test certificates, or personnel qualifications mentioned in the tender documents.",
+    "tender_evidence": [
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Bieter hat mit dem Angebot die systemspezifischen Angaben zu machen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Das ist durch Detailzeichnungen, Muster und System-Prüfzeugnisse nachzuweisen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Nachweis, daß der Hersteller des angebotenen Systems ein Qualitätssicherungssystem nach DIN ISO 9001 oder gleichwertig anwendet, ist durch Vorlage eines entsprechenden Zertifikates zu erbringen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Es sind nur Baustoffe mit allgemeiner bauaufsichtlicher Zulassung zu verwenden."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die nachfolgend beschriebenen Brandschutz-Konstruktionen sind zulassungspflichtige Bauteile. Diese bauaufsichtliche Zulassung muss erteilt sein."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Zulassung nach Qualicoat in Pulverklasse 2 Zulassung nach GSB International e.V. (Qualitätsgemeinschaft für die Stückbeschichtung von Bauteilen) in Masterqualität"
+      },
+      {
+        "doc": "vertragsbedingungen/210_EU_ohne_Lose (002)_BHZ_Alutüren.pdf",
+        "page": 12,
+        "quote_de": "ein nach der Leistungsbeschreibung ggf. zu benennender Sicherheits- und Gesundheitsschutzkoordinator gemäß Baustellenverordnung und dessen Stellvertreter über die nach den „Regeln zum Arbeitsschutz auf Baustellen; geeigneter Koordinator (Konkretisierung zu § 3 BaustellV) (RAB 30)“ geforderte Qualifikation verfügen"
+      }
+    ],
+    "company_evidence": [
+      "QUAL-956700A1"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:18.259Z"
+  },
+  {
+    "id": "RES-F5D8BD44",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-0B35C189",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:22.836Z"
+  },
+  {
+    "id": "RES-550747B0",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-E39CE548",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Westfalen, Kreis Soest).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T11:56:22.837Z"
+  },
+  {
+    "id": "RES-A42D728B",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-3AE560E7",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "PARTNER_REQUIRED",
+    "reason": "90.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T11:56:22.837Z"
+  },
+  {
+    "id": "RES-16A3A3AF",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-E89CFC09",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:22.838Z"
+  },
+  {
+    "id": "RES-AC45AFBF",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-91C1F547",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2026-11-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:22.838Z"
+  },
+  {
+    "id": "RES-8BF80B48",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-1D7DBA5E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T11:56:22.839Z"
+  },
+  {
+    "id": "RES-F0030BBC",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-89CA5B86",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T11:56:22.840Z"
+  },
+  {
+    "id": "RES-EAE5B95D",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-0C8D23BA",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T11:56:22.840Z"
+  },
+  {
+    "id": "RES-20345D34",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-C2804AB2",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hellweg-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:22.841Z"
+  },
+  {
+    "id": "RES-EC48EB81",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-83652E63",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hellweg-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T11:56:22.841Z"
+  },
+  {
+    "id": "RES-347C2A4A",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-DA12DF00",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "2 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 2; uncertain: 1.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-8970A6FC",
+      "REF-4547FC3A",
+      "REF-AAB36D16"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T11:56:22.842Z"
+  },
+  {
+    "id": "RES-63C7BC70",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-C2E5B4DE",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has a system-partner certificate for T30 fire doors, which likely covers the building authority approval for fire protection elements, but it is unclear if they meet other required certifications for quality assurance, powder coating, and personnel qualifications.\n\nThe tender requires various approvals and certificates, including system-specific test certificates, a quality assurance system according to DIN ISO 9001, general building authority approval for materials, Qualicoat Class 2 and GSB International e.V. Master quality approvals for powder coating, and a Premium Coater status for the coating company. It also demands building authority approval for fire protection constructions and a qualified safety and health coordinator. The company provides a 'System-partner certificate, T30 fire doors (approved manufacturer system)', which directly addresses the requirement for building authority approval for fire protection elements. However, there is no evidence provided for the other specific certifications and qualifications mentioned in the tender documents. (3 quotes rejected by the evidence gate.)",
+    "tender_evidence": [],
+    "company_evidence": [
+      "QUAL-55C3ED7C"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T11:56:22.842Z"
+  },
+  {
+    "id": "RES-34580951",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-6DD79EB5",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:00.441Z"
+  },
+  {
+    "id": "RES-667DDE68",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-348F60BB",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Westfalen, Ruhr).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T12:03:00.442Z"
+  },
+  {
+    "id": "RES-B362AB1E",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-A5B6C0F5",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (50.000 €–1.500.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T12:03:00.443Z"
+  },
+  {
+    "id": "RES-FFA42F86",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-6591458B",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:03:00.443Z"
+  },
+  {
+    "id": "RES-F3B04136",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-34415A61",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-01-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:03:00.443Z"
+  },
+  {
+    "id": "RES-96C1AD37",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-79A329E4",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T12:03:00.444Z"
+  },
+  {
+    "id": "RES-E8CBF8E5",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-E2B469C6",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:03:00.444Z"
+  },
+  {
+    "id": "RES-200F8750",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-B63EC758",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T12:03:00.444Z"
+  },
+  {
+    "id": "RES-CDB43B37",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-63DD6177",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (steel structures) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:00.445Z"
+  },
+  {
+    "id": "RES-8DB7E598",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-ED306CC0",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades above 20 m) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:00.445Z"
+  },
+  {
+    "id": "RES-173C9CC3",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-72562F27",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:00.445Z"
+  },
+  {
+    "id": "RES-2D66FE00",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-160B6437",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "3 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 3; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-3696C0B9",
+      "REF-61BADF9E",
+      "REF-D2D5E07B"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T12:03:00.446Z"
+  },
+  {
+    "id": "RES-39A61A3E",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-D23A62DE",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company demonstrates compliance with ISO 9001, powder coating certifications, and the SiGeKo qualification, but further evidence is needed for product-specific approvals and documentation.\n\nThe tender requires several certifications and approvals, including ISO 9001 for the system manufacturer, Qualicoat Class 2 and GSB International for powder coating, and specific building authority approvals for fire protection elements. The company provides evidence of ISO 9001 (QUAL-00C87E17), and states that powder coating is done via a partner certified with Qualicoat Class 2 and GSB International Premiumbeschichter (QUAL-4AC5AACD). The company also states that it cooperates with a client-appointed SiGeKo per Baustellenverordnung (QUAL-9F427012). However, there is no direct evidence for the general building authority approvals for materials, specific building authority approvals for fire protection constructions, or the submission of associated documentation like Zulassungsbescheid or Allgemeines bauaufsichtliches Prüfzeugnis, nor for the use of tested, system-belonging glasses, infills, and fittings for fire protection elements. (3 quotes rejected by the evidence gate.)",
+    "tender_evidence": [],
+    "company_evidence": [
+      "QUAL-00C87E17",
+      "QUAL-4AC5AACD",
+      "QUAL-9F427012"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:03:00.446Z"
+  },
+  {
+    "id": "RES-8D1FEE6F",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-DA09A228",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:07.066Z"
+  },
+  {
+    "id": "RES-CC5E891D",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-82A2BDD1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Sauerland, Westfalen).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T12:03:07.067Z"
+  },
+  {
+    "id": "RES-84461592",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-FA6A2DC9",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (30.000 €–800.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T12:03:07.067Z"
+  },
+  {
+    "id": "RES-CE204989",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-06EAF3D1",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:03:07.067Z"
+  },
+  {
+    "id": "RES-4C83CE69",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-785FEF4A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-02-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:03:07.068Z"
+  },
+  {
+    "id": "RES-CA64992E",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-9EA9B29B",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T12:03:07.068Z"
+  },
+  {
+    "id": "RES-6CF445A8",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-269EB0F8",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:03:07.068Z"
+  },
+  {
+    "id": "RES-AAB07A34",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-28DCDFDA",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T12:03:07.069Z"
+  },
+  {
+    "id": "RES-E86741E8",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-CA547F72",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (steel structures) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:07.069Z"
+  },
+  {
+    "id": "RES-672DCB80",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-5AA5EC07",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:07.070Z"
+  },
+  {
+    "id": "RES-84DBADFD",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-BB5D5634",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "3 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 3; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-D899DADC",
+      "REF-DF2E532C",
+      "REF-4934EA29"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T12:03:07.070Z"
+  },
+  {
+    "id": "RES-ADB22EF7",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-5E051AAF",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has not provided evidence for any of the required approvals, certificates, or qualifications mentioned in the tender documents.\n\nThe tender documents explicitly demand various certifications and approvals, including system test certificates, a quality assurance system according to DIN ISO 9001, general building authority approvals for materials, specific coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator. The company's evidence does not contain any information regarding these specific requirements.",
+    "tender_evidence": [
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Das ist durch Detailzeichnungen, Muster und System-Prüfzeugnisse nachzuweisen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Nachweis, daß der Hersteller des angebotenen Systems ein Qualitätssicherungssystem nach DIN ISO 9001 oder gleichwertig anwendet, ist durch Vorlage eines entsprechenden Zertifikates zu erbringen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Zulassung nach Qualicoat in Pulverklasse 2 Zulassung nach GSB International e.V. (Qualitätsgemeinschaft für die Stückbeschichtung von Bauteilen) in Masterqualität Um besten Korrosionsschutz und Oberflächenbeschaffenheit zugewährleisten, muss der Beschichtungsbetrieb die Zulassung zum Premiumbeschichter der GSB International e.V. besitzen oder nachweislich nach den dort festgelegten Regeln beschichten."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die nachfolgend beschriebenen Brandschutz-Konstruktionen sind zulassungspflichtige Bauteile. Diese bauaufsichtliche Zulassung muss erteilt sein."
+      },
+      {
+        "doc": "vertragsbedingungen/210_EU_ohne_Lose (002)_BHZ_Alutüren.pdf",
+        "page": 12,
+        "quote_de": "ein nach der Leistungsbeschreibung ggf. zu benennender Sicherheits- und Gesundheitsschutzkoordinator gemäß Baustellenverordnung und dessen Stellvertreter über die nach den „Regeln zum Arbeitsschutz auf Baustellen; geeigneter Koordinator (Konkretisierung zu § 3 BaustellV) (RAB 30)“ geforderte Qualifikation verfügen"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:03:07.070Z"
+  },
+  {
+    "id": "RES-645E0851",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-EA07B90B",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:12.128Z"
+  },
+  {
+    "id": "RES-CA4976BA",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-36396D97",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Rheinland, Ruhr).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T12:03:12.129Z"
+  },
+  {
+    "id": "RES-C60C54FE",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-8CD846CF",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (40.000 €–1.200.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T12:03:12.129Z"
+  },
+  {
+    "id": "RES-4E91750E",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-3D4CD8A1",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:03:12.129Z"
+  },
+  {
+    "id": "RES-BFC239DE",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-3B72EA19",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-01-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:03:12.130Z"
+  },
+  {
+    "id": "RES-E35EEED1",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-D613AEF3",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T12:03:12.130Z"
+  },
+  {
+    "id": "RES-3D653B50",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-FF96F71F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:03:12.130Z"
+  },
+  {
+    "id": "RES-9750C880",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-F302071F",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T12:03:12.130Z"
+  },
+  {
+    "id": "RES-789D489D",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-87EED5F7",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-tueren-rheinland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:12.130Z"
+  },
+  {
+    "id": "RES-89FB3155",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-D033089F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-tueren-rheinland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:12.131Z"
+  },
+  {
+    "id": "RES-3E5F8F30",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-7786A8E6",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "Only 1 verified reference(s) found; 2 required (Neubau BHZ - Alutüren).\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 1; judged comparable: 1; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-E0910A3C"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T12:03:12.131Z"
+  },
+  {
+    "id": "RES-01CE757F",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-921E8231",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has provided evidence for ISO 9001 certification, fire protection system partnership, powder coating certifications, and cooperation with a qualified SiGeKo.\n\nThe tender requires the manufacturer of the offered system to have a quality assurance system according to DIN ISO 9001, which the company has. For fire protection elements, a building authority approval is required, and the company has a system partner certificate for fire doors. The tender also specifies that the coating company must have Qualicoat Class 2 and GSB International e.V. Masterqualität certification or be a Premiumbeschichter, which the company's partner possesses. Finally, the tender states that the SiGeKo must have the qualification according to RAB 30, and the company cooperates with a client-appointed SiGeKo. (4 quotes rejected by the evidence gate.)",
+    "tender_evidence": [],
+    "company_evidence": [
+      "QUAL-956700A1",
+      "QUAL-DF0FC925",
+      "QUAL-4D474948",
+      "QUAL-959EF9AD"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:03:12.131Z"
+  },
+  {
+    "id": "RES-6890EF53",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-63E722FE",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:18.734Z"
+  },
+  {
+    "id": "RES-23223B94",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-337F6D1A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Westfalen, Kreis Soest).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T12:03:18.735Z"
+  },
+  {
+    "id": "RES-74C9E2F7",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-17818D13",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "PARTNER_REQUIRED",
+    "reason": "90.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T12:03:18.735Z"
+  },
+  {
+    "id": "RES-9A074604",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-F4AD1368",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:03:18.735Z"
+  },
+  {
+    "id": "RES-15FBB803",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-636B04A4",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2026-11-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:03:18.736Z"
+  },
+  {
+    "id": "RES-384F8417",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-A323F166",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T12:03:18.736Z"
+  },
+  {
+    "id": "RES-7CE11640",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-BD02D56E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:03:18.736Z"
+  },
+  {
+    "id": "RES-9B300A33",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-AD564377",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T12:03:18.737Z"
+  },
+  {
+    "id": "RES-CA08186B",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-185403C1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hellweg-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:18.737Z"
+  },
+  {
+    "id": "RES-8AA825D8",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-3FDF4AA3",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hellweg-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:03:18.737Z"
+  },
+  {
+    "id": "RES-2CA09FE8",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-6F026BD9",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "2 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 2; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-8970A6FC",
+      "REF-4547FC3A",
+      "REF-AAB36D16"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T12:03:18.738Z"
+  },
+  {
+    "id": "RES-28684B0F",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-3BCF6174",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company demonstrates compliance with powder coating certifications and the availability of a qualified safety and health coordinator, but it is unclear if they can provide system test certificates, general building authority approvals for materials, or specific fire protection element approvals and test certificates.\n\nThe tender requires various approvals and certificates, including system test certificates for offered constructions, a quality assurance system for the manufacturer, general building authority approvals for materials, specific powder coating certifications, and building authority approvals/test certificates for fire protection elements. The company provides evidence of powder coating certifications (Qualicoat Class 2 and GSB International Premiumbeschichter) and the availability of a SiGeKo. However, there is no explicit evidence for system test certificates, general building authority approvals for all materials, or the specific building authority approvals and test certificates for fire protection elements as required by the tender. (3 quotes rejected by the evidence gate.)",
+    "tender_evidence": [],
+    "company_evidence": [
+      "QUAL-20FAB246",
+      "QUAL-824B02A9"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:03:18.738Z"
+  },
+  {
+    "id": "RES-2FB274C4",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-185ED7AB",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:15.072Z"
+  },
+  {
+    "id": "RES-49549C2B",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-89FF6AF4",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Westfalen, Ruhr).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T12:04:15.073Z"
+  },
+  {
+    "id": "RES-752F53D0",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-8BA4D1E5",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (50.000 €–1.500.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T12:04:15.074Z"
+  },
+  {
+    "id": "RES-EF94B00E",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-F35D01E7",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:04:15.074Z"
+  },
+  {
+    "id": "RES-6F81EC9A",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-43CD17BB",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-01-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:04:15.074Z"
+  },
+  {
+    "id": "RES-382E05B4",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-81D946C5",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T12:04:15.075Z"
+  },
+  {
+    "id": "RES-969EF6FF",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-A3D72C0A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:04:15.075Z"
+  },
+  {
+    "id": "RES-9072CF41",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-3EB29D41",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T12:04:15.076Z"
+  },
+  {
+    "id": "RES-47C2789E",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-90075270",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (steel structures) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:15.076Z"
+  },
+  {
+    "id": "RES-A2A25972",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-D89C880B",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades above 20 m) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:15.076Z"
+  },
+  {
+    "id": "RES-EC10E3EE",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-DA39D332",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-metallbau-westfalen-LEGACY-CON-2"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:15.077Z"
+  },
+  {
+    "id": "RES-D9EA73F0",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-27B2AB22",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "3 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 3; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-3696C0B9",
+      "REF-61BADF9E",
+      "REF-D2D5E07B"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T12:04:15.077Z"
+  },
+  {
+    "id": "RES-87967BF8",
+    "evaluation_id": "EVAL-1CCDD542",
+    "task_id": "TASK-21CB50E3",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company provides evidence for all required approvals, certificates, and qualifications, including system test certificates, ISO 9001, general building authority approvals, specific powder coating certifications, and SiGeKo qualification.\n\nThe tender documents require several certifications and approvals: system test certificates for constructions, ISO 9001 for quality assurance, general building authority approval for materials, Qualicoat Class 2 and GSB International Masterqualität for powder coating, and specific building authority approvals and test certificates for fire protection elements. The company provides evidence for a system-partner certificate for T30 aluminium fire doors, ISO 9001, general building authority approval and system test certificate for T30 fire-door systems, and states that powder coating is done via a partner certified with Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität). Additionally, the company cooperates with a client-appointed SiGeKo per Baustellenverordnung, addressing the requirement for a qualified SiGeKo. (1 quote rejected by the evidence gate.)",
+    "tender_evidence": [
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Das ist durch Detailzeichnungen, Muster und System-Prüfzeugnisse nachzuweisen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Nachweis, daß der Hersteller des angebotenen Systems ein Qualitätssicherungssystem nach DIN ISO 9001 oder gleichwertig anwendet, ist durch Vorlage eines entsprechenden Zertifikates zu erbringen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Zulassung nach Qualicoat in Pulverklasse 2 Zulassung nach GSB International e.V. (Qualitätsgemeinschaft für die Stückbeschichtung von Bauteilen) in Masterqualität Um besten Korrosionsschutz und Oberflächenbeschaffenheit zugewährleisten, muss der Beschichtungsbetrieb die Zulassung zum Premiumbeschichter der GSB International e.V. besitzen oder nachweislich nach den dort festgelegten Regeln beschichten."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die nachfolgend beschriebenen Brandschutz-Konstruktionen sind zulassungspflichtige Bauteile. Diese bauaufsichtliche Zulassung muss erteilt sein. Die Angaben aus dem Genehmigungsantrag und die Auflagen aus dem Zulassungsbescheid sind bei der Bauausführung zu berücksichtigen und zu befolgen. Eine Ausfertigung des Zulassungsbescheides muss dem Auftraggeber zusammen mit den Ausführungszeichnungen vorgelegt werden."
+      }
+    ],
+    "company_evidence": [
+      "QUAL-9F6704D7",
+      "QUAL-00C87E17",
+      "QUAL-4AC5AACD",
+      "QUAL-48DCD0D3",
+      "QUAL-9F427012"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:04:15.077Z"
+  },
+  {
+    "id": "RES-515388D6",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-BE5F31EA",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:22.912Z"
+  },
+  {
+    "id": "RES-FE562CB1",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-5062F2DE",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Sauerland, Westfalen).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T12:04:22.913Z"
+  },
+  {
+    "id": "RES-ED573D6F",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-CDC6CFCC",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (30.000 €–800.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T12:04:22.913Z"
+  },
+  {
+    "id": "RES-BB4C3C4A",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-DF0D288F",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:04:22.913Z"
+  },
+  {
+    "id": "RES-C655F967",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-DD282F0D",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-02-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:04:22.914Z"
+  },
+  {
+    "id": "RES-71F59B08",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-9AF6E5D6",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T12:04:22.914Z"
+  },
+  {
+    "id": "RES-80F28698",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-DF9967E3",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:04:22.916Z"
+  },
+  {
+    "id": "RES-63BEA5A2",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-630EC032",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T12:04:22.916Z"
+  },
+  {
+    "id": "RES-12792A2E",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-4F87476E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (steel structures) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:22.916Z"
+  },
+  {
+    "id": "RES-53DA38E6",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-07CB941A",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-alu-sauerland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:22.916Z"
+  },
+  {
+    "id": "RES-6E6282E2",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-4BE69531",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "3 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 3; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-D899DADC",
+      "REF-DF2E532C",
+      "REF-4934EA29"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T12:04:22.917Z"
+  },
+  {
+    "id": "RES-F457288D",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-D36F2A7F",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has not provided evidence for any of the required approvals, certificates, or qualifications mentioned in the tender documents.\n\nThe tender documents explicitly demand various certifications and approvals, including system test certificates, a quality assurance system according to DIN ISO 9001, general building authority approvals for materials, specific coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator. The company's evidence does not contain any information regarding these specific requirements.",
+    "tender_evidence": [
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Das ist durch Detailzeichnungen, Muster und System-Prüfzeugnisse nachzuweisen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Nachweis, daß der Hersteller des angebotenen Systems ein Qualitätssicherungssystem nach DIN ISO 9001 oder gleichwertig anwendet, ist durch Vorlage eines entsprechenden Zertifikates zu erbringen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Zulassung nach Qualicoat in Pulverklasse 2 Zulassung nach GSB International e.V. (Qualitätsgemeinschaft für die Stückbeschichtung von Bauteilen) in Masterqualität Um besten Korrosionsschutz und Oberflächenbeschaffenheit zugewährleisten, muss der Beschichtungsbetrieb die Zulassung zum Premiumbeschichter der GSB International e.V. besitzen oder nachweislich nach den dort festgelegten Regeln beschichten."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die nachfolgend beschriebenen Brandschutz-Konstruktionen sind zulassungspflichtige Bauteile. Diese bauaufsichtliche Zulassung muss erteilt sein."
+      },
+      {
+        "doc": "vertragsbedingungen/210_EU_ohne_Lose (002)_BHZ_Alutüren.pdf",
+        "page": 12,
+        "quote_de": "ein nach der Leistungsbeschreibung ggf. zu benennender Sicherheits- und Gesundheitsschutzkoordinator gemäß Baustellenverordnung und dessen Stellvertreter über die nach den „Regeln zum Arbeitsschutz auf Baustellen; geeigneter Koordinator (Konkretisierung zu § 3 BaustellV) (RAB 30)“ geforderte Qualifikation verfügen"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:04:22.917Z"
+  },
+  {
+    "id": "RES-E1B23180",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-907D740F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:32.223Z"
+  },
+  {
+    "id": "RES-AAE02C40",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-582269A1",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Rheinland, Ruhr).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T12:04:32.224Z"
+  },
+  {
+    "id": "RES-A6B2E70B",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-873D5591",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Tender value 90.000 € is within company range (40.000 €–1.200.000 €).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T12:04:32.224Z"
+  },
+  {
+    "id": "RES-AA739413",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-F0D021E8",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:04:32.224Z"
+  },
+  {
+    "id": "RES-8650F51D",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-1CECCF87",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2027-01-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:04:32.224Z"
+  },
+  {
+    "id": "RES-B46D0492",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-0EC32C95",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T12:04:32.225Z"
+  },
+  {
+    "id": "RES-9BBB36FB",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-1D25B7C5",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:04:32.225Z"
+  },
+  {
+    "id": "RES-E0B6E1BA",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-ACE1A452",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T12:04:32.226Z"
+  },
+  {
+    "id": "RES-4BD9F8C8",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-E1667BA7",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-tueren-rheinland-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:32.226Z"
+  },
+  {
+    "id": "RES-03F5E505",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-4EFE0E4E",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-tueren-rheinland-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:32.226Z"
+  },
+  {
+    "id": "RES-D720B0C6",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-9CEE79F2",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "Only 1 verified reference(s) found; 2 required (Neubau BHZ - Alutüren).\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 1; judged comparable: 1; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-E0910A3C"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T12:04:32.226Z"
+  },
+  {
+    "id": "RES-4DF04AF3",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-D0B80F11",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company has provided evidence for all required system certifications, quality management, material approvals, powder coating qualifications, fire protection element approvals, and SiGeKo qualification.\n\nThe tender documents require various certifications including system test certificates, ISO 9001, general building authority approvals for materials, Qualicoat and GSB International approvals for powder coating, and specific approvals and test certificates for fire protection elements. The company's evidence shows a system-partner certificate, ISO 9001, general building authority approval and system test certificate for T30 fire doors, and powder coating via a partner certified with Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität). Additionally, the company cooperates with a client-appointed SiGeKo per Baustellenverordnung, which implies the SiGeKo has the required qualification. (2 quotes rejected by the evidence gate.)",
+    "tender_evidence": [
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Das ist durch Detailzeichnungen, Muster und System-Prüfzeugnisse nachzuweisen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Der Nachweis, daß der Hersteller des angebotenen Systems ein Qualitätssicherungssystem nach DIN ISO 9001 oder gleichwertig anwendet, ist durch Vorlage eines entsprechenden Zertifikates zu erbringen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Es sind nur Baustoffe mit allgemeiner bauaufsichtlicher Zulassung zu verwenden."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Zulassung nach Qualicoat in Pulverklasse 2 Zulassung nach GSB International e.V. (Qualitätsgemeinschaft für die Stückbeschichtung von Bauteilen) in Masterqualität Um besten Korrosionsschutz und Oberflächenbeschaffenheit zugewährleisten, muss der Beschichtungsbetrieb die Zulassung zum Premiumbeschichter der GSB International e.V. besitzen oder nachweislich nach den dort festgelegten Regeln beschichten."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die nachfolgend beschriebenen Brandschutz-Konstruktionen sind zulassungspflichtige Bauteile. Diese bauaufsichtliche Zulassung muss erteilt sein. Die Angaben aus dem Genehmigungsantrag und die Auflagen aus dem Zulassungsbescheid sind bei der Bauausführung zu berücksichtigen und zu befolgen. Eine Ausfertigung des Zulassungsbescheides muss dem Auftraggeber zusammen mit den Ausführungszeichnungen vorgelegt werden."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Die Montage der Elemente hat nach den Vorgaben des Allgemeinen bauaufsichtlichen Prüfzeugnisses zu erfolgen."
+      },
+      {
+        "doc": "leistungsbeschreibungen/3027-ALU.x83",
+        "page": null,
+        "quote_de": "Bei Fabrikaten, für die eine Bauaufsichtliche Zulassung oder ein bauaufsichtliches Prüfzeugnis erforderlich ist, sind diese Unterlagen ebenso vorzulegen."
+      }
+    ],
+    "company_evidence": [
+      "QUAL-DF0FC925",
+      "QUAL-956700A1",
+      "QUAL-4D474948",
+      "QUAL-ED739FEE",
+      "QUAL-959EF9AD"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:04:32.227Z"
+  },
+  {
+    "id": "RES-0DAB4F0C",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-A545E5DA",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "CPV 45421131 matches the company's stated trade prefix 45421.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-262/BT-263",
+        "page": null,
+        "quote_de": "45421131"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:42.526Z"
+  },
+  {
+    "id": "RES-3B32F65D",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-2F12D36D",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Place of performance DEA5B lies in Nordrhein-Westfalen, one of the company's stated regions (North Rhine-Westphalia, Westfalen, Kreis Soest).",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-5101/BT-5071",
+        "page": null,
+        "quote_de": "Anröchte DEA5B"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "GEOGRAPHY",
+    "created_at": "2026-09-18T12:04:42.526Z"
+  },
+  {
+    "id": "RES-1C34DFEC",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-8BB9C71F",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "PARTNER_REQUIRED",
+    "reason": "90.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-27",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACT_SIZE",
+    "created_at": "2026-09-18T12:04:42.526Z"
+  },
+  {
+    "id": "RES-E832686D",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-C63AFDEE",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Only the standard §§ 123/124 GWB exclusion grounds are listed; covered by the bidder's self-declaration (Eigenerklärung, Formblatt 124), no special proof.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-67",
+        "page": null,
+        "quote_de": "bankr-nat; corruption; crime-org; distorsion; envir-law; finan-laund; fraud; human-traffic; insolvency; labour-law; liq-admin; misrepresent; nati-ground; partic-confl; prep-confl; prof-misconduct; sanction; socsec-law; socsec-pay; susp-act; tax-pay; terr-offence"
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:04:42.527Z"
+  },
+  {
+    "id": "RES-AD392CEE",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-1E3A74CF",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Company crews available from 2026-11-01.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-536/BT-537",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:04:42.527Z"
+  },
+  {
+    "id": "RES-5F836484",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-5355BCED",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "The notice states that no guarantee (Sicherheitsleistung) is required.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-75",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "FINANCIAL_GUARANTEES",
+    "created_at": "2026-09-18T12:04:42.527Z"
+  },
+  {
+    "id": "RES-C3DA5D05",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-12290B77",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "DETERMINISTIC",
+    "reason": "Submission deadline 2026-10-20T10:00:00+02:00 is in the future.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-131",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "TIMING_CAPACITY",
+    "created_at": "2026-09-18T12:04:42.528Z"
+  },
+  {
+    "id": "RES-E7647953",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-F9C4E4AC",
+    "status": "PASS",
+    "severity": "SOFT",
+    "method": "DETERMINISTIC",
+    "reason": "Side offers (Nebenangebote) are permitted.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-63",
+        "page": null,
+        "quote_de": ""
+      }
+    ],
+    "company_evidence": [],
+    "aspect": "CONTRACTUAL_RISK",
+    "created_at": "2026-09-18T12:04:42.528Z"
+  },
+  {
+    "id": "RES-40921625",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-0D78A90F",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (facades) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hellweg-LEGACY-CON-0"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:42.528Z"
+  },
+  {
+    "id": "RES-27945EC2",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-CE8CB514",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "CONSTRAINT",
+    "reason": "Exclusion (outside germany) not triggered by tender trade scope.",
+    "tender_evidence": [],
+    "company_evidence": [
+      "COMP-hellweg-LEGACY-CON-1"
+    ],
+    "aspect": "SCOPE_CAPABILITY",
+    "created_at": "2026-09-18T12:04:42.528Z"
+  },
+  {
+    "id": "RES-C17C48B5",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-D167CE05",
+    "status": "PASS",
+    "severity": "HARD",
+    "method": "REFERENCE",
+    "reason": "2 reference(s) comparable to \"Neubau BHZ - Alutüren\" within 3 years satisfy the required 2.\n\nRequired: 2 within the last 3 years, comparable to Neubau BHZ - Alutüren. Company references on file: 3; after date/value filter: 3; judged comparable: 2; uncertain: 0.",
+    "tender_evidence": [
+      {
+        "doc": "xpath:BT-750",
+        "page": null,
+        "quote_de": "Der Bieter muss seine fachliche und berufliche Leistungsfähigkeit (insbes. seine Erfahrung) durch Vorlage von mindestens zwei vergleichbaren Referenzen aus den letzten drei Jahren vor dem Angebotsabgabeschluss nachweisen."
+      }
+    ],
+    "company_evidence": [
+      "REF-8970A6FC",
+      "REF-4547FC3A",
+      "REF-AAB36D16"
+    ],
+    "aspect": "REFERENCES",
+    "created_at": "2026-09-18T12:04:42.529Z"
+  },
+  {
+    "id": "RES-35CF3EA3",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-26985E5C",
+    "status": "UNCERTAIN",
+    "severity": "HARD",
+    "method": "SEMANTIC",
+    "reason": "The company provides evidence for most required approvals and certificates, including system test certificates, general building authority approvals for fire doors, and powder coating certifications, but lacks explicit confirmation for DIN ISO 9001 and smoke-tight door marking.\n\nThe tender requires system test certificates for offered constructions, which the company provides through its manufacturer partnership for T30 fire doors. It also demands a quality assurance system according to DIN ISO 9001, for which the company does not provide direct evidence. The tender specifies the use of building materials with general building authority approval, which is covered by the company's general building authority approval for its T30 fire-door system. Furthermore, the tender requires powder coating approvals (Qualicoat Class 2, GSB International Masterqualität, and GSB International Premiumbeschichter), all of which are explicitly stated in the company's qualifications. For fire protection elements, a general building authority approval is mandatory, and the company holds this for its T30 fire-door system, including tested system components. However, while the company states it has fire protection doors, it does not explicitly confirm that its doors are smoke-tight according to EN 1634-3 / DIN 18095 and marked with a type plate. Finally, the tender requires a qualified SiGeKo, which the company confirms it cooperates with. (10 quotes rejected by the evidence gate.)",
+    "tender_evidence": [],
+    "company_evidence": [
+      "QUAL-55C3ED7C",
+      "QUAL-20FAB246",
+      "QUAL-824B02A9",
+      "QUAL-DD1448AF"
+    ],
+    "aspect": "QUALIFICATIONS",
+    "created_at": "2026-09-18T12:04:42.529Z"
   }
 ]

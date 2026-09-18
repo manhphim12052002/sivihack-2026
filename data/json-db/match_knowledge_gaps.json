@@ -3130,5 +3130,266 @@
     "importance": "HARD",
     "triggered_by": "Company capabilities (OTHER) do not match required scope: OTHER.",
     "created_at": "2026-09-18T11:16:08.700Z"
+  },
+  {
+    "id": "GAP-F733D156",
+    "evaluation_id": "EVAL-F98A49D4",
+    "task_id": "TASK-A8DE3E04",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:45:04.448Z"
+  },
+  {
+    "id": "GAP-DB22302E",
+    "evaluation_id": "EVAL-594FEDD2",
+    "task_id": "TASK-8C56255B",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:45:04.490Z"
+  },
+  {
+    "id": "GAP-7614EF63",
+    "evaluation_id": "EVAL-4079D959",
+    "task_id": "TASK-B021CDD0",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:45:04.530Z"
+  },
+  {
+    "id": "GAP-87C18147",
+    "evaluation_id": "EVAL-6F174597",
+    "task_id": "TASK-FA22C5F4",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Does Metallbau Westfalen GmbH or its coating subcontractor possess the 'Zulassung nach Qualicoat in Pulverklasse 2' and 'Zulassung nach GSB International e.V. in Masterqualität' certifications, and is the coating company a 'Premiumbeschichter der GSB International e.V.' or does it coat according to their rules? Does the company have a qualified 'Sicherheits- und Gesundheitsschutzkoordinator' according to RAB 30?",
+    "created_at": "2026-09-18T11:45:09.755Z"
+  },
+  {
+    "id": "GAP-64009DCE",
+    "evaluation_id": "EVAL-4F970C92",
+    "task_id": "TASK-4DAA5978",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Can you provide evidence for the required system test certificates, quality assurance system (DIN ISO 9001 or equivalent), general building authority approvals for materials, coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator?",
+    "created_at": "2026-09-18T11:45:15.847Z"
+  },
+  {
+    "id": "GAP-63B31BA0",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-0379F630",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2023 are comparable to Neubau BHZ - Alutüren, with client, value and completion date?",
+    "created_at": "2026-09-18T11:45:23.396Z"
+  },
+  {
+    "id": "GAP-F3A3FB0E",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "task_id": "TASK-ACC539C0",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Can you provide evidence for the required product approvals (e.g., allgemeine bauaufsichtliche Zulassung, bauaufsichtliche Zulassung for fire protection elements, Allgemeines bauaufsichtliches Prüfzeugnis), system test certificates, and the coating company's Qualicoat or GSB International e.V. approval, as well as the RAB 30 qualification for the safety and health coordinator?",
+    "created_at": "2026-09-18T11:45:23.396Z"
+  },
+  {
+    "id": "GAP-4984E12C",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-BB904995",
+    "concept": "ESTIMATED_VALUE",
+    "importance": "HARD",
+    "triggered_by": "90.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "created_at": "2026-09-18T11:45:29.631Z"
+  },
+  {
+    "id": "GAP-5B5545CC",
+    "evaluation_id": "EVAL-606AE747",
+    "task_id": "TASK-EEE0F496",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Does the company possess a quality assurance system according to DIN ISO 9001 or equivalent, Qualicoat Class 2 and GSB International e.V. Master quality approvals for powder coating, and a qualified safety and health coordinator?",
+    "created_at": "2026-09-18T11:45:29.632Z"
+  },
+  {
+    "id": "GAP-18531F8A",
+    "evaluation_id": "EVAL-CE674D04",
+    "task_id": "TASK-DFF1D24A",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Can you provide evidence for the required system test certificates, quality assurance system (DIN ISO 9001 or equivalent), general building authority approvals for materials, coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator?",
+    "created_at": "2026-09-18T11:51:28.440Z"
+  },
+  {
+    "id": "GAP-30C4C67B",
+    "evaluation_id": "EVAL-530995AE",
+    "task_id": "TASK-6F24D851",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:55:59.973Z"
+  },
+  {
+    "id": "GAP-064AF4F9",
+    "evaluation_id": "EVAL-4214888D",
+    "task_id": "TASK-DEAA1048",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:56:00.028Z"
+  },
+  {
+    "id": "GAP-BF4C9CA0",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "task_id": "TASK-F1E6B4C3",
+    "concept": "CONSTRUCTION_WINDOW",
+    "importance": "HARD",
+    "triggered_by": "Company crew availability is unknown or ambiguous.",
+    "created_at": "2026-09-18T11:56:00.073Z"
+  },
+  {
+    "id": "GAP-5ED0790C",
+    "evaluation_id": "EVAL-524F6586",
+    "task_id": "TASK-7E9B7938",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Does Metallbau Westfalen GmbH or its coating subcontractor possess the 'Zulassung nach Qualicoat in Pulverklasse 2' and 'Zulassung nach GSB International e.V. in Masterqualität' certifications, and is the coating company a 'Premiumbeschichter der GSB International e.V.' or does it coat according to their rules? Does the company have a qualified 'Sicherheits- und Gesundheitsschutzkoordinator' according to RAB 30?",
+    "created_at": "2026-09-18T11:56:05.662Z"
+  },
+  {
+    "id": "GAP-8FC50923",
+    "evaluation_id": "EVAL-35792C69",
+    "task_id": "TASK-8D4CB901",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Can you provide evidence for the required system test certificates, quality assurance system (DIN ISO 9001 or equivalent), general building authority approvals for materials, coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator?",
+    "created_at": "2026-09-18T11:56:11.142Z"
+  },
+  {
+    "id": "GAP-E1C8065F",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-340B3EFE",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2023 are comparable to Neubau BHZ - Alutüren, with client, value and completion date?",
+    "created_at": "2026-09-18T11:56:18.270Z"
+  },
+  {
+    "id": "GAP-788AA32A",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "task_id": "TASK-3268D48D",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Can you provide evidence for the required product approvals (e.g., allgemeine bauaufsichtliche Zulassung, bauaufsichtliche Zulassung for fire protection elements, Allgemeines bauaufsichtliches Prüfzeugnis), system test certificates, and the coating company's Qualicoat or GSB International e.V. approval, as well as the RAB 30 qualification for the safety and health coordinator?",
+    "created_at": "2026-09-18T11:56:18.270Z"
+  },
+  {
+    "id": "GAP-C5E5E7C0",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-3AE560E7",
+    "concept": "ESTIMATED_VALUE",
+    "importance": "HARD",
+    "triggered_by": "90.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "created_at": "2026-09-18T11:56:22.856Z"
+  },
+  {
+    "id": "GAP-BF0762C7",
+    "evaluation_id": "EVAL-57E963DC",
+    "task_id": "TASK-C2E5B4DE",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Does the company possess a quality assurance system according to DIN ISO 9001 or equivalent, Qualicoat Class 2 and GSB International e.V. Master quality approvals for powder coating, and a qualified safety and health coordinator?",
+    "created_at": "2026-09-18T11:56:22.857Z"
+  },
+  {
+    "id": "GAP-2A8856D7",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "task_id": "TASK-D23A62DE",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Can you provide evidence of general building authority approvals for the materials used, specific building authority approvals for fire protection constructions, and confirmation that tested, system-belonging glasses, infills, and fittings are used for fire protection elements?",
+    "created_at": "2026-09-18T12:03:00.459Z"
+  },
+  {
+    "id": "GAP-FD01DA97",
+    "evaluation_id": "EVAL-2043562D",
+    "task_id": "TASK-5E051AAF",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Can you provide evidence for the required system test certificates, quality assurance system (DIN ISO 9001 or equivalent), general building authority approvals for materials, coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator?",
+    "created_at": "2026-09-18T12:03:07.081Z"
+  },
+  {
+    "id": "GAP-D12F0B75",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-7786A8E6",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2023 are comparable to Neubau BHZ - Alutüren, with client, value and completion date?",
+    "created_at": "2026-09-18T12:03:12.141Z"
+  },
+  {
+    "id": "GAP-CC26C8CB",
+    "evaluation_id": "EVAL-1B10246D",
+    "task_id": "TASK-921E8231",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "The company has provided evidence for ISO 9001 certification, fire protection system partnership, powder coating certifications, and cooperation with a qualified SiGeKo.",
+    "created_at": "2026-09-18T12:03:12.141Z"
+  },
+  {
+    "id": "GAP-C2D1B445",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-17818D13",
+    "concept": "ESTIMATED_VALUE",
+    "importance": "HARD",
+    "triggered_by": "90.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "created_at": "2026-09-18T12:03:18.747Z"
+  },
+  {
+    "id": "GAP-6B3B5683",
+    "evaluation_id": "EVAL-203FFE02",
+    "task_id": "TASK-3BCF6174",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Can you provide system test certificates for the offered constructions, general building authority approvals for the materials used, and the specific building authority approvals and test certificates for fire protection elements?",
+    "created_at": "2026-09-18T12:03:18.747Z"
+  },
+  {
+    "id": "GAP-CA0B878A",
+    "evaluation_id": "EVAL-9CC4869C",
+    "task_id": "TASK-D36F2A7F",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Can you provide evidence for the required system test certificates, quality assurance system (DIN ISO 9001 or equivalent), general building authority approvals for materials, coating company approvals (Qualicoat, GSB International e.V.), building authority approvals and test certificates for fire protection elements, and a qualified safety and health coordinator?",
+    "created_at": "2026-09-18T12:04:22.925Z"
+  },
+  {
+    "id": "GAP-784645D8",
+    "evaluation_id": "EVAL-CEC992C0",
+    "task_id": "TASK-9CEE79F2",
+    "concept": "REFERENCES_REQUIRED",
+    "importance": "HARD",
+    "triggered_by": "Which completed projects since 2023 are comparable to Neubau BHZ - Alutüren, with client, value and completion date?",
+    "created_at": "2026-09-18T12:04:32.239Z"
+  },
+  {
+    "id": "GAP-E94A5732",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-8BB9C71F",
+    "concept": "ESTIMATED_VALUE",
+    "importance": "HARD",
+    "triggered_by": "90.000 € exceeds partner threshold 60.000 €. A partner/JV would be required.",
+    "created_at": "2026-09-18T12:04:42.537Z"
+  },
+  {
+    "id": "GAP-E484844A",
+    "evaluation_id": "EVAL-1E6BA684",
+    "task_id": "TASK-26985E5C",
+    "concept": "DOCUMENT_QUALIFICATIONS",
+    "importance": "HARD",
+    "triggered_by": "Does the company's T30 fire-door system meet the requirement for smoke-tightness according to EN 1634-3 / DIN 18095, and are the doors marked with a type plate?",
+    "created_at": "2026-09-18T12:04:42.537Z"
   }
 ]

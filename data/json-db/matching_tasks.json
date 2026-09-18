@@ -22264,5 +22264,2669 @@
     "matcher_type": "CONSTRAINT",
     "severity": "HARD",
     "created_at": "2026-09-18T11:16:08.683Z"
+  },
+  {
+    "id": "TASK-90F82BBD",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.416Z"
+  },
+  {
+    "id": "TASK-B2DC78EE",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.417Z"
+  },
+  {
+    "id": "TASK-E35B571A",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.417Z"
+  },
+  {
+    "id": "TASK-07FDD45E",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:04.417Z"
+  },
+  {
+    "id": "TASK-A8DE3E04",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.418Z"
+  },
+  {
+    "id": "TASK-9F6C5C72",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.418Z"
+  },
+  {
+    "id": "TASK-7C477CBF",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.418Z"
+  },
+  {
+    "id": "TASK-1DFB3142",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:04.420Z"
+  },
+  {
+    "id": "TASK-4196F90A",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: rail-adjacent work",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.420Z"
+  },
+  {
+    "id": "TASK-58EF0DAD",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: rail-side construction",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.421Z"
+  },
+  {
+    "id": "TASK-9CCE4E6C",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: db qualification required",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.421Z"
+  },
+  {
+    "id": "TASK-7513A6CE",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: bridge construction",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.421Z"
+  },
+  {
+    "id": "TASK-2E9D2CFD",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.421Z"
+  },
+  {
+    "id": "TASK-E060AEB6",
+    "evaluation_id": "EVAL-F98A49D4",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: brücke",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.421Z"
+  },
+  {
+    "id": "TASK-3C269C2E",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.475Z"
+  },
+  {
+    "id": "TASK-2D3023C3",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.475Z"
+  },
+  {
+    "id": "TASK-E64E15D7",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.475Z"
+  },
+  {
+    "id": "TASK-CA7DF20E",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:04.476Z"
+  },
+  {
+    "id": "TASK-8C56255B",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.476Z"
+  },
+  {
+    "id": "TASK-8814E71B",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.476Z"
+  },
+  {
+    "id": "TASK-26FA0B28",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.476Z"
+  },
+  {
+    "id": "TASK-615D8EEE",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:04.477Z"
+  },
+  {
+    "id": "TASK-0B30B566",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: high voltage",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.477Z"
+  },
+  {
+    "id": "TASK-E8ABAAF1",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: explosion-protected installation",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.477Z"
+  },
+  {
+    "id": "TASK-7D4C5986",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: atex",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.477Z"
+  },
+  {
+    "id": "TASK-7D687C45",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: main contractor on multi-trade",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.477Z"
+  },
+  {
+    "id": "TASK-7CCC68D9",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: generalunternehmer",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.478Z"
+  },
+  {
+    "id": "TASK-0F6FD2F5",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: road construction",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.478Z"
+  },
+  {
+    "id": "TASK-0C10071E",
+    "evaluation_id": "EVAL-594FEDD2",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: civil engineering",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.478Z"
+  },
+  {
+    "id": "TASK-28DDDA86",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.514Z"
+  },
+  {
+    "id": "TASK-A7099E7D",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.515Z"
+  },
+  {
+    "id": "TASK-A6724CDE",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.515Z"
+  },
+  {
+    "id": "TASK-6F17C983",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:04.515Z"
+  },
+  {
+    "id": "TASK-B021CDD0",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.515Z"
+  },
+  {
+    "id": "TASK-99B14130",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.516Z"
+  },
+  {
+    "id": "TASK-51063FCB",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.516Z"
+  },
+  {
+    "id": "TASK-2D8CE647",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:04.516Z"
+  },
+  {
+    "id": "TASK-CA69D812",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: road construction as lead contractor",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.516Z"
+  },
+  {
+    "id": "TASK-51721B4F",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: sewer construction as lead contractor",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.516Z"
+  },
+  {
+    "id": "TASK-1592FF3E",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: bridge construction as lead contractor",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.517Z"
+  },
+  {
+    "id": "TASK-77401393",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: southern germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.517Z"
+  },
+  {
+    "id": "TASK-1B3760F8",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: bavaria",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.517Z"
+  },
+  {
+    "id": "TASK-DF4CE981",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: baden-württemberg",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.517Z"
+  },
+  {
+    "id": "TASK-262BF55F",
+    "evaluation_id": "EVAL-4079D959",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: high self-performance share required",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:04.518Z"
+  },
+  {
+    "id": "TASK-65EB53A1",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.733Z"
+  },
+  {
+    "id": "TASK-65D7B67B",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.734Z"
+  },
+  {
+    "id": "TASK-47C3B17F",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.734Z"
+  },
+  {
+    "id": "TASK-EC688C13",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:09.734Z"
+  },
+  {
+    "id": "TASK-F51C991E",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.735Z"
+  },
+  {
+    "id": "TASK-B3B6AE7F",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.735Z"
+  },
+  {
+    "id": "TASK-6ACCCF69",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.735Z"
+  },
+  {
+    "id": "TASK-89F4E5B4",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:09.736Z"
+  },
+  {
+    "id": "TASK-8D6766A8",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: steel structures",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.736Z"
+  },
+  {
+    "id": "TASK-30A967DD",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades above 20 m",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.736Z"
+  },
+  {
+    "id": "TASK-B1D66066",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.737Z"
+  },
+  {
+    "id": "TASK-77560211",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.737Z"
+  },
+  {
+    "id": "TASK-FA22C5F4",
+    "evaluation_id": "EVAL-6F174597",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:09.737Z"
+  },
+  {
+    "id": "TASK-DC3F5695",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.822Z"
+  },
+  {
+    "id": "TASK-436F29E4",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.823Z"
+  },
+  {
+    "id": "TASK-707850D9",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.823Z"
+  },
+  {
+    "id": "TASK-FEB16322",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:15.823Z"
+  },
+  {
+    "id": "TASK-697494CE",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.824Z"
+  },
+  {
+    "id": "TASK-7C4F72D3",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.826Z"
+  },
+  {
+    "id": "TASK-766BE9E6",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.826Z"
+  },
+  {
+    "id": "TASK-F4062C5C",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:15.826Z"
+  },
+  {
+    "id": "TASK-911EA11E",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: steel structures",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.827Z"
+  },
+  {
+    "id": "TASK-7B47C1CF",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.827Z"
+  },
+  {
+    "id": "TASK-0C2EAC44",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.827Z"
+  },
+  {
+    "id": "TASK-4DAA5978",
+    "evaluation_id": "EVAL-4F970C92",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:15.827Z"
+  },
+  {
+    "id": "TASK-6F5DA214",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.367Z"
+  },
+  {
+    "id": "TASK-3775F00F",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.371Z"
+  },
+  {
+    "id": "TASK-B9E46BC1",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.371Z"
+  },
+  {
+    "id": "TASK-8907CF49",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:23.371Z"
+  },
+  {
+    "id": "TASK-6A41ED84",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.372Z"
+  },
+  {
+    "id": "TASK-567D6459",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.372Z"
+  },
+  {
+    "id": "TASK-FA66890A",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.372Z"
+  },
+  {
+    "id": "TASK-359868FC",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:23.373Z"
+  },
+  {
+    "id": "TASK-83B67392",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.373Z"
+  },
+  {
+    "id": "TASK-FC78245E",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.373Z"
+  },
+  {
+    "id": "TASK-0379F630",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.374Z"
+  },
+  {
+    "id": "TASK-ACC539C0",
+    "evaluation_id": "EVAL-E2D5C4D1",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:23.374Z"
+  },
+  {
+    "id": "TASK-B0A381E5",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.603Z"
+  },
+  {
+    "id": "TASK-ABBA384F",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.604Z"
+  },
+  {
+    "id": "TASK-BB904995",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "PARTNER_REQUIRED",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.605Z"
+  },
+  {
+    "id": "TASK-5F2E21CB",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:29.606Z"
+  },
+  {
+    "id": "TASK-7D31105C",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.607Z"
+  },
+  {
+    "id": "TASK-9E690B2A",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.607Z"
+  },
+  {
+    "id": "TASK-D1117BB1",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.607Z"
+  },
+  {
+    "id": "TASK-A5D31576",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:45:29.608Z"
+  },
+  {
+    "id": "TASK-CD5F1A3D",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.608Z"
+  },
+  {
+    "id": "TASK-D2DE3100",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.609Z"
+  },
+  {
+    "id": "TASK-FCD8461A",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.610Z"
+  },
+  {
+    "id": "TASK-EEE0F496",
+    "evaluation_id": "EVAL-606AE747",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:45:29.611Z"
+  },
+  {
+    "id": "TASK-D001F7E4",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.410Z"
+  },
+  {
+    "id": "TASK-AC385D1D",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.411Z"
+  },
+  {
+    "id": "TASK-BFFE634F",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.412Z"
+  },
+  {
+    "id": "TASK-7B61965C",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:51:28.413Z"
+  },
+  {
+    "id": "TASK-F2400CD9",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.414Z"
+  },
+  {
+    "id": "TASK-12B8266E",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.414Z"
+  },
+  {
+    "id": "TASK-95BF69BD",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.415Z"
+  },
+  {
+    "id": "TASK-DD7BC197",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:51:28.415Z"
+  },
+  {
+    "id": "TASK-4A6F8642",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: steel structures",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.416Z"
+  },
+  {
+    "id": "TASK-28C01A8F",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.416Z"
+  },
+  {
+    "id": "TASK-69568A27",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.417Z"
+  },
+  {
+    "id": "TASK-DFF1D24A",
+    "evaluation_id": "EVAL-CE674D04",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:51:28.417Z"
+  },
+  {
+    "id": "TASK-E0A165B7",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.941Z"
+  },
+  {
+    "id": "TASK-913AFA7B",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.943Z"
+  },
+  {
+    "id": "TASK-CC08868B",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.944Z"
+  },
+  {
+    "id": "TASK-8FD02E4F",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:55:59.944Z"
+  },
+  {
+    "id": "TASK-6F24D851",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.944Z"
+  },
+  {
+    "id": "TASK-39A69FD6",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.948Z"
+  },
+  {
+    "id": "TASK-7D339BDC",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.949Z"
+  },
+  {
+    "id": "TASK-0052DEAF",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:55:59.950Z"
+  },
+  {
+    "id": "TASK-1630791E",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: rail-adjacent work",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.953Z"
+  },
+  {
+    "id": "TASK-3DC312D6",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: rail-side construction",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.953Z"
+  },
+  {
+    "id": "TASK-A484B7B7",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: db qualification required",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.953Z"
+  },
+  {
+    "id": "TASK-92EBC2D4",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: bridge construction",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.954Z"
+  },
+  {
+    "id": "TASK-13D2656A",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.954Z"
+  },
+  {
+    "id": "TASK-0B378573",
+    "evaluation_id": "EVAL-530995AE",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: brücke",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.954Z"
+  },
+  {
+    "id": "TASK-9A782B4B",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:55:59.999Z"
+  },
+  {
+    "id": "TASK-6031DC8F",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.000Z"
+  },
+  {
+    "id": "TASK-BAF78D33",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.000Z"
+  },
+  {
+    "id": "TASK-A0265E41",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:00.000Z"
+  },
+  {
+    "id": "TASK-DEAA1048",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.001Z"
+  },
+  {
+    "id": "TASK-0EF64BA9",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.002Z"
+  },
+  {
+    "id": "TASK-27475F08",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.002Z"
+  },
+  {
+    "id": "TASK-7B1CBBE2",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:00.002Z"
+  },
+  {
+    "id": "TASK-DBC9B17C",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: high voltage",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.002Z"
+  },
+  {
+    "id": "TASK-F629E08C",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: explosion-protected installation",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.002Z"
+  },
+  {
+    "id": "TASK-6368C6F8",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: atex",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.003Z"
+  },
+  {
+    "id": "TASK-000EEB0B",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: main contractor on multi-trade",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.003Z"
+  },
+  {
+    "id": "TASK-B5953109",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: generalunternehmer",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.003Z"
+  },
+  {
+    "id": "TASK-F00307E0",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: road construction",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.003Z"
+  },
+  {
+    "id": "TASK-6A6AAF47",
+    "evaluation_id": "EVAL-4214888D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: civil engineering",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.004Z"
+  },
+  {
+    "id": "TASK-D9B69EBD",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.054Z"
+  },
+  {
+    "id": "TASK-DAB1DEC5",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.054Z"
+  },
+  {
+    "id": "TASK-93B8834E",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.055Z"
+  },
+  {
+    "id": "TASK-27C007C9",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:00.055Z"
+  },
+  {
+    "id": "TASK-F1E6B4C3",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.055Z"
+  },
+  {
+    "id": "TASK-5BF6AC4C",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.055Z"
+  },
+  {
+    "id": "TASK-784F30D2",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.056Z"
+  },
+  {
+    "id": "TASK-5154F52B",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:00.056Z"
+  },
+  {
+    "id": "TASK-35DFB6B3",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: road construction as lead contractor",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.056Z"
+  },
+  {
+    "id": "TASK-7F61B8FF",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: sewer construction as lead contractor",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.056Z"
+  },
+  {
+    "id": "TASK-549C10FC",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: bridge construction as lead contractor",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.057Z"
+  },
+  {
+    "id": "TASK-45E9E66A",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: southern germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.057Z"
+  },
+  {
+    "id": "TASK-EF628974",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: bavaria",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.057Z"
+  },
+  {
+    "id": "TASK-39D3F07C",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: baden-württemberg",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.057Z"
+  },
+  {
+    "id": "TASK-9307A914",
+    "evaluation_id": "EVAL-B1F3D7C1",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: high self-performance share required",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:00.058Z"
+  },
+  {
+    "id": "TASK-9E3924C3",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.638Z"
+  },
+  {
+    "id": "TASK-A3F7EBEC",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.639Z"
+  },
+  {
+    "id": "TASK-B5A1B0D1",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.639Z"
+  },
+  {
+    "id": "TASK-F0197C31",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:05.639Z"
+  },
+  {
+    "id": "TASK-CD321E68",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.640Z"
+  },
+  {
+    "id": "TASK-DB3B0875",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.640Z"
+  },
+  {
+    "id": "TASK-C43D874B",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.640Z"
+  },
+  {
+    "id": "TASK-08AE2FD1",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:05.641Z"
+  },
+  {
+    "id": "TASK-18AEF9B8",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: steel structures",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.642Z"
+  },
+  {
+    "id": "TASK-E15BB989",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades above 20 m",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.642Z"
+  },
+  {
+    "id": "TASK-63AB36DF",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.643Z"
+  },
+  {
+    "id": "TASK-6D179B39",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.643Z"
+  },
+  {
+    "id": "TASK-7E9B7938",
+    "evaluation_id": "EVAL-524F6586",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:05.643Z"
+  },
+  {
+    "id": "TASK-885748B3",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.105Z"
+  },
+  {
+    "id": "TASK-20563D30",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.107Z"
+  },
+  {
+    "id": "TASK-53AD721E",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.107Z"
+  },
+  {
+    "id": "TASK-620564DC",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:11.108Z"
+  },
+  {
+    "id": "TASK-1D46EFF1",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.108Z"
+  },
+  {
+    "id": "TASK-71521BDD",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.109Z"
+  },
+  {
+    "id": "TASK-088E0AEE",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.110Z"
+  },
+  {
+    "id": "TASK-AB86DD74",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:11.114Z"
+  },
+  {
+    "id": "TASK-05FC7327",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: steel structures",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.114Z"
+  },
+  {
+    "id": "TASK-3E3357A0",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.114Z"
+  },
+  {
+    "id": "TASK-8561D0F1",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.115Z"
+  },
+  {
+    "id": "TASK-8D4CB901",
+    "evaluation_id": "EVAL-35792C69",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:11.115Z"
+  },
+  {
+    "id": "TASK-7040482E",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.242Z"
+  },
+  {
+    "id": "TASK-E1D9E732",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.243Z"
+  },
+  {
+    "id": "TASK-E04A1184",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.244Z"
+  },
+  {
+    "id": "TASK-70F127EE",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:18.244Z"
+  },
+  {
+    "id": "TASK-11A8EFB5",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.244Z"
+  },
+  {
+    "id": "TASK-8F129680",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.245Z"
+  },
+  {
+    "id": "TASK-7C6ED5A6",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.245Z"
+  },
+  {
+    "id": "TASK-2FF7C556",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:18.245Z"
+  },
+  {
+    "id": "TASK-98E41F6B",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.246Z"
+  },
+  {
+    "id": "TASK-6C423DBF",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.246Z"
+  },
+  {
+    "id": "TASK-340B3EFE",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.246Z"
+  },
+  {
+    "id": "TASK-3268D48D",
+    "evaluation_id": "EVAL-9CD53EC4",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:18.247Z"
+  },
+  {
+    "id": "TASK-0B35C189",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.820Z"
+  },
+  {
+    "id": "TASK-E39CE548",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.821Z"
+  },
+  {
+    "id": "TASK-3AE560E7",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "PARTNER_REQUIRED",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.822Z"
+  },
+  {
+    "id": "TASK-E89CFC09",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:22.823Z"
+  },
+  {
+    "id": "TASK-91C1F547",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.824Z"
+  },
+  {
+    "id": "TASK-1D7DBA5E",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.825Z"
+  },
+  {
+    "id": "TASK-89CA5B86",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.825Z"
+  },
+  {
+    "id": "TASK-0C8D23BA",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T11:56:22.826Z"
+  },
+  {
+    "id": "TASK-C2804AB2",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.827Z"
+  },
+  {
+    "id": "TASK-83652E63",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.828Z"
+  },
+  {
+    "id": "TASK-DA12DF00",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.828Z"
+  },
+  {
+    "id": "TASK-C2E5B4DE",
+    "evaluation_id": "EVAL-57E963DC",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T11:56:22.829Z"
+  },
+  {
+    "id": "TASK-6DD79EB5",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.427Z"
+  },
+  {
+    "id": "TASK-348F60BB",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.429Z"
+  },
+  {
+    "id": "TASK-A5B6C0F5",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.430Z"
+  },
+  {
+    "id": "TASK-6591458B",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:03:00.430Z"
+  },
+  {
+    "id": "TASK-34415A61",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.431Z"
+  },
+  {
+    "id": "TASK-79A329E4",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.432Z"
+  },
+  {
+    "id": "TASK-E2B469C6",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.432Z"
+  },
+  {
+    "id": "TASK-B63EC758",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:03:00.433Z"
+  },
+  {
+    "id": "TASK-63DD6177",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: steel structures",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.434Z"
+  },
+  {
+    "id": "TASK-ED306CC0",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades above 20 m",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.434Z"
+  },
+  {
+    "id": "TASK-72562F27",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.435Z"
+  },
+  {
+    "id": "TASK-160B6437",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.435Z"
+  },
+  {
+    "id": "TASK-D23A62DE",
+    "evaluation_id": "EVAL-F28B2E6E",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:00.436Z"
+  },
+  {
+    "id": "TASK-DA09A228",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.050Z"
+  },
+  {
+    "id": "TASK-82A2BDD1",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.051Z"
+  },
+  {
+    "id": "TASK-FA6A2DC9",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.052Z"
+  },
+  {
+    "id": "TASK-06EAF3D1",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:03:07.053Z"
+  },
+  {
+    "id": "TASK-785FEF4A",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.054Z"
+  },
+  {
+    "id": "TASK-9EA9B29B",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.054Z"
+  },
+  {
+    "id": "TASK-269EB0F8",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.056Z"
+  },
+  {
+    "id": "TASK-28DCDFDA",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:03:07.057Z"
+  },
+  {
+    "id": "TASK-CA547F72",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: steel structures",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.058Z"
+  },
+  {
+    "id": "TASK-5AA5EC07",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.058Z"
+  },
+  {
+    "id": "TASK-BB5D5634",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.059Z"
+  },
+  {
+    "id": "TASK-5E051AAF",
+    "evaluation_id": "EVAL-2043562D",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:07.059Z"
+  },
+  {
+    "id": "TASK-EA07B90B",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.121Z"
+  },
+  {
+    "id": "TASK-36396D97",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.121Z"
+  },
+  {
+    "id": "TASK-8CD846CF",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.121Z"
+  },
+  {
+    "id": "TASK-3D4CD8A1",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:03:12.122Z"
+  },
+  {
+    "id": "TASK-3B72EA19",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.122Z"
+  },
+  {
+    "id": "TASK-D613AEF3",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.122Z"
+  },
+  {
+    "id": "TASK-FF96F71F",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.122Z"
+  },
+  {
+    "id": "TASK-F302071F",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:03:12.123Z"
+  },
+  {
+    "id": "TASK-87EED5F7",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.123Z"
+  },
+  {
+    "id": "TASK-D033089F",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.123Z"
+  },
+  {
+    "id": "TASK-7786A8E6",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.125Z"
+  },
+  {
+    "id": "TASK-921E8231",
+    "evaluation_id": "EVAL-1B10246D",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:12.125Z"
+  },
+  {
+    "id": "TASK-63E722FE",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.723Z"
+  },
+  {
+    "id": "TASK-337F6D1A",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.724Z"
+  },
+  {
+    "id": "TASK-17818D13",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "PARTNER_REQUIRED",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.725Z"
+  },
+  {
+    "id": "TASK-F4AD1368",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:03:18.725Z"
+  },
+  {
+    "id": "TASK-636B04A4",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.726Z"
+  },
+  {
+    "id": "TASK-A323F166",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.728Z"
+  },
+  {
+    "id": "TASK-BD02D56E",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.729Z"
+  },
+  {
+    "id": "TASK-AD564377",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:03:18.729Z"
+  },
+  {
+    "id": "TASK-185403C1",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.729Z"
+  },
+  {
+    "id": "TASK-3FDF4AA3",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.730Z"
+  },
+  {
+    "id": "TASK-6F026BD9",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.730Z"
+  },
+  {
+    "id": "TASK-3BCF6174",
+    "evaluation_id": "EVAL-203FFE02",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:03:18.730Z"
+  },
+  {
+    "id": "TASK-185ED7AB",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.054Z"
+  },
+  {
+    "id": "TASK-89FF6AF4",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.057Z"
+  },
+  {
+    "id": "TASK-8BA4D1E5",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.058Z"
+  },
+  {
+    "id": "TASK-F35D01E7",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:04:15.059Z"
+  },
+  {
+    "id": "TASK-43CD17BB",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.060Z"
+  },
+  {
+    "id": "TASK-81D946C5",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.062Z"
+  },
+  {
+    "id": "TASK-A3D72C0A",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.063Z"
+  },
+  {
+    "id": "TASK-3EB29D41",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:04:15.063Z"
+  },
+  {
+    "id": "TASK-90075270",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: steel structures",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.064Z"
+  },
+  {
+    "id": "TASK-D89C880B",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades above 20 m",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.064Z"
+  },
+  {
+    "id": "TASK-DA39D332",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.065Z"
+  },
+  {
+    "id": "TASK-27B2AB22",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.066Z"
+  },
+  {
+    "id": "TASK-21CB50E3",
+    "evaluation_id": "EVAL-1CCDD542",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:15.066Z"
+  },
+  {
+    "id": "TASK-BE5F31EA",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.903Z"
+  },
+  {
+    "id": "TASK-5062F2DE",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.904Z"
+  },
+  {
+    "id": "TASK-CDC6CFCC",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.904Z"
+  },
+  {
+    "id": "TASK-DF0D288F",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:04:22.904Z"
+  },
+  {
+    "id": "TASK-DD282F0D",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.905Z"
+  },
+  {
+    "id": "TASK-9AF6E5D6",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.906Z"
+  },
+  {
+    "id": "TASK-DF9967E3",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.906Z"
+  },
+  {
+    "id": "TASK-630EC032",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:04:22.907Z"
+  },
+  {
+    "id": "TASK-4F87476E",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: steel structures",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.907Z"
+  },
+  {
+    "id": "TASK-07CB941A",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.907Z"
+  },
+  {
+    "id": "TASK-4BE69531",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.908Z"
+  },
+  {
+    "id": "TASK-D36F2A7F",
+    "evaluation_id": "EVAL-9CC4869C",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:22.908Z"
+  },
+  {
+    "id": "TASK-907D740F",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.212Z"
+  },
+  {
+    "id": "TASK-582269A1",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.214Z"
+  },
+  {
+    "id": "TASK-873D5591",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.214Z"
+  },
+  {
+    "id": "TASK-F0D021E8",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:04:32.214Z"
+  },
+  {
+    "id": "TASK-1CECCF87",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.215Z"
+  },
+  {
+    "id": "TASK-0EC32C95",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.215Z"
+  },
+  {
+    "id": "TASK-1D25B7C5",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.217Z"
+  },
+  {
+    "id": "TASK-ACE1A452",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:04:32.217Z"
+  },
+  {
+    "id": "TASK-E1667BA7",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.218Z"
+  },
+  {
+    "id": "TASK-4EFE0E4E",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.218Z"
+  },
+  {
+    "id": "TASK-9CEE79F2",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.218Z"
+  },
+  {
+    "id": "TASK-D0B80F11",
+    "evaluation_id": "EVAL-CEC992C0",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:32.219Z"
+  },
+  {
+    "id": "TASK-A545E5DA",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "trade_scope",
+    "label": "Trade scope / capability",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.518Z"
+  },
+  {
+    "id": "TASK-2F12D36D",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "place_of_performance",
+    "label": "Place of performance",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.519Z"
+  },
+  {
+    "id": "TASK-8BB9C71F",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "estimated_value",
+    "label": "Estimated contract value",
+    "matcher_type": "PARTNER_REQUIRED",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.519Z"
+  },
+  {
+    "id": "TASK-C63AFDEE",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "eligibility_proofs",
+    "label": "Qualifications / certificates",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:04:42.519Z"
+  },
+  {
+    "id": "TASK-1E3A74CF",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "construction_window",
+    "label": "Construction window / timing",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.520Z"
+  },
+  {
+    "id": "TASK-5355BCED",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "guarantees",
+    "label": "Guarantee capacity",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.520Z"
+  },
+  {
+    "id": "TASK-12290B77",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "submission_deadline",
+    "label": "Submission deadline",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.520Z"
+  },
+  {
+    "id": "TASK-F9C4E4AC",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "side_offers_allowed",
+    "label": "Side offers allowed",
+    "matcher_type": "DETERMINISTIC",
+    "severity": "SOFT",
+    "created_at": "2026-09-18T12:04:42.520Z"
+  },
+  {
+    "id": "TASK-0D78A90F",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: facades",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.521Z"
+  },
+  {
+    "id": "TASK-CE8CB514",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "company_constraint",
+    "label": "Exclusion: outside germany",
+    "matcher_type": "CONSTRAINT",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.522Z"
+  },
+  {
+    "id": "TASK-D167CE05",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "references_required",
+    "label": "Reference projects required",
+    "matcher_type": "REFERENCE",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.523Z"
+  },
+  {
+    "id": "TASK-26985E5C",
+    "evaluation_id": "EVAL-1E6BA684",
+    "requirement_id": "document_qualifications",
+    "label": "Approvals and certificates required by the documents",
+    "matcher_type": "SEMANTIC",
+    "severity": "HARD",
+    "created_at": "2026-09-18T12:04:42.523Z"
   }
 ]

@@ -183,7 +183,7 @@ export const MOCK_COMPANIES: CompanyProfile[] = [
       "Contract size: €50k–€1.5M. " +
       "Can show: aluminium fire doors for the Warstein fire station (2024, €140k); exterior doors and F30 glazing for a school campus in Soest (2025, €310k); entrance doors with automatic drives for Lippstadt town hall (2023, €95k). " +
       "Cannot show: steel structures, facades above 20 m, anything outside Germany. " +
-      "Qualifications: Handwerksrolle Metallbau; two staff certified for hold-open systems (Feststellanlagen); system-partner certificate for T30 aluminium fire doors; ISO 9001 at the system manufacturer. " +
+      "Qualifications: Handwerksrolle Metallbau; two staff certified for hold-open systems (Feststellanlagen); system-partner certificate for T30 aluminium fire doors; ISO 9001 at the system manufacturer; powder coating through a partner certified Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität); cooperates with the client-appointed SiGeKo per Baustellenverordnung on every site. " +
       "Financial limit: guarantees up to about €600k. " +
       "Free from: January 2027. " +
       "In their words: Doors and glass in public buildings are our bread and butter. We bid directly when the package is one trade and the fire-protection paperwork is clear.",
@@ -246,7 +246,7 @@ export const MOCK_COMPANIES: CompanyProfile[] = [
     hard_exclusions: ["facades", "outside Germany"],
     raw_text:
       "Türen & Tore Rheinland GmbH, Köln, North Rhine-Westphalia. ~€15M revenue, 70 employees, founded 1982. " +
-      "Does: fire- and smoke-protection doors in steel and aluminium as system partner of an approved manufacturer, industrial doors and gates, automatic door drives; two staff certified for hold-open systems (Feststellanlagen); ISO 9001. " +
+      "Does: fire- and smoke-protection doors in steel and aluminium as system partner of an approved manufacturer, industrial doors and gates, automatic door drives; two staff certified for hold-open systems (Feststellanlagen); ISO 9001; powder coating through a partner certified Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität); cooperates with the client-appointed SiGeKo per Baustellenverordnung on every site. " +
       "Where: North Rhine-Westphalia, mainly Rheinland and the Ruhr, up to ~200 km from Köln. " +
       "Contract size: €40k–€1.2M. " +
       "Can show: aluminium fire doors T30 with hold-open systems for a logistics hall in Köln-Niehl (2025, €180k); steel fire doors and sectional gates for a depot in Leverkusen (2021, €260k); smoke protection doors for an office building in Düsseldorf (2020, €95k). " +
@@ -280,7 +280,7 @@ export const MOCK_COMPANIES: CompanyProfile[] = [
     hard_exclusions: ["facades", "outside Germany"],
     raw_text:
       "Schlosserei Hellweg e.K., Soest, North Rhine-Westphalia. ~€1.8M revenue, 9 employees, founded 2004. " +
-      "Does: metal construction, aluminium doors, fire-protection doors as system partner of an approved manufacturer, railings and stairs. " +
+      "Does: metal construction, aluminium doors, fire-protection doors as system partner of an approved manufacturer, railings and stairs; powder coating through a partner certified Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität); cooperates with the client-appointed SiGeKo per Baustellenverordnung on every site. " +
       "Where: Kreis Soest and neighbouring districts, up to ~60 km. " +
       "Contract size: €10k–€80k. Above about €60k they team up with a larger partner. " +
       "Can show: aluminium entrance and fire doors for a kindergarten in Soest (2025, €48k); T30 fire doors for a community hall in Bad Sassendorf (2024, €35k); railings and doors for the town hall annex in Werl (2023, €62k). " +

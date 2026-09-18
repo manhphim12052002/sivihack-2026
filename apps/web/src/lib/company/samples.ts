@@ -114,6 +114,9 @@ async function seed() {
         { label: "Fachkraft für Feststellanlagen (hold-open systems), 2 staff", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
         { label: "Handwerksrolle Metallbau", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
         { label: "ISO 9001 (system manufacturer)", type: "ISO_9001", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Powder coating via partner certified Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität)", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Cooperates with the client-appointed SiGeKo per Baustellenverordnung", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
+        { label: "General building authority approval (allgemeine bauaufsichtliche Zulassung) and system test certificate (Prüfzeugnis) for the T30 fire-door system, held via the manufacturer partnership, incl. tested system glasses/infills/fittings", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
       ],
       4: [
         { label: "Handwerksrolle Metallbau", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
@@ -125,10 +128,16 @@ async function seed() {
         { label: "Fachkraft für Feststellanlagen (hold-open systems), 2 staff", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
         { label: "ISO 9001", type: "ISO_9001", knowledge_state: "KNOWN_PRESENT" },
         { label: "Handwerksrolle Metallbau", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Powder coating via partner certified Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität)", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Cooperates with the client-appointed SiGeKo per Baustellenverordnung", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
+        { label: "General building authority approval (allgemeine bauaufsichtliche Zulassung) and system test certificate (Prüfzeugnis) for the T30 fire-door system, held via the manufacturer partnership, incl. tested system glasses/infills/fittings", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
       ],
       6: [
         { label: "System-partner certificate, T30 fire doors (approved manufacturer system)", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
         { label: "Handwerksrolle Metallbau", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Powder coating via partner certified Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität)", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
+        { label: "Cooperates with the client-appointed SiGeKo per Baustellenverordnung", type: "OTHER", knowledge_state: "KNOWN_PRESENT" },
+        { label: "General building authority approval (allgemeine bauaufsichtliche Zulassung) and system test certificate (Prüfzeugnis) for the T30 fire-door system, held via the manufacturer partnership, incl. tested system glasses/infills/fittings", type: "SPECIALIST_LICENSE", knowledge_state: "KNOWN_PRESENT" },
       ],
     };
     const statedAvailability: Record<number, { from: string; raw: string }> = {

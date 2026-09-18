@@ -238,5 +238,149 @@
       "CCHUNK-9B3EBCF6"
     ],
     "created_at": "2026-09-18T11:15:49.781Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "QUAL-4AC5AACD",
+    "type": "SPECIALIST_LICENSE",
+    "label": "Powder coating via partner certified Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität)",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T12:02:38.344Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "QUAL-9F427012",
+    "type": "OTHER",
+    "label": "Cooperates with the client-appointed SiGeKo per Baustellenverordnung",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T12:02:38.344Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "QUAL-4D474948",
+    "type": "SPECIALIST_LICENSE",
+    "label": "Powder coating via partner certified Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität)",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T12:02:38.344Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "QUAL-959EF9AD",
+    "type": "OTHER",
+    "label": "Cooperates with the client-appointed SiGeKo per Baustellenverordnung",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T12:02:38.344Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "QUAL-20FAB246",
+    "type": "SPECIALIST_LICENSE",
+    "label": "Powder coating via partner certified Qualicoat Class 2 and GSB International Premiumbeschichter (Masterqualität)",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T12:02:38.344Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "QUAL-824B02A9",
+    "type": "OTHER",
+    "label": "Cooperates with the client-appointed SiGeKo per Baustellenverordnung",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T12:02:38.344Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "QUAL-48DCD0D3",
+    "type": "SPECIALIST_LICENSE",
+    "label": "General building authority approval (allgemeine bauaufsichtliche Zulassung) and system test certificate (Prüfzeugnis) for the T30 fire-door system, held via the manufacturer partnership, incl. tested system glasses/infills/fittings",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T12:03:48.257Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "QUAL-ED739FEE",
+    "type": "SPECIALIST_LICENSE",
+    "label": "General building authority approval (allgemeine bauaufsichtliche Zulassung) and system test certificate (Prüfzeugnis) for the T30 fire-door system, held via the manufacturer partnership, incl. tested system glasses/infills/fittings",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T12:03:48.257Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "QUAL-DD1448AF",
+    "type": "SPECIALIST_LICENSE",
+    "label": "General building authority approval (allgemeine bauaufsichtliche Zulassung) and system test certificate (Prüfzeugnis) for the T30 fire-door system, held via the manufacturer partnership, incl. tested system glasses/infills/fittings",
+    "knowledge_state": "KNOWN_PRESENT",
+    "status": "CONFIRMED",
+    "valid_from": null,
+    "valid_until": null,
+    "freshness": "CURRENT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T12:03:48.257Z"
   }
 ]

@@ -76,9 +76,12 @@ export function selectPassages(passages: Passage[], kind: string, queryText: str
     .map((s) => s.p);
 }
 
-/** Whitespace-normalised substring check: the same gate the pipeline applies to model quotes. */
+/** Whitespace-normalised substring check: the same gate the pipeline applies to model quotes.
+ * Joins a hyphen line-wrap inside a word (`Gesundheits-\nschutzkoordinator`) before collapsing
+ * whitespace, so a model quote that de-hyphenates a wrapped compound still matches the source
+ * PDF text; a real en-dash bullet (`– ich/wir...`) is untouched since it isn't `-`. */
 export function normalise(text: string): string {
-  return text.replace(/\s+/g, " ").trim();
+  return text.replace(/(\w)-\s+(\w)/g, "$1$2").replace(/\s+/g, " ").trim();
 }
 
 export function quoteIsIn(quote: string, passage: Passage): boolean {
