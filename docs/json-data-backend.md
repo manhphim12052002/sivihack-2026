@@ -46,22 +46,6 @@ Relations the app reads today:
 - documents — `sources.json`, `chunks.json`
 - matching — `match_evaluations.json`, `matching_tasks.json`, `match_results.json`,
   `match_knowledge_gaps.json`
-- demo board — `company_profiles.json`, `demo_lots.json`; the flat CompanyProfile / TenderDetail
-  shapes the triage UI screens on (see `apps/web/src/lib/assets.ts`)
-
-### The demo board relations are checked in
-
-`company_profiles.json` and `demo_lots.json` are the demo content itself, so unlike the pipeline
-snapshots they are tracked in git and are the only copy — there is no bundled fixture behind them.
-Editing a lot or a company profile means editing those files. `POST /api/companies` appends to
-`company_profiles.json`, so a company created in the UI survives a restart.
-
-For `DATA_BACKEND=supabase`, load the same two files into Postgres (safe to re-run; rows merge on
-their primary key):
-
-```bash
-node scripts/load-demo-board.mjs
-```
 
 ### Views must be exported resolved
 
