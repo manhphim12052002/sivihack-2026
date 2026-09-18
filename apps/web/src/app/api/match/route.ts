@@ -1,6 +1,8 @@
 import { companyErrorResponse } from '@/lib/company/errors';
 import { NextRequest, NextResponse } from "next/server";
 import { runMatchEvaluation, runAllLotEvaluations } from "@/lib/match/assemble";
+import { getTender } from "@/lib/tender/db";
+import { findTender } from "@/lib/mock/tenders";
 import type { TenderDetail } from "@/lib/match/types";
 
 function err(message: string, status = 400) {
@@ -8,17 +10,10 @@ function err(message: string, status = 400) {
 }
 
 async function fetchTender(tenderId: string): Promise<TenderDetail | null> {
-  const { findTender } = await import('@/lib/mock/tenders');
-  let tender = findTender(tenderId) as TenderDetail | undefined;
-  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  if (apiUrl) {
-    try {
-      const res = await fetch(`${apiUrl.replace(/\/$/, '')}/tenders/${encodeURIComponent(tenderId)}`, { cache: 'no-store' });
-      if (!res.ok) return null;
-      tender = await res.json() as TenderDetail;
-    } catch { return null; }
-  }
-  return tender ?? null;
+  // Try real DB first, then mock fixtures
+  const real = await getTender(tenderId);
+  if (real) return real as TenderDetail;
+  return (findTender(tenderId) as TenderDetail | undefined) ?? null;
 }
 
 /**
