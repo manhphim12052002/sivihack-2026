@@ -53,8 +53,10 @@ NS = {"gc": GC_NS}
 # Preferred description column, most specific first; the first one present wins.
 # CPV is EU-wide, so the file may carry one label per official language.
 LABEL_COLUMN_PREFERENCE = ("label-eng", "label-en", "label", "name-eng", "name")
+LABEL_COLUMN_PREFERENCE_DE = ("label-deu", "label-de", "name-deu", "name-de")
 
 _cache: dict[str, str] | None = None
+_cache_bilingual: dict[str, dict[str, str]] | None = None
 
 
 def _column_id_by_shortname(root: ET.Element, shortname: str) -> str | None:
@@ -66,18 +68,24 @@ def _column_id_by_shortname(root: ET.Element, shortname: str) -> str | None:
     return None
 
 
-def _pick_label_column(root: ET.Element) -> str | None:
-    for name in LABEL_COLUMN_PREFERENCE:
+def _pick_column(root: ET.Element, preference: tuple[str, ...], fallback_prefix: str | None = None) -> str | None:
+    for name in preference:
         column_id = _column_id_by_shortname(root, name)
         if column_id:
             return column_id
-    # Fall back to any column whose short name starts with "label", so an
-    # unexpected language suffix (e.g. "label-deu") still resolves to something.
+    if fallback_prefix is None:
+        return None
+    # Any column whose short name starts with the prefix, so an unexpected language
+    # suffix (e.g. "label-deu") still resolves to something.
     for column in root.findall(".//gc:ColumnSet/gc:Column", NS):
         short = column.findtext("gc:ShortName", namespaces=NS) or ""
-        if short.strip().lower().startswith("label"):
+        if short.strip().lower().startswith(fallback_prefix):
             return column.get("Id")
     return None
+
+
+def _pick_label_column(root: ET.Element) -> str | None:
+    return _pick_column(root, LABEL_COLUMN_PREFERENCE, fallback_prefix="label")
 
 
 def parse_genericode(xml_bytes: bytes) -> dict[str, str]:
@@ -104,6 +112,52 @@ def parse_genericode(xml_bytes: bytes) -> dict[str, str]:
         if code and label:
             out[code.strip()] = label.strip()
     return out
+
+
+def parse_genericode_bilingual(xml_bytes: bytes) -> dict[str, dict[str, str]]:
+    """CPV code -> {"en": ..., "de": ...} from a Genericode 1.0 codelist's bytes.
+
+    A language is left out of the inner dict when the file has no matching label
+    column at all (e.g. an English-only export); a code missing a language's label
+    keeps whichever language it does have. Pure and offline, like `parse_genericode`.
+    """
+    root = ET.fromstring(xml_bytes)
+    code_col = _column_id_by_shortname(root, "code")
+    columns = {"en": _pick_column(root, LABEL_COLUMN_PREFERENCE, fallback_prefix="label"),
+               "de": _pick_column(root, LABEL_COLUMN_PREFERENCE_DE)}
+    columns = {lang: col for lang, col in columns.items() if col}
+    if not code_col or not columns:
+        return {}
+
+    out: dict[str, dict[str, str]] = {}
+    for row in root.findall(".//gc:SimpleCodeList/gc:Row", NS):
+        code = None
+        labels: dict[str, str] = {}
+        for value in row.findall("gc:Value", NS):
+            simple = value.findtext("gc:SimpleValue", namespaces=NS)
+            if value.get("ColumnRef") == code_col:
+                code = simple
+            for lang, col in columns.items():
+                if value.get("ColumnRef") == col and simple:
+                    labels[lang] = simple.strip()
+        if code and labels:
+            out[code.strip()] = labels
+    return out
+
+
+def load_descriptions_bilingual(path: Path = DEFAULT_PATH) -> dict[str, dict[str, str]]:
+    """CPV code -> {"en": ..., "de": ...}, cached in memory. {} if the codelist was never fetched."""
+    global _cache_bilingual
+    if _cache_bilingual is not None:
+        return _cache_bilingual
+    if not path.exists():
+        _cache_bilingual = {}
+        return _cache_bilingual
+    try:
+        _cache_bilingual = parse_genericode_bilingual(path.read_bytes())
+    except ET.ParseError:
+        _cache_bilingual = {}
+    return _cache_bilingual
 
 
 def load_descriptions(path: Path = DEFAULT_PATH) -> dict[str, str]:
@@ -144,6 +198,29 @@ def fetch_codelist(dest: Path = DEFAULT_PATH, version: str = SDK_VERSION, timeou
     return dest
 
 
+def load_db(path: Path = DEFAULT_PATH, dsn: str | None = None) -> int:
+    """Upsert the codelist's bilingual labels into the `cpv_descriptions` table.
+
+    Imports `db` lazily so parsing and `--check` keep working without psycopg
+    installed or a DATABASE_URL set -- this is the only entry point that needs a
+    connection.
+    """
+    from . import db
+
+    table = load_descriptions_bilingual(path)
+    rows = [
+        {"code": code, "description_en": labels.get("en"), "description_de": labels.get("de")}
+        for code, labels in table.items()
+    ]
+    conn = db.connect(dsn)
+    try:
+        written = db.upsert_cpv_descriptions(conn, rows)
+        conn.commit()
+    finally:
+        conn.close()
+    return written
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="python -m tender_extract.cpv",
@@ -151,13 +228,19 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--fetch", action="store_true", help=f"download {SOURCE_URL}")
     parser.add_argument("--check", action="store_true", help="parse the codelist and print a sample")
+    parser.add_argument("--load-db", action="store_true",
+                         help="upsert code -> {en, de} descriptions into the cpv_descriptions table")
+    parser.add_argument("--dsn", help="Postgres DSN for --load-db (default: $DATABASE_URL)")
     parser.add_argument("--path", type=Path, default=DEFAULT_PATH)
     args = parser.parse_args(argv)
 
     if args.fetch:
         print(f"downloading {SOURCE_URL} -> {args.path}", file=sys.stderr)
         fetch_codelist(args.path)
-    if args.check or not args.fetch:
+    if args.load_db:
+        written = load_db(args.path, args.dsn)
+        print(f"{written} CPV rows upserted into cpv_descriptions from {args.path}", file=sys.stderr)
+    if args.check or not (args.fetch or args.load_db):
         table = load_descriptions(args.path)
         print(f"{len(table)} CPV codes loaded from {args.path}", file=sys.stderr)
         for code, label in list(table.items())[:5]:
