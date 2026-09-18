@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Notice to Verdict",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1080,
+      500
+    ],
+    "views": [
+      {
+        "id": "document-path",
+        "label": "Into the documents",
+        "focus": [
+          "package",
+          "doc_reader",
+          "gate",
+          "observations"
+        ],
+        "note": "The disqualifying clause sits in an attachment, so the package is read, not just the notice."
+      },
+      {
+        "id": "resolution",
+        "label": "Read-time resolution",
+        "focus": [
+          "observations",
+          "resolved",
+          "tasks"
+        ],
+        "note": "Nothing is overwritten: precedence and agreement pick the value when it is read."
+      },
+      {
+        "id": "company-path",
+        "label": "Company lane",
+        "focus": [
+          "company_doc",
+          "company_extract",
+          "canonical",
+          "tasks"
+        ],
+        "note": "The profile is extracted the same way and carries its own evidence."
+      }
+    ],
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "security": {
+          "label": "evidence gate"
+        },
+        "emphasis": {
+          "label": "tender evidence"
+        },
+        "default": {
+          "label": "company data"
+        }
+      }
+    }
+  },
+  "stages": [
+    {
+      "label": "Sources"
+    },
+    {
+      "label": "Extraction"
+    },
+    {
+      "label": "Evidence"
+    },
+    {
+      "label": "Store and resolve"
+    },
+    {
+      "label": "Decision"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "notice",
+      "type": "external",
+      "label": "eForms notice",
+      "sublabel": "one version per lot",
+      "stage": 0,
+      "row": 0,
+      "tag": "German"
+    },
+    {
+      "id": "package",
+      "type": "external",
+      "label": "Vergabeunterlagen",
+      "sublabel": "ZIP over plain HTTP",
+      "stage": 0,
+      "row": 1,
+      "tag": "German"
+    },
+    {
+      "id": "company_doc",
+      "type": "external",
+      "label": "Company document",
+      "sublabel": "pasted text or PDF",
+      "stage": 0,
+      "row": 2
+    },
+    {
+      "id": "notice_extract",
+      "type": "backend",
+      "label": "Notice extract",
+      "sublabel": "xpath fields + rules",
+      "stage": 1,
+      "row": 0
+    },
+    {
+      "id": "doc_reader",
+      "type": "backend",
+      "label": "Document reader",
+      "sublabel": "route, then page text",
+      "stage": 1,
+      "row": 1,
+      "tag": "gated named"
+    },
+    {
+      "id": "company_extract",
+      "type": "backend",
+      "label": "Company extract",
+      "sublabel": "chunks to typed items",
+      "stage": 1,
+      "row": 2
+    },
+    {
+      "id": "gate",
+      "type": "security",
+      "label": "Model + gate",
+      "sublabel": "quote on its own page",
+      "stage": 2,
+      "row": 1,
+      "tag": "pure, tested"
+    },
+    {
+      "id": "observations",
+      "type": "database",
+      "label": "observations",
+      "sublabel": "insert-only rows",
+      "stage": 3,
+      "row": 0,
+      "tag": "never updated"
+    },
+    {
+      "id": "resolved",
+      "type": "backend",
+      "label": "Resolution view",
+      "sublabel": "precedence, agreement",
+      "stage": 3,
+      "row": 1
+    },
+    {
+      "id": "canonical",
+      "type": "database",
+      "label": "Canonical company",
+      "sublabel": "merged, freshness-scored",
+      "stage": 3,
+      "row": 2
+    },
+    {
+      "id": "tasks",
+      "type": "backend",
+      "label": "Matching tasks",
+      "sublabel": "one per requirement",
+      "stage": 4,
+      "row": 0
+    },
+    {
+      "id": "matchers",
+      "type": "backend",
+      "label": "Four matchers",
+      "sublabel": "rule to reference",
+      "stage": 4,
+      "row": 1
+    },
+    {
+      "id": "verdict",
+      "type": "frontend",
+      "label": "Briefing",
+      "sublabel": "reason, not a score",
+      "stage": 4,
+      "row": 2
+    }
+  ],
+  "flows": [
+    {
+      "id": "notice-fields",
+      "from": "notice",
+      "to": "notice_extract",
+      "label": "eForms XML",
+      "classification": "structured",
+      "variant": "emphasis"
+    },
+    {
+      "id": "package-files",
+      "from": "package",
+      "to": "doc_reader",
+      "label": "conditions docs",
+      "classification": "PDF only",
+      "variant": "emphasis"
+    },
+    {
+      "id": "company-source",
+      "from": "company_doc",
+      "to": "company_extract",
+      "label": "source chunks",
+      "classification": "page section"
+    },
+    {
+      "id": "page-chunks",
+      "from": "doc_reader",
+      "to": "gate",
+      "label": "page chunks",
+      "classification": "one per page",
+      "variant": "emphasis"
+    },
+    {
+      "id": "notice-observations",
+      "from": "notice_extract",
+      "to": "observations",
+      "label": "xpath \u00b7 rule",
+      "classification": "high / medium",
+      "variant": "emphasis",
+      "route": "straight"
+    },
+    {
+      "id": "gated-items",
+      "from": "gate",
+      "to": "observations",
+      "label": "surviving items",
+      "classification": "verbatim",
+      "variant": "security"
+    },
+    {
+      "id": "company-items",
+      "from": "company_extract",
+      "to": "canonical",
+      "label": "typed items",
+      "classification": "own evidence",
+      "route": "straight"
+    },
+    {
+      "id": "immutable-rows",
+      "from": "observations",
+      "to": "resolved",
+      "label": "immutable rows",
+      "classification": "kept forever",
+      "labelDy": 24
+    },
+    {
+      "id": "resolved-facts",
+      "from": "resolved",
+      "to": "tasks",
+      "label": "lot facts",
+      "classification": "resolved",
+      "variant": "emphasis",
+      "labelDx": -38,
+      "labelDy": 10
+    },
+    {
+      "id": "company-constraints",
+      "from": "canonical",
+      "to": "tasks",
+      "label": "constraints",
+      "classification": "typed limits",
+      "variant": "emphasis",
+      "labelDy": 66
+    },
+    {
+      "id": "routed-tasks",
+      "from": "tasks",
+      "to": "matchers",
+      "label": "routed by kind",
+      "classification": "hard / soft",
+      "variant": "emphasis",
+      "labelDy": 24
+    },
+    {
+      "id": "criterion-lines",
+      "from": "matchers",
+      "to": "verdict",
+      "label": "criterion lines",
+      "classification": "quote vs fact",
+      "variant": "emphasis",
+      "labelDy": 24
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "The claim the pipeline earns",
+      "items": [
+        "A verdict line pairs a German clause, its document and page, with the company fact it met",
+        "The model types and quotes; precedence and every comparison are code",
+        "A fact with no reading stays Unknown; nothing is inferred to fill a hole"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Resolved at read time",
+      "items": [
+        "Rows are inserted, never updated, so a superseded notice version drops out of the view",
+        "Precedence: structured field, rule, model over document, model over notice",
+        "Equal-precedence disagreement resolves to CONFLICTING, not a silent winner"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Honest limits",
+      "items": [
+        "PDF text layer only: no OCR, and DOCX/XLSX are not routed yet",
+        "A portal that demands a form is recorded GATED with its host named",
+        "Only filename-routed conditions documents are read, not drawings or bills"
+      ]
+    }
+  ]
+}

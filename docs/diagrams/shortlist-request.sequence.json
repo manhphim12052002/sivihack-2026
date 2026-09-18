@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Briefing Request",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1080,
+      520
+    ],
+    "column_fit": "spread",
+    "views": [
+      {
+        "id": "facts",
+        "label": "Resolved facts first",
+        "focus": [
+          "api",
+          "db"
+        ],
+        "note": "The handler reads one row per lot at its newest notice version, with the resolved value per attribute."
+      },
+      {
+        "id": "evaluate",
+        "label": "Evaluate per requirement",
+        "focus": [
+          "match",
+          "db"
+        ],
+        "note": "Tasks are generated from the company's typed constraints, then routed by requirement kind."
+      },
+      {
+        "id": "model-use",
+        "label": "Where the model is used",
+        "focus": [
+          "match",
+          "model"
+        ],
+        "note": "Only capability wording and reference comparability reach the model; knock-outs are decided in code."
+      }
+    ]
+  },
+  "participants": [
+    {
+      "id": "estimator",
+      "type": "external",
+      "label": "Estimator",
+      "sublabel": "browser"
+    },
+    {
+      "id": "web_ui",
+      "type": "frontend",
+      "label": "Briefing page",
+      "sublabel": "Next.js client"
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "Route handler",
+      "sublabel": "app/api/match"
+    },
+    {
+      "id": "match",
+      "type": "backend",
+      "label": "Match engine",
+      "sublabel": "tasks + matchers"
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "DbClient port",
+      "sublabel": "json or Postgres"
+    },
+    {
+      "id": "model",
+      "type": "external",
+      "label": "OpenRouter",
+      "sublabel": "typed judgement"
+    }
+  ],
+  "segments": [
+    {
+      "from": 150,
+      "to": 262,
+      "label": "Read the resolved facts"
+    },
+    {
+      "from": 272,
+      "to": 437,
+      "label": "Evaluate, persist, answer"
+    }
+  ],
+  "messages": [
+    {
+      "id": "open-tender",
+      "from": "estimator",
+      "to": "web_ui",
+      "y": 170,
+      "label": "opens a shortlisted tender"
+    },
+    {
+      "id": "match-post",
+      "from": "web_ui",
+      "to": "api",
+      "y": 199,
+      "label": "POST /api/match",
+      "variant": "emphasis"
+    },
+    {
+      "id": "facts-read",
+      "from": "api",
+      "to": "db",
+      "y": 228,
+      "label": "lots_latest \u00b7 observations_resolved"
+    },
+    {
+      "id": "facts-rows",
+      "from": "db",
+      "to": "api",
+      "y": 257,
+      "label": "resolved lot facts",
+      "variant": "return"
+    },
+    {
+      "id": "match-run",
+      "from": "api",
+      "to": "match",
+      "y": 286,
+      "label": "runMatchEvaluation",
+      "variant": "emphasis"
+    },
+    {
+      "id": "company-read",
+      "from": "match",
+      "to": "db",
+      "y": 315,
+      "label": "canonical company + passages"
+    },
+    {
+      "id": "semantic-call",
+      "from": "match",
+      "to": "model",
+      "y": 344,
+      "label": "semantic + reference only",
+      "variant": "dashed"
+    },
+    {
+      "id": "persist",
+      "from": "match",
+      "to": "db",
+      "y": 373,
+      "label": "evaluation \u00b7 results \u00b7 gaps",
+      "variant": "dashed"
+    },
+    {
+      "id": "criterion-lines",
+      "from": "match",
+      "to": "api",
+      "y": 402,
+      "label": "criterion lines + viability",
+      "variant": "return"
+    },
+    {
+      "id": "briefing-render",
+      "from": "api",
+      "to": "web_ui",
+      "y": 431,
+      "label": "quote, page, company fact",
+      "variant": "return"
+    }
+  ],
+  "activations": [
+    {
+      "participant": "web_ui",
+      "from": 194,
+      "to": 437,
+      "type": "frontend"
+    },
+    {
+      "participant": "api",
+      "from": 199,
+      "to": 437,
+      "type": "backend"
+    },
+    {
+      "participant": "match",
+      "from": 286,
+      "to": 408,
+      "type": "backend"
+    },
+    {
+      "participant": "db",
+      "from": 224,
+      "to": 262,
+      "type": "database"
+    },
+    {
+      "participant": "db",
+      "from": 315,
+      "to": 379,
+      "type": "database"
+    },
+    {
+      "participant": "model",
+      "from": 344,
+      "to": 373,
+      "type": "external"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Server-side by construction",
+      "items": [
+        "The client posts a company id and renders what comes back; it ranks nothing",
+        "A different company id re-runs the same code and yields a different shortlist",
+        "No score crosses the wire, only criterion lines with a status and a reason"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "What the model is asked",
+      "items": [
+        "Region, size, guarantee, window and self-performance are decided by rule matchers",
+        "Only capability wording and reference comparability go to the model",
+        "A model failure degrades that task to UNCERTAIN, never to a pass"
+      ]
+    },
+    {
+      "dot": "orange",
+      "title": "Two paths, one port",
+      "items": [
+        "The board path reads the demo board; the briefing path reads the resolved views",
+        "Both go through lib/db, so the json backend serves the whole trace offline",
+        "Evaluations and results are written back, so a briefing reopens without re-running"
+      ]
+    }
+  ]
+}
