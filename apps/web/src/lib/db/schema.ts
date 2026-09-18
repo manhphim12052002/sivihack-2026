@@ -124,7 +124,10 @@ export const SCHEMA: Readonly<Record<string, TableSchema>> = {
   cpv_descriptions: { primaryKey: ["code"] },
   verdicts: { primaryKey: ["lot_key", "company_id", "criterion"] },
   sync_state: { primaryKey: ["key"] },
-  ingest_jobs: { primaryKey: ["id"], defaults: { created_at: NOW } },
+  ingest_jobs: {
+    primaryKey: ["id"],
+    defaults: { stage: "queued", pct: 0, ...TIMESTAMPS },
+  },
 
   // ── Views: exported resolved snapshots, read-only ─────────────────────────
   lots_latest: { primaryKey: ["lot_key"], readOnly: true },

@@ -12,6 +12,27 @@
 import { writeTable } from "./store";
 import type { DbRow } from "../types";
 
+/**
+ * JSON port of `claim_ingest_job()` (apps/pipeline's init migration): the oldest `queued` row of
+ * `ingest_jobs` moves to `downloading` and is returned, or `null` when nothing is queued. No
+ * `for update skip locked` equivalent is needed — `writeTable` already serialises writers per
+ * table, so two concurrent callers cannot claim the same row.
+ */
+export async function claimIngestJob(): Promise<DbRow | null> {
+  let claimed: DbRow | null = null;
+  await writeTable("ingest_jobs", (rows) => {
+    const queued = rows
+      .filter((r) => r.stage === "queued")
+      .sort((a, b) => String(a.created_at).localeCompare(String(b.created_at)));
+    if (queued.length === 0) return [];
+    const at = rows.indexOf(queued[0]);
+    rows[at] = { ...rows[at], stage: "downloading", updated_at: new Date().toISOString() };
+    claimed = rows[at];
+    return [rows[at]];
+  });
+  return claimed;
+}
+
 function text(value: unknown): string | null {
   if (value === null || value === undefined) return null;
   return typeof value === "string" ? value : String(value);

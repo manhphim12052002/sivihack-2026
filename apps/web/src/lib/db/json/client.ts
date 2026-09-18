@@ -12,7 +12,7 @@
 import { tableSchema, withDefaults, type TableSchema } from "../schema";
 import type { DbClient, DbError, DbQuery, DbResult, DbRow } from "../types";
 import { readTable, writeTable } from "./store";
-import { saveCompanyIntelligence } from "./rpc";
+import { claimIngestJob, saveCompanyIntelligence } from "./rpc";
 
 class JsonDbError extends Error {
   constructor(
@@ -267,18 +267,22 @@ export const jsonDb: DbClient = {
   },
 
   async rpc<T = unknown>(fn: string, args: DbRow): Promise<DbResult<T | null>> {
-    if (fn !== "save_company_intelligence") {
+    try {
+      if (fn === "save_company_intelligence") {
+        const revision = await saveCompanyIntelligence(
+          args.payload as DbRow,
+          Number(args.expected_revision ?? 0),
+        );
+        return { data: revision as unknown as T, error: null };
+      }
+      if (fn === "claim_ingest_job") {
+        const job = await claimIngestJob();
+        return { data: job as unknown as T, error: null };
+      }
       return {
         data: null,
         error: { message: `function "${fn}" does not exist`, code: "42883" },
       };
-    }
-    try {
-      const revision = await saveCompanyIntelligence(
-        args.payload as DbRow,
-        Number(args.expected_revision ?? 0),
-      );
-      return { data: revision as unknown as T, error: null };
     } catch (e) {
       return {
         data: null,
