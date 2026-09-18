@@ -14,17 +14,21 @@ export async function POST(req: NextRequest) {
 
   if (!body.company_id) return err("company_id is required", 400);
 
-  const company = getCompany(body.company_id);
+  const company = await getCompany(body.company_id);
   if (!company) return err(`Company ${body.company_id} not found`, 404);
 
   const lots =
     body.tender_ids && body.tender_ids.length > 0
-      ? body.tender_ids.map(getLot).filter((l): l is NonNullable<typeof l> => Boolean(l))
-      : listLots();
+      ? (await Promise.all(body.tender_ids.map(getLot))).filter(
+          (l): l is NonNullable<typeof l> => Boolean(l),
+        )
+      : await listLots();
 
   const now = new Date();
   const verdicts = lots.map((lot) => screenTender(company, lot, now));
-  const ranked = rankVerdicts(verdicts, (id) => getLot(id)?.estimated_value_eur ?? null);
+  // Ranking ties break on contract size; every verdict came from `lots`, so no second read.
+  const valueById = new Map(lots.map((l) => [l.id, l.estimated_value_eur ?? null]));
+  const ranked = rankVerdicts(verdicts, (id) => valueById.get(id) ?? null);
 
   return NextResponse.json(ranked);
 }

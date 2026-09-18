@@ -217,6 +217,13 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+# JSON data backend: the local store the web app reads and writes. Pipeline snapshots are
+# re-exportable and stay out of git; the demo board's two relations are checked in, since they
+# are the demo content itself.
+data/json-db/*.json
+!data/json-db/company_profiles.json
+!data/json-db/demo_lots.json
+
 # Tender extraction: cached bulk export ZIPs (re-downloadable, ~4MB/day) and the
 # content-addressed store of fetched Vergabeunterlagen (re-downloadable, tens of MB)
 data/cache/

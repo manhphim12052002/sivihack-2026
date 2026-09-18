@@ -9,7 +9,7 @@ function err(code: string, message: string, status = 400) {
 }
 
 export async function GET() {
-  return NextResponse.json(listCompanies());
+  return NextResponse.json(await listCompanies());
 }
 
 export async function POST(req: NextRequest) {
@@ -80,6 +80,6 @@ CPV prefixes for construction start with 45. Monetary values are EUR numbers. Re
     raw_text: rawText,
   };
 
-  upsertCompany(company);
+  await upsertCompany(company);
   return NextResponse.json(company, { status: 201 });
 }

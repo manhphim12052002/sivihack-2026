@@ -5,7 +5,7 @@ type Ctx = { params: Promise<{ id: string }> };
 
 export async function GET(_req: NextRequest, { params }: Ctx) {
   const { id } = await params;
-  const lot = getLot(id);
+  const lot = await getLot(id);
   if (!lot) return NextResponse.json({ error: `Lot ${id} not found` }, { status: 404 });
   return NextResponse.json(lot);
 }

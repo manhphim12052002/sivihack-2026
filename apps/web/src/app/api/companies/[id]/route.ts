@@ -10,25 +10,25 @@ function notFound(id: string) {
 
 export async function GET(_req: NextRequest, { params }: Ctx) {
   const { id } = await params;
-  const company = getCompany(id);
+  const company = await getCompany(id);
   if (!company) return notFound(id);
   return NextResponse.json(company);
 }
 
 export async function PUT(req: NextRequest, { params }: Ctx) {
   const { id } = await params;
-  const company = getCompany(id);
+  const company = await getCompany(id);
   if (!company) return notFound(id);
   let patch: Partial<CompanyProfile>;
   try { patch = await req.json(); } catch { return NextResponse.json({ error: "Invalid JSON" }, { status: 400 }); }
   const updated: CompanyProfile = { ...company, ...patch, id };
-  upsertCompany(updated);
+  await upsertCompany(updated);
   return NextResponse.json(updated);
 }
 
 export async function DELETE(_req: NextRequest, { params }: Ctx) {
   const { id } = await params;
-  const existed = deleteCompany(id);
+  const existed = await deleteCompany(id);
   if (!existed) return notFound(id);
   return new NextResponse(null, { status: 204 });
 }

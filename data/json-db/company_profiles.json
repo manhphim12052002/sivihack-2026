@@ -43,7 +43,8 @@
       "outside Germany",
       "Brücke"
     ],
-    "raw_text": "Brenner & Sohn Tiefbau GmbH, Augsburg, Bavaria. ~€31M revenue, 140 employees, family-owned since 1962. Does: road construction, sewers and pipelines, earthworks, municipal civil engineering. Own machinery. Where: Bavaria, mainly Schwaben and Oberbayern, up to ~150 km from Augsburg — crews go home at night. Contract size: €400k–€4M. Below that the overhead isn't worth it; above €5M they'd need a partner. References: a €2.9M state road rehabilitation, a district sewer renewal, several housing-estate site developments. Cannot show: anything rail-side (no DB qualification, no certified safety staff), no bridges, nothing outside Germany. Financial limit: their bank supports guarantees up to about €1.5M in total at any one time. Free from: March — two crews are committed until then."
+    "raw_text": "Brenner & Sohn Tiefbau GmbH, Augsburg, Bavaria. ~€31M revenue, 140 employees, family-owned since 1962. Does: road construction, sewers and pipelines, earthworks, municipal civil engineering. Own machinery. Where: Bavaria, mainly Schwaben and Oberbayern, up to ~150 km from Augsburg — crews go home at night. Contract size: €400k–€4M. Below that the overhead isn't worth it; above €5M they'd need a partner. References: a €2.9M state road rehabilitation, a district sewer renewal, several housing-estate site developments. Cannot show: anything rail-side (no DB qualification, no certified safety staff), no bridges, nothing outside Germany. Financial limit: their bank supports guarantees up to about €1.5M in total at any one time. Free from: March — two crews are committed until then.",
+    "created_at": "2026-09-18T00:00:00Z"
   },
   {
     "id": "COMP-vogtland",
@@ -91,7 +92,8 @@
       "road construction",
       "civil engineering"
     ],
-    "raw_text": "Elektro Vogtland GmbH, Plauen, Saxony. ~€8M revenue, 45 employees, founded 1991. Does: electrical installation for buildings — power, lighting, fire alarm systems, building automation. Usually as a subcontractor to a general contractor. Where: Saxony, Thuringia, eastern Bavaria, up to ~200 km. Contract size: €80k–€900k. References: school refurbishments, a hospital ward block, office fit-outs, two care homes. Cannot show: high voltage, explosion-protected installations, or acting as main contractor on a multi-trade job. Financial limit: guarantees up to about €300k."
+    "raw_text": "Elektro Vogtland GmbH, Plauen, Saxony. ~€8M revenue, 45 employees, founded 1991. Does: electrical installation for buildings — power, lighting, fire alarm systems, building automation. Usually as a subcontractor to a general contractor. Where: Saxony, Thuringia, eastern Bavaria, up to ~200 km. Contract size: €80k–€900k. References: school refurbishments, a hospital ward block, office fit-outs, two care homes. Cannot show: high voltage, explosion-protected installations, or acting as main contractor on a multi-trade job. Financial limit: guarantees up to about €300k.",
+    "created_at": "2026-09-18T00:00:01Z"
   },
   {
     "id": "COMP-hanseatische",
@@ -145,6 +147,7 @@
       "Baden-Württemberg",
       "high self-performance share required"
     ],
-    "raw_text": "Hanseatische Bau AG, Hamburg. ~€310M revenue, 620 employees, founded 1954. Does: building construction and turnkey projects — offices, schools, hospitals, housing, logistics. They coordinate; the trades are subcontracted. Where: northern Germany. Contract size: €8M–€90M. Below €5M the overhead is disproportionate. References: a university building, two school campuses, a hospital extension, large residential quarters. Cannot show: civil engineering as lead contractor (no roads, sewers or bridges), nothing in southern Germany in a decade. Constraint: not money — bidding capacity. The estimating department can seriously pursue about three tenders a week."
+    "raw_text": "Hanseatische Bau AG, Hamburg. ~€310M revenue, 620 employees, founded 1954. Does: building construction and turnkey projects — offices, schools, hospitals, housing, logistics. They coordinate; the trades are subcontracted. Where: northern Germany. Contract size: €8M–€90M. Below €5M the overhead is disproportionate. References: a university building, two school campuses, a hospital extension, large residential quarters. Cannot show: civil engineering as lead contractor (no roads, sewers or bridges), nothing in southern Germany in a decade. Constraint: not money — bidding capacity. The estimating department can seriously pursue about three tenders a week.",
+    "created_at": "2026-09-18T00:00:02Z"
   }
 ]
