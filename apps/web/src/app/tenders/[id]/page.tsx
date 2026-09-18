@@ -7,5 +7,7 @@ export default async function TenderBriefingPage({ params, searchParams }: PageP
   const companyParam = resolvedSearchParams.company;
   const companyId = Array.isArray(companyParam) ? companyParam[0] : companyParam;
 
-  return <TenderReviewClient tenderId={id} companyId={companyId} />;
+  // Next 16 leaves this page's `params.id` percent-encoded (unlike route handlers, which
+  // decode it) — lot_key values always contain "|", so every tender 404'd until decoded here.
+  return <TenderReviewClient tenderId={decodeURIComponent(id)} companyId={companyId} />;
 }
