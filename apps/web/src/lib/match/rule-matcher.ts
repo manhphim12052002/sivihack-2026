@@ -2,7 +2,7 @@ import { genId } from "@/lib/id";
 import { formatEur } from "@/lib/status";
 import type { MatchingTask, MatchResult, MatchStatus, CanonicalCompany } from "./types";
 
-type RuleResult = Pick<MatchResult, "status" | "method" | "reason">;
+type RuleResult = Pick<MatchResult, "status" | "method" | "reason"> & { severity_override?: "HARD" | "SOFT" };
 
 function pass(reason: string): RuleResult {
   return { status: "PASS", method: "DETERMINISTIC", reason };
@@ -22,13 +22,41 @@ function checkEstimatedValue(tenderValue: unknown, company: CanonicalCompany): R
 
   const min = company.commercial_profile.contract_min_eur;
   const max = company.commercial_profile.contract_max_eur;
+  const partnerThreshold = company.commercial_profile.partner_threshold_eur;
 
   if (min !== null && min !== undefined && value < min) {
     return fail(`Tender value ${formatEur(value)} is below company minimum ${formatEur(min)}.`);
   }
+
   if (max !== null && max !== undefined && value > max) {
+    // Check partner threshold before treating as a straight fail
+    if (partnerThreshold !== null && partnerThreshold !== undefined && value >= partnerThreshold) {
+      // Check for hard no-JV constraint
+      const noJv = (company.constraints ?? []).find(
+        (c) =>
+          c.status !== "REJECTED" &&
+          c.severity === "HARD" &&
+          (c.type === "JV" || c.type === "CONSORTIUM") &&
+          c.operator === "EXCLUDE",
+      );
+      if (noJv && noJv.status === "CONFIRMED") {
+        return {
+          ...fail(
+            `${formatEur(value)} requires a partner/JV (threshold ${formatEur(partnerThreshold)}) but company has a hard no-JV constraint.`,
+          ),
+          severity_override: "HARD",
+        };
+      }
+      return {
+        status: "UNCERTAIN",
+        method: "PARTNER_REQUIRED",
+        reason: `${formatEur(value)} exceeds partner threshold ${formatEur(partnerThreshold)}. A partner/JV would be required.`,
+        severity_override: "HARD",
+      };
+    }
     return fail(`Tender value ${formatEur(value)} exceeds company maximum ${formatEur(max)}.`);
   }
+
   if ((min === null || min === undefined) && (max === null || max === undefined)) {
     return uncertain("Company contract size limits not on file.");
   }
@@ -89,23 +117,14 @@ function checkConstructionWindow(tenderValue: unknown, company: CanonicalCompany
   const raw = typeof tenderValue === "string" ? tenderValue : JSON.stringify(tenderValue ?? "");
   if (!raw || raw === "null") return uncertain("Construction window not specified in tender.");
 
-  const earliest = company.regions; // not directly applicable here
-  // Extract a start date from the tender value string
   const dateMatch = raw.match(/(\d{4}-\d{2}-\d{2})/);
-  if (!dateMatch) return uncertain(`Construction window present ("${raw}") but not parseable as a date.`);
+  if (!dateMatch) return uncertain('Tender start date cannot be established.');
+  const availability = company.capacity?.find(r => r.type === 'CREW_AVAILABILITY' && r.status === 'CONFIRMED' && r.state !== 'AMBIGUOUS' && r.available_from);
+  if (!availability?.available_from) return uncertain('Company crew availability is unknown or ambiguous.');
+  return dateMatch[1] >= availability.available_from
+    ? pass(`Company crews available from ${availability.available_from}.`)
+    : fail(`Tender starts before stated crew availability ${availability.available_from}.`);
 
-  const tenderStart = new Date(dateMatch[1]);
-  const companyEarliest = company.identity
-    ? null
-    : null; // earliest_start not in CanonicalCompany identity; use raw_text fallback
-
-  // We don't have earliest_start in CanonicalCompany directly — mark as uncertain
-  // unless the date is clearly in the future
-  const now = new Date();
-  if (tenderStart < now) {
-    return fail(`Construction window starts ${dateMatch[1]}, which is in the past.`);
-  }
-  return uncertain(`Construction window "${raw}" — company capacity calendar not on file.`);
 }
 
 function checkSubmissionDeadline(tenderValue: unknown): RuleResult {
@@ -188,7 +207,7 @@ export function runRuleMatcher(task: MatchingTask, company: CanonicalCompany): M
     requirement_id: task.requirement_id,
     label: task.label,
     status: result.status as MatchStatus,
-    severity: task.severity,
+    severity: result.severity_override ?? task.severity,
     method: result.method,
     reason: result.reason,
     tender_evidence: task.tender_evidence,

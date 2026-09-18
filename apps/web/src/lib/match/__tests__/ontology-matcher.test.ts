@@ -34,6 +34,7 @@ const confirmedQual: QualificationRow & { freshness: Freshness } = {
   company_id: "COMP-001",
   type: "PQ_VOB",
   label: "PQ-VOB",
+  knowledge_state: "KNOWN_PRESENT",
   status: "CONFIRMED" as ItemStatus,
   valid_from: null,
   valid_until: null,
@@ -63,9 +64,9 @@ describe("runOntologyMatcher — trade_scope", () => {
     expect(result.company_evidence).toContain("CAP-001");
   });
 
-  it("FAIL when company has no matching capability", () => {
+  it("UNCERTAIN when company has no evidence of a matching capability", () => {
     const result = runOntologyMatcher(makeTask({ tender_value: "Gleisbau" }), baseCompany);
-    expect(result.status).toBe("FAIL");
+    expect(result.status).toBe("UNCERTAIN");
     expect(result.reason).toMatch(/do not match/i);
   });
 
@@ -112,12 +113,12 @@ describe("runOntologyMatcher — eligibility_proofs", () => {
     expect(result.status).toBe("UNCERTAIN");
   });
 
-  it("FAIL when required qualification is completely absent", () => {
+  it("UNCERTAIN when required qualification is unmentioned", () => {
     const co = { ...baseCompany, qualifications: [] };
     const result = runOntologyMatcher(
       makeTask({ requirement_id: "eligibility_proofs", tender_value: "ISO 9001", aspect: "QUALIFICATIONS" }),
       co,
     );
-    expect(result.status).toBe("FAIL");
+    expect(result.status).toBe("UNCERTAIN");
   });
 });

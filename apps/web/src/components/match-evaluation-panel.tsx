@@ -17,18 +17,12 @@ const VIABILITY_CLASS: Record<ViabilityStatus, string> = {
   BLOCKED: "bg-red-100 text-red-800",
 };
 
-const STATUS_ICON: Record<string, string> = {
-  PASS: "✓",
-  FAIL: "✗",
-  UNCERTAIN: "?",
-};
-
+const STATUS_ICON: Record<string, string> = { PASS: "✓", FAIL: "✗", UNCERTAIN: "?" };
 const STATUS_CLASS: Record<string, string> = {
   PASS: "text-emerald-700",
   FAIL: "text-red-700",
   UNCERTAIN: "text-amber-600",
 };
-
 const SEVERITY_CLASS: Record<string, string> = {
   HARD: "bg-red-50 text-red-700 border-red-200",
   SOFT: "bg-zinc-50 text-zinc-600 border-zinc-200",
@@ -37,10 +31,7 @@ const SEVERITY_CLASS: Record<string, string> = {
 // ─── Override modal ───────────────────────────────────────────────────────────
 
 function OverrideModal({
-  result,
-  evaluationId,
-  onClose,
-  onSaved,
+  result, evaluationId, onClose, onSaved,
 }: {
   result: MatchResult;
   evaluationId: string;
@@ -54,8 +45,7 @@ function OverrideModal({
 
   async function save() {
     if (!reason.trim()) { setError("Reason is required"); return; }
-    setSaving(true);
-    setError(null);
+    setSaving(true); setError(null);
     try {
       const res = await fetch(`/api/match/${evaluationId}/override`, {
         method: "POST",
@@ -66,14 +56,10 @@ function OverrideModal({
         const body = await res.json() as { error?: string };
         throw new Error(body.error ?? "Override failed");
       }
-      const updated = await res.json() as MatchEvaluation;
-      onSaved(updated);
+      onSaved(await res.json() as MatchEvaluation);
       onClose();
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Failed");
-    } finally {
-      setSaving(false);
-    }
+    } catch (e) { setError(e instanceof Error ? e.message : "Failed"); }
+    finally { setSaving(false); }
   }
 
   return (
@@ -81,48 +67,27 @@ function OverrideModal({
       <div className="w-full max-w-md rounded-xl bg-white shadow-xl p-6 space-y-4">
         <h3 className="font-semibold text-lg">Override: {result.label}</h3>
         <p className="text-sm text-zinc-500">AI decision: <span className={`font-medium ${STATUS_CLASS[result.status]}`}>{result.status}</span></p>
-
         <div className="space-y-1">
           <label className="block text-sm font-medium text-zinc-700">Your assessment</label>
           <div className="flex gap-2">
             {(["PASS", "UNCERTAIN", "FAIL"] as const).map((s) => (
-              <button
-                key={s}
-                type="button"
-                onClick={() => setStatus(s)}
-                className={`flex-1 rounded border px-3 py-2 text-sm font-semibold transition ${
-                  status === s ? `ring-2 ring-offset-1 ${STATUS_CLASS[s]} border-current` : "border-zinc-200 text-zinc-600"
-                }`}
-              >
+              <button key={s} type="button" onClick={() => setStatus(s)}
+                className={`flex-1 rounded border px-3 py-2 text-sm font-semibold transition ${status === s ? `ring-2 ring-offset-1 ${STATUS_CLASS[s]} border-current` : "border-zinc-200 text-zinc-600"}`}>
                 {STATUS_ICON[s]} {s}
               </button>
             ))}
           </div>
         </div>
-
         <div className="space-y-1">
           <label className="block text-sm font-medium text-zinc-700">Reason <span className="text-zinc-400">(required)</span></label>
-          <textarea
-            value={reason}
-            onChange={(e) => setReason(e.target.value)}
-            rows={3}
+          <textarea value={reason} onChange={(e) => setReason(e.target.value)} rows={3}
             className="w-full rounded border border-zinc-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-400"
-            placeholder="Why does the AI assessment need adjustment?"
-          />
+            placeholder="Why does the AI assessment need adjustment?" />
         </div>
-
         {error && <p className="text-sm text-red-600">{error}</p>}
-
         <div className="flex justify-end gap-2 pt-1">
-          <button type="button" onClick={onClose} className="rounded border border-zinc-200 px-4 py-2 text-sm text-zinc-600 hover:bg-zinc-50">
-            Cancel
-          </button>
-          <button
-            type="button"
-            onClick={save}
-            disabled={saving}
-            className="rounded bg-zinc-900 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50"
-          >
+          <button type="button" onClick={onClose} className="rounded border border-zinc-200 px-4 py-2 text-sm text-zinc-600 hover:bg-zinc-50">Cancel</button>
+          <button type="button" onClick={save} disabled={saving} className="rounded bg-zinc-900 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50">
             {saving ? "Saving…" : "Save override"}
           </button>
         </div>
@@ -133,17 +98,14 @@ function OverrideModal({
 
 // ─── Result row ───────────────────────────────────────────────────────────────
 
-function ResultRow({
-  result,
-  evaluationId,
-  onOverrideSaved,
-}: {
+function ResultRow({ result, evaluationId, onOverrideSaved }: {
   result: MatchResult;
   evaluationId: string;
   onOverrideSaved: (updated: MatchEvaluation) => void;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [overriding, setOverriding] = useState(false);
+  const isPartnerRequired = result.method === "PARTNER_REQUIRED";
 
   return (
     <>
@@ -158,22 +120,17 @@ function ResultRow({
           <span className={`font-semibold ${STATUS_CLASS[result.status]}`}>
             {STATUS_ICON[result.status]} {result.status}
           </span>
+          {isPartnerRequired && (
+            <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-xs font-semibold text-amber-800">⚠ Partner/JV</span>
+          )}
         </td>
-        <td className="py-2 px-2 text-sm text-zinc-500 hidden sm:table-cell">{result.method}</td>
+        <td className="py-2 px-2 hidden sm:table-cell text-xs text-zinc-500">{result.method}</td>
         <td className="py-2 px-2">
           <div className="flex gap-1">
-            <button
-              type="button"
-              onClick={() => setExpanded((v) => !v)}
-              className="rounded px-2 py-1 text-xs text-blue-700 underline"
-            >
+            <button type="button" onClick={() => setExpanded((v) => !v)} className="rounded px-2 py-1 text-xs text-blue-700 underline">
               {expanded ? "hide" : "details"}
             </button>
-            <button
-              type="button"
-              onClick={() => setOverriding(true)}
-              className="rounded px-2 py-1 text-xs text-zinc-500 underline"
-            >
+            <button type="button" onClick={() => setOverriding(true)} className="rounded px-2 py-1 text-xs text-zinc-500 underline">
               override
             </button>
           </div>
@@ -199,12 +156,7 @@ function ResultRow({
         </tr>
       )}
       {overriding && (
-        <OverrideModal
-          result={result}
-          evaluationId={evaluationId}
-          onClose={() => setOverriding(false)}
-          onSaved={onOverrideSaved}
-        />
+        <OverrideModal result={result} evaluationId={evaluationId} onClose={() => setOverriding(false)} onSaved={onOverrideSaved} />
       )}
     </>
   );
@@ -224,100 +176,47 @@ function GapCard({ gap }: { gap: KnowledgeGapEntry }) {
   );
 }
 
-// ─── Main panel ───────────────────────────────────────────────────────────────
+// ─── Single evaluation card ───────────────────────────────────────────────────
 
-export function MatchEvaluationPanel({
-  tenderId,
-  companyId,
-}: {
-  tenderId: string;
-  companyId: string;
+function EvaluationCard({ evaluation, onUpdate }: {
+  evaluation: MatchEvaluation;
+  onUpdate: (updated: MatchEvaluation) => void;
 }) {
-  const [evaluation, setEvaluation] = useState<MatchEvaluation | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  async function runEvaluation() {
-    setLoading(true);
-    setError(null);
-    try {
-      const res = await fetch("/api/match", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ tender_id: tenderId, company_id: companyId }),
-      });
-      if (!res.ok) {
-        const body = await res.json() as { error?: string };
-        throw new Error(body.error ?? "Evaluation failed");
-      }
-      setEvaluation(await res.json() as MatchEvaluation);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Failed");
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  if (!evaluation && !loading) {
-    return (
-      <div className="rounded border border-zinc-200 bg-zinc-50 px-4 py-5 text-center">
-        <p className="text-sm text-zinc-600 mb-3">
-          Run the eligibility matching engine to check this tender against your company profile.
-        </p>
-        <button
-          type="button"
-          onClick={runEvaluation}
-          className="rounded bg-zinc-900 px-5 py-2 text-sm font-semibold text-white"
-        >
-          Run eligibility check
-        </button>
-        {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
-      </div>
-    );
-  }
-
-  if (loading) {
-    return (
-      <div className="rounded border border-zinc-200 bg-zinc-50 px-4 py-8 text-center text-zinc-500">
-        Running eligibility checks…
-      </div>
-    );
-  }
-
-  if (!evaluation) return null;
-
-  const { matrix, viability } = evaluation;
+  const { matrix, viability, bid_scope } = evaluation;
+  const partnerRequired = matrix.results.some((r) => r.method === "PARTNER_REQUIRED" && r.status === "UNCERTAIN");
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-4">
+      {/* Scope header */}
+      {bid_scope.type === "LOT" && (
+        <p className="text-xs font-semibold uppercase tracking-wide text-zinc-500">
+          LOT: {bid_scope.lot_title ?? bid_scope.lot_id}
+        </p>
+      )}
+
       {/* Summary bar */}
       <div className="flex flex-wrap items-center gap-3">
         <span className={`rounded-full px-4 py-1.5 text-sm font-semibold uppercase tracking-wide ${VIABILITY_CLASS[viability.status]}`}>
           {VIABILITY_LABEL[viability.status]}
         </span>
         {viability.hard_blockers > 0 && (
-          <span className="text-sm text-red-700 font-medium">{viability.hard_blockers} hard blocker{viability.hard_blockers > 1 ? "s" : ""}</span>
+          <span className="text-sm text-red-700 font-medium">✕ {viability.hard_blockers} hard blocker{viability.hard_blockers > 1 ? "s" : ""}</span>
+        )}
+        {partnerRequired && (
+          <span className="text-sm text-amber-700 font-medium">⚠ Partner/JV required</span>
         )}
         {viability.hard_unknowns > 0 && (
-          <span className="text-sm text-amber-700 font-medium">{viability.hard_unknowns} uncertain check{viability.hard_unknowns > 1 ? "s" : ""}</span>
+          <span className="text-sm text-amber-600">? {viability.hard_unknowns} uncertain</span>
         )}
         {viability.soft_concerns > 0 && (
           <span className="text-sm text-zinc-500">{viability.soft_concerns} soft concern{viability.soft_concerns > 1 ? "s" : ""}</span>
         )}
-        <button
-          type="button"
-          onClick={runEvaluation}
-          disabled={loading}
-          className="ml-auto text-xs text-zinc-400 underline hover:text-zinc-600"
-        >
-          Re-run
-        </button>
       </div>
 
       {/* Hard blockers highlight */}
       {matrix.hard_blockers.length > 0 && (
         <div className="rounded border border-red-200 bg-red-50 px-4 py-3">
-          <p className="text-sm font-semibold text-red-800 mb-2">Hard blockers — bid not viable as-is</p>
+          <p className="text-sm font-semibold text-red-800 mb-2">✕ Hard blockers — bid not viable as-is</p>
           <ul className="space-y-1">
             {matrix.hard_blockers.map((r) => (
               <li key={r.id} className="text-sm text-red-700">
@@ -329,37 +228,32 @@ export function MatchEvaluationPanel({
       )}
 
       {/* Full results table */}
-      <div>
-        <p className="text-sm font-semibold text-zinc-700 mb-2">Requirement-by-requirement results</p>
-        <div className="overflow-x-auto rounded border border-zinc-200">
-          <table className="w-full text-left">
-            <thead>
-              <tr className="bg-zinc-50 text-xs font-semibold uppercase tracking-wide text-zinc-500">
-                <th className="py-2 pl-3 pr-2">Weight</th>
-                <th className="py-2 px-2">Requirement</th>
-                <th className="py-2 px-2">Result</th>
-                <th className="py-2 px-2 hidden sm:table-cell">Method</th>
-                <th className="py-2 px-2"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {matrix.results.map((r) => (
-                <ResultRow key={r.id} result={r} evaluationId={evaluation.id} onOverrideSaved={setEvaluation} />
-              ))}
-            </tbody>
-          </table>
-          {matrix.results.length === 0 && (
-            <p className="px-4 py-6 text-center text-sm text-zinc-500">No requirements evaluated — fact sheet may be empty.</p>
-          )}
-        </div>
+      <div className="overflow-x-auto rounded border border-zinc-200">
+        <table className="w-full text-left">
+          <thead>
+            <tr className="bg-zinc-50 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+              <th className="py-2 pl-3 pr-2">Weight</th>
+              <th className="py-2 px-2">Requirement</th>
+              <th className="py-2 px-2">Result</th>
+              <th className="py-2 px-2 hidden sm:table-cell">Method</th>
+              <th className="py-2 px-2"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {matrix.results.map((r) => (
+              <ResultRow key={r.id} result={r} evaluationId={evaluation.id} onOverrideSaved={onUpdate} />
+            ))}
+          </tbody>
+        </table>
+        {matrix.results.length === 0 && (
+          <p className="px-4 py-6 text-center text-sm text-zinc-500">No requirements evaluated — fact sheet may be empty.</p>
+        )}
       </div>
 
       {/* Knowledge gaps */}
       {matrix.knowledge_gaps.length > 0 && (
         <div>
-          <p className="text-sm font-semibold text-zinc-700 mb-2">
-            Knowledge gaps — information missing from company profile
-          </p>
+          <p className="text-sm font-semibold text-zinc-700 mb-2">Knowledge gaps — missing from company profile</p>
           <div className="grid gap-2 sm:grid-cols-2">
             {matrix.knowledge_gaps.map((gap) => (
               <GapCard key={`${gap.task_id}-${gap.concept}`} gap={gap} />
@@ -379,6 +273,102 @@ export function MatchEvaluationPanel({
               </li>
             ))}
           </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── Main panel ───────────────────────────────────────────────────────────────
+
+export function MatchEvaluationPanel({ tenderId, companyId }: { tenderId: string; companyId: string }) {
+  const [evaluations, setEvaluations] = useState<MatchEvaluation[] | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  async function runEvaluation() {
+    setLoading(true); setError(null);
+    try {
+      const res = await fetch("/api/match", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tender_id: tenderId, company_id: companyId, all_lots: true }),
+      });
+      if (!res.ok) {
+        const body = await res.json() as { error?: string };
+        throw new Error(body.error ?? "Evaluation failed");
+      }
+      const data = await res.json() as MatchEvaluation | MatchEvaluation[];
+      setEvaluations(Array.isArray(data) ? data : [data]);
+    } catch (e) { setError(e instanceof Error ? e.message : "Failed"); }
+    finally { setLoading(false); }
+  }
+
+  function updateEvaluation(updated: MatchEvaluation) {
+    setEvaluations((prev) => prev ? prev.map((e) => e.id === updated.id ? updated : e) : [updated]);
+  }
+
+  if (!evaluations && !loading) {
+    return (
+      <div className="rounded border border-zinc-200 bg-zinc-50 px-4 py-5 text-center">
+        <p className="text-sm text-zinc-600 mb-3">
+          Run the eligibility matching engine to check this tender against your company profile.
+        </p>
+        <button type="button" onClick={runEvaluation} className="rounded bg-zinc-900 px-5 py-2 text-sm font-semibold text-white">
+          Run eligibility check
+        </button>
+        {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div className="rounded border border-zinc-200 bg-zinc-50 px-4 py-8 text-center text-zinc-500">
+        Running eligibility checks…
+      </div>
+    );
+  }
+
+  if (!evaluations) return null;
+
+  const isMultiLot = evaluations.length > 1;
+
+  return (
+    <div className="space-y-6">
+      {/* Multi-lot summary strip */}
+      {isMultiLot && (
+        <div className="flex flex-wrap gap-3 rounded border border-zinc-200 bg-zinc-50 px-4 py-3">
+          <span className="text-sm font-semibold text-zinc-700">Lot results:</span>
+          {evaluations.map((ev) => (
+            <span key={ev.id} className={`rounded-full px-3 py-0.5 text-xs font-semibold ${VIABILITY_CLASS[ev.viability.status]}`}>
+              {ev.bid_scope.lot_title ?? ev.bid_scope.lot_id ?? "Tender"}: {VIABILITY_LABEL[ev.viability.status]}
+            </span>
+          ))}
+          <button type="button" onClick={runEvaluation} disabled={loading} className="ml-auto text-xs text-zinc-400 underline hover:text-zinc-600">
+            Re-run
+          </button>
+        </div>
+      )}
+
+      {evaluations.map((ev, i) => (
+        <div key={ev.id} className={isMultiLot ? "rounded border border-zinc-200 p-4" : ""}>
+          {isMultiLot && (
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-semibold text-zinc-800">
+                {ev.bid_scope.lot_title ?? ev.bid_scope.lot_id ?? `Lot ${i + 1}`}
+              </h3>
+            </div>
+          )}
+          <EvaluationCard evaluation={ev} onUpdate={updateEvaluation} />
+        </div>
+      ))}
+
+      {!isMultiLot && (
+        <div className="flex justify-end">
+          <button type="button" onClick={runEvaluation} disabled={loading} className="text-xs text-zinc-400 underline hover:text-zinc-600">
+            Re-run
+          </button>
         </div>
       )}
     </div>

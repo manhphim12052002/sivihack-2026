@@ -53,9 +53,14 @@ describe("createCompany", () => {
       created_at: "2026-09-17T00:00:00Z",
       updated_at: "2026-09-17T00:00:00Z",
     };
-    vi.mocked(supabase.from).mockReturnValue(mockInsert(row) as unknown as ReturnType<typeof supabase.from>);
+    vi.mocked(supabase.from).mockReturnValue(
+      mockInsert(row) as unknown as ReturnType<typeof supabase.from>,
+    );
 
-    const profile = await createCompany({ name: "Brenner & Sohn", headquarters: "Augsburg" });
+    const profile = await createCompany({
+      name: "Brenner & Sohn",
+      headquarters: "Augsburg",
+    });
     expect(profile.id).toMatch(/^COMP-/);
     expect(profile.name).toBe("Brenner & Sohn");
     expect(profile.capacity_per_week).toBe(3);
@@ -86,7 +91,9 @@ describe("createCompany", () => {
       updated_at: "2026-09-17T00:00:00Z",
     };
     const insertMock = mockInsert(row);
-    vi.mocked(supabase.from).mockReturnValue(insertMock as unknown as ReturnType<typeof supabase.from>);
+    vi.mocked(supabase.from).mockReturnValue(
+      insertMock as unknown as ReturnType<typeof supabase.from>,
+    );
 
     await createCompany({ name: "Test GmbH", raw_text: "some text" });
     expect(insertMock.insert).toHaveBeenCalledWith(

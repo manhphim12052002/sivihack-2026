@@ -23,8 +23,8 @@ export const MOCK_COMPANIES: CompanyProfile[] = [
     partner_threshold_eur: 5000000,
     guarantee_capacity_eur: 1500000,
     self_perform_share_pct: 80,
-    earliest_start: "2026-03-01",
-    capacity_per_week: 3,
+    earliest_start: null,
+    capacity_per_week: null,
     references_held: [
       "€2.9M state road rehabilitation (Augsburg)",
       "District sewer renewal (Landkreis Augsburg)",
@@ -69,7 +69,7 @@ export const MOCK_COMPANIES: CompanyProfile[] = [
     guarantee_capacity_eur: 300000,
     self_perform_share_pct: 70,
     earliest_start: null,
-    capacity_per_week: 2,
+    capacity_per_week: null,
     references_held: [
       "School refurbishment electrical works (Saxony)",
       "Hospital ward block electrical installation (Thuringia)",

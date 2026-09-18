@@ -1,42 +1,39 @@
-import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { NextRequest } from "next/server";
 import { ingestSource } from "@/lib/company/ingest-source";
-
-type Ctx = { params: Promise<{ id: string }> };
-
-function err(message: string, status = 500) {
-  return NextResponse.json({ error: message }, { status });
-}
-
-export async function POST(req: NextRequest, { params }: Ctx) {
-  const { id: companyId } = await params;
-
-  // Verify company exists
-  const { data: company } = await supabase.from("companies").select("id").eq("id", companyId).single();
-  if (!company) return err("Company not found", 404);
-
-  const contentType = req.headers.get("content-type") ?? "";
-  if (!contentType.includes("multipart/form-data")) {
-    return err("Expected multipart/form-data", 400);
+import { CompanyError, companyErrorResponse } from "@/lib/company/errors";
+export async function POST(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  const { id } = await params;
+  try {
+    let filename: string, buffer: Buffer;
+    if (req.headers.get("content-type")?.includes("multipart/form-data")) {
+      const file = (await req.formData()).get("file");
+      if (!file || typeof file === "string")
+        throw new CompanyError("INVALID_INPUT", "Choose a document.", 400);
+      filename = file.name;
+      buffer = Buffer.from(await file.arrayBuffer());
+    } else {
+      const body = await req.json();
+      if (typeof body.text !== "string" || !body.text.trim())
+        throw new CompanyError("INVALID_INPUT", "Paste information.", 400);
+      filename = "company-description.txt";
+      buffer = Buffer.from(body.text);
+    }
+    if (buffer.length > 15 * 1024 * 1024)
+      throw new CompanyError(
+        "FILE_TOO_LARGE",
+        "Use a document below 15 MB.",
+        413,
+      );
+    const r = await ingestSource(id, filename, buffer);
+    return Response.json({
+      source_id: r.source.id,
+      chunk_count: r.chunks.length,
+      duplicate: r.duplicate,
+    });
+  } catch (e) {
+    return companyErrorResponse(e, id);
   }
-
-  const form = await req.formData();
-  const file = form.get("file");
-  if (!file || typeof file === "string") return err("No file provided", 400);
-
-  const f = file as File;
-  const buffer = Buffer.from(await f.arrayBuffer());
-
-  const result = await ingestSource(companyId, f.name, buffer);
-
-  return NextResponse.json(
-    {
-      source_id: result.source.id,
-      chunk_count: result.chunks.length,
-      duplicate: result.duplicate,
-      filename: result.source.filename,
-      type: result.source.type,
-    },
-    { status: result.duplicate ? 200 : 201 },
-  );
 }

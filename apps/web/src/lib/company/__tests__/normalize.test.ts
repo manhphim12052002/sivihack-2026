@@ -11,7 +11,9 @@ describe("normalizeCapabilityType", () => {
   });
 
   it("maps Straßenbauarbeiten → ROAD_CONSTRUCTION", () => {
-    expect(normalizeCapabilityType("Straßenbauarbeiten")).toBe("ROAD_CONSTRUCTION");
+    expect(normalizeCapabilityType("Straßenbauarbeiten")).toBe(
+      "ROAD_CONSTRUCTION",
+    );
   });
 
   it("is case-insensitive", () => {
@@ -23,7 +25,9 @@ describe("normalizeCapabilityType", () => {
   });
 
   it("maps Kanalbau → SEWER_CONSTRUCTION", () => {
-    expect(normalizeCapabilityType("Kanalbau und Entwässerung")).toBe("SEWER_CONSTRUCTION");
+    expect(normalizeCapabilityType("Kanalbau und Entwässerung")).toBe(
+      "SEWER_CONSTRUCTION",
+    );
   });
 
   it("maps Rohrleitungsbau → PIPELINE", () => {
@@ -31,13 +35,17 @@ describe("normalizeCapabilityType", () => {
   });
 
   it("matches a term embedded in a sentence", () => {
-    expect(normalizeCapabilityType("Referenzen aus Straßenbauarbeiten der letzten 5 Jahre")).toBe(
-      "ROAD_CONSTRUCTION",
-    );
+    expect(
+      normalizeCapabilityType(
+        "Referenzen aus Straßenbauarbeiten der letzten 5 Jahre",
+      ),
+    ).toBe("ROAD_CONSTRUCTION");
   });
 
   it("returns OTHER for an unknown term", () => {
-    expect(normalizeCapabilityType("Kühlungsmontage Klimaanlage")).toBe("OTHER");
+    expect(normalizeCapabilityType("Kühlungsmontage Klimaanlage")).toBe(
+      "OTHER",
+    );
   });
 });
 
@@ -47,7 +55,9 @@ describe("normalizeQualificationType", () => {
   });
 
   it("maps 'Präqualifikation' → PQ_VOB", () => {
-    expect(normalizeQualificationType("Präqualifikation nach VOB")).toBe("PQ_VOB");
+    expect(normalizeQualificationType("Präqualifikation nach VOB")).toBe(
+      "PQ_VOB",
+    );
   });
 
   it("maps ISO 9001 → ISO_9001", () => {
@@ -55,11 +65,15 @@ describe("normalizeQualificationType", () => {
   });
 
   it("maps ISO 14001 → ISO_14001", () => {
-    expect(normalizeQualificationType("ISO 14001 Umweltmanagement")).toBe("ISO_14001");
+    expect(normalizeQualificationType("ISO 14001 Umweltmanagement")).toBe(
+      "ISO_14001",
+    );
   });
 
   it("maps Haftpflichtversicherung → INSURANCE", () => {
-    expect(normalizeQualificationType("Haftpflichtversicherung")).toBe("INSURANCE");
+    expect(normalizeQualificationType("Haftpflichtversicherung")).toBe(
+      "INSURANCE",
+    );
   });
 
   it("returns OTHER for an unrecognised qualification", () => {

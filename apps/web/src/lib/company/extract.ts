@@ -1,7 +1,10 @@
 import { supabase } from "@/lib/supabase";
 import { genId } from "@/lib/id";
 import { llmClient, EXTRACTION_SYSTEM_PROMPT } from "@/lib/llm";
-import { normalizeCapabilityType, normalizeQualificationType } from "@/lib/company/normalize";
+import {
+  normalizeCapabilityType,
+  normalizeQualificationType,
+} from "@/lib/company/normalize";
 import type {
   ExtractionResult,
   ExtractedCapability,
@@ -23,7 +26,9 @@ export function parseExtractionResult(json: string): ExtractionResult {
   try {
     raw = JSON.parse(json);
   } catch {
-    throw new ExtractionParseError(`LLM returned invalid JSON: ${json.slice(0, 200)}`);
+    throw new ExtractionParseError(
+      `LLM returned invalid JSON: ${json.slice(0, 200)}`,
+    );
   }
 
   if (typeof raw !== "object" || raw === null) {
@@ -34,7 +39,10 @@ export function parseExtractionResult(json: string): ExtractionResult {
 
   const capabilities = ((obj.capabilities as unknown[]) ?? []).filter(
     (c): c is ExtractedCapability =>
-      isObject(c) && typeof c.type === "string" && typeof c.label === "string" && hasChunkIds(c),
+      isObject(c) &&
+      typeof c.type === "string" &&
+      typeof c.label === "string" &&
+      hasChunkIds(c),
   );
 
   const references = ((obj.references as unknown[]) ?? []).filter(
@@ -44,7 +52,10 @@ export function parseExtractionResult(json: string): ExtractionResult {
 
   const qualifications = ((obj.qualifications as unknown[]) ?? []).filter(
     (q): q is ExtractedQualification =>
-      isObject(q) && typeof q.type === "string" && typeof q.label === "string" && hasChunkIds(q),
+      isObject(q) &&
+      typeof q.type === "string" &&
+      typeof q.label === "string" &&
+      hasChunkIds(q),
   );
 
   return { capabilities, references, qualifications };
@@ -58,114 +69,66 @@ function hasChunkIds(v: Record<string, unknown>): boolean {
   return Array.isArray(v.chunk_ids) && (v.chunk_ids as unknown[]).length > 0;
 }
 
-/** Run LLM extraction over all chunks for a company and persist results. */
-export async function extractCompanyIntelligence(companyId: string): Promise<{
-  capabilities: number;
-  references: number;
-  qualifications: number;
-}> {
-  // Fetch all chunks for this company's sources
-  const { data: sources } = await supabase
-    .from("sources")
-    .select("id")
-    .eq("entity_id", companyId)
-    .eq("entity_type", "company");
-
-  if (!sources || sources.length === 0) {
-    return { capabilities: 0, references: 0, qualifications: 0 };
+/** Extract all sources, merge deterministically, save atomically. Failures never masquerade as missing knowledge. */
+export async function extractCompanyIntelligence(companyId: string) {
+  const { CompanyError } = await import("./errors");
+  const { assembleCanonicalCompany } = await import("./assemble");
+  const { saveCanonicalCompany } = await import("./repository");
+  const { parseIntelligence } = await import("./parse");
+  const { mergeCompany } = await import("./model");
+  if (!llmClient)
+    throw new CompanyError(
+      "LLM_UNAVAILABLE",
+      "OpenRouter is not configured. Source information is retained; retry after configuration.",
+      503,
+    );
+  let company = await assembleCanonicalCompany(companyId);
+  if (!company.chunks?.length && company.raw_text?.trim()) {
+    const { ingestSource } = await import("./ingest-source");
+    await ingestSource(
+      companyId,
+      "legacy-company-description.txt",
+      Buffer.from(company.raw_text),
+    );
+    company = await assembleCanonicalCompany(companyId);
   }
-
-  const sourceIds = sources.map((s: { id: string }) => s.id);
-  const { data: chunks } = await supabase
-    .from("chunks")
-    .select("*")
-    .in("source_id", sourceIds);
-
-  if (!chunks || chunks.length === 0) {
-    return { capabilities: 0, references: 0, qualifications: 0 };
-  }
-
-  if (!llmClient) {
-    return { capabilities: 0, references: 0, qualifications: 0 };
-  }
-
-  // Batch chunks into groups of 10 to stay within context limits
-  const BATCH_SIZE = 10;
-  const allCapabilities: ExtractedCapability[] = [];
-  const allReferences: ExtractedReference[] = [];
-  const allQualifications: ExtractedQualification[] = [];
-
-  for (let i = 0; i < chunks.length; i += BATCH_SIZE) {
-    const batch = (chunks as ChunkRow[]).slice(i, i + BATCH_SIZE);
-    const userContent = batch
-      .map((c) => `[${c.id}]: ${c.text.slice(0, 1000)}`)
-      .join("\n\n");
-
+  const chunks = (company.chunks ?? []).filter((c) =>
+    company.sources.some(
+      (s) => s.id === c.source_id && s.status === "AVAILABLE",
+    ),
+  );
+  if (!chunks.length)
+    throw new CompanyError(
+      "NO_SOURCE_TEXT",
+      "Add company text or a readable document first.",
+    );
+  for (let i = 0; i < chunks.length; i += 6) {
+    const batch = chunks.slice(i, i + 6);
+    let json: string | null;
     try {
-      const json = await llmClient.extract(EXTRACTION_SYSTEM_PROMPT, userContent);
-      if (!json) continue;
-      const result = parseExtractionResult(json);
-      allCapabilities.push(...result.capabilities);
-      allReferences.push(...result.references);
-      allQualifications.push(...result.qualifications);
-    } catch (e) {
-      if (e instanceof ExtractionParseError) continue;
-      throw e;
+      json = await llmClient.extract(
+        EXTRACTION_SYSTEM_PROMPT,
+        batch.map((c) => `[${c.id}]: ${c.text}`).join("\n\n"),
+      );
+    } catch {
+      throw new CompanyError(
+        "LLM_REQUEST_FAILED",
+        "OpenRouter extraction failed. Your sources are retained; retry the build.",
+        502,
+      );
     }
+    if (!json)
+      throw new CompanyError(
+        "LLM_PARSE_ERROR",
+        "OpenRouter returned no structured output.",
+        502,
+      );
+    company = mergeCompany(company, parseIntelligence(json, companyId, batch));
   }
-
-  // Persist capabilities
-  let capCount = 0;
-  for (const cap of allCapabilities) {
-    const { error } = await supabase.from("company_capabilities").insert({
-      id: genId("CAP"),
-      company_id: companyId,
-      type: normalizeCapabilityType(cap.label),
-      label: cap.label,
-      origin: "DOCUMENT_EXTRACTED",
-      status: "PENDING",
-      evidence: cap.chunk_ids,
-    });
-    if (!error) capCount++;
-  }
-
-  // Persist references
-  let refCount = 0;
-  for (const ref of allReferences) {
-    const { error } = await supabase.from("company_references").insert({
-      id: genId("REF"),
-      company_id: companyId,
-      name: ref.name,
-      client: ref.client ?? null,
-      project_types: ref.project_types ?? [],
-      location: ref.location ?? null,
-      contract_value_eur: ref.contract_value_eur ?? null,
-      completed_at: ref.completed_at ?? null,
-      capabilities: ref.capabilities ?? [],
-      origin: "DOCUMENT_EXTRACTED",
-      status: "PENDING",
-      evidence: ref.chunk_ids,
-    });
-    if (!error) refCount++;
-  }
-
-  // Persist qualifications
-  let qualCount = 0;
-  for (const qual of allQualifications) {
-    const { error } = await supabase.from("company_qualifications").insert({
-      id: genId("QUAL"),
-      company_id: companyId,
-      type: normalizeQualificationType(qual.label),
-      label: qual.label,
-      valid_from: qual.valid_from ?? null,
-      valid_until: qual.valid_until ?? null,
-      freshness: "CURRENT",
-      origin: "DOCUMENT_EXTRACTED",
-      status: "PENDING",
-      evidence: qual.chunk_ids,
-    });
-    if (!error) qualCount++;
-  }
-
-  return { capabilities: capCount, references: refCount, qualifications: qualCount };
+  company = await saveCanonicalCompany(company);
+  return {
+    capabilities: company.capabilities.length,
+    references: company.references.length,
+    qualifications: company.qualifications.length,
+  };
 }

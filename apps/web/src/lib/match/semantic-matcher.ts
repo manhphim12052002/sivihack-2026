@@ -1,26 +1,19 @@
+import { CompanyError } from '@/lib/company/errors';
 import { genId } from "@/lib/id";
 import { llmClient, SEMANTIC_MATCH_PROMPT } from "@/lib/llm";
 import type { MatchingTask, MatchResult, SemanticMatchResult, CanonicalCompany } from "./types";
 import type { CapabilityRow, QualificationRow } from "@/lib/company/types";
-
-function noClient(): SemanticMatchResult {
-  return {
-    status: "UNCERTAIN",
-    conditions: [],
-    reason: "Semantic matching unavailable — LLM not configured.",
-  };
-}
 
 function parseSemanticResult(json: string): SemanticMatchResult {
   let raw: unknown;
   try {
     raw = JSON.parse(json);
   } catch {
-    return { status: "UNCERTAIN", conditions: [], reason: "LLM returned unparseable response." };
+    throw new CompanyError("LLM_PARSE_ERROR", "Matching model returned invalid JSON.",502);
   }
 
   if (typeof raw !== "object" || raw === null) {
-    return { status: "UNCERTAIN", conditions: [], reason: "LLM returned unexpected format." };
+    throw new CompanyError("LLM_PARSE_ERROR", "Matching model returned invalid structure.",502);
   }
 
   const obj = raw as Record<string, unknown>;
@@ -36,7 +29,7 @@ function parseSemanticResult(json: string): SemanticMatchResult {
     : [];
 
   return {
-    status,
+    status: conditions.some(c => c.status === "UNCERTAIN") && status === "PASS" ? "UNCERTAIN" : conditions.some(c => c.status === "FAIL") && status === "PASS" ? "FAIL" : status,
     conditions,
     reason: typeof obj.reason === "string" ? obj.reason : "No reason provided.",
   };
@@ -47,7 +40,7 @@ function buildCompanyContext(requirement_id: string, company: CanonicalCompany):
 
   if (requirement_id === "special_qualifications" || requirement_id === "eligibility_proofs") {
     for (const q of company.qualifications as Array<QualificationRow & { status: string }>) {
-      items.push(`[${q.id}] Qualification: ${q.label} (${q.type}) — ${q.status}`);
+      if (q.status === "CONFIRMED") items.push(`[${q.id}] Qualification: ${q.label} (${q.type}) — knowledge=${q.knowledge_state ?? "UNESTABLISHED"}; verification=${q.status}; freshness=${q.freshness}`);
     }
     for (const c of company.capabilities as Array<CapabilityRow & { status: string }>) {
       if (c.status === "CONFIRMED") items.push(`[${c.id}] Capability: ${c.label} (${c.type})`);
@@ -71,7 +64,7 @@ export async function runSemanticMatcher(
   let semantic: SemanticMatchResult;
 
   if (!llmClient) {
-    semantic = noClient();
+    throw new CompanyError("LLM_UNAVAILABLE", "Semantic matching requires OpenRouter configuration.",503);
   } else {
     const userContent = JSON.stringify({
       requirement: {
@@ -88,9 +81,11 @@ export async function runSemanticMatcher(
         company_id: company.company_id,
         matcher: "semantic",
       });
-      semantic = json ? parseSemanticResult(json) : noClient();
-    } catch {
-      semantic = { status: "UNCERTAIN", conditions: [], reason: "Semantic matching call failed." };
+      if (!json) throw new CompanyError("LLM_PARSE_ERROR", "Matching model returned no output.",502);
+      semantic = parseSemanticResult(json);
+    } catch (e) {
+      if(e instanceof CompanyError) throw e;
+      throw new CompanyError("LLM_REQUEST_FAILED", "Semantic matching request failed.",502);
     }
   }
 

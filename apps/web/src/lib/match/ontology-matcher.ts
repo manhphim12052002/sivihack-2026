@@ -42,8 +42,8 @@ function matchCapabilities(
   const required = labels.map((l) => normalizeCapabilityType(l));
   const companyTypes = new Set(confirmed.map((c) => c.type));
 
-  const matched = required.filter((r) => companyTypes.has(r) || r === "OTHER");
-  const unmatched = required.filter((r) => !companyTypes.has(r) && r !== "OTHER");
+  const matched = required.filter((r) => r !== "OTHER" && companyTypes.has(r));
+  const unmatched = required.filter((r) => !companyTypes.has(r) || r === "OTHER");
 
   if (unmatched.length === 0) {
     return {
@@ -64,7 +64,7 @@ function matchCapabilities(
   }
 
   return {
-    status: "FAIL",
+    status: "UNCERTAIN",
     method: "ONTOLOGY",
     reason: `Company capabilities (${[...companyTypes].join(", ")}) do not match required scope: ${required.join(", ")}.`,
     company_evidence: confirmed.map((c) => c.id),
@@ -97,18 +97,24 @@ function matchQualifications(
 
   for (const label of labels) {
     const required = normalizeQualificationType(label);
-    const matching = confirmed.filter((q) => q.type === required);
+    const matching = confirmed.filter((q) => q.type === required && required !== "OTHER");
 
     if (matching.length === 0) {
       const pending = qualifications.find((q) => q.type === required);
       results.push({
         type: required,
-        status: pending ? "UNCERTAIN" : "FAIL",
+        status: "UNCERTAIN",
         note: pending
           ? `${required} found in documents but not yet confirmed.`
           : `No evidence for ${required} (${label}).`,
         ids: [],
       });
+    } else if (matching.some(q => q.knowledge_state === 'KNOWN_ABSENT') && matching.some(q => q.knowledge_state === 'KNOWN_PRESENT')) {
+      results.push({ type: required, status: 'UNCERTAIN', note: `${required} has conflicting claims requiring review.`, ids: matching.map(q => q.id) });
+    } else if (matching.some(q => q.knowledge_state === 'KNOWN_ABSENT')) {
+      results.push({ type: required, status: 'FAIL', note: `${required} is explicitly known absent and confirmed.`, ids: matching.map(q => q.id) });
+    } else if (matching.every(q => q.knowledge_state !== 'KNOWN_PRESENT')) {
+      results.push({ type: required, status: 'UNCERTAIN', note: `${required} knowledge state needs review.`, ids: matching.map(q => q.id) });
     } else {
       const expired = matching.filter((q) => q.freshness === "EXPIRED");
       const current = matching.filter((q) => q.freshness !== "EXPIRED");
