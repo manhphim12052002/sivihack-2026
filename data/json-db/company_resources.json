@@ -1,0 +1,20 @@
+[
+  {
+    "company_id": "COMP-brenner",
+    "id": "OP-C514617E",
+    "type": "MACHINERY",
+    "label": "Own machinery",
+    "value": null,
+    "unit": null,
+    "available_from": null,
+    "valid_as_of": null,
+    "raw_value": null,
+    "state": "EXPLICIT",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.708Z"
+  }
+]

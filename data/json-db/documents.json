@@ -1,0 +1,130 @@
+[
+ {
+  "lot_key": "oeffentlichevergabe.de|25698750|2|LOT-0000",
+  "url": "https://bieterportal.noncd.db.de/evergabe.bieter/api/supplier/external/deeplink/subproject/721d0036-39d4-4907-85e9-21ac494da5e2",
+  "source_id": null,
+  "status": "UNREACHABLE",
+  "platform": "bieterportal.noncd.db.de",
+  "fetched_at": "2026-09-18T09:32:59.879932+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|f4d9e344-0f56-4605-815c-a28436cacaaf|01|LOT-0002",
+  "url": "https://bieterportal.noncd.db.de/evergabe.bieter/api/supplier/external/deeplink/subproject/c0b6c192-e1f9-47ea-b5f6-3c98cf1d5d33",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "bieterportal.noncd.db.de",
+  "fetched_at": "2026-09-18T09:35:42.505467+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|f4d9e344-0f56-4605-815c-a28436cacaaf|01|LOT-0001",
+  "url": "https://bieterportal.noncd.db.de/evergabe.bieter/api/supplier/external/deeplink/subproject/c0b6c192-e1f9-47ea-b5f6-3c98cf1d5d33",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "bieterportal.noncd.db.de",
+  "fetched_at": "2026-09-18T09:37:40.224792+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|ad1cc2f5-6904-4823-a723-9f3ceb58eddb|2|LOT-0000",
+  "url": "https://www.evergabe-online.de/tenderdetails.html?id=886312",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "www.evergabe-online.de",
+  "fetched_at": "2026-09-18T09:37:58.543828+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|8f03be7e-2b8c-47ba-b4f5-1659eea8c66c|01|LOT-0004",
+  "url": "https://bieterportal.noncd.db.de/evergabe.bieter/api/supplier/external/deeplink/subproject/f490dcd1-025a-4dd2-ba27-90948b0843a2",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "bieterportal.noncd.db.de",
+  "fetched_at": "2026-09-18T09:38:36.950992+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|8f03be7e-2b8c-47ba-b4f5-1659eea8c66c|01|LOT-0003",
+  "url": "https://bieterportal.noncd.db.de/evergabe.bieter/api/supplier/external/deeplink/subproject/f490dcd1-025a-4dd2-ba27-90948b0843a2",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "bieterportal.noncd.db.de",
+  "fetched_at": "2026-09-18T09:39:03.774851+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|8f03be7e-2b8c-47ba-b4f5-1659eea8c66c|01|LOT-0002",
+  "url": "https://bieterportal.noncd.db.de/evergabe.bieter/api/supplier/external/deeplink/subproject/f490dcd1-025a-4dd2-ba27-90948b0843a2",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "bieterportal.noncd.db.de",
+  "fetched_at": "2026-09-18T09:39:28.297021+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|8f03be7e-2b8c-47ba-b4f5-1659eea8c66c|01|LOT-0001",
+  "url": "https://bieterportal.noncd.db.de/evergabe.bieter/api/supplier/external/deeplink/subproject/f490dcd1-025a-4dd2-ba27-90948b0843a2",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "bieterportal.noncd.db.de",
+  "fetched_at": "2026-09-18T09:39:41.531720+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|7b26d022-5ebe-49cc-a8c6-cf374dd7abe4|01|LOT-0000",
+  "url": "https://www.meinauftrag.rib.de/public/DetailsByPlatformIdAndTenderId/platformId/7/tenderId/121016368",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "www.meinauftrag.rib.de",
+  "fetched_at": "2026-09-18T09:40:14.676983+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|becd04e7-f16b-4942-86ba-f0366cb215c2|01|LOT-0001",
+  "url": "https://landesverwaltung.vergabe.rlp.de/VMPSatellite/notice/CXPDYDEYK8Q/documents",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "landesverwaltung.vergabe.rlp.de",
+  "fetched_at": "2026-09-18T09:40:42.596048+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|f26b6f38-b16f-4bdb-833b-de2ec02732a6|1|LOT-0000",
+  "url": "https://www.evergabe-online.de/tenderdetails.html?id=888116",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "www.evergabe-online.de",
+  "fetched_at": "2026-09-18T09:40:56.926087+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|95604900-68fc-4945-b467-51148a864c6a|1|LOT-0000",
+  "url": "https://www.evergabe-online.de/tenderdetails.html?id=888117",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "www.evergabe-online.de",
+  "fetched_at": "2026-09-18T09:41:07.306028+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|25792120|1|LOT-0000",
+  "url": "https://www.meinauftrag.rib.de/public/DetailsByPlatformIdAndTenderId/platformId/3/tenderId/157333",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "www.meinauftrag.rib.de",
+  "fetched_at": "2026-09-18T09:41:40.782094+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|29e2e8d0-98ff-4b31-92da-1d9457c6b5a2|1|LOT-0000",
+  "url": "https://www.evergabe-online.de/tenderdetails.html?id=888119",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "www.evergabe-online.de",
+  "fetched_at": "2026-09-18T09:42:05.491878+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|c1574280-b6c1-46d9-af5f-c0f8e088b986|1|LOT-0000",
+  "url": "https://www.evergabe-online.de/tenderdetails.html?id=888076",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "www.evergabe-online.de",
+  "fetched_at": "2026-09-18T09:42:33.867105+00:00"
+ },
+ {
+  "lot_key": "oeffentlichevergabe.de|008fb94b-8bcb-47e8-a939-5768583c71d4|01|LOT-0001",
+  "url": "https://www.vergabe-westfalen.de/VMPSatellite/notice/CXPWY6LLKDU/documents",
+  "source_id": null,
+  "status": "RETRIEVED",
+  "platform": "manual download",
+  "fetched_at": "2026-09-18T10:19:07.781344+00:00"
+ }
+]

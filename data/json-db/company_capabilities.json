@@ -1,0 +1,434 @@
+[
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CAP-0",
+    "type": "ROAD_CONSTRUCTION",
+    "label": "road construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.706Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CAP-1",
+    "type": "SEWER_CONSTRUCTION",
+    "label": "sewer renewal",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.706Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CAP-2",
+    "type": "PIPELINE",
+    "label": "pipeline construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.706Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CAP-3",
+    "type": "EARTHWORKS",
+    "label": "earthworks",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.706Z"
+  },
+  {
+    "company_id": "COMP-brenner",
+    "id": "COMP-brenner-LEGACY-CAP-4",
+    "type": "CIVIL_ENGINEERING",
+    "label": "municipal civil engineering",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-B014D554"
+    ],
+    "created_at": "2026-09-18T11:15:49.706Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CAP-0",
+    "type": "BUILDING_ELECTRICAL",
+    "label": "electrical installation",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "created_at": "2026-09-18T11:15:49.720Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CAP-1",
+    "type": "OTHER",
+    "label": "power installation",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "created_at": "2026-09-18T11:15:49.720Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CAP-2",
+    "type": "OTHER",
+    "label": "lighting systems",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "created_at": "2026-09-18T11:15:49.720Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CAP-3",
+    "type": "OTHER",
+    "label": "fire alarm systems",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "created_at": "2026-09-18T11:15:49.720Z"
+  },
+  {
+    "company_id": "COMP-vogtland",
+    "id": "COMP-vogtland-LEGACY-CAP-4",
+    "type": "OTHER",
+    "label": "building automation",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-196D882C"
+    ],
+    "created_at": "2026-09-18T11:15:49.720Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CAP-0",
+    "type": "OTHER",
+    "label": "building construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CAP-1",
+    "type": "TURNKEY_BUILDING",
+    "label": "turnkey projects",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CAP-2",
+    "type": "OTHER",
+    "label": "school construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CAP-3",
+    "type": "OTHER",
+    "label": "hospital construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CAP-4",
+    "type": "OTHER",
+    "label": "housing construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CAP-5",
+    "type": "OTHER",
+    "label": "logistics buildings",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-hanseatische",
+    "id": "COMP-hanseatische-LEGACY-CAP-6",
+    "type": "OTHER",
+    "label": "general contractor",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-2B893A30"
+    ],
+    "created_at": "2026-09-18T11:15:49.731Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "COMP-metallbau-westfalen-LEGACY-CAP-0",
+    "type": "OTHER",
+    "label": "aluminium windows and doors",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.744Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "COMP-metallbau-westfalen-LEGACY-CAP-1",
+    "type": "OTHER",
+    "label": "aluminium facades",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.744Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "COMP-metallbau-westfalen-LEGACY-CAP-2",
+    "type": "OTHER",
+    "label": "fire protection doors T30",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.744Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "COMP-metallbau-westfalen-LEGACY-CAP-3",
+    "type": "OTHER",
+    "label": "smoke protection doors RS",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.744Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "COMP-metallbau-westfalen-LEGACY-CAP-4",
+    "type": "OTHER",
+    "label": "automatic door drives",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.744Z"
+  },
+  {
+    "company_id": "COMP-metallbau-westfalen",
+    "id": "COMP-metallbau-westfalen-LEGACY-CAP-5",
+    "type": "OTHER",
+    "label": "metal construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-4EE5F678"
+    ],
+    "created_at": "2026-09-18T11:15:49.744Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "COMP-alu-sauerland-LEGACY-CAP-0",
+    "type": "OTHER",
+    "label": "aluminium windows",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.756Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "COMP-alu-sauerland-LEGACY-CAP-1",
+    "type": "OTHER",
+    "label": "aluminium exterior doors",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.756Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "COMP-alu-sauerland-LEGACY-CAP-2",
+    "type": "OTHER",
+    "label": "conservatories",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.756Z"
+  },
+  {
+    "company_id": "COMP-alu-sauerland",
+    "id": "COMP-alu-sauerland-LEGACY-CAP-3",
+    "type": "OTHER",
+    "label": "metal construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-A197DA5C"
+    ],
+    "created_at": "2026-09-18T11:15:49.756Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "COMP-tueren-rheinland-LEGACY-CAP-0",
+    "type": "OTHER",
+    "label": "fire protection doors",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.768Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "COMP-tueren-rheinland-LEGACY-CAP-1",
+    "type": "OTHER",
+    "label": "smoke protection doors",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.768Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "COMP-tueren-rheinland-LEGACY-CAP-2",
+    "type": "OTHER",
+    "label": "industrial doors and gates",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.768Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "COMP-tueren-rheinland-LEGACY-CAP-3",
+    "type": "OTHER",
+    "label": "automatic door drives",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.768Z"
+  },
+  {
+    "company_id": "COMP-tueren-rheinland",
+    "id": "COMP-tueren-rheinland-LEGACY-CAP-4",
+    "type": "OTHER",
+    "label": "metal construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-D8E6565F"
+    ],
+    "created_at": "2026-09-18T11:15:49.768Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "COMP-hellweg-LEGACY-CAP-0",
+    "type": "OTHER",
+    "label": "metal construction",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.780Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "COMP-hellweg-LEGACY-CAP-1",
+    "type": "OTHER",
+    "label": "aluminium doors",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.780Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "COMP-hellweg-LEGACY-CAP-2",
+    "type": "OTHER",
+    "label": "fire protection doors",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.780Z"
+  },
+  {
+    "company_id": "COMP-hellweg",
+    "id": "COMP-hellweg-LEGACY-CAP-3",
+    "type": "OTHER",
+    "label": "railings and stairs",
+    "origin": "DOCUMENT_EXTRACTED",
+    "status": "CONFIRMED",
+    "evidence": [
+      "CCHUNK-9B3EBCF6"
+    ],
+    "created_at": "2026-09-18T11:15:49.780Z"
+  }
+]
