@@ -1,4 +1,4 @@
-// ─── DB row shapes (mirror Supabase tables) ───────────────────────────────────
+// ─── DB row shapes (mirror the DB tables) ───────────────────────────────────
 
 export interface CompanyRow {
   id: string;

@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { genId } from "@/lib/id";
 import { assembleCanonicalCompany } from "@/lib/company/assemble";
 import { generateTasks } from "./tasks";
@@ -107,7 +107,7 @@ async function persistEvaluation(
   gaps: KnowledgeGapEntry[],
   viability: ViabilityResult,
 ): Promise<void> {
-  await supabase.from("match_evaluations").upsert({
+  await db.from("match_evaluations").upsert({
     id: evaluationId,
     tender_id: tenderId,
     company_id: companyId,
@@ -121,7 +121,7 @@ async function persistEvaluation(
   });
 
   for (const result of results) {
-    await supabase.from("matching_tasks").upsert({
+    await db.from("matching_tasks").upsert({
       id: result.task_id,
       evaluation_id: evaluationId,
       requirement_id: result.requirement_id,
@@ -132,7 +132,7 @@ async function persistEvaluation(
   }
 
   for (const result of results) {
-    await supabase.from("match_results").upsert({
+    await db.from("match_results").upsert({
       id: result.id,
       evaluation_id: evaluationId,
       task_id: result.task_id,
@@ -146,9 +146,9 @@ async function persistEvaluation(
     });
   }
 
-  await supabase.from("match_knowledge_gaps").delete().eq("evaluation_id", evaluationId);
+  await db.from("match_knowledge_gaps").delete().eq("evaluation_id", evaluationId);
   for (const gap of gaps) {
-    await supabase.from("match_knowledge_gaps").insert({
+    await db.from("match_knowledge_gaps").insert({
       id: genId("GAP"),
       evaluation_id: evaluationId,
       task_id: gap.task_id || null,
@@ -162,7 +162,7 @@ async function persistEvaluation(
 // ─── Re-hydration from DB ─────────────────────────────────────────────────────
 
 export async function loadMatchEvaluation(evaluationId: string): Promise<MatchEvaluation | null> {
-  const { data: evalRow } = await supabase
+  const { data: evalRow } = await db
     .from("match_evaluations")
     .select("*")
     .eq("id", evaluationId)
@@ -170,12 +170,12 @@ export async function loadMatchEvaluation(evaluationId: string): Promise<MatchEv
   if (!evalRow) return null;
   const row = evalRow as MatchEvaluationRow;
 
-  const { data: resultRows } = await supabase
+  const { data: resultRows } = await db
     .from("match_results")
     .select("*")
     .eq("evaluation_id", evaluationId);
 
-  const { data: gapRows } = await supabase
+  const { data: gapRows } = await db
     .from("match_knowledge_gaps")
     .select("*")
     .eq("evaluation_id", evaluationId);

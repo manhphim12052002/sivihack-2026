@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import type { CanonicalCompany } from "./types";
 import { gapsFor } from "./model";
 import { CompanyError } from "./errors";
@@ -15,7 +15,7 @@ export async function saveCanonicalCompany(
   c.regions = c.geography.regions;
   c.radius_km = c.geography.radius_km;
   c.knowledge_gaps = gapsFor(c);
-  const { data, error } = await supabase.rpc("save_company_intelligence", {
+  const { data, error } = await db.rpc("save_company_intelligence", {
     payload: c,
     expected_revision: c.revision ?? 0,
   });

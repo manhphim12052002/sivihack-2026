@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { createCompany } from "@/lib/company/create";
 import { assembleCanonicalCompany } from "@/lib/company/assemble";
 import { toCompanyProfile } from "@/lib/company/model";
@@ -11,7 +11,7 @@ import { CompanyError, companyErrorResponse } from "@/lib/company/errors";
 export async function GET() {
   try {
     await ensureDemoCompanies();
-    const { data, error } = await supabase
+    const { data, error } = await db
       .from("companies")
       .select("id")
       .order("created_at", { ascending: false });

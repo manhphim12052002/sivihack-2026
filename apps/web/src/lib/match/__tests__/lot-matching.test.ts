@@ -1,10 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-vi.mock("@/lib/supabase", () => ({ supabase: { from: vi.fn() } }));
+vi.mock("@/lib/db", () => ({ db: { from: vi.fn() } }));
 vi.mock("@/lib/llm", () => ({ llmClient: null, SEMANTIC_MATCH_PROMPT: "", PROFILE_SYSTEM_PROMPT: "", EXTRACTION_SYSTEM_PROMPT: "" }));
 vi.mock("@/lib/company/assemble", () => ({ assembleCanonicalCompany: vi.fn() }));
 
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { assembleCanonicalCompany } from "@/lib/company/assemble";
 import { runMatchEvaluation, runAllLotEvaluations } from "../assemble";
 import { generateTasks } from "../tasks";
@@ -14,7 +14,7 @@ import type { PolicyItem } from "@/lib/company/types";
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function mockSupabase() {
+function mockDb() {
   const chain = {
     upsert: vi.fn().mockResolvedValue({ error: null }),
     insert: vi.fn().mockResolvedValue({ error: null }),
@@ -23,7 +23,7 @@ function mockSupabase() {
     select: vi.fn().mockReturnThis(),
     single: vi.fn().mockResolvedValue({ data: null, error: null }),
   };
-  vi.mocked(supabase.from).mockReturnValue(chain as unknown as ReturnType<typeof supabase.from>);
+  vi.mocked(db.from).mockReturnValue(chain as unknown as ReturnType<typeof db.from>);
 }
 
 /** Company: €31M turnover, road capability, hard rail-side exclusion, €5M partner threshold */
@@ -86,7 +86,7 @@ const multiLotTender: TenderDetail = {
 
 beforeEach(() => {
   vi.clearAllMocks();
-  mockSupabase();
+  mockDb();
 });
 
 // ─── A. Lot isolation ─────────────────────────────────────────────────────────

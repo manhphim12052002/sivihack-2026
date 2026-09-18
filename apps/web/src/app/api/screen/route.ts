@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
 import { assembleCanonicalCompany } from "@/lib/company/assemble";
 import { toCompanyProfile } from "@/lib/company/model";
 import { screenTender, rankVerdicts } from "@/lib/screening/engine";
@@ -13,7 +12,7 @@ function err(message: string, status = 500) {
 
 // Runs the placeholder rule engine (see lib/screening/engine.ts) for a company profile
 // against the mock tender batch (lib/mock/tenders.ts). Falls back to mock company profiles
-// when Supabase has no matching row (demo / offline mode).
+// when the data backend has no matching row (demo / offline mode).
 export async function POST(req: NextRequest) {
   let body: ScreenRequest;
   try {

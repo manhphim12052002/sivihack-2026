@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { computeFreshness } from "./normalize";
 import { emptyCompany, gapsFor, importLegacy, mergeRows } from "./model";
 import { rowToProfile } from "./create";
@@ -9,6 +9,7 @@ import type {
   QualificationRow,
   ReferenceRow,
   SourceRow,
+  ChunkRow,
   OperationalItem,
   PolicyItem,
 } from "./types";
@@ -17,7 +18,7 @@ import type {
 export async function assembleCanonicalCompany(
   companyId: string,
 ): Promise<CanonicalCompany> {
-  const { data: row, error } = await supabase
+  const { data: row, error } = await db
     .from("companies")
     .select("*")
     .eq("id", companyId)
@@ -38,13 +39,13 @@ export async function assembleCanonicalCompany(
     "company_preferences",
   ];
   const responses = await Promise.all(
-    tables.map((t) => supabase.from(t).select("*").eq("company_id", companyId)),
+    tables.map((t) => db.from(t).select("*").eq("company_id", companyId)),
   );
   for (const r of responses)
     if (r.error) throw new CompanyError("DATABASE_ERROR", r.error.message, 500);
   const [caps, refs, quals, resources, capacity, constraints, preferences] =
     responses.map((r) => r.data ?? []);
-  const sourcesRes = await supabase
+  const sourcesRes = await db
     .from("sources")
     .select("*")
     .eq("entity_id", companyId)
@@ -96,8 +97,8 @@ export async function assembleCanonicalCompany(
   c.preferences = preferences as PolicyItem[];
   c.sources = (sourcesRes.data as SourceRow[]) ?? [];
   if (c.sources.length) {
-    const res = await supabase
-      .from("chunks")
+    const res = await db
+      .from<ChunkRow>("chunks")
       .select("*")
       .in(
         "source_id",

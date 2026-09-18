@@ -1,17 +1,17 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-// Mock Supabase before importing anything that uses it
-vi.mock("@/lib/supabase", () => ({
-  supabase: {
+// Mock the data port before importing anything that uses it
+vi.mock("@/lib/db", () => ({
+  db: {
     from: vi.fn(),
   },
 }));
 
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { assembleCanonicalCompany } from "../assemble";
 import type { CapabilityRow, QualificationRow } from "../types";
 
-// Helper to build a chainable Supabase mock for a specific table's data
+// Helper to build a chainable query mock for a specific table's data
 function mockTable(data: unknown, error: null | { message: string } = null) {
   const chain = {
     select: vi.fn().mockReturnThis(),
@@ -98,10 +98,10 @@ function setupMocks({
   capabilities = [] as CapabilityRow[],
   qualifications = [] as QualificationRow[],
 } = {}) {
-  const fromMock = vi.mocked(supabase.from);
+  const fromMock = vi.mocked(db.from);
   fromMock.mockImplementation((table: string) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    type F = ReturnType<typeof supabase.from>;
+    type F = ReturnType<typeof db.from>;
     if (table === "companies") return mockTable(baseCompany) as unknown as F;
     if (table === "company_capabilities")
       return mockTable(capabilities) as unknown as F;

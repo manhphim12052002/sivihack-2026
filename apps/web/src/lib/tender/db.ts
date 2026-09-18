@@ -1,5 +1,5 @@
 /**
- * Read tenders from the pipeline's Supabase tables.
+ * Read tenders from the pipeline's tables through the data port (lib/db).
  *
  * The pipeline writes to `lots` (one row per lot per notice version) and
  * `observations` (immutable fact readings). We read from:
@@ -10,7 +10,7 @@
  * tenders use, so the match engine and UI need no changes.
  */
 
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import type { components } from "@/lib/api-types";
 
 type TenderDetail = components["schemas"]["TenderDetail"];
@@ -39,7 +39,7 @@ const FACT_SHEET_ATTRIBUTES = [
   "contractor_role",
 ] as const;
 
-// ─── Row types (from Supabase) ────────────────────────────────────────────────
+// ─── Row types (DB rows) ────────────────────────────────────────────────
 
 interface LotRow {
   lot_key: string;
@@ -138,7 +138,7 @@ function lotRowToSummary(row: LotRow): TenderSummary {
 
 /** List all lots (latest version) as TenderSummary, newest first. */
 export async function listTenders(limit = 100): Promise<TenderSummary[]> {
-  const { data, error } = await supabase
+  const { data, error } = await db
     .from("lots_latest")
     .select(
       "lot_key,procedure_key,source,notice_id,notice_version,lot_id,title,buyer_name,place_city,place_nuts,cpv_main,estimated_value,submission_deadline,published,ingested_at,notice_url,lot_count",
@@ -152,7 +152,7 @@ export async function listTenders(limit = 100): Promise<TenderSummary[]> {
 
 /** Load a single lot by lot_key and build a full TenderDetail with fact_sheet. */
 export async function getTender(lotKey: string): Promise<TenderDetail | null> {
-  const { data: rows, error } = await supabase
+  const { data: rows, error } = await db
     .from("lots_latest")
     .select("*")
     .eq("lot_key", lotKey)
@@ -163,12 +163,12 @@ export async function getTender(lotKey: string): Promise<TenderDetail | null> {
 
   // Fetch resolved observations for both LOT (this lot_key) and PROCEDURE scopes
   const [lotObsResult, procObsResult] = await Promise.all([
-    supabase
+    db
       .from("observations_resolved")
       .select("scope_key,attribute,state,value_text,value_num,unit,confidence,evidence")
       .eq("scope_key", row.lot_key)
       .in("attribute", [...FACT_SHEET_ATTRIBUTES]),
-    supabase
+    db
       .from("observations_resolved")
       .select("scope_key,attribute,state,value_text,value_num,unit,confidence,evidence")
       .eq("scope_key", row.procedure_key)
@@ -180,7 +180,7 @@ export async function getTender(lotKey: string): Promise<TenderDetail | null> {
   const fact_sheet = buildFactSheet(lotObs, procObs);
 
   // Build sibling lots for the same procedure (for lot-scoped evaluation)
-  const { data: siblingRows } = await supabase
+  const { data: siblingRows } = await db
     .from("lots_latest")
     .select("lot_key,lot_id,title,cpv_main,estimated_value")
     .eq("procedure_key", row.procedure_key);

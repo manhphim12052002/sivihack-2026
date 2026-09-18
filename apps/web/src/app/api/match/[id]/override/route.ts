@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { db } from "@/lib/db";
 import { loadMatchEvaluation } from "@/lib/match/assemble";
 
 type Ctx = { params: Promise<{ id: string }> };
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest, { params }: Ctx) {
   if (!["PASS", "FAIL", "UNCERTAIN"].includes(body.status)) return err("Invalid status");
   if (!body.reason?.trim()) return err("reason required");
 
-  const { error } = await supabase
+  const { error } = await db
     .from("match_results")
     .update({
       override_status: body.status,
