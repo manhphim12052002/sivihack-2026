@@ -5,6 +5,7 @@ import { companyErrorResponse, CompanyError } from "@/lib/company/errors";
 import { saveCanonicalCompany } from "@/lib/company/repository";
 import { applyReview } from "@/lib/company/review";
 import { applyLegacyReview } from "@/lib/company/legacy-review";
+import { supabase } from "@/lib/supabase";
 type Ctx = { params: Promise<{ id: string }> };
 export async function GET(req: NextRequest, { params }: Ctx) {
   try {
@@ -14,6 +15,16 @@ export async function GET(req: NextRequest, { params }: Ctx) {
         ? c
         : toCompanyProfile(c),
     );
+  } catch (e) {
+    return companyErrorResponse(e);
+  }
+}
+export async function DELETE(_req: NextRequest, { params }: Ctx) {
+  try {
+    const { id } = await params;
+    const { error } = await supabase.from("companies").delete().eq("id", id);
+    if (error) throw new CompanyError("DATABASE_ERROR", error.message, 500);
+    return new NextResponse(null, { status: 204 });
   } catch (e) {
     return companyErrorResponse(e);
   }
