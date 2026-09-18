@@ -52,17 +52,43 @@ NS = {"gc": GC_NS}
 
 # Preferred description column, most specific first; the first one present wins.
 # CPV is EU-wide, so the file may carry one label per official language.
-LABEL_COLUMN_PREFERENCE = ("label-eng", "label-en", "label", "name-eng", "name")
-LABEL_COLUMN_PREFERENCE_DE = ("label-deu", "label-de", "name-deu", "name-de")
+LABEL_COLUMN_PREFERENCE = ("label-eng", "label-en", "engLabel", "label", "name-eng", "name")
+LABEL_COLUMN_PREFERENCE_DE = ("label-deu", "label-de", "deuLabel", "name-deu", "name-de")
 
 _cache: dict[str, str] | None = None
 _cache_bilingual: dict[str, dict[str, str]] | None = None
 
 
+def _local(tag: str) -> str:
+    """Element tag with any `{namespace}` prefix stripped."""
+    return tag.rsplit("}", 1)[-1]
+
+
+def _iter_local(elem: ET.Element, tag: str):
+    """Descendants of `elem` whose tag (namespace-agnostic) equals `tag`.
+
+    Real-world genericode files are inconsistent about whether every element
+    actually carries the `gc:` namespace declared on the root (this CPV export
+    declares it but only the root element uses it), so matching by local name
+    instead of a namespace-scoped XPath tolerates both cases.
+    """
+    for e in elem.iter():
+        if _local(e.tag) == tag:
+            yield e
+
+
+def _child_local(elem: ET.Element, tag: str) -> ET.Element | None:
+    for c in elem:
+        if _local(c.tag) == tag:
+            return c
+    return None
+
+
 def _column_id_by_shortname(root: ET.Element, shortname: str) -> str | None:
     """The Column @Id whose ShortName matches `shortname` (case-insensitive)."""
-    for column in root.findall(".//gc:ColumnSet/gc:Column", NS):
-        short = column.findtext("gc:ShortName", namespaces=NS)
+    for column in _iter_local(root, "Column"):
+        short_el = _child_local(column, "ShortName")
+        short = short_el.text if short_el is not None else None
         if short and short.strip().lower() == shortname.lower():
             return column.get("Id")
     return None
@@ -75,11 +101,12 @@ def _pick_column(root: ET.Element, preference: tuple[str, ...], fallback_prefix:
             return column_id
     if fallback_prefix is None:
         return None
-    # Any column whose short name starts with the prefix, so an unexpected language
-    # suffix (e.g. "label-deu") still resolves to something.
-    for column in root.findall(".//gc:ColumnSet/gc:Column", NS):
-        short = column.findtext("gc:ShortName", namespaces=NS) or ""
-        if short.strip().lower().startswith(fallback_prefix):
+    # Any column whose short name contains the prefix, so an unexpected language
+    # label naming style (e.g. "label-deu" or "deuLabel") still resolves to something.
+    for column in _iter_local(root, "Column"):
+        short_el = _child_local(column, "ShortName")
+        short = (short_el.text if short_el is not None else "") or ""
+        if fallback_prefix in short.strip().lower():
             return column.get("Id")
     return None
 
@@ -101,10 +128,13 @@ def parse_genericode(xml_bytes: bytes) -> dict[str, str]:
         return {}
 
     out: dict[str, str] = {}
-    for row in root.findall(".//gc:SimpleCodeList/gc:Row", NS):
+    for row in _iter_local(root, "Row"):
         code = label = None
-        for value in row.findall("gc:Value", NS):
-            simple = value.findtext("gc:SimpleValue", namespaces=NS)
+        for value in row:
+            if _local(value.tag) != "Value":
+                continue
+            simple_el = _child_local(value, "SimpleValue")
+            simple = simple_el.text if simple_el is not None else None
             if value.get("ColumnRef") == code_col:
                 code = simple
             elif value.get("ColumnRef") == label_col:
@@ -130,11 +160,14 @@ def parse_genericode_bilingual(xml_bytes: bytes) -> dict[str, dict[str, str]]:
         return {}
 
     out: dict[str, dict[str, str]] = {}
-    for row in root.findall(".//gc:SimpleCodeList/gc:Row", NS):
+    for row in _iter_local(root, "Row"):
         code = None
         labels: dict[str, str] = {}
-        for value in row.findall("gc:Value", NS):
-            simple = value.findtext("gc:SimpleValue", namespaces=NS)
+        for value in row:
+            if _local(value.tag) != "Value":
+                continue
+            simple_el = _child_local(value, "SimpleValue")
+            simple = simple_el.text if simple_el is not None else None
             if value.get("ColumnRef") == code_col:
                 code = simple
             for lang, col in columns.items():
