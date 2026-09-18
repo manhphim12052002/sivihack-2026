@@ -251,6 +251,10 @@ describe("Company safety regressions", () => {
       "Brenner & Sohn Tiefbau GmbH",
       "Elektro Vogtland GmbH",
       "Hanseatische Bau AG",
+      "Metallbau Westfalen GmbH",
+      "Alu-Fenster Sauerland GmbH",
+      "Türen & Tore Rheinland GmbH",
+      "Schlosserei Hellweg e.K.",
     ]);
     for (const p of MOCK_COMPANIES) {
       const c = importLegacy(p);
