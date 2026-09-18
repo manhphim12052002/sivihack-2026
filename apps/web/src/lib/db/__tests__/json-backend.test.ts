@@ -353,7 +353,9 @@ describe("tender reads through the JSON backend", () => {
 
     const tender = await getTender("oev:N1:LOT-0001");
 
-    expect(tender?.docs_retrieved).toBe(true);
+    // docs_retrieved means a linked document was read (document_files → sources AVAILABLE);
+    // observations alone, as seeded here, do not make that claim.
+    expect(tender?.docs_retrieved).toBe(false);
     expect(tender?.fact_sheet?.guarantees).toMatchObject({
       value: "5% Vertragserfüllungsbürgschaft",
       confidence: "high",

@@ -135,9 +135,11 @@ function observationToFact(obs: ObservationRow): FactWithCondition {
 
 function buildFactSheet(lotObs: ObservationRow[], procObs: ObservationRow[]): TenderFactSheet {
   const byAttr = new Map<string, ObservationRow>();
-  // Lot-scope observations override procedure-scope for the same attribute
-  for (const o of procObs) if (o.kind === "fact") byAttr.set(o.attribute, o);
-  for (const o of lotObs) if (o.kind === "fact") byAttr.set(o.attribute, o);
+  // Lot-scope observations override procedure-scope for the same attribute. Rows without a
+  // `kind` (older exports) are facts; requirement and unmatched rows are read elsewhere.
+  const isFact = (o: ObservationRow) => !o.kind || o.kind === "fact";
+  for (const o of procObs) if (isFact(o)) byAttr.set(o.attribute, o);
+  for (const o of lotObs) if (isFact(o)) byAttr.set(o.attribute, o);
 
   const sheet: Record<string, FactWithCondition> = {};
   for (const attr of FACT_SHEET_ATTRIBUTES) {
@@ -184,10 +186,10 @@ function lotRowToSummary(row: LotRow): TenderSummary {
 // ─── Documents and passages ───────────────────────────────────────────────────
 
 async function lotSources(lotKey: string): Promise<SourceRow[]> {
-  const { data: links } = await supabase.from("document_files").select("source_id").eq("lot_key", lotKey);
+  const { data: links } = await db.from("document_files").select("source_id").eq("lot_key", lotKey);
   const ids = [...new Set((links ?? []).map((l) => (l as { source_id: string }).source_id))];
   if (ids.length === 0) return [];
-  const { data } = await supabase.from("sources").select("id,type,filename,status,pages").in("id", ids);
+  const { data } = await db.from("sources").select("id,type,filename,status,pages").in("id", ids);
   return (data ?? []) as SourceRow[];
 }
 
@@ -251,7 +253,7 @@ export async function listTenders(limit = 100): Promise<TenderSummary[]> {
  * carry the document-backed reasons), then open lots by soonest deadline, up to `limit`.
  */
 export async function listTriageTenders(limit = 40): Promise<TenderSummary[]> {
-  const { data: docLots } = await supabase.from("documents").select("lot_key").eq("status", "RETRIEVED");
+  const { data: docLots } = await db.from("documents").select("lot_key").eq("status", "RETRIEVED");
   const withDocs = [...new Set((docLots ?? []).map((d) => (d as { lot_key: string }).lot_key))];
 
   const columns =
@@ -259,16 +261,17 @@ export async function listTriageTenders(limit = 40): Promise<TenderSummary[]> {
   const first = withDocs.length
     ? ((await db.from("lots_latest").select(columns).in("lot_key", withDocs)).data ?? [])
     : [];
-  const { data: rest } = await db
+  // The db port has no range filter; take the soonest deadlines and drop the expired ones here.
+  const { data: byDeadline } = await db
     .from("lots_latest")
     .select(columns)
-    .gte("submission_deadline", new Date().toISOString())
-    .order("submission_deadline", { ascending: true })
-    .limit(limit);
+    .order("submission_deadline", { ascending: true });
+  const now = new Date().toISOString();
+  const rest = ((byDeadline ?? []) as unknown as LotRow[]).filter((r) => (r.submission_deadline ?? "") >= now).slice(0, limit);
 
   const seen = new Set<string>();
   const rows: LotRow[] = [];
-  for (const r of [...(first as unknown as LotRow[]), ...((rest ?? []) as unknown as LotRow[])]) {
+  for (const r of [...(first as unknown as LotRow[]), ...rest]) {
     if (seen.has(r.lot_key) || rows.length >= limit) continue;
     seen.add(r.lot_key);
     rows.push(r);
@@ -279,15 +282,15 @@ export async function listTriageTenders(limit = 40): Promise<TenderSummary[]> {
 /** Load a single lot by lot_key and build a full TenderDetail with fact sheet, unmatched
  *  requirements and document status. */
 export async function getTender(lotKey: string): Promise<TenderDetailWithDocuments | null> {
-  const { data: rows, error } = await supabase.from("lots_latest").select("*").eq("lot_key", lotKey).limit(1);
+  const { data: rows, error } = await db.from("lots_latest").select("*").eq("lot_key", lotKey).limit(1);
 
   if (error || !rows || rows.length === 0) return null;
   const row = rows[0] as LotRow;
 
   // Resolved observations for both LOT (this lot_key) and PROCEDURE scopes
   const [lotObsResult, procObsResult, documents] = await Promise.all([
-    supabase.from("observations_resolved").select(OBSERVATION_COLUMNS).eq("scope_key", row.lot_key),
-    supabase.from("observations_resolved").select(OBSERVATION_COLUMNS).eq("scope_key", row.procedure_key),
+    db.from("observations_resolved").select(OBSERVATION_COLUMNS).eq("scope_key", row.lot_key),
+    db.from("observations_resolved").select(OBSERVATION_COLUMNS).eq("scope_key", row.procedure_key),
     documentStatus(row.lot_key),
   ]);
 

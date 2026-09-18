@@ -100,7 +100,7 @@ function getCompanyValue(requirementId: string, company: CanonicalCompany): unkn
 
 async function persistEvaluation(evaluation: MatchEvaluation, results: MatchResult[]): Promise<void> {
   const { viability, bid_scope } = evaluation;
-  const head = await supabase.from("match_evaluations").upsert({
+  const head = await db.from("match_evaluations").upsert({
     id: evaluation.id,
     tender_id: evaluation.tender_id,
     company_id: evaluation.company_id,
@@ -118,13 +118,13 @@ async function persistEvaluation(evaluation: MatchEvaluation, results: MatchResu
   }
 
   if (results.length) {
-    await supabase.from("matching_tasks").upsert(
+    await db.from("matching_tasks").upsert(
       results.map((r) => ({
         id: r.task_id, evaluation_id: evaluation.id, requirement_id: r.requirement_id,
         label: r.label, matcher_type: r.method, severity: r.severity,
       })),
     );
-    await supabase.from("match_results").upsert(
+    await db.from("match_results").upsert(
       results.map((r) => ({
         id: r.id, evaluation_id: evaluation.id, task_id: r.task_id, status: r.status, severity: r.severity,
         method: r.method, reason: r.reasoning ? `${r.reason}\n\n${r.reasoning}` : r.reason,
@@ -133,9 +133,9 @@ async function persistEvaluation(evaluation: MatchEvaluation, results: MatchResu
     );
   }
 
-  await supabase.from("match_knowledge_gaps").delete().eq("evaluation_id", evaluation.id);
+  await db.from("match_knowledge_gaps").delete().eq("evaluation_id", evaluation.id);
   if (evaluation.matrix.knowledge_gaps.length) {
-    await supabase.from("match_knowledge_gaps").insert(
+    await db.from("match_knowledge_gaps").insert(
       evaluation.matrix.knowledge_gaps.map((gap) => ({
         id: genId("GAP"), evaluation_id: evaluation.id, task_id: gap.task_id || null,
         concept: gap.concept, importance: gap.importance, triggered_by: gap.triggered_by,
@@ -147,14 +147,14 @@ async function persistEvaluation(evaluation: MatchEvaluation, results: MatchResu
 // ─── Re-hydration from DB ─────────────────────────────────────────────────────
 
 export async function loadMatchEvaluation(evaluationId: string): Promise<MatchEvaluation | null> {
-  const { data: evalRow } = await supabase.from("match_evaluations").select("*").eq("id", evaluationId).single();
+  const { data: evalRow } = await db.from("match_evaluations").select("*").eq("id", evaluationId).single();
   if (!evalRow) return null;
   const row = evalRow as MatchEvaluationRow;
 
   const [{ data: resultRows }, { data: taskRows }, { data: gapRows }] = await Promise.all([
-    supabase.from("match_results").select("*").eq("evaluation_id", evaluationId),
-    supabase.from("matching_tasks").select("id,requirement_id,label").eq("evaluation_id", evaluationId),
-    supabase.from("match_knowledge_gaps").select("*").eq("evaluation_id", evaluationId),
+    db.from("match_results").select("*").eq("evaluation_id", evaluationId),
+    db.from("matching_tasks").select("id,requirement_id,label").eq("evaluation_id", evaluationId),
+    db.from("match_knowledge_gaps").select("*").eq("evaluation_id", evaluationId),
   ]);
   const taskById = new Map(((taskRows ?? []) as Array<{ id: string; requirement_id: string; label: string }>).map((t) => [t.id, t]));
 
@@ -231,8 +231,8 @@ export async function loadStoredEvaluations(companyId: string, tenderIds: string
 
   const evalIds = [...newest.values()].map((h) => h.id);
   const [{ data: resultRows }, { data: taskRows }] = await Promise.all([
-    supabase.from("match_results").select("*").in("evaluation_id", evalIds),
-    supabase.from("matching_tasks").select("id,requirement_id,label").in("evaluation_id", evalIds),
+    db.from("match_results").select("*").in("evaluation_id", evalIds),
+    db.from("matching_tasks").select("id,requirement_id,label").in("evaluation_id", evalIds),
   ]);
   const taskById = new Map(((taskRows ?? []) as Array<{ id: string; requirement_id: string; label: string }>).map((t) => [t.id, t]));
   const byEval = new Map<string, MatchResult[]>();
