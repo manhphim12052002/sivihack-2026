@@ -1,49 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
-import { assembleCanonicalCompany } from "@/lib/company/assemble";
-import { toCompanyProfile } from "@/lib/company/model";
-import { companyErrorResponse, CompanyError } from "@/lib/company/errors";
-import { saveCanonicalCompany } from "@/lib/company/repository";
-import { applyReview } from "@/lib/company/review";
-import { applyLegacyReview } from "@/lib/company/legacy-review";
-import { supabase } from "@/lib/supabase";
+import { getCompany, upsertCompany, deleteCompany } from "@/lib/assets";
+import type { CompanyProfile } from "@/lib/api";
+
 type Ctx = { params: Promise<{ id: string }> };
-export async function GET(req: NextRequest, { params }: Ctx) {
-  try {
-    const c = await assembleCanonicalCompany((await params).id);
-    return NextResponse.json(
-      req.nextUrl.searchParams.get("view") === "canonical"
-        ? c
-        : toCompanyProfile(c),
-    );
-  } catch (e) {
-    return companyErrorResponse(e);
-  }
+
+function notFound(id: string) {
+  return NextResponse.json({ error: `Company ${id} not found` }, { status: 404 });
 }
-export async function DELETE(_req: NextRequest, { params }: Ctx) {
-  try {
-    const { id } = await params;
-    const { error } = await supabase.from("companies").delete().eq("id", id);
-    if (error) throw new CompanyError("DATABASE_ERROR", error.message, 500);
-    return new NextResponse(null, { status: 204 });
-  } catch (e) {
-    return companyErrorResponse(e);
-  }
+
+export async function GET(_req: NextRequest, { params }: Ctx) {
+  const { id } = await params;
+  const company = getCompany(id);
+  if (!company) return notFound(id);
+  return NextResponse.json(company);
 }
+
 export async function PUT(req: NextRequest, { params }: Ctx) {
-  try {
-    const c = await assembleCanonicalCompany((await params).id),
-      body = await req.json();
-    const canonical = "identity" in body;
-    const updated = canonical
-      ? applyReview(c, body)
-      : applyLegacyReview(c, body);
-    const saved = await saveCanonicalCompany(updated);
-    return NextResponse.json(canonical ? saved : toCompanyProfile(saved));
-  } catch (e) {
-    return companyErrorResponse(
-      e instanceof SyntaxError
-        ? new CompanyError("INVALID_INPUT", "Invalid JSON", 400)
-        : e,
-    );
-  }
+  const { id } = await params;
+  const company = getCompany(id);
+  if (!company) return notFound(id);
+  let patch: Partial<CompanyProfile>;
+  try { patch = await req.json(); } catch { return NextResponse.json({ error: "Invalid JSON" }, { status: 400 }); }
+  const updated: CompanyProfile = { ...company, ...patch, id };
+  upsertCompany(updated);
+  return NextResponse.json(updated);
+}
+
+export async function DELETE(_req: NextRequest, { params }: Ctx) {
+  const { id } = await params;
+  const existed = deleteCompany(id);
+  if (!existed) return notFound(id);
+  return new NextResponse(null, { status: 204 });
 }
