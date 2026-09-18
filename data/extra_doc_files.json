@@ -1,0 +1,2594 @@
+[
+  {
+    "buyer_name": "DB InfraGO AG – Geschäftsbereich Fahrweg (Bukr 16)",
+    "document_url": "https://bieterportal.noncd.db.de/evergabe.bieter/api/supplier/external/deeplink/subproject/e6fdedd4-e7e3-4f63-8ef7-2cf9587b5752",
+    "notice_ids": [
+      "01ae7ebb-9d5a-4d29-9567-649c640c15de"
+    ],
+    "platform": "bieterportal.noncd.db.de",
+    "status": "RETRIEVED",
+    "reason": null,
+    "package": {
+      "filename": "Vergabeunterlagen_26FEI87017.zip",
+      "bytes": 48145969
+    },
+    "files": [
+      {
+        "name": "Bekanntmachung/Auftragsbekanntmachung.pdf",
+        "sha256": "f369d3a2a29878e4698c64f8458e6c43d7792a01bdf544019e6133f3c064d775",
+        "bytes": 1587275,
+        "ext": "pdf",
+        "path": "data/documents/f369d3a2a29878e4698c64f8458e6c43d7792a01bdf544019e6133f3c064d775.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "Unterlagen/Vergabeunterlagen.pdf",
+        "sha256": "5abf22ae7930c2b867fe27db31bffdec22095f0aebeb7e9c6da3d237942292e8",
+        "bytes": 229186,
+        "ext": "pdf",
+        "path": "data/documents/5abf22ae7930c2b867fe27db31bffdec22095f0aebeb7e9c6da3d237942292e8.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/1.1.1 - Frankfurt_M/26FEI87017 - Ausschreibungs-LV (VL 1.1.1 - Frankfurt M).pdf",
+        "sha256": "58d671f6b18c26f23163a5e6cd1fcc1a29a2cdc91defed23a688485598d4a410",
+        "bytes": 873744,
+        "ext": "pdf",
+        "path": "data/documents/58d671f6b18c26f23163a5e6cd1fcc1a29a2cdc91defed23a688485598d4a410.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/1.1.1 - Frankfurt_M/26FEI87017 - Ausschreibungs-LV (VL 1.1.1 - Frankfurt M).X83",
+        "sha256": "84a7e95d0d75816b94fff33091e8d8c44e28c6ace4aca2b5e623b83cafa7fcb2",
+        "bytes": 1313321,
+        "ext": "x83",
+        "path": "data/documents/84a7e95d0d75816b94fff33091e8d8c44e28c6ace4aca2b5e623b83cafa7fcb2.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/1.1.1 - Frankfurt_M/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 1.1 Region Mitte, Netz Frankfurt (FFM).pdf",
+        "sha256": "1abde99dcdcb84517cec02f0ab9969447223d6e35d1096e14e6c285e5914142a",
+        "bytes": 475471,
+        "ext": "pdf",
+        "path": "data/documents/1abde99dcdcb84517cec02f0ab9969447223d6e35d1096e14e6c285e5914142a.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/1.1.3 - Frankfurt_M/26FEI87017 - Ausschreibungs-LV (VL 1.1.3 - Frankfurt M).pdf",
+        "sha256": "cb6dfa27ae40405230a9eff6fe9afded108f813f1bb0e6c7969eaccf198e32ef",
+        "bytes": 417538,
+        "ext": "pdf",
+        "path": "data/documents/cb6dfa27ae40405230a9eff6fe9afded108f813f1bb0e6c7969eaccf198e32ef.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/1.1.3 - Frankfurt_M/26FEI87017 - Ausschreibungs-LV (VL 1.1.3 - Frankfurt M).X83",
+        "sha256": "8b10c673e22ea9a46b61f4d0aa1e59775e088d3c796d2a6619e20f7a8111e5db",
+        "bytes": 327895,
+        "ext": "x83",
+        "path": "data/documents/8b10c673e22ea9a46b61f4d0aa1e59775e088d3c796d2a6619e20f7a8111e5db.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/1.1.3 - Frankfurt_M/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 1.1 Region Mitte, Netz Frankfurt (FFM).pdf",
+        "sha256": "1abde99dcdcb84517cec02f0ab9969447223d6e35d1096e14e6c285e5914142a",
+        "bytes": 475471,
+        "ext": "pdf",
+        "path": "data/documents/1abde99dcdcb84517cec02f0ab9969447223d6e35d1096e14e6c285e5914142a.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/1.1.4 - Frankfurt_M/26FEI87017 - Ausschreibungs-LV (VL 1.1.4 - Frankfurt M).pdf",
+        "sha256": "926247ea85c3fab2891b54b5f91264171f342b124f03ab16c3d2eb6c43efc8ed",
+        "bytes": 355247,
+        "ext": "pdf",
+        "path": "data/documents/926247ea85c3fab2891b54b5f91264171f342b124f03ab16c3d2eb6c43efc8ed.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/1.1.4 - Frankfurt_M/26FEI87017 - Ausschreibungs-LV (VL 1.1.4 - Frankfurt M).X83",
+        "sha256": "4bedb76dda293f654f7fdeded2ae1a4bd0afe0295e34ccbac7d4ba304d21624d",
+        "bytes": 258656,
+        "ext": "x83",
+        "path": "data/documents/4bedb76dda293f654f7fdeded2ae1a4bd0afe0295e34ccbac7d4ba304d21624d.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/1.1.4 - Frankfurt_M/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 1.1 Region Mitte, Netz Frankfurt (FFM).pdf",
+        "sha256": "1abde99dcdcb84517cec02f0ab9969447223d6e35d1096e14e6c285e5914142a",
+        "bytes": 475471,
+        "ext": "pdf",
+        "path": "data/documents/1abde99dcdcb84517cec02f0ab9969447223d6e35d1096e14e6c285e5914142a.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/2.4.1 - Kiel/26FEI87017 - Ausschreibungs-LV (VL 2.4.1 - Kiel).pdf",
+        "sha256": "a78fc03d9f52269a15528edea0d9fddd432677d3388db17cd74fe155afcd285d",
+        "bytes": 873403,
+        "ext": "pdf",
+        "path": "data/documents/a78fc03d9f52269a15528edea0d9fddd432677d3388db17cd74fe155afcd285d.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/2.4.1 - Kiel/26FEI87017 - Ausschreibungs-LV (VL 2.4.1 - Kiel).X83",
+        "sha256": "3972380b6110365390a70437040e629ec409de672aa58095b2ee226a1902a684",
+        "bytes": 1311504,
+        "ext": "x83",
+        "path": "data/documents/3972380b6110365390a70437040e629ec409de672aa58095b2ee226a1902a684.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/2.4.1 - Kiel/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 2.4 Region Nord, Netz Kiel (KIE).pdf",
+        "sha256": "a7fb2f8767884c8c8bc3d6264b89f6e1f23365e0ffff96f41b33ec4123488408",
+        "bytes": 828790,
+        "ext": "pdf",
+        "path": "data/documents/a7fb2f8767884c8c8bc3d6264b89f6e1f23365e0ffff96f41b33ec4123488408.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/2.4.3 - Kiel/26FEI87017 - Ausschreibungs-LV (VL 2.4.3 - Kiel).pdf",
+        "sha256": "c1d12f929980ef4938d43c8fa091399ce9d35fb1512d6d5ad84072e9959fe34c",
+        "bytes": 417449,
+        "ext": "pdf",
+        "path": "data/documents/c1d12f929980ef4938d43c8fa091399ce9d35fb1512d6d5ad84072e9959fe34c.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/2.4.3 - Kiel/26FEI87017 - Ausschreibungs-LV (VL 2.4.3 - Kiel).X83",
+        "sha256": "d3f407992c01d51a6096f5d2c7275aa5eb1dfb183c2ae5960679e5e9e5dd8d6a",
+        "bytes": 327901,
+        "ext": "x83",
+        "path": "data/documents/d3f407992c01d51a6096f5d2c7275aa5eb1dfb183c2ae5960679e5e9e5dd8d6a.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/2.4.3 - Kiel/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 2.4 Region Nord, Netz Kiel (KIE).pdf",
+        "sha256": "a7fb2f8767884c8c8bc3d6264b89f6e1f23365e0ffff96f41b33ec4123488408",
+        "bytes": 828790,
+        "ext": "pdf",
+        "path": "data/documents/a7fb2f8767884c8c8bc3d6264b89f6e1f23365e0ffff96f41b33ec4123488408.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/2.4.4 - Kiel/26FEI87017 - Ausschreibungs-LV (VL 2.4.4 - Kiel).pdf",
+        "sha256": "4d177d9846b758b86b5b3b30a07ce0845d945562e17da73419014f905738462d",
+        "bytes": 355304,
+        "ext": "pdf",
+        "path": "data/documents/4d177d9846b758b86b5b3b30a07ce0845d945562e17da73419014f905738462d.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/2.4.4 - Kiel/26FEI87017 - Ausschreibungs-LV (VL 2.4.4 - Kiel).X83",
+        "sha256": "b75407b47247bd12d1775073c73a5cdb5dc91557e1b7606e8dc71fd971040f69",
+        "bytes": 258653,
+        "ext": "x83",
+        "path": "data/documents/b75407b47247bd12d1775073c73a5cdb5dc91557e1b7606e8dc71fd971040f69.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/2.4.4 - Kiel/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 2.4 Region Nord, Netz Kiel (KIE).pdf",
+        "sha256": "a7fb2f8767884c8c8bc3d6264b89f6e1f23365e0ffff96f41b33ec4123488408",
+        "bytes": 828790,
+        "ext": "pdf",
+        "path": "data/documents/a7fb2f8767884c8c8bc3d6264b89f6e1f23365e0ffff96f41b33ec4123488408.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.3.1 - München Nord/26FEI87017 - Ausschreibungs-LV (VL 4.3.1 - München Nord).pdf",
+        "sha256": "f5e52a672725093c299122c57a492c56b70e8758aaf1c0aaf71d29eca16bcb39",
+        "bytes": 873512,
+        "ext": "pdf",
+        "path": "data/documents/f5e52a672725093c299122c57a492c56b70e8758aaf1c0aaf71d29eca16bcb39.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.3.1 - München Nord/26FEI87017 - Ausschreibungs-LV (VL 4.3.1 - München Nord).X83",
+        "sha256": "f452531ddf3047a001c52475a6f5b4d1bf0e37a30765d087bbf08343f60c8fe4",
+        "bytes": 1313330,
+        "ext": "x83",
+        "path": "data/documents/f452531ddf3047a001c52475a6f5b4d1bf0e37a30765d087bbf08343f60c8fe4.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.3.1 - München Nord/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 4.3 Region Süd, Netz München Nord (MÜ N)_kommentiert_MUC.pdf",
+        "sha256": "5b32579cc3451f5a0391c36807f09da1bbb6bd9d94bf818052f38654d0cdbca3",
+        "bytes": 541854,
+        "ext": "pdf",
+        "path": "data/documents/5b32579cc3451f5a0391c36807f09da1bbb6bd9d94bf818052f38654d0cdbca3.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.3.3 - München Nord/26FEI87017 - Ausschreibungs-LV (VL 4.3.3 - München Nord).pdf",
+        "sha256": "4d00b6ad7a8c14da2ecaecbb52d3530d2ef3f8f23d63e341fce6775526ea0d87",
+        "bytes": 416950,
+        "ext": "pdf",
+        "path": "data/documents/4d00b6ad7a8c14da2ecaecbb52d3530d2ef3f8f23d63e341fce6775526ea0d87.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.3.3 - München Nord/26FEI87017 - Ausschreibungs-LV (VL 4.3.3 - München Nord).X83",
+        "sha256": "1d54f2d844711973bb8f27c0854e6301701afc5d746db19a18b9ee4ea3a0667d",
+        "bytes": 327841,
+        "ext": "x83",
+        "path": "data/documents/1d54f2d844711973bb8f27c0854e6301701afc5d746db19a18b9ee4ea3a0667d.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.3.3 - München Nord/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 4.3 Region Süd, Netz München Nord (MÜ N)_kommentiert_MUC.pdf",
+        "sha256": "5b32579cc3451f5a0391c36807f09da1bbb6bd9d94bf818052f38654d0cdbca3",
+        "bytes": 541854,
+        "ext": "pdf",
+        "path": "data/documents/5b32579cc3451f5a0391c36807f09da1bbb6bd9d94bf818052f38654d0cdbca3.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.3.4 - München Nord/26FEI87017 - Ausschreibungs-LV (VL 4.3.4 - München Nord).pdf",
+        "sha256": "8bd77bfd57f14e5840ab99679fc2bb84453fe847291f277ce1ca6a3553a74a06",
+        "bytes": 354966,
+        "ext": "pdf",
+        "path": "data/documents/8bd77bfd57f14e5840ab99679fc2bb84453fe847291f277ce1ca6a3553a74a06.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.3.4 - München Nord/26FEI87017 - Ausschreibungs-LV (VL 4.3.4 - München Nord).X83",
+        "sha256": "c589a9aa6135c92e74e9e375be7d2179d1f99d02dc81188a80b03089a7639d0e",
+        "bytes": 258627,
+        "ext": "x83",
+        "path": "data/documents/c589a9aa6135c92e74e9e375be7d2179d1f99d02dc81188a80b03089a7639d0e.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.3.4 - München Nord/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 4.3 Region Süd, Netz München Nord (MÜ N)_kommentiert_MUC.pdf",
+        "sha256": "5b32579cc3451f5a0391c36807f09da1bbb6bd9d94bf818052f38654d0cdbca3",
+        "bytes": 541854,
+        "ext": "pdf",
+        "path": "data/documents/5b32579cc3451f5a0391c36807f09da1bbb6bd9d94bf818052f38654d0cdbca3.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.7.1 - Nürnberg 3/26FEI87017 - Ausschreibungs-LV (VL 4.7.1 - Nürnberg 3).pdf",
+        "sha256": "c35f8f8c322ff85884ef6c3d60feb3a669d832fa7459429308be3a08a076ddc1",
+        "bytes": 874753,
+        "ext": "pdf",
+        "path": "data/documents/c35f8f8c322ff85884ef6c3d60feb3a669d832fa7459429308be3a08a076ddc1.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.7.1 - Nürnberg 3/26FEI87017 - Ausschreibungs-LV (VL 4.7.1 - Nürnberg 3).X83",
+        "sha256": "900204897102f2ca657def8a91bc02ebcb868210d9fdb588f535ef15bacebf17",
+        "bytes": 1313301,
+        "ext": "x83",
+        "path": "data/documents/900204897102f2ca657def8a91bc02ebcb868210d9fdb588f535ef15bacebf17.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.7.1 - Nürnberg 3/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 4.7 Region Süd, Netz Nürnberg 3 (NÜR 3) Kirchenlaibach.pdf",
+        "sha256": "1d7cfa026f8073da176a2f8d3f6346a9c9e647fbe1bc3f648466f9260bc14034",
+        "bytes": 403555,
+        "ext": "pdf",
+        "path": "data/documents/1d7cfa026f8073da176a2f8d3f6346a9c9e647fbe1bc3f648466f9260bc14034.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.7.3 - Nürnberg 3/26FEI87017 - Ausschreibungs-LV (VL 4.7.3 - Nürnberg 3).pdf",
+        "sha256": "9049323c0a27a986556c16aaf00b43678b6d28c84c66a59a669097d77d15619f",
+        "bytes": 417600,
+        "ext": "pdf",
+        "path": "data/documents/9049323c0a27a986556c16aaf00b43678b6d28c84c66a59a669097d77d15619f.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.7.3 - Nürnberg 3/26FEI87017 - Ausschreibungs-LV (VL 4.7.3 - Nürnberg 3).X83",
+        "sha256": "fe22e6605a3a540b12e0aaea0bb1af0d9b67ea53163bb96d2a80cb0e4899ca1b",
+        "bytes": 327873,
+        "ext": "x83",
+        "path": "data/documents/fe22e6605a3a540b12e0aaea0bb1af0d9b67ea53163bb96d2a80cb0e4899ca1b.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.7.3 - Nürnberg 3/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 4.7 Region Süd, Netz Nürnberg 3 (NÜR 3) Kirchenlaibach.pdf",
+        "sha256": "1d7cfa026f8073da176a2f8d3f6346a9c9e647fbe1bc3f648466f9260bc14034",
+        "bytes": 403555,
+        "ext": "pdf",
+        "path": "data/documents/1d7cfa026f8073da176a2f8d3f6346a9c9e647fbe1bc3f648466f9260bc14034.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.7.4 - Nürnberg 3/26FEI87017 - Ausschreibungs-LV (VL 4.7.4 - Nürnberg 3).pdf",
+        "sha256": "79d409d473c4b1ab400a5e076e050d55a9201855b67099608339e35907490027",
+        "bytes": 355205,
+        "ext": "pdf",
+        "path": "data/documents/79d409d473c4b1ab400a5e076e050d55a9201855b67099608339e35907490027.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.7.4 - Nürnberg 3/26FEI87017 - Ausschreibungs-LV (VL 4.7.4 - Nürnberg 3).X83",
+        "sha256": "17b12def5265dd2c835010a33dfffc8735b5677255f4e38c882b0d1e8b532ba4",
+        "bytes": 258632,
+        "ext": "x83",
+        "path": "data/documents/17b12def5265dd2c835010a33dfffc8735b5677255f4e38c882b0d1e8b532ba4.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/4.7.4 - Nürnberg 3/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 4.7 Region Süd, Netz Nürnberg 3 (NÜR 3) Kirchenlaibach.pdf",
+        "sha256": "1d7cfa026f8073da176a2f8d3f6346a9c9e647fbe1bc3f648466f9260bc14034",
+        "bytes": 403555,
+        "ext": "pdf",
+        "path": "data/documents/1d7cfa026f8073da176a2f8d3f6346a9c9e647fbe1bc3f648466f9260bc14034.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.1.1 - Dresden 1/26FEI87017 - Ausschreibungs-LV (VL 5.1.1 - Dresden 1).pdf",
+        "sha256": "072f07be7cee4c43df39f4b86e94ca61d6a7503b562c8ad42b783bda04fa9256",
+        "bytes": 874858,
+        "ext": "pdf",
+        "path": "data/documents/072f07be7cee4c43df39f4b86e94ca61d6a7503b562c8ad42b783bda04fa9256.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.1.1 - Dresden 1/26FEI87017 - Ausschreibungs-LV (VL 5.1.1 - Dresden 1).X83",
+        "sha256": "e5bd37da35b4970bdbeda839b72fd0b0a9e3855e1b0fb5928dc6f4b7fee1fb0b",
+        "bytes": 1313322,
+        "ext": "x83",
+        "path": "data/documents/e5bd37da35b4970bdbeda839b72fd0b0a9e3855e1b0fb5928dc6f4b7fee1fb0b.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.1.1 - Dresden 1/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 5.1 Region Südost, Netz Dresden 1 (DRE 1).pdf",
+        "sha256": "dc42c20d037ed54cffa17e07d981958d34d7a57dea6ca9107ff0911aaae801ec",
+        "bytes": 529733,
+        "ext": "pdf",
+        "path": "data/documents/dc42c20d037ed54cffa17e07d981958d34d7a57dea6ca9107ff0911aaae801ec.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.1.3 - Dresden 1/26FEI87017 - Ausschreibungs-LV (VL 5.1.3 - Dresden 1).pdf",
+        "sha256": "6f7da85962fe147e29da4877eb45cf0ace80e84f1a74f5c21f9e3b26ac581b37",
+        "bytes": 417698,
+        "ext": "pdf",
+        "path": "data/documents/6f7da85962fe147e29da4877eb45cf0ace80e84f1a74f5c21f9e3b26ac581b37.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.1.3 - Dresden 1/26FEI87017 - Ausschreibungs-LV (VL 5.1.3 - Dresden 1).X83",
+        "sha256": "bb0bcdf2754ca68ee33c38aedab461a3985c55d08245a514f5216e8735c84ca2",
+        "bytes": 327863,
+        "ext": "x83",
+        "path": "data/documents/bb0bcdf2754ca68ee33c38aedab461a3985c55d08245a514f5216e8735c84ca2.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.1.3 - Dresden 1/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 5.1 Region Südost, Netz Dresden 1 (DRE 1).pdf",
+        "sha256": "dc42c20d037ed54cffa17e07d981958d34d7a57dea6ca9107ff0911aaae801ec",
+        "bytes": 529733,
+        "ext": "pdf",
+        "path": "data/documents/dc42c20d037ed54cffa17e07d981958d34d7a57dea6ca9107ff0911aaae801ec.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.1.4 - Dresden 1/26FEI87017 - Ausschreibungs-LV (VL 5.1.4 - Dresden 1).pdf",
+        "sha256": "c680323c81fc2564cce69c3cec4def00b078f5463feedf271c012941b6e0931c",
+        "bytes": 355120,
+        "ext": "pdf",
+        "path": "data/documents/c680323c81fc2564cce69c3cec4def00b078f5463feedf271c012941b6e0931c.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.1.4 - Dresden 1/26FEI87017 - Ausschreibungs-LV (VL 5.1.4 - Dresden 1).X83",
+        "sha256": "d01ba36ce3cd192bc6d66aa32f541b6b24df1cd4711d4c698003fd6d435de127",
+        "bytes": 258626,
+        "ext": "x83",
+        "path": "data/documents/d01ba36ce3cd192bc6d66aa32f541b6b24df1cd4711d4c698003fd6d435de127.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.1.4 - Dresden 1/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 5.1 Region Südost, Netz Dresden 1 (DRE 1).pdf",
+        "sha256": "dc42c20d037ed54cffa17e07d981958d34d7a57dea6ca9107ff0911aaae801ec",
+        "bytes": 529733,
+        "ext": "pdf",
+        "path": "data/documents/dc42c20d037ed54cffa17e07d981958d34d7a57dea6ca9107ff0911aaae801ec.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.5.3 - Erfurt 3/26FEI87017 - Ausschreibungs-LV (VL 5.5.3 - Erfurt 3).pdf",
+        "sha256": "f55657711ea3fc16b3f9e153253a4b6e77d212d82aa7fc3b18e88374ca7ab6f1",
+        "bytes": 417535,
+        "ext": "pdf",
+        "path": "data/documents/f55657711ea3fc16b3f9e153253a4b6e77d212d82aa7fc3b18e88374ca7ab6f1.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.5.3 - Erfurt 3/26FEI87017 - Ausschreibungs-LV (VL 5.5.3 - Erfurt 3).X83",
+        "sha256": "cc7db1827e369a6f3073384fcc2c40681cf4faf5ed361379b4e02fc4bc854029",
+        "bytes": 327882,
+        "ext": "x83",
+        "path": "data/documents/cc7db1827e369a6f3073384fcc2c40681cf4faf5ed361379b4e02fc4bc854029.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.5.3 - Erfurt 3/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 5.5 Region Südost, Netz Erfurt 3 (EF 3) bearbeitet.pdf",
+        "sha256": "900910959a0d8bdab2b01ef46e20541810d462fe0a3e2841d773f3733cfa21fa",
+        "bytes": 497681,
+        "ext": "pdf",
+        "path": "data/documents/900910959a0d8bdab2b01ef46e20541810d462fe0a3e2841d773f3733cfa21fa.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.5.4 - Erfurt 3/26FEI87017 - Ausschreibungs-LV (VL 5.5.4 - Erfurt 3).pdf",
+        "sha256": "9bb29225bb6de65fafa09c3d3f2b60070ba8e06f4dba4eb87a0e06562320403c",
+        "bytes": 355513,
+        "ext": "pdf",
+        "path": "data/documents/9bb29225bb6de65fafa09c3d3f2b60070ba8e06f4dba4eb87a0e06562320403c.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.5.4 - Erfurt 3/26FEI87017 - Ausschreibungs-LV (VL 5.5.4 - Erfurt 3).X83",
+        "sha256": "ce8ddd34d0065bee825ad4455710e9ac7ab6726771d93c3c3b412ac8894dc38c",
+        "bytes": 258641,
+        "ext": "x83",
+        "path": "data/documents/ce8ddd34d0065bee825ad4455710e9ac7ab6726771d93c3c3b412ac8894dc38c.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.5.4 - Erfurt 3/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 5.5 Region Südost, Netz Erfurt 3 (EF 3) bearbeitet.pdf",
+        "sha256": "900910959a0d8bdab2b01ef46e20541810d462fe0a3e2841d773f3733cfa21fa",
+        "bytes": 497681,
+        "ext": "pdf",
+        "path": "data/documents/900910959a0d8bdab2b01ef46e20541810d462fe0a3e2841d773f3733cfa21fa.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.9.1 - Magdeburg 1/26FEI87017 - Ausschreibungs-LV (VL 5.9.1 - Magdeburg 1).pdf",
+        "sha256": "45ed0ffd4a912c297c2b4ad800de6365b66205d5b95fce50170e452758de1556",
+        "bytes": 875706,
+        "ext": "pdf",
+        "path": "data/documents/45ed0ffd4a912c297c2b4ad800de6365b66205d5b95fce50170e452758de1556.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.9.1 - Magdeburg 1/26FEI87017 - Ausschreibungs-LV (VL 5.9.1 - Magdeburg 1).X83",
+        "sha256": "a496d6015e9206264c6809e242586f6b4c71f3c285457d3d9bcad644f91f96d0",
+        "bytes": 1313141,
+        "ext": "x83",
+        "path": "data/documents/a496d6015e9206264c6809e242586f6b4c71f3c285457d3d9bcad644f91f96d0.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.9.1 - Magdeburg 1/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 5.9 Region Südost, Netz Magdeburg 1 (MGB 1) (HBS,Güsten).pdf",
+        "sha256": "06722da2004c2ce599c5248233a0f5e978c047bd16ac563492306a0bf7c226f4",
+        "bytes": 410573,
+        "ext": "pdf",
+        "path": "data/documents/06722da2004c2ce599c5248233a0f5e978c047bd16ac563492306a0bf7c226f4.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.9.3 - Magdeburg 1/26FEI87017 - Ausschreibungs-LV (VL 5.9.3 - Magdeburg 1).pdf",
+        "sha256": "42039188785856fc8f9dca344e3b5430f1cd0613ac77982664d4c02f93fc3027",
+        "bytes": 418159,
+        "ext": "pdf",
+        "path": "data/documents/42039188785856fc8f9dca344e3b5430f1cd0613ac77982664d4c02f93fc3027.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.9.3 - Magdeburg 1/26FEI87017 - Ausschreibungs-LV (VL 5.9.3 - Magdeburg 1).X83",
+        "sha256": "31ddc1019c022c6f25bda98e9036dcd292f726296f6a34176b5d1fac0df46aad",
+        "bytes": 327920,
+        "ext": "x83",
+        "path": "data/documents/31ddc1019c022c6f25bda98e9036dcd292f726296f6a34176b5d1fac0df46aad.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.9.3 - Magdeburg 1/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 5.9 Region Südost, Netz Magdeburg 1 (MGB 1) (HBS,Güsten).pdf",
+        "sha256": "06722da2004c2ce599c5248233a0f5e978c047bd16ac563492306a0bf7c226f4",
+        "bytes": 410573,
+        "ext": "pdf",
+        "path": "data/documents/06722da2004c2ce599c5248233a0f5e978c047bd16ac563492306a0bf7c226f4.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.9.4 - Magdeburg 1/26FEI87017 - Ausschreibungs-LV (VL 5.9.4 - Magdeburg 1).pdf",
+        "sha256": "5d42d9debc4f2a5433930c45e3579d7760a2e68113cd3f50e2d27411d0dad806",
+        "bytes": 355534,
+        "ext": "pdf",
+        "path": "data/documents/5d42d9debc4f2a5433930c45e3579d7760a2e68113cd3f50e2d27411d0dad806.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.9.4 - Magdeburg 1/26FEI87017 - Ausschreibungs-LV (VL 5.9.4 - Magdeburg 1).X83",
+        "sha256": "98298a504e83d8580cb53812c8c7757bd122414b1121a38c8a3909d32eaec4a0",
+        "bytes": 258630,
+        "ext": "x83",
+        "path": "data/documents/98298a504e83d8580cb53812c8c7757bd122414b1121a38c8a3909d32eaec4a0.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/5.9.4 - Magdeburg 1/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 5.9 Region Südost, Netz Magdeburg 1 (MGB 1) (HBS,Güsten).pdf",
+        "sha256": "06722da2004c2ce599c5248233a0f5e978c047bd16ac563492306a0bf7c226f4",
+        "bytes": 410573,
+        "ext": "pdf",
+        "path": "data/documents/06722da2004c2ce599c5248233a0f5e978c047bd16ac563492306a0bf7c226f4.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.10.1 - Stuttgart 4/26FEI87017 - Ausschreibungs-LV (VL 6.10.1 - Stuttgart 4).pdf",
+        "sha256": "2c25521744afd8a98f3ed3972fcf55a313d0c54971d8fbd528443a5f782698da",
+        "bytes": 874574,
+        "ext": "pdf",
+        "path": "data/documents/2c25521744afd8a98f3ed3972fcf55a313d0c54971d8fbd528443a5f782698da.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.10.1 - Stuttgart 4/26FEI87017 - Ausschreibungs-LV (VL 6.10.1 - Stuttgart 4).X83",
+        "sha256": "5f1d281433055fbb10eb8e66741e76f132c57429ed57049cb10a9207fede45db",
+        "bytes": 1313208,
+        "ext": "x83",
+        "path": "data/documents/5f1d281433055fbb10eb8e66741e76f132c57429ed57049cb10a9207fede45db.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.10.1 - Stuttgart 4/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 6.10 Region Südwest, Netz Stuttgart 4 (STG 4).pdf",
+        "sha256": "ad646a785985ca452898d221f81c201a7c15c49c72f57b6ab03507079640d663",
+        "bytes": 544390,
+        "ext": "pdf",
+        "path": "data/documents/ad646a785985ca452898d221f81c201a7c15c49c72f57b6ab03507079640d663.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.10.4 - Stuttgart 4/26FEI87017 - Ausschreibungs-LV (VL 6.10.4 - Stuttgart 4).pdf",
+        "sha256": "f8fe4c06dfff3d1b28c633c2880841240d6e44659a930f11d36f16f1348471b3",
+        "bytes": 355525,
+        "ext": "pdf",
+        "path": "data/documents/f8fe4c06dfff3d1b28c633c2880841240d6e44659a930f11d36f16f1348471b3.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.10.4 - Stuttgart 4/26FEI87017 - Ausschreibungs-LV (VL 6.10.4 - Stuttgart 4).X83",
+        "sha256": "df5c05d5ffed43faa8e8e8e437510c33eff1e128b421c32123482d1e818ccefd",
+        "bytes": 258618,
+        "ext": "x83",
+        "path": "data/documents/df5c05d5ffed43faa8e8e8e437510c33eff1e128b421c32123482d1e818ccefd.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.10.4 - Stuttgart 4/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 6.10 Region Südwest, Netz Stuttgart 4 (STG 4).pdf",
+        "sha256": "ad646a785985ca452898d221f81c201a7c15c49c72f57b6ab03507079640d663",
+        "bytes": 544390,
+        "ext": "pdf",
+        "path": "data/documents/ad646a785985ca452898d221f81c201a7c15c49c72f57b6ab03507079640d663.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.14.1 - Freiburg 4/26FEI87017 - Ausschreibungs-LV (VL 6.14.1 - Freibung 4).pdf",
+        "sha256": "6a6ef0bb16e3e53bbaf270614f7f72086793b90948cd0efcdfd63e7362a3da6b",
+        "bytes": 874869,
+        "ext": "pdf",
+        "path": "data/documents/6a6ef0bb16e3e53bbaf270614f7f72086793b90948cd0efcdfd63e7362a3da6b.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.14.1 - Freiburg 4/26FEI87017 - Ausschreibungs-LV (VL 6.14.1 - Freibung 4).X83",
+        "sha256": "cf20f397f84b9045c114c061f19902d6f6cbff5a82de9cf15d3aab405f857c16",
+        "bytes": 1313221,
+        "ext": "x83",
+        "path": "data/documents/cf20f397f84b9045c114c061f19902d6f6cbff5a82de9cf15d3aab405f857c16.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.14.1 - Freiburg 4/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 6.14 Region Südwest, Netz Freiburg 4 (FBU 4).pdf",
+        "sha256": "6e81831492e48ce43c6b559ca64d275e1504958f2edc3b82ab16d04073b75d5f",
+        "bytes": 596007,
+        "ext": "pdf",
+        "path": "data/documents/6e81831492e48ce43c6b559ca64d275e1504958f2edc3b82ab16d04073b75d5f.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.14.3 - Freiburg 4/26FEI87017 - Ausschreibungs-LV (VL 6.14.3 - Freibung 4).pdf",
+        "sha256": "a038228e944f58716cbf0ca53aaac9d55cd79f551f84e56953cea7d2f0db6c65",
+        "bytes": 417922,
+        "ext": "pdf",
+        "path": "data/documents/a038228e944f58716cbf0ca53aaac9d55cd79f551f84e56953cea7d2f0db6c65.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.14.3 - Freiburg 4/26FEI87017 - Ausschreibungs-LV (VL 6.14.3 - Freibung 4).X83",
+        "sha256": "73c98dffec59e1714cbb3c06d034dcafa7d973d0104abca0d50df19eb8564ccf",
+        "bytes": 327808,
+        "ext": "x83",
+        "path": "data/documents/73c98dffec59e1714cbb3c06d034dcafa7d973d0104abca0d50df19eb8564ccf.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.14.3 - Freiburg 4/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 6.14 Region Südwest, Netz Freiburg 4 (FBU 4).pdf",
+        "sha256": "6e81831492e48ce43c6b559ca64d275e1504958f2edc3b82ab16d04073b75d5f",
+        "bytes": 596007,
+        "ext": "pdf",
+        "path": "data/documents/6e81831492e48ce43c6b559ca64d275e1504958f2edc3b82ab16d04073b75d5f.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.14.4 - Freiburg 4/26FEI87017 - Ausschreibungs-LV (VL 6.14.4 - Freiburg 4).pdf",
+        "sha256": "a0ec467017dea264915a59007268833ea2d382891c140ca6e2cceea2e532c1d0",
+        "bytes": 355570,
+        "ext": "pdf",
+        "path": "data/documents/a0ec467017dea264915a59007268833ea2d382891c140ca6e2cceea2e532c1d0.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.14.4 - Freiburg 4/26FEI87017 - Ausschreibungs-LV (VL 6.14.4 - Freiburg 4).X83",
+        "sha256": "9c950678cb032283c15a6db555cc0b4881c14c9781e5a056f97666f4cbb86aec",
+        "bytes": 258610,
+        "ext": "x83",
+        "path": "data/documents/9c950678cb032283c15a6db555cc0b4881c14c9781e5a056f97666f4cbb86aec.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.14.4 - Freiburg 4/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 6.14 Region Südwest, Netz Freiburg 4 (FBU 4).pdf",
+        "sha256": "6e81831492e48ce43c6b559ca64d275e1504958f2edc3b82ab16d04073b75d5f",
+        "bytes": 596007,
+        "ext": "pdf",
+        "path": "data/documents/6e81831492e48ce43c6b559ca64d275e1504958f2edc3b82ab16d04073b75d5f.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.2.1 - Karlsruhe 2/26FEI87017 - Ausschreibungs-LV (VL 6.2.1 - Karlsruhe 2).pdf",
+        "sha256": "fb74eeb398b4a6d80bb1d9a939d23a3c511c7c00f8bcfed8161479df820cc207",
+        "bytes": 874956,
+        "ext": "pdf",
+        "path": "data/documents/fb74eeb398b4a6d80bb1d9a939d23a3c511c7c00f8bcfed8161479df820cc207.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.2.1 - Karlsruhe 2/26FEI87017 - Ausschreibungs-LV (VL 6.2.1 - Karlsruhe 2).X83",
+        "sha256": "3a7fd359b452fb97bd951b0cc531eadc90a4d579ef875d44d64166e3ecfb5265",
+        "bytes": 1313194,
+        "ext": "x83",
+        "path": "data/documents/3a7fd359b452fb97bd951b0cc531eadc90a4d579ef875d44d64166e3ecfb5265.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.2.1 - Karlsruhe 2/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 6.2 Region Südwest, Netz Karlsruhe 2 (KAR 2).pdf",
+        "sha256": "07256e52af0ee205ec5fa753ed5516115a210fa5446fe52c72dcc78e3fd61bba",
+        "bytes": 577920,
+        "ext": "pdf",
+        "path": "data/documents/07256e52af0ee205ec5fa753ed5516115a210fa5446fe52c72dcc78e3fd61bba.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.6.1 - Saarbrücken/26FEI87017 - Ausschreibungs-LV (VL 6.6.1 - Saarbrücken).pdf",
+        "sha256": "58bb755b65cb8190713b91f2d047292d14ead63cca375cbc0b1ec557c38797b9",
+        "bytes": 874285,
+        "ext": "pdf",
+        "path": "data/documents/58bb755b65cb8190713b91f2d047292d14ead63cca375cbc0b1ec557c38797b9.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.6.1 - Saarbrücken/26FEI87017 - Ausschreibungs-LV (VL 6.6.1 - Saarbrücken).X83",
+        "sha256": "9c41e1110fbec17831ac7ac3e874d6eeae61656881cf832382a5f95be2171101",
+        "bytes": 1313200,
+        "ext": "x83",
+        "path": "data/documents/9c41e1110fbec17831ac7ac3e874d6eeae61656881cf832382a5f95be2171101.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.6.1 - Saarbrücken/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 6.6 Region Südwest, Netz Saarbrücken (SBR).pdf",
+        "sha256": "26739f22776bad0f2b5bfaf836692cff2392d291be2a7c36cfca12e04dc051ae",
+        "bytes": 577387,
+        "ext": "pdf",
+        "path": "data/documents/26739f22776bad0f2b5bfaf836692cff2392d291be2a7c36cfca12e04dc051ae.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.6.3 - Saarbrücken/26FEI87017 - Ausschreibungs-LV (VL 6.6.3 - Saarbrücken).pdf",
+        "sha256": "7b09433c2e4e651b73b29bae8b3470a42a1d65b01e62ee4862ead50cf48c75ee",
+        "bytes": 417223,
+        "ext": "pdf",
+        "path": "data/documents/7b09433c2e4e651b73b29bae8b3470a42a1d65b01e62ee4862ead50cf48c75ee.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.6.3 - Saarbrücken/26FEI87017 - Ausschreibungs-LV (VL 6.6.3 - Saarbrücken).X83",
+        "sha256": "8e6a5b860b8614ba2238fe9edce27eeac4338115115a3eff90c3f8d82a9d71fd",
+        "bytes": 327792,
+        "ext": "x83",
+        "path": "data/documents/8e6a5b860b8614ba2238fe9edce27eeac4338115115a3eff90c3f8d82a9d71fd.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.6.3 - Saarbrücken/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 6.6 Region Südwest, Netz Saarbrücken (SBR).pdf",
+        "sha256": "26739f22776bad0f2b5bfaf836692cff2392d291be2a7c36cfca12e04dc051ae",
+        "bytes": 577387,
+        "ext": "pdf",
+        "path": "data/documents/26739f22776bad0f2b5bfaf836692cff2392d291be2a7c36cfca12e04dc051ae.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.6.4 - Saarbrücken/26FEI87017 - Ausschreibungs-LV (VL 6.6.4 - Saarbrücken).pdf",
+        "sha256": "10cf748017599dd860253c118d167da1a60e495aa7c572a63d65a545647d1178",
+        "bytes": 355360,
+        "ext": "pdf",
+        "path": "data/documents/10cf748017599dd860253c118d167da1a60e495aa7c572a63d65a545647d1178.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.6.4 - Saarbrücken/26FEI87017 - Ausschreibungs-LV (VL 6.6.4 - Saarbrücken).X83",
+        "sha256": "9fb1d7738ddd77b5a3f857cef7416ca7b08384180bbd523db4442f976b00826a",
+        "bytes": 258596,
+        "ext": "x83",
+        "path": "data/documents/9fb1d7738ddd77b5a3f857cef7416ca7b08384180bbd523db4442f976b00826a.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/6.6.4 - Saarbrücken/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 6.6 Region Südwest, Netz Saarbrücken (SBR).pdf",
+        "sha256": "26739f22776bad0f2b5bfaf836692cff2392d291be2a7c36cfca12e04dc051ae",
+        "bytes": 577387,
+        "ext": "pdf",
+        "path": "data/documents/26739f22776bad0f2b5bfaf836692cff2392d291be2a7c36cfca12e04dc051ae.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.1.1 - Duisburg/26FEI87017 - Ausschreibungs-LV (VL 7.1.1 - Duisburg).pdf",
+        "sha256": "f74a9d6b90894f67e56739ae562a381270290cc0eccc93e6d24af0624cbd7041",
+        "bytes": 874832,
+        "ext": "pdf",
+        "path": "data/documents/f74a9d6b90894f67e56739ae562a381270290cc0eccc93e6d24af0624cbd7041.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.1.1 - Duisburg/26FEI87017 - Ausschreibungs-LV (VL 7.1.1 - Duisburg).X83",
+        "sha256": "88ce0dac2590a10d4a0acf7451043acff93cd3adee23694fc18c913f4bf6b357",
+        "bytes": 1313492,
+        "ext": "x83",
+        "path": "data/documents/88ce0dac2590a10d4a0acf7451043acff93cd3adee23694fc18c913f4bf6b357.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.1.1 - Duisburg/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 7.1 Region West, Netz Duisburg (DU) (1).pdf",
+        "sha256": "aa6c96d032615b8065f45c9cceab72181b82852e29814d57dafb98d1d311bdb6",
+        "bytes": 486165,
+        "ext": "pdf",
+        "path": "data/documents/aa6c96d032615b8065f45c9cceab72181b82852e29814d57dafb98d1d311bdb6.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.1.3 - Duisburg/26FEI87017 - Ausschreibungs-LV (VL 7.1.3 - Duisburg).pdf",
+        "sha256": "71c677752012dd62d2ecd2da259b78b4c75d1c5637196ad8452f7090d21f6c5d",
+        "bytes": 417859,
+        "ext": "pdf",
+        "path": "data/documents/71c677752012dd62d2ecd2da259b78b4c75d1c5637196ad8452f7090d21f6c5d.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.1.3 - Duisburg/26FEI87017 - Ausschreibungs-LV (VL 7.1.3 - Duisburg).X83",
+        "sha256": "83ab685cf610c693f71dd3adbb331ed4408c2d7504ea54a5c64645512e7c6468",
+        "bytes": 327917,
+        "ext": "x83",
+        "path": "data/documents/83ab685cf610c693f71dd3adbb331ed4408c2d7504ea54a5c64645512e7c6468.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.1.3 - Duisburg/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 7.1 Region West, Netz Duisburg (DU) (1).pdf",
+        "sha256": "aa6c96d032615b8065f45c9cceab72181b82852e29814d57dafb98d1d311bdb6",
+        "bytes": 486165,
+        "ext": "pdf",
+        "path": "data/documents/aa6c96d032615b8065f45c9cceab72181b82852e29814d57dafb98d1d311bdb6.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.1.4 - Duisburg/26FEI87017 - Ausschreibungs-LV (VL 7.1.4 - Duisburg).pdf",
+        "sha256": "f7f986eb216e933d8cf5454e7c4e9cd61ea61c256bbeb44ac36be235f76873cb",
+        "bytes": 355572,
+        "ext": "pdf",
+        "path": "data/documents/f7f986eb216e933d8cf5454e7c4e9cd61ea61c256bbeb44ac36be235f76873cb.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.1.4 - Duisburg/26FEI87017 - Ausschreibungs-LV (VL 7.1.4 - Duisburg).X83",
+        "sha256": "b1819939fadea1600d3a4e7487ccb8c3ca4a11bf1b6ea1a25121df80ddcf2813",
+        "bytes": 258645,
+        "ext": "x83",
+        "path": "data/documents/b1819939fadea1600d3a4e7487ccb8c3ca4a11bf1b6ea1a25121df80ddcf2813.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.1.4 - Duisburg/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 7.1 Region West, Netz Duisburg (DU) (1).pdf",
+        "sha256": "aa6c96d032615b8065f45c9cceab72181b82852e29814d57dafb98d1d311bdb6",
+        "bytes": 486165,
+        "ext": "pdf",
+        "path": "data/documents/aa6c96d032615b8065f45c9cceab72181b82852e29814d57dafb98d1d311bdb6.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.5.1 - Köln/26FEI87017 - Ausschreibungs-LV (VL 7.5.1 - Köln).pdf",
+        "sha256": "cf0dfc29eac10fecac9333f82254fae059ba7318e93ebd515515f86bdee8b9fa",
+        "bytes": 874896,
+        "ext": "pdf",
+        "path": "data/documents/cf0dfc29eac10fecac9333f82254fae059ba7318e93ebd515515f86bdee8b9fa.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.5.1 - Köln/26FEI87017 - Ausschreibungs-LV (VL 7.5.1 - Köln).X83",
+        "sha256": "b6e85fe6763f8b423254d9351b1775e2b07130c829a3d7404e66edee9eb6a893",
+        "bytes": 1313358,
+        "ext": "x83",
+        "path": "data/documents/b6e85fe6763f8b423254d9351b1775e2b07130c829a3d7404e66edee9eb6a893.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.5.1 - Köln/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 7.5 Region West, Netz Köln (KÖL).pdf",
+        "sha256": "03a6b41f31dfd745ae1170bdc69512ef963125b03bcc2e1cb45140d8ff060a50",
+        "bytes": 394994,
+        "ext": "pdf",
+        "path": "data/documents/03a6b41f31dfd745ae1170bdc69512ef963125b03bcc2e1cb45140d8ff060a50.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.5.3 - Köln/26FEI87017 - Ausschreibungs-LV (VL 7.5.3 - Köln).pdf",
+        "sha256": "0478d3d26cfef19a11bae2de685929219b88c98b7f2969a211a609340fa45686",
+        "bytes": 418010,
+        "ext": "pdf",
+        "path": "data/documents/0478d3d26cfef19a11bae2de685929219b88c98b7f2969a211a609340fa45686.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.5.3 - Köln/26FEI87017 - Ausschreibungs-LV (VL 7.5.3 - Köln).X83",
+        "sha256": "66d875dcee3b79e335ab303e607cbbfc7dadd804c1fbcb0da1ae7baa87180661",
+        "bytes": 327864,
+        "ext": "x83",
+        "path": "data/documents/66d875dcee3b79e335ab303e607cbbfc7dadd804c1fbcb0da1ae7baa87180661.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.5.3 - Köln/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 7.5 Region West, Netz Köln (KÖL).pdf",
+        "sha256": "03a6b41f31dfd745ae1170bdc69512ef963125b03bcc2e1cb45140d8ff060a50",
+        "bytes": 394994,
+        "ext": "pdf",
+        "path": "data/documents/03a6b41f31dfd745ae1170bdc69512ef963125b03bcc2e1cb45140d8ff060a50.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.5.4 - Köln/26FEI87017 - Ausschreibungs-LV (VL 7.5.4 - Köln).pdf",
+        "sha256": "55d552ee07d5226dfcb510bf3bf9a3d49e3c7866264761acb1670b9c9cef9a4e",
+        "bytes": 355584,
+        "ext": "pdf",
+        "path": "data/documents/55d552ee07d5226dfcb510bf3bf9a3d49e3c7866264761acb1670b9c9cef9a4e.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.5.4 - Köln/26FEI87017 - Ausschreibungs-LV (VL 7.5.4 - Köln).X83",
+        "sha256": "a41edc0dd19ad5b1c47c134986416c15959967b7b668386494d55e83b5f1a793",
+        "bytes": 258651,
+        "ext": "x83",
+        "path": "data/documents/a41edc0dd19ad5b1c47c134986416c15959967b7b668386494d55e83b5f1a793.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/7.5.4 - Köln/Anl. 3.0 RV OBIS 2028ff - Vorbemerkungen - VL 7.5 Region West, Netz Köln (KÖL).pdf",
+        "sha256": "03a6b41f31dfd745ae1170bdc69512ef963125b03bcc2e1cb45140d8ff060a50",
+        "bytes": 394994,
+        "ext": "pdf",
+        "path": "data/documents/03a6b41f31dfd745ae1170bdc69512ef963125b03bcc2e1cb45140d8ff060a50.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_0.0.0-Infoschreiben zur OBIS2028.pdf",
+        "sha256": "4b1b014251015ba5e166960b83e6a8769aebfe8403ad729e16a7ea09b08102fc",
+        "bytes": 41773,
+        "ext": "pdf",
+        "path": "data/documents/4b1b014251015ba5e166960b83e6a8769aebfe8403ad729e16a7ea09b08102fc.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_0.1-Anschreiben an die Bewerber.pdf",
+        "sha256": "c9d9cfb4ed79112c9477790c6a52494b4115ea418263f0e5fc4eb479db086c4b",
+        "bytes": 112832,
+        "ext": "pdf",
+        "path": "data/documents/c9d9cfb4ed79112c9477790c6a52494b4115ea418263f0e5fc4eb479db086c4b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_0.3.0b-Bewerbungsbedingungen Bauleistungen.pdf",
+        "sha256": "71f9087ee7004123a44a553640624c46bdedbcd83d77ff8236297a78337e45da",
+        "bytes": 164945,
+        "ext": "pdf",
+        "path": "data/documents/71f9087ee7004123a44a553640624c46bdedbcd83d77ff8236297a78337e45da.pdf",
+        "route": "READ"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_0.3.1-Anlage zu den Bewerbungsbedingungen final.pdf",
+        "sha256": "7c4e8eda7cc7fabc2a4b4d3c77b0d40810c2d7366e6332b9b1da4e083a3dfc03",
+        "bytes": 108105,
+        "ext": "pdf",
+        "path": "data/documents/7c4e8eda7cc7fabc2a4b4d3c77b0d40810c2d7366e6332b9b1da4e083a3dfc03.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_0.4-Inhaltsverzeichnis Vergabeunterlagen.pdf",
+        "sha256": "19db318d8f13aa9adff8f184aa49962f59e14d41ca2ecb59a91132d6f92c18f3",
+        "bytes": 358900,
+        "ext": "pdf",
+        "path": "data/documents/19db318d8f13aa9adff8f184aa49962f59e14d41ca2ecb59a91132d6f92c18f3.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_1.00-Angebotserklärung zum Rahmenvertrag.pdf",
+        "sha256": "2f1f10e9938f88caaf1b8fd84949b8f9e607ddf00cbfebc1bf840618641dd222",
+        "bytes": 82640,
+        "ext": "pdf",
+        "path": "data/documents/2f1f10e9938f88caaf1b8fd84949b8f9e607ddf00cbfebc1bf840618641dd222.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.00.0-Rahmenvertrag_OBIS_2028.pdf",
+        "sha256": "69ed077a92ba6983384945f8bad0725d347bc585d76aa2176bd738898beb2ca7",
+        "bytes": 180042,
+        "ext": "pdf",
+        "path": "data/documents/69ed077a92ba6983384945f8bad0725d347bc585d76aa2176bd738898beb2ca7.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.01.0_Besondere Vertragsbedingungen.pdf",
+        "sha256": "b10c9dea62733de05c7873aada853fb8c124edfffa75e7ecc65b8d090346a4aa",
+        "bytes": 270213,
+        "ext": "pdf",
+        "path": "data/documents/b10c9dea62733de05c7873aada853fb8c124edfffa75e7ecc65b8d090346a4aa.pdf",
+        "route": "READ"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.01.1-Anlage - RV OBIS 2028ff.pdf",
+        "sha256": "000c44d31d675bdce20ff56bb12823053d4f1614665561d857e2c2cfbce39122",
+        "bytes": 637715,
+        "ext": "pdf",
+        "path": "data/documents/000c44d31d675bdce20ff56bb12823053d4f1614665561d857e2c2cfbce39122.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.02_ZVB DB.pdf",
+        "sha256": "ce54e165a2960c92fe5e51dba66224be3465acaee60427247404bdf30ee9cb7f",
+        "bytes": 248195,
+        "ext": "pdf",
+        "path": "data/documents/ce54e165a2960c92fe5e51dba66224be3465acaee60427247404bdf30ee9cb7f.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.03.0-ZTB - Stand 23.03.2026 final.pdf",
+        "sha256": "14412260bb78f385ff6a15fbcc58555882ae512df07a340de643cac0eace5d0b",
+        "bytes": 123538,
+        "ext": "pdf",
+        "path": "data/documents/14412260bb78f385ff6a15fbcc58555882ae512df07a340de643cac0eace5d0b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.06_DVA Versicherungsmerkblatt.pdf",
+        "sha256": "1e7d90ba4c9f24c4977255153f0deac7197397686c81e894ed258397fedd9e4d",
+        "bytes": 204619,
+        "ext": "pdf",
+        "path": "data/documents/1e7d90ba4c9f24c4977255153f0deac7197397686c81e894ed258397fedd9e4d.pdf",
+        "route": "READ"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.07.2_Verpflichtungserklärung NU.docx",
+        "sha256": "831d569d7b6151fb8cffdc1a90dcb022abe2b575078e0e0aaec6de7a85b4f33c",
+        "bytes": 36964,
+        "ext": "docx",
+        "path": "data/documents/831d569d7b6151fb8cffdc1a90dcb022abe2b575078e0e0aaec6de7a85b4f33c.docx",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.09 - Anlage 2.9 Kabelmerkblatt.pdf",
+        "sha256": "813c97060fa628ef44091a3cefbdaf969b595366f1f1c544eb35d9b7d27c134c",
+        "bytes": 3450289,
+        "ext": "pdf",
+        "path": "data/documents/813c97060fa628ef44091a3cefbdaf969b595366f1f1c544eb35d9b7d27c134c.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.13.1_Anhang I_Rückgabeblatt.xlsm",
+        "sha256": "da2e389f3710520a96c0f226d5f83bd8916232b95be9d7a2d69f32bd8fba20e6",
+        "bytes": 483601,
+        "ext": "xlsm",
+        "path": "data/documents/da2e389f3710520a96c0f226d5f83bd8916232b95be9d7a2d69f32bd8fba20e6.xlsm",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.13.2_Anhang II_Wagenprüfprotokoll.pdf",
+        "sha256": "4ad3947af5ff23466c1f2c3ff6a9424032fe82897fca93d80984d3b4b44a126b",
+        "bytes": 374713,
+        "ext": "pdf",
+        "path": "data/documents/4ad3947af5ff23466c1f2c3ff6a9424032fe82897fca93d80984d3b4b44a126b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.13.3_Anhang III_bes. Beding. Transport OB-Abfälle.pdf",
+        "sha256": "694c593b3595c2b2f2c83ea1af58b01550bef0060bc5c076b6189262754baf73",
+        "bytes": 142587,
+        "ext": "pdf",
+        "path": "data/documents/694c593b3595c2b2f2c83ea1af58b01550bef0060bc5c076b6189262754baf73.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.13.4_Anhang IV_Baulogistik Wagenmiete.pdf",
+        "sha256": "341a5a4649ddbdd10058b8381ed60d3146b82f289a39c4be68754d75290e38d2",
+        "bytes": 577743,
+        "ext": "pdf",
+        "path": "data/documents/341a5a4649ddbdd10058b8381ed60d3146b82f289a39c4be68754d75290e38d2.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.13.5_Anhang V_Selbsttransport Muster Wagenliste.xlsm",
+        "sha256": "771d59ac03a0d6aa8346fddb2472d35e68ff0572c87f6008248ef8d6ebaaa161",
+        "bytes": 120644,
+        "ext": "xlsm",
+        "path": "data/documents/771d59ac03a0d6aa8346fddb2472d35e68ff0572c87f6008248ef8d6ebaaa161.xlsm",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.13.6_Anhang VI_Umgang m. Betonschwelle.pdf",
+        "sha256": "af5ac237e04bac94761ef15f3e663fb3cb29c514fcde1a41b59051c2d87a0e23",
+        "bytes": 3019428,
+        "ext": "pdf",
+        "path": "data/documents/af5ac237e04bac94761ef15f3e663fb3cb29c514fcde1a41b59051c2d87a0e23.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.13_Regelungen Ver- u. Entsorgung Oberbau.pdf",
+        "sha256": "682407223f292279b2262d75db15ff147e120dc2ae07f9b1e5d139ab32f9b655",
+        "bytes": 214772,
+        "ext": "pdf",
+        "path": "data/documents/682407223f292279b2262d75db15ff147e120dc2ae07f9b1e5d139ab32f9b655.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.16_Strukt. Verf. Streitbeilegung .pdf",
+        "sha256": "83a93a9d22a999fe938a50d6502e918ef222820486fcc0d0a475b77ec6ee20a6",
+        "bytes": 82997,
+        "ext": "pdf",
+        "path": "data/documents/83a93a9d22a999fe938a50d6502e918ef222820486fcc0d0a475b77ec6ee20a6.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.23_EVB Bundestariftreue.pdf",
+        "sha256": "c6bf79d2c1dfe43f7ef3b77adf18af30bfce9921b339984a5a09eeb64cd7430e",
+        "bytes": 119652,
+        "ext": "pdf",
+        "path": "data/documents/c6bf79d2c1dfe43f7ef3b77adf18af30bfce9921b339984a5a09eeb64cd7430e.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.24 EVB Mindestlohn.pdf",
+        "sha256": "d72b4a3886e3e86bf9da60a040a7830715c8a0e691bb9570ab0f66eac0bd8537",
+        "bytes": 484881,
+        "ext": "pdf",
+        "path": "data/documents/d72b4a3886e3e86bf9da60a040a7830715c8a0e691bb9570ab0f66eac0bd8537.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.25.0-Preisgleitung OBIS2028.pdf",
+        "sha256": "ab6ce5c264a47b55646627a5f7eff3dd51f833d0805ab19121e87eccf640e2cb",
+        "bytes": 76358,
+        "ext": "pdf",
+        "path": "data/documents/ab6ce5c264a47b55646627a5f7eff3dd51f833d0805ab19121e87eccf640e2cb.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.26.0-Betrachtungszeiträume Preisgleitung.xlsx",
+        "sha256": "d7a7da62813361e1bc1f0c532865db0746549d7003ecb11cdd79906ef1bbda3d",
+        "bytes": 23612,
+        "ext": "xlsx",
+        "path": "data/documents/d7a7da62813361e1bc1f0c532865db0746549d7003ecb11cdd79906ef1bbda3d.xlsx",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_2.27_Höchstwerte.pdf",
+        "sha256": "508888f1659891e1029845e9923d43f077e65f48e93e422876028f63cb13e3a1",
+        "bytes": 38844,
+        "ext": "pdf",
+        "path": "data/documents/508888f1659891e1029845e9923d43f077e65f48e93e422876028f63cb13e3a1.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_3.15 benötigte Bauspitzen je Vergabelos 1. Vergabewelle.xlsx",
+        "sha256": "0d8d35dcf81575855f3ae690e1820a8a9cc8aab8f7b68edd2700bc782c50ad1f",
+        "bytes": 21528,
+        "ext": "xlsx",
+        "path": "data/documents/0d8d35dcf81575855f3ae690e1820a8a9cc8aab8f7b68edd2700bc782c50ad1f.xlsx",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_3.22_Verzeichnis Bahnbetrieb teilnehm. EVU.pdf",
+        "sha256": "8e302aab46e8c083d85022322f8221761974c9aaa2229f192f43fefb29b5f797",
+        "bytes": 75331,
+        "ext": "pdf",
+        "path": "data/documents/8e302aab46e8c083d85022322f8221761974c9aaa2229f192f43fefb29b5f797.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_4.01_Kalkulationsschlussblatt.xlsx",
+        "sha256": "40c225f1b15afe82df0909343a55e6431b1ef70587d8fe0878cf049ce9eee3e2",
+        "bytes": 27997,
+        "ext": "xlsx",
+        "path": "data/documents/40c225f1b15afe82df0909343a55e6431b1ef70587d8fe0878cf049ce9eee3e2.xlsx",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_4.04_Kalkulationsmittellohn.xlsx",
+        "sha256": "964668e7299f26bd7ddb351d54688e534741cc0b78ccd644304ce76a83c2f40d",
+        "bytes": 29921,
+        "ext": "xlsx",
+        "path": "data/documents/964668e7299f26bd7ddb351d54688e534741cc0b78ccd644304ce76a83c2f40d.xlsx",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_4.06_Geräteliste.xlsx",
+        "sha256": "2fbedf452cca83dfd141143c1fc1855c92d55d598a0a8b6d77194da007c0b135",
+        "bytes": 21444,
+        "ext": "xlsx",
+        "path": "data/documents/2fbedf452cca83dfd141143c1fc1855c92d55d598a0a8b6d77194da007c0b135.xlsx",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_4.0_Anforderung an Angebotskalkulation.pdf",
+        "sha256": "f27966d572759000f7d84b5493e8de84803d50834e00be061cf71662b9da65a0",
+        "bytes": 32482,
+        "ext": "pdf",
+        "path": "data/documents/f27966d572759000f7d84b5493e8de84803d50834e00be061cf71662b9da65a0.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_4.5_Beispiele Berechnung EP.pdf",
+        "sha256": "42cea58a023e9db58d370b0cba154e270227688cc701e68f03ba50a4bf4dc161",
+        "bytes": 208035,
+        "ext": "pdf",
+        "path": "data/documents/42cea58a023e9db58d370b0cba154e270227688cc701e68f03ba50a4bf4dc161.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_4.8_Gemeinkostendeckung.xlsx",
+        "sha256": "c7762caab18ec71c891b71275543859916724ea0442121c6e0c234c71cddcf0c",
+        "bytes": 24240,
+        "ext": "xlsx",
+        "path": "data/documents/c7762caab18ec71c891b71275543859916724ea0442121c6e0c234c71cddcf0c.xlsx",
+        "route": "SKIP"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_5.0_Feststellung VNF.pdf",
+        "sha256": "c073d21bb8c4da333d0d0923118e1e0f7a7a856a18ed770b9d698a4135a87e6d",
+        "bytes": 55031,
+        "ext": "pdf",
+        "path": "data/documents/c073d21bb8c4da333d0d0923118e1e0f7a7a856a18ed770b9d698a4135a87e6d.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "26FEI87017 OBIS2028 Welle 1/26FEI87017 OBIS2028 Welle 1/Vertragsunterlagen/26FEI87017_7.0_Kodex gute Zusammenarbeit.pdf",
+        "sha256": "cd74014c2c4dddc80783a3c0f32896f142007f3a3327143eab4bb7e12119e6e4",
+        "bytes": 325095,
+        "ext": "pdf",
+        "path": "data/documents/cd74014c2c4dddc80783a3c0f32896f142007f3a3327143eab4bb7e12119e6e4.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "Unterlagen/Weitere Dokumente/26FEI87017- 2.07.1_NU-Verzeichnis.docx",
+        "sha256": "d4f9bd85bfe1490677bc1a39cced7deae652b88b938af4e21e49353872c1a12c",
+        "bytes": 34459,
+        "ext": "docx",
+        "path": "data/documents/d4f9bd85bfe1490677bc1a39cced7deae652b88b938af4e21e49353872c1a12c.docx",
+        "route": "SKIP"
+      },
+      {
+        "name": "Unterlagen/Weitere Dokumente/26FEI87017_0.4-Inhaltsverzeichnis Vergabeunterlagen neu.pdf",
+        "sha256": "2cdf15d8a31fc957ee918e352762e2eb7726f62532926f306239750a8e835fd5",
+        "bytes": 359018,
+        "ext": "pdf",
+        "path": "data/documents/2cdf15d8a31fc957ee918e352762e2eb7726f62532926f306239750a8e835fd5.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "Nachrichten/Fragen und Antworten 17.09.2026 15_37_11.pdf",
+        "sha256": "5732a52ef1fcae11c204153f21fc62a23399590c2cae3cd2e90141120554d30e",
+        "bytes": 14525,
+        "ext": "pdf",
+        "path": "data/documents/5732a52ef1fcae11c204153f21fc62a23399590c2cae3cd2e90141120554d30e.pdf",
+        "route": "OTHER"
+      }
+    ],
+    "fetched_at": "2026-09-18T09:52:14+00:00"
+  },
+  {
+    "buyer_name": "Gemeinde Anröchte",
+    "document_url": "https://www.vergabe-westfalen.de/VMPSatellite/notice/CXPWY6LLKD3/documents",
+    "notice_ids": [
+      "bc4afef4-23b4-4599-b42b-cf6665f6d5f3"
+    ],
+    "platform": "www.vergabe-westfalen.de",
+    "status": "RETRIEVED",
+    "reason": null,
+    "package": {
+      "filename": "Vergabeunterlagen_CXPWY6LLKD3.zip",
+      "bytes": 13551303
+    },
+    "files": [
+      {
+        "name": "leistungsbeschreibungen/3015-SEK.x83",
+        "sha256": "c9c8db40591f3457c62ee6944980e356fa9588c1c9acbaf0e98363a18a3bc12c",
+        "bytes": 107690,
+        "ext": "x83",
+        "path": "data/documents/c9c8db40591f3457c62ee6944980e356fa9588c1c9acbaf0e98363a18a3bc12c.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "leistungsbeschreibungen/3015-SEK-LV.pdf",
+        "sha256": "0e5afc6362a21a4c75ab525ce122e34bcb750d7d0e3bbde5329174b4df1b0582",
+        "bytes": 190933,
+        "ext": "pdf",
+        "path": "data/documents/0e5afc6362a21a4c75ab525ce122e34bcb750d7d0e3bbde5329174b4df1b0582.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "leistungsbeschreibungen/3015-SEK.D83",
+        "sha256": "ad629a9bddc2036b50edd6a6bfd0b3429023067ae1cea0dcc252608d5c01bb9f",
+        "bytes": 91922,
+        "ext": "d83",
+        "path": "data/documents/ad629a9bddc2036b50edd6a6bfd0b3429023067ae1cea0dcc252608d5c01bb9f.d83",
+        "route": "SKIP"
+      },
+      {
+        "name": "vertragsbedingungen/216_EU_ohne_Lose (002)_BHZ_Sektionaltore.pdf",
+        "sha256": "b104c6700f634ca20467f7e84d2499fc904422c31f7bfb9079e89561bc307d0e",
+        "bytes": 201330,
+        "ext": "pdf",
+        "path": "data/documents/b104c6700f634ca20467f7e84d2499fc904422c31f7bfb9079e89561bc307d0e.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "vertragsbedingungen/210_EU_ohne_Lose (002)_BHZ_Sektionaltore.pdf",
+        "sha256": "6888aadbe6259403be29ad8903ef28ed93378e37ec7e43ecbc3291b29e3cebe1",
+        "bytes": 439031,
+        "ext": "pdf",
+        "path": "data/documents/6888aadbe6259403be29ad8903ef28ed93378e37ec7e43ecbc3291b29e3cebe1.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "sonstiges/FEUANR01-BAU-130-100-GRU-1.OG-Ind 2.pdf",
+        "sha256": "bab93f0af7d3878f54ba9093953188db66ceb375a8600ddd423ea105e9cee0a9",
+        "bytes": 636267,
+        "ext": "pdf",
+        "path": "data/documents/bab93f0af7d3878f54ba9093953188db66ceb375a8600ddd423ea105e9cee0a9.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "sonstiges/FEUANR01-BAU-200-100-SCH-A-B-C-D-Ind 2.pdf",
+        "sha256": "b735fd755a32d5ed657c8a3ce0af371e34b111eeb3c7333256c37b3ff4a77a6d",
+        "bytes": 1349275,
+        "ext": "pdf",
+        "path": "data/documents/b735fd755a32d5ed657c8a3ce0af371e34b111eeb3c7333256c37b3ff4a77a6d.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "sonstiges/FEUANR01-BAU-220-100-ANS-Ind 2.pdf",
+        "sha256": "c2b2d015a11f1442e74ee307d36af66de12c7d66c80f0bf470c45d82fb40133e",
+        "bytes": 3281286,
+        "ext": "pdf",
+        "path": "data/documents/c2b2d015a11f1442e74ee307d36af66de12c7d66c80f0bf470c45d82fb40133e.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "sonstiges/BZP-LV-001-20260909-LVS.pdf",
+        "sha256": "260eeaad03dfd705574a33639ad9214924520fc26a9bcf17a5250265422e3fcd",
+        "bytes": 150433,
+        "ext": "pdf",
+        "path": "data/documents/260eeaad03dfd705574a33639ad9214924520fc26a9bcf17a5250265422e3fcd.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "sonstiges/FEUANR01-AUS-500-200-LAG-LEI Index 0.1.pdf",
+        "sha256": "577543939cb33de1adda54e2d0595d45b92b86ca5b06816ec09f680fb7e1dacb",
+        "bytes": 2205999,
+        "ext": "pdf",
+        "path": "data/documents/577543939cb33de1adda54e2d0595d45b92b86ca5b06816ec09f680fb7e1dacb.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "sonstiges/FEUANR01-AUS-520-200-LAG-BAU-Ind 0.1.pdf",
+        "sha256": "37f574ffa28c56b6887be72ce790c582bf381773e2d00eaa0f0532f9155a4448",
+        "bytes": 3000998,
+        "ext": "pdf",
+        "path": "data/documents/37f574ffa28c56b6887be72ce790c582bf381773e2d00eaa0f0532f9155a4448.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "sonstiges/FEUANR01-BAU-120-100-GRU-EG-Ind 2.pdf",
+        "sha256": "a0dee1ccf02b223b8f4f256d566f74d4ea391255bbb991549b81fe5a053209dc",
+        "bytes": 3291230,
+        "ext": "pdf",
+        "path": "data/documents/a0dee1ccf02b223b8f4f256d566f74d4ea391255bbb991549b81fe5a053209dc.pdf",
+        "route": "OTHER"
+      }
+    ],
+    "fetched_at": "2026-09-18T09:30:14+00:00"
+  },
+  {
+    "buyer_name": "Gemeinde Obersulm",
+    "document_url": "https://www.vergabe24.de/vergabeunterlagen/54321-Tender-1a057235099-3e10aa49cb25c2d9",
+    "notice_ids": [
+      "15b583c7-8b22-4cd6-b394-27ee0cfc41c7",
+      "20c022b4-4bd0-4260-94d3-f0e91d2dad42",
+      "5d881a3d-daa1-4d1b-b3f9-6b7436d80349"
+    ],
+    "platform": "www.vergabe24.de",
+    "status": "RETRIEVED",
+    "reason": null,
+    "package": {
+      "filename": "5a559f98-9f4b-e16e-e063-e918000ab536.zip",
+      "bytes": 89688252
+    },
+    "files": [
+      {
+        "name": "2417_LV_Estrich/260818_Liste_Anlagen zur Ausschreibung.pdf",
+        "sha256": "479047d4a6c14bb6a0f4a879754a2f9c7a009b0e96c2c0524ca3f08ba7b5b322",
+        "bytes": 670891,
+        "ext": "pdf",
+        "path": "data/documents/479047d4a6c14bb6a0f4a879754a2f9c7a009b0e96c2c0524ca3f08ba7b5b322.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/01_LV/2417_KEV_Estrich.pdf",
+        "sha256": "b74b29eec153fcfba6d2a5571e6ef73cb0bd506c0c22a814851b5804b4af27fb",
+        "bytes": 510055,
+        "ext": "pdf",
+        "path": "data/documents/b74b29eec153fcfba6d2a5571e6ef73cb0bd506c0c22a814851b5804b4af27fb.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/01_LV/2417_Schule_Affaltrach_Estrich.pdf",
+        "sha256": "7f648fb37b74ff7fab54aeac9a3d5e1127623bd8c74f30a73e56d79c0559dc37",
+        "bytes": 826881,
+        "ext": "pdf",
+        "path": "data/documents/7f648fb37b74ff7fab54aeac9a3d5e1127623bd8c74f30a73e56d79c0559dc37.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/01_LV/2417_Schule_Affaltrach_Estrich.X83",
+        "sha256": "295e5fac2b7c357f77f3bfff063f9d4c4708573544cba40d3ff3f7e20d7c6975",
+        "bytes": 551290,
+        "ext": "x83",
+        "path": "data/documents/295e5fac2b7c357f77f3bfff063f9d4c4708573544cba40d3ff3f7e20d7c6975.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_502_GR_BA_1+2_A_260309.pdf",
+        "sha256": "fc749cc9c782e785924dfdb3ec73f8dafe6a08c0bacaa4fed58abf81668718d4",
+        "bytes": 560666,
+        "ext": "pdf",
+        "path": "data/documents/fc749cc9c782e785924dfdb3ec73f8dafe6a08c0bacaa4fed58abf81668718d4.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_503_GR_BA_3_B_260610.pdf",
+        "sha256": "f3575f73c43db11d098d40c3d4c8a0fb2dba542057dd0deeab72b6e6253d065b",
+        "bytes": 621244,
+        "ext": "pdf",
+        "path": "data/documents/f3575f73c43db11d098d40c3d4c8a0fb2dba542057dd0deeab72b6e6253d065b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_504_GR_BA_4_B_260610.pdf",
+        "sha256": "62a2d8b625cd9c65fe35627120bdd03883999e04a299005a8a29ee1c0f835b7b",
+        "bytes": 528208,
+        "ext": "pdf",
+        "path": "data/documents/62a2d8b625cd9c65fe35627120bdd03883999e04a299005a8a29ee1c0f835b7b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_505_GR_BA_5_B_260610.pdf",
+        "sha256": "e7429f807d55a329c984ecb6cf00d8f375ed54fdd02d45c9d5b2a1a8bbc67ea6",
+        "bytes": 737513,
+        "ext": "pdf",
+        "path": "data/documents/e7429f807d55a329c984ecb6cf00d8f375ed54fdd02d45c9d5b2a1a8bbc67ea6.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_506_GR_BA_6_B_260610.pdf",
+        "sha256": "77e114fcb572c7f14eeacfb3e97a549821d61ffbf4436195c3c904feaad1ca99",
+        "bytes": 746740,
+        "ext": "pdf",
+        "path": "data/documents/77e114fcb572c7f14eeacfb3e97a549821d61ffbf4436195c3c904feaad1ca99.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_510b_GR_U1_J_260813.pdf",
+        "sha256": "0c79901f4f00ee43833915731a52c86543a127b717bbcce446c4c275391a0442",
+        "bytes": 390044,
+        "ext": "pdf",
+        "path": "data/documents/0c79901f4f00ee43833915731a52c86543a127b717bbcce446c4c275391a0442.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_511b_GR_00_K_260813.pdf",
+        "sha256": "536722ca36b1cf19fc8bbae68d96e61e4ecb4b6eb99a116f2c76acc9a9e94289",
+        "bytes": 1783002,
+        "ext": "pdf",
+        "path": "data/documents/536722ca36b1cf19fc8bbae68d96e61e4ecb4b6eb99a116f2c76acc9a9e94289.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_512b_GR_01_L_260813.pdf",
+        "sha256": "89ba31e5c5f683a68d53b2a6e0842afccc617ceacd4e5b9527face0ced22f369",
+        "bytes": 1553782,
+        "ext": "pdf",
+        "path": "data/documents/89ba31e5c5f683a68d53b2a6e0842afccc617ceacd4e5b9527face0ced22f369.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_513b_GR_02_K_260813.pdf",
+        "sha256": "fc712df81797caf66d7082943750583a127cca2826a91e7e635defd52e0ce337",
+        "bytes": 1580013,
+        "ext": "pdf",
+        "path": "data/documents/fc712df81797caf66d7082943750583a127cca2826a91e7e635defd52e0ce337.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_515b_GR_DA_F_260813.pdf",
+        "sha256": "95c01c4d610a61a5e698d89db7924977aa799c96bfaef63fde61a892907f31bd",
+        "bytes": 971409,
+        "ext": "pdf",
+        "path": "data/documents/95c01c4d610a61a5e698d89db7924977aa799c96bfaef63fde61a892907f31bd.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_521_SN_1-1_H_260813.pdf",
+        "sha256": "8d92ffd879515d5b83b5ff4d6fa5df7053405f130e15414e908e3bc50845e6c5",
+        "bytes": 1455503,
+        "ext": "pdf",
+        "path": "data/documents/8d92ffd879515d5b83b5ff4d6fa5df7053405f130e15414e908e3bc50845e6c5.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_522_SN_2-2_E_260813.pdf",
+        "sha256": "9ee34b5fb312e88370f2d34cbe70a92fef0181c02fbce7f0ad615c41e09767a8",
+        "bytes": 709170,
+        "ext": "pdf",
+        "path": "data/documents/9ee34b5fb312e88370f2d34cbe70a92fef0181c02fbce7f0ad615c41e09767a8.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_523_SN_3-3_I_260813.pdf",
+        "sha256": "5c74c38d76e66021fcdafc6ae4068e7abb97136f44d2b6a5afa45b9966e318be",
+        "bytes": 636008,
+        "ext": "pdf",
+        "path": "data/documents/5c74c38d76e66021fcdafc6ae4068e7abb97136f44d2b6a5afa45b9966e318be.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_524_SN_4-4_G_260813.pdf",
+        "sha256": "55efad7cf5aeb62e145c06fe2968013fd9909157d62b5f634a95fdb05b721050",
+        "bytes": 822244,
+        "ext": "pdf",
+        "path": "data/documents/55efad7cf5aeb62e145c06fe2968013fd9909157d62b5f634a95fdb05b721050.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_525_SN_5-5_H_260813.pdf",
+        "sha256": "c529266953c69c254d5b371991ca043470f4ee135a2f8d6a966b01593cc03665",
+        "bytes": 556850,
+        "ext": "pdf",
+        "path": "data/documents/c529266953c69c254d5b371991ca043470f4ee135a2f8d6a966b01593cc03665.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_526_SN_TRH_D_260813.pdf",
+        "sha256": "06fa80b433bc333b7c645254dd1c98d23ef6eb95bf08ca270717546699481727",
+        "bytes": 921500,
+        "ext": "pdf",
+        "path": "data/documents/06fa80b433bc333b7c645254dd1c98d23ef6eb95bf08ca270717546699481727.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_527_SN_AUFZUG_C_260813.pdf",
+        "sha256": "3e558c69a7357178f15d9a2657cd5bfed4d15f76f8221ee0bdf3d09fc1922cfc",
+        "bytes": 569027,
+        "ext": "pdf",
+        "path": "data/documents/3e558c69a7357178f15d9a2657cd5bfed4d15f76f8221ee0bdf3d09fc1922cfc.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_530_AN_S_F_260813.pdf",
+        "sha256": "84803e57b39fca9ea50bbdd63bb666ea7267c613942e33c533603bd9782b6070",
+        "bytes": 856129,
+        "ext": "pdf",
+        "path": "data/documents/84803e57b39fca9ea50bbdd63bb666ea7267c613942e33c533603bd9782b6070.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_531_AN_O_F_260813.pdf",
+        "sha256": "5d70899ad64364118f3435003ae54b35958eb5ba178771c3a6296afc71451609",
+        "bytes": 781129,
+        "ext": "pdf",
+        "path": "data/documents/5d70899ad64364118f3435003ae54b35958eb5ba178771c3a6296afc71451609.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_532_AN_N_F_260813.pdf",
+        "sha256": "84fa30c7a14e898a5ca1885cb3b06214bde484be753f94c2ae439fcca88806b3",
+        "bytes": 1702127,
+        "ext": "pdf",
+        "path": "data/documents/84fa30c7a14e898a5ca1885cb3b06214bde484be753f94c2ae439fcca88806b3.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_533_AN_W_F_260813.pdf",
+        "sha256": "e77de9f6bc3e64ad86d8a3054d97b3cc150979ac1a7267398c69612fc4862b69",
+        "bytes": 929883,
+        "ext": "pdf",
+        "path": "data/documents/e77de9f6bc3e64ad86d8a3054d97b3cc150979ac1a7267398c69612fc4862b69.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/08_Bodenbelag/2417_541_BS_00_A_260813.pdf",
+        "sha256": "85581abee49205ede1298b593de81fd5e9307211347957721a395cc5cb7ba975",
+        "bytes": 1262014,
+        "ext": "pdf",
+        "path": "data/documents/85581abee49205ede1298b593de81fd5e9307211347957721a395cc5cb7ba975.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/08_Bodenbelag/2417_542_BS_01_A_250813.pdf",
+        "sha256": "489bc32425e7dce037c4047ff62f8665a210d05c18734e8079bbd338789b12c8",
+        "bytes": 1102153,
+        "ext": "pdf",
+        "path": "data/documents/489bc32425e7dce037c4047ff62f8665a210d05c18734e8079bbd338789b12c8.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/08_Bodenbelag/2417_543_BS_02_A_250813.pdf",
+        "sha256": "f3826ae88653b49b30f7486628d1160d43e9616ebe9402f206b8f62a32705c0b",
+        "bytes": 1099305,
+        "ext": "pdf",
+        "path": "data/documents/f3826ae88653b49b30f7486628d1160d43e9616ebe9402f206b8f62a32705c0b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/10_Lageplan/2_22.09.2025_Lageplan_zeichnerisch.pdf",
+        "sha256": "7a3a64db248be753f39239c0574f42b4f0b84d051b8f14c25acc849bc29c12e4",
+        "bytes": 1191136,
+        "ext": "pdf",
+        "path": "data/documents/7a3a64db248be753f39239c0574f42b4f0b84d051b8f14c25acc849bc29c12e4.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/24706_Bauakustik_3.pdf",
+        "sha256": "5166245e36020295004c2b3c8df8633f2a5d10341bcb1e5528227c22d2b027ff",
+        "bytes": 521077,
+        "ext": "pdf",
+        "path": "data/documents/5166245e36020295004c2b3c8df8633f2a5d10341bcb1e5528227c22d2b027ff.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/24706_Raumakustik_2.pdf",
+        "sha256": "8ef9fa9bb7101569d4625f3ba2927cc575a68482a9f2ba6a8f40135272169a0c",
+        "bytes": 1215644,
+        "ext": "pdf",
+        "path": "data/documents/8ef9fa9bb7101569d4625f3ba2927cc575a68482a9f2ba6a8f40135272169a0c.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/260714_AblaufplanBau.pdf",
+        "sha256": "6aeef68d55cda3d4e2a48f439dc80cb530a90b8d4e414e7ea4e2a5c3e0b3fad7",
+        "bytes": 2815604,
+        "ext": "pdf",
+        "path": "data/documents/6aeef68d55cda3d4e2a48f439dc80cb530a90b8d4e414e7ea4e2a5c3e0b3fad7.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/Russland_Sanktion.pdf",
+        "sha256": "c138fe7c4905eb36260020aa0b48978d1f014829a113c08e6a96cbffd730328f",
+        "bytes": 245810,
+        "ext": "pdf",
+        "path": "data/documents/c138fe7c4905eb36260020aa0b48978d1f014829a113c08e6a96cbffd730328f.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "DECKBLATT_ANGEBOTSSCHREIBEN.aidoc",
+        "sha256": "c3e72baa883f1c87a0c0cab00e5bfda2b9ec3ef017ecce9abf2b8e9f8ec0f1b0",
+        "bytes": 1341,
+        "ext": "aidoc",
+        "path": "data/documents/c3e72baa883f1c87a0c0cab00e5bfda2b9ec3ef017ecce9abf2b8e9f8ec0f1b0.aidoc",
+        "route": "SKIP"
+      },
+      {
+        "name": "DECKBLATT_ANGEBOTSSCHREIBEN.aidocdef",
+        "sha256": "efa1af7d9de0bbff223f1f76afde2d8863414173b289ddaf222ca955dbf5a1f8",
+        "bytes": 10332,
+        "ext": "aidocdef",
+        "path": "data/documents/efa1af7d9de0bbff223f1f76afde2d8863414173b289ddaf222ca955dbf5a1f8.aidocdef",
+        "route": "SKIP"
+      },
+      {
+        "name": "DECKBLATT_ANGEBOTSSCHREIBEN.aiform",
+        "sha256": "5f5f7032ddd8ac03ab0cb62c60dcd6ccefe3289ef4610bf1b9d6e999a6c6edd5",
+        "bytes": 14825,
+        "ext": "aiform",
+        "path": "data/documents/5f5f7032ddd8ac03ab0cb62c60dcd6ccefe3289ef4610bf1b9d6e999a6c6edd5.aiform",
+        "route": "SKIP"
+      },
+      {
+        "name": "LVStyleSheet.xsl",
+        "sha256": "d91618d9be88cc172f50ab16711f9fc091236f1974a58792cfd8ad5f93aabe26",
+        "bytes": 190311,
+        "ext": "xsl",
+        "path": "data/documents/d91618d9be88cc172f50ab16711f9fc091236f1974a58792cfd8ad5f93aabe26.xsl",
+        "route": "SKIP"
+      },
+      {
+        "name": "Leistungsverzeichnis.aidf",
+        "sha256": "ecb017859d2cfd655d13c0dc924992d6aefd5fcbc597fb41ca1f7e5594b64743",
+        "bytes": 47239,
+        "ext": "aidf",
+        "path": "data/documents/ecb017859d2cfd655d13c0dc924992d6aefd5fcbc597fb41ca1f7e5594b64743.aidf",
+        "route": "SKIP"
+      },
+      {
+        "name": "MetaData.xml",
+        "sha256": "3a4ed5e584437804e8e388df2e0eace7bb393692dae86e52f0792a9fdf6761f6",
+        "bytes": 437139,
+        "ext": "xml",
+        "path": "data/documents/3a4ed5e584437804e8e388df2e0eace7bb393692dae86e52f0792a9fdf6761f6.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nutzungsbedingungen.pdf",
+        "sha256": "8153f474ebbf77dce196bc429dd40a7bc842f822d562f4868dcdd7fc0145db39",
+        "bytes": 1184866,
+        "ext": "pdf",
+        "path": "data/documents/8153f474ebbf77dce196bc429dd40a7bc842f822d562f4868dcdd7fc0145db39.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "VIRTUAL_ANGEBOTSDATEN.aidocdef",
+        "sha256": "ba3d57fb8510d32a420a8031e6f247325a19fd9c7ec2fb046c055d4f95fd6fdc",
+        "bytes": 2016,
+        "ext": "aidocdef",
+        "path": "data/documents/ba3d57fb8510d32a420a8031e6f247325a19fd9c7ec2fb046c055d4f95fd6fdc.aidocdef",
+        "route": "SKIP"
+      },
+      {
+        "name": "VIRTUAL_OFFER_LV.aidocdef",
+        "sha256": "c3fd0dcac41302cb11981ff3b48ebf25d4c750764563c71a5326da812f124beb",
+        "bytes": 35880,
+        "ext": "aidocdef",
+        "path": "data/documents/c3fd0dcac41302cb11981ff3b48ebf25d4c750764563c71a5326da812f124beb.aidocdef",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/260818_Liste_Anlagen zur Ausschreibung.pdf",
+        "sha256": "479047d4a6c14bb6a0f4a879754a2f9c7a009b0e96c2c0524ca3f08ba7b5b322",
+        "bytes": 670891,
+        "ext": "pdf",
+        "path": "data/documents/479047d4a6c14bb6a0f4a879754a2f9c7a009b0e96c2c0524ca3f08ba7b5b322.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/01_LV/2417_KEV_Estrich.pdf",
+        "sha256": "b74b29eec153fcfba6d2a5571e6ef73cb0bd506c0c22a814851b5804b4af27fb",
+        "bytes": 510055,
+        "ext": "pdf",
+        "path": "data/documents/b74b29eec153fcfba6d2a5571e6ef73cb0bd506c0c22a814851b5804b4af27fb.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/01_LV/2417_Schule_Affaltrach_Estrich.pdf",
+        "sha256": "7f648fb37b74ff7fab54aeac9a3d5e1127623bd8c74f30a73e56d79c0559dc37",
+        "bytes": 826881,
+        "ext": "pdf",
+        "path": "data/documents/7f648fb37b74ff7fab54aeac9a3d5e1127623bd8c74f30a73e56d79c0559dc37.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/01_LV/2417_Schule_Affaltrach_Estrich.X83",
+        "sha256": "295e5fac2b7c357f77f3bfff063f9d4c4708573544cba40d3ff3f7e20d7c6975",
+        "bytes": 551290,
+        "ext": "x83",
+        "path": "data/documents/295e5fac2b7c357f77f3bfff063f9d4c4708573544cba40d3ff3f7e20d7c6975.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_502_GR_BA_1+2_A_260309.pdf",
+        "sha256": "fc749cc9c782e785924dfdb3ec73f8dafe6a08c0bacaa4fed58abf81668718d4",
+        "bytes": 560666,
+        "ext": "pdf",
+        "path": "data/documents/fc749cc9c782e785924dfdb3ec73f8dafe6a08c0bacaa4fed58abf81668718d4.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_503_GR_BA_3_B_260610.pdf",
+        "sha256": "f3575f73c43db11d098d40c3d4c8a0fb2dba542057dd0deeab72b6e6253d065b",
+        "bytes": 621244,
+        "ext": "pdf",
+        "path": "data/documents/f3575f73c43db11d098d40c3d4c8a0fb2dba542057dd0deeab72b6e6253d065b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_504_GR_BA_4_B_260610.pdf",
+        "sha256": "62a2d8b625cd9c65fe35627120bdd03883999e04a299005a8a29ee1c0f835b7b",
+        "bytes": 528208,
+        "ext": "pdf",
+        "path": "data/documents/62a2d8b625cd9c65fe35627120bdd03883999e04a299005a8a29ee1c0f835b7b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_505_GR_BA_5_B_260610.pdf",
+        "sha256": "e7429f807d55a329c984ecb6cf00d8f375ed54fdd02d45c9d5b2a1a8bbc67ea6",
+        "bytes": 737513,
+        "ext": "pdf",
+        "path": "data/documents/e7429f807d55a329c984ecb6cf00d8f375ed54fdd02d45c9d5b2a1a8bbc67ea6.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_506_GR_BA_6_B_260610.pdf",
+        "sha256": "77e114fcb572c7f14eeacfb3e97a549821d61ffbf4436195c3c904feaad1ca99",
+        "bytes": 746740,
+        "ext": "pdf",
+        "path": "data/documents/77e114fcb572c7f14eeacfb3e97a549821d61ffbf4436195c3c904feaad1ca99.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_510b_GR_U1_J_260813.pdf",
+        "sha256": "0c79901f4f00ee43833915731a52c86543a127b717bbcce446c4c275391a0442",
+        "bytes": 390044,
+        "ext": "pdf",
+        "path": "data/documents/0c79901f4f00ee43833915731a52c86543a127b717bbcce446c4c275391a0442.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_511b_GR_00_K_260813.pdf",
+        "sha256": "536722ca36b1cf19fc8bbae68d96e61e4ecb4b6eb99a116f2c76acc9a9e94289",
+        "bytes": 1783002,
+        "ext": "pdf",
+        "path": "data/documents/536722ca36b1cf19fc8bbae68d96e61e4ecb4b6eb99a116f2c76acc9a9e94289.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_512b_GR_01_L_260813.pdf",
+        "sha256": "89ba31e5c5f683a68d53b2a6e0842afccc617ceacd4e5b9527face0ced22f369",
+        "bytes": 1553782,
+        "ext": "pdf",
+        "path": "data/documents/89ba31e5c5f683a68d53b2a6e0842afccc617ceacd4e5b9527face0ced22f369.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_513b_GR_02_K_260813.pdf",
+        "sha256": "fc712df81797caf66d7082943750583a127cca2826a91e7e635defd52e0ce337",
+        "bytes": 1580013,
+        "ext": "pdf",
+        "path": "data/documents/fc712df81797caf66d7082943750583a127cca2826a91e7e635defd52e0ce337.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_515b_GR_DA_F_260813.pdf",
+        "sha256": "95c01c4d610a61a5e698d89db7924977aa799c96bfaef63fde61a892907f31bd",
+        "bytes": 971409,
+        "ext": "pdf",
+        "path": "data/documents/95c01c4d610a61a5e698d89db7924977aa799c96bfaef63fde61a892907f31bd.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_521_SN_1-1_H_260813.pdf",
+        "sha256": "8d92ffd879515d5b83b5ff4d6fa5df7053405f130e15414e908e3bc50845e6c5",
+        "bytes": 1455503,
+        "ext": "pdf",
+        "path": "data/documents/8d92ffd879515d5b83b5ff4d6fa5df7053405f130e15414e908e3bc50845e6c5.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_522_SN_2-2_E_260813.pdf",
+        "sha256": "9ee34b5fb312e88370f2d34cbe70a92fef0181c02fbce7f0ad615c41e09767a8",
+        "bytes": 709170,
+        "ext": "pdf",
+        "path": "data/documents/9ee34b5fb312e88370f2d34cbe70a92fef0181c02fbce7f0ad615c41e09767a8.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_523_SN_3-3_I_260813.pdf",
+        "sha256": "5c74c38d76e66021fcdafc6ae4068e7abb97136f44d2b6a5afa45b9966e318be",
+        "bytes": 636008,
+        "ext": "pdf",
+        "path": "data/documents/5c74c38d76e66021fcdafc6ae4068e7abb97136f44d2b6a5afa45b9966e318be.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_524_SN_4-4_G_260813.pdf",
+        "sha256": "55efad7cf5aeb62e145c06fe2968013fd9909157d62b5f634a95fdb05b721050",
+        "bytes": 822244,
+        "ext": "pdf",
+        "path": "data/documents/55efad7cf5aeb62e145c06fe2968013fd9909157d62b5f634a95fdb05b721050.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_525_SN_5-5_H_260813.pdf",
+        "sha256": "c529266953c69c254d5b371991ca043470f4ee135a2f8d6a966b01593cc03665",
+        "bytes": 556850,
+        "ext": "pdf",
+        "path": "data/documents/c529266953c69c254d5b371991ca043470f4ee135a2f8d6a966b01593cc03665.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_526_SN_TRH_D_260813.pdf",
+        "sha256": "06fa80b433bc333b7c645254dd1c98d23ef6eb95bf08ca270717546699481727",
+        "bytes": 921500,
+        "ext": "pdf",
+        "path": "data/documents/06fa80b433bc333b7c645254dd1c98d23ef6eb95bf08ca270717546699481727.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_527_SN_AUFZUG_C_260813.pdf",
+        "sha256": "3e558c69a7357178f15d9a2657cd5bfed4d15f76f8221ee0bdf3d09fc1922cfc",
+        "bytes": 569027,
+        "ext": "pdf",
+        "path": "data/documents/3e558c69a7357178f15d9a2657cd5bfed4d15f76f8221ee0bdf3d09fc1922cfc.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_530_AN_S_F_260813.pdf",
+        "sha256": "84803e57b39fca9ea50bbdd63bb666ea7267c613942e33c533603bd9782b6070",
+        "bytes": 856129,
+        "ext": "pdf",
+        "path": "data/documents/84803e57b39fca9ea50bbdd63bb666ea7267c613942e33c533603bd9782b6070.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_531_AN_O_F_260813.pdf",
+        "sha256": "5d70899ad64364118f3435003ae54b35958eb5ba178771c3a6296afc71451609",
+        "bytes": 781129,
+        "ext": "pdf",
+        "path": "data/documents/5d70899ad64364118f3435003ae54b35958eb5ba178771c3a6296afc71451609.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_532_AN_N_F_260813.pdf",
+        "sha256": "84fa30c7a14e898a5ca1885cb3b06214bde484be753f94c2ae439fcca88806b3",
+        "bytes": 1702127,
+        "ext": "pdf",
+        "path": "data/documents/84fa30c7a14e898a5ca1885cb3b06214bde484be753f94c2ae439fcca88806b3.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_533_AN_W_F_260813.pdf",
+        "sha256": "e77de9f6bc3e64ad86d8a3054d97b3cc150979ac1a7267398c69612fc4862b69",
+        "bytes": 929883,
+        "ext": "pdf",
+        "path": "data/documents/e77de9f6bc3e64ad86d8a3054d97b3cc150979ac1a7267398c69612fc4862b69.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/08_Bodenbelag/2417_541_BS_00_A_260813.pdf",
+        "sha256": "85581abee49205ede1298b593de81fd5e9307211347957721a395cc5cb7ba975",
+        "bytes": 1262014,
+        "ext": "pdf",
+        "path": "data/documents/85581abee49205ede1298b593de81fd5e9307211347957721a395cc5cb7ba975.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/08_Bodenbelag/2417_542_BS_01_A_250813.pdf",
+        "sha256": "489bc32425e7dce037c4047ff62f8665a210d05c18734e8079bbd338789b12c8",
+        "bytes": 1102153,
+        "ext": "pdf",
+        "path": "data/documents/489bc32425e7dce037c4047ff62f8665a210d05c18734e8079bbd338789b12c8.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/08_Bodenbelag/2417_543_BS_02_A_250813.pdf",
+        "sha256": "f3826ae88653b49b30f7486628d1160d43e9616ebe9402f206b8f62a32705c0b",
+        "bytes": 1099305,
+        "ext": "pdf",
+        "path": "data/documents/f3826ae88653b49b30f7486628d1160d43e9616ebe9402f206b8f62a32705c0b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/10_Lageplan/2_22.09.2025_Lageplan_zeichnerisch.pdf",
+        "sha256": "7a3a64db248be753f39239c0574f42b4f0b84d051b8f14c25acc849bc29c12e4",
+        "bytes": 1191136,
+        "ext": "pdf",
+        "path": "data/documents/7a3a64db248be753f39239c0574f42b4f0b84d051b8f14c25acc849bc29c12e4.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/24706_Bauakustik_3.pdf",
+        "sha256": "5166245e36020295004c2b3c8df8633f2a5d10341bcb1e5528227c22d2b027ff",
+        "bytes": 521077,
+        "ext": "pdf",
+        "path": "data/documents/5166245e36020295004c2b3c8df8633f2a5d10341bcb1e5528227c22d2b027ff.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/24706_Raumakustik_2.pdf",
+        "sha256": "8ef9fa9bb7101569d4625f3ba2927cc575a68482a9f2ba6a8f40135272169a0c",
+        "bytes": 1215644,
+        "ext": "pdf",
+        "path": "data/documents/8ef9fa9bb7101569d4625f3ba2927cc575a68482a9f2ba6a8f40135272169a0c.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/260714_AblaufplanBau.pdf",
+        "sha256": "6aeef68d55cda3d4e2a48f439dc80cb530a90b8d4e414e7ea4e2a5c3e0b3fad7",
+        "bytes": 2815604,
+        "ext": "pdf",
+        "path": "data/documents/6aeef68d55cda3d4e2a48f439dc80cb530a90b8d4e414e7ea4e2a5c3e0b3fad7.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/Russland_Sanktion.pdf",
+        "sha256": "c138fe7c4905eb36260020aa0b48978d1f014829a113c08e6a96cbffd730328f",
+        "bytes": 245810,
+        "ext": "pdf",
+        "path": "data/documents/c138fe7c4905eb36260020aa0b48978d1f014829a113c08e6a96cbffd730328f.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben1/DECKBLATT_ANGEBOTSSCHREIBEN.aidoc",
+        "sha256": "c3e72baa883f1c87a0c0cab00e5bfda2b9ec3ef017ecce9abf2b8e9f8ec0f1b0",
+        "bytes": 1341,
+        "ext": "aidoc",
+        "path": "data/documents/c3e72baa883f1c87a0c0cab00e5bfda2b9ec3ef017ecce9abf2b8e9f8ec0f1b0.aidoc",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben1/DECKBLATT_ANGEBOTSSCHREIBEN.aidocdef",
+        "sha256": "efa1af7d9de0bbff223f1f76afde2d8863414173b289ddaf222ca955dbf5a1f8",
+        "bytes": 10332,
+        "ext": "aidocdef",
+        "path": "data/documents/efa1af7d9de0bbff223f1f76afde2d8863414173b289ddaf222ca955dbf5a1f8.aidocdef",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben1/DECKBLATT_ANGEBOTSSCHREIBEN.aiform",
+        "sha256": "5f5f7032ddd8ac03ab0cb62c60dcd6ccefe3289ef4610bf1b9d6e999a6c6edd5",
+        "bytes": 14825,
+        "ext": "aiform",
+        "path": "data/documents/5f5f7032ddd8ac03ab0cb62c60dcd6ccefe3289ef4610bf1b9d6e999a6c6edd5.aiform",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben1/LVStyleSheet.xsl",
+        "sha256": "d91618d9be88cc172f50ab16711f9fc091236f1974a58792cfd8ad5f93aabe26",
+        "bytes": 190311,
+        "ext": "xsl",
+        "path": "data/documents/d91618d9be88cc172f50ab16711f9fc091236f1974a58792cfd8ad5f93aabe26.xsl",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben1/Leistungsverzeichnis.aidf",
+        "sha256": "16885aacae9c7954ac0d381c3bbb0af0c10fe50e2abd9b81b6cf0b771ba684f8",
+        "bytes": 47239,
+        "ext": "aidf",
+        "path": "data/documents/16885aacae9c7954ac0d381c3bbb0af0c10fe50e2abd9b81b6cf0b771ba684f8.aidf",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben1/MetaData.xml",
+        "sha256": "d42b73e7f55252abdd5c6af0db19d3139e623e15b7722926c5231a0c3b5d2486",
+        "bytes": 437183,
+        "ext": "xml",
+        "path": "data/documents/d42b73e7f55252abdd5c6af0db19d3139e623e15b7722926c5231a0c3b5d2486.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben1/Nutzungsbedingungen.pdf",
+        "sha256": "ee399ab7db089b7be860ea937871cb453d6a98fb3bb81a9612f555b4b52d023d",
+        "bytes": 1184867,
+        "ext": "pdf",
+        "path": "data/documents/ee399ab7db089b7be860ea937871cb453d6a98fb3bb81a9612f555b4b52d023d.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "Nachschreiben1/VIRTUAL_ANGEBOTSDATEN.aidocdef",
+        "sha256": "ba3d57fb8510d32a420a8031e6f247325a19fd9c7ec2fb046c055d4f95fd6fdc",
+        "bytes": 2016,
+        "ext": "aidocdef",
+        "path": "data/documents/ba3d57fb8510d32a420a8031e6f247325a19fd9c7ec2fb046c055d4f95fd6fdc.aidocdef",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben1/VIRTUAL_OFFER_LV.aidocdef",
+        "sha256": "c3fd0dcac41302cb11981ff3b48ebf25d4c750764563c71a5326da812f124beb",
+        "bytes": 35880,
+        "ext": "aidocdef",
+        "path": "data/documents/c3fd0dcac41302cb11981ff3b48ebf25d4c750764563c71a5326da812f124beb.aidocdef",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben2/2417_KEV_Estrich.pdf",
+        "sha256": "ec029712507f3db8406a3b5ff491a259b50c7309d4126fb86031e243c050269d",
+        "bytes": 242323,
+        "ext": "pdf",
+        "path": "data/documents/ec029712507f3db8406a3b5ff491a259b50c7309d4126fb86031e243c050269d.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/260818_Liste_Anlagen zur Ausschreibung.pdf",
+        "sha256": "479047d4a6c14bb6a0f4a879754a2f9c7a009b0e96c2c0524ca3f08ba7b5b322",
+        "bytes": 670891,
+        "ext": "pdf",
+        "path": "data/documents/479047d4a6c14bb6a0f4a879754a2f9c7a009b0e96c2c0524ca3f08ba7b5b322.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/01_LV/2417_KEV_Estrich.pdf",
+        "sha256": "b74b29eec153fcfba6d2a5571e6ef73cb0bd506c0c22a814851b5804b4af27fb",
+        "bytes": 510055,
+        "ext": "pdf",
+        "path": "data/documents/b74b29eec153fcfba6d2a5571e6ef73cb0bd506c0c22a814851b5804b4af27fb.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/01_LV/2417_Schule_Affaltrach_Estrich.pdf",
+        "sha256": "7f648fb37b74ff7fab54aeac9a3d5e1127623bd8c74f30a73e56d79c0559dc37",
+        "bytes": 826881,
+        "ext": "pdf",
+        "path": "data/documents/7f648fb37b74ff7fab54aeac9a3d5e1127623bd8c74f30a73e56d79c0559dc37.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/01_LV/2417_Schule_Affaltrach_Estrich.X83",
+        "sha256": "295e5fac2b7c357f77f3bfff063f9d4c4708573544cba40d3ff3f7e20d7c6975",
+        "bytes": 551290,
+        "ext": "x83",
+        "path": "data/documents/295e5fac2b7c357f77f3bfff063f9d4c4708573544cba40d3ff3f7e20d7c6975.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_502_GR_BA_1+2_A_260309.pdf",
+        "sha256": "fc749cc9c782e785924dfdb3ec73f8dafe6a08c0bacaa4fed58abf81668718d4",
+        "bytes": 560666,
+        "ext": "pdf",
+        "path": "data/documents/fc749cc9c782e785924dfdb3ec73f8dafe6a08c0bacaa4fed58abf81668718d4.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_503_GR_BA_3_B_260610.pdf",
+        "sha256": "f3575f73c43db11d098d40c3d4c8a0fb2dba542057dd0deeab72b6e6253d065b",
+        "bytes": 621244,
+        "ext": "pdf",
+        "path": "data/documents/f3575f73c43db11d098d40c3d4c8a0fb2dba542057dd0deeab72b6e6253d065b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_504_GR_BA_4_B_260610.pdf",
+        "sha256": "62a2d8b625cd9c65fe35627120bdd03883999e04a299005a8a29ee1c0f835b7b",
+        "bytes": 528208,
+        "ext": "pdf",
+        "path": "data/documents/62a2d8b625cd9c65fe35627120bdd03883999e04a299005a8a29ee1c0f835b7b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_505_GR_BA_5_B_260610.pdf",
+        "sha256": "e7429f807d55a329c984ecb6cf00d8f375ed54fdd02d45c9d5b2a1a8bbc67ea6",
+        "bytes": 737513,
+        "ext": "pdf",
+        "path": "data/documents/e7429f807d55a329c984ecb6cf00d8f375ed54fdd02d45c9d5b2a1a8bbc67ea6.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/01 Bauabschnitte/2417_506_GR_BA_6_B_260610.pdf",
+        "sha256": "77e114fcb572c7f14eeacfb3e97a549821d61ffbf4436195c3c904feaad1ca99",
+        "bytes": 746740,
+        "ext": "pdf",
+        "path": "data/documents/77e114fcb572c7f14eeacfb3e97a549821d61ffbf4436195c3c904feaad1ca99.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_510b_GR_U1_J_260813.pdf",
+        "sha256": "0c79901f4f00ee43833915731a52c86543a127b717bbcce446c4c275391a0442",
+        "bytes": 390044,
+        "ext": "pdf",
+        "path": "data/documents/0c79901f4f00ee43833915731a52c86543a127b717bbcce446c4c275391a0442.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_511b_GR_00_K_260813.pdf",
+        "sha256": "536722ca36b1cf19fc8bbae68d96e61e4ecb4b6eb99a116f2c76acc9a9e94289",
+        "bytes": 1783002,
+        "ext": "pdf",
+        "path": "data/documents/536722ca36b1cf19fc8bbae68d96e61e4ecb4b6eb99a116f2c76acc9a9e94289.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_512b_GR_01_L_260813.pdf",
+        "sha256": "89ba31e5c5f683a68d53b2a6e0842afccc617ceacd4e5b9527face0ced22f369",
+        "bytes": 1553782,
+        "ext": "pdf",
+        "path": "data/documents/89ba31e5c5f683a68d53b2a6e0842afccc617ceacd4e5b9527face0ced22f369.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_513b_GR_02_K_260813.pdf",
+        "sha256": "fc712df81797caf66d7082943750583a127cca2826a91e7e635defd52e0ce337",
+        "bytes": 1580013,
+        "ext": "pdf",
+        "path": "data/documents/fc712df81797caf66d7082943750583a127cca2826a91e7e635defd52e0ce337.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/02_Grundrisse/2417_515b_GR_DA_F_260813.pdf",
+        "sha256": "95c01c4d610a61a5e698d89db7924977aa799c96bfaef63fde61a892907f31bd",
+        "bytes": 971409,
+        "ext": "pdf",
+        "path": "data/documents/95c01c4d610a61a5e698d89db7924977aa799c96bfaef63fde61a892907f31bd.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_521_SN_1-1_H_260813.pdf",
+        "sha256": "8d92ffd879515d5b83b5ff4d6fa5df7053405f130e15414e908e3bc50845e6c5",
+        "bytes": 1455503,
+        "ext": "pdf",
+        "path": "data/documents/8d92ffd879515d5b83b5ff4d6fa5df7053405f130e15414e908e3bc50845e6c5.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_522_SN_2-2_E_260813.pdf",
+        "sha256": "9ee34b5fb312e88370f2d34cbe70a92fef0181c02fbce7f0ad615c41e09767a8",
+        "bytes": 709170,
+        "ext": "pdf",
+        "path": "data/documents/9ee34b5fb312e88370f2d34cbe70a92fef0181c02fbce7f0ad615c41e09767a8.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_523_SN_3-3_I_260813.pdf",
+        "sha256": "5c74c38d76e66021fcdafc6ae4068e7abb97136f44d2b6a5afa45b9966e318be",
+        "bytes": 636008,
+        "ext": "pdf",
+        "path": "data/documents/5c74c38d76e66021fcdafc6ae4068e7abb97136f44d2b6a5afa45b9966e318be.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_524_SN_4-4_G_260813.pdf",
+        "sha256": "55efad7cf5aeb62e145c06fe2968013fd9909157d62b5f634a95fdb05b721050",
+        "bytes": 822244,
+        "ext": "pdf",
+        "path": "data/documents/55efad7cf5aeb62e145c06fe2968013fd9909157d62b5f634a95fdb05b721050.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_525_SN_5-5_H_260813.pdf",
+        "sha256": "c529266953c69c254d5b371991ca043470f4ee135a2f8d6a966b01593cc03665",
+        "bytes": 556850,
+        "ext": "pdf",
+        "path": "data/documents/c529266953c69c254d5b371991ca043470f4ee135a2f8d6a966b01593cc03665.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_526_SN_TRH_D_260813.pdf",
+        "sha256": "06fa80b433bc333b7c645254dd1c98d23ef6eb95bf08ca270717546699481727",
+        "bytes": 921500,
+        "ext": "pdf",
+        "path": "data/documents/06fa80b433bc333b7c645254dd1c98d23ef6eb95bf08ca270717546699481727.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/03_Schnitte/2417_527_SN_AUFZUG_C_260813.pdf",
+        "sha256": "3e558c69a7357178f15d9a2657cd5bfed4d15f76f8221ee0bdf3d09fc1922cfc",
+        "bytes": 569027,
+        "ext": "pdf",
+        "path": "data/documents/3e558c69a7357178f15d9a2657cd5bfed4d15f76f8221ee0bdf3d09fc1922cfc.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_530_AN_S_F_260813.pdf",
+        "sha256": "84803e57b39fca9ea50bbdd63bb666ea7267c613942e33c533603bd9782b6070",
+        "bytes": 856129,
+        "ext": "pdf",
+        "path": "data/documents/84803e57b39fca9ea50bbdd63bb666ea7267c613942e33c533603bd9782b6070.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_531_AN_O_F_260813.pdf",
+        "sha256": "5d70899ad64364118f3435003ae54b35958eb5ba178771c3a6296afc71451609",
+        "bytes": 781129,
+        "ext": "pdf",
+        "path": "data/documents/5d70899ad64364118f3435003ae54b35958eb5ba178771c3a6296afc71451609.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_532_AN_N_F_260813.pdf",
+        "sha256": "84fa30c7a14e898a5ca1885cb3b06214bde484be753f94c2ae439fcca88806b3",
+        "bytes": 1702127,
+        "ext": "pdf",
+        "path": "data/documents/84fa30c7a14e898a5ca1885cb3b06214bde484be753f94c2ae439fcca88806b3.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/04_Ansichten/2417_533_AN_W_F_260813.pdf",
+        "sha256": "e77de9f6bc3e64ad86d8a3054d97b3cc150979ac1a7267398c69612fc4862b69",
+        "bytes": 929883,
+        "ext": "pdf",
+        "path": "data/documents/e77de9f6bc3e64ad86d8a3054d97b3cc150979ac1a7267398c69612fc4862b69.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/08_Bodenbelag/2417_541_BS_00_A_260813.pdf",
+        "sha256": "85581abee49205ede1298b593de81fd5e9307211347957721a395cc5cb7ba975",
+        "bytes": 1262014,
+        "ext": "pdf",
+        "path": "data/documents/85581abee49205ede1298b593de81fd5e9307211347957721a395cc5cb7ba975.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/08_Bodenbelag/2417_542_BS_01_A_250813.pdf",
+        "sha256": "489bc32425e7dce037c4047ff62f8665a210d05c18734e8079bbd338789b12c8",
+        "bytes": 1102153,
+        "ext": "pdf",
+        "path": "data/documents/489bc32425e7dce037c4047ff62f8665a210d05c18734e8079bbd338789b12c8.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/08_Bodenbelag/2417_543_BS_02_A_250813.pdf",
+        "sha256": "f3826ae88653b49b30f7486628d1160d43e9616ebe9402f206b8f62a32705c0b",
+        "bytes": 1099305,
+        "ext": "pdf",
+        "path": "data/documents/f3826ae88653b49b30f7486628d1160d43e9616ebe9402f206b8f62a32705c0b.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "2417_LV_Estrich/02_Pläne/10_Lageplan/2_22.09.2025_Lageplan_zeichnerisch.pdf",
+        "sha256": "7a3a64db248be753f39239c0574f42b4f0b84d051b8f14c25acc849bc29c12e4",
+        "bytes": 1191136,
+        "ext": "pdf",
+        "path": "data/documents/7a3a64db248be753f39239c0574f42b4f0b84d051b8f14c25acc849bc29c12e4.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/24706_Bauakustik_3.pdf",
+        "sha256": "5166245e36020295004c2b3c8df8633f2a5d10341bcb1e5528227c22d2b027ff",
+        "bytes": 521077,
+        "ext": "pdf",
+        "path": "data/documents/5166245e36020295004c2b3c8df8633f2a5d10341bcb1e5528227c22d2b027ff.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/24706_Raumakustik_2.pdf",
+        "sha256": "8ef9fa9bb7101569d4625f3ba2927cc575a68482a9f2ba6a8f40135272169a0c",
+        "bytes": 1215644,
+        "ext": "pdf",
+        "path": "data/documents/8ef9fa9bb7101569d4625f3ba2927cc575a68482a9f2ba6a8f40135272169a0c.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/260714_AblaufplanBau.pdf",
+        "sha256": "6aeef68d55cda3d4e2a48f439dc80cb530a90b8d4e414e7ea4e2a5c3e0b3fad7",
+        "bytes": 2815604,
+        "ext": "pdf",
+        "path": "data/documents/6aeef68d55cda3d4e2a48f439dc80cb530a90b8d4e414e7ea4e2a5c3e0b3fad7.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "2417_LV_Estrich/03_sonstige Anlagen/Russland_Sanktion.pdf",
+        "sha256": "c138fe7c4905eb36260020aa0b48978d1f014829a113c08e6a96cbffd730328f",
+        "bytes": 245810,
+        "ext": "pdf",
+        "path": "data/documents/c138fe7c4905eb36260020aa0b48978d1f014829a113c08e6a96cbffd730328f.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben2/DECKBLATT_ANGEBOTSSCHREIBEN.aidoc",
+        "sha256": "c3e72baa883f1c87a0c0cab00e5bfda2b9ec3ef017ecce9abf2b8e9f8ec0f1b0",
+        "bytes": 1341,
+        "ext": "aidoc",
+        "path": "data/documents/c3e72baa883f1c87a0c0cab00e5bfda2b9ec3ef017ecce9abf2b8e9f8ec0f1b0.aidoc",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben2/DECKBLATT_ANGEBOTSSCHREIBEN.aidocdef",
+        "sha256": "efa1af7d9de0bbff223f1f76afde2d8863414173b289ddaf222ca955dbf5a1f8",
+        "bytes": 10332,
+        "ext": "aidocdef",
+        "path": "data/documents/efa1af7d9de0bbff223f1f76afde2d8863414173b289ddaf222ca955dbf5a1f8.aidocdef",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben2/DECKBLATT_ANGEBOTSSCHREIBEN.aiform",
+        "sha256": "5f5f7032ddd8ac03ab0cb62c60dcd6ccefe3289ef4610bf1b9d6e999a6c6edd5",
+        "bytes": 14825,
+        "ext": "aiform",
+        "path": "data/documents/5f5f7032ddd8ac03ab0cb62c60dcd6ccefe3289ef4610bf1b9d6e999a6c6edd5.aiform",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben2/LVStyleSheet.xsl",
+        "sha256": "d91618d9be88cc172f50ab16711f9fc091236f1974a58792cfd8ad5f93aabe26",
+        "bytes": 190311,
+        "ext": "xsl",
+        "path": "data/documents/d91618d9be88cc172f50ab16711f9fc091236f1974a58792cfd8ad5f93aabe26.xsl",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben2/Leistungsverzeichnis.aidf",
+        "sha256": "24c6dc1832ae71629954a97cc039c009b0ee1a9389fd990769815072c7617a52",
+        "bytes": 47240,
+        "ext": "aidf",
+        "path": "data/documents/24c6dc1832ae71629954a97cc039c009b0ee1a9389fd990769815072c7617a52.aidf",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben2/MetaData.xml",
+        "sha256": "81d49985dced60c6e8f8ab20e57dab6906af408132cf4b15d6991247b82a8f5c",
+        "bytes": 437442,
+        "ext": "xml",
+        "path": "data/documents/81d49985dced60c6e8f8ab20e57dab6906af408132cf4b15d6991247b82a8f5c.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben2/Nutzungsbedingungen.pdf",
+        "sha256": "b8d4f724b16c391beb39162ef42b402650076129108b5a7f0405a03d74244664",
+        "bytes": 1184867,
+        "ext": "pdf",
+        "path": "data/documents/b8d4f724b16c391beb39162ef42b402650076129108b5a7f0405a03d74244664.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "Nachschreiben2/VIRTUAL_ANGEBOTSDATEN.aidocdef",
+        "sha256": "ba3d57fb8510d32a420a8031e6f247325a19fd9c7ec2fb046c055d4f95fd6fdc",
+        "bytes": 2016,
+        "ext": "aidocdef",
+        "path": "data/documents/ba3d57fb8510d32a420a8031e6f247325a19fd9c7ec2fb046c055d4f95fd6fdc.aidocdef",
+        "route": "SKIP"
+      },
+      {
+        "name": "Nachschreiben2/VIRTUAL_OFFER_LV.aidocdef",
+        "sha256": "c3fd0dcac41302cb11981ff3b48ebf25d4c750764563c71a5326da812f124beb",
+        "bytes": 35880,
+        "ext": "aidocdef",
+        "path": "data/documents/c3fd0dcac41302cb11981ff3b48ebf25d4c750764563c71a5326da812f124beb.aidocdef",
+        "route": "SKIP"
+      }
+    ],
+    "fetched_at": "2026-09-18T09:47:02+00:00"
+  },
+  {
+    "buyer_name": "Landeshauptstadt München, Baureferat",
+    "document_url": "https://www.meinauftrag.rib.de/public/DetailsByPlatformIdAndTenderId/platformId/1/tenderId/302919",
+    "notice_ids": [
+      "720c4c10-ef99-439f-97ae-07790db3e5c8",
+      "880139ff-5d45-4c63-a54a-b41b7be34d05"
+    ],
+    "platform": "www.meinauftrag.rib.de",
+    "status": "RETRIEVED",
+    "reason": null,
+    "package": {
+      "filename": null,
+      "bytes": 97752451
+    },
+    "files": [
+      {
+        "name": "eForm_16_25023.pdf",
+        "sha256": "7df4eed78da3a393cddf17c420a72eeaa4bfbe543e1d79bd0a01889ef0a8c214",
+        "bytes": 2057163,
+        "ext": "pdf",
+        "path": "data/documents/7df4eed78da3a393cddf17c420a72eeaa4bfbe543e1d79bd0a01889ef0a8c214.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "eForm_16_25251.pdf",
+        "sha256": "efc4a5a114f71838399bd3e7ebad3167622cd06b71b37dfce4707f7966505713",
+        "bytes": 2061136,
+        "ext": "pdf",
+        "path": "data/documents/efc4a5a114f71838399bd3e7ebad3167622cd06b71b37dfce4707f7966505713.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "Eignung_und_Nichtvorliegen_von_Ausschlussgruenden.pdf",
+        "sha256": "1b33bc064b8d92d25a007422524271e3ed64fa554397001e0d4fbbb599d51717",
+        "bytes": 31804,
+        "ext": "pdf",
+        "path": "data/documents/1b33bc064b8d92d25a007422524271e3ed64fa554397001e0d4fbbb599d51717.pdf",
+        "route": "READ"
+      },
+      {
+        "name": "Tender Documents of Sep 9, 2026 (PDF)",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0,
+        "ext": "bin",
+        "path": "data/documents/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.bin",
+        "route": "SKIP"
+      },
+      {
+        "name": "WBVBs_Regelungen_zum_zentralen_Rechnungseingang_022026.pdf",
+        "sha256": "b33efbdbdfd967a591901732412db09bed3b5af2adfe853ea63f2586ab63d586",
+        "bytes": 113475,
+        "ext": "pdf",
+        "path": "data/documents/b33efbdbdfd967a591901732412db09bed3b5af2adfe853ea63f2586ab63d586.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "Infoflyer_Lieferant_innen_V10_August2025.pdf",
+        "sha256": "74244359e4e907f1e60d9c158d002d76b36153ba2de3ac42cc7f97dc0d9811a5",
+        "bytes": 1430506,
+        "ext": "pdf",
+        "path": "data/documents/74244359e4e907f1e60d9c158d002d76b36153ba2de3ac42cc7f97dc0d9811a5.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "TTS_BA 3_LV-Holz-Fensterfassaden_Plaene_Paket 1_LV-Anlagen_111a bis 1241.pdf",
+        "sha256": "4d3c89958009f417382a9c6b20bc2d2215c12335baf6f9a912976f800ceef12f",
+        "bytes": 53834738,
+        "ext": "pdf",
+        "path": "data/documents/4d3c89958009f417382a9c6b20bc2d2215c12335baf6f9a912976f800ceef12f.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "TTS_BA 3_LV-Holz-Fensterfassaden_Plaene_Paket 3_LV-Anlagen_1261-262.pdf",
+        "sha256": "f59251158ce5d4696067ab4fb5dda3d6cb6a168fd2b066c088448c7dc64092d7",
+        "bytes": 38137684,
+        "ext": "pdf",
+        "path": "data/documents/f59251158ce5d4696067ab4fb5dda3d6cb6a168fd2b066c088448c7dc64092d7.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "[Content_Types].xml",
+        "sha256": "3cac03a6b44a4ceba3b876808a07b551bb95018ef3db07c555d0545c9ae5e3f8",
+        "bytes": 1284,
+        "ext": "xml",
+        "path": "data/documents/3cac03a6b44a4ceba3b876808a07b551bb95018ef3db07c555d0545c9ae5e3f8.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "xl/workbook.xml",
+        "sha256": "b08e1ef47dadd57a00b67a607ce98d33f960e9bd8ce6092058633a6b9fee4347",
+        "bytes": 2662,
+        "ext": "xml",
+        "path": "data/documents/b08e1ef47dadd57a00b67a607ce98d33f960e9bd8ce6092058633a6b9fee4347.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "xl/_rels/workbook.xml.rels",
+        "sha256": "353383fbe90f202be596bdf0a86439c704d7024f4f8c19ebc9d06b42a341dba1",
+        "bytes": 698,
+        "ext": "rels",
+        "path": "data/documents/353383fbe90f202be596bdf0a86439c704d7024f4f8c19ebc9d06b42a341dba1.rels",
+        "route": "SKIP"
+      },
+      {
+        "name": "xl/worksheets/sheet1.xml",
+        "sha256": "eb3ab0ddd817a1d1eaaa41617c1e8db4dc153a68980cd473a2a48771736897e5",
+        "bytes": 24319,
+        "ext": "xml",
+        "path": "data/documents/eb3ab0ddd817a1d1eaaa41617c1e8db4dc153a68980cd473a2a48771736897e5.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "xl/theme/theme1.xml",
+        "sha256": "642cec25cb9633e733794dfd6850e6609d5aeed7fbf72286507899a8efffd3f1",
+        "bytes": 8715,
+        "ext": "xml",
+        "path": "data/documents/642cec25cb9633e733794dfd6850e6609d5aeed7fbf72286507899a8efffd3f1.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "xl/styles.xml",
+        "sha256": "ca7bbf56e6286b2bd71058e43e89b182bc3e48ffc3deb6ca54824b9fb48fd482",
+        "bytes": 7921,
+        "ext": "xml",
+        "path": "data/documents/ca7bbf56e6286b2bd71058e43e89b182bc3e48ffc3deb6ca54824b9fb48fd482.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "xl/sharedStrings.xml",
+        "sha256": "21efe27a3ce34b76f8ebaa176be230ab159d1871caa2d76115ef076108fc3ca4",
+        "bytes": 1938,
+        "ext": "xml",
+        "path": "data/documents/21efe27a3ce34b76f8ebaa176be230ab159d1871caa2d76115ef076108fc3ca4.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "xl/worksheets/_rels/sheet1.xml.rels",
+        "sha256": "65cefb6727e21f882eb83bb6c10370afa59aafda7f007f531df0c30026dc4684",
+        "bytes": 322,
+        "ext": "rels",
+        "path": "data/documents/65cefb6727e21f882eb83bb6c10370afa59aafda7f007f531df0c30026dc4684.rels",
+        "route": "SKIP"
+      },
+      {
+        "name": "xl/printerSettings/printerSettings1.bin",
+        "sha256": "2d2a2644c6141bd7e55d3eedf63eec00ebd426fa07c6ef53a112bea22eb32b46",
+        "bytes": 5092,
+        "ext": "bin",
+        "path": "data/documents/2d2a2644c6141bd7e55d3eedf63eec00ebd426fa07c6ef53a112bea22eb32b46.bin",
+        "route": "SKIP"
+      },
+      {
+        "name": "docProps/core.xml",
+        "sha256": "3cd8b2c86ca0c179baa45ad5347eb9605160a7c2110ae93f60e6b9cb42c09890",
+        "bytes": 661,
+        "ext": "xml",
+        "path": "data/documents/3cd8b2c86ca0c179baa45ad5347eb9605160a7c2110ae93f60e6b9cb42c09890.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "docProps/app.xml",
+        "sha256": "52379241258f0ecf2c30a5ea7c2fcac18a28675dcaa5eb0a5a944b7b9ba4f387",
+        "bytes": 1002,
+        "ext": "xml",
+        "path": "data/documents/52379241258f0ecf2c30a5ea7c2fcac18a28675dcaa5eb0a5a944b7b9ba4f387.xml",
+        "route": "SKIP"
+      },
+      {
+        "name": "Aenderungsmitteilung_1_20260910.pdf",
+        "sha256": "25fd3ecfc02aa1bc0b0006eff9451cf03cf2c9c6556e4bfd6d38f37702e73e79",
+        "bytes": 70897,
+        "ext": "pdf",
+        "path": "data/documents/25fd3ecfc02aa1bc0b0006eff9451cf03cf2c9c6556e4bfd6d38f37702e73e79.pdf",
+        "route": "OTHER"
+      }
+    ],
+    "fetched_at": "2026-09-18T09:32:02+00:00"
+  },
+  {
+    "buyer_name": "SBH | Schulbau Hamburg",
+    "document_url": "https://fbhh-evergabe.web.hamburg.de/evergabe.bieter/api/supplier/external/deeplink/subproject/01b12d2a-eff8-48b3-bfd4-3f61e6b5ae57",
+    "notice_ids": [
+      "c272e648-07b2-4879-b41a-9809b7a337fa"
+    ],
+    "platform": "fbhh-evergabe.web.hamburg.de",
+    "status": "RETRIEVED",
+    "reason": null,
+    "package": {
+      "filename": "Vergabeunterlagen_SBH VOB OV 431-26 CS.zip",
+      "bytes": 27102938
+    },
+    "files": [
+      {
+        "name": "Bekanntmachung\\Auftragsbekanntmachung.pdf",
+        "sha256": "8eac23a9a461a4f6552c4c98d1252051f665674805dbc5816bcb89507145b45b",
+        "bytes": 224939,
+        "ext": "pdf",
+        "path": "data/documents/8eac23a9a461a4f6552c4c98d1252051f665674805dbc5816bcb89507145b45b.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "Unterlagen\\Vergabeunterlagen.pdf",
+        "sha256": "96467faf854ce00e274d6def46e653f2e4024234948b50a05e645c1d14dff0e1",
+        "bytes": 27914402,
+        "ext": "pdf",
+        "path": "data/documents/96467faf854ce00e274d6def46e653f2e4024234948b50a05e645c1d14dff0e1.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "Unterlagen\\Anlagen zum Leistungsverzeichnis\\22-1089-ALL-348_01_TS-003.00-731_01_AR-00-LV Tischler.x83",
+        "sha256": "c6e86702f6149617480b810d64075e0ce32b60e1820273925b00f9117b840a67",
+        "bytes": 155934,
+        "ext": "x83",
+        "path": "data/documents/c6e86702f6149617480b810d64075e0ce32b60e1820273925b00f9117b840a67.x83",
+        "route": "SKIP"
+      },
+      {
+        "name": "Unterlagen\\Weitere Dokumente\\6-190_Referenzbescheinig_07 2024.docx",
+        "sha256": "aed038b3afd15ed855ce2ba6e890123d34df790b2de32d570f10cfe1b009070b",
+        "bytes": 60682,
+        "ext": "docx",
+        "path": "data/documents/aed038b3afd15ed855ce2ba6e890123d34df790b2de32d570f10cfe1b009070b.docx",
+        "route": "SKIP"
+      },
+      {
+        "name": "Unterlagen\\Weitere Dokumente\\Hinweise zur rein elektronischen Angebotsabgabe und Kommunikation Stand 01.11.19.pdf",
+        "sha256": "4708aecf7bad4010741201b910f6eb3679cf010f760a6188dd1f190a0d783e03",
+        "bytes": 537523,
+        "ext": "pdf",
+        "path": "data/documents/4708aecf7bad4010741201b910f6eb3679cf010f760a6188dd1f190a0d783e03.pdf",
+        "route": "OTHER"
+      },
+      {
+        "name": "Unterlagen\\Weitere Dokumente\\22-1089-ALL-348_01_TS-001.00-731_01_AR-00-LV Tischler.pdf",
+        "sha256": "7159563530feaffb900cf8bd06cb0e70c38032649208ee8277bd45c214d45fd0",
+        "bytes": 502994,
+        "ext": "pdf",
+        "path": "data/documents/7159563530feaffb900cf8bd06cb0e70c38032649208ee8277bd45c214d45fd0.pdf",
+        "route": "SKIP"
+      },
+      {
+        "name": "Unterlagen\\Weitere Dokumente\\Externe Dateianlagen.html",
+        "sha256": "34fe9d978c1c2efa2583c47c75aedc5493f9a932150e28edc179dcd7ea74a6e4",
+        "bytes": 2087,
+        "ext": "html",
+        "path": "data/documents/34fe9d978c1c2efa2583c47c75aedc5493f9a932150e28edc179dcd7ea74a6e4.html",
+        "route": "SKIP"
+      }
+    ],
+    "fetched_at": "2026-09-18T09:31:10+00:00"
+  }
+]

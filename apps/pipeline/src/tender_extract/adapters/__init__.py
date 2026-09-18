@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import http.client
 import http.cookiejar
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -85,7 +86,14 @@ def host_of(url: str) -> str:
     return urllib.parse.urlparse(url).netloc.lower()
 
 
-from . import aumass, evergabe_online, rib, staatsanzeiger  # noqa: E402  (need helpers above)
+def attachment_filename(headers: dict[str, str], default: str) -> str:
+    """The plain `filename=` of a Content-Disposition header, else `default`."""
+    disposition = next((v for k, v in headers.items() if k.lower() == "content-disposition"), "")
+    m = re.search(r'filename="?([^";]+)"?', disposition)
+    return m.group(1).strip() if m and m.group(1).strip() else default
+
+
+from . import aumass, cosinex, evergabe_bieter, evergabe_online, rib, staatsanzeiger, vergabe24  # noqa: E402  (need helpers above)
 
 ADAPTERS: dict[str, Adapter] = {
     "plattform.aumass.de": aumass.fetch,
@@ -96,31 +104,46 @@ ADAPTERS: dict[str, Adapter] = {
     "www.evergabe-online.de": evergabe_online.fetch,
     "evergabe-online.de": evergabe_online.fetch,
     "www.staatsanzeiger-eservices.de": staatsanzeiger.fetch,
+    "www.vergabe24.de": vergabe24.fetch,
+    "europa.vergabe24.de": vergabe24.fetch,
 }
 
-# Registration or order-form wall before any file (probe reports, both rounds).
+# Registration or order-form wall before any file (probe reports, both rounds; www.vergabe24.de
+# left this set on 18.09: its Direkt-Kiosk has a "Download ohne Registrierung" step, see vergabe24).
 GATED_HOSTS = frozenset({
     "www.evergabe.de", "www.dtvp.de", "vergabe.niedersachsen.de", "vergabemarktplatz.brandenburg.de",
     "www.vergabe-westfalen.de", "www.vergabe.metropoleruhr.de", "www.evergabe.nrw.de",
     "www.deutsche-evergabe.de", "portal.deutsche-evergabe.de", "bieterzugang.deutsche-evergabe.de",
-    "www.vergabe24.de", "bund.vergabe24.de", "www.deutsches-ausschreibungsblatt.de",
+    "bund.vergabe24.de", "www.deutsches-ausschreibungsblatt.de",
     "www.sachsen-vergabe.de", "vergabe.autobahn.de", "vergabe.hessen.de", "www.xvergabe.de",
 })
 # Serve only the Bekanntmachung PDF, which we already hold structured: nothing to read.
 NOTICE_ONLY_HOSTS = frozenset({"www.subreport-elvis.de", "www.had.de"})
-# JavaScript shells: no content without a browser, which ADR 0004 rules out.
-JS_SHELL_HOSTS = frozenset({"bieterportal.noncd.db.de", "www.subreport.de"})
+# JavaScript shells: no content without a browser, which ADR 0004 rules out. (The Healy
+# Hudson portals were listed here until 18.09; their package ZIP turned out to be a plain
+# API call, see evergabe_bieter.)
+JS_SHELL_HOSTS = frozenset({"www.subreport.de"})
+
+
+def adapter_for(url: str) -> Adapter | None:
+    """The adapter that can fetch this URL, by path shape first, then by host."""
+    if evergabe_bieter.is_evergabe_bieter(url):        # many tenant hosts, one API path
+        return evergabe_bieter.fetch
+    if cosinex.is_documents_page(url):                  # only the /notice/<id>/documents shape
+        return cosinex.fetch
+    return ADAPTERS.get(host_of(url))
 
 
 def classify(url: str) -> str:
     """'ADAPTER' | 'GATED' | 'NOTICE_ONLY' | 'JS_SHELL' | 'UNKNOWN' for a document URL."""
     host = host_of(url)
-    if "VMPSatellite" in url or "/Satellite/" in url:   # cosinex Vergabemarktplatz stack
-        return "GATED"
-    if host in ADAPTERS:
-        if ADAPTERS[host] is staatsanzeiger.fetch and staatsanzeiger.is_notice_only(url):
+    adapter = adapter_for(url)
+    if adapter is not None:                              # one routing table: adapter_for decides
+        if adapter is staatsanzeiger.fetch and staatsanzeiger.is_notice_only(url):
             return "NOTICE_ONLY"
         return "ADAPTER"
+    if "VMPSatellite" in url or "/Satellite/" in url:   # other cosinex pages: participation wall
+        return "GATED"
     if host in GATED_HOSTS:
         return "GATED"
     if host in NOTICE_ONLY_HOSTS:

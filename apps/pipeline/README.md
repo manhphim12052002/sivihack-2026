@@ -71,6 +71,29 @@ document, `low` model over notice text, `not_found`) is derived from the extract
 Coverage on the 14-day batch: deadline 93.8%, place 95.7%, estimated value 4.9% from the notice;
 about 24% of document-bearing lots are on anonymously downloadable platforms.
 
+## Extra document scrape (no database needed)
+
+`data/extra_doc.json` is a Supabase export of `(buyer_name, document_urls, notice_ids)` for the
+five MVP buyers. `scrape_documents` downloads every package those URLs point at through the
+platform adapters, keeps each file once in `data/documents/<sha256>.<ext>` (gitignored) and
+writes one manifest entry per URL to `data/extra_doc_files.json` (committed): status
+`RETRIEVED | GATED | UNREACHABLE`, platform, reason, package name and size (name is null for
+per-file listings such as RIB), and per file its
+name inside the package, sha256, size, local path and `reader.route` (`READ | SKIP | OTHER`).
+Nothing is filtered: drawings are stored too; the route tells a reader what to open.
+
+```bash
+python -m tender_extract.scrape_documents --sample 1          # first URL of every buyer
+python -m tender_extract.scrape_documents --buyer Hamburg     # one buyer
+python -m tender_extract.scrape_documents                     # every URL; re-runs skip RETRIEVED ones
+```
+
+Verified 18.09: DB InfraGO and Schulbau Hamburg (Healy Hudson `evergabe.bieter`, package ZIP from
+`api/supplier/subproject/<uuid>/projectFilesZip`), Gemeinde Anröchte (cosinex VMPSatellite,
+`documents/archive/*.zip`), München (RIB, per-file links) and Gemeinde Obersulm (vergabe24
+Direkt-Kiosk: choosing the package variant leads to a "Download ohne Registrierung" step; no
+contact data is entered, one ZIP per variant) download anonymously.
+
 ## CPV descriptions (optional; not fetched by default)
 
 The notice states only the CPV code (`45311200`), never its label. `cpv.py` resolves the
