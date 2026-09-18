@@ -23,6 +23,7 @@ from __future__ import annotations
 from typing import Any
 
 from .confidence import CONFIDENCE_BY_EXTRACTOR
+from .cpv import describe as describe_cpv
 from .db import lot_key, notice_version, procedure_key
 from .eforms import LotRecord
 
@@ -74,7 +75,15 @@ def lot_row(record: LotRecord, lot_count: int = 1) -> dict[str, Any]:
     fields and only the queryable ones deserve indexing. `qualification_text`
     and `document_urls` are real columns because enrich queries on them.
     """
+    # CPV description, resolved from the eForms SDK codelist (cpv.py) when it has
+    # been fetched locally, {} otherwise -- the notice itself never states it. Not a
+    # Fact (no source asserted it), so it lives in extra rather than as an observation.
+    cpv_descriptions = {
+        code: label for code in [record.cpv_main, *record.cpv_additional]
+        if code and (label := describe_cpv(code))
+    }
     extra = {
+        "cpv_descriptions": cpv_descriptions,
         "prose_signals": record.prose_signals,
         "award_criteria": record.award_criteria,
         "exclusion_grounds": record.exclusion_grounds,

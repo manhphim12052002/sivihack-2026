@@ -71,6 +71,22 @@ document, `low` model over notice text, `not_found`) is derived from the extract
 Coverage on the 14-day batch: deadline 93.8%, place 95.7%, estimated value 4.9% from the notice;
 about 24% of document-bearing lots are on anonymously downloadable platforms.
 
+## CPV descriptions (optional; not fetched by default)
+
+The notice states only the CPV code (`45311200`), never its label. `cpv.py` resolves the
+label from the eForms SDK's own codelist (`codelists/cpv.gc`, pinned to SDK 1.15.1 --
+the same distribution `docs/specifications/eforms-de/` is tailored from), and
+`factsheet.lot_row` puts it in `lots.extra.cpv_descriptions` when present. Absent gracefully
+(`{}`) when the codelist has never been fetched -- nothing else in the pipeline depends on it.
+
+```bash
+python -m tender_extract.cpv --fetch    # once: downloads data/reference/cpv.gc (~32MB, gitignored)
+python -m tender_extract.cpv --check    # prints the row count and a sample
+```
+
+Not verified against the real file in this session (the network could not sustain the
+download); see the module docstring for what to check once it has been fetched.
+
 ## Environment variables (names only; values live in an untracked env file)
 
 - `DATABASE_URL` — Postgres DSN read by `tender_extract.db.connect()`; `supabase start` prints a local one.

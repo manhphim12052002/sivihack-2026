@@ -221,6 +221,7 @@ __marimo__/
 # content-addressed store of fetched Vergabeunterlagen (re-downloadable, tens of MB)
 data/cache/
 data/documents/
+data/reference/
 
 # eForms-DE spec bundle: keep the PDF + notes, skip the 85MB generated HTML/model dump
 docs/specifications/eforms-de/html/
