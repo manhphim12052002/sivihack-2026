@@ -1,0 +1,65 @@
+name: Supabase migration dry run
+
+on:
+  pull_request:
+    paths:
+      - "supabase/migrations/**"
+      - "supabase/config.toml"
+
+jobs:
+  dry-run:
+    name: Dry-run migration plan
+    # Fork PRs don't get repo secrets, so linking/commenting would just fail.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Link project
+        run: supabase link --project-ref "$SUPABASE_PROJECT_ID"
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+          SUPABASE_PROJECT_ID: ${{ secrets.SUPABASE_PROJECT_ID }}
+
+      - name: Dry-run db push
+        id: dry_run
+        run: |
+          set -o pipefail
+          supabase db push --dry-run 2>&1 | tee plan.log
+          delim="EOF_$(openssl rand -hex 16)"
+          {
+            echo "output<<$delim"
+            cat plan.log
+            echo "$delim"
+          } >> "$GITHUB_OUTPUT"
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+
+      - name: Comment plan on PR
+        if: always()
+        uses: actions/github-script@v7
+        env:
+          DRY_RUN_OUTPUT: ${{ steps.dry_run.outputs.output }}
+        with:
+          script: |
+            const body = [
+              "### Supabase migration dry run",
+              "```",
+              process.env.DRY_RUN_OUTPUT,
+              "```",
+            ].join("\n");
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            });

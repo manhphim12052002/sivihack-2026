@@ -31,6 +31,21 @@ uv venv .venv && uv pip install -e apps/pipeline
 export (CC0), filtered to CPV 45*. Produced by `apps/pipeline`, see
 `docs/tender-data-extraction.md`.
 
+## Supabase migration CI
+
+`.github/workflows/supabase-migration-dry-run.yml` runs on every PR touching
+`supabase/migrations/**` and posts a `supabase db push --dry-run` plan as a PR comment — review
+it before merging. `.github/workflows/supabase-migration-deploy.yml` runs on push to `main`,
+backs up the remote DB (`supabase db dump`, uploaded as a workflow artifact) then applies the
+migration for real.
+
+One-time setup — add these repo secrets (`gh secret set <NAME>` or Settings → Secrets and
+variables → Actions):
+
+- `SUPABASE_ACCESS_TOKEN` — personal access token from https://supabase.com/dashboard/account/tokens
+- `SUPABASE_PROJECT_ID` — the shared project's ref (Settings → General → Reference ID)
+- `SUPABASE_DB_PASSWORD` — the shared project's database password
+
 ## Layout
 
 ```
