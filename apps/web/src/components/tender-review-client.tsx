@@ -5,11 +5,17 @@ import Link from "next/link";
 import { api, ApiError } from "@/lib/api";
 import type { CriterionResult, Evidence, TenderDetail, Verdict } from "@/lib/api";
 import { formatEur } from "@/lib/status";
-import { FactSheet } from "@/components/fact-sheet";
 import { DecisionBreakdown } from "@/components/decision-breakdown";
 import { EvidencePanel, type EvidencePanelData } from "@/components/evidence-panel";
 import { HumanReviewPanel, type OverrideState } from "@/components/human-review-panel";
-import { MatchEvaluationPanel } from "@/components/match-evaluation-panel";
+import type { MatchEvaluation, ViabilityStatus } from "@/lib/match/types";
+
+const VIABILITY_CLASS: Record<ViabilityStatus, string> = {
+  VIABLE: "bg-[var(--color-pursue-soft)] text-[var(--color-pursue)]",
+  REVIEW: "bg-[var(--color-review-soft)] text-[var(--color-review)]",
+  BLOCKED: "bg-[var(--color-skip-soft)] text-[var(--color-skip)]",
+};
+const VIABILITY_LABEL: Record<ViabilityStatus, string> = { VIABLE: "Eligible", REVIEW: "Needs review", BLOCKED: "Blocked" };
 
 const OVERALL_LABEL: Record<Verdict["overall"], string> = { Bid: "Pursue", Consider: "Review", NoGo: "Skip" };
 const OVERALL_CLASS: Record<Verdict["overall"], string> = {
@@ -26,6 +32,8 @@ export function TenderReviewClient({ tenderId, companyId }: { tenderId: string; 
   const [evidence, setEvidence] = useState<EvidencePanelData | null>(null);
   const [reviewOpen, setReviewOpen] = useState(false);
   const [override, setOverride] = useState<OverrideState | null>(null);
+  const [eligibility, setEligibility] = useState<MatchEvaluation[] | null>(null);
+  const [eligibilityLoading, setEligibilityLoading] = useState(false);
 
   useEffect(() => {
     // setState calls live inside this async callback (not directly in the effect body) so
@@ -66,8 +74,23 @@ export function TenderReviewClient({ tenderId, companyId }: { tenderId: string; 
 
   const effectiveOverall = override?.overall ?? verdict?.overall ?? null;
 
+  async function runEligibility() {
+    if (!companyId) return;
+    setEligibilityLoading(true);
+    try {
+      const res = await fetch("/api/match", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tender_id: tenderId, company_id: companyId, all_lots: true }),
+      });
+      const data = await res.json() as MatchEvaluation | MatchEvaluation[];
+      setEligibility(Array.isArray(data) ? data : [data]);
+    } catch { /* silently ignore */ }
+    finally { setEligibilityLoading(false); }
+  }
+
   function handleViewEvidence(criterion: CriterionResult, ev: Evidence) {
-    setEvidence({ criterion: criterion.criterion, doc: ev.doc, page: ev.page, quote_de: ev.quote_de, reason_en: criterion.reason_en });
+    setEvidence({ criterion: criterion.criterion, doc: ev.doc, page: ev.page, quote_de: ev.quote_de, reason_en: criterion.reason_en, factSheet: tender?.fact_sheet });
   }
 
   return (
@@ -89,15 +112,33 @@ export function TenderReviewClient({ tenderId, companyId }: { tenderId: string; 
             )}
             {override && <span className="rounded border border-zinc-300 px-2 py-0.5 text-xs text-zinc-500">Estimator-adjusted</span>}
           </div>
-          {verdict && (
-            <button
-              type="button"
-              onClick={() => setReviewOpen((open) => !open)}
-              className="rounded bg-zinc-900 px-4 py-2 text-sm font-semibold text-white"
-            >
-              Review AI decision
-            </button>
-          )}
+          <div className="flex items-center gap-2">
+            {companyId && (
+              eligibility ? (
+                <span className={`rounded-full px-3 py-1 text-xs font-semibold tracking-wide uppercase ${VIABILITY_CLASS[eligibility[0].viability.status]}`}>
+                  {VIABILITY_LABEL[eligibility[0].viability.status]}
+                </span>
+              ) : (
+                <button
+                  type="button"
+                  onClick={runEligibility}
+                  disabled={eligibilityLoading}
+                  className="rounded border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 disabled:opacity-50"
+                >
+                  {eligibilityLoading ? "Checking…" : "Run eligibility check"}
+                </button>
+              )
+            )}
+            {verdict && (
+              <button
+                type="button"
+                onClick={() => setReviewOpen((open) => !open)}
+                className="rounded bg-zinc-900 px-4 py-2 text-sm font-semibold text-white"
+              >
+                Review AI decision
+              </button>
+            )}
+          </div>
         </div>
         <p className="mt-2 text-sm text-zinc-500">
           {tender.buyer_name ?? "Unknown buyer"} — {tender.place_city ?? "Unknown"} · {formatEur(tender.estimated_value_eur)} ·{" "}
@@ -134,22 +175,6 @@ export function TenderReviewClient({ tenderId, companyId }: { tenderId: string; 
           </div>
         </section>
       )}
-
-      {companyId && (
-        <section>
-          <h2 className="text-lg font-semibold">Eligibility Check</h2>
-          <div className="mt-3">
-            <MatchEvaluationPanel tenderId={tenderId} companyId={companyId} />
-          </div>
-        </section>
-      )}
-
-      <section>
-        <h2 className="text-lg font-semibold">Fact sheet</h2>
-        <div className="mt-2">
-          <FactSheet factSheet={tender.fact_sheet} />
-        </div>
-      </section>
 
       <section>
         <h2 className="text-lg font-semibold">Documents (Vergabeunterlagen)</h2>
