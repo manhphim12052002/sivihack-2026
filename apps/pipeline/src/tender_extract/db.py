@@ -199,6 +199,26 @@ def upsert_document(conn: psycopg.Connection, row: dict[str, Any]) -> None:
     conn.execute(_upsert_sql("documents", row, ("lot_key", "url")), _adapt(row))
 
 
+def insert_document_files(conn: psycopg.Connection, lot_key: str, url: str, source_ids: Iterable[str]) -> None:
+    """Record which Sources came from unpacking one (lot, url) package.
+
+    `documents.source_id` is a single nullable column (one document link, one Source);
+    a package unpacks into many files, so the actual link is this table. Idempotent:
+    re-fetching the same package re-links the same source ids, nothing new happens.
+    """
+    rows = [{"lot_key": lot_key, "url": url, "source_id": sid} for sid in source_ids]
+    if rows:
+        _insert_many(conn, "document_files", rows, ("lot_key", "url", "source_id"))
+
+
+def document_file_sources(conn: psycopg.Connection, lot_key: str, url: str) -> list[dict[str, Any]]:
+    """The Sources already fetched for one (lot, url) package, for reuse without re-fetching."""
+    return conn.execute(
+        "SELECT s.id, s.filename, s.sha256, s.bytes FROM document_files df "
+        "JOIN sources s ON s.id = df.source_id WHERE df.lot_key = %(k)s AND df.url = %(u)s",
+        {"k": lot_key, "u": url}).fetchall()
+
+
 def insert_chunks(conn: psycopg.Connection, rows: Iterable[dict[str, Any]]) -> int:
     """Insert page text per (source_id, page); existing pages are left untouched."""
     return _insert_many(conn, "chunks", rows, ("id",))
