@@ -48,7 +48,7 @@ export function TenderCard({ tender, verdict, companyId }: { tender: TenderSumma
       <div className="mt-3 text-right">
         <Link
           href={`/tenders/${verdict.tender_id}?company=${companyId}`}
-          className="inline-block rounded border border-[--color-charcoal] px-3 py-1.5 text-sm font-semibold hover:bg-[--color-charcoal] hover:text-white"
+          className="inline-block rounded border border-[--color-charcoal] px-3 py-1.5 text-sm font-semibold text-[--color-charcoal] hover:bg-[--color-charcoal] hover:text-[--color-bg]"
         >
           Review decision
         </Link>

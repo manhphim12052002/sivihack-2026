@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { listTenders } from "@/lib/tender/db";
+import { listLots, lotToSummary } from "@/lib/assets";
 
 export async function GET() {
-  return NextResponse.json(await listTenders(200));
+  return NextResponse.json(listLots().map(lotToSummary));
 }

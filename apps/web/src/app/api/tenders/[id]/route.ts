@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getTender } from "@/lib/tender/db";
+import { getLot } from "@/lib/assets";
 
 type Ctx = { params: Promise<{ id: string }> };
 
 export async function GET(_req: NextRequest, { params }: Ctx) {
   const { id } = await params;
-  const tender = await getTender(id);
-  if (tender) return NextResponse.json(tender);
-  return NextResponse.json({ error: `Tender ${id} not found` }, { status: 404 });
+  const lot = getLot(id);
+  if (!lot) return NextResponse.json({ error: `Lot ${id} not found` }, { status: 404 });
+  return NextResponse.json(lot);
 }

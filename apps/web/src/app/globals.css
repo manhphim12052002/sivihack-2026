@@ -26,6 +26,8 @@
   --color-review-soft:     #F3E7D0;   /* warm cream bg */
   --color-skip:            #B53535;   /* dusty rose text */
   --color-skip-soft:       #FCEAEA;   /* dusty rose bg */
+  --color-uncertain:       #8B6B00;   /* amber text */
+  --color-uncertain-soft:  #FEF3C7;   /* amber bg */
 
   /* Semantic — UI states */
   --color-info:            #2563EB;
@@ -47,13 +49,6 @@
   --color-surface:         var(--color-surface);
   --color-surface-subtle:  var(--color-surface-subtle);
   --color-border:          var(--color-border);
-
-  --color-pursue:          var(--color-pursue);
-  --color-pursue-soft:     var(--color-pursue-soft);
-  --color-review:          var(--color-review);
-  --color-review-soft:     var(--color-review-soft);
-  --color-skip:            var(--color-skip);
-  --color-skip-soft:       var(--color-skip-soft);
 
   --color-info:            var(--color-info);
   --color-action:          var(--color-action);

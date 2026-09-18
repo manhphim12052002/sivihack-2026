@@ -16,7 +16,7 @@ export function DecisionBreakdown({
     return <p className="text-zinc-500">No criteria evaluated yet.</p>;
   }
   return (
-    <div className="space-y-3">
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
       {criteria.map((criterion) => {
         const style = ASPECT_STYLES[criterion.status];
         const evidence = criterion.tender_evidence?.[0];
@@ -25,7 +25,7 @@ export function DecisionBreakdown({
             <div className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <h3 className="font-semibold">{criterion.criterion}</h3>
-                <span className={`rounded px-2 py-0.5 text-xs font-semibold ${style.className}`}>{style.label}</span>
+                <span className={`border rounded px-2 py-0.5 text-xs font-semibold ${style.className}`}>{style.label}</span>
                 {criterion.status === "Blocker" && (
                   <span className="rounded border border-[--color-skip] bg-[--color-skip-soft] px-2 py-0.5 text-xs font-semibold text-[--color-skip]">Hard blocker</span>
                 )}
@@ -43,7 +43,7 @@ export function DecisionBreakdown({
               )}
             </div>
 
-            <div className="mt-3 grid grid-cols-1 gap-3 text-sm sm:grid-cols-3">
+            <div className="mt-3 flex flex-col gap-2 text-sm">
               <div>
                 <p className="text-xs font-semibold tracking-wide text-zinc-500 uppercase">Tender value</p>
                 <p className="mt-1 text-zinc-700">{criterion.tender_value != null ? String(criterion.tender_value) : "—"}</p>
