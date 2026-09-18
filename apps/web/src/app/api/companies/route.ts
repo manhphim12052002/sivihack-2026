@@ -7,6 +7,29 @@ import { ingestSource } from "@/lib/company/ingest-source";
 import { extractCompanyIntelligence } from "@/lib/company/extract";
 import { ensureDemoCompanies } from "@/lib/company/samples";
 import { CompanyError, companyErrorResponse } from "@/lib/company/errors";
+import { runMatchEvaluation } from "@/lib/match/assemble";
+import { listTriageTenders, getTender } from "@/lib/tender/db";
+import type { CanonicalCompany } from "@/lib/company/types";
+
+/**
+ * Pre-populates the evaluation cache for a newly onboarded company against the current
+ * notice batch, so the triage board and briefing pages show verdicts immediately instead
+ * of waiting for a manual "Screen" click. Best-effort: one lot failing (e.g. missing
+ * documents) must not fail company creation, so failures are swallowed per lot.
+ */
+async function evaluateAgainstTriageBatch(company: CanonicalCompany): Promise<void> {
+  const tenders = await listTriageTenders(40);
+  await Promise.all(
+    tenders.map(async (summary) => {
+      try {
+        const tender = await getTender(summary.id);
+        if (tender) await runMatchEvaluation(tender, company);
+      } catch {
+        // Best-effort enrichment — the company is still created and can be re-screened later.
+      }
+    }),
+  );
+}
 
 export async function GET() {
   try {
@@ -65,10 +88,9 @@ export async function POST(req: NextRequest) {
     id = shell.id;
     await ingestSource(id, filename, buffer);
     await extractCompanyIntelligence(id);
-    return NextResponse.json(
-      toCompanyProfile(await assembleCanonicalCompany(id)),
-      { status: 201 },
-    );
+    const company = await assembleCanonicalCompany(id);
+    await evaluateAgainstTriageBatch(company);
+    return NextResponse.json(toCompanyProfile(company), { status: 201 });
   } catch (e) {
     return companyErrorResponse(e, id);
   }
