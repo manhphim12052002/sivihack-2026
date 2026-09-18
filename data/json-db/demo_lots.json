@@ -150,7 +150,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:00Z"
   },
   {
     "id": "lot-ki-klinikum",
@@ -291,7 +292,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:01Z"
   },
   {
     "id": "lot-hb-logistik",
@@ -438,7 +440,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:02Z"
   },
   {
     "id": "lot-hh-wohnen",
@@ -573,7 +576,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:03Z"
   },
   {
     "id": "lot-be-buero",
@@ -714,7 +718,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:04Z"
   },
   {
     "id": "lot-ki-berufsschule",
@@ -849,7 +854,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:05Z"
   },
   {
     "id": "lot-muc-buero",
@@ -972,7 +978,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:06Z"
   },
   {
     "id": "lot-stu-klinik",
@@ -1095,7 +1102,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:07Z"
   },
   {
     "id": "lot-hh-kanal",
@@ -1218,7 +1226,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:08Z"
   },
   {
     "id": "lot-hh-strasse",
@@ -1341,7 +1350,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:09Z"
   },
   {
     "id": "lot-hh-dach",
@@ -1458,7 +1468,8 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:10Z"
   },
   {
     "id": "lot-be-strasse",
@@ -1581,6 +1592,7 @@
         "confidence": "high",
         "evidence": []
       }
-    }
+    },
+    "created_at": "2026-09-18T00:00:11Z"
   }
 ]

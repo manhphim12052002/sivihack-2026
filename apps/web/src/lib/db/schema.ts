@@ -99,6 +99,30 @@ export const SCHEMA: Readonly<Record<string, TableSchema>> = {
     defaults: { stage: "queued", pct: 0, ...TIMESTAMPS },
   },
 
+  // ── Demo board: flat profile/lot shapes the triage UI screens on ──────────
+  company_profiles: {
+    primaryKey: ["id"],
+    defaults: {
+      home_base: "",
+      regions: [],
+      trades: [],
+      cpv_prefixes: [],
+      references_held: [],
+      hard_exclusions: [],
+      raw_text: "",
+      ...TIMESTAMPS,
+    },
+  },
+  demo_lots: {
+    primaryKey: ["id"],
+    defaults: {
+      lot_count: 1,
+      docs_retrieved: false,
+      source: "oeffentlichevergabe.de",
+      created_at: NOW,
+    },
+  },
+
   // ── Match evaluations ─────────────────────────────────────────────────────
   match_evaluations: {
     primaryKey: ["id"],
