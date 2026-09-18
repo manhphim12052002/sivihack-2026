@@ -6,26 +6,31 @@
    Fixed light palette — no dark-mode theming.
    ────────────────────────────────────────────────────────────────────────── */
 :root {
-  /* Neutral foundation */
-  --color-charcoal:        #171717;
-  --color-text-primary:    #111111;
-  --color-text-secondary:  #6B6B6B;
-  --color-bg:              #F7F7F5;
+  /* Neutral foundation — Arctis brand palette */
+  --color-nav-bg:          #FFFFFF;   /* white nav */
+  --color-nav-text:        #2B2825;   /* warm near-black for nav links */
+  --color-nav-muted:       #2B2825;
+  --color-nav-accent:      #0C0C0C;   /* thin top-bar strip */
+  --color-charcoal:        #2B2825;
+  --color-text-primary:    #2B2825;
+  --color-text-secondary:  #7A7672;
+  --color-bg:              #F5F4F1;   /* very light warm white — Arctis content bg */
   --color-surface:         #FFFFFF;
-  --color-border:          #E5E5E2;
+  --color-surface-subtle:  #F7F5F1;
+  --color-border:          #E2DDD8;
 
-  /* Semantic — decision outcomes */
-  --color-pursue:          #2E7D32;
-  --color-pursue-soft:     #D7F2E8;
-  --color-review:          #F59E0B;
-  --color-review-soft:     #FEF3C7;
-  --color-skip:            #D14343;
-  --color-skip-soft:       #FEE2E2;
+  /* Semantic — decision outcomes (Arctis muted palette) */
+  --color-pursue:          #3A6B28;   /* sage green text */
+  --color-pursue-soft:     #DFF0D5;   /* sage green bg */
+  --color-review:          #8B6840;   /* warm tan text */
+  --color-review-soft:     #F3E7D0;   /* warm cream bg */
+  --color-skip:            #B53535;   /* dusty rose text */
+  --color-skip-soft:       #FCEAEA;   /* dusty rose bg */
 
   /* Semantic — UI states */
-  --color-info:            #3B82F6;
-  --color-action:          #6D28D9;
-  --color-disabled:        #D1D1CC;
+  --color-info:            #2563EB;
+  --color-action:          #0C0C0C;   /* primary action = brand dark */
+  --color-disabled:        #D4D4D4;
 }
 
 /* ─── Tailwind v4 theme extension ────────────────────────────────────────── */
@@ -33,30 +38,80 @@
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 
-  /* Expose design system colors as Tailwind utilities */
-  --color-charcoal:       var(--color-charcoal);
-  --color-text-secondary: var(--color-text-secondary);
-  --color-bg:             var(--color-bg);
-  --color-surface:        var(--color-surface);
-  --color-border:         var(--color-border);
+  --color-nav-bg:          var(--color-nav-bg);
+  --color-nav-text:        var(--color-nav-text);
+  --color-nav-muted:       var(--color-nav-muted);
+  --color-charcoal:        var(--color-charcoal);
+  --color-text-secondary:  var(--color-text-secondary);
+  --color-bg:              var(--color-bg);
+  --color-surface:         var(--color-surface);
+  --color-surface-subtle:  var(--color-surface-subtle);
+  --color-border:          var(--color-border);
 
-  --color-pursue:         var(--color-pursue);
-  --color-pursue-soft:    var(--color-pursue-soft);
-  --color-review:         var(--color-review);
-  --color-review-soft:    var(--color-review-soft);
-  --color-skip:           var(--color-skip);
-  --color-skip-soft:      var(--color-skip-soft);
+  --color-pursue:          var(--color-pursue);
+  --color-pursue-soft:     var(--color-pursue-soft);
+  --color-review:          var(--color-review);
+  --color-review-soft:     var(--color-review-soft);
+  --color-skip:            var(--color-skip);
+  --color-skip-soft:       var(--color-skip-soft);
 
-  --color-info:           var(--color-info);
-  --color-action:         var(--color-action);
-  --color-disabled:       var(--color-disabled);
+  --color-info:            var(--color-info);
+  --color-action:          var(--color-action);
+  --color-disabled:        var(--color-disabled);
 }
 
 body {
   background: var(--color-bg);
   color: var(--color-text-primary);
   font-family: var(--font-inter), system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
 }
+
+/* ─── Arctis-brand component defaults ────────────────────────────────────── */
+
+/* Cards / panels */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* Primary button — matches Arctis dark CTA */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: var(--color-charcoal);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.85; }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Ghost / secondary button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-ghost:hover { background: var(--color-surface-subtle); }

@@ -28,7 +28,7 @@ export function DecisionBreakdown({
                 <h3 className="font-semibold">{criterion.criterion}</h3>
                 <span className={`rounded px-2 py-0.5 text-xs font-semibold ${style.className}`}>{style.label}</span>
                 {criterion.status === "Blocker" && (
-                  <span className="rounded border border-red-200 px-2 py-0.5 text-xs font-semibold text-red-700">Hard blocker</span>
+                  <span className="rounded border border-[--color-skip] bg-[--color-skip-soft] px-2 py-0.5 text-xs font-semibold text-[--color-skip]">Hard blocker</span>
                 )}
               </div>
               {evidence ? (

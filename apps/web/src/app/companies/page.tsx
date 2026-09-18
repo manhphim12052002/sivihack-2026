@@ -10,7 +10,19 @@ export default function CompaniesPage() {
     [file, setFile] = useState<File | null>(null),
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),
-    [recovery, setRecovery] = useState<string>();
+    [recovery, setRecovery] = useState<string>(),
+    [deleting, setDeleting] = useState<string | null>(null);
+
+  async function deleteCompany(id: string) {
+    if (!confirm("Delete this company profile? This cannot be undone.")) return;
+    setDeleting(id);
+    try {
+      await fetch(`/api/companies/${id}`, { method: "DELETE" });
+      setCompanies((prev) => prev.filter((c) => c.id !== id));
+    } finally {
+      setDeleting(null);
+    }
+  }
   useEffect(() => {
     api
       .companies()
@@ -123,19 +135,28 @@ export default function CompaniesPage() {
         <h2 className="mb-4 text-xl font-semibold">Existing companies</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           {companies.map((c) => (
-            <Link
+            <div
               key={c.id}
-              href={`/companies/${c.id}`}
-              className="rounded-xl border border-zinc-200 bg-white p-5 hover:border-emerald-600"
+              className="relative rounded-xl border border-zinc-200 bg-white p-5 hover:border-emerald-600"
             >
-              <h3 className="font-semibold">{c.name}</h3>
-              <p className="mt-2 text-sm text-zinc-500">
-                {c.home_base || "Headquarters not provided"}
-              </p>
-              <p className="mt-4 text-sm text-emerald-700">
-                Open Company Intelligence →
-              </p>
-            </Link>
+              <button
+                type="button"
+                onClick={() => void deleteCompany(c.id)}
+                disabled={deleting === c.id}
+                className="absolute right-3 top-3 rounded px-2 py-0.5 text-xs text-zinc-400 hover:bg-red-50 hover:text-red-600 disabled:opacity-40"
+              >
+                {deleting === c.id ? "…" : "✕"}
+              </button>
+              <Link href={`/companies/${c.id}`} className="block">
+                <h3 className="font-semibold pr-6">{c.name}</h3>
+                <p className="mt-2 text-sm text-zinc-500">
+                  {c.home_base || "Headquarters not provided"}
+                </p>
+                <p className="mt-4 text-sm text-emerald-700">
+                  Open Company Intelligence →
+                </p>
+              </Link>
+            </div>
           ))}
         </div>
       </section>
