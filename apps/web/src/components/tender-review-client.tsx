@@ -90,7 +90,8 @@ export function TenderReviewClient({ tenderId, companyId }: { tenderId: string; 
   }
 
   function handleViewEvidence(criterion: CriterionResult, ev: Evidence) {
-    setEvidence({ criterion: criterion.criterion, doc: ev.doc, page: ev.page, quote_de: ev.quote_de, reason_en: criterion.reason_en, factSheet: tender?.fact_sheet });
+    const evAny = ev as Evidence & { reason_en?: string };
+    setEvidence({ criterion: criterion.criterion, doc: ev.doc, page: ev.page, quote_de: ev.quote_de, reason_en: evAny.reason_en ?? criterion.reason_en, factSheet: tender?.fact_sheet });
   }
 
   return (

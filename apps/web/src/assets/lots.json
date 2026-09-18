@@ -31,7 +31,8 @@
           {
             "doc": "Leistungsverzeichnis.pdf",
             "page": 2,
-            "quote_de": "Neubau Schulcampus Hamburg-Altona, Rohbau und Ausbau inkl. Sporthalle, Los 2."
+            "quote_de": "Neubau Schulcampus Hamburg-Altona, Rohbau und Ausbau inkl. Sporthalle, Los 2.",
+            "reason_en": "The lot title explicitly names shell works (Rohbau) and fit-out (Ausbau) for a school campus — a core building-construction scope fully covered by CPV prefix 45214."
           }
         ]
       },
@@ -42,7 +43,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Baustelle: Hamburg-Altona, Schulstraße 12."
+            "quote_de": "Baustelle: Hamburg-Altona, Schulstraße 12.",
+            "reason_en": "The site address is Hamburg-Altona, Schulstraße 12 — inside Hamburg city, 0 km from the company's home base."
           }
         ]
       },
@@ -53,7 +55,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 2,
-            "quote_de": "Geschätzter Auftragswert Los 2: ca. 22.000.000 €."
+            "quote_de": "Geschätzter Auftragswert Los 2: ca. 22.000.000 €.",
+            "reason_en": "The notice states the estimated contract value for this lot as approximately €22 million, placing it squarely within the company's €8 M–€90 M target contract band."
           }
         ]
       },
@@ -82,7 +85,8 @@
           {
             "doc": "Bauzeitenplan.pdf",
             "page": 1,
-            "quote_de": "Baubeginn 01.12.2026, Fertigstellung voraussichtlich Juli 2028."
+            "quote_de": "Baubeginn 01.12.2026, Fertigstellung voraussichtlich Juli 2028.",
+            "reason_en": "Start is fixed at 1 December 2026 with planned completion in July 2028 — a 20-month programme. No earliest-availability conflict with the company's profile."
           }
         ]
       },
@@ -96,7 +100,8 @@
           {
             "doc": "Vergabeunterlagen_Teil_B.pdf",
             "page": 7,
-            "quote_de": "Vertragserfüllungsbürgschaft 5%, Gewährleistungsbürgschaft 3%."
+            "quote_de": "Vertragserfüllungsbürgschaft 5%, Gewährleistungsbürgschaft 3%.",
+            "reason_en": "The buyer requires a 5% performance bond plus a 3% warranty bond. At €22 M contract value that totals approximately €1.76 M in simultaneous bonding — slightly above the company's €1.5 M stated guarantee capacity."
           }
         ]
       },
@@ -110,7 +115,8 @@
           {
             "doc": "Vertragsbedingungen.pdf",
             "page": 9,
-            "quote_de": "Vertragsstrafe 0,1% pro Werktag Verzug, max. 5% der Netto-Auftragssumme."
+            "quote_de": "Vertragsstrafe 0,1% pro Werktag Verzug, max. 5% der Netto-Auftragssumme.",
+            "reason_en": "The delay penalty runs at 0.1% per working day, capped at 5% of the net contract sum — a standard clause that sits within the normal 5% comfort threshold."
           }
         ]
       },
@@ -136,7 +142,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Angebotsfrist: 14.11.2026, 12:00 Uhr."
+            "quote_de": "Angebotsfrist: 14.11.2026, 12:00 Uhr.",
+            "reason_en": "The tender closes on 14 November 2026 at 12:00 — 57 days from today, a comfortable window to prepare a competitive bid."
           }
         ]
       },
@@ -184,7 +191,8 @@
           {
             "doc": "Leistungsverzeichnis.pdf",
             "page": 1,
-            "quote_de": "Erweiterungsneubau UKSH Kiel, Los 1 Rohbau und Gebäudehülle, GU-Leistung."
+            "quote_de": "Erweiterungsneubau UKSH Kiel, Los 1 Rohbau und Gebäudehülle, GU-Leistung.",
+            "reason_en": "Los 1 covers all reinforced-concrete shell works and the full building envelope (Gebäudehülle) for the hospital extension under a general-contractor arrangement — a strong match for the company's major building-construction expertise."
           }
         ]
       },
@@ -195,7 +203,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Baustelle: Kiel, UKSH Campus Arnold-Heller-Str."
+            "quote_de": "Baustelle: Kiel, UKSH Campus Arnold-Heller-Str.",
+            "reason_en": "The site is at the UKSH campus in Kiel, Arnold-Heller-Straße — approximately 90 km north of Hamburg, well within the company's 300 km operating radius."
           }
         ]
       },
@@ -206,7 +215,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 2,
-            "quote_de": "Geschätzter Auftragswert Los 1: ca. 34.000.000 €."
+            "quote_de": "Geschätzter Auftragswert Los 1: ca. 34.000.000 €.",
+            "reason_en": "The notice states an estimated lot value of approximately €34 million — within the company's €8 M–€90 M target band and large enough to be a portfolio anchor."
           }
         ]
       },
@@ -235,7 +245,8 @@
           {
             "doc": "Bauzeitenplan.pdf",
             "page": 1,
-            "quote_de": "Baubeginn 15.01.2027, Fertigstellung September 2029."
+            "quote_de": "Baubeginn 15.01.2027, Fertigstellung September 2029.",
+            "reason_en": "Construction is planned to start 15 January 2027, with completion in September 2029 — a 32-month programme. The start date gives adequate mobilisation time after the November submission."
           }
         ]
       },
@@ -277,7 +288,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Angebotsfrist: 28.11.2026, 14:00 Uhr."
+            "quote_de": "Angebotsfrist: 28.11.2026, 14:00 Uhr.",
+            "reason_en": "Deadline is 28 November 2026 at 14:00, giving 71 days from today to prepare. Sufficient time for a hospital-scale technical bid."
           }
         ]
       },
@@ -325,7 +337,8 @@
           {
             "doc": "Leistungsverzeichnis.pdf",
             "page": 1,
-            "quote_de": "Neubau Hochregallager und Bürogebäude, schlüsselfertig, GU-Leistung, Los 3."
+            "quote_de": "Neubau Hochregallager und Bürogebäude, schlüsselfertig, GU-Leistung, Los 3.",
+            "reason_en": "The scope is a turnkey logistics warehouse and office building under a general-contractor arrangement (GU-Leistung) — all trades subcontracted, matching the company's project-management capability."
           }
         ]
       },
@@ -336,7 +349,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Baustelle: Bremen, Hafengebiet Überseestadt."
+            "quote_de": "Baustelle: Bremen, Hafengebiet Überseestadt.",
+            "reason_en": "The site is in Bremen's Überseestadt harbour district — approximately 120 km from Hamburg, within the company's 300 km operating radius."
           }
         ]
       },
@@ -347,7 +361,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 2,
-            "quote_de": "Geschätzter Auftragswert Los 3: ca. 17.000.000 €."
+            "quote_de": "Geschätzter Auftragswert Los 3: ca. 17.000.000 €.",
+            "reason_en": "Estimated contract value is approximately €17 million, comfortably within the company's €8 M–€90 M target band."
           }
         ]
       },
@@ -376,7 +391,8 @@
           {
             "doc": "Bauzeitenplan.pdf",
             "page": 1,
-            "quote_de": "Baubeginn 15.12.2026, Fertigstellung März 2028."
+            "quote_de": "Baubeginn 15.12.2026, Fertigstellung März 2028.",
+            "reason_en": "Start planned for 15 December 2026, completion March 2028 — a 15-month turnkey programme."
           }
         ]
       },
@@ -398,7 +414,8 @@
           {
             "doc": "Vertragsbedingungen.pdf",
             "page": 8,
-            "quote_de": "Vertragsstrafe max. 4% der Netto-Auftragssumme."
+            "quote_de": "Vertragsstrafe max. 4% der Netto-Auftragssumme.",
+            "reason_en": "The penalty is capped at 4% of the net contract sum — below the standard 5% threshold, so marginally lower risk than typical."
           }
         ]
       },
@@ -424,7 +441,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Angebotsfrist: 31.10.2026, 12:00 Uhr."
+            "quote_de": "Angebotsfrist: 31.10.2026, 12:00 Uhr.",
+            "reason_en": "Deadline is 31 October 2026 at 12:00, giving 43 days — tight but workable for a known logistics typology."
           }
         ]
       },
@@ -472,7 +490,8 @@
           {
             "doc": "Leistungsverzeichnis.pdf",
             "page": 1,
-            "quote_de": "Neubau Seniorenwohnanlage, 48 barrierefreie Wohneinheiten, Hamburg-Wandsbek."
+            "quote_de": "Neubau Seniorenwohnanlage, 48 barrierefreie Wohneinheiten, Hamburg-Wandsbek.",
+            "reason_en": "The scope is a 48-unit barrier-free senior housing block (Seniorenwohnanlage) — residential building construction under CPV 45211300, a standard building-contractor scope."
           }
         ]
       },
@@ -483,7 +502,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Baustelle: Hamburg-Wandsbek, Walddörferstraße."
+            "quote_de": "Baustelle: Hamburg-Wandsbek, Walddörferstraße.",
+            "reason_en": "Site is in Hamburg-Wandsbek, Walddörferstraße — inside Hamburg, 0 km from the company's home base."
           }
         ]
       },
@@ -494,7 +514,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 2,
-            "quote_de": "Geschätzter Auftragswert Los 1: ca. 7.100.000 €."
+            "quote_de": "Geschätzter Auftragswert Los 1: ca. 7.100.000 €.",
+            "reason_en": "Estimated lot value is approximately €7.1 million — just below the company's stated €8 M minimum. This triggers a soft 'contract-size concern': the value is 11% below the lower bound."
           }
         ]
       },
@@ -559,7 +580,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Angebotsfrist: 22.10.2026, 12:00 Uhr."
+            "quote_de": "Angebotsfrist: 22.10.2026, 12:00 Uhr.",
+            "reason_en": "Deadline is 22 October 2026 at 12:00, giving 34 days — workable but on the tighter end for a residential new-build."
           }
         ]
       },
@@ -607,7 +629,8 @@
           {
             "doc": "Leistungsverzeichnis.pdf",
             "page": 1,
-            "quote_de": "Neubau Bürogebäude B und C, schlüsselfertig, GU-Leistung, Los 2."
+            "quote_de": "Neubau Bürogebäude B und C, schlüsselfertig, GU-Leistung, Los 2.",
+            "reason_en": "Two turnkey office buildings under a general-contractor arrangement — commercial building construction, a solid match for the company's CPV 45211 prefix."
           }
         ]
       },
@@ -618,7 +641,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Baustelle: Berlin-Spandau, Brunsbütteler Damm."
+            "quote_de": "Baustelle: Berlin-Spandau, Brunsbütteler Damm.",
+            "reason_en": "Site is in Berlin-Spandau, Brunsbütteler Damm — approximately 280 km from Hamburg, within the 300 km radius but towards the outer limit."
           }
         ]
       },
@@ -629,7 +653,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 2,
-            "quote_de": "Geschätzter Auftragswert Los 2: ca. 13.000.000 €."
+            "quote_de": "Geschätzter Auftragswert Los 2: ca. 13.000.000 €.",
+            "reason_en": "Estimated lot value is approximately €13 million — within the company's €8 M–€90 M target band."
           }
         ]
       },
@@ -674,7 +699,8 @@
           {
             "doc": "Vertragsbedingungen.pdf",
             "page": 11,
-            "quote_de": "Vertragsstrafe: 0,2% pro Werktag Verzug, begrenzt auf 8% der Netto-Auftragssumme."
+            "quote_de": "Vertragsstrafe: 0,2% pro Werktag Verzug, begrenzt auf 8% der Netto-Auftragssumme.",
+            "reason_en": "The penalty clause is 0.2% per working day, capped at 8% of the net contract sum. This exceeds the standard 5% comfort threshold and warrants a contract-risk review before bidding."
           }
         ]
       },
@@ -700,7 +726,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Angebotsfrist: 07.11.2026, 14:00 Uhr."
+            "quote_de": "Angebotsfrist: 07.11.2026, 14:00 Uhr.",
+            "reason_en": "Deadline is 7 November 2026 at 14:00, giving 50 days — a reasonable preparation window for a two-building turnkey tender."
           }
         ]
       },
@@ -748,7 +775,8 @@
           {
             "doc": "Leistungsverzeichnis.pdf",
             "page": 1,
-            "quote_de": "Vorhangfassade, Fenster und Sonnenschutz, Erweiterung Berufsschulzentrum Kiel, Los 3."
+            "quote_de": "Vorhangfassade, Fenster und Sonnenschutz, Erweiterung Berufsschulzentrum Kiel, Los 3.",
+            "reason_en": "Los 3 is a specialist curtain-wall facade, glazing and solar-shading package for a school extension — a trade subcontract scope, not a general-contractor tender."
           }
         ]
       },
@@ -759,7 +787,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Baustelle: Kiel, Berufsschulzentrum Westring."
+            "quote_de": "Baustelle: Kiel, Berufsschulzentrum Westring.",
+            "reason_en": "The site is at the Berufsschulzentrum Westring in Kiel — approximately 90 km from Hamburg, well within the 300 km radius."
           }
         ]
       },
@@ -780,7 +809,8 @@
           {
             "doc": "Eignungskriterien.pdf",
             "page": 4,
-            "quote_de": "Mindestens zwei vergleichbare Vorhangfassaden-Projekte an öffentlichen Gebäuden oder Schulen, jeweils Auftragswert mind. 5 Mio. €, innerhalb der letzten acht Jahre."
+            "quote_de": "Mindestens zwei vergleichbare Vorhangfassaden-Projekte an öffentlichen Gebäuden oder Schulen, jeweils Auftragswert mind. 5 Mio. €, innerhalb der letzten acht Jahre.",
+            "reason_en": "The eligibility criteria require at least two comparable curtain-wall facade projects on public buildings or schools, each worth at least €5 million, completed within the last eight years. The company holds no curtain-wall references in its profile — this is an unmet hard requirement that could lead to disqualification."
           }
         ]
       },
@@ -835,7 +865,8 @@
           {
             "doc": "Bekanntmachung.pdf",
             "page": 1,
-            "quote_de": "Angebotsfrist: 21.11.2026, 12:00 Uhr."
+            "quote_de": "Angebotsfrist: 21.11.2026, 12:00 Uhr.",
+            "reason_en": "Deadline is 21 November 2026 at 12:00, giving 64 days to prepare."
           }
         ]
       },
