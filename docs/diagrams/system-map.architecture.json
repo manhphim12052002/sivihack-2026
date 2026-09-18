@@ -1,0 +1,531 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Three Out of Forty \u2014 System Map",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1380,
+      610
+    ],
+    "repository": {
+      "url": "https://github.com/manhphim12052002/sivihack-2026",
+      "provider": "github",
+      "revision": "69aa93299283ba77745dc34b46e1ac5ca30693ae"
+    },
+    "views": [
+      {
+        "id": "acquisition",
+        "label": "Acquisition and extraction",
+        "focus": [
+          "vergabe",
+          "portals",
+          "pipeline",
+          "doc_store",
+          "openrouter",
+          "supabase"
+        ],
+        "note": "How a German notice and its attachments become evidence-backed observations."
+      },
+      {
+        "id": "decision",
+        "label": "Decision path",
+        "focus": [
+          "estimator",
+          "web_ui",
+          "api_routes",
+          "decision",
+          "db_port",
+          "supabase"
+        ],
+        "note": "The path a shortlist request takes from the estimator to the resolved lot facts."
+      },
+      {
+        "id": "storage",
+        "label": "Interchangeable stores",
+        "focus": [
+          "db_port",
+          "json_db",
+          "supabase"
+        ],
+        "note": "One port, two backends on the same schema: the laptop demo needs no services."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "vergabe",
+      "type": "external",
+      "label": "oeffentlichevergabe.de",
+      "sublabel": "eForms bulk + lot search",
+      "tag": "CC0, no key",
+      "pos": [
+        40,
+        150
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/pipeline/src/tender_extract/fetch.py",
+          "label": "fetch.py"
+        }
+      ]
+    },
+    {
+      "id": "portals",
+      "type": "external",
+      "label": "Vergabe portals",
+      "sublabel": "cosinex \u00b7 RIB \u00b7 vergabe24",
+      "pos": [
+        40,
+        360
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/pipeline/src/tender_extract/adapters/__init__.py",
+          "label": "adapters"
+        }
+      ]
+    },
+    {
+      "id": "pipeline",
+      "type": "backend",
+      "label": "tender-extract",
+      "sublabel": "poll \u00b7 load \u00b7 enrich",
+      "tag": "apps/pipeline (Python)",
+      "pos": [
+        265,
+        255
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/pipeline/src/tender_extract/load.py",
+          "label": "load.py"
+        },
+        {
+          "path": "apps/pipeline/src/tender_extract/enrich.py",
+          "label": "enrich.py"
+        }
+      ]
+    },
+    {
+      "id": "doc_store",
+      "type": "database",
+      "label": "Document store",
+      "sublabel": "data/documents/<sha256>",
+      "tag": "content-addressed",
+      "pos": [
+        265,
+        465
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/pipeline/src/tender_extract/documents.py",
+          "label": "documents.py"
+        }
+      ]
+    },
+    {
+      "id": "openrouter",
+      "type": "external",
+      "label": "OpenRouter",
+      "sublabel": "OpenAI-compatible API",
+      "tag": "extracts, never decides",
+      "pos": [
+        490,
+        40
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/pipeline/src/tender_extract/llm.py",
+          "label": "llm.py"
+        }
+      ]
+    },
+    {
+      "id": "supabase",
+      "type": "database",
+      "label": "Supabase Postgres",
+      "sublabel": "lots \u00b7 observations",
+      "tag": "psycopg + PostgREST",
+      "pos": [
+        490,
+        255
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "supabase/migrations/20260917210000_init.sql",
+          "label": "init migration"
+        }
+      ]
+    },
+    {
+      "id": "json_db",
+      "type": "database",
+      "label": "JSON tables",
+      "sublabel": "data/json-db/*.json",
+      "tag": "default backend",
+      "pos": [
+        490,
+        465
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/web/src/lib/db/json/store.ts",
+          "label": "json/store.ts"
+        }
+      ]
+    },
+    {
+      "id": "db_port",
+      "type": "backend",
+      "label": "DbClient port",
+      "sublabel": "DATA_BACKEND picks one",
+      "tag": "PostgREST semantics",
+      "pos": [
+        715,
+        360
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/web/src/lib/db/index.ts",
+          "label": "lib/db"
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "type": "backend",
+      "label": "Match engine",
+      "sublabel": "tasks \u2192 router \u2192 matchers",
+      "pos": [
+        940,
+        180
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/web/src/lib/match/assemble.ts",
+          "label": "assemble.ts"
+        },
+        {
+          "path": "apps/web/src/lib/match/router.ts",
+          "label": "router.ts"
+        }
+      ]
+    },
+    {
+      "id": "screening",
+      "type": "backend",
+      "label": "Board screening",
+      "sublabel": "deterministic rules",
+      "pos": [
+        940,
+        360
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/web/src/lib/screening/engine.ts",
+          "label": "engine.ts"
+        }
+      ]
+    },
+    {
+      "id": "company",
+      "type": "backend",
+      "label": "Company intelligence",
+      "sublabel": "ingest \u2192 extract \u2192 assemble",
+      "pos": [
+        940,
+        465
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/web/src/lib/company/extract.ts",
+          "label": "extract.ts"
+        },
+        {
+          "path": "apps/web/src/lib/company/assemble.ts",
+          "label": "assemble.ts"
+        }
+      ]
+    },
+    {
+      "id": "api_routes",
+      "type": "backend",
+      "label": "Route handlers",
+      "sublabel": "app/api/* \u00b7 same origin",
+      "pos": [
+        1165,
+        360
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/web/src/app/api/match/route.ts",
+          "label": "api/match"
+        }
+      ]
+    },
+    {
+      "id": "web_ui",
+      "type": "frontend",
+      "label": "Next.js App Router",
+      "sublabel": "board \u00b7 briefing \u00b7 profiles",
+      "pos": [
+        1165,
+        180
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "sources": [
+        {
+          "path": "apps/web/src/app/page.tsx",
+          "label": "board page"
+        }
+      ]
+    },
+    {
+      "id": "estimator",
+      "type": "external",
+      "label": "Estimator",
+      "sublabel": "one browser, no login",
+      "pos": [
+        1165,
+        30
+      ],
+      "size": [
+        170,
+        64
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "apps/pipeline \u00b7 idempotent stage commands",
+      "wraps": [
+        "pipeline",
+        "doc_store"
+      ],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "Same schema, either store",
+      "wraps": [
+        "supabase",
+        "json_db"
+      ],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "apps/web \u00b7 one Next.js process",
+      "wraps": [
+        "db_port",
+        "decision",
+        "screening",
+        "company",
+        "api_routes",
+        "web_ui"
+      ],
+      "pad": 20
+    }
+  ],
+  "connections": [
+    {
+      "id": "notice-feed",
+      "from": "vergabe",
+      "to": "pipeline",
+      "label": "eForms XML \u00b7 lot stubs",
+      "variant": "emphasis",
+      "labelDy": -82
+    },
+    {
+      "id": "package-fetch",
+      "from": "pipeline",
+      "to": "portals",
+      "label": "anonymous package GET",
+      "variant": "dashed"
+    },
+    {
+      "id": "files-hashed",
+      "from": "pipeline",
+      "to": "doc_store",
+      "label": "unpacked files, hashed once",
+      "labelDy": 86
+    },
+    {
+      "id": "observations-written",
+      "from": "pipeline",
+      "to": "supabase",
+      "label": "lots \u00b7 observations",
+      "variant": "emphasis",
+      "labelDy": 56
+    },
+    {
+      "id": "model-extraction",
+      "from": "pipeline",
+      "to": "openrouter",
+      "label": "page text \u2192 typed items + quote",
+      "variant": "dashed"
+    },
+    {
+      "id": "semantic-matching",
+      "from": "decision",
+      "to": "openrouter",
+      "label": "semantic + reference matching",
+      "variant": "dashed"
+    },
+    {
+      "id": "backend-supabase",
+      "from": "db_port",
+      "to": "supabase",
+      "label": "DATA_BACKEND=supabase",
+      "variant": "dashed",
+      "labelDy": 20
+    },
+    {
+      "id": "backend-json",
+      "from": "db_port",
+      "to": "json_db",
+      "label": "DATA_BACKEND=json (default)",
+      "variant": "emphasis"
+    },
+    {
+      "id": "resolved-facts",
+      "from": "decision",
+      "to": "db_port",
+      "label": "resolved lot facts"
+    },
+    {
+      "id": "board-rows",
+      "from": "screening",
+      "to": "db_port",
+      "label": "demo board rows",
+      "labelDy": -42,
+      "labelDx": -56
+    },
+    {
+      "id": "canonical-rows",
+      "from": "company",
+      "to": "db_port",
+      "label": "sources \u00b7 chunks \u00b7 canonical rows"
+    },
+    {
+      "id": "match-request",
+      "from": "api_routes",
+      "to": "decision",
+      "label": "POST /api/match",
+      "variant": "emphasis"
+    },
+    {
+      "id": "screen-request",
+      "from": "api_routes",
+      "to": "screening",
+      "label": "POST /api/screen",
+      "labelDy": -42,
+      "labelDx": -58
+    },
+    {
+      "id": "company-request",
+      "from": "api_routes",
+      "to": "company",
+      "label": "POST /api/companies/:id/*"
+    },
+    {
+      "id": "typed-fetch",
+      "from": "web_ui",
+      "to": "api_routes",
+      "label": "typed fetch (lib/api)",
+      "variant": "emphasis",
+      "labelDy": 60
+    },
+    {
+      "id": "picks-company",
+      "from": "estimator",
+      "to": "web_ui",
+      "label": "picks a company",
+      "variant": "emphasis",
+      "labelDy": 56
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "One decision, two engines",
+      "items": [
+        "POST /api/match routes one task per requirement to a rule, ontology, semantic or reference matcher",
+        "POST /api/screen runs the deterministic board rules over the demo board relations",
+        "No score anywhere: each criterion returns PASS, FAIL or UNCERTAIN with a reason"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Evidence is the contract",
+      "items": [
+        "Observations are insert-only; the shown value is chosen at read time by precedence and agreement",
+        "A model item survives only if its quote is on the page it cites",
+        "Unknown is a state: NOT_FOUND, REFERRED_TO_DOCUMENTS or CONFLICTING"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Runs on the tech-checked laptop",
+      "items": [
+        "DATA_BACKEND=json is the default: JSON files, no services, no keys",
+        "DATA_BACKEND=supabase serves the same schema; CI applies the migrations",
+        "/api/ingest and /api/jobs are still stubs; tenders arrive through the pipeline CLI"
+      ]
+    }
+  ]
+}
