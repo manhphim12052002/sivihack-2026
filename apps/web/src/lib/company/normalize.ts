@@ -12,6 +12,7 @@ export type CapabilityType =
   | "RAILWAY_CONSTRUCTION"
   | "BRIDGE_CONSTRUCTION"
   | "HYDRAULIC_ENGINEERING"
+  | "METAL_CONSTRUCTION"
   | "OTHER";
 
 export type QualificationType =
@@ -87,6 +88,33 @@ const CAPABILITY_ONTOLOGY: OntologyEntry<CapabilityType>[] = [
   {
     type: "HYDRAULIC_ENGINEERING",
     patterns: [/wasserbau/, /hydraulic/, /deichbau/, /uferbau/],
+  },
+  {
+    type: "METAL_CONSTRUCTION",
+    patterns: [
+      /metallbau/,
+      /metal.?constr/,
+      /stahlbau/,
+      /schlosserei/,
+      /fassade/,
+      /\bfacade/,
+      /brandschutztür/,
+      /rauchschutztür/,
+      /\btür(en)?\b/,
+      /\bfenster\b/,
+      /\btor(e)?\b/,
+      /rolltor/,
+      /industrietor/,
+      /\bdoor(s)?\b/,
+      /\bwindow(s)?\b/,
+      /\bgate(s)?\b/,
+      /conservator/,
+      /wintergarten/,
+      /geländer/,
+      /\brailing/,
+      /\bstair/,
+      /treppe/,
+    ],
   },
 ];
 

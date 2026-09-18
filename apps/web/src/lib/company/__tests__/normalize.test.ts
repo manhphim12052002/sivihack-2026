@@ -47,6 +47,30 @@ describe("normalizeCapabilityType", () => {
       "OTHER",
     );
   });
+
+  it("maps Metallbau → METAL_CONSTRUCTION", () => {
+    expect(normalizeCapabilityType("Metallbauarbeiten")).toBe(
+      "METAL_CONSTRUCTION",
+    );
+  });
+
+  it("maps fire protection doors → METAL_CONSTRUCTION", () => {
+    expect(normalizeCapabilityType("fire protection doors T30")).toBe(
+      "METAL_CONSTRUCTION",
+    );
+  });
+
+  it("maps aluminium windows and doors → METAL_CONSTRUCTION", () => {
+    expect(normalizeCapabilityType("aluminium windows and doors")).toBe(
+      "METAL_CONSTRUCTION",
+    );
+  });
+
+  it("maps aluminium facades → METAL_CONSTRUCTION", () => {
+    expect(normalizeCapabilityType("aluminium facades")).toBe(
+      "METAL_CONSTRUCTION",
+    );
+  });
 });
 
 describe("normalizeQualificationType", () => {

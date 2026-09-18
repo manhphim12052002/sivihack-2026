@@ -206,7 +206,7 @@
   {
     "company_id": "COMP-metallbau-westfalen",
     "id": "COMP-metallbau-westfalen-LEGACY-CAP-0",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "aluminium windows and doors",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -218,7 +218,7 @@
   {
     "company_id": "COMP-metallbau-westfalen",
     "id": "COMP-metallbau-westfalen-LEGACY-CAP-1",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "aluminium facades",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -230,7 +230,7 @@
   {
     "company_id": "COMP-metallbau-westfalen",
     "id": "COMP-metallbau-westfalen-LEGACY-CAP-2",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "fire protection doors T30",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -242,7 +242,7 @@
   {
     "company_id": "COMP-metallbau-westfalen",
     "id": "COMP-metallbau-westfalen-LEGACY-CAP-3",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "smoke protection doors RS",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -254,7 +254,7 @@
   {
     "company_id": "COMP-metallbau-westfalen",
     "id": "COMP-metallbau-westfalen-LEGACY-CAP-4",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "automatic door drives",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -266,7 +266,7 @@
   {
     "company_id": "COMP-metallbau-westfalen",
     "id": "COMP-metallbau-westfalen-LEGACY-CAP-5",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "metal construction",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -278,7 +278,7 @@
   {
     "company_id": "COMP-alu-sauerland",
     "id": "COMP-alu-sauerland-LEGACY-CAP-0",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "aluminium windows",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -290,7 +290,7 @@
   {
     "company_id": "COMP-alu-sauerland",
     "id": "COMP-alu-sauerland-LEGACY-CAP-1",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "aluminium exterior doors",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -302,7 +302,7 @@
   {
     "company_id": "COMP-alu-sauerland",
     "id": "COMP-alu-sauerland-LEGACY-CAP-2",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "conservatories",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -314,7 +314,7 @@
   {
     "company_id": "COMP-alu-sauerland",
     "id": "COMP-alu-sauerland-LEGACY-CAP-3",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "metal construction",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -326,7 +326,7 @@
   {
     "company_id": "COMP-tueren-rheinland",
     "id": "COMP-tueren-rheinland-LEGACY-CAP-0",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "fire protection doors",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -338,7 +338,7 @@
   {
     "company_id": "COMP-tueren-rheinland",
     "id": "COMP-tueren-rheinland-LEGACY-CAP-1",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "smoke protection doors",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -350,7 +350,7 @@
   {
     "company_id": "COMP-tueren-rheinland",
     "id": "COMP-tueren-rheinland-LEGACY-CAP-2",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "industrial doors and gates",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -362,7 +362,7 @@
   {
     "company_id": "COMP-tueren-rheinland",
     "id": "COMP-tueren-rheinland-LEGACY-CAP-3",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "automatic door drives",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -374,7 +374,7 @@
   {
     "company_id": "COMP-tueren-rheinland",
     "id": "COMP-tueren-rheinland-LEGACY-CAP-4",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "metal construction",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -386,7 +386,7 @@
   {
     "company_id": "COMP-hellweg",
     "id": "COMP-hellweg-LEGACY-CAP-0",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "metal construction",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -398,7 +398,7 @@
   {
     "company_id": "COMP-hellweg",
     "id": "COMP-hellweg-LEGACY-CAP-1",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "aluminium doors",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -410,7 +410,7 @@
   {
     "company_id": "COMP-hellweg",
     "id": "COMP-hellweg-LEGACY-CAP-2",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "fire protection doors",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
@@ -422,7 +422,7 @@
   {
     "company_id": "COMP-hellweg",
     "id": "COMP-hellweg-LEGACY-CAP-3",
-    "type": "OTHER",
+    "type": "METAL_CONSTRUCTION",
     "label": "railings and stairs",
     "origin": "DOCUMENT_EXTRACTED",
     "status": "CONFIRMED",
