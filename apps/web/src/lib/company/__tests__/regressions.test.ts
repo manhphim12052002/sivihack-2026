@@ -99,21 +99,20 @@ describe("Company safety regressions", () => {
         .status,
     ).toBe("FAIL");
   });
-  it("rejects unsupported negative qualifications", () => {
-    expect(() =>
-      parse(
-        {
-          qualifications: [
-            {
-              label: "DB qualification",
-              knowledge_state: "KNOWN_ABSENT",
-              chunk_ids: ["CH-1"],
-            },
-          ],
-        },
-        "Road construction",
-      ),
-    ).toThrow("Unsupported negative");
+  it("drops unsupported negative qualifications instead of failing the whole extraction", () => {
+    const c = parse(
+      {
+        qualifications: [
+          {
+            label: "DB qualification",
+            knowledge_state: "KNOWN_ABSENT",
+            chunk_ids: ["CH-1"],
+          },
+        ],
+      },
+      "Road construction",
+    );
+    expect(c.qualifications).toEqual([]);
   });
   it("no estimator capacity default, and committed crews are not bids/week", () => {
     expect(
@@ -234,17 +233,15 @@ describe("Company safety regressions", () => {
     );
     expect(mergeCompany(reviewed, extraction).identity.employees).toBe(140);
   });
-  it("rejects malformed arrays and foreign evidence ids", () => {
+  it("rejects a malformed array shape and an empty extraction, but only drops one bad item", () => {
     expect(() => parse({ references: {} }, "text")).toThrow();
-    expect(() =>
-      parse(
-        {
-          capabilities: [{ label: "road construction", chunk_ids: ["OTHER"] }],
-        },
-        "text",
-      ),
-    ).toThrow();
     expect(() => parse({}, "text")).toThrow();
+    // A citation to a chunk id the model was never given is a broken item, not a broken batch.
+    const c = parse(
+      { capabilities: [{ label: "road construction", chunk_ids: ["OTHER"] }] },
+      "text",
+    );
+    expect(c.capabilities).toEqual([]);
   });
   it("keeps all original sample companies and removes unsupported availability/capacity", () => {
     expect(MOCK_COMPANIES.map((c) => c.name)).toEqual([

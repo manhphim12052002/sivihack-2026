@@ -200,154 +200,177 @@ export function parseIntelligence(
       state: value === null ? "AMBIGUOUS" : claim(r, ids).state,
     };
   }
+  // A single malformed item (missing a required field, an unsupported enum value, a citation
+  // that doesn't check out) is dropped rather than failing the whole extraction — the model's
+  // non-determinism on one claim shouldn't discard every other claim it got right. Only an
+  // array-shaped error (raw.facts not even being an array) throws, before this loop starts.
+  function skippable(fn: () => void): void {
+    try {
+      fn();
+    } catch (e) {
+      if (e instanceof CompanyError && e.code === "LLM_PARSE_ERROR") return;
+      throw e;
+    }
+  }
+
   for (const item of list(raw.capabilities)) {
-    const r = obj(item),
-      ids = evidence(r),
-      label = str(r.label);
-    if (!label)
-      throw new CompanyError("LLM_PARSE_ERROR", "Capability label missing.");
-    for (const type of normalizeCapabilityTypes(label))
-      c.capabilities.push({ ...rowMeta(companyId, "CAP", ids), type, label });
+    skippable(() => {
+      const r = obj(item),
+        ids = evidence(r),
+        label = str(r.label);
+      if (!label)
+        throw new CompanyError("LLM_PARSE_ERROR", "Capability label missing.");
+      for (const type of normalizeCapabilityTypes(label))
+        c.capabilities.push({ ...rowMeta(companyId, "CAP", ids), type, label });
+    });
   }
   for (const item of list(raw.references)) {
-    const r = obj(item),
-      ids = evidence(r),
-      name = str(r.name) ?? str(r.raw_value);
-    const text = str(r.raw_value) ?? evidenceText(ids, chunks);
-    if (!name)
-      throw new CompanyError("LLM_PARSE_ERROR", "Reference name missing.");
-    c.references.push({
-      ...rowMeta(companyId, "REF", ids),
-      name,
-      client: specificName(r.client, text),
-      location: specificName(r.location, text),
-      project_types: strings(r.project_types),
-      capabilities: [
-        ...new Set([
-          ...strings(r.capabilities).flatMap(normalizeCapabilityTypes),
-          ...normalizeCapabilityTypes(name),
-        ]),
-      ].filter((t) => t !== "OTHER"),
-      contract_value_eur: groundedNumber(r.contract_value_eur, text),
-      completed_at: safeDate(r.completed_at, text),
+    skippable(() => {
+      const r = obj(item),
+        ids = evidence(r),
+        name = str(r.name) ?? str(r.raw_value);
+      const text = str(r.raw_value) ?? evidenceText(ids, chunks);
+      if (!name)
+        throw new CompanyError("LLM_PARSE_ERROR", "Reference name missing.");
+      c.references.push({
+        ...rowMeta(companyId, "REF", ids),
+        name,
+        client: specificName(r.client, text),
+        location: specificName(r.location, text),
+        project_types: strings(r.project_types),
+        capabilities: [
+          ...new Set([
+            ...strings(r.capabilities).flatMap(normalizeCapabilityTypes),
+            ...normalizeCapabilityTypes(name),
+          ]),
+        ].filter((t) => t !== "OTHER"),
+        contract_value_eur: groundedNumber(r.contract_value_eur, text),
+        completed_at: safeDate(r.completed_at, text),
+      });
     });
   }
   for (const item of list(raw.qualifications)) {
-    const r = obj(item),
-      ids = evidence(r),
-      label = str(r.label);
-    const text = str(r.raw_value) ?? evidenceText(ids, chunks);
-    if (
-      !label ||
-      !["KNOWN_PRESENT", "KNOWN_ABSENT"].includes(String(r.knowledge_state))
-    )
-      throw new CompanyError(
-        "LLM_PARSE_ERROR",
-        "Qualification requires an explicit knowledge state.",
-      );
-    // Negative claims require a source statement, never mere omission.
-    if (
-      r.knowledge_state === "KNOWN_ABSENT" &&
-      (!/\b(no|not|without|kein\w*|nicht|ohne)\b/i.test(text) ||
-        normalizeQualificationType(text) !== normalizeQualificationType(label))
-    )
-      throw new CompanyError(
-        "LLM_PARSE_ERROR",
-        "Unsupported negative qualification claim.",
-      );
-    c.qualifications.push({
-      ...rowMeta(companyId, "QUAL", ids),
-      type: normalizeQualificationType(label),
-      label,
-      knowledge_state: r.knowledge_state as "KNOWN_PRESENT" | "KNOWN_ABSENT",
-      valid_from: safeDate(r.valid_from, text),
-      valid_until: safeDate(r.valid_until, text),
-      freshness: "STALE",
+    skippable(() => {
+      const r = obj(item),
+        ids = evidence(r),
+        label = str(r.label);
+      const text = str(r.raw_value) ?? evidenceText(ids, chunks);
+      if (
+        !label ||
+        !["KNOWN_PRESENT", "KNOWN_ABSENT"].includes(String(r.knowledge_state))
+      )
+        throw new CompanyError(
+          "LLM_PARSE_ERROR",
+          "Qualification requires an explicit knowledge state.",
+        );
+      // Negative claims require a source statement, never mere omission.
+      if (
+        r.knowledge_state === "KNOWN_ABSENT" &&
+        (!/\b(no|not|without|kein\w*|nicht|ohne)\b/i.test(text) ||
+          normalizeQualificationType(text) !== normalizeQualificationType(label))
+      )
+        throw new CompanyError(
+          "LLM_PARSE_ERROR",
+          "Unsupported negative qualification claim.",
+        );
+      c.qualifications.push({
+        ...rowMeta(companyId, "QUAL", ids),
+        type: normalizeQualificationType(label),
+        label,
+        knowledge_state: r.knowledge_state as "KNOWN_PRESENT" | "KNOWN_ABSENT",
+        valid_from: safeDate(r.valid_from, text),
+        valid_until: safeDate(r.valid_until, text),
+        freshness: "STALE",
+      });
     });
   }
   for (const section of ["resources", "capacity"] as const) {
     for (const item of list(raw[section])) {
-      const r = obj(item),
-        ids = evidence(r),
-        label = str(r.label),
-        type = str(r.type);
-      const text = str(r.raw_value) ?? evidenceText(ids, chunks);
-      if (!label || !type)
-        throw new CompanyError(
-          "LLM_PARSE_ERROR",
-          "Resource/capacity type and label required.",
-        );
-      if (
-        type === "ESTIMATOR_CAPACITY" &&
-        !/(?:bids?|tenders?|angebote|ausschreibungen).{0,50}(?:week|woche)|(?:week|woche).{0,50}(?:bids?|tenders?|angebote)/i.test(
-          text.replace(/\n/g, " "),
+      skippable(() => {
+        const r = obj(item),
+          ids = evidence(r),
+          label = str(r.label),
+          type = str(r.type);
+        const text = str(r.raw_value) ?? evidenceText(ids, chunks);
+        if (!label || !type)
+          throw new CompanyError(
+            "LLM_PARSE_ERROR",
+            "Resource/capacity type and label required.",
+          );
+        if (
+          type === "ESTIMATOR_CAPACITY" &&
+          !/(?:bids?|tenders?|angebote|ausschreibungen).{0,50}(?:week|woche)|(?:week|woche).{0,50}(?:bids?|tenders?|angebote)/i.test(
+            text.replace(/\n/g, " "),
+          )
         )
-      )
-        continue;
-      if (
-        section === "capacity" &&
-        ![
-          "ESTIMATOR_CAPACITY",
-          "AVAILABLE_CREWS",
-          "CREW_AVAILABILITY",
-          "GUARANTEE_AVAILABLE",
-        ].includes(type)
-      )
-        throw new CompanyError("LLM_PARSE_ERROR", "Unsupported capacity type.");
-      if (
-        type === "AVAILABLE_CREWS" &&
-        /committed|gebunden|belegt/i.test(text) &&
-        !/available|verfügbar|frei/i.test(text)
-      )
-        continue;
-      const available = safeDate(r.available_from, text);
-      const row: OperationalItem = {
-        ...rowMeta(companyId, "OP", ids),
-        ...claim(r, ids),
-        type,
-        label,
-        value: groundedNumber(r.value, text),
-        unit: str(r.unit),
-        available_from: available,
-        valid_as_of: safeDate(r.valid_as_of, text),
-      };
-      if (type === "CREW_AVAILABILITY" && !available) {
-        row.state = "AMBIGUOUS";
-        row.raw_value = str(r.raw_value) ?? text;
-      }
-      c[section]!.push(row);
+          return;
+        if (
+          section === "capacity" &&
+          ![
+            "ESTIMATOR_CAPACITY",
+            "AVAILABLE_CREWS",
+            "CREW_AVAILABILITY",
+            "GUARANTEE_AVAILABLE",
+          ].includes(type)
+        )
+          throw new CompanyError("LLM_PARSE_ERROR", "Unsupported capacity type.");
+        if (
+          type === "AVAILABLE_CREWS" &&
+          /committed|gebunden|belegt/i.test(text) &&
+          !/available|verfügbar|frei/i.test(text)
+        )
+          return;
+        const available = safeDate(r.available_from, text);
+        const row: OperationalItem = {
+          ...rowMeta(companyId, "OP", ids),
+          ...claim(r, ids),
+          type,
+          label,
+          value: groundedNumber(r.value, text),
+          unit: str(r.unit),
+          available_from: available,
+          valid_as_of: safeDate(r.valid_as_of, text),
+        };
+        if (type === "CREW_AVAILABILITY" && !available) {
+          row.state = "AMBIGUOUS";
+          row.raw_value = str(r.raw_value) ?? text;
+        }
+        c[section]!.push(row);
+      });
     }
   }
   for (const section of ["constraints", "preferences"] as const) {
     for (const item of list(raw[section])) {
-      const r = obj(item),
-        ids = evidence(r),
-        value = str(r.value),
-        type = str(r.type),
-        operator = str(r.operator);
-      if (!value || !type || !operator)
-        throw new CompanyError(
-          "LLM_PARSE_ERROR",
-          "Constraint/preference needs type, operator, value.",
-        );
-      const row: PolicyItem = {
-        ...rowMeta(companyId, "POL", ids),
-        ...claim(r, ids),
-        type,
-        operator:
-          type === "COUNTRY" &&
-          /outside|außerhalb|ausserhalb/i.test(str(r.raw_value) ?? "")
-            ? "OUTSIDE"
-            : operator,
-        value,
-        severity:
-          section === "preferences"
-            ? "SOFT"
-            : r.severity === "SOFT"
+      skippable(() => {
+        const r = obj(item),
+          ids = evidence(r),
+          value = str(r.value),
+          type = str(r.type),
+          operator = str(r.operator);
+        if (!value || !type || !operator)
+          throw new CompanyError(
+            "LLM_PARSE_ERROR",
+            "Constraint/preference needs type, operator, value.",
+          );
+        const row: PolicyItem = {
+          ...rowMeta(companyId, "POL", ids),
+          ...claim(r, ids),
+          type,
+          operator:
+            type === "COUNTRY" &&
+            /outside|außerhalb|ausserhalb/i.test(str(r.raw_value) ?? "")
+              ? "OUTSIDE"
+              : operator,
+          value,
+          severity:
+            section === "preferences"
               ? "SOFT"
-              : "HARD",
-      };
-      c[section]!.push(row);
+              : r.severity === "SOFT"
+                ? "SOFT"
+                : "HARD",
+        };
+        c[section]!.push(row);
+      });
     }
   }
   c.geography!.headquarters = c.identity.headquarters;
