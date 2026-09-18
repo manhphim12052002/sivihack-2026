@@ -139,14 +139,16 @@ function TriageBoard() {
             onOpenTender={(tenderId) => router.push(`/tenders/${tenderId}?company=${companyId}`)}
           />
 
-          <TriageSection textClass="text-[--color-pursue]" title="Pursue" rows={otherBidRows} companyId={companyId} emptyNote="Everything worth pursuing this week is already in the portfolio above." />
-          <TriageSection textClass="text-[--color-review]" title="Review" rows={considerRows} companyId={companyId} />
-          <TriageSection textClass="text-[--color-skip]" title="Skip" rows={noGoRows} companyId={companyId} />
+          <TriageSection key={`pursue-${companyId}`} textClass="text-[--color-pursue]" title="Pursue" rows={otherBidRows} companyId={companyId} emptyNote="Everything worth pursuing this week is already in the portfolio above." />
+          <TriageSection key={`review-${companyId}`} textClass="text-[--color-review]" title="Review" rows={considerRows} companyId={companyId} />
+          <TriageSection key={`skip-${companyId}`} textClass="text-[--color-skip]" title="Skip" rows={noGoRows} companyId={companyId} />
         </div>
       )}
     </div>
   );
 }
+
+const PAGE_SIZE = 25;
 
 function TriageSection({
   textClass,
@@ -161,6 +163,8 @@ function TriageSection({
   companyId: string;
   emptyNote?: string;
 }) {
+  const [page, setPage] = useState(1);
+
   if (rows.length === 0) {
     if (!emptyNote) return null;
     return (
@@ -170,14 +174,48 @@ function TriageSection({
       </section>
     );
   }
+
+  const pageCount = Math.ceil(rows.length / PAGE_SIZE);
+  const clampedPage = Math.min(page, pageCount);
+  const start = (clampedPage - 1) * PAGE_SIZE;
+  const pageRows = rows.slice(start, start + PAGE_SIZE);
+
   return (
     <section>
       <SectionHeader textClass={textClass} title={title} count={rows.length} />
       <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {rows.map(({ verdict, tender }) => (
+        {pageRows.map(({ verdict, tender }) => (
           <TenderCard key={verdict.tender_id} tender={tender} verdict={verdict} companyId={companyId} />
         ))}
       </div>
+      {pageCount > 1 && (
+        <div className="mt-4 flex items-center justify-between text-sm text-zinc-500">
+          <span>
+            Showing {start + 1}–{Math.min(start + PAGE_SIZE, rows.length)} of {rows.length}
+          </span>
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setPage((p) => Math.max(1, p - 1))}
+              disabled={clampedPage <= 1}
+              className="rounded border border-zinc-300 px-3 py-1 disabled:opacity-40"
+            >
+              Previous
+            </button>
+            <span className="font-mono">
+              {clampedPage} / {pageCount}
+            </span>
+            <button
+              type="button"
+              onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
+              disabled={clampedPage >= pageCount}
+              className="rounded border border-zinc-300 px-3 py-1 disabled:opacity-40"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

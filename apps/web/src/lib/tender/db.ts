@@ -248,6 +248,12 @@ export async function listTenders(limit = 100): Promise<TenderSummary[]> {
   return (data as unknown as LotRow[]).map(lotRowToSummary);
 }
 
+/** Every known lot id, uncapped — for screening the whole store rather than a batch. */
+export async function listAllTenderIds(): Promise<string[]> {
+  const { data } = await db.from("lots_latest").select("lot_key");
+  return ((data ?? []) as Array<{ lot_key: string }>).map((r) => r.lot_key);
+}
+
 /**
  * The week's batch for the triage board: lots whose documents were read come first (they
  * carry the document-backed reasons), then open lots by soonest deadline, up to `limit`.

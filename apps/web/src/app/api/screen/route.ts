@@ -3,7 +3,7 @@ import { assembleCanonicalCompany } from "@/lib/company/assemble";
 import { companyErrorResponse } from "@/lib/company/errors";
 import { loadStoredEvaluations, runMatchEvaluation } from "@/lib/match/assemble";
 import { evaluationToVerdict, rankVerdicts } from "@/lib/match/verdict";
-import { getTender, listTriageTenders } from "@/lib/tender/db";
+import { getTender, listAllTenderIds } from "@/lib/tender/db";
 import type { ScreenRequest, Verdict } from "@/lib/api";
 
 function err(message: string, status = 500) {
@@ -11,9 +11,11 @@ function err(message: string, status = 500) {
 }
 
 /**
- * Screens one company against the week's batch (or the given tender ids) with the real decision
+ * Screens one company against every known lot (or the given tender ids) with the real decision
  * engine — layer 1 hard gate on every lot, layer 2 only on the survivors — and returns the
- * Verdict shape the triage board and briefing header render.
+ * Verdict shape the triage board and briefing header render. The triage board paginates the
+ * result client-side rather than this route capping the batch, so nothing is hidden from
+ * screening just because it wasn't in an arbitrary top-N slice.
  */
 export async function POST(req: NextRequest) {
   let body: ScreenRequest & { force?: boolean };
@@ -28,7 +30,7 @@ export async function POST(req: NextRequest) {
     const company = await assembleCanonicalCompany(body.company_id);
     const ids = body.tender_ids && body.tender_ids.length > 0
       ? body.tender_ids
-      : (await listTriageTenders(40)).map((t) => t.id);
+      : await listAllTenderIds();
 
     // Lots screened before are read back from the store; `force` recomputes everything.
     const stored = body.force ? new Map() : await loadStoredEvaluations(company.company_id, ids);
