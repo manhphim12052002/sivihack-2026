@@ -64,6 +64,13 @@ function checkEstimatedValue(tenderValue: unknown, company: CanonicalCompany): R
 }
 
 function checkGuarantees(tenderValue: unknown, company: CanonicalCompany): RuleResult {
+  // eForms BT-75 answers only WHETHER a guarantee is required; "false" is a real answer.
+  if (tenderValue === false || tenderValue === "false" || tenderValue === "no") {
+    return pass("The notice states that no guarantee (Sicherheitsleistung) is required.");
+  }
+  if (tenderValue === true || tenderValue === "true" || tenderValue === "yes") {
+    return uncertain("A guarantee is required but its amount is only stated in the documents.");
+  }
   const required = extractNumber(tenderValue);
   if (required === null) return uncertain("Guarantee amount not specified in tender.");
 
@@ -91,12 +98,44 @@ function checkSelfPerformance(tenderValue: unknown, company: CanonicalCompany): 
   return fail(`Company self-performance share ${actual}% is below required ${required}%.`);
 }
 
+/** NUTS-1 code → federal state; region words a company profile may use for it. */
+const NUTS1: Record<string, { state: string; words: string[] }> = {
+  DE1: { state: "Baden-Württemberg", words: ["baden-württemberg", "baden-wuerttemberg", "südwesten", "southern germany", "süddeutschland"] },
+  DE2: { state: "Bayern", words: ["bayern", "bavaria", "schwaben", "oberbayern", "niederbayern", "franken", "oberpfalz", "eastern bavaria", "ostbayern", "southern germany", "süddeutschland"] },
+  DE3: { state: "Berlin", words: ["berlin"] },
+  DE4: { state: "Brandenburg", words: ["brandenburg"] },
+  DE5: { state: "Bremen", words: ["bremen", "northern germany", "norddeutschland"] },
+  DE6: { state: "Hamburg", words: ["hamburg", "northern germany", "norddeutschland"] },
+  DE7: { state: "Hessen", words: ["hessen", "hesse"] },
+  DE8: { state: "Mecklenburg-Vorpommern", words: ["mecklenburg", "northern germany", "norddeutschland"] },
+  DE9: { state: "Niedersachsen", words: ["niedersachsen", "lower saxony", "northern germany", "norddeutschland"] },
+  DEA: { state: "Nordrhein-Westfalen", words: ["nordrhein-westfalen", "north rhine-westphalia", "nrw", "westfalen", "westphalia", "ruhr", "rheinland"] },
+  DEB: { state: "Rheinland-Pfalz", words: ["rheinland-pfalz", "rhineland-palatinate"] },
+  DEC: { state: "Saarland", words: ["saarland"] },
+  DED: { state: "Sachsen", words: ["sachsen", "saxony", "vogtland"] },
+  DEE: { state: "Sachsen-Anhalt", words: ["sachsen-anhalt", "saxony-anhalt"] },
+  DEF: { state: "Schleswig-Holstein", words: ["schleswig-holstein", "northern germany", "norddeutschland"] },
+  DEG: { state: "Thüringen", words: ["thüringen", "thuringia"] },
+};
+
 function checkPlaceOfPerformance(tenderValue: unknown, company: CanonicalCompany): RuleResult {
   const place = typeof tenderValue === "string" ? tenderValue.toLowerCase() : null;
   if (!place) return uncertain("Place of performance not specified in tender.");
 
   const regions = company.regions ?? [];
   if (regions.length === 0) return uncertain("Company operating regions not on file.");
+
+  // NUTS code (e.g. DEA5B) → federal state → is any company region word inside that state?
+  const nuts1 = NUTS1[place.slice(0, 3).toUpperCase()];
+  if (/^de[0-9a-g]/i.test(place) && nuts1) {
+    const lowerRegions = regions.map((r) => r.toLowerCase());
+    const inState = lowerRegions.some((r) => nuts1.words.some((w) => r.includes(w) || w.includes(r)));
+    if (inState) return pass(`Place of performance ${tenderValue} lies in ${nuts1.state}, one of the company's stated regions (${regions.join(", ")}).`);
+    // Whole-country wording only; "northern germany" is a part, not the whole.
+    const germanyWide = lowerRegions.some((r) => /^(deutschland|germany|bundesweit|nationwide|deutschlandweit|germany-wide)$/.test(r.trim()));
+    if (germanyWide) return pass(`Place of performance ${tenderValue} (${nuts1.state}); the company works Germany-wide.`);
+    return fail(`Place of performance ${tenderValue} lies in ${nuts1.state}, outside the company's stated regions (${regions.join(", ")}${company.radius_km ? `, ~${company.radius_km} km radius` : ""}).`);
+  }
 
   const match = regions.some(
     (r) => place.includes(r.toLowerCase()) || r.toLowerCase().includes(place),
@@ -152,8 +191,8 @@ function checkConsortium(tenderValue: unknown): RuleResult {
 }
 
 function checkSideOffers(tenderValue: unknown): RuleResult {
-  if (tenderValue === true || tenderValue === "yes") return pass("Side offers are permitted.");
-  if (tenderValue === false || tenderValue === "no") return pass("Side offers not relevant (not required).");
+  if (tenderValue === true || tenderValue === "yes" || tenderValue === "allowed") return pass("Side offers (Nebenangebote) are permitted.");
+  if (tenderValue === false || tenderValue === "no" || tenderValue === "not-allowed" || tenderValue === "not allowed") return pass("Side offers are not permitted; main offer only.");
   return uncertain(`Side offers rule unclear: "${String(tenderValue)}".`);
 }
 
@@ -209,11 +248,59 @@ export function runRuleMatcher(task: MatchingTask, company: CanonicalCompany): M
     status: result.status as MatchStatus,
     severity: result.severity_override ?? task.severity,
     method: result.method,
+    layer: "HARD_GATE",
     reason: result.reason,
     tender_evidence: task.tender_evidence,
     company_evidence: [],
+    company_fact: companyFact(task.requirement_id, company),
     aspect: task.aspect,
   };
+}
+
+/** The company side of a deterministic comparison, for the card's "company says" column. */
+function companyFact(requirementId: string, company: CanonicalCompany): string | null {
+  const cp = company.commercial_profile;
+  switch (requirementId) {
+    case "estimated_value":
+      return `${formatEur(cp.contract_min_eur)}–${formatEur(cp.contract_max_eur)}`;
+    case "guarantees":
+      return cp.guarantee_capacity_eur != null ? `${formatEur(cp.guarantee_capacity_eur)} guarantee capacity` : null;
+    case "self_performance_min_pct":
+      return cp.self_perform_share_pct != null ? `${cp.self_perform_share_pct} % self-performed` : null;
+    case "place_of_performance":
+      return `${(company.regions ?? []).join(", ")}${company.radius_km ? `, ~${company.radius_km} km` : ""}` || null;
+    case "construction_window": {
+      const a = company.capacity?.find((r) => r.type === "CREW_AVAILABILITY");
+      return a ? `crews available from ${a.available_from ?? a.raw_value ?? "unknown"}` : null;
+    }
+    case "trade_scope":
+      return (company.cpv_prefixes ?? []).length ? `CPV ${(company.cpv_prefixes ?? []).join(", ")}` : null;
+    default:
+      return null;
+  }
+}
+
+/** trade_scope as a deterministic CPV-prefix check; null when the company lists no CPV prefixes. */
+export function checkCpvScope(task: MatchingTask, company: CanonicalCompany): MatchResult | null {
+  const prefixes = company.cpv_prefixes ?? [];
+  const cpv = String(task.tender_value);
+  if (prefixes.length === 0) return null;
+  const hit = prefixes.find((p) => cpv.startsWith(p));
+  const label = task.context?.cpv_label ? ` (${task.context.cpv_label})` : "";
+  const result: RuleResult = hit
+    ? pass(`CPV ${cpv}${label} matches the company's stated trade prefix ${hit}.`)
+    : fail(`CPV ${cpv}${label} matches none of the company's stated trade prefixes (${prefixes.join(", ")}).`);
+  return {
+    id: genId("RES"), task_id: task.id, requirement_id: task.requirement_id, label: task.label,
+    status: result.status, severity: task.severity, method: result.method, layer: "HARD_GATE",
+    reason: result.reason, tender_evidence: task.tender_evidence, company_evidence: [],
+    company_fact: companyFact("trade_scope", company), aspect: task.aspect,
+  };
+}
+
+/** eForms BT-67 exclusion-ground codes, e.g. "bankr-nat; corruption; crime-org; ...". */
+export function isExclusionGrounds(value: unknown): boolean {
+  return typeof value === "string" && /\b(corruption|bankr-nat|crime-org|fraud|tax-pay|socsec-pay|misrepres)\b/.test(value);
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

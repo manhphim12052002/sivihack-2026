@@ -2,12 +2,15 @@ import { genId } from "@/lib/id";
 import type {
   TenderFactSheet,
   Fact,
+  FactWithCondition,
+  Evidence,
   MatchingTask,
   MatcherType,
   Severity,
   DecisionAspect,
   KnowledgeGapEntry,
   CanonicalCompany,
+  UnmatchedRequirement,
 } from "./types";
 import type { PolicyItem } from "@/lib/company/types";
 
@@ -22,7 +25,7 @@ interface TaskSpec {
 const TASK_SPECS: TaskSpec[] = [
   { requirement_id: "trade_scope",            label: "Trade scope / capability",      matcher_type: "ONTOLOGY",   severity: "HARD", aspect: "SCOPE_CAPABILITY" },
   { requirement_id: "place_of_performance",   label: "Place of performance",          matcher_type: "RULE",       severity: "HARD", aspect: "GEOGRAPHY" },
-  { requirement_id: "estimated_value",        label: "Estimated contract value",      matcher_type: "RULE",       severity: "SOFT", aspect: "CONTRACT_SIZE" },
+  { requirement_id: "estimated_value",        label: "Estimated contract value",      matcher_type: "RULE",       severity: "HARD", aspect: "CONTRACT_SIZE" },
   { requirement_id: "references_required",    label: "Reference projects required",   matcher_type: "REFERENCE",  severity: "HARD", aspect: "REFERENCES" },
   { requirement_id: "eligibility_proofs",     label: "Qualifications / certificates", matcher_type: "ONTOLOGY",   severity: "HARD", aspect: "QUALIFICATIONS" },
   { requirement_id: "construction_window",    label: "Construction window / timing",  matcher_type: "RULE",       severity: "HARD", aspect: "TIMING_CAPACITY" },
@@ -37,9 +40,37 @@ const TASK_SPECS: TaskSpec[] = [
   { requirement_id: "lots",                   label: "Lots structure",                matcher_type: "RULE",       severity: "SOFT", aspect: "SCOPE_CAPABILITY" },
 ];
 
-function extractEvidence(fact: Fact | undefined): string[] {
-  if (!fact?.evidence) return [];
-  return fact.evidence.map((e) => e.doc).filter(Boolean);
+/** Unmatched-requirement categories the buyer states that decide eligibility, hence HARD. */
+const HARD_CATEGORIES = new Set(["QUALIFICATION", "FINANCIAL", "INSURANCE", "REFERENCE", "PERSONNEL", "LEGAL"]);
+const CATEGORY_ASPECT: Record<string, DecisionAspect> = {
+  QUALIFICATION: "QUALIFICATIONS",
+  REFERENCE: "REFERENCES",
+  FINANCIAL: "FINANCIAL_GUARANTEES",
+  INSURANCE: "FINANCIAL_GUARANTEES",
+  PERSONNEL: "TIMING_CAPACITY",
+  EXECUTION: "TIMING_CAPACITY",
+  TECHNICAL_CAPABILITY: "SCOPE_CAPABILITY",
+  SUBMISSION: "CONTRACTUAL_RISK",
+  CONTRACTUAL: "CONTRACTUAL_RISK",
+  LEGAL: "QUALIFICATIONS",
+  OTHER: "CONTRACTUAL_RISK",
+};
+const CATEGORY_LABEL: Record<string, string> = {
+  QUALIFICATION: "Qualification stated in documents",
+  REFERENCE: "Reference condition stated in documents",
+  FINANCIAL: "Financial condition stated in documents",
+  INSURANCE: "Insurance stated in documents",
+  PERSONNEL: "Personnel condition stated in documents",
+  EXECUTION: "Execution condition stated in documents",
+  TECHNICAL_CAPABILITY: "Technical capability stated in documents",
+  SUBMISSION: "Submission condition stated in documents",
+  CONTRACTUAL: "Contract condition stated in documents",
+  LEGAL: "Legal condition stated in documents",
+  OTHER: "Condition stated in documents",
+};
+
+function extractEvidence(fact: Fact | undefined): Evidence[] {
+  return (fact?.evidence ?? []).filter((e) => e.doc);
 }
 
 function isAbsent(fact: Fact | undefined): boolean {
@@ -52,10 +83,20 @@ export interface TaskGenerationResult {
   skipped_gaps: KnowledgeGapEntry[];
 }
 
+export interface TaskContext {
+  title: string | null;
+  cpv: string | null;
+  cpv_label: string | null;
+  unmatched: UnmatchedRequirement[];
+  /** True when the lot has readable documents, so the standing document question makes sense. */
+  has_documents: boolean;
+}
+
 /** Build matching tasks driven by a company's active hard constraints against the tender. */
 function generateConstraintTasks(
   company: CanonicalCompany,
   factSheet: TenderFactSheet | null | undefined,
+  context: MatchingTask["context"],
 ): MatchingTask[] {
   const constraints = (company.constraints ?? []) as PolicyItem[];
   const sheet = (factSheet ?? {}) as Record<string, Fact | undefined>;
@@ -92,22 +133,41 @@ function generateConstraintTasks(
       company_value: c,
       tender_evidence: [],
       aspect,
+      context,
     });
   }
   return tasks;
+}
+
+/** One layer-2 task per requirement the buyer stated that no typed rule covers. */
+function generateUnmatchedTasks(unmatched: UnmatchedRequirement[], context: MatchingTask["context"]): MatchingTask[] {
+  return unmatched.map((u) => ({
+    id: genId("TASK"),
+    requirement_id: `unmatched:${u.category}`,
+    label: CATEGORY_LABEL[u.category] ?? CATEGORY_LABEL.OTHER,
+    matcher_type: "SEMANTIC",
+    severity: HARD_CATEGORIES.has(u.category) ? "HARD" : "SOFT",
+    tender_value: u.quote_de,
+    company_value: null,
+    tender_evidence: [{ doc: u.doc, page: u.page, quote_de: u.quote_de }],
+    aspect: CATEGORY_ASPECT[u.category] ?? "CONTRACTUAL_RISK",
+    context,
+  }));
 }
 
 export function generateTasks(
   factSheet: TenderFactSheet | null | undefined,
   companyValue: (requirementId: string) => unknown,
   company?: CanonicalCompany,
+  context?: TaskContext,
 ): TaskGenerationResult {
   const tasks: MatchingTask[] = [];
   const skipped_gaps: KnowledgeGapEntry[] = [];
+  const taskContext = context ? { title: context.title, cpv: context.cpv, cpv_label: context.cpv_label } : undefined;
 
   if (!factSheet) return { tasks, skipped_gaps };
 
-  const sheet = factSheet as Record<string, Fact | undefined>;
+  const sheet = factSheet as Record<string, FactWithCondition | undefined>;
 
   for (const spec of TASK_SPECS) {
     // Only process fields the tender actually contains (key present in factSheet)
@@ -134,15 +194,37 @@ export function generateTasks(
       matcher_type: spec.matcher_type,
       severity: spec.severity,
       tender_value: fact?.value ?? null,
+      tender_condition: fact?.condition ?? null,
       company_value: companyValue(spec.requirement_id),
       tender_evidence: extractEvidence(fact),
       aspect: spec.aspect,
+      context: taskContext,
     });
   }
 
   // Append constraint tasks from company profile (independent of fact sheet structure)
   if (company) {
-    tasks.push(...generateConstraintTasks(company, factSheet));
+    tasks.push(...generateConstraintTasks(company, factSheet, taskContext));
+  }
+
+  if (context) {
+    tasks.push(...generateUnmatchedTasks(context.unmatched, taskContext));
+    // Standing document question: approvals, certificates and inspector qualifications the
+    // trade's contract preambles demand are rarely in the notice; the model reads the passages.
+    if (context.has_documents && !("special_qualifications" in sheet)) {
+      tasks.push({
+        id: genId("TASK"),
+        requirement_id: "document_qualifications",
+        label: "Approvals and certificates required by the documents",
+        matcher_type: "SEMANTIC",
+        severity: "HARD",
+        tender_value: null,
+        company_value: null,
+        tender_evidence: [],
+        aspect: "QUALIFICATIONS",
+        context: taskContext,
+      });
+    }
   }
 
   return { tasks, skipped_gaps };

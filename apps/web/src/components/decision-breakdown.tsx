@@ -2,9 +2,8 @@ import type { CriterionResult, Evidence } from "@/lib/api";
 import { ASPECT_STYLES } from "@/lib/status";
 
 /**
- * Decision breakdown — one card per criterion the placeholder rule engine evaluated
- * (lib/screening/engine.ts), styled PASS/CONCERN/FAIL/UNCERTAIN with a left-border accent
- * that reads at a glance, hard blockers visually distinct from soft concerns.
+ * Decision breakdown — one card per criterion of a Verdict (the decision engine's card mapped
+ * through lib/match/verdict.ts), hard blockers visually distinct from soft concerns.
  */
 export function DecisionBreakdown({
   criteria,

@@ -103,19 +103,30 @@ export async function runReferenceMatcher(
   task: MatchingTask,
   company: CanonicalCompany,
 ): Promise<MatchResult> {
-  const req = parseRequirement(task.tender_value);
+  const req = parseRequirement(task.tender_condition && Object.keys(task.tender_condition).length ? task.tender_condition : task.tender_value);
+  // "vergleichbare Referenzen" without a stated type means comparable to this lot's work.
+  if (!req.project_type && task.context?.title) {
+    req.project_type = `${task.context.title}${task.context.cpv_label ? ` (${task.context.cpv_label})` : ""}`;
+  }
   const refs = company.references as Array<ReferenceRow & { status: string }>;
 
   const candidates = filterDeterministic(refs, req);
 
   let verified = 0;
   let uncertainCount = 0;
+  let modelFailed = false;
   const checkedIds: string[] = [];
 
   if (req.project_type && candidates.length > 0) {
     for (const ref of candidates) {
       checkedIds.push(ref.id);
-      const result = await semanticCheckReference(ref, req.project_type);
+      let result: "PASS" | "FAIL" | "UNCERTAIN";
+      try {
+        result = await semanticCheckReference(ref, req.project_type);
+      } catch {
+        result = "UNCERTAIN";   // model down: never a FAIL, never a crash
+        modelFailed = true;
+      }
       if (result === "PASS") verified++;
       else if (result === "UNCERTAIN") uncertainCount++;
     }
@@ -131,7 +142,7 @@ export async function runReferenceMatcher(
 
   if (verified >= needed) {
     status = "PASS";
-    reason = `${verified} verified reference(s) satisfy the requirement of ${needed}.`;
+    reason = `${verified} reference(s) comparable to "${req.project_type ?? "the requirement"}"${req.lookback_years ? ` within ${req.lookback_years} years` : ""} satisfy the required ${needed}.`;
   } else if (verified + uncertainCount >= needed) {
     status = "UNCERTAIN";
     reason = `${verified} verified, ${uncertainCount} uncertain — need ${needed}. Resolution required.`;
@@ -142,6 +153,7 @@ export async function runReferenceMatcher(
     status = "UNCERTAIN";
     reason = `Only ${verified} verified reference(s) found; ${needed} required (${req.project_type ?? "any type"}).`;
   }
+  if (modelFailed) reason += " Model unavailable for the comparison; counted as uncertain.";
 
   return {
     id: genId("RES"),
@@ -151,9 +163,13 @@ export async function runReferenceMatcher(
     status,
     severity: task.severity,
     method: "REFERENCE",
+    layer: "SEMANTIC",
     reason,
+    reasoning: `Required: ${needed}${req.lookback_years ? ` within the last ${req.lookback_years} years` : ""}, comparable to ${req.project_type ?? "unspecified work"}. Company references on file: ${refs.length}; after date/value filter: ${candidates.length}; judged comparable: ${verified}; uncertain: ${uncertainCount}.`,
+    question: status === "UNCERTAIN" ? `Which completed projects since ${new Date().getFullYear() - (req.lookback_years ?? 3)} are comparable to ${req.project_type ?? "this work"}, with client, value and completion date?` : null,
     tender_evidence: task.tender_evidence,
     company_evidence: checkedIds,
+    company_fact: refs.length ? `${refs.length} reference(s) on file` : "No references on file",
     aspect: task.aspect,
   };
 }

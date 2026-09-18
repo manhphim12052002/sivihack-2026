@@ -38,7 +38,7 @@ describe("generateTasks", () => {
   });
 
   it("skips absent SOFT facts without recording a gap", () => {
-    const sheet: TenderFactSheet = { estimated_value: absentFact };
+    const sheet: TenderFactSheet = { lots: absentFact };   // lots is SOFT; contract value is a hard gate
     const { tasks, skipped_gaps } = generateTasks(sheet, () => null);
     expect(tasks).toHaveLength(0);
     expect(skipped_gaps).toHaveLength(0);
@@ -72,12 +72,12 @@ describe("generateTasks", () => {
     expect(byId["references_required"].aspect).toBe("REFERENCES");
   });
 
-  it("extracts tender evidence doc names from fact", () => {
+  it("carries the fact's evidence (doc, page, German quote) onto the task", () => {
     const sheet: TenderFactSheet = {
       trade_scope: { value: "Straßenbau", confidence: "high", evidence: [{ doc: "LV.pdf", quote_de: "Straßenbau" }] },
     };
     const { tasks } = generateTasks(sheet, () => null);
-    expect(tasks[0].tender_evidence).toEqual(["LV.pdf"]);
+    expect(tasks[0].tender_evidence).toEqual([{ doc: "LV.pdf", quote_de: "Straßenbau" }]);
   });
 
   it("passes company value from callback into task", () => {

@@ -177,6 +177,7 @@ export function runOntologyMatcher(task: MatchingTask, company: CanonicalCompany
     status: result.status,
     severity: task.severity,
     method: result.method,
+    layer: "HARD_GATE",
     reason: result.reason,
     tender_evidence: task.tender_evidence,
     company_evidence: result.company_evidence,

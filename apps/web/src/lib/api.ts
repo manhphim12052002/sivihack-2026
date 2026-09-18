@@ -4,12 +4,11 @@
  * components) — this file never hand-declares a parallel type.
  *
  * The backend lives in this same Next.js app as route handlers under
- * `src/app/api/*` (same-origin, no separate service to run). Endpoints that
- * have a real implementation behind them (companies) hit the data backend; endpoints
- * that don't have a pipeline yet (tenders, screen) are served by placeholder
- * fixtures + a small rule engine — see `src/lib/mock/tenders.ts` and
- * `src/lib/screening/engine.ts`. `NEXT_PUBLIC_API_URL` can still override this
- * to point at a standalone service later without touching call sites here.
+ * `src/app/api/*` (same-origin, no separate service to run). Tenders come from
+ * the pipeline's Supabase tables (`src/lib/tender/db.ts`); `screen` and `match`
+ * run the decision engine in `src/lib/match/`. `NEXT_PUBLIC_API_URL` can still
+ * override this to point at a standalone service later without touching call
+ * sites here.
  */
 import type { components } from "./api-types";
 
