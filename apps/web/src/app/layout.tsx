@@ -33,20 +33,27 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-[--color-bg] text-[--color-text-primary]">
         <ApiOfflineBanner />
-        <header className="border-b border-[--color-border] bg-[--color-surface]">
-          <div className="mx-auto flex max-w-6xl items-center gap-8 px-6 py-4">
-            <span className="text-lg font-semibold text-[--color-charcoal]">Arctis Compass</span>
-            <nav className="flex gap-6 text-base">
+        <header className="border-b border-[#E2DDD8]" style={{ background: "#FFFFFF", borderTop: "3px solid #0C0C0C" }}>
+          <div className="mx-auto flex max-w-6xl items-center px-8 py-5">
+            {/* Logo */}
+            <span className="text-sm font-semibold tracking-tight text-[#2B2825] shrink-0">
+              Arctis Compass
+            </span>
+            {/* Centered nav */}
+            <nav className="flex flex-1 justify-center gap-10">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[--color-text-secondary] hover:text-[--color-text-primary] hover:underline underline-offset-2"
+                  className="group relative text-sm font-medium text-[#5A5652] transition-colors hover:text-[#2B2825]"
                 >
                   {link.label}
+                  <span className="absolute -bottom-1 left-0 h-[1.5px] w-0 bg-[#2B2825] transition-all duration-200 group-hover:w-full" />
                 </Link>
               ))}
             </nav>
+            {/* Mirror spacer to keep links centered */}
+            <span className="shrink-0 text-sm font-semibold invisible select-none" aria-hidden>Arctis Compass</span>
           </div>
         </header>
         <main className="flex-1">{children}</main>
