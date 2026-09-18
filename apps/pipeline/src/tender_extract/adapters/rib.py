@@ -4,7 +4,7 @@ The public page (server-rendered, redirects to `/public/publications/<id>`) embe
 the document table as JSON in a script block; each file is an anchor to a regional
 backend such as `my.vergabe.bayern.de/remote/download.php?k=<hash>` with the filename
 as anchor text. Files are downloaded one by one; the caller decides which names are
-worth fetching so drawings are never pulled.
+worth fetching so drawings are never pulled, and a file over the size limit is skipped.
 """
 
 from __future__ import annotations
@@ -13,7 +13,9 @@ import html
 import re
 from typing import Callable
 
-from . import Files, http_get
+import sys
+
+from . import Files, TooLarge, http_get
 
 LINK = re.compile(r'<a[^>]+href=\\?"(?P<url>https?:[^"\\]+/remote/download\.php\?k=[A-Za-z0-9]+)\\?"[^>]*>'
                   r'(?P<name>[^<]{1,200}?)<\\?/a>', re.I)
@@ -41,6 +43,10 @@ def fetch(url: str, wanted: Callable[[str], bool] | None = None) -> Files:
     for name, file_url in files:
         if wanted is not None and not wanted(name):
             continue
-        body, _, _ = http_get(file_url, headers={"Referer": final_url})
+        try:
+            body, _, _ = http_get(file_url, headers={"Referer": final_url})
+        except TooLarge:   # a single oversize drawing must not sink the rest of the listing
+            print(f"    rib: skipped {name} (over the per-file size limit)", file=sys.stderr)
+            continue
         out.append((name, body))
     return out

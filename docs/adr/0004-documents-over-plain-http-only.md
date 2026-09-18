@@ -25,3 +25,14 @@ lots already exceed the three-bid capacity.
 - A filename router decides which files are read; drawings and bills of quantities are skipped.
 - `pdftotext` is the only reader; scanned PDFs are marked and not read. No OCR, no embeddings.
 - Adding a platform is one adapter; adding a browser would be a new decision.
+
+## Note (2026-09-18)
+
+Three host classes from the probe reports were wrong and are corrected in `adapters`: the Healy
+Hudson portal `bieterportal.noncd.db.de` (listed as a JavaScript shell; Hamburg's tenant was never
+classified) serves the whole package from a plain API call; the cosinex
+`/VMPSatellite/notice/<id>/documents` page links an anonymous archive ZIP, its registration wall
+guards participation, not the download; and the vergabe24 Direkt-Kiosk reaches a "Download ohne
+Registrierung" step once the package variant is chosen. That last step is a form POST carrying
+only the variant id, no company or contact data, so it stays within this decision's reason (we do
+not hand over company data on someone's behalf). Still no browser, no registration.

@@ -68,14 +68,18 @@ FetchOutcome = Retrieved | Gated | Skipped | Unreachable
 
 
 def _fix_name(info: zipfile.ZipInfo) -> str:
-    """ZIP names without the UTF-8 flag are decoded as cp437 by Python; most were UTF-8."""
+    """ZIP names without the UTF-8 flag are decoded as cp437 by Python; most were UTF-8.
+
+    Windows-built packages (Healy Hudson) separate folders with backslashes, which the
+    filename router's basename split does not understand; normalised to '/'.
+    """
     name = info.filename
     if not info.flag_bits & 0x800:
         try:
             name = name.encode("cp437").decode("utf-8")
         except UnicodeError:
             pass
-    return name
+    return name.replace("\\", "/")
 
 
 def unpack(name: str, data: bytes, depth: int = 0) -> list[tuple[str, bytes]]:
@@ -123,15 +127,17 @@ def fetch_documents(url: str, store: Path = DEFAULT_STORE) -> FetchOutcome:
     if kind == "UNKNOWN":
         return Unreachable(platform, "no adapter for this platform")
 
-    adapter = adapters.ADAPTERS[platform]
+    adapter = adapters.adapter_for(url)
+    if adapter is None:
+        return Unreachable(platform, "no adapter for this platform")
     try:
         # A listing adapter (currently only RIB) uses this to skip drawings before
         # downloading them; the single-package adapters ignore it.
         raw = adapter(url, lambda n: route(n) != "SKIP")
-    except Exception as exc:  # transport, parsing, size: all become an honest UNREACHABLE
+        files = [store_file(n, b, store) for name, data in raw for n, b in unpack(name, data)]
+    except Exception as exc:  # transport, parsing, size, bad archive: all become an honest UNREACHABLE
         return Unreachable(platform, f"{type(exc).__name__}: {str(exc)[:160]}")
 
-    files = [store_file(n, b, store) for name, data in raw for n, b in unpack(name, data)]
     if not files:
         return Unreachable(platform, "adapter returned no files")
     return Retrieved(platform, files)
