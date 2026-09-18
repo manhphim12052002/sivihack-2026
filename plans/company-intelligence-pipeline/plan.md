@@ -26,7 +26,7 @@ evidence) is defined here and referenced by both.
 
 ## 1. Supabase Schema
 
-Run as a single migration in the Supabase SQL editor.
+Superseded 17.09: the schema now lives in `supabase/migrations/20260917210000_init.sql`, merged with the tender pipeline (shared `sources`, `chunks`, `companies`; RLS off). Apply with `supabase db push` (hosted) or `supabase db reset` (local). The SQL below is the original draft.
 
 ### 1.1 Shared infrastructure
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
-import { rowToProfile } from "@/lib/company/create";
+import { assembleCanonicalCompany } from "@/lib/company/assemble";
+import { toCompanyProfile } from "@/lib/company/model";
 import { screenTender, rankVerdicts } from "@/lib/screening/engine";
 import { TENDERS, findTender } from "@/lib/mock/tenders";
 import { findCompany } from "@/lib/mock/companies";
@@ -23,11 +24,9 @@ export async function POST(req: NextRequest) {
 
   if (!body.company_id) return err("company_id is required", 400);
 
-  const { data, error } = await supabase.from("companies").select("*").eq("id", body.company_id).single();
-  const company = (!error && data)
-    ? rowToProfile(data as Record<string, unknown>)
-    : findCompany(body.company_id);
-  if (!company) return err(`Company ${body.company_id} not found`, 404);
+  let company;
+  try { company = toCompanyProfile(await assembleCanonicalCompany(body.company_id)); }
+  catch (e) { return err(e instanceof Error ? e.message : 'Company unavailable', 500); }
 
   const tenders = body.tender_ids && body.tender_ids.length > 0
     ? body.tender_ids.map(findTender).filter((t): t is NonNullable<typeof t> => Boolean(t))

@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Tender Ingestion Pipeline",
+    "locale": "en",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "job_runner",
+      "type": "backend",
+      "label": "Job Runner",
+      "sublabel": "drains ingest_job queue",
+      "pos": [
+        40,
+        200
+      ],
+      "size": [
+        170,
+        64
+      ]
+    },
+    {
+      "id": "oeffentlichevergabe",
+      "type": "external",
+      "label": "ÖffentlicheVergabe",
+      "sublabel": "eForms feed · CPV 45*",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        170,
+        64
+      ]
+    },
+    {
+      "id": "notice_normalizer",
+      "type": "backend",
+      "label": "Notice Normalizer",
+      "sublabel": "eForms → NormalizedNotice",
+      "pos": [
+        380,
+        200
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "tag": "Flow 1"
+    },
+    {
+      "id": "structured_extractor",
+      "type": "backend",
+      "label": "Structured Extractor",
+      "sublabel": "deterministic BT fields",
+      "pos": [
+        720,
+        40
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "tag": "Flow 2–3"
+    },
+    {
+      "id": "document_fetcher",
+      "type": "backend",
+      "label": "Document Fetcher",
+      "sublabel": "filename router · hashing",
+      "pos": [
+        380,
+        360
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "tag": "Flow 4–5"
+    },
+    {
+      "id": "procurement_platforms",
+      "type": "external",
+      "label": "Vergabeplattformen",
+      "sublabel": "≈33 % registration-gated",
+      "pos": [
+        40,
+        360
+      ],
+      "size": [
+        170,
+        64
+      ]
+    },
+    {
+      "id": "pdf_reader",
+      "type": "backend",
+      "label": "PDF Reader",
+      "sublabel": "pdftotext · page = chunk",
+      "pos": [
+        380,
+        520
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "tag": "Flow 5"
+    },
+    {
+      "id": "llm_extractor",
+      "type": "backend",
+      "label": "LLM Extractor",
+      "sublabel": "one JSON call per document",
+      "pos": [
+        720,
+        360
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "tag": "Flow 6"
+    },
+    {
+      "id": "evidence_gate",
+      "type": "security",
+      "label": "Evidence Gate",
+      "sublabel": "quote ⊂ chunk, else reject",
+      "pos": [
+        720,
+        200
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "tag": "Flow 6"
+    },
+    {
+      "id": "observation_store",
+      "type": "database",
+      "label": "Observation Store",
+      "sublabel": "Supabase Postgres · sources",
+      "pos": [
+        1060,
+        200
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "tag": "Flow 13"
+    },
+    {
+      "id": "resolution_view",
+      "type": "backend",
+      "label": "Resolution View",
+      "sublabel": "precedence · 4 states",
+      "pos": [
+        1060,
+        360
+      ],
+      "size": [
+        170,
+        64
+      ],
+      "tag": "Flow 9–11"
+    },
+    {
+      "id": "decision_pipeline",
+      "type": "external",
+      "label": "Decision Pipeline",
+      "sublabel": "screen(lot, company)",
+      "pos": [
+        1060,
+        520
+      ],
+      "size": [
+        170,
+        64
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Document pipeline · idempotent stage commands",
+      "wraps": [
+        "notice_normalizer",
+        "structured_extractor",
+        "document_fetcher",
+        "pdf_reader",
+        "llm_extractor",
+        "evidence_gate"
+      ],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "Serving layer",
+      "wraps": [
+        "observation_store",
+        "resolution_view"
+      ],
+      "pad": 20
+    }
+  ],
+  "connections": [
+    {
+      "from": "oeffentlichevergabe",
+      "to": "notice_normalizer",
+      "label": "eForms XML",
+      "fromSide": "right",
+      "toSide": "top"
+    },
+    {
+      "from": "job_runner",
+      "to": "notice_normalizer",
+      "label": "runs stage commands",
+      "variant": "emphasis"
+    },
+    {
+      "from": "notice_normalizer",
+      "to": "structured_extractor",
+      "label": "NormalizedNotice"
+    },
+    {
+      "from": "notice_normalizer",
+      "to": "document_fetcher",
+      "label": "doc links · lot ids",
+      "variant": "emphasis",
+      "labelAt": [
+        465,
+        312
+      ]
+    },
+    {
+      "from": "document_fetcher",
+      "to": "procurement_platforms",
+      "label": "plain HTTP GET",
+      "variant": "dashed"
+    },
+    {
+      "from": "document_fetcher",
+      "to": "pdf_reader",
+      "label": "routed PDFs",
+      "variant": "emphasis",
+      "labelAt": [
+        465,
+        472
+      ]
+    },
+    {
+      "from": "pdf_reader",
+      "to": "llm_extractor",
+      "label": "page chunks",
+      "variant": "emphasis"
+    },
+    {
+      "from": "llm_extractor",
+      "to": "evidence_gate",
+      "label": "facts · reqs · unmatched",
+      "variant": "emphasis"
+    },
+    {
+      "from": "evidence_gate",
+      "to": "observation_store",
+      "label": "observations · reject count",
+      "variant": "security"
+    },
+    {
+      "from": "structured_extractor",
+      "to": "observation_store",
+      "label": "notice observations",
+      "fromSide": "right",
+      "toSide": "top"
+    },
+    {
+      "from": "observation_store",
+      "to": "resolution_view",
+      "label": "immutable rows",
+      "labelAt": [
+        1145,
+        312
+      ]
+    },
+    {
+      "from": "resolution_view",
+      "to": "decision_pipeline",
+      "label": "ResolvedProcedure · API / DB boundary",
+      "variant": "emphasis",
+      "labelAt": [
+        1145,
+        472
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Every observation is evidence-backed",
+      "items": [
+        "source_id + locator (BT term or page) + verbatim German quote",
+        "Scope is PROCEDURE or one LOT, never mixed",
+        "LLM claims survive only if the quote is a substring of the chunk",
+        "Unknown is a state: KNOWN · NOT_FOUND · REFERRED_TO_DOCUMENTS · CONFLICTING"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Resolution is a read-time view (ADR 0001)",
+      "items": [
+        "Rows are never updated; a superseded notice version drops out of the view",
+        "Precedence: structured field > rule > model over document > model over notice",
+        "Equal-precedence disagreement → CONFLICTING, no current value",
+        "Confidence derives from the extractor; corroboration is a signal line"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Triggers and v1 limits",
+      "items": [
+        "ingest_job table is the queue; one worker drains it, the web polls the stepper",
+        "Plain HTTP only: gated platforms stay REFERRED_TO_DOCUMENTS with the platform named",
+        "PDF text layer only: no OCR, DOCX/XLSX, CSV/OCDS are P2",
+        "Estimated value is NOT_FOUND unless the notice states it"
+      ]
+    }
+  ]
+}

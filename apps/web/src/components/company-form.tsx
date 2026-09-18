@@ -73,7 +73,7 @@ export function CompanyForm({
         <NumberField
           label="Capacity per week"
           value={draft.capacity_per_week}
-          onChange={(value) => updateField("capacity_per_week", value ?? 3)}
+          onChange={(value) => updateField("capacity_per_week", value)}
         />
         <NumberField
           label="Contract min (EUR)"

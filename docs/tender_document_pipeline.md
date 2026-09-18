@@ -4,6 +4,8 @@
 > is the schema in `plans/260917-1945-tender-ingestion-pipeline/prd.md` (`lot`, `claim`,
 > `document`, `company`, `verdict`) plus the deltas listed under Flow 13. Vocabulary follows
 > `CONTEXT.md`: *Procedure* and *Lot* are the two scope levels; "tender" is UI copy only.
+> Storage is Supabase Postgres per `docs/adr/0005-supabase-postgres-over-sqlite.md` (schema in
+> `supabase/migrations/`), superseding the SQLite file named below.
 > Section 5a says what starts each stage; section 7 says which flows are code and which are
 > prose for the hackathon.
 > Resolution rules are recorded in `docs/adr/0001-immutable-observations-read-time-resolution.md`.
@@ -615,6 +617,8 @@ FACTS   REQUIREMENTS
 One call per routed document, full extracted text, schema-enforced JSON output. The prompt
 carries the Procedure title and the list of lot ids and titles. Output has three arrays:
 `facts`, `requirements` (the six typed kinds only) and `unmatched_requirements`.
+The model is Claude Sonnet via OpenRouter, read from `OPENROUTER_MODEL=anthropic/claude-sonnet-5`;
+swapping to a GPT model is a change of that one environment variable (ADR 0005).
 
 **Scope assignment.** The model emits a scope per item from the supplied lot list. Default is
 `PROCEDURE` unless the file or text names a lot; a filename hint such as `Los_2` sets the default

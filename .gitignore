@@ -217,8 +217,11 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-# Tender extraction: cached bulk export ZIPs (re-downloadable, ~4MB/day)
+# Tender extraction: cached bulk export ZIPs (re-downloadable, ~4MB/day) and the
+# content-addressed store of fetched Vergabeunterlagen (re-downloadable, tens of MB)
 data/cache/
+data/documents/
+data/reference/
 
 # eForms-DE spec bundle: keep the PDF + notes, skip the 85MB generated HTML/model dump
 docs/specifications/eforms-de/html/

@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
+import { listTenders } from "@/lib/tender/db";
 import { TENDERS, toSummary } from "@/lib/mock/tenders";
 
-// Placeholder: serves the mock tender batch until the real ingestion pipeline
-// (plans/260917-1945-tender-ingestion-pipeline) is wired to Supabase.
-export function GET() {
+export async function GET() {
+  const real = await listTenders(200);
+  if (real.length > 0) return NextResponse.json(real);
+  // Fall back to mock fixtures when the DB has no lots yet
   return NextResponse.json(TENDERS.map(toSummary));
 }

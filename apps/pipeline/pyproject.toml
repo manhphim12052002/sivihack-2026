@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tender-extract"
+version = "0.1.0"
+description = "Screen German public construction tenders (CPV 45*) against a company profile"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = [
+    "psycopg[binary]>=3.2",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "python-multipart",
+]
+
+[project.scripts]
+tender-extract = "tender_extract.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tender_extract"]

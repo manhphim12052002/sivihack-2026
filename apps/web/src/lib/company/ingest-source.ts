@@ -1,3 +1,4 @@
+import { CompanyError } from "./errors";
 import { createHash } from "crypto";
 import { supabase } from "@/lib/supabase";
 import { genId } from "@/lib/id";
@@ -17,7 +18,7 @@ async function parsePdf(buffer: Buffer): Promise<ParsedChunk[]> {
   // Dynamic import keeps this server-only
   const { PDFParse } = await import("pdf-parse");
   const parser = new PDFParse({ data: new Uint8Array(buffer) });
-  const result = await parser.getText();
+  const result = await parser.getText().finally(() => parser.destroy());
   // Each page is a PageTextResult with a .text field
   return result.pages
     .map((p, i) => ({
@@ -36,7 +37,7 @@ async function parseDocx(buffer: Buffer): Promise<ParsedChunk[]> {
   const paragraphs = result.value
     .split(/\n{2,}/)
     .map((t) => t.trim())
-    .filter((t) => t.length > 20);
+    .filter((t) => t.length > 0);
   return paragraphs.map((text, i) => ({
     page: null,
     section: null,
@@ -53,7 +54,9 @@ async function parseXlsx(buffer: Buffer): Promise<ParsedChunk[]> {
   for (const sheetName of wb.SheetNames) {
     const ws = wb.Sheets[sheetName];
     if (!ws) continue;
-    const rows = XLSX.utils.sheet_to_json<Record<string, unknown>>(ws, { defval: "" });
+    const rows = XLSX.utils.sheet_to_json<Record<string, unknown>>(ws, {
+      defval: "",
+    });
     // Batch rows into groups of 20 to keep chunk sizes manageable
     for (let i = 0; i < rows.length; i += 20) {
       const slice = rows.slice(i, i + 20);
@@ -73,7 +76,10 @@ async function parseXlsx(buffer: Buffer): Promise<ParsedChunk[]> {
 }
 
 function parseTxt(text: string): ParsedChunk[] {
-  const paragraphs = text.split(/\n{2,}/).map((t) => t.trim()).filter((t) => t.length > 20);
+  const paragraphs = text
+    .split(/\n{2,}/)
+    .map((t) => t.trim())
+    .filter((t) => t.length > 0);
   return paragraphs.map((t, i) => ({
     page: null,
     section: null,
@@ -99,14 +105,17 @@ export async function ingestSource(
   const sha256 = createHash("sha256").update(buffer).digest("hex");
 
   // Deduplicate: if this exact file was already ingested for this company, skip
-  const { data: existing } = await supabase
+  const { data: existing, error: existingError } = await supabase
     .from("sources")
     .select("*")
     .eq("entity_id", companyId)
     .eq("sha256", sha256)
+    .eq("status", "AVAILABLE")
     .maybeSingle();
 
-  if (existing) {
+  if (existingError)
+    throw new CompanyError("DATABASE_ERROR", existingError.message, 500);
+  if (existing?.status === "AVAILABLE") {
     const { data: existingChunks } = await supabase
       .from("chunks")
       .select("*")
@@ -120,8 +129,20 @@ export async function ingestSource(
 
   // Detect format from filename extension
   const ext = filename.split(".").pop()?.toLowerCase() ?? "";
-  const type = ext === "pdf" ? "PDF" : ext === "docx" ? "DOCX" : ext === "xlsx" || ext === "csv" ? "XLSX" : "TXT";
+  const type =
+    ext === "pdf"
+      ? "PDF"
+      : ext === "docx"
+        ? "DOCX"
+        : ext === "xlsx" || ext === "csv"
+          ? "XLSX"
+          : "TXT";
 
+  if (!["pdf", "docx", "xlsx", "csv", "txt"].includes(ext))
+    throw new CompanyError(
+      "UNSUPPORTED_FORMAT",
+      "Use PDF, DOCX, XLSX, CSV or TXT.",
+    );
   // Register source
   const sourceId = genId("CSRC");
   const { data: sourceRow, error: sourceErr } = await supabase
@@ -134,7 +155,7 @@ export async function ingestSource(
       filename,
       origin: "CUSTOMER_UPLOAD",
       sha256,
-      status: "AVAILABLE",
+      status: "PARSING",
     })
     .select()
     .single();
@@ -149,9 +170,32 @@ export async function ingestSource(
     else if (type === "XLSX") parsed = await parseXlsx(buffer);
     else parsed = parseTxt(buffer.toString("utf-8"));
   } catch (e) {
-    // Parsing failed — store a single error chunk so the source isn't silently empty
-    parsed = [{ page: null, section: null, paragraph: null, cell_range: null, text: `[Parse error: ${String(e)}]` }];
+    await supabase
+      .from("sources")
+      .update({ status: "ERROR" })
+      .eq("id", sourceId);
+    throw new CompanyError(
+      "DOCUMENT_PARSE_ERROR",
+      `Could not read ${filename}: ${String(e)}`,
+    );
   }
+  if (!parsed.length) {
+    await supabase
+      .from("sources")
+      .update({ status: "ERROR" })
+      .eq("id", sourceId);
+    throw new CompanyError(
+      "DOCUMENT_EMPTY",
+      "No readable text found. Use a text PDF or paste its text; scanned PDFs need OCR.",
+    );
+  }
+  // Split long pages without discarding their tail. Overlap preserves boundary context.
+  parsed = parsed.flatMap((c) => {
+    const out: ParsedChunk[] = [];
+    for (let offset = 0; offset < c.text.length; offset += 3500)
+      out.push({ ...c, text: c.text.slice(offset, offset + 4000) });
+    return out;
+  });
 
   // Insert chunks
   const chunkRows = parsed.map((c) => ({
@@ -169,8 +213,14 @@ export async function ingestSource(
     if (chunkErr) throw new Error(chunkErr.message);
   }
 
+  const { error: readyError } = await supabase
+    .from("sources")
+    .update({ status: "AVAILABLE" })
+    .eq("id", sourceId);
+  if (readyError)
+    throw new CompanyError("DATABASE_ERROR", readyError.message, 500);
   return {
-    source: sourceRow as SourceRow,
+    source: { ...sourceRow, status: "AVAILABLE" } as SourceRow,
     chunks: chunkRows as ChunkRow[],
     duplicate: false,
   };

@@ -1,12 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getTender } from "@/lib/tender/db";
 import { findTender } from "@/lib/mock/tenders";
 
 type Ctx = { params: Promise<{ id: string }> };
 
-// Placeholder: reads from the mock tender fixtures until the real pipeline lands.
 export async function GET(_req: NextRequest, { params }: Ctx) {
   const { id } = await params;
-  const tender = findTender(id);
-  if (!tender) return NextResponse.json({ error: `Tender ${id} not found` }, { status: 404 });
-  return NextResponse.json(tender);
+
+  const real = await getTender(id);
+  if (real) return NextResponse.json(real);
+
+  // Fall back to mock fixtures (mock ids are t1..t9)
+  const mock = findTender(id);
+  if (mock) return NextResponse.json(mock);
+
+  return NextResponse.json({ error: `Tender ${id} not found` }, { status: 404 });
 }
