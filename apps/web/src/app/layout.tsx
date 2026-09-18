@@ -36,9 +36,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <header className="sticky top-0 z-40 border-b border-[#E2DDD8]" style={{ background: "#FFFFFF", borderTop: "3px solid #0C0C0C" }}>
           <div className="mx-auto flex max-w-6xl items-center px-8 py-5">
             {/* Logo */}
-            <span className="text-sm font-semibold tracking-tight text-[#2B2825] shrink-0">
+            <Link
+              href="/"
+              className="text-sm font-semibold tracking-tight text-[#2B2825] shrink-0"
+            >
               Arctis Compass
-            </span>
+            </Link>
             {/* Centered nav */}
             <nav className="flex flex-1 justify-center gap-10">
               {NAV_LINKS.map((link) => (
