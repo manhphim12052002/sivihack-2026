@@ -75,7 +75,7 @@ export default function IngestPage() {
 
       <IngestDropzone onSubmitFiles={handleFiles} onSubmitUrl={handleUrl} busy={busy} />
 
-      {error && <p className="rounded border border-red-300 bg-red-50 px-3 py-2 text-red-800">{error}</p>}
+      {error && <p className="rounded border border-[--color-skip] bg-[--color-skip-soft] px-3 py-2 text-[--color-skip]">{error}</p>}
       {job && <JobProgress job={job} />}
     </div>
   );

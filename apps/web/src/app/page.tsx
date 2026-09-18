@@ -120,7 +120,7 @@ function TriageBoard() {
           .
         </p>
       )}
-      {error && <p className="rounded border border-red-300 bg-red-50 px-3 py-2 text-red-800">{error}</p>}
+      {error && <p className="rounded border border-[--color-skip] bg-[--color-skip-soft] px-3 py-2 text-[--color-skip]">{error}</p>}
       {loading && <p className="text-zinc-500">Screening…</p>}
 
       {!loading && effectiveVerdicts && (
@@ -139,9 +139,9 @@ function TriageBoard() {
             onOpenTender={(tenderId) => router.push(`/tenders/${tenderId}?company=${companyId}`)}
           />
 
-          <TriageSection dotClass="bg-[--color-pursue]" title="Pursue" rows={otherBidRows} companyId={companyId} emptyNote="Everything worth pursuing this week is already in the portfolio above." />
-          <TriageSection dotClass="bg-[--color-review]" title="Review" rows={considerRows} companyId={companyId} />
-          <TriageSection dotClass="bg-[--color-skip]" title="Skip" rows={noGoRows} companyId={companyId} />
+          <TriageSection textClass="text-[--color-pursue]" title="Pursue" rows={otherBidRows} companyId={companyId} emptyNote="Everything worth pursuing this week is already in the portfolio above." />
+          <TriageSection textClass="text-[--color-review]" title="Review" rows={considerRows} companyId={companyId} />
+          <TriageSection textClass="text-[--color-skip]" title="Skip" rows={noGoRows} companyId={companyId} />
         </div>
       )}
     </div>
@@ -149,13 +149,13 @@ function TriageBoard() {
 }
 
 function TriageSection({
-  dotClass,
+  textClass,
   title,
   rows,
   companyId,
   emptyNote,
 }: {
-  dotClass: string;
+  textClass: string;
   title: string;
   rows: Row[];
   companyId: string;
@@ -165,14 +165,14 @@ function TriageSection({
     if (!emptyNote) return null;
     return (
       <section>
-        <SectionHeader dotClass={dotClass} title={title} count={0} />
+        <SectionHeader textClass={textClass} title={title} count={0} />
         <p className="mt-2 text-sm text-zinc-500">{emptyNote}</p>
       </section>
     );
   }
   return (
     <section>
-      <SectionHeader dotClass={dotClass} title={title} count={rows.length} />
+      <SectionHeader textClass={textClass} title={title} count={rows.length} />
       <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {rows.map(({ verdict, tender }) => (
           <TenderCard key={verdict.tender_id} tender={tender} verdict={verdict} companyId={companyId} />
@@ -182,11 +182,10 @@ function TriageSection({
   );
 }
 
-function SectionHeader({ dotClass, title, count }: { dotClass: string; title: string; count: number }) {
+function SectionHeader({ textClass, title, count }: { textClass: string; title: string; count: number }) {
   return (
     <div className="flex items-center gap-2">
-      <span className={`h-2.5 w-2.5 rounded-full ${dotClass}`} />
-      <h2 className="font-semibold tracking-wide uppercase">{title}</h2>
+      <h2 className={`font-semibold tracking-wide uppercase ${textClass}`}>{title}</h2>
       <span className="font-mono text-sm text-zinc-400">{String(count).padStart(2, "0")}</span>
     </div>
   );

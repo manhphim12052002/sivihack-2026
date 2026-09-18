@@ -33,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-[--color-bg] text-[--color-text-primary]">
         <ApiOfflineBanner />
-        <header className="border-b border-[#E2DDD8]" style={{ background: "#FFFFFF", borderTop: "3px solid #0C0C0C" }}>
+        <header className="sticky top-0 z-40 border-b border-[#E2DDD8]" style={{ background: "#FFFFFF", borderTop: "3px solid #0C0C0C" }}>
           <div className="mx-auto flex max-w-6xl items-center px-8 py-5">
             {/* Logo */}
             <span className="text-sm font-semibold tracking-tight text-[#2B2825] shrink-0">

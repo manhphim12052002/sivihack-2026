@@ -14,18 +14,18 @@
   --color-charcoal:        #2B2825;
   --color-text-primary:    #2B2825;
   --color-text-secondary:  #7A7672;
-  --color-bg:              #F0EDE8;   /* warm light gray — Arctis content bg */
+  --color-bg:              #F5F4F1;   /* very light warm white — Arctis content bg */
   --color-surface:         #FFFFFF;
   --color-surface-subtle:  #F7F5F1;
   --color-border:          #E2DDD8;
 
-  /* Semantic — decision outcomes */
-  --color-pursue:          #16A34A;
-  --color-pursue-soft:     #DCFCE7;
-  --color-review:          #D97706;
-  --color-review-soft:     #FEF3C7;
-  --color-skip:            #DC2626;
-  --color-skip-soft:       #FEE2E2;
+  /* Semantic — decision outcomes (Arctis muted palette) */
+  --color-pursue:          #3A6B28;   /* sage green text */
+  --color-pursue-soft:     #DFF0D5;   /* sage green bg */
+  --color-review:          #8B6840;   /* warm tan text */
+  --color-review-soft:     #F3E7D0;   /* warm cream bg */
+  --color-skip:            #B53535;   /* dusty rose text */
+  --color-skip-soft:       #FCEAEA;   /* dusty rose bg */
 
   /* Semantic — UI states */
   --color-info:            #2563EB;
