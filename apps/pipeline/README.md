@@ -65,6 +65,16 @@ Other PDFs go through `pdftotext` page by page; drawings (little text per page) 
 are recorded `SKIPPED` / `SCANNED`. Every readable file is sent to the model once per prompt
 version, exactly as in `enrich`. Idempotent: re-running relinks the same content hashes.
 
+## Export for the web's JSON backend (need `DATABASE_URL`)
+
+```bash
+python -m tender_extract.export_json --out data/json-db --open-lots 200
+```
+
+Writes one JSON file per relation (`lots_latest`, `lots_current`, `observations_resolved`,
+`documents`, `document_files`, `sources`, `chunks`), views resolved, trimmed to lots with
+documents plus the soonest open lots. See `docs/json-data-backend.md`.
+
 ## Reading the data (contract for downstream owners)
 
 Nothing in this pipeline ranks or decides. It stores what the sources state, with evidence, and

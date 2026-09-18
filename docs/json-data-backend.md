@@ -71,6 +71,20 @@ and the observation-resolution rules (extractor precedence, agreement, conflict 
 them, it reads the view's output. An export must therefore contain the resolved rows, and these
 files are read-only — a write to them fails with `42809`, as it would against a view.
 
+## Producing the files
+
+The pipeline exports its Postgres relations as the JSON files, views resolved:
+
+```bash
+DATABASE_URL=... uv run --project apps/pipeline python -m tender_extract.export_json --out data/json-db --open-lots 200
+```
+
+The export is trimmed to every lot whose documents were read plus the 200 soonest open lots,
+with their observations, sources, chunks and document links (about 3 MB). The committed
+`data/json-db/` is such a snapshot; the company files and the `match_*` files in it were
+written by the app itself on first use (demo profiles seeded, board warmed), so the demo runs
+with no services and no model key. Deleting `match_*.json` forces a recompute on next screen.
+
 ## Behaviour and limits
 
 - **Reads** support `eq`, `in`, ordering (nulls last), `limit`, column projection, `single`
