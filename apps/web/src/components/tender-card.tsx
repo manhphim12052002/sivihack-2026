@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { CriterionResult, TenderSummary, Verdict } from "@/lib/api";
 import { formatEur } from "@/lib/status";
 
+
 function callout(criteria: CriterionResult[]): { label: string; text: string; tone: "fail" | "risk" } | null {
   const blocker = criteria.find((c) => c.status === "Blocker");
   if (blocker) return { label: "Hard blocker", text: blocker.reason_en, tone: "fail" };
@@ -18,10 +19,9 @@ export function TenderCard({ tender, verdict, companyId }: { tender: TenderSumma
     .slice(0, 3);
 
   return (
-    <div className="rounded-xl border border-[--color-border] bg-[--color-surface] p-4 shadow-sm">
-      <div className="flex items-start justify-between gap-2">
+    <div className="rounded-xl border border-zinc-200 bg-white p-4">
+      <div className="flex items-start gap-2">
         <h3 className="font-semibold text-[--color-text-primary]">{tender?.title ?? verdict.tender_id}</h3>
-        <BadgePill overall={verdict.overall} />
       </div>
       <p className="mt-1 text-sm text-[--color-text-secondary]">
         {tender?.buyer_name ?? "Unknown buyer"} · {tender?.place_city ?? "Unknown"} ·{" "}
@@ -57,13 +57,3 @@ export function TenderCard({ tender, verdict, companyId }: { tender: TenderSumma
   );
 }
 
-function BadgePill({ overall }: { overall: Verdict["overall"] }) {
-  const cls =
-    overall === "Bid"
-      ? "bg-[--color-pursue-soft] text-[--color-pursue]"
-      : overall === "Consider"
-        ? "bg-[--color-review-soft] text-[--color-review]"
-        : "bg-[--color-skip-soft] text-[--color-skip]";
-  const label = overall === "Bid" ? "Pursue" : overall === "Consider" ? "Review" : "Skip";
-  return <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide uppercase ${cls}`}>{label}</span>;
-}

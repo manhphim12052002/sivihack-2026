@@ -59,7 +59,7 @@ export function TenderReviewClient({ tenderId, companyId }: { tenderId: string; 
   if (error || !tender) {
     return (
       <div className="mx-auto max-w-4xl px-6 py-8">
-        <p className="rounded border border-red-300 bg-red-50 px-4 py-3 text-red-800">{error ?? "Tender not found."}</p>
+        <p className="rounded border border-[--color-skip] bg-[--color-skip-soft] px-4 py-3 text-[--color-skip]">{error ?? "Tender not found."}</p>
       </div>
     );
   }

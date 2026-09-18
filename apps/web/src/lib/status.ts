@@ -22,9 +22,9 @@ export const STATUS_STYLES: Record<Status, Tone> = {
 
 /** Tender-level verdict: Bid green, Consider amber, No-go red. */
 export const OVERALL_STYLES: Record<Overall, Tone> = {
-  Bid: { label: "Pursue", className: "bg-[--color-pursue] text-white" },
-  Consider: { label: "Review", className: "bg-[--color-review] text-white" },
-  NoGo: { label: "Skip", className: "bg-[--color-skip] text-white" },
+  Bid: { label: "Pursue", className: "border border-[--color-pursue] bg-[--color-pursue-soft] text-[--color-pursue]" },
+  Consider: { label: "Review", className: "border border-[--color-review] bg-[--color-review-soft] text-[--color-review]" },
+  NoGo: { label: "Skip", className: "border border-[--color-skip] bg-[--color-skip-soft] text-[--color-skip]" },
 };
 
 export const CONFIDENCE_STYLES: Record<Confidence, Tone> = {

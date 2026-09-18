@@ -12,19 +12,19 @@ const VIABILITY_LABEL: Record<ViabilityStatus, string> = {
 };
 
 const VIABILITY_CLASS: Record<ViabilityStatus, string> = {
-  VIABLE: "bg-emerald-100 text-emerald-800",
-  REVIEW: "bg-amber-100 text-amber-800",
-  BLOCKED: "bg-red-100 text-red-800",
+  VIABLE: "bg-[--color-pursue-soft] text-[--color-pursue]",
+  REVIEW: "bg-[--color-review-soft] text-[--color-review]",
+  BLOCKED: "bg-[--color-skip-soft] text-[--color-skip]",
 };
 
 const STATUS_ICON: Record<string, string> = { PASS: "✓", FAIL: "✗", UNCERTAIN: "?" };
 const STATUS_CLASS: Record<string, string> = {
-  PASS: "text-emerald-700",
-  FAIL: "text-red-700",
-  UNCERTAIN: "text-amber-600",
+  PASS: "text-[--color-pursue]",
+  FAIL: "text-[--color-skip]",
+  UNCERTAIN: "text-[--color-review]",
 };
 const SEVERITY_CLASS: Record<string, string> = {
-  HARD: "bg-red-50 text-red-700 border-red-200",
+  HARD: "bg-[--color-skip-soft] text-[--color-skip] border-[--color-skip]",
   SOFT: "bg-zinc-50 text-zinc-600 border-zinc-200",
 };
 
@@ -121,7 +121,7 @@ function ResultRow({ result, evaluationId, onOverrideSaved }: {
             {STATUS_ICON[result.status]} {result.status}
           </span>
           {isPartnerRequired && (
-            <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-xs font-semibold text-amber-800">⚠ Partner/JV</span>
+            <span className="ml-2 rounded bg-[--color-review-soft] px-1.5 py-0.5 text-xs font-semibold text-[--color-review]">⚠ Partner/JV</span>
           )}
         </td>
         <td className="py-2 px-2 hidden sm:table-cell text-xs text-zinc-500">{result.method}</td>
@@ -166,9 +166,9 @@ function ResultRow({ result, evaluationId, onOverrideSaved }: {
 
 function GapCard({ gap }: { gap: KnowledgeGapEntry }) {
   return (
-    <div className="rounded border border-amber-200 bg-amber-50 px-3 py-2 text-sm">
-      <p className="font-medium text-amber-900">{gap.concept}</p>
-      <p className="mt-0.5 text-amber-700">{gap.triggered_by}</p>
+    <div className="rounded border border-[--color-review] bg-[--color-review-soft] px-3 py-2 text-sm">
+      <p className="font-medium text-[--color-review]">{gap.concept}</p>
+      <p className="mt-0.5 text-[--color-review]">{gap.triggered_by}</p>
       <span className={`mt-1 inline-block rounded border px-1.5 py-0.5 text-xs font-semibold ${SEVERITY_CLASS[gap.importance]}`}>
         {gap.importance}
       </span>
@@ -200,13 +200,13 @@ function EvaluationCard({ evaluation, onUpdate }: {
           {VIABILITY_LABEL[viability.status]}
         </span>
         {viability.hard_blockers > 0 && (
-          <span className="text-sm text-red-700 font-medium">✕ {viability.hard_blockers} hard blocker{viability.hard_blockers > 1 ? "s" : ""}</span>
+          <span className="text-sm text-[--color-skip] font-medium">✕ {viability.hard_blockers} hard blocker{viability.hard_blockers > 1 ? "s" : ""}</span>
         )}
         {partnerRequired && (
-          <span className="text-sm text-amber-700 font-medium">⚠ Partner/JV required</span>
+          <span className="text-sm text-[--color-review] font-medium">⚠ Partner/JV required</span>
         )}
         {viability.hard_unknowns > 0 && (
-          <span className="text-sm text-amber-600">? {viability.hard_unknowns} uncertain</span>
+          <span className="text-sm text-[--color-review]">? {viability.hard_unknowns} uncertain</span>
         )}
         {viability.soft_concerns > 0 && (
           <span className="text-sm text-zinc-500">{viability.soft_concerns} soft concern{viability.soft_concerns > 1 ? "s" : ""}</span>
@@ -215,11 +215,11 @@ function EvaluationCard({ evaluation, onUpdate }: {
 
       {/* Hard blockers highlight */}
       {matrix.hard_blockers.length > 0 && (
-        <div className="rounded border border-red-200 bg-red-50 px-4 py-3">
-          <p className="text-sm font-semibold text-red-800 mb-2">✕ Hard blockers — bid not viable as-is</p>
+        <div className="rounded border border-[--color-skip] bg-[--color-skip-soft] px-4 py-3">
+          <p className="text-sm font-semibold text-[--color-skip] mb-2">✕ Hard blockers — bid not viable as-is</p>
           <ul className="space-y-1">
             {matrix.hard_blockers.map((r) => (
-              <li key={r.id} className="text-sm text-red-700">
+              <li key={r.id} className="text-sm text-[--color-skip]">
                 <span className="font-medium">{r.label}:</span> {r.reason}
               </li>
             ))}
