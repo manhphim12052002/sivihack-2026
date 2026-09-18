@@ -1,37 +1,29 @@
-import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
-
-type Ctx = { params: Promise<{ id: string }> };
-type Body = {
-  table: "company_capabilities" | "company_references" | "company_qualifications";
-  item_id: string;
-  status: "CONFIRMED" | "REJECTED";
-};
-
-function err(message: string, status = 400) {
-  return NextResponse.json({ error: message }, { status });
-}
-
-const ALLOWED_TABLES = new Set([
-  "company_capabilities",
-  "company_references",
-  "company_qualifications",
-]);
-
-export async function POST(req: NextRequest, { params }: Ctx) {
-  const { id: companyId } = await params;
-  const body = (await req.json()) as Body;
-
-  if (!ALLOWED_TABLES.has(body.table)) return err("Invalid table");
-  if (!body.item_id) return err("item_id required");
-  if (body.status !== "CONFIRMED" && body.status !== "REJECTED") return err("Invalid status");
-
-  const { error } = await supabase
-    .from(body.table)
-    .update({ status: body.status })
-    .eq("id", body.item_id)
-    .eq("company_id", companyId);
-
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json({ ok: true });
+import { NextRequest } from "next/server";
+import { assembleCanonicalCompany } from "@/lib/company/assemble";
+import { saveCanonicalCompany } from "@/lib/company/repository";
+import { CompanyError, companyErrorResponse } from "@/lib/company/errors";
+export async function POST(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
+  try {
+    const body = await req.json();
+    const section = (
+      {
+        company_capabilities: "capabilities",
+        company_references: "references",
+        company_qualifications: "qualifications",
+      } as const
+    )[body.table as "company_capabilities"];
+    if (!section || !["CONFIRMED", "REJECTED"].includes(body.status))
+      throw new CompanyError("INVALID_INPUT", "Invalid review request.", 400);
+    const c = await assembleCanonicalCompany((await params).id);
+    const r = c[section].find((r) => r.id === body.item_id);
+    if (!r) throw new CompanyError("INVALID_INPUT", "Item not found.", 404);
+    r.status = body.status;
+    await saveCanonicalCompany(c);
+    return Response.json({ ok: true });
+  } catch (e) {
+    return companyErrorResponse(e);
+  }
 }

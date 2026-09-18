@@ -1,35 +1,56 @@
+import { companyErrorResponse } from '@/lib/company/errors';
 import { NextRequest, NextResponse } from "next/server";
-import { runMatchEvaluation } from "@/lib/match/assemble";
+import { runMatchEvaluation, runAllLotEvaluations } from "@/lib/match/assemble";
 import type { TenderDetail } from "@/lib/match/types";
 
 function err(message: string, status = 400) {
   return NextResponse.json({ error: message }, { status });
 }
 
+async function fetchTender(tenderId: string): Promise<TenderDetail | null> {
+  const { findTender } = await import('@/lib/mock/tenders');
+  let tender = findTender(tenderId) as TenderDetail | undefined;
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  if (apiUrl) {
+    try {
+      const res = await fetch(`${apiUrl.replace(/\/$/, '')}/tenders/${encodeURIComponent(tenderId)}`, { cache: 'no-store' });
+      if (!res.ok) return null;
+      tender = await res.json() as TenderDetail;
+    } catch { return null; }
+  }
+  return tender ?? null;
+}
+
+/**
+ * POST /api/match
+ * Body: { tender_id, company_id, lot_id?, all_lots? }
+ *
+ * - Without lot_id: evaluate company against whole tender
+ * - With lot_id:    evaluate company against that specific lot
+ * - With all_lots:  evaluate company against every lot, returns array
+ */
 export async function POST(req: NextRequest) {
-  const body = (await req.json()) as { tender_id?: string; company_id?: string };
+  const body = (await req.json()) as {
+    tender_id?: string;
+    company_id?: string;
+    lot_id?: string;
+    all_lots?: boolean;
+  };
 
   if (!body.tender_id) return err("tender_id required");
   if (!body.company_id) return err("company_id required");
 
-  // Fetch TenderDetail from FastAPI
-  const apiUrl = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000").replace(/\/$/, "");
-  let tender: TenderDetail;
-  try {
-    const res = await fetch(`${apiUrl}/tenders/${encodeURIComponent(body.tender_id)}`, {
-      cache: "no-store",
-    });
-    if (!res.ok) return err(`Tender ${body.tender_id} not found`, 404);
-    tender = (await res.json()) as TenderDetail;
-  } catch {
-    return NextResponse.json({ error: "Could not reach tender API" }, { status: 502 });
-  }
+  const tender = await fetchTender(body.tender_id);
+  if (!tender) return err(`Tender ${body.tender_id} not found`, 404);
 
   try {
-    const evaluation = await runMatchEvaluation(tender, body.company_id);
+    if (body.all_lots) {
+      const evaluations = await runAllLotEvaluations(tender, body.company_id);
+      return NextResponse.json(evaluations);
+    }
+    const evaluation = await runMatchEvaluation(tender, body.company_id, body.lot_id);
     return NextResponse.json(evaluation);
   } catch (e) {
-    const message = e instanceof Error ? e.message : "Evaluation failed";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return companyErrorResponse(e);
   }
 }

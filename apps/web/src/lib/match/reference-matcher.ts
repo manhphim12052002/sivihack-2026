@@ -1,3 +1,4 @@
+import { CompanyError } from '@/lib/company/errors';
 import { genId } from "@/lib/id";
 import { llmClient, SEMANTIC_MATCH_PROMPT } from "@/lib/llm";
 import type { MatchingTask, MatchResult, CanonicalCompany } from "./types";
@@ -26,6 +27,8 @@ function parseRequirement(value: unknown): ParsedReferenceRequirement {
     const yearMatch = value.match(/(\d+)\s*(Jahr|year)/i);
     if (yearMatch) defaults.lookback_years = parseInt(yearMatch[1], 10);
 
+    const money = value.match(/(?:€|EUR)\s*([\d.,]+)\s*(M|million|Mio|k)?/i);
+    if (money) defaults.min_value_eur = Number(money[1].replace(',', '.')) * (/^(m|million|mio)$/i.test(money[2] ?? '') ? 1e6 : /^k$/i.test(money[2] ?? '') ? 1000 : 1);
     defaults.project_type = value;
     return defaults;
   }
@@ -51,15 +54,17 @@ function filterDeterministic(
     if (ref.status !== "CONFIRMED") return false;
 
     // Lookback window
-    if (req.lookback_years !== null && ref.completed_at) {
+    if (req.lookback_years !== null) {
+      if (!ref.completed_at) return false;
       const completed = new Date(ref.completed_at);
       const cutoff = new Date();
       cutoff.setFullYear(cutoff.getFullYear() - req.lookback_years);
-      if (completed < cutoff) return false;
+      if (isNaN(completed.getTime()) || completed > new Date() || completed < cutoff) return false;
     }
 
     // Minimum contract value
-    if (req.min_value_eur !== null && ref.contract_value_eur !== null && ref.contract_value_eur !== undefined) {
+    if (req.min_value_eur !== null) {
+      if (ref.contract_value_eur === null || ref.contract_value_eur === undefined) return false;
       if (ref.contract_value_eur < req.min_value_eur) return false;
     }
 
@@ -71,7 +76,7 @@ async function semanticCheckReference(
   ref: ReferenceRow,
   projectType: string,
 ): Promise<"PASS" | "FAIL" | "UNCERTAIN"> {
-  if (!llmClient) return "UNCERTAIN";
+  if (!llmClient) throw new CompanyError("LLM_UNAVAILABLE", "Reference comparison requires OpenRouter configuration.",503);
 
   const userContent = JSON.stringify({
     requirement: { field: "references_required", description: projectType },
@@ -83,13 +88,15 @@ async function semanticCheckReference(
       reference_id: ref.id,
       matcher: "reference",
     });
-    if (!json) return "UNCERTAIN";
+    if (!json) throw new CompanyError("LLM_PARSE_ERROR", "Reference model returned no output.",502);
     const raw = JSON.parse(json) as { status?: string };
     if (raw.status === "PASS" || raw.status === "FAIL" || raw.status === "UNCERTAIN") return raw.status;
-  } catch {
-    // fall through
+  } catch (e) {
+    if(e instanceof CompanyError) throw e;
+    if(e instanceof SyntaxError) throw new CompanyError("LLM_PARSE_ERROR", "Reference model returned invalid JSON.",502);
+    throw new CompanyError("LLM_REQUEST_FAILED", "Reference comparison request failed.",502);
   }
-  return "UNCERTAIN";
+  throw new CompanyError("LLM_PARSE_ERROR", "Reference model returned invalid status.",502);
 }
 
 export async function runReferenceMatcher(
@@ -132,7 +139,7 @@ export async function runReferenceMatcher(
     status = "UNCERTAIN";
     reason = "No reference projects on file — cannot verify requirement.";
   } else {
-    status = "FAIL";
+    status = "UNCERTAIN";
     reason = `Only ${verified} verified reference(s) found; ${needed} required (${req.project_type ?? "any type"}).`;
   }
 

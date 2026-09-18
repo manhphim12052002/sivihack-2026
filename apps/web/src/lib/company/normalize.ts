@@ -21,6 +21,7 @@ export type QualificationType =
   | "DB_PREQUALIFICATION"
   | "SPECIALIST_LICENSE"
   | "INSURANCE"
+  | "RAIL_SAFETY"
   | "OTHER";
 
 interface OntologyEntry<T extends string> {
@@ -32,7 +33,14 @@ interface OntologyEntry<T extends string> {
 const CAPABILITY_ONTOLOGY: OntologyEntry<CapabilityType>[] = [
   {
     type: "ROAD_CONSTRUCTION",
-    patterns: [/straßenbau/, /straßenb/, /road.?constr/, /asphalt/, /fahrbahn/],
+    patterns: [
+      /straßenbau/,
+      /straßenb/,
+      /road.?constr/,
+      /road.?rehabilit/,
+      /asphalt/,
+      /fahrbahn/,
+    ],
   },
   {
     type: "CIVIL_ENGINEERING",
@@ -44,7 +52,12 @@ const CAPABILITY_ONTOLOGY: OntologyEntry<CapabilityType>[] = [
   },
   {
     type: "PIPELINE",
-    patterns: [/rohrleitungsbau/, /leitungsbau/, /pipeline/, /versorgungsleitung/],
+    patterns: [
+      /rohrleitungsbau/,
+      /leitungsbau/,
+      /pipeline/,
+      /versorgungsleitung/,
+    ],
   },
   {
     type: "SEWER_CONSTRUCTION",
@@ -52,7 +65,12 @@ const CAPABILITY_ONTOLOGY: OntologyEntry<CapabilityType>[] = [
   },
   {
     type: "BUILDING_ELECTRICAL",
-    patterns: [/elektroinstallation/, /elektrotechnik/, /electrical/, /e-technik/],
+    patterns: [
+      /elektroinstallation/,
+      /elektrotechnik/,
+      /electrical/,
+      /e-technik/,
+    ],
   },
   {
     type: "TURNKEY_BUILDING",
@@ -74,8 +92,33 @@ const CAPABILITY_ONTOLOGY: OntologyEntry<CapabilityType>[] = [
 
 const QUALIFICATION_ONTOLOGY: OntologyEntry<QualificationType>[] = [
   {
+    type: "RAIL_SAFETY",
+    patterns: [
+      /rail.?safety/,
+      /safety.?staff/,
+      /sicherungs(?:personal|posten)/,
+      /certified.?safety/,
+    ],
+  },
+  {
+    type: "DB_PREQUALIFICATION",
+    patterns: [
+      /db.?präqualifik/,
+      /deutsche.?bahn.*qualifik/,
+      /db.?praequalifik/,
+      /db[ _-]?(?:prequalification|qualification)/,
+    ],
+  },
+
+  {
     type: "PQ_VOB",
-    patterns: [/pq.?vob/, /präqualifik/, /praequalifik/, /pq.?nummer/, /präqual/],
+    patterns: [
+      /pq.?vob/,
+      /präqualifik/,
+      /praequalifik/,
+      /pq.?nummer/,
+      /präqual/,
+    ],
   },
   {
     type: "ISO_9001",
@@ -84,10 +127,6 @@ const QUALIFICATION_ONTOLOGY: OntologyEntry<QualificationType>[] = [
   {
     type: "ISO_14001",
     patterns: [/iso.?14001/, /din.?14001/],
-  },
-  {
-    type: "DB_PREQUALIFICATION",
-    patterns: [/db.?präqualifik/, /deutsche.?bahn.*qualifik/, /db.?praequalifik/],
   },
   {
     type: "SPECIALIST_LICENSE",
@@ -138,4 +177,12 @@ export function computeFreshness(
   if (days < 0) return "EXPIRED";
   if (days < 90) return "EXPIRING";
   return "CURRENT";
+}
+
+/** Preserve all concepts in compound phrases, e.g. sewers and pipelines. */
+export function normalizeCapabilityTypes(label: string): CapabilityType[] {
+  const matches = CAPABILITY_ONTOLOGY.filter((e) =>
+    e.patterns.some((p) => p.test(label.toLowerCase())),
+  ).map((e) => e.type);
+  return matches.length ? [...new Set(matches)] : ["OTHER"];
 }

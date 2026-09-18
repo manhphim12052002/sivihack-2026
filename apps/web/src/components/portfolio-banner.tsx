@@ -27,7 +27,7 @@ export function PortfolioBanner({
   onOpenTender,
 }: {
   slots: PortfolioSlot[];
-  capacity: number;
+  capacity: number | null;
   swappingSlot: number | null;
   swapPool: SwapCandidate[];
   onOpenSwap: (slot: number) => void;
@@ -47,10 +47,10 @@ export function PortfolioBanner({
     <div className="rounded-xl bg-[var(--color-charcoal)] px-6 py-5 text-white">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-lg font-semibold">
-          Recommended Bid Portfolio <span className="font-normal text-white/60">{slots.length} / {capacity} slots</span>
+          Recommended Bid Portfolio <span className="font-normal text-white/60">{slots.length}{capacity === null ? " shortlisted" : ` / ${capacity} slots`}</span>
         </h2>
         <span className="rounded-full bg-[var(--color-pursue)] px-3 py-1 text-xs font-semibold tracking-wide uppercase">
-          Estimating capacity reserved
+          {capacity === null ? "Estimating capacity unknown" : "Stated estimating capacity"}
         </span>
       </div>
 

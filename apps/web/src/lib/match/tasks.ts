@@ -7,7 +7,9 @@ import type {
   Severity,
   DecisionAspect,
   KnowledgeGapEntry,
+  CanonicalCompany,
 } from "./types";
+import type { PolicyItem } from "@/lib/company/types";
 
 interface TaskSpec {
   requirement_id: string;
@@ -50,9 +52,55 @@ export interface TaskGenerationResult {
   skipped_gaps: KnowledgeGapEntry[];
 }
 
+/** Build matching tasks driven by a company's active hard constraints against the tender. */
+function generateConstraintTasks(
+  company: CanonicalCompany,
+  factSheet: TenderFactSheet | null | undefined,
+): MatchingTask[] {
+  const constraints = (company.constraints ?? []) as PolicyItem[];
+  const sheet = (factSheet ?? {}) as Record<string, Fact | undefined>;
+  const tasks: MatchingTask[] = [];
+
+  for (const c of constraints) {
+    if (c.status === "REJECTED") continue;
+
+    // Determine tender_value: use the most relevant tender fact for this constraint type
+    let tender_value: unknown = null;
+    let aspect: DecisionAspect = "CONTRACTUAL_RISK";
+
+    if (c.type === "WORK_TYPE") {
+      tender_value = sheet["trade_scope"]?.value ?? null;
+      aspect = "SCOPE_CAPABILITY";
+    } else if (c.type === "COUNTRY" || c.type === "REGION") {
+      tender_value = sheet["place_of_performance"]?.value ?? null;
+      aspect = "GEOGRAPHY";
+    } else if (c.type === "MAX_PROJECT_VALUE") {
+      tender_value = sheet["estimated_value"]?.value ?? null;
+      aspect = "CONTRACT_SIZE";
+    } else if (c.type === "JV" || c.type === "CONSORTIUM") {
+      tender_value = sheet["consortium_allowed"]?.value ?? null;
+      aspect = "CONTRACTUAL_RISK";
+    }
+
+    tasks.push({
+      id: genId("TASK"),
+      requirement_id: "company_constraint",
+      label: `Exclusion: ${c.value.toLowerCase().replace(/_/g, " ")}`,
+      matcher_type: "CONSTRAINT",
+      severity: c.severity,
+      tender_value,
+      company_value: c,
+      tender_evidence: [],
+      aspect,
+    });
+  }
+  return tasks;
+}
+
 export function generateTasks(
   factSheet: TenderFactSheet | null | undefined,
   companyValue: (requirementId: string) => unknown,
+  company?: CanonicalCompany,
 ): TaskGenerationResult {
   const tasks: MatchingTask[] = [];
   const skipped_gaps: KnowledgeGapEntry[] = [];
@@ -90,6 +138,11 @@ export function generateTasks(
       tender_evidence: extractEvidence(fact),
       aspect: spec.aspect,
     });
+  }
+
+  // Append constraint tasks from company profile (independent of fact sheet structure)
+  if (company) {
+    tasks.push(...generateConstraintTasks(company, factSheet));
   }
 
   return { tasks, skipped_gaps };

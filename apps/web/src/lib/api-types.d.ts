@@ -3,6 +3,9 @@
  * Do not make direct changes to the file.
  */
 
+// Convenience re-exports for the matching engine
+export type Lot = import("./api-types").components["schemas"]["Lot"];
+
 export interface paths {
     "/health": {
         parameters: {
@@ -86,9 +89,8 @@ export interface components {
             earliest_start?: string | null;
             /**
              * Capacity Per Week
-             * @default 3
              */
-            capacity_per_week: number;
+            capacity_per_week: number | null;
             /**
              * Raw Text
              * @default

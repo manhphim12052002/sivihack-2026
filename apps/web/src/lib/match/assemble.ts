@@ -4,6 +4,7 @@ import { assembleCanonicalCompany } from "@/lib/company/assemble";
 import { generateTasks } from "./tasks";
 import { routeAndRun } from "./router";
 import type {
+  BidScope,
   MatchEvaluation,
   MatchEvaluationRow,
   MatchResult,
@@ -15,19 +16,51 @@ import type {
   KnowledgeGapEntry,
   CanonicalCompany,
   TenderDetail,
+  TenderFactSheet,
+  Fact,
 } from "./types";
+import type { Lot } from "@/lib/api-types";
+
+// ─── Lot-scoped fact sheet ────────────────────────────────────────────────────
+
+function makeFact(value: unknown): Fact {
+  return { value, confidence: "high", evidence: [] };
+}
+
+/**
+ * Build a fact sheet for a single lot evaluation.
+ * Tender-level facts are inherited; lot-specific trade and value override.
+ * The `lots` fact is stripped (not relevant per-lot).
+ */
+function buildLotFactSheet(
+  lot: Lot,
+  tenderFactSheet: TenderFactSheet | null | undefined,
+): TenderFactSheet {
+  const base = { ...(tenderFactSheet ?? {}) } as Record<string, Fact | undefined>;
+  delete base["lots"]; // lots count is a tender-level fact, not per-lot
+
+  // Lot-specific overrides
+  if (lot.trade) {
+    base["trade_scope"] = makeFact(lot.trade);
+  }
+  if (lot.value_eur !== null && lot.value_eur !== undefined) {
+    base["estimated_value"] = makeFact(lot.value_eur);
+  }
+
+  return base as TenderFactSheet;
+}
 
 // ─── Viability ────────────────────────────────────────────────────────────────
 
 function computeViability(results: MatchResult[]): ViabilityResult {
-  const hardFails     = results.filter((r) => r.status === "FAIL" && r.severity === "HARD");
+  const hardFails     = results.filter((r) => r.status === "FAIL"      && r.severity === "HARD");
   const hardUncertain = results.filter((r) => r.status === "UNCERTAIN" && r.severity === "HARD");
-  const softConcerns  = results.filter((r) => r.status !== "PASS" && r.severity === "SOFT");
+  const softConcerns  = results.filter((r) => r.status !== "PASS"      && r.severity === "SOFT");
 
   let status: ViabilityStatus;
-  if (hardFails.length > 0) status = "BLOCKED";
+  if (hardFails.length > 0)     status = "BLOCKED";
   else if (hardUncertain.length > 0) status = "REVIEW";
-  else status = "VIABLE";
+  else                          status = "VIABLE";
 
   return {
     status,
@@ -69,17 +102,17 @@ async function persistEvaluation(
   evaluationId: string,
   tenderId: string,
   companyId: string,
+  bidScope: BidScope,
   results: MatchResult[],
   gaps: KnowledgeGapEntry[],
   viability: ViabilityResult,
 ): Promise<void> {
-  // Upsert evaluation row
   await supabase.from("match_evaluations").upsert({
     id: evaluationId,
     tender_id: tenderId,
     company_id: companyId,
-    scope_type: "WHOLE_TENDER",
-    scope_id: null,
+    scope_type: bidScope.type === "LOT" ? "LOT" : "WHOLE_TENDER",
+    scope_id: bidScope.lot_id,
     status: viability.status,
     hard_blockers: viability.hard_blockers,
     hard_unknowns: viability.hard_unknowns,
@@ -87,7 +120,6 @@ async function persistEvaluation(
     updated_at: new Date().toISOString(),
   });
 
-  // Insert tasks (use result task_ids as proxy — task rows inserted inline)
   for (const result of results) {
     await supabase.from("matching_tasks").upsert({
       id: result.task_id,
@@ -99,7 +131,6 @@ async function persistEvaluation(
     });
   }
 
-  // Insert results
   for (const result of results) {
     await supabase.from("match_results").upsert({
       id: result.id,
@@ -115,7 +146,6 @@ async function persistEvaluation(
     });
   }
 
-  // Clear and re-insert knowledge gaps
   await supabase.from("match_knowledge_gaps").delete().eq("evaluation_id", evaluationId);
   for (const gap of gaps) {
     await supabase.from("match_knowledge_gaps").insert({
@@ -153,7 +183,7 @@ export async function loadMatchEvaluation(evaluationId: string): Promise<MatchEv
   const results: MatchResult[] = ((resultRows ?? []) as MatchResultRow[]).map((r) => ({
     id: r.id,
     task_id: r.task_id,
-    requirement_id: r.task_id, // approximation; real requirement_id from matching_tasks
+    requirement_id: r.task_id,
     label: r.reason,
     status: (r.override_status ?? r.status) as "PASS" | "FAIL" | "UNCERTAIN",
     severity: r.severity as "HARD" | "SOFT",
@@ -180,41 +210,45 @@ export async function loadMatchEvaluation(evaluationId: string): Promise<MatchEv
     knowledge_gaps: gaps,
   };
 
+  const bidScope: BidScope = {
+    type: row.scope_type === "LOT" ? "LOT" : "TENDER",
+    lot_id: row.scope_id,
+    lot_title: null,
+  };
+
   return {
     id: row.id,
     tender_id: row.tender_id,
     company_id: row.company_id,
     scope_type: row.scope_type as "WHOLE_TENDER" | "LOT",
     scope_id: row.scope_id,
+    bid_scope: bidScope,
     matrix,
     viability,
     created_at: row.created_at,
   };
 }
 
-// ─── Main entry point ─────────────────────────────────────────────────────────
+// ─── Core evaluation (single scope) ──────────────────────────────────────────
 
-export async function runMatchEvaluation(
+async function runScopedEvaluation(
   tender: TenderDetail,
-  companyId: string,
+  company: CanonicalCompany,
+  factSheet: TenderFactSheet | null,
+  bidScope: BidScope,
 ): Promise<MatchEvaluation> {
   const evaluationId = genId("EVAL");
 
-  // Load canonical company from our Supabase pipeline
-  const company = await assembleCanonicalCompany(companyId);
-
-  // Generate tasks from TenderFactSheet
   const { tasks, skipped_gaps } = generateTasks(
-    tender.fact_sheet ?? null,
+    factSheet,
     (reqId) => getCompanyValue(reqId, company),
+    company,
   );
 
-  // Run all matchers
   const results: MatchResult[] = await Promise.all(
     tasks.map((task) => routeAndRun(task, company)),
   );
 
-  // Knowledge gaps: from skipped HARD fields + HARD UNCERTAIN results
   const gaps: KnowledgeGapEntry[] = [
     ...skipped_gaps,
     ...results
@@ -237,16 +271,69 @@ export async function runMatchEvaluation(
     knowledge_gaps: gaps,
   };
 
-  await persistEvaluation(evaluationId, tender.id, companyId, results, gaps, viability);
+  await persistEvaluation(evaluationId, tender.id, company.company_id, bidScope, results, gaps, viability);
 
   return {
     id: evaluationId,
     tender_id: tender.id,
-    company_id: companyId,
-    scope_type: "WHOLE_TENDER",
-    scope_id: null,
+    company_id: company.company_id,
+    scope_type: bidScope.type === "LOT" ? "LOT" : "WHOLE_TENDER",
+    scope_id: bidScope.lot_id,
+    bid_scope: bidScope,
     matrix,
     viability,
     created_at: new Date().toISOString(),
   };
+}
+
+// ─── Public API ───────────────────────────────────────────────────────────────
+
+/** Evaluate a company against a specific lot (or whole tender when lotId is omitted). */
+export async function runMatchEvaluation(
+  tender: TenderDetail,
+  companyId: string,
+  lotId?: string,
+): Promise<MatchEvaluation> {
+  const company = await assembleCanonicalCompany(companyId);
+
+  if (lotId) {
+    const lot = (tender.lots ?? []).find((l) => l.id === lotId);
+    if (!lot) throw new Error(`Lot ${lotId} not found in tender ${tender.id}`);
+    const lotFactSheet = buildLotFactSheet(lot, tender.fact_sheet);
+    const bidScope: BidScope = {
+      type: "LOT",
+      lot_id: lot.id,
+      lot_title: lot.title ?? null,
+    };
+    return runScopedEvaluation(tender, company, lotFactSheet, bidScope);
+  }
+
+  const bidScope: BidScope = { type: "TENDER", lot_id: null, lot_title: null };
+  return runScopedEvaluation(tender, company, tender.fact_sheet ?? null, bidScope);
+}
+
+/** Evaluate a company against every lot in a multi-lot tender (or whole tender if no lots). */
+export async function runAllLotEvaluations(
+  tender: TenderDetail,
+  companyId: string,
+): Promise<MatchEvaluation[]> {
+  const lots = tender.lots ?? [];
+
+  if (lots.length <= 1 || tender.lot_count <= 1) {
+    return [await runMatchEvaluation(tender, companyId)];
+  }
+
+  const company = await assembleCanonicalCompany(companyId);
+
+  return Promise.all(
+    lots.map((lot) => {
+      const lotFactSheet = buildLotFactSheet(lot, tender.fact_sheet);
+      const bidScope: BidScope = {
+        type: "LOT",
+        lot_id: lot.id,
+        lot_title: lot.title ?? null,
+      };
+      return runScopedEvaluation(tender, company, lotFactSheet, bidScope);
+    }),
+  );
 }

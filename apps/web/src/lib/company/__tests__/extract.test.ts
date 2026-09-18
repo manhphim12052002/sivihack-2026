@@ -3,7 +3,11 @@ import { parseExtractionResult, ExtractionParseError } from "../extract";
 
 const validResult = JSON.stringify({
   capabilities: [
-    { type: "ROAD_CONSTRUCTION", label: "Straßenbau", chunk_ids: ["CCHUNK-001"] },
+    {
+      type: "ROAD_CONSTRUCTION",
+      label: "Straßenbau",
+      chunk_ids: ["CCHUNK-001"],
+    },
   ],
   references: [
     {
@@ -18,7 +22,13 @@ const validResult = JSON.stringify({
     },
   ],
   qualifications: [
-    { type: "PQ_VOB", label: "PQ-VOB", valid_from: null, valid_until: null, chunk_ids: ["CCHUNK-003"] },
+    {
+      type: "PQ_VOB",
+      label: "PQ-VOB",
+      valid_from: null,
+      valid_until: null,
+      chunk_ids: ["CCHUNK-003"],
+    },
   ],
 });
 
@@ -33,18 +43,26 @@ describe("parseExtractionResult", () => {
   });
 
   it("throws ExtractionParseError on invalid JSON", () => {
-    expect(() => parseExtractionResult("not json")).toThrow(ExtractionParseError);
+    expect(() => parseExtractionResult("not json")).toThrow(
+      ExtractionParseError,
+    );
   });
 
   it("throws ExtractionParseError when result is not an object", () => {
-    expect(() => parseExtractionResult('"just a string"')).toThrow(ExtractionParseError);
+    expect(() => parseExtractionResult('"just a string"')).toThrow(
+      ExtractionParseError,
+    );
   });
 
   it("drops capabilities with no chunk_ids", () => {
     const json = JSON.stringify({
       capabilities: [
         { type: "ROAD_CONSTRUCTION", label: "Straßenbau", chunk_ids: [] },
-        { type: "CIVIL_ENGINEERING", label: "Tiefbau", chunk_ids: ["CCHUNK-001"] },
+        {
+          type: "CIVIL_ENGINEERING",
+          label: "Tiefbau",
+          chunk_ids: ["CCHUNK-001"],
+        },
       ],
       references: [],
       qualifications: [],
@@ -69,7 +87,11 @@ describe("parseExtractionResult", () => {
   });
 
   it("handles an empty extraction result without crashing", () => {
-    const json = JSON.stringify({ capabilities: [], references: [], qualifications: [] });
+    const json = JSON.stringify({
+      capabilities: [],
+      references: [],
+      qualifications: [],
+    });
     const result = parseExtractionResult(json);
     expect(result.capabilities).toHaveLength(0);
     expect(result.references).toHaveLength(0);

@@ -82,8 +82,10 @@ function TriageBoard() {
   const considerRows = rows.filter((row) => row.verdict.overall === "Consider");
   const noGoRows = rows.filter((row) => row.verdict.overall === "NoGo");
 
-  const capacity = selectedCompany?.capacity_per_week ?? 3;
-  const defaultPortfolioIds = bidRows.slice(0, capacity).map((row) => row.verdict.tender_id);
+  const capacity = selectedCompany?.capacity_per_week ?? null;
+  // Top-three is a presentation limit, never an inferred company capacity.
+  const shortlistLimit = capacity === null ? 3 : Math.min(3, capacity);
+  const defaultPortfolioIds = bidRows.slice(0, shortlistLimit).map((row) => row.verdict.tender_id);
   const portfolioIds = defaultPortfolioIds.map((id, index) => portfolioOverrides[index] ?? id);
   const portfolioSlots: PortfolioSlot[] = portfolioIds
     .map((id) => rows.find((row) => row.verdict.tender_id === id))

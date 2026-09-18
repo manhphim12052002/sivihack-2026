@@ -22,12 +22,26 @@ function mockTable(data: unknown, error: null | { message: string } = null) {
   };
   // When the chain is awaited (Promise.all path), resolve with { data, error }
   Object.defineProperty(chain, "then", {
-    value: (resolve: (v: unknown) => void) => resolve({ data: Array.isArray(data) ? data : [], error }),
+    value: (resolve: (v: unknown) => void) =>
+      resolve({ data: Array.isArray(data) ? data : [], error }),
   });
   return chain;
 }
 
 const baseCompany = {
+  intelligence_version: 2,
+  geography: {
+    regions: ["Bavaria"],
+    radius_km: 150,
+    countries: [],
+    headquarters: "Augsburg",
+  },
+  commercial_profile: {
+    contract_min_eur: null,
+    contract_max_eur: 5000000,
+    guarantee_capacity_eur: null,
+    self_perform_share_pct: null,
+  },
   id: "COMP-001",
   name: "Brenner & Sohn",
   headquarters: "Augsburg",
@@ -89,11 +103,14 @@ function setupMocks({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     type F = ReturnType<typeof supabase.from>;
     if (table === "companies") return mockTable(baseCompany) as unknown as F;
-    if (table === "company_capabilities") return mockTable(capabilities) as unknown as F;
+    if (table === "company_capabilities")
+      return mockTable(capabilities) as unknown as F;
     if (table === "company_references") return mockTable([]) as unknown as F;
-    if (table === "company_qualifications") return mockTable(qualifications) as unknown as F;
+    if (table === "company_qualifications")
+      return mockTable(qualifications) as unknown as F;
     if (table === "sources") return mockTable([]) as unknown as F;
-    if (table === "company_knowledge_gaps") return mockTable([]) as unknown as F;
+    if (table === "company_knowledge_gaps")
+      return mockTable([]) as unknown as F;
     return mockTable([]) as unknown as F;
   });
 }
@@ -119,12 +136,18 @@ describe("assembleCanonicalCompany", () => {
   });
 
   it("only includes CONFIRMED items in the assembled output via filter check", async () => {
-    const pending: CapabilityRow = { ...confirmedCapability, id: "CAP-002", status: "PENDING" };
+    const pending: CapabilityRow = {
+      ...confirmedCapability,
+      id: "CAP-002",
+      status: "PENDING",
+    };
     setupMocks({ capabilities: [confirmedCapability, pending] });
     const result = await assembleCanonicalCompany("COMP-001");
     // All rows are returned — the UI applies the status filter; assembly preserves them
     expect(result.capabilities).toHaveLength(2);
-    const confirmed = result.capabilities.filter((c) => c.status === "CONFIRMED");
+    const confirmed = result.capabilities.filter(
+      (c) => c.status === "CONFIRMED",
+    );
     expect(confirmed).toHaveLength(1);
   });
 
@@ -134,14 +157,20 @@ describe("assembleCanonicalCompany", () => {
       valid_until: "2020-01-01",
       status: "CONFIRMED",
     };
-    setupMocks({ capabilities: [confirmedCapability], qualifications: [expiredQual] });
+    setupMocks({
+      capabilities: [confirmedCapability],
+      qualifications: [expiredQual],
+    });
     const result = await assembleCanonicalCompany("COMP-001");
     const qual = result.qualifications[0];
     expect(qual?.freshness).toBe("EXPIRED");
   });
 
   it("marks qualification as CURRENT when no valid_until", async () => {
-    setupMocks({ capabilities: [confirmedCapability], qualifications: [confirmedQualification] });
+    setupMocks({
+      capabilities: [confirmedCapability],
+      qualifications: [confirmedQualification],
+    });
     const result = await assembleCanonicalCompany("COMP-001");
     const qual = result.qualifications[0];
     expect(qual?.freshness).toBe("CURRENT");

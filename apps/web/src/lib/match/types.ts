@@ -12,7 +12,7 @@ export type { CanonicalCompany };
 
 export type MatchStatus     = "PASS" | "FAIL" | "UNCERTAIN";
 export type Severity        = "HARD" | "SOFT";
-export type MatcherType     = "RULE" | "ONTOLOGY" | "SEMANTIC" | "REFERENCE";
+export type MatcherType     = "RULE" | "ONTOLOGY" | "SEMANTIC" | "REFERENCE" | "CONSTRAINT";
 export type ViabilityStatus = "VIABLE" | "REVIEW" | "BLOCKED";
 
 export type DecisionAspect =
@@ -99,12 +99,19 @@ export interface ViabilityResult {
   soft_concerns: number;
 }
 
+export interface BidScope {
+  type: "TENDER" | "LOT";
+  lot_id: string | null;
+  lot_title: string | null;
+}
+
 export interface MatchEvaluation {
   id: string;
   tender_id: string;
   company_id: string;
   scope_type: "WHOLE_TENDER" | "LOT";
   scope_id: string | null;
+  bid_scope: BidScope;
   matrix: EvaluationMatrix;
   viability: ViabilityResult;
   created_at: string;
